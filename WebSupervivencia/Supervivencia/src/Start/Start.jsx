@@ -1,5 +1,6 @@
 import react from 'react';
-import './Start.css';
+
+import '../CSS/Start.css';
 import VideoStart from './VideoStart';
 import { Typewriter, useTypewriter } from 'react-simple-typewriter';
 
@@ -15,17 +16,18 @@ function Start() {
     
     return(
         
-       <section>
-
-        <VideoStart>
-        </VideoStart>
-        <article className="startText">
+       <section className="startSection">
+        
+        <VideoStart/>
+        
+        <article className="startArticle">
             <h2 className="typeWriteText">{'\u00A0'}{text}</h2>
           
             <h3 id="resilencia">Resilencia</h3>
-            <footer id="definicionResilencia">Capacidad de adaptación de un ser vivo frente a un agente perturbador o un estado o situación adversos.</footer>
+            <footer id="resilenciaDefinition">Capacidad de adaptación de un ser vivo frente a un agente perturbador o un estado o situación adversos.</footer>
         </article>
        </section>
+    
     )
 }
 

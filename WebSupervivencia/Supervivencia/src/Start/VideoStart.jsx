@@ -1,8 +1,9 @@
 import react from 'react';
-import { useState } from 'react';
-import './Start.css';
+
+import '../CSS/Start.css';
 import { Typewriter, useTypewriter } from 'react-simple-typewriter';
-import videoStart from "./assets/videoStart.mp4";
+import videoStart from "../assets/Start/videoStart.mp4";
+
 function VideoStart() {
 
     const [text] = useTypewriter({
@@ -15,9 +16,8 @@ function VideoStart() {
     
     return(
         
-        
-        <div className='videoStart'>
-                <video autoPlay loop muted src={videoStart}></video>
+        <div>
+                <video className='startVideo' autoPlay loop muted src={videoStart}></video>
         </div>
     )
 }
