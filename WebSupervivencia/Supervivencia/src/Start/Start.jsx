@@ -2,6 +2,7 @@ import react from 'react';
 
 import '../CSS/Start.css';
 import VideoStart from './VideoStart';
+import NavBar from './NavBar';
 import { Typewriter, useTypewriter } from 'react-simple-typewriter';
 
 function Start() {
@@ -16,18 +17,23 @@ function Start() {
     
     return(
         
-       <section className="startSection">
+        <>
         
+        <NavBar/>
+        
+        <section className="bg-black relative text-left">
+    
         <VideoStart/>
         
         <article className="startArticle">
-            <h2 className="typeWriteText">{'\u00A0'}{text}</h2>
-          
-            <h3 id="resilencia">Resilencia</h3>
-            <footer id="resilenciaDefinition">Capacidad de adaptación de un ser vivo frente a un agente perturbador o un estado o situación adversos.</footer>
+            <h2 id="typeWriteText">{'\u00A0'}{text}</h2>
+            <header id="resilencia">Resilencia</header>
+            <p id="resilenciaDefinition">Capacidad de adaptación de un ser vivo frente a un agente perturbador o un estado o situación adversos.</p>
         </article>
+       
        </section>
-    
+        </>
+             
     )
 }
 

@@ -16,7 +16,7 @@ function VideoStart() {
     
     return(
         
-        <div>
+        <div className='startDiv'>
                 <video className='startVideo' autoPlay loop muted src={videoStart}></video>
         </div>
     )
