@@ -1,5 +1,4 @@
 
-<<<<<<< HEAD
 @font-face {
     font-family: Noto_Serif_B;
     src: url('../../public/Fonts/Noto_Serif_KR/NotoSerifKR-Black.otf');
@@ -26,8 +25,6 @@
     padding-bottom: 20px;
 }
 
-=======
->>>>>>> f15425ccaee7809518ca31f2e424d48b1b47f6b6
 .startDiv{
     position: absolute;
     width: 100%;
@@ -46,25 +43,11 @@
 .startArticle{
     position: absolute;
     padding-top: 50px;
-<<<<<<< HEAD
     padding-left: 5vw;
-=======
-    padding-left: 70px;
->>>>>>> f15425ccaee7809518ca31f2e424d48b1b47f6b6
     z-index: 10;
 
 }
 
-<<<<<<< HEAD
-=======
-.navHeader{
-    padding-left: 60px;
-    padding-right: 60px;
-    text-align: center;
-
-}
-
->>>>>>> f15425ccaee7809518ca31f2e424d48b1b47f6b6
 #typeWriteText{
     padding-top: 150px;
     font-style: italic;
@@ -72,7 +55,6 @@
 }
 
 #resilencia{
-<<<<<<< HEAD
     padding-top: 20px;
     padding-left: 15px;
     width: 30px;
@@ -90,6 +72,13 @@
 
 }
 
+#landingSection{
+    position: relative; 
+    text-align: left;
+    width: 100%;
+    height: 100vh;
+}
+
 .navBar{
 
     box-sizing: border-box;
@@ -104,8 +93,11 @@
     flex-direction: row;
    
     z-index: 400;
-    top: 0;
+    
     position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
     width: 100vw;
     height: 9vh;
 
@@ -188,38 +180,3 @@ li img{
 
 
 
-=======
-    padding-left: 10px;
-    width: 30px;
-    font-size: clamp(25px, 6vw, 40px);  
-    padding-top: 19px;
-}
-
-#resilenciaDefinition{
-    padding-left: 10px;
-    width: 40vw;
-    font-style: italic;
-    font-size: clamp(12px, 3vw, 30px);  
-}
-
-.navbar{
-    z-index: 20;
-}
-
-.navbar-nav a{
-
-    padding-left: 30px !important;
-    padding-right: 30px !important;
-    text-align: center;    
-    font-size: 1.4vw;
-}
-
-.navbar-nav{
-    padding-right: 150px;
-}
-
-.navbar-brand{
-    padding-left: 11px;
-}
-
->>>>>>> f15425ccaee7809518ca31f2e424d48b1b47f6b6

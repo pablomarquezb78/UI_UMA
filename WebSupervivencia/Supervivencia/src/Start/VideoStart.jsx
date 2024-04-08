@@ -2,11 +2,7 @@ import react from 'react';
 
 import '../CSS/Start.css';
 import { Typewriter, useTypewriter } from 'react-simple-typewriter';
-<<<<<<< HEAD
 import videoStart from "../assets/Start/video_fondo.webm";
-=======
-import videoStart from "../assets/Start/videoStart.mp4";
->>>>>>> f15425ccaee7809518ca31f2e424d48b1b47f6b6
 
 function VideoStart() {
 
