@@ -1,4 +1,3 @@
-
 @font-face {
     font-family: Noto_Serif_B;
     src: url('../../public/Fonts/Noto_Serif_KR/NotoSerifKR-Black.otf');
@@ -80,7 +79,6 @@
 }
 
 .navBar{
-
     box-sizing: border-box;
     /* background-color: rgba(214, 194, 194, 0.187); */
     
@@ -107,7 +105,7 @@
     width: 50px; 
     height: 50px; 
     object-fit: cover;
-
+    cursor: pointer;
 }
 
 #navList{
@@ -144,13 +142,13 @@
 }
 
 #ayudaLogoStart{
-   
     width: 50px; 
     height: 50px; 
     object-fit: cover;
     position: absolute;
     right: 0;
     top: 0;
+    cursor: pointer;
 }
 
 li img{
@@ -166,7 +164,7 @@ li img{
     transition-duration: .6s;
     transition-timing-function: ease;
     letter-spacing: 0;
-
+    cursor: pointer;
   }
 
 .animatedSpanNavBar:hover,
@@ -176,7 +174,20 @@ li img{
     letter-spacing: 5px;
 }
 
+#hamburger{
+    display: none;
+}
 
+@media only screen and (max-width: 700px) {
 
+    #webLogoStart{
+        display: none;
+    }
 
+    #hamburger{
+        display: block;
+        width: 50px;
+        height: 50px;
+    }
 
+}
