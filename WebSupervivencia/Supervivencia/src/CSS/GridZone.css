@@ -1,0 +1,79 @@
+
+#sectionGrid{
+    background-color: #252525;
+}
+
+.gridSection{
+    width: 95vw;
+    height: 100vh;
+    margin: auto;
+    padding: 10px;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+}
+
+.gridCard{
+
+    height: 100%;
+    width: 100%;
+    position: relative;
+
+}
+
+#topCard{
+
+    grid-row-start: 1;
+    grid-row-end: 3;
+
+}
+
+#bottomCard{
+    grid-row-start: 3;
+    grid-row-end: 5;
+}
+
+.gridCard video{
+
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+    
+}
+
+
+
+.gridDivContent{
+   
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.gridText{
+    
+    text-align: center;
+    margin: auto;
+    color: rgb(255, 255, 255);
+    font-size:3vw;
+    word-wrap: break-word;
+}
+
+
+.gridSection h1{
+    color: rgb(0, 73, 10);
+    font-size: 6vw;
+    padding: 15px;
+    text-align: center;
+}
+
+

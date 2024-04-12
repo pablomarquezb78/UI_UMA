@@ -1,6 +1,6 @@
 import React from 'react'
 import Start from './Start/Start.jsx'
-import MainGrid from './MainGridZone/MainGridZone.jsx'
+import MainGrid from './GridZone/GridZone.jsx'
 import { Outlet, Link } from "react-router-dom";
 import './CSS/main.css'
 import './CSS/Start.css'
