@@ -4,6 +4,7 @@ import hamburguesa from '../assets/Start/Logos/new_burger.png'
 
 import '../CSS/Start.css';
 import '../CSS/BootstrapEdit.css';
+import { Link } from "react-router-dom";
 import {useState ,useEffect} from 'react';
 import React from 'react';
 
@@ -45,16 +46,13 @@ function navBar() {
     }, [manualMenuOpen]);
 
     return(
-        
-      <header className="navBar">
-
+    <>
+        <header className="navBar">
             <div className="navBarItem">
                 <img id="webLogoStart" src={logoWeb}></img>
                 <input type='image' id="hamburger" src={hamburguesa} onClick={toggleMenu}/>
             </div>
-            
             <nav>
-                
                 <ul id="navList" style={{ 
                     display: showMenu === 0 ? 'none' : showMenu === 1 ? 'block' : 'flex',
                     //Añadir el estilo deseado al display block
@@ -63,43 +61,41 @@ function navBar() {
                     // paddingLeft: showMenu === 1 ? '75px' : '',
                     }}>
                     <li>
-                        <a>
+                        <Link to='/prueba'>
                         <span className='animatedSpanNavBar'>Montaña</span>
-                        </a>
+                        </Link>
                     </li>
                     
                     <li>
-                        <a>
+                        <Link to='/prueba'>
                         <span className='animatedSpanNavBar'>Bosque</span>
-                        </a>
+                        </Link>
                     </li>
                     
                     <li>
-                        <a>
+                        <Link to='prueba'>
                             <span className='animatedSpanNavBar'>Desierto</span>
-                        </a>
+                        </Link>
                     </li>
 
                     <li>
-                        <a>
+                        <Link to='prueba'>
                             <span className='animatedSpanNavBar'>Mar</span>
-                        </a>
+                        </Link>
                     </li>
                     <li>
-                        <a>
+                        <Link to='prueba'>
                             <span className='animatedSpanNavBar'>Ciudad</span>
-                        </a>
+                        </Link>
                     </li>
                 </ul>
-            
             </nav>
-
             <div id="divAyudaLogoStart" className="navBarItem">
                 <img id="ayudaLogoStart" src={ayudaWeb}></img>
             </div>
-           
-      </header>
-
+        </header>
+    </>
+    
     )
 }
 
