@@ -12,10 +12,15 @@ function GridZone() {
     <div className='gridSection'>
        
         <GridCard nameClass='topCard' nameVideo='desierto' texto='DESIERTO'/>
-        <h1 id="topCard" className="gridCard">sobrevive</h1>
+        <div id="topCard" className="gridCard">
+            <h1>Sobrevive</h1>
+            <h2>Desde los consejos más básicos a los más avanzados.<br/><br/>
+            Adéntrate en el mundo de la supervivencia
+            </h2>
+        </div>
         <GridCard nameClass='topCard' nameVideo='ciudad' texto='CIUDAD'/>
         <GridCard nameClass='bottomCard' nameVideo='montana' texto='MONTAÑA'/>
-        <GridCard nameClass='bottomCard' nameVideo='playa' texto='PLAYA'/>
+        <GridCard nameClass='bottomCard' nameVideo='costa' texto='COSTA'/>
         <GridCard nameClass='bottomCard' nameVideo='bosque' texto='BOSQUE'/>
 
     </div>

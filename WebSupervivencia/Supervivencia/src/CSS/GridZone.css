@@ -1,6 +1,6 @@
 
 #sectionGrid{
-    background-color: #252525;
+    background-color: #F5F5F5;
 }
 
 .gridSection{
@@ -19,6 +19,7 @@
     height: 100%;
     width: 100%;
     position: relative;
+    overflow: hidden;
 
 }
 
@@ -43,8 +44,6 @@
     
 }
 
-
-
 .gridDivContent{
    
     top: 0;
@@ -66,14 +65,32 @@
     color: rgb(255, 255, 255);
     font-size:3vw;
     word-wrap: break-word;
+    font-family: 'Noto_Serif_M',NotoSerifKR-Medium;
 }
 
 
 .gridSection h1{
-    color: rgb(0, 73, 10);
-    font-size: 6vw;
+    color: rgb(0, 0, 0);
+    font-size: 2vw;
     padding: 15px;
     text-align: center;
+    font-family: 'Noto_Serif_B', NotoSerifKR-Black
 }
+
+.gridSection h2{
+    color: rgb(0, 0, 0);
+    font-size: 2vw;
+    padding: 15px;
+    text-align: center;
+    font-family: 'Noto_Serif_M',NotoSerifKR-Medium;
+}
+
+.gridCard button{
+    position: absolute;
+    right: 45%;
+    bottom: 5%;
+    width: 100px; height: 50px; font-size: 20px;
+}
+
 
 

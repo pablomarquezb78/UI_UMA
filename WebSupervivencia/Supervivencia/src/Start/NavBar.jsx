@@ -80,7 +80,7 @@ function navBar() {
 
                     <li>
                         <Link to='prueba'>
-                            <span className='animatedSpanNavBar'>Mar</span>
+                            <span className='animatedSpanNavBar'>Costa</span>
                         </Link>
                     </li>
                     <li>
