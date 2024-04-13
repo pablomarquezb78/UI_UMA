@@ -1,5 +1,4 @@
 .navbar-toggler-icon {
-
     width: 3rem;
     height: 3rem;
     background-image: url('../assets/Start/new_burger.png');
@@ -8,7 +7,6 @@
 .navbar{
     --bs-navbar-toggler-focus-width: 0.25rem;
     --bs-navbar-toggler-border-color: none;
-
 }
 
 .container-fluid{
@@ -16,14 +14,12 @@
 }
 
 .nav-link{
-
     width: fit-content;
     border-radius: 10px;
 }
 
 
 .navbar-nav a:hover{
-
     background-color: rgba(211, 211, 211, 0.291);
 }
 

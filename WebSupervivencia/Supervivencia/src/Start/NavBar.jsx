@@ -13,13 +13,11 @@ function navBar() {
     //Control de como mostar el navList
     // estado 0: oculta el nav | estado 1: muestra con display block | estado 2: muestra con display flex
     const [showMenu,setShowMenu] = useState(2)
-    //Control de que se haya pulsado la hamburguesa
-    const [manualMenuOpen, setManualMenuOpen] = useState(false);
+    
     //Control transiccion de ancho de pantalla a menor 750px
     const [below750px, setBelow750px] = useState(window.innerWidth <= 750);
 
     const toggleMenu = () => {
-        setManualMenuOpen(prevState => !prevState);
         setShowMenu(prevState => (prevState + 1)%2);
     };
 
@@ -29,10 +27,9 @@ function navBar() {
             const wasBelow750px = below750px;
             const isBelow750px = screenWidth <= 750;
 
-            if (isBelow750px && !wasBelow750px && !manualMenuOpen) { // Oculta el menú al pasar por debajo de 750px y si no se ha pulsado la hamburguesa
+            if (isBelow750px && !wasBelow750px) { // Oculta el menú al pasar por debajo de 750px y resetea el click de hamburguesa
                 setShowMenu(0); 
             } else if(screenWidth > 750) { //Vuelve a mostrar el menu con flex y setea la hamburguesa a no pulsado
-                setManualMenuOpen(false);
                 setShowMenu(2);
             }
 
@@ -43,7 +40,7 @@ function navBar() {
         return () => {
             window.removeEventListener('resize', handleResize);
         };
-    }, [manualMenuOpen]);
+    }, []);
 
     return(
     <>

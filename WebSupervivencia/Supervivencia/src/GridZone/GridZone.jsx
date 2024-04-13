@@ -15,7 +15,7 @@ function GridZone() {
         <div id="topCard" className="gridCard">
             <h1>Sobrevive</h1>
             <h2>Desde los consejos más básicos a los más avanzados.<br/><br/>
-            Adéntrate en el mundo de la supervivencia
+            Adéntrate en el mundo de la supervivencia.
             </h2>
         </div>
         <GridCard nameClass='topCard' nameVideo='ciudad' texto='CIUDAD'/>
