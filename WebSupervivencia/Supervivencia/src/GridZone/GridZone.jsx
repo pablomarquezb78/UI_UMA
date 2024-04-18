@@ -2,6 +2,7 @@ import react from 'react';
 
 import '../CSS/GridZone.css';
 import GridCard from './GridCard';
+import FlechaScroll from '../assets/Start/Logos/flechas_scroll.png'
 
 function GridZone() {
 
@@ -24,7 +25,7 @@ function GridZone() {
         <GridCard nameClass='bottomCard' nameVideo='bosque' texto='BOSQUE'/>
 
     </div>
-  
+
     </section>
 
 

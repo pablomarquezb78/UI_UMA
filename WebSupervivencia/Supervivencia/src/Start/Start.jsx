@@ -21,29 +21,29 @@ function Start() {
         
         <section id="landingSection" className="bg-black">
     
-        {/* Envuelto por una etiqueta header dentro del componente NavBar*/}
-        <NavBar/>
+            {/* Envuelto por una etiqueta header dentro del componente NavBar*/}
+            <NavBar/>
 
-        {/* Envuelto por un etiqueta div dentro del componente VideoStart*/}
-        <VideoStart/>
+            {/* Envuelto por un etiqueta div dentro del componente VideoStart*/}
+            <VideoStart/>
 
-        <article className="startArticle">
-        
-        <h1 id="typeWriteText">{'\u00A0'}{text}</h1>
-        
-            <article>
+            <article className="startArticle">
+            
+            <h1 id="typeWriteText">{'\u00A0'}{text}</h1>
+            
+                <article>
 
-            <h2 id="resilencia">resilencia</h2>
-        
-            <p id="resilenciaDefinition">Capacidad de adaptación de un ser vivo frente a un agente perturbador o un estado o situación adversos.</p>
-        
+                <h2 id="resilencia">resilencia</h2>
+            
+                <p id="resilenciaDefinition">Capacidad de adaptación de un ser vivo frente a un agente perturbador o un estado o situación adversos.</p>
+            
+                </article>
+
             </article>
 
-        </article>
-
-        <footer>
-            <img className="imgFlechaScroll" src={FlechaScroll}></img>
-        </footer>
+            <footer>
+                <img className="imgFlechaScroll" src={FlechaScroll}></img>
+            </footer>
 
 
        </section>
