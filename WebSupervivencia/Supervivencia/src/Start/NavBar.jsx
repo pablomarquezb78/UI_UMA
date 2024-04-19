@@ -11,11 +11,8 @@ import React from 'react';
 function navBar() {
  
     //Control de como mostar el navList
-    // estado 0: oculta el nav | estado 1: muestra con display block | estado 2: muestra con display flex
-    const [showMenu,setShowMenu] = useState(2)
-    
-    //Control transiccion de ancho de pantalla a menor 750px
-    const [below750px, setBelow750px] = useState(window.innerWidth <= 750);
+    const [showMenu,setShowMenu] = useState(2);
+    //0 es equivalente a no pulsado y 1 a pulsado 2 es equivalente a ver en grande (flex)
 
     const toggleMenu = () => {
         setShowMenu(prevState => (prevState + 1)%2);
@@ -24,21 +21,21 @@ function navBar() {
     useEffect(() => {
         const handleResize = () => {
             const screenWidth = window.innerWidth;
-            const wasBelow750px = below750px;
-            const isBelow750px = screenWidth <= 750;
-
-            if (isBelow750px && !wasBelow750px) { // Oculta el menú al pasar por debajo de 750px y resetea el click de hamburguesa
-                setShowMenu(0); 
-            } else if(screenWidth > 750) { //Vuelve a mostrar el menu con flex y setea la hamburguesa a no pulsado
+            
+            if(screenWidth > 750) { //Vuelve a mostrar el menu con flex y setea la hamburguesa a no pulsado
                 setShowMenu(2);
+            }else{
+                setShowMenu(0);
             }
 
-            setBelow750px(isBelow750px);
         };
-
+        
         window.addEventListener('resize', handleResize);
+        handleResize();
+        window.addEventListener('load', handleResize);;
         return () => {
             window.removeEventListener('resize', handleResize);
+            window.removeEventListener('load', handleResize);
         };
     }, []);
 
