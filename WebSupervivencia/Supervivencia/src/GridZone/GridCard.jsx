@@ -2,8 +2,8 @@ import react from 'react';
 
 import '../CSS/GridZone.css';
 import {useState,useEffect,useRef} from 'react';
-import { Link } from "react-router-dom";
-
+import { Link } from 'react-router-dom';
+import infoCard from '../assets/Start/Logos/info.png'
 
 function GridCard({nameClass,nameVideo,texto}) {
 
@@ -27,14 +27,16 @@ function GridCard({nameClass,nameVideo,texto}) {
     <>
     <div  onMouseEnter={() => {setTime2Play(true)} } onMouseLeave={() => {setTime2Play(false);}} id={nameClass} className="gridCard">
         <Link to={'/' + nameVideo}>
-            <video ref={elementRef} control={"false"} src={url} muted></video>
-                <div className="gridDivContent">
+            <video ref={elementRef} control={"false"} src={url} muted></video>  
+        </Link> 
+        <div className="gridDivContent">
                     <h3 className="gridText">
                         {texto}
                     </h3>
-                </div>   
-        </Link> 
-        <button>INFO</button> 
+                    <button>
+                        <img src={infoCard}></img>    
+                    </button> 
+        </div> 
     </div>
     </> 
     )

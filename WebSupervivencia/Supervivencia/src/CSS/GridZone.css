@@ -1,13 +1,16 @@
 
 #sectionGrid{
     background-color: #F5F5F5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
 }
 
 .gridSection{
-    width: 90vw;
+    width: 95vw;
     height: 95vh;
-    margin: auto;
-    padding: 10px;
+   
     display: grid;
     gap: 10px;
     grid-template-columns: 1fr 1fr 1fr;
@@ -53,21 +56,30 @@
     margin: auto;
 
     position: absolute;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    justify-items: center;
+    align-items: center;
 }
 
 .gridText{
     
+    display: inline-block !important;
+    grid-row-start: 2;
+    grid-row-end: 3;
     text-align: center;
-    margin: auto;
     color: rgb(255, 255, 255);
     font-size:3vw;
     word-wrap: break-word;
     font-family: 'Noto_Serif_M',NotoSerifKR-Medium;
 }
 
+.gridDivContent button{
+    grid-row-start: 3;
+    grid-row-end: 4;
+    
+}
 
 .gridSection h1{
     color: rgb(0, 0, 0);
@@ -87,10 +99,15 @@
 
 .gridCard button{
     position: absolute;
-    right: 45%;
     bottom: 5%;
     width: 100px; height: 50px; font-size: 20px;
+    border: none;
+    background: none;
 }
 
+button img{
+    width: 50px;
+    height: 50px;
+}
 
 
