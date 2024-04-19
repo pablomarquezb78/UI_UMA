@@ -26,9 +26,10 @@ function GridCard({nameClass,nameVideo,texto}) {
     return(
     <>
     <div  onMouseEnter={() => {setTime2Play(true)} } onMouseLeave={() => {setTime2Play(false);}} id={nameClass} className="gridCard">
-        <Link to={'/' + nameVideo}>
+        
             <video ref={elementRef} control={"false"} src={url} muted></video>  
-        </Link> 
+        
+        <Link to={'/' + nameVideo}>
         <div className="gridDivContent">
                     <h3 className="gridText">
                         {texto}
@@ -37,6 +38,8 @@ function GridCard({nameClass,nameVideo,texto}) {
                         <img src={infoCard}></img>    
                     </button> 
         </div> 
+        </Link>
+       
     </div>
     </> 
     )
