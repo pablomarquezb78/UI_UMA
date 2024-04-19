@@ -1,7 +1,7 @@
 import React from "react";
 import { Navigation, A11y, Autoplay  } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import SliderContent from "./SliderContent";
+import CarrouselContent from "./CarrouselContent";
 
 // Import Swiper styles
 import 'swiper/css';
@@ -13,7 +13,7 @@ import grizzlyBear from "../assets/Tips/grizzlyBear.jpg"
 import mushroom from "../assets/Tips/mushroom.jpg"
 import wolfFingerprint from "../assets/Tips/wolfFingerprint.jpg"
 
-function Slider (){
+function Carrousel (){
     return (
         <>
             <h1>¿Sabias Que...?</h1>
@@ -28,15 +28,15 @@ function Slider (){
             className="sliderTips"
             >
             <SwiperSlide>
-                <SliderContent texto="'Cuando te ataca un oso lo mejor es quedarte quieto en un lugar neutral'"
+                <CarrouselContent texto="'Cuando te ataca un oso lo mejor es quedarte quieto en un lugar neutral'"
                  imagen={grizzlyBear}/>
             </SwiperSlide>
             <SwiperSlide>
-                <SliderContent texto="'Para identificar una seta es decisivo darle la vuelta y observar su himenio'" 
+                <CarrouselContent texto="'Para identificar una seta es decisivo darle la vuelta y observar su himenio'" 
                 imagen={mushroom}/>
             </SwiperSlide>
             <SwiperSlide>
-                <SliderContent texto="'En las huellas de zorro es característica la separación entre las
+                <CarrouselContent texto="'En las huellas de zorro es característica la separación entre las
                  almohadillas delanteras y las posteriores, de tal manera que si trazamos una línea 
                  inmediatamente detrás de las delanteras, no tocará a las posteriores laterales.'" 
                 imagen={wolfFingerprint}/>
@@ -46,4 +46,4 @@ function Slider (){
     );
 }
 
-export default Slider;
+export default Carrousel;

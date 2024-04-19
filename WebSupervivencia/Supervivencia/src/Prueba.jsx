@@ -1,12 +1,12 @@
 import React from 'react'
 import './CSS/main.css'
 import './CSS/Start.css'
-import Slider from './Start/Slider';
+import Carrousel from './Start/Carrousel';
 
 function Prueba() {
  return (
     <>
-        <Slider/>
+        <Carrousel/>
     </>
   );
 };

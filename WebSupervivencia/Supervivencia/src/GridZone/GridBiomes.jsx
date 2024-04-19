@@ -1,6 +1,6 @@
 import react from 'react';
 
-import '../CSS/GridZone.css';
+import '../CSS/Grid.css';
 import GridCard from './GridCard';
 
 function GridZone() {
@@ -9,7 +9,7 @@ function GridZone() {
     
     <section id="sectionGrid" className="vw-100 vh-100">
 
-    <div className='gridSection'>
+    <div className='gridBiomeSection'>
        
         <GridCard nameClass='topCard' nameVideo='desierto' texto='DESIERTO'/>
         <div id="topCard" className="gridCard">
@@ -27,8 +27,7 @@ function GridZone() {
 
     </section>
 
-
     )
 }
 
-export default GridZone
+export default GridZone;

@@ -1,6 +1,6 @@
 import React from "react";
 
-function SliderContent (props){
+function CarrouselContent (props){
     return(
         <>
             <h3>
@@ -11,4 +11,4 @@ function SliderContent (props){
     );
 }
 
-export default SliderContent;
+export default CarrouselContent;

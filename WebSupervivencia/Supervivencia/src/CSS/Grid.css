@@ -7,7 +7,7 @@
     flex-direction: row;
 }
 
-.gridSection{
+.gridBiomeSection{
     width: 95vw;
     height: 95vh;
    
@@ -17,25 +17,41 @@
     grid-template-rows: 1fr 1fr 1fr 1fr;
 }
 
-.gridCard{
+.gridInfoSection{
+    width: 95vw;
+    height: 80vh;
+   
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+}
 
+.gridCard{
     height: 100%;
     width: 100%;
     position: relative;
     overflow: hidden;
-
 }
 
 #topCard{
-
     grid-row-start: 1;
     grid-row-end: 3;
-
 }
 
 #bottomCard{
     grid-row-start: 3;
     grid-row-end: 5;
+}
+
+#leftCard{
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+
+#rightCard{
+    grid-column-start: 2;
+    grid-column-end: 3;
 }
 
 .gridCard video{
@@ -81,7 +97,7 @@
     
 }
 
-.gridSection h1{
+.gridBiomeSection h1{
     color: rgb(0, 0, 0);
     font-size: 2vw;
     padding: 15px;
@@ -89,7 +105,7 @@
     font-family: 'Noto_Serif_B', NotoSerifKR-Black
 }
 
-.gridSection h2{
+.gridBiomeSection h2{
     color: rgb(0, 0, 0);
     font-size: 2vw;
     padding: 15px;

@@ -1,6 +1,6 @@
 import react from 'react';
 
-import '../CSS/GridZone.css';
+import '../CSS/Grid.css';
 import {useState,useEffect,useRef} from 'react';
 import { Link } from 'react-router-dom';
 import infoCard from '../assets/Start/Logos/info.png'
