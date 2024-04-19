@@ -63,7 +63,7 @@
     
 }
 
-.gridDivContent{
+.flexDivContent{
    
     top: 0;
     right: 0;
@@ -71,31 +71,26 @@
     left: 0;
     margin: auto;
 
+    width: 100%;
+    height: 100%;
+
     position: absolute;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
+    display: flex;
     justify-items: center;
     align-items: center;
+    align-content: center;
 }
 
 .gridText{
     
-    display: inline-block !important;
-    grid-row-start: 2;
-    grid-row-end: 3;
     text-align: center;
     color: rgb(255, 255, 255);
     font-size:3vw;
     word-wrap: break-word;
     font-family: 'Noto_Serif_M',NotoSerifKR-Medium;
+    width: 100%;
 }
 
-.gridDivContent button{
-    grid-row-start: 3;
-    grid-row-end: 4;
-    
-}
 
 .gridBiomeSection h1{
     color: rgb(0, 0, 0);
@@ -114,11 +109,21 @@
 }
 
 .gridCard button{
+   
     position: absolute;
-    bottom: 5%;
-    width: 100px; height: 50px; font-size: 20px;
+   
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+
+    margin-bottom: 2%;
+    width: 50px; 
+    height: 50px; 
     border: none;
     background: none;
+
+    transform-style: preserve-3d;
 }
 
 button img{
@@ -126,4 +131,35 @@ button img{
     height: 50px;
 }
 
+.frontCard{
+    transition: .5s;
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    top: 0;
+    margin: 0;
+    transform: perspective(600px) rotateY(0deg);
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+
+.reverseCard{
+    transition: .5s;
+    background-color: rgb(240, 234, 234);
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    top: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    transform: perspective(600px) rotateY(180deg);
+    backface-visibility: hidden;
+    border: #252525 solid;
+    border-radius: 5px;
+}
 
