@@ -201,3 +201,35 @@ a{
     color: black;
 }
 
+#overlay {
+    z-index: 20;
+    position: fixed; /* Usar 'fixed' en lugar de 'absolute' para basarlo en la ventana */
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    justify-content: center; /* Opcional: para centrar contenido horizontalmente */
+    align-items: center; /* Opcional: para centrar contenido verticalmente */
+    display: flex;
+    overflow-y: auto;
+    background-color: white;
+}
+
+#overlay ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    justify-content: center;
+    height: 100%;
+}
+
+#overlay li{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10vh;
+    height: 20vw;
+}
+
+
