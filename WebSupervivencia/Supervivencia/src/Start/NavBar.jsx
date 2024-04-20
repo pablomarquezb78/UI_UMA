@@ -13,9 +13,12 @@ function navBar() {
     //Control de como mostar el navList
     const [showMenu,setShowMenu] = useState(2);
     //0 es equivalente a no pulsado y 1 a pulsado 2 es equivalente a ver en grande (flex)
+    const [showOverlay, setShowOverlay] = useState(false);
 
     const toggleMenu = () => {
         setShowMenu(prevState => (prevState + 1)%2);
+        setShowOverlay(prevState => !prevState);
+        
     };
 
     useEffect(() => {
@@ -24,10 +27,14 @@ function navBar() {
             
             if(screenWidth > 750) { //Vuelve a mostrar el menu con flex y setea la hamburguesa a no pulsado
                 setShowMenu(2);
+                setShowOverlay(false);
             }else{
                 setShowMenu(0);
             }
 
+            if(showMenu == 1){
+                setShowOverlay(true);
+            }
         };
         
         window.addEventListener('resize', handleResize);
@@ -39,23 +46,34 @@ function navBar() {
         };
     }, []);
 
+    useEffect(() => {
+        console.log(showMenu);
+
+        const overlay = document.getElementById('overlay');
+        if(showMenu == 1){
+            overlay.style.display = 'block';
+        }else{
+            overlay.style.display = 'none';
+        }
+    }, [showOverlay]);
+
     return(
     <>
         <header className="navBar">
             <div className="navBarItem">
-                <img id="webLogoStart" src={logoWeb}></img>
+                <Link><img id="webLogoStart" src={logoWeb}></img></Link>
                 <input type='image' id="hamburger" src={hamburguesa} onClick={toggleMenu}/>
             </div>
             <nav>
                 <ul id="navList" style={{ 
-                    display: showMenu === 0 ? 'none' : showMenu === 1 ? 'block' : 'flex',
+                    display: showMenu === 0 ? 'none' : showMenu === 2 ? 'flex' : 'none',
                     //Añadir el estilo deseado al display block
                     // position: showMenu === 1 ? 'fixed' : '',
                     // left: showMenu === 1 ? '0' : '',
                     // paddingLeft: showMenu === 1 ? '75px' : '',
                     }}>
                     <li>
-                        <Link to='/prueba'>
+                        <Link to='/memory'>
                         <span className='animatedSpanNavBar'>Montaña</span>
                         </Link>
                     </li>
@@ -88,6 +106,15 @@ function navBar() {
                 <img id="ayudaLogoStart" src={ayudaWeb}></img>
             </div>
         </header>
+        <div id="overlay">
+            <ul>
+                <li><Link to='/prueba'><span className='animatedSpanNavBar'>Montaña</span></Link></li>
+                <li><Link to='/prueba'><span className='animatedSpanNavBar'>Bosque</span></Link></li>
+                <li><Link to='prueba'><span className='animatedSpanNavBar'>Desierto</span></Link></li>
+                <li><Link to='prueba'><span className='animatedSpanNavBar'>Costa</span></Link></li>
+                <li><Link to='prueba'><span className='animatedSpanNavBar'>Ciudad</span></Link></li>
+            </ul>
+        </div> 
     </>
     
     )
