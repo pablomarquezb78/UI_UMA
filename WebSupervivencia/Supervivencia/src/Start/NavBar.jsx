@@ -73,7 +73,7 @@ function navBar() {
                     // paddingLeft: showMenu === 1 ? '75px' : '',
                     }}>
                     <li>
-                        <Link to='/prueba'>
+                        <Link to='/memory'>
                         <span className='animatedSpanNavBar'>Montaña</span>
                         </Link>
                     </li>
