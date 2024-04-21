@@ -18,7 +18,7 @@ function App() {
                 <Route path='/desert' element={<DesertMain/>}/>
                 <Route path='/coast' element={<CoastMain/>}/>
                 <Route path='/city' element={<CityMain/>}/>
-                {/* <Route path="/prueba" element={<Prueba/>}/> */}
+                <Route path="/prueba" element={<Prueba/>}/>
                 <Route path="/memory" element={<MemoryGame/>}/>
                 {/* <Route path="/:name" element={<Prueba/>}/> */}
             </Routes>

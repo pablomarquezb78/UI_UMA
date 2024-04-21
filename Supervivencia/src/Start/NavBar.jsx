@@ -67,7 +67,7 @@ function navBar({ scrollToGridInfo }) {
     <>
         <header className="navBar">
             <div className="navBarItem">
-                <Link to='/'><img id="webLogoStart" src={logoWeb}></img></Link>
+                <Link to='/UI_UMA'><img id="webLogoStart" src={logoWeb}></img></Link>
                 <input type='image' id="hamburger" src={hamburguesa} onClick={toggleMenu}/>
             </div>
             <nav>
