@@ -1,6 +1,7 @@
 import logoWeb from '../assets/Start/Logos/logo_web.png'
 import ayudaWeb from '../assets/Start/Logos/ayuda_logo.png'
 import hamburguesa from '../assets/Start/Logos/new_burger.png'
+import cross from '../assets/Start/Logos/X.png'
 
 import '../CSS/Start.css';
 import '../CSS/BootstrapEdit.css';
@@ -50,10 +51,15 @@ function navBar({ scrollToGridInfo }) {
         console.log(showMenu);
 
         const overlay = document.getElementById('overlay');
+        const LogoStart = document.getElementById('ayudaLogoStart');
+        const hamburger = document.getElementById('hamburger');
         if(showMenu == 1){
             overlay.style.display = 'block';
+            LogoStart.style.display = 'none';
+            hamburger.setAttribute('src', cross);
         }else{
             overlay.style.display = 'none';
+            hamburger.setAttribute('src', hamburguesa);
         }
     }, [showOverlay]);
 
@@ -67,10 +73,6 @@ function navBar({ scrollToGridInfo }) {
             <nav>
                 <ul id="navList" style={{ 
                     display: showMenu === 0 ? 'none' : showMenu === 2 ? 'flex' : 'none',
-                    //Añadir el estilo deseado al display block
-                    // position: showMenu === 1 ? 'fixed' : '',
-                    // left: showMenu === 1 ? '0' : '',
-                    // paddingLeft: showMenu === 1 ? '75px' : '',
                     }}>
                     <li>
                         <Link to='/memory'>
