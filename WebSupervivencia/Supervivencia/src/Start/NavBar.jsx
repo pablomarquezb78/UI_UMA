@@ -81,7 +81,7 @@ function navBar({ scrollToGridInfo }) {
                     </li>
                     
                     <li>
-                        <Link to='/prueba'>
+                        <Link to='/bosque   '>
                         <span className='animatedSpanNavBar'>Bosque</span>
                         </Link>
                     </li>

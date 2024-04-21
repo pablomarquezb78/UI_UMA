@@ -1,0 +1,19 @@
+/*La pagina que use un background tiene que implementar este css (ejemplo de uso en ForestAudioGame.jsx)*/
+
+.startVideo{
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.zoneContainer {
+    position: relative;
+}
+
+.zoneContent {
+    z-index: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
