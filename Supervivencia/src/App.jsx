@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import Index from './Index.jsx';
 import Prueba from './Prueba.jsx';
 import MemoryGame from './Components/MemoryGame.jsx';
@@ -11,7 +11,6 @@ import CityMain from './City/CityMain.jsx';
 
 function App() {
     return (
-        <Router>
             <Routes>
                 <Route path="/" element={<Index />} />
                 <Route path="/mountain" element={<MountainMain/>}/>
@@ -23,7 +22,6 @@ function App() {
                 <Route path="/memory" element={<MemoryGame/>}/>
                 <Route path="/:name" element={<Prueba/>}/>
             </Routes>
-        </Router>
     );
 };
 
