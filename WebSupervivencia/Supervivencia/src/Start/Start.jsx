@@ -6,7 +6,7 @@ import NavBar from './NavBar';
 import FlechaScroll from '../assets/Start/Logos/flechas_scroll.png'
 import { Typewriter, useTypewriter } from 'react-simple-typewriter';
 
-function Start() {
+function Start({scrollToGridInfo}) {
 
     const [text] = useTypewriter({
         words: ["Sobrevive", "Adáptate", "Aprende", "Resiste", "Perdura", "Persiste", "Aguanta", "Supéralo"],        
@@ -22,7 +22,7 @@ function Start() {
         <section id="landingSection" className="bg-black">
     
             {/* Envuelto por una etiqueta header dentro del componente NavBar*/}
-            <NavBar/>
+            <NavBar scrollToGridInfo={scrollToGridInfo}/>
 
             {/* Envuelto por un etiqueta div dentro del componente VideoStart*/}
             <VideoStart/>
@@ -35,7 +35,7 @@ function Start() {
 
                 <h2 id="resilencia">resilencia</h2>
             
-                <p id="resilenciaDefinition">Capacidad de adaptación de un ser vivo frente a un agente perturbador o un estado o situación adversos.</p>
+                <p id="resilenciaDefinition">Capacidad de adaptación de un ser vivo frente a un agente perturbador, un estado o situación adversos.</p>
             
                 </article>
 

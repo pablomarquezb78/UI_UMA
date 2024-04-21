@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 import {useState ,useEffect} from 'react';
 import React from 'react';
 
-function navBar() {
+function navBar({ scrollToGridInfo }) {
  
     //Control de como mostar el navList
     const [showMenu,setShowMenu] = useState(2);
@@ -61,7 +61,7 @@ function navBar() {
     <>
         <header className="navBar">
             <div className="navBarItem">
-                <Link><img id="webLogoStart" src={logoWeb}></img></Link>
+                <Link to='/'><img id="webLogoStart" src={logoWeb}></img></Link>
                 <input type='image' id="hamburger" src={hamburguesa} onClick={toggleMenu}/>
             </div>
             <nav>
@@ -103,7 +103,9 @@ function navBar() {
                 </ul>
             </nav>
             <div id="divAyudaLogoStart" className="navBarItem">
-                <img id="ayudaLogoStart" src={ayudaWeb}></img>
+                <button id="ayudaLogoStart" onClick={scrollToGridInfo}>
+                    <img src={ayudaWeb}></img>
+                </button>
             </div>
         </header>
         <div id="overlay">

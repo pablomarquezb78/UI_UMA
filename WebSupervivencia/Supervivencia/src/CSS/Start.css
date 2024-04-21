@@ -145,14 +145,18 @@
 }
 
 #ayudaLogoStart{
-   
-    width: 50px; 
-    height: 50px; 
     object-fit: cover;
     position: absolute;
     right: 0;
     top: 0;
     cursor: pointer;
+    background-color: transparent;
+    border: none;
+}
+
+#ayudaLogoStart img{
+    width: 60px;
+    height: 50px;
 }
 
 li img{
@@ -203,13 +207,13 @@ a{
 
 #overlay {
     z-index: 20;
-    position: fixed; /* Usar 'fixed' en lugar de 'absolute' para basarlo en la ventana */
+    position: fixed;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
-    justify-content: center; /* Opcional: para centrar contenido horizontalmente */
-    align-items: center; /* Opcional: para centrar contenido verticalmente */
+    justify-content: center;
+    align-items: center;
     display: flex;
     overflow-y: auto;
     background-color: white;

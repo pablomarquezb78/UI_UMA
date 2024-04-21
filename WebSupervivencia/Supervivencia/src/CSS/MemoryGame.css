@@ -1,12 +1,10 @@
-/* MemoryGame.css */
-
 .memory-game {
   text-align: center;
 }
 
 .cards-grid {
-  display: flex; /* Cambiado a flex */
-  flex-direction: column; /* Cambiado a column */
+  display: flex;
+  flex-direction: column;
   align-items: center;
 }
 
@@ -18,7 +16,7 @@
 
 .card {
   width: 100px;
-  height: 150px; /* Ajusta según tus necesidades */
+  height: 150px;
   perspective: 1000px;
   cursor: pointer;
 }
