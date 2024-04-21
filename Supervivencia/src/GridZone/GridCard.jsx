@@ -5,7 +5,7 @@ import {useState,useEffect,useRef} from 'react';
 import { Link } from 'react-router-dom';
 import infoCard from '../assets/Start/Logos/info.png'
 
-function GridCard({nameClass,nameVideo,texto}) {
+function GridCard({nameClass,nameVideo,texto, linkTo}) {
 
     const[time2Play, setTime2Play] = useState(false)
     const[reverseCard, setReverseCard] = useState(false)
@@ -52,7 +52,7 @@ function GridCard({nameClass,nameVideo,texto}) {
         
         <video id={videoId} control={"false"} src={url} muted></video>  
         
-        <Link to={'/' + nameVideo}>
+        <Link to={'/' + linkTo}>
         <div className="flexDivContent">
                     <h3 className="gridText">
                         {texto}

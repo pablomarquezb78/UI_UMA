@@ -104,6 +104,18 @@
 
 }
 
+#webLogoStart{
+    object-fit: cover;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+}
+
+#webLogoStart img{
+    width: 60px; 
+    height: 50px; 
+}
+
 #navList{
     list-style: none;
     padding: 0;
@@ -150,18 +162,6 @@
 #ayudaLogoStart img{
     width: 60px;
     height: 50px;
-}
-
-#webLogoStart{
-    object-fit: cover;
-    cursor: pointer;
-    background-color: transparent;
-    border: none;
-}
-
-#webLogoStart img{
-    width: 60px; 
-    height: 50px; 
 }
 
 li img{

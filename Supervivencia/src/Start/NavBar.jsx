@@ -63,15 +63,11 @@ function navBar({ scrollToGridInfo }) {
         }
     }, [showOverlay]);
 
-    const reload = () => {
-        window.location.reload();
-    };
-
     return(
     <>
         <header className="navBar">
             <div className="navBarItem">
-                <button id="webLogoStart" onClick={reload}><img src={logoWeb}></img></button>
+                <Link to='/'><img id="webLogoStart" src={logoWeb}></img></Link>
                 <input type='image' id="hamburger" src={hamburguesa} onClick={toggleMenu}/>
             </div>
             <nav>
@@ -79,30 +75,30 @@ function navBar({ scrollToGridInfo }) {
                     display: showMenu === 0 ? 'none' : showMenu === 2 ? 'flex' : 'none',
                     }}>
                     <li>
-                        <Link to='/memory'>
+                        <Link to='/mountain'>
                         <span className='animatedSpanNavBar'>Montaña</span>
                         </Link>
                     </li>
                     
                     <li>
-                        <Link to='/bosque   '>
+                        <Link to='/forest'>
                         <span className='animatedSpanNavBar'>Bosque</span>
                         </Link>
                     </li>
                     
                     <li>
-                        <Link to='prueba'>
+                        <Link to='/desert'>
                             <span className='animatedSpanNavBar'>Desierto</span>
                         </Link>
                     </li>
 
                     <li>
-                        <Link to='prueba'>
+                        <Link to='/coast'>
                             <span className='animatedSpanNavBar'>Costa</span>
                         </Link>
                     </li>
                     <li>
-                        <Link to='prueba'>
+                        <Link to='/city'>
                             <span className='animatedSpanNavBar'>Ciudad</span>
                         </Link>
                     </li>
@@ -116,11 +112,11 @@ function navBar({ scrollToGridInfo }) {
         </header>
         <div id="overlay">
             <ul>
-                <li><Link to='/prueba'><span className='animatedSpanNavBar'>Montaña</span></Link></li>
-                <li><Link to='/prueba'><span className='animatedSpanNavBar'>Bosque</span></Link></li>
-                <li><Link to='prueba'><span className='animatedSpanNavBar'>Desierto</span></Link></li>
-                <li><Link to='prueba'><span className='animatedSpanNavBar'>Costa</span></Link></li>
-                <li><Link to='prueba'><span className='animatedSpanNavBar'>Ciudad</span></Link></li>
+                <li><Link to='/mountain'><span className='animatedSpanNavBar'>Montaña</span></Link></li>
+                <li><Link to='/forest'><span className='animatedSpanNavBar'>Bosque</span></Link></li>
+                <li><Link to='/desert'><span className='animatedSpanNavBar'>Desierto</span></Link></li>
+                <li><Link to='/coast'><span className='animatedSpanNavBar'>Costa</span></Link></li>
+                <li><Link to='/city'><span className='animatedSpanNavBar'>Ciudad</span></Link></li>
             </ul>
         </div> 
     </>

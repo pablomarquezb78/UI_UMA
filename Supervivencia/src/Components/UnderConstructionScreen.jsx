@@ -9,7 +9,7 @@ function underConstruction({nombrePagina}) {
     
     return(
 
-        <div class="adviseDiv">
+        <div className="adviseDiv">
             <div className='row'>
                 <img className='img-fluid' class='resizeImageSmall' src={cleaningPenguin}></img>
             </div>
