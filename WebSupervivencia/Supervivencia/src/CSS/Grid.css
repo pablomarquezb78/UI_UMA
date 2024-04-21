@@ -51,7 +51,7 @@
     grid-column-end: 2;
 
     border: black solid;
-    border-radius: 10%;
+    border-radius: 5%;
 }
 
 #rightCard{
@@ -59,7 +59,7 @@
     grid-column-end: 3;
 
     border: black solid;
-    border-radius: 10%;
+    border-radius: 5%;
 }
 
 .gridCard video{
@@ -193,8 +193,8 @@ button img{
     object-fit: cover;
     cursor: pointer;
     position: absolute;
-    top: 10px;
-    left: 80px;
+    top: 20px;
+    left: 1;
     border: none;
     background-color: transparent;
 }

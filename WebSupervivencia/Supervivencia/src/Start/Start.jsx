@@ -33,7 +33,7 @@ function Start({scrollToGridInfo}) {
             
                 <article>
 
-                <h2 id="resilencia">resilencia</h2>
+                <h2 id="resilencia">resiliencia</h2>
             
                 <p id="resilenciaDefinition">Capacidad de adaptación de un ser vivo frente a un agente perturbador, un estado o situación adversos.</p>
             
