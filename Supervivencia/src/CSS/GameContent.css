@@ -1,0 +1,99 @@
+#gameZoneCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+#gameBox {
+    display: grid;
+    gap: 0px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    position: relative;
+    /* Setting the size of the upper layer to 60% of the screen size*/
+    height: 60vh;
+    width: 60vw;
+    align-items: center;
+    justify-content:center;
+    padding: 50px;
+
+    /*the alpha value controls the transparency*/
+    background: rgba( 165, 165, 165, 0.1 );
+
+    /* This controls the blurring effect*/
+    backdrop-filter: blur( 7.5px );
+    -webkit-backdrop-filter: blur( 7.5px );
+
+    /*Adding the shadow*/
+    box-shadow: 0 8px 32px 0 rgba( 0, 0, 0, 0.18 );
+
+    /* Adding our borders*/
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    z-index: 4;
+}
+
+#gameBox button{
+
+    /*the alpha value controls the transparency*/
+    background: rgba( 255, 255, 255, 0.5);
+
+    /* This controls the blurring effect*/
+    backdrop-filter: blur( 7.5px );
+    -webkit-backdrop-filter: blur(7.5px);
+
+    /*Adding the shadow*/
+    box-shadow: 0 8px 32px 0 rgba( 0, 0, 0, 0.18);
+
+    /* Adding our borders*/
+    border-radius: 4%;
+    border: 1px solid rgba( 255, 255, 255, 0.4);
+    z-index: 4;
+}
+
+.gridElement{
+    height: 100%;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.playElement{
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+.responseElement{
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+.scoreElement{
+    grid-row-start: 3;
+    grid-row-end: 4;
+}
+
+#playerGrid {
+    grid-column: 2 / span 1;
+}
+
+#skipGrid {
+    grid-column: 3 / span 1;
+}
+
+#scoreGrid {
+    grid-column: 1 / span 4;
+    color: white;
+}

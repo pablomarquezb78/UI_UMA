@@ -1,0 +1,205 @@
+#sectionGrid{
+    background-color: #F5F5F5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    position: relative;
+}
+
+.gridBiomeSection{
+    width: 95vw;
+    height: 95vh;
+   
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+}
+
+.gridInfoSection{
+    width: 95vw;
+    height: 80vh;
+   
+    gap: 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+}
+
+.gridCard{
+    height: 100%;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+}
+
+#topCard{
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+
+#bottomCard{
+    grid-row-start: 3;
+    grid-row-end: 5;
+}
+
+#leftCard{
+    grid-column-start: 1;
+    grid-column-end: 2;
+
+    border: black solid;
+    border-radius: 5%;
+}
+
+#rightCard{
+    grid-column-start: 2;
+    grid-column-end: 3;
+
+    border: black solid;
+    border-radius: 5%;
+}
+
+.gridCard video{
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.flexDivContent{
+   
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    align-content: center;
+}
+
+.gridText{
+    
+    text-align: center;
+    color: rgb(255, 255, 255);
+    font-size:3vw;
+    word-wrap: break-word;
+    font-family: 'Noto_Serif_M',NotoSerifKR-Medium;
+    width: 100%;
+}
+
+
+.gridBiomeSection h1{
+    color: rgb(0, 0, 0);
+    font-size: 2vw;
+    padding: 15px;
+    text-align: center;
+    font-family: 'Noto_Serif_B', NotoSerifKR-Black
+}
+
+.gridBiomeSection h2{
+    color: rgb(0, 0, 0);
+    font-size: 2vw;
+    padding: 15px;
+    text-align: center;
+    font-family: 'Noto_Serif_M',NotoSerifKR-Medium;
+}
+
+.gridInfoSection p{
+    color: rgb(0, 0, 0);
+    font-size: 1vw;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.gridInfoSection h1{
+    color: rgb(0, 0, 0);
+    font-size: 2vw;
+    text-align: center;
+}
+
+.gridInfoSection details{
+    color: rgb(0, 0, 0);
+    font-size: 1vw;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.gridCard button{
+   
+    position: absolute;
+   
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+
+    margin-bottom: 2%;
+    width: 50px; 
+    height: 50px; 
+    border: none;
+    background: none;
+
+    transform-style: preserve-3d;
+}
+
+button img{
+    width: 50px;
+    height: 50px;
+}
+
+.frontCard{
+    transition: .5s;
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    top: 0;
+    margin: 0;
+    transform: perspective(600px) rotateY(0deg);
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+
+.reverseCard{
+    transition: .5s;
+    background-color: rgb(240, 234, 234);
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    top: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    transform: perspective(600px) rotateY(180deg);
+    backface-visibility: hidden;
+    border: #252525 solid;
+    border-radius: 5px;
+}
+
+#logoButton{
+    object-fit: cover;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    left: 1;
+    border: none;
+    background-color: transparent;
+}
+
+#logoButton img{
+    width: 60px;
+    height: 50px;
+}
