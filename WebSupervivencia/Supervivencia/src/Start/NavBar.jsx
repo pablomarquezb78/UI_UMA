@@ -63,11 +63,15 @@ function navBar({ scrollToGridInfo }) {
         }
     }, [showOverlay]);
 
+    const reload = () => {
+        window.location.reload();
+    };
+
     return(
     <>
         <header className="navBar">
             <div className="navBarItem">
-                <Link to='/'><img id="webLogoStart" src={logoWeb}></img></Link>
+                <button id="webLogoStart" onClick={reload}><img src={logoWeb}></img></button>
                 <input type='image' id="hamburger" src={hamburguesa} onClick={toggleMenu}/>
             </div>
             <nav>
