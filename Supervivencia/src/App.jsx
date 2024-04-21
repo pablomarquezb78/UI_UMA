@@ -12,15 +12,15 @@ import CityMain from './City/CityMain.jsx';
 function App() {
     return (
             <Routes>
-                <Route path="/" element={<Index />} />
+                <Route path="/UI_UMA" element={<Index />} />
                 <Route path="/mountain" element={<MountainMain/>}/>
                 <Route path="/forest" element={<ForestMain/>}/>
                 <Route path='/desert' element={<DesertMain/>}/>
                 <Route path='/coast' element={<CoastMain/>}/>
                 <Route path='/city' element={<CityMain/>}/>
-                <Route path="/prueba" element={<Prueba/>}/>
+                {/* <Route path="/prueba" element={<Prueba/>}/> */}
                 <Route path="/memory" element={<MemoryGame/>}/>
-                <Route path="/:name" element={<Prueba/>}/>
+                {/* <Route path="/:name" element={<Prueba/>}/> */}
             </Routes>
     );
 };
