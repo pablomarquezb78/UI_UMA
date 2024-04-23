@@ -3,8 +3,8 @@ import react, { useId } from 'react';
 import '../CSS/Grid.css';
 import {useState,useEffect,useRef} from 'react';
 import { Link } from 'react-router-dom';
-import infoCard from '../assets/Start/Logos/info.png'
-
+import infoCardIcon from '../assets/Start/Logos/info.png'
+import reverseCardIcon from '../assets/Start/Logos/reverse.webp'
 function GridCard({nameClass,nameVideo,texto, linkTo}) {
 
     const[time2Play, setTime2Play] = useState(false)
@@ -22,6 +22,9 @@ function GridCard({nameClass,nameVideo,texto, linkTo}) {
         if(reverseCard){
             Fcard.style.transform = 'perspective(600px) rotateY(180deg)';
             Bcard.style.transform = 'perspective(600px) rotateY(360deg)';
+        }else{
+            Fcard.style.transform = 'perspective(600px) rotateY(360deg)';
+            Bcard.style.transform = 'perspective(600px) rotateY(180deg)';
         }
             
     
@@ -60,7 +63,8 @@ function GridCard({nameClass,nameVideo,texto, linkTo}) {
         </div> 
         </Link>
         <button onClick={() => {setReverseCard(true)}}>
-                        <img src={infoCard}></img>    
+            
+            <img src={infoCardIcon} hidden={reverseCard}></img>    
         
         </button> 
     </div>
@@ -70,6 +74,12 @@ function GridCard({nameClass,nameVideo,texto, linkTo}) {
 
     <h1>resumen</h1>
 
+    <button onClick={() => {setReverseCard(false)}}>
+        
+        <img src={reverseCardIcon} hidden={!reverseCard}></img>    
+    
+    </button> 
+    
     </article>
 
 
