@@ -57,7 +57,7 @@ function GridCard({nameClass,nameVideo,texto, linkTo}) {
         
         <Link to={'/' + linkTo}>
         <div className="flexDivContent">
-                    <h3 className="gridText">
+                    <h3 className="gridText" hidden={reverseCard}>
                         {texto}
                     </h3>
         </div> 
@@ -70,17 +70,28 @@ function GridCard({nameClass,nameVideo,texto, linkTo}) {
     </div>
 
 
-    <article id={reverseCardId} className="reverseCard">
+    <section id={reverseCardId} className="reverseCard">
 
     <h1>resumen</h1>
 
+    <article>
+
+        <h1>{nameVideo}</h1>
+
+
+    </article>
+
+    <Link to={'/' + linkTo}>
+    <button className="knowMore">SABER MÁS</button>
+    </Link>
+    
     <button onClick={() => {setReverseCard(false)}}>
         
         <img src={reverseCardIcon} hidden={!reverseCard}></img>    
     
     </button> 
     
-    </article>
+    </section>
 
 
     </div>

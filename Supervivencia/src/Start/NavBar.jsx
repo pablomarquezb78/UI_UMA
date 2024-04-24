@@ -4,7 +4,6 @@ import hamburguesa from '../assets/Start/Logos/new_burger.png'
 import cross from '../assets/Start/Logos/X.png'
 
 import '../CSS/Start.css';
-import '../CSS/BootstrapEdit.css';
 import { Link } from "react-router-dom";
 import {useState ,useEffect} from 'react';
 import React from 'react';

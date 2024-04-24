@@ -69,8 +69,6 @@
     width: 40vw;
     font-size: clamp(12px, 3vw, 30px);  
     font-family: 'Noto_Serif_M',NotoSerifKR-Medium;
-
-
 }
 
 #landingSection{
@@ -101,8 +99,8 @@
     left: 0;
     width: 100vw;
     height: 9vh;
-
 }
+
 
 #navList{
     list-style: none;
