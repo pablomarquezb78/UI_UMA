@@ -3,7 +3,7 @@ import react from 'react';
 import '../CSS/Start.css';
 import VideoStart from './VideoStart';
 import NavBar from './NavBar';
-import FlechaScroll from '../assets/Start/Logos/flechas_scroll.png'
+import downscroll from '../assets/Start/Logos/down_scroll.png'
 import { Typewriter, useTypewriter } from 'react-simple-typewriter';
 
 function Start({scrollToGridInfo}) {
@@ -42,7 +42,7 @@ function Start({scrollToGridInfo}) {
             </article>
 
             <footer>
-                <img className="imgFlechaScroll" src={FlechaScroll}></img>
+                <img className="imgFlechaScroll" src={downscroll}></img>
             </footer>
 
 

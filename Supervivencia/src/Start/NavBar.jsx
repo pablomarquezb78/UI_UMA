@@ -10,31 +10,24 @@ import React from 'react';
 
 function navBar({ scrollToGridInfo }) {
  
-    //Control de como mostar el navList
+    //0 es equivalente a hamburguesa no pulsads,  1 a pulsada y 2 es equivalente a ver pagina en grande (flex)
     const [showMenu,setShowMenu] = useState(2);
-    //0 es equivalente a no pulsado y 1 a pulsado 2 es equivalente a ver en grande (flex)
-    const [showOverlay, setShowOverlay] = useState(false);
 
     const toggleMenu = () => {
         setShowMenu(prevState => (prevState + 1)%2);
-        setShowOverlay(prevState => !prevState);
-        
     };
 
+    //Control de tamaño de pantalla y el estado del menu de navegacion
     useEffect(() => {
         const handleResize = () => {
             const screenWidth = window.innerWidth;
             
             if(screenWidth > 750) { //Vuelve a mostrar el menu con flex y setea la hamburguesa a no pulsado
                 setShowMenu(2);
-                setShowOverlay(false);
             }else{
                 setShowMenu(0);
             }
 
-            if(showMenu == 1){
-                setShowOverlay(true);
-            }
         };
         
         window.addEventListener('resize', handleResize);
@@ -46,27 +39,44 @@ function navBar({ scrollToGridInfo }) {
         };
     }, []);
 
+    //Control cambios del estado del menu de navegacion
     useEffect(() => {
-        console.log(showMenu);
-
         const overlay = document.getElementById('overlay');
-        const LogoStart = document.getElementById('ayudaLogoStart');
+        const ayudaLogoStart = document.getElementById('ayudaLogoStart');
         const hamburger = document.getElementById('hamburger');
+        const webLogoStart = document.getElementById('webLogoStart')
+
         if(showMenu == 1){
             overlay.style.display = 'block';
-            LogoStart.style.display = 'none';
+            ayudaLogoStart.style.display = 'none';
             hamburger.setAttribute('src', cross);
         }else{
+            //Cuando se pone modo movil debe mostrarse la hamburguesa y ocultarse el logo
+            if(showMenu == 0){
+                webLogoStart.style.display = 'none';
+                hamburger.style.display = 'block';
+            }else{
+                webLogoStart.style.display = 'block';
+                hamburger.style.display = 'none';
+            }
+
             overlay.style.display = 'none';
             hamburger.setAttribute('src', hamburguesa);
         }
-    }, [showOverlay]);
+    }, [showMenu]);
+
+    //Si estoy en inicio y pulso inicio otra vez debe haber un reload
+    const handleInicioClick = () => {
+        if (window.location.pathname === '/UI_UMA/') {
+            window.location.reload();
+        }
+    };
 
     return(
     <>
         <header className="navBar">
             <div className="navBarItem">
-                <Link to='/UI_UMA/'><img id="webLogoStart" src={logoWeb}></img></Link>
+                <Link to='/UI_UMA/' onClick={handleInicioClick}><img id="webLogoStart" src={logoWeb}></img></Link>
                 <input type='image' id="hamburger" src={hamburguesa} onClick={toggleMenu}/>
             </div>
             <nav>
@@ -74,30 +84,30 @@ function navBar({ scrollToGridInfo }) {
                     display: showMenu === 0 ? 'none' : showMenu === 2 ? 'flex' : 'none',
                     }}>
                     <li>
-                        <Link to='/mountain'>
+                        <Link to='/UI_UMA/mountain'>
                         <span className='animatedSpanNavBar'>Montaña</span>
                         </Link>
                     </li>
                     
                     <li>
-                        <Link to='/forest'>
+                        <Link to='/UI_UMA/forest'>
                         <span className='animatedSpanNavBar'>Bosque</span>
                         </Link>
                     </li>
                     
                     <li>
-                        <Link to='/desert'>
+                        <Link to='/UI_UMA/desert'>
                             <span className='animatedSpanNavBar'>Desierto</span>
                         </Link>
                     </li>
 
                     <li>
-                        <Link to='/coast'>
+                        <Link to='/UI_UMA/coast'>
                             <span className='animatedSpanNavBar'>Costa</span>
                         </Link>
                     </li>
                     <li>
-                        <Link to='/city'>
+                        <Link to='/UI_UMA/city'>
                             <span className='animatedSpanNavBar'>Ciudad</span>
                         </Link>
                     </li>
@@ -111,11 +121,12 @@ function navBar({ scrollToGridInfo }) {
         </header>
         <div id="overlay">
             <ul>
-                <li><Link to='/mountain'><span className='animatedSpanNavBar'>Montaña</span></Link></li>
-                <li><Link to='/forest'><span className='animatedSpanNavBar'>Bosque</span></Link></li>
-                <li><Link to='/desert'><span className='animatedSpanNavBar'>Desierto</span></Link></li>
-                <li><Link to='/coast'><span className='animatedSpanNavBar'>Costa</span></Link></li>
-                <li><Link to='/city'><span className='animatedSpanNavBar'>Ciudad</span></Link></li>
+                <li><Link to='/UI_UMA/' onClick={handleInicioClick}><span className='animatedSpanNavBar'>Inicio</span></Link></li>
+                <li><Link to='/UI_UMA/mountain'><span className='animatedSpanNavBar'>Montaña</span></Link></li>
+                <li><Link to='/UI_UMA/forest'><span className='animatedSpanNavBar'>Bosque</span></Link></li>
+                <li><Link to='/UI_UMA/desert'><span className='animatedSpanNavBar'>Desierto</span></Link></li>
+                <li><Link to='/UI_UMA/coast'><span className='animatedSpanNavBar'>Costa</span></Link></li>
+                <li><Link to='/UI_UMA/city'><span className='animatedSpanNavBar'>Ciudad</span></Link></li>
             </ul>
         </div> 
     </>

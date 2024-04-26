@@ -13,13 +13,13 @@ function App() {
     return (
             <Routes>
                 <Route path="/UI_UMA/" element={<Index />} />
-                <Route path="/mountain" element={<MountainMain/>}/>
-                <Route path="/forest" element={<ForestMain/>}/>
-                <Route path='/desert' element={<DesertMain/>}/>
-                <Route path='/coast' element={<CoastMain/>}/>
-                <Route path='/city' element={<CityMain/>}/>
-                <Route path="/prueba" element={<Prueba/>}/>
-                <Route path="/memory" element={<MemoryGame/>}/>
+                <Route path="/UI_UMA/mountain" element={<MountainMain/>}/>
+                <Route path="/UI_UMA/forest" element={<ForestMain/>}/>
+                <Route path='/UI_UMA/desert' element={<DesertMain/>}/>
+                <Route path='/UI_UMA/coast' element={<CoastMain/>}/>
+                <Route path='/UI_UMA/city' element={<CityMain/>}/>
+                <Route path="/UI_UMA/prueba" element={<Prueba/>}/>
+                <Route path="/UI_UMA/memory" element={<MemoryGame/>}/>
                 {/* <Route path="/:name" element={<Index/>}/> */}
             </Routes>
     );

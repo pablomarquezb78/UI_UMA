@@ -230,7 +230,7 @@ button img{
 }
 
 
-#logoButton{
+#upButton{
     object-fit: cover;
     cursor: pointer;
     position: absolute;
@@ -240,9 +240,9 @@ button img{
     background-color: transparent;
 }
 
-#logoButton img{
-    width: 60px;
-    height: 50px;
+#upButton img{
+    width: 40px;
+    height: 30px;
 }
 
 .knowMore{

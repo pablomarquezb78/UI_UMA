@@ -185,20 +185,8 @@ li img{
 
 #hamburger{
     display: none;
-}
-
-@media only screen and (max-width: 750px) {
-
-    #webLogoStart{
-        display: none;
-    }
-
-    #hamburger{
-        display: block;
-        width: 50px;
-        height: 50px;
-    }
-
+    width: 50px;
+    height: 50px;
 }
 
 a{
@@ -232,8 +220,8 @@ a{
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 10vh;
-    height: 20vw;
+    padding: 10vw;
+    height: 20vh;
 }
 
 
