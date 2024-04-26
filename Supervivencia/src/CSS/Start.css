@@ -173,7 +173,6 @@ li img{
     transition-timing-function: ease;
     letter-spacing: 0;
     cursor: pointer;
-
   }
 
 .animatedSpanNavBar:hover,
@@ -194,9 +193,11 @@ a{
 }
 
 #overlay {
+    width: 100%;
+    height: 100vh;
     z-index: 20;
     position: fixed;
-    top: 0;
+    top: -120%; /* Empieza arriba de la pantalla */
     right: 0;
     bottom: 0;
     left: 0;
@@ -205,6 +206,30 @@ a{
     display: flex;
     overflow-y: auto;
     background-color: white;
+    transition: top 0.5s ease; /* Transición de movimiento */
+    animation: slideDown 0.5s forwards; /* Animación de entrada */
+}
+
+@keyframes slideDown {
+    from {
+        top: -120%; /* Empieza arriba de la pantalla */
+    }
+    to {
+        top: 0; /* Se desplaza hacia abajo */
+    }
+}
+
+#overlay.hidden {
+    animation: slideUp 0.5s forwards; /* Animación de salida */
+}
+
+@keyframes slideUp {
+    from {
+        top: 0; /* Empieza en la posición actual */
+    }
+    to {
+        top: -120%; /* Se desplaza hacia arriba y desaparece */
+    }
 }
 
 #overlay ul{
@@ -224,4 +249,11 @@ a{
     height: 20vh;
 }
 
+.active span{
+    font-weight: bold;
+    text-decoration: underline;
+}
 
+#overlay ul li a{
+    text-decoration: none;
+}

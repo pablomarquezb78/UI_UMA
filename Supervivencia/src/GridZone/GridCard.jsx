@@ -55,7 +55,7 @@ function GridCard({nameClass,nameVideo,texto, linkTo}) {
         
         <video id={videoId} control={"false"} src={url} muted></video>  
         
-        <Link to={'/' + linkTo}>
+        <Link to={'/UI_UMA/' + linkTo}>
         <div className="flexDivContent">
                     <h3 className="gridText" hidden={reverseCard}>
                         {texto}
@@ -81,7 +81,7 @@ function GridCard({nameClass,nameVideo,texto, linkTo}) {
 
     </article>
 
-    <Link to={'/' + linkTo}>
+    <Link to={'/UI_UMA/' + linkTo}>
     <button className="knowMore">SABER MÁS</button>
     </Link>
     

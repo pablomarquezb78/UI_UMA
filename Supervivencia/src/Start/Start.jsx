@@ -9,7 +9,7 @@ import { Typewriter, useTypewriter } from 'react-simple-typewriter';
 function Start({scrollToGridInfo}) {
 
     const [text] = useTypewriter({
-        words: ["Sobrevive", "Adáptate", "Aprende", "Resiste", "Perdura", "Persiste", "Aguanta", "Supéralo"],        
+        words: ["Sobrevive", "Adáptate", "Aprende", "Resiste", "Perdura", "Persiste", "Aguanta"],        
         loop: 0, 
         typeSpeed: 100,
         deleteSpeed: 70,
