@@ -47,12 +47,6 @@ function navBar({ scrollToGridInfo }) {
         const hamburger = document.getElementById('hamburger');
         const webLogoStart = document.getElementById('webLogoStart')
 
-        console.log("antes")
-        console.log(prevShowMenu)
-        console.log("ahora")
-        console.log(showMenu)
-
-
         if (showMenu === 1) {
             ayudaLogoStart.style.display = 'none';
             hamburger.setAttribute('src', cross);
