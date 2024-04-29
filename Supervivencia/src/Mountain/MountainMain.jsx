@@ -4,6 +4,7 @@ import GridInfo from '../GridZone/GridInfo.jsx'
 import {useRef} from 'react';
 import '../CSS/main.css'
 import '../CSS/Start.css'
+import MemoryGame from '../Components/MemoryGame.jsx';
 
 function MountainMain(){
 
@@ -24,6 +25,10 @@ function MountainMain(){
 
                 <div className='sliderItem' ref={startRef}>
                     <MountainStart scrollToGridInfo={scrollToGridInfo}/>
+                </div>
+
+                <div className='sliderItem'>
+                    <MemoryGame/>
                 </div>
 
                 <div className='sliderItem' ref={gridInfoRef}>
