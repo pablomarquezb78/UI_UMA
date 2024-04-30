@@ -6,7 +6,7 @@ import CarrouselContent from "./CarrouselContent";
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/navigation';
-import '../CSS/Slider.css'
+import './CSS/Slider.css'
 
 //Import Images
 import grizzlyBear from "../assets/Tips/grizzlyBear.jpg"

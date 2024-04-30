@@ -26,7 +26,7 @@ function SelvaStart({scrollToGridInfo}) {
       
         
     
-    <section id="landingSection" className="bg-white vw-100 vh-100">
+    <section id="landingSectionSelva" className="bg-white vw-100 vh-100">
     
     <h1>Tinder alimentos!</h1>
 

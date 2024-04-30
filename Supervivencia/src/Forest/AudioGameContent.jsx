@@ -1,6 +1,6 @@
 import React from 'react';
 
-import '../CSS/GameContent.css';
+import './GameContent.css';
 
 function GameContent() {
     
