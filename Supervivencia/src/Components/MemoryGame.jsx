@@ -79,7 +79,7 @@ const MemoryGame = () => {
           setFlippedCards([]);
           // Habilitar nuevamente el manejo de clics después del tiempo de espera
           setClickEnabled(true);
-        }, 1000);
+        }, 1500);
       }
     }
   };
