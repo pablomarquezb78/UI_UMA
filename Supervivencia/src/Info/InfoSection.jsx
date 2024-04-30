@@ -25,6 +25,7 @@ function GridInfo() {
         </div>
         <div>
             <h5>Información</h5>
+            <Link to="/UI_UMA/AboutUs">Sobre Nosotros</Link><br/><br/>
             <p>Política de Privacidad</p>
             <p>Aviso Legal</p>
             <p>Política de Cookies</p>
