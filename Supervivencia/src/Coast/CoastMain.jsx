@@ -1,6 +1,6 @@
 import React from 'react'
 import CoastStart from './CoastStart.jsx';
-import GridInfo from '../GridZone/GridInfo.jsx'
+import InfoSection from '../Info/InfoSection.jsx'
 import {useRef} from 'react';
 import '../CSS/main.css'
 import '../CSS/Start.css'
@@ -14,10 +14,6 @@ function CoastMain(){
         gridInfoRef.current.scrollIntoView({ behavior: 'smooth' });
     };
 
-    const scrollToStart = () => {
-        startRef.current.scrollIntoView({ behavior: 'smooth' });
-    };
-
     return(
         <>
             <main className='sliderContainer'>
@@ -27,7 +23,7 @@ function CoastMain(){
                 </div>
 
                 <div className='sliderItem' ref={gridInfoRef}>
-                    <GridInfo scrollToStart={scrollToStart}/>
+                    <InfoSection/>
                 </div>
 
             </main>  

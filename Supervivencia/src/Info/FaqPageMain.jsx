@@ -1,12 +1,11 @@
-import React from 'react'
-import CityStart from './CityStart.jsx';
+import React from "react";
 import InfoSection from '../Info/InfoSection.jsx'
 import {useRef} from 'react';
+import FaqPageStart from "./FaqPageStart";
 import '../CSS/main.css'
 import '../CSS/Start.css'
 
-function CityMain(){
-
+function FaqPageMain(){
     const gridInfoRef = useRef(null);
     const startRef = useRef(null);
 
@@ -14,22 +13,21 @@ function CityMain(){
         gridInfoRef.current.scrollIntoView({ behavior: 'smooth' });
     };
 
-    return(
+    return (
         <>
             <main className='sliderContainer'>
 
-                <div className='sliderItem' ref={startRef}>
-                    <CityStart scrollToGridInfo={scrollToGridInfo}/>
-                </div>
-
-                <div className='sliderItem' ref={gridInfoRef}>
-                    <InfoSection/>
-                </div>
+            <div className='sliderItem' ref={startRef}>
+                <FaqPageStart scrollToGridInfo={scrollToGridInfo}/>
+            </div>
+            
+            <div className='sliderItem' ref={gridInfoRef}>
+                <InfoSection/>
+            </div>
 
             </main>  
         </>
     );
-
 }
 
-export default CityMain;
+export default FaqPageMain;

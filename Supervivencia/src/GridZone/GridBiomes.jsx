@@ -1,6 +1,6 @@
 import react from 'react';
 
-import '../CSS/Grid.css';
+import './Grid.css';
 import GridCard from './GridCard';
 
 function GridZone() {

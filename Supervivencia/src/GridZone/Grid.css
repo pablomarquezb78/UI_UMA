@@ -21,13 +21,16 @@
 }
 
 .gridInfoSection{
-    width: 95vw;
-    height: 75vh;
+    width: 50vw;
+    height: 35vh;
    
-    gap: clamp(10px, 2vw, 100px);  
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr;
+    /* gap: 10px; */
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
 }
 
 .gridCard{
@@ -47,22 +50,6 @@
 #bottomCard{
     grid-row-start: 3;
     grid-row-end: 5;
-}
-
-#leftCard{
-    grid-column-start: 1;
-    grid-column-end: 2;
-
-    border: black solid;
-    border-radius: 5%;
-}
-
-#rightCard{
-    grid-column-start: 2;
-    grid-column-end: 3;
-
-    border: black solid;
-    border-radius: 5%;
 }
 
 .gridCard video{
@@ -323,5 +310,19 @@ button img{
 }
 
 #hideContactButton img:hover{
+    transform: scale(1.2);
+}
+
+#showContactButton{
+    border: none;
+    background-color: transparent;
+}
+
+#showContactButton img{
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+#showContactButton img:hover{
     transform: scale(1.2);
 }

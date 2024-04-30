@@ -1,0 +1,28 @@
+#infoSection{
+    background-color: #F5F5F5;
+    justify-content: space-around;
+    align-items: flex-start;
+    display: flex;
+    padding-right: 20px;
+    padding-top: 50px;
+    padding-bottom: 70px;
+}
+
+#infoSection a{
+    text-decoration: none;
+}
+
+#infoSection h5{
+    padding-bottom: 20px;
+}
+
+#socialNetWorkDisplayer{
+    justify-content: space-around;
+    align-items: flex-start;
+    display: flex;
+}
+
+#FaqDiv{
+    position: relative;
+    top: 15%;
+}

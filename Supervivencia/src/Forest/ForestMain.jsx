@@ -1,7 +1,7 @@
 import React from 'react'
 import ForestStart from './ForestStart.jsx'
 import ForestAudioGame from './ForestAudioGame.jsx'
-import GridInfo from '../GridZone/GridInfo.jsx'
+import InfoSection from '../Info/InfoSection.jsx'
 import {useRef} from 'react';
 import '../CSS/main.css'
 import '../CSS/Start.css'
@@ -13,10 +13,6 @@ function ForestMain(){
 
     const scrollToGridInfo = () => {
         gridInfoRef.current.scrollIntoView({ behavior: 'smooth' });
-    };
-
-    const scrollToStart = () => {
-        startRef.current.scrollIntoView({ behavior: 'smooth' });
     };
 
     return(
@@ -32,7 +28,7 @@ function ForestMain(){
                 </div>
 
                 <div className='sliderItem' ref={gridInfoRef}>
-                    <GridInfo scrollToStart={scrollToStart}/>
+                    <InfoSection/>
                 </div>
 
             </main>  

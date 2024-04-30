@@ -1,6 +1,6 @@
 import react, { useId } from 'react';
 
-import '../CSS/Grid.css';
+import './Grid.css';
 import {useState,useEffect,useRef} from 'react';
 import { Link } from 'react-router-dom';
 import infoCardIcon from '../assets/Start/Logos/info.png'
