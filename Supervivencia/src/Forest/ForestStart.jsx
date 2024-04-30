@@ -1,4 +1,4 @@
-import react from 'react';
+import React from 'react';
 
 import '../CSS/Start.css';
 import NavBar from '../Start/NavBar';

@@ -1,4 +1,4 @@
-import react from 'react';
+import React from 'react';
 
 import MemoryGame from '../Components/MemoryGame';
 import '../CSS/MountainInitGame.css';
