@@ -1,0 +1,44 @@
+#landingSection{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+}
+
+
+
+#tinderZone{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 500px;
+    height: 500px;
+    position: relative;
+    
+}
+
+.tinderCard{
+    width: 75%;
+    height: 100%;
+    position: absolute;
+    border-radius: 15px;
+}
+
+.tinderCard img{
+    width: 100%;
+    height: 95%;
+    position: absolute;
+    border-radius: 20px;
+}
+
+.tinderCard h2{
+    position: absolute;
+    background-color: white;
+    left: 0;
+    width: 100%;
+    bottom: 0;
+    margin: auto;
+    font-size: 20px;
+}
+

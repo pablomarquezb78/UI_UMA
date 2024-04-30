@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import '../CSS/MemoryGame.css'; // Importa el archivo CSS
+import '../CSS/MemoryGame.css';
 
 const MemoryGame = () => {
   const [cards, setCards] = useState([]);
@@ -16,14 +16,14 @@ const MemoryGame = () => {
   // Inicializar el juego al cargar el componente
   useEffect(() => {
     // Aquí puedes cargar tus imágenes desde la carpeta de imágenes
-    const image1 = "public/images/numero1.png";
-    const image2 = "public/images/numero2.png";
-    const image3 = "public/images/numero3.png";
-    const image4 = "public/images/numero4.png";
-    const image5 = "public/images/numero5.png"; // Nueva imagen
-    const image6 = "public/images/numero6.png"; // Nueva imagen
-    const image7 = "public/images/numero7.png"; // Nueva imagen
-    const image8 = "public/images/numero8.png"; // Nueva imagen
+    const image1 = "src/assets/Mountain/numero1.png";
+    const image2 = "src/assets/Mountain/numero2.png";
+    const image3 = "src/assets/Mountain/numero3.png";
+    const image4 = "src/assets/Mountain/numero4.png";
+    const image5 = "src/assets/Mountain/numero5.png"; // Nueva imagen
+    const image6 = "src/assets/Mountain/numero6.png"; // Nueva imagen
+    const image7 = "src/assets/Mountain/numero7.png"; // Nueva imagen
+    const image8 = "src/assets/Mountain/numero8.png"; // Nueva imagen
 
     // Crear una lista de pares de imágenes
     const cardPairs = [
@@ -79,7 +79,7 @@ const MemoryGame = () => {
           setFlippedCards([]);
           // Habilitar nuevamente el manejo de clics después del tiempo de espera
           setClickEnabled(true);
-        }, 1000);
+        }, 1500);
       }
     }
   };
@@ -102,7 +102,7 @@ const MemoryGame = () => {
               onClick={() => handleCardClick(index)}
             >
               <img
-                src={isCardFlipped(index) ? card.image : "public/images/interrogacion.png"}
+                src={isCardFlipped(index) ? card.image : "src/assets/Mountain/interrogacion.png"}
                 alt="Card"
                 className="card-image"
               />
@@ -117,7 +117,7 @@ const MemoryGame = () => {
               onClick={() => handleCardClick(index + 4)}
             >
               <img
-                src={isCardFlipped(index + 4) ? card.image : "public/images/interrogacion.png"}
+                src={isCardFlipped(index + 4) ? card.image : "src/assets/Mountain/interrogacion.png"}
                 alt="Card"
                 className="card-image"
               />

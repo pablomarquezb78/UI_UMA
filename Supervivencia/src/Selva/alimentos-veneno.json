@@ -1,0 +1,107 @@
+[
+    {
+      "id": 1,
+      "nombre": "Banana",
+      "foto": "banana.jpg",
+      "mortalidad": "No mortal",
+      "descripcion": "La banana es una fruta deliciosa y nutritiva que se encuentra comúnmente en la selva. Es una excelente fuente de potasio y otros nutrientes esenciales."
+    },
+    {
+      "id": 2,
+      "nombre": "Guayaba",
+      "foto": "guayaba.jpg",
+      "mortalidad": "No mortal",
+      "descripcion": "La guayaba es una fruta tropical sabrosa y aromática que crece en la selva. Es rica en vitamina C y fibra, y es muy apreciada por su sabor único."
+    },
+    {
+      "id": 3,
+      "nombre": "Yuca",
+      "foto": "yuca.jpg",
+      "mortalidad": "No mortal",
+      "descripcion": "La yuca es una raíz tuberosa comestible que se cultiva en la selva. Es una fuente importante de carbohidratos y se puede preparar de diversas formas."
+    },
+    {
+      "id": 4,
+      "nombre": "Manzana de agua",
+      "foto": "manzana_agua.jpg",
+      "mortalidad": "Mortal",
+      "descripcion": "La manzana de agua es una fruta tropical que crece en los bosques húmedos. Aunque su sabor es agradable, todas las partes de la planta, incluidas las semillas, son venenosas si se ingieren."
+    },
+    {
+      "id": 5,
+      "nombre": "Fruto de manchineel",
+      "foto": "manchineel.jpg",
+      "mortalidad": "Mortal",
+      "descripcion": "El fruto del manchineel, conocido como 'la manzana de la muerte', es extremadamente tóxico y puede ser mortal si se ingiere. Es importante evitar el contacto con esta fruta y sus hojas."
+    },
+    {
+      "id": 6,
+      "nombre": "Yuca amarga",
+      "foto": "yuca_amarga.jpg",
+      "mortalidad": "Mortal",
+      "descripcion": "La variedad de yuca amarga contiene altos niveles de ácido cianhídrico, un compuesto venenoso. Si no se cocina correctamente para eliminar el veneno, puede ser fatal si se consume."
+    },
+    {
+      "id": 7,
+      "nombre": "Amanita phalloides",
+      "foto": "amanita_phalloides.jpg",
+      "mortalidad": "Mortal",
+      "descripcion": "La Amanita phalloides, también conocida como 'hongo de muerte verde', es una seta altamente venenosa que se encuentra en la selva. Contiene toxinas que pueden causar daño hepático grave e incluso la muerte si se ingiere."
+    },
+    {
+      "id": 8,
+      "nombre": "Amanita muscaria",
+      "foto": "amanita_muscaria.jpg",
+      "mortalidad": "Mortal",
+      "descripcion": "La Amanita muscaria, conocida como 'amanita de mosca', es otra seta altamente venenosa que se encuentra en la selva. Contiene compuestos tóxicos que pueden provocar alucinaciones, convulsiones y otros efectos adversos graves."
+    },
+    {
+      "id": 9,
+      "nombre": "Púas de la fruta de lichi",
+      "foto": "puas_lichi.jpg",
+      "mortalidad": "No mortal",
+      "descripcion": "Las semillas son tóxicas si se mastican y se ingieren en grandes cantidades. Pueden causar hipoglucemia y otros problemas de salud."
+    },
+    {
+      "id": 10,
+      "nombre": "Plantas cícadas",
+      "foto": "cicadas.jpg",
+      "mortalidad": "Variable (Algunas especies son altamente tóxicas y pueden ser mortales si se ingieren, mientras que otras se utilizan en la medicina tradicional o tienen usos ceremoniales.)",
+      "descripcion": "Las cícadas son plantas coníferas que pueden tener diferentes niveles de toxicidad dependiendo de la especie y la preparación. Algunas son utilizadas en medicina y rituales, mientras que otras pueden ser venenosas."
+    },
+    {
+      "id": 11,
+      "nombre": "Bala de cañón",
+      "foto": "bala_canon.jpg",
+      "mortalidad": "Mortal",
+      "descripcion": "El árbol de la bala de cañón produce frutos espinosos y venenosos que contienen una sustancia tóxica llamada cerberin. La ingesta de la fruta puede ser mortal."
+    },
+    {
+      "id": 12,
+      "nombre": "Fruta de la higuera estranguladora",
+      "foto": "higuera_estranguladora.jpg",
+      "mortalidad": "Mortal",
+      "descripcion": "La fruta de la higuera estranguladora, una especie de higo silvestre, produce frutos tóxicos que pueden causar trastornos gastrointestinales graves y la muerte si se ingieren."
+    },
+    {
+      "id": 13,
+      "nombre": "Bayas de ricino",
+      "foto": "bayas_ricino.jpg",
+      "mortalidad": "Mortal",
+      "descripcion": "Las bayas del ricino contienen ricina, una toxina mortal que puede causar daño orgánico y la muerte si se ingieren."
+    },
+    {
+      "id": 14,
+      "nombre": "Castañas de saponina",
+      "foto": "castanas_saponina.jpg",
+      "mortalidad": "Mortal",
+      "descripcion": "Las castañas de saponina, producidas por el árbol de jabón, contienen una sustancia tóxica que puede causar vómitos, diarrea y otros síntomas graves si se ingieren en grandes cantidades."
+    },
+    {
+      "id": 15,
+      "nombre": "Raíz de cicuta",
+      "foto": "raiz_cicuta.jpg",
+      "mortalidad": "Mortal",
+      "descripcion": "La raíz de cicuta contiene alcaloides tóxicos que pueden causar convulsiones, parálisis respiratoria y la muerte si se ingiere."
+    }
+  ]
