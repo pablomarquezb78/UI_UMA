@@ -30,6 +30,7 @@
 
 .card.flipped {
   transform: rotateY(180deg);
+  transition: transform 0.7s ease;
 }
 
 .question-mark-image {
