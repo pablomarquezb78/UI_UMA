@@ -1,9 +1,8 @@
 import React from "react";
 
 import '../CSS/Start.css';
-import AboutUS from "../Components/AboutUs";
+import AboutUS from "./Components/AboutUs";
 import NavBar from '../Start/NavBar';
-import downScroll from '../assets/Start/Logos/down_scroll.png'
 
 function AboutUsStart({scrollToGridInfo}){
     return(

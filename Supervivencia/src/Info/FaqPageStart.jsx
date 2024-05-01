@@ -1,7 +1,7 @@
 import React from "react";
 
 import '../CSS/Start.css';
-import FAQ from "../Components/FAQ";
+import FAQ from "./Components/FAQ";
 import NavBar from '../Start/NavBar';
 import downScroll from '../assets/Start/Logos/down_scroll.png'
 

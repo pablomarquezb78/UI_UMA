@@ -7,7 +7,6 @@ import ForestMain from './Forest/ForestMain';
 import MountainMain from './Mountain/MountainMain.jsx';
 import DesertMain from './Desert/DesertMain.jsx';
 import CoastMain from './Coast/CoastMain.jsx';
-import CityMain from './City/CityMain.jsx';
 import FaqPage from './Info/FaqPageMain.jsx';
 import SelvaStart from './Selva/SelvaStart.jsx';
 import AboutUs from './Info/AboutUsMain.jsx';
@@ -20,7 +19,7 @@ function App() {
                 <Route path="/UI_UMA/forest" element={<ForestMain/>}/>
                 <Route path='/UI_UMA/desert' element={<DesertMain/>}/>
                 <Route path='/UI_UMA/coast' element={<CoastMain/>}/>
-                <Route path='/UI_UMA/selva' element={<SelvaStart/>}/>
+                <Route path='/UI_UMA/jungle' element={<SelvaStart/>}/>
                 <Route path="/UI_UMA/prueba" element={<Prueba/>}/>
                 <Route path="/UI_UMA/memory" element={<MemoryGame/>}/>
                 <Route path="/UI_UMA/FAQ" element={<FaqPage/>}/>

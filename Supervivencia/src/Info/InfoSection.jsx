@@ -3,6 +3,9 @@ import { Link } from "react-router-dom";
 import './Info.css'
 import 'react-accessible-accordion/dist/fancy-example.css';
 
+import InstagramIcon from '@mui/icons-material/Instagram';
+import XIcon from '@mui/icons-material/X';
+
 function GridInfo() {
 
    return(
@@ -16,19 +19,19 @@ function GridInfo() {
         </div>
         <div>
             <h5>Contacto</h5>
-            <p>Correo: APND@gmail.com</p>
-            <p>Teléfono: 123-456-789</p>
+            <a>Correo: APND@gmail.com</a><br/>
+            <a>Teléfono: 123-456-789</a><br/>
             <div id='socialNetWorkDisplayer'>
-                <p>Red 1</p>
-                <p>Red 2</p>
+                <InstagramIcon/>
+                <XIcon/>
             </div>
         </div>
         <div>
             <h5>Información</h5>
-            <Link to="/UI_UMA/AboutUs">Sobre Nosotros</Link><br/><br/>
-            <p>Política de Privacidad</p>
-            <p>Aviso Legal</p>
-            <p>Política de Cookies</p>
+            <Link to="/UI_UMA/AboutUs">Sobre Nosotros</Link><br/>
+            <a>Política de Privacidad</a><br/>
+            <a>Aviso Legal</a><br/>
+            <a>Política de Cookies</a>
         </div>
 
     </div>

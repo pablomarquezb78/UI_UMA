@@ -9,7 +9,9 @@
 }
 
 #infoSection a{
+    display: block;
     text-decoration: none;
+    margin-bottom: -10px;
 }
 
 #infoSection h5{
@@ -17,9 +19,8 @@
 }
 
 #socialNetWorkDisplayer{
-    justify-content: space-around;
-    align-items: flex-start;
     display: flex;
+    justify-content: space-around;
 }
 
 #FaqDiv{

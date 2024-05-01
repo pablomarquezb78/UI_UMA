@@ -1,7 +1,7 @@
 import React from "react";
 
-import APND from "../assets/Info/APND.png"
-import '../Info/Info.css'
+import APND from "../../assets/Info/APND.png"
+import '../Info.css'
 
 function AboutUs(){
     return (
