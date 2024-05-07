@@ -1,0 +1,30 @@
+
+/* HigherLowerGame.css */
+
+.container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Alinea los elementos en la parte superior e inferior */
+    align-items: center;
+    text-align: center; /* Centra el texto */
+}
+
+
+.cards {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente los elementos */
+    align-items: center;
+}
+
+.card {
+    width: 90%;
+    height: 75%; /* Altura automática para mantener la relación de aspecto de la imagen */
+    margin: 10px;
+}
+
+.nombre{
+    margin-top: 20px;
+}
+

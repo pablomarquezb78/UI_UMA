@@ -1,0 +1,39 @@
+[
+    {
+      "id": 1,
+      "nombre": "Tiburon",
+      "foto": "tiburon.jpg",
+      "mortalidad": "10"
+    },
+    {
+        "id": 2,
+        "nombre": "Medusa",
+        "foto": "medusa.jpg",
+        "mortalidad": "11"
+      },
+    {
+      "id": 3,
+      "nombre": "Orca",
+      "foto": "orca.jpg",
+      "mortalidad": "12"
+    },
+    {
+      "id": 4,
+      "nombre": "Coco",
+      "foto": "coco.jpg",
+      "mortalidad": "13"
+    },
+    {
+      "id": 5,
+      "nombre": "Mantarraya",
+      "foto": "mantarraya.jpg",
+      "mortalidad": "14"
+    },
+
+    {
+      "id": 6,
+      "nombre": "Sol",
+      "foto": "sol.jpg",
+      "mortalidad": "15"
+    }
+]
