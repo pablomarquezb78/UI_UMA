@@ -9,7 +9,9 @@
 }
 
 #infoSection a{
+    display: block;
     text-decoration: none;
+    margin-bottom: -10px;
 }
 
 #infoSection h5{
@@ -17,12 +19,27 @@
 }
 
 #socialNetWorkDisplayer{
-    justify-content: space-around;
-    align-items: flex-start;
     display: flex;
+    justify-content: space-around;
 }
 
 #FaqDiv{
     position: relative;
     top: 15%;
+}
+
+#APND_Logo{
+    position: relative;
+    max-width: 600px;
+    height: 80%;
+    margin: 0 auto;
+    padding: 0 30px;
+    display: block;
+    top: 15%;
+    text-align: center;
+}
+
+#APND_Logo img{
+    max-width: 100%;
+    height: 70%;
 }

@@ -18,7 +18,7 @@ function GridZone() {
             Adéntrate en el mundo de la supervivencia.
             </h2>
         </div>
-        <GridCard nameClass='topCard' nameVideo='ciudad' texto='CIUDAD' linkTo='city'/>
+        <GridCard nameClass='topCard' nameVideo='ciudad' texto='JUNGLA' linkTo='jungle'/>
         <GridCard nameClass='bottomCard' nameVideo='montana' texto='MONTAÑA' linkTo='mountain'/>
         <GridCard nameClass='bottomCard' nameVideo='costa' texto='COSTA' linkTo='coast'/>
         <GridCard nameClass='bottomCard' nameVideo='bosque' texto='BOSQUE' linkTo='forest'/>

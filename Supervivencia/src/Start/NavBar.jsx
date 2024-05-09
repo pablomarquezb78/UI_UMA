@@ -114,8 +114,8 @@ function navBar({ scrollToGridInfo }) {
                         </NavLink>
                     </li>
                     <li>
-                        <NavLink to='/UI_UMA/city' activeClassName="active">
-                            <span className='animatedSpanNavBar'>Ciudad</span>
+                        <NavLink to='/UI_UMA/jungle' activeClassName="active">
+                            <span className='animatedSpanNavBar'>Jungla</span>
                         </NavLink>
                     </li>
                 </ul>
@@ -143,8 +143,8 @@ function navBar({ scrollToGridInfo }) {
                 <li><NavLink to='/UI_UMA/coast' activeClassName="active">
                     <span className='animatedSpanNavBar'>Costa</span></NavLink>
                 </li>
-                <li><NavLink to='/UI_UMA/city' activeClassName="active">
-                    <span className='animatedSpanNavBar'>Ciudad</span></NavLink>
+                <li><NavLink to='/UI_UMA/jungle' activeClassName="active">
+                    <span className='animatedSpanNavBar'>Jungla</span></NavLink>
                 </li>
             </ul>
         </div> 

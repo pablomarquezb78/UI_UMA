@@ -1,11 +1,10 @@
 import React from "react";
 
 import '../CSS/Start.css';
-import FAQ from "./Components/FAQ";
+import AboutUS from "./Components/AboutUs";
 import NavBar from '../Start/NavBar';
-import downScroll from '../assets/Start/Logos/down_scroll.png'
 
-function FaqPage({scrollToGridInfo}){
+function AboutUsStart({scrollToGridInfo}){
     return(
         <>
 
@@ -14,11 +13,7 @@ function FaqPage({scrollToGridInfo}){
             {/* Envuelto por una etiqueta header dentro del componente NavBar*/}
             <NavBar scrollToGridInfo={scrollToGridInfo}/>
 
-            <FAQ/>
-
-            <footer>
-                <img className="imgFlechaScroll" src={downScroll}></img>
-            </footer>
+            <AboutUS/>
 
         </section>
 
@@ -26,4 +21,4 @@ function FaqPage({scrollToGridInfo}){
     );
 }
 
-export default FaqPage;
+export default AboutUsStart;

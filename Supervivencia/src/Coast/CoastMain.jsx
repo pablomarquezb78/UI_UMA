@@ -1,6 +1,7 @@
 import React from 'react'
 import CoastStart from './CoastStart.jsx';
 import InfoSection from '../Info/InfoSection.jsx'
+import HigerOrLowerGame from './HigherOrLower.jsx'
 import {useRef} from 'react';
 import '../CSS/main.css'
 import '../CSS/Start.css'
@@ -14,12 +15,20 @@ function CoastMain(){
         gridInfoRef.current.scrollIntoView({ behavior: 'smooth' });
     };
 
+    const scrollToStart = () => {
+        startRef.current.scrollIntoView({ behavior: 'smooth' });
+    };
+
     return(
         <>
             <main className='sliderContainer'>
 
                 <div className='sliderItem' ref={startRef}>
                     <CoastStart scrollToGridInfo={scrollToGridInfo}/>
+                </div>
+
+                <div className='sliderItem' ref={gridInfoRef}>
+                    <HigerOrLowerGame/>
                 </div>
 
                 <div className='sliderItem' ref={gridInfoRef}>
