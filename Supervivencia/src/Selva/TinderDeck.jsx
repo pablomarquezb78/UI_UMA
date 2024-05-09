@@ -1,93 +1,122 @@
-import { useState, useEffect } from "react";
-import tinderCard from './RandomFood';
-import TinderCard from './TinderCard.jsx';
+    import { useState, useEffect } from "react";
+    import tinderCard from './RandomFood';
+    import TinderCard from './TinderCard.jsx';
 
-function TinderDeck({numberOfCard}){
-    
-    const[showCard, setShowCard] = useState([1,0]);
-    
-    const[isAnimated, setAnimated] = useState(false);
-    
-    const[actualCard, setActualCard] = useState();
-
-    const[positionStart, setPositionStart] = useState(0);
-    const[currentPosition, setCurrentPosition] = useState(0);
-    const[deltaPosition, setDeltaPosition] = useState(0);
-
-    const tinderHandler = () => {
-
-            setShowCard([(showCard[0]+1),(showCard[0])])
+    function TinderDeck({numberOfCard}){
         
-    }
+        const[showCard, setShowCard] = useState([1,0]);
+        const[decision, setDecision] = useState(false);        
 
-   
-    const endDrag = (event) => {
+        const limit = 225;
 
-        setAnimated(false);
-        console.log("fin");
+        let isAnimated = false;
+        let deltaPosition = 0;
+        // useEffect (() => {
+
+        //     document.addEventListener('mousedown',(event) => startDrag(event));
+
+        // },[])
+
+        useEffect ( () => {
+
+            if(decision){
+
+                setShowCard([(showCard[0]+1),(showCard[0])])
+
+            }
+
+            return () => {
+                setDecision(false);
+              };
+        },[decision])
 
 
+        const tinderHandler = () => {
 
-    }
-
-    const mouveDrag = (event) => {
-
-        setCurrentPosition(event.pageX ?? event.touches[0].pageX);
-        
-        setDeltaPosition(currentPosition - positionStart)
-        
-        console.log(deltaPosition);
-        console.log(currentPosition);
-        console.log(positionStart);
-
-        if(deltaPosition == 0) return;
-
-            setAnimated(true);
-            const rotate = deltaPosition / 12;
-            console.log(12);
             
-            actualCard.style.transform = `translateX(${deltaPosition}px) rotate (${rotate}deg)`;
-            actualCard.style.cursor = 'grabbing';
+        }
+
     
+        const endDrag = (actualCard,upEvent) => {
+
+            upEvent.preventDefault();
+
+            isAnimated = false;
         
-        console.log(positionStart);
+            actualCard.style.transform = 'none';
+            actualCard.style.cursor = 'grab';
+        
+            document.removeEventListener('mousemove', moveDrag);
+            document.removeEventListener('mouseup', endDrag);
 
-    }
+            if(Math.abs(deltaPosition) > limit){
+               
+                const positive = deltaPosition >= 0;
+
+                actualCard.classList.add(positive ? 'right' : 'left')
+
+                setDecision(true);
+            }else{
+                actualCard.classList.add('restart')
+
+            }
 
 
-    const startDrag = (event) => {
+        }
 
-        console.log(isAnimated)
-        if(isAnimated) return
+        const moveDrag = (actualCard, startPosition, moveEvent) => {
 
-            setActualCard(event.target.closest('div'));
-            console.log(actualCard);
-            console.log(event)
-            setPositionStart(event.pageX ?? event.touches[0].pageX);
+            moveEvent.preventDefault();
+           
+            const currentPosition = moveEvent.pageX ?? moveEvent.touches[0].pageX;
+            deltaPosition  = currentPosition - startPosition;
+
             
-            document.addEventListener('mousemove',mouveDrag);
-            document.addEventListener('mouseup',endDrag);
+            if(deltaPosition != 0 && isAnimated){
+                
+                const rotate = deltaPosition / 22;
+                
+                actualCard.style.transform = `translateX(${deltaPosition}px) rotate(${rotate}deg)`;
+                                
+                actualCard.style.cursor = 'grabbing';
+            }
 
-            document.addEventListener('touchmove',mouveDrag, {passive: true})
-            document.addEventListener('touchend',endDrag, {passive: true})
+        }
 
+
+        const startDrag = (event) => {
+
+            console.log(event);
+
+            event.preventDefault();
+
+            if(!isAnimated){
+
+                isAnimated = true;
+                const actualCard = event.target.closest('div');
+                const startPosition = event.pageX ?? event.touches[0].pageX
+                console.log(startPosition);
+
+                document.addEventListener('mousemove',(moveEvent) => moveDrag(actualCard,startPosition,moveEvent));
+                document.addEventListener('mouseup',(upEvent) => endDrag(actualCard,upEvent));
+            }
+
+        }
+
+        if(showCard[0] < tinderCard.longData()){
+        return(
+        showCard.map((value,index) => {
+            let number = numberOfCard[value];
         
-    }
-
-    if(showCard[0] < tinderCard.longData()){
-    return(
-    showCard.map((value,index) => {
-        let number = numberOfCard[value];
-       
-            return(
-                <div className="tinderCard" key={index} onMouseDown={(event) => startDrag(event)} onTouchStart={(event) => startDrag(event)}>
-                <TinderCard  card={tinderCard.randomFood(number)}></TinderCard>
-                </div>
+                return(
+                    <div className="tinderCard" key={index} onMouseDown={(event) => startDrag(event)}>
+                        <TinderCard card={tinderCard.randomFood(number)}></TinderCard>
+                    </div>
+                )
+            
+                })
             )
-        
-            })
-        )
+        }
     }
-}
 
-export default TinderDeck;
+    export default TinderDeck;
