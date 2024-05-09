@@ -29,13 +29,13 @@ function Start({scrollToGridInfo}) {
 
             <article className="startArticle">
             
-            <h1 id="typeWriteText">{'\u00A0'}{text}</h1>
+                <h1 id="typeWriteText">{'\u00A0'}{text}</h1>
             
                 <article>
 
-                <h2 id="resilencia">resiliencia</h2>
+                    <h2 id="resilencia">resiliencia</h2>
             
-                <p id="resilenciaDefinition">Capacidad de adaptación de un ser vivo frente a un agente perturbador, un estado o situación adversos.</p>
+                    <p id="resilenciaDefinition">Capacidad de adaptación de un ser vivo frente a un agente perturbador, un estado o situación adversos.</p>
             
                 </article>
 

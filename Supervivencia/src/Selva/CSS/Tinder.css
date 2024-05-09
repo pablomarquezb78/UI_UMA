@@ -21,6 +21,24 @@
     height: 100%;
     position: absolute;
     border-radius: 15px;
+
+    &.left{
+        transform: translateX(-100%) rotate(-20deg) !important;
+    }
+
+    &.right{
+        transform: translateX(100%) rotate(20deg) !important;
+    }
+
+    &.right, &.left{
+        transition: transform .3s ease, rotate .3s ease;
+    }
+
+    &.restart{
+        transition: transform .3s ease;
+        transform: translateX(0) !important;
+    }
+
 }
 
 .tinderCard img{
