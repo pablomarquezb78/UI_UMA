@@ -1,0 +1,100 @@
+[
+    {
+        "id":1,
+        "nombre": "Abrigo",
+        "imagen": "abrigoDesierto.png",
+        "puntuacion": 13,
+        "descripcion": "Un abrigo puede ser útil para protegerse del frío durante las noches en el desierto."
+    },
+    {
+        "id":2,
+        "nombre": "Botella de agua",
+        "imagen": "botellaDeAgua.png",
+        "puntuacion": 14,
+        "descripcion": "La hidratación es esencial para la supervivencia en el desierto. Una botella de agua puede ser de gran ayuda."
+    },
+    {
+        "id":3,
+        "nombre": "Brújula",
+        "imagen": "brujula.png",
+        "puntuacion": 2,
+        "descripcion": "Una brújula puede ayudarte a orientarte en el desierto y a encontrar la dirección correcta."
+    },
+    {
+        "id":4,
+        "nombre": "Chubasquero",
+        "imagen": "chubasqueroDesierto.png",
+        "puntuacion": 10,
+        "descripcion": "Un chubasquero puede ser útil para protegerse de la lluvia ocasional en el desierto."
+    },
+    {
+        "id":5,
+        "nombre": "Espejo",
+        "imagen": "espejo.png",
+        "puntuacion": 4,
+        "descripcion": "Un espejo puede ser útil para señales de rescate reflejando la luz del sol."
+    },
+    {
+        "id":6,
+        "nombre": "Gafas de Sol",
+        "imagen": "gafasSol.png",
+        "puntuacion": 9,
+        "descripcion": "Las gafas de sol pueden proteger tus ojos de la intensa luz solar en el desierto."
+    },
+    {
+        "id":7,
+        "nombre": "Gasa",
+        "imagen": "gasa.png",
+        "puntuacion": 6,
+        "descripcion": "La gasa puede ser útil para tratar heridas y prevenir infecciones."
+    },
+    {
+        "id":8,
+        "nombre": "Libro de comestibles en el desierto",
+        "imagen": "libroComestibleDesierto.jpg",
+        "puntuacion": 11,
+        "descripcion": "Este libro puede ayudarte a identificar plantas y animales comestibles en el desierto."
+    },
+    {
+        "id":9,
+        "nombre": "Linterna",
+        "imagen": "linterna.png",
+        "puntuacion": 8,
+        "descripcion": "Una linterna puede ser útil para la visibilidad durante las noches en el desierto."
+    },
+    {
+        "id":10,
+        "nombre": "Mapa",
+        "imagen": "mapa.png",
+        "puntuacion": 3,
+        "descripcion": "Un mapa puede ayudarte a navegar y encontrar rutas de escape en el desierto."
+    },
+    {
+        "id":11,
+        "nombre": "Navaja",
+        "imagen": "navaja.png",
+        "puntuacion": 7,
+        "descripcion": "Una navaja puede ser útil para cortar alimentos, hacer herramientas y protegerse."
+    },
+    {
+        "id":12,
+        "nombre": "Pistola",
+        "imagen": "pistola.png",
+        "puntuacion": 12,
+        "descripcion": "Una pistola puede ser útil para la defensa personal en situaciones de peligro."
+    },
+    {
+        "id":13,
+        "nombre": "Tabletas de sal",
+        "imagen": "tabletaDeSal.png",
+        "puntuacion": 1,
+        "descripcion": "Las tabletas de sal pueden ayudar a reponer los electrolitos perdidos por la sudoración."
+    },
+    {
+        "id":14,
+        "nombre": "Botella de vodka",
+        "imagen": "vodka.png",
+        "puntuacion": 5,
+        "descripcion": "Una botella de vodka puede ser útil como desinfectante para heridas, aunque no es recomendable para la hidratación."
+    }
+]
