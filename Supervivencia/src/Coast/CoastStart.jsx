@@ -2,7 +2,6 @@ import React from 'react';
 import '../CSS/Start.css';
 import NavBar from '../Start/NavBar';
 import UnderConstruction from '../Components/UnderConstructionScreen'
-import downScroll from '../assets/Start/Logos/down_scroll.png'
 
 function CoastStart({scrollToGridInfo}) {
     

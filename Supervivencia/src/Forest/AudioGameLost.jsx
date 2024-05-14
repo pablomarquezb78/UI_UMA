@@ -1,4 +1,4 @@
-import react, { useRef, useState } from 'react';
+import React, { useRef, useState } from 'react';
 
 import './AudioGameContent.css';
 import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore'

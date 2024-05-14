@@ -1,4 +1,4 @@
-import react,{useEffect, useRef, useState} from 'react';
+import React,{useEffect, useRef, useState} from 'react';
 
 import '../Components/CSS/BackgroundVideoUsage.css'
 import VideoBackground from '../Components/BackgroundVideoComponent';

@@ -5,7 +5,6 @@ import '../CSS/NavBar.css';
 
 import VideoStart from './VideoStart';
 import NavBar from './NavBar';
-import downscroll from '../assets/Start/Logos/down_scroll.png'
 import { Typewriter, useTypewriter } from 'react-simple-typewriter';
 
 function Start({scrollToGridInfo}) {
@@ -42,11 +41,6 @@ function Start({scrollToGridInfo}) {
                 </article>
 
             </article>
-
-            <footer>
-                <img className="imgFlechaScroll" src={downscroll}></img>
-            </footer>
-
 
        </section>
  
