@@ -92,7 +92,7 @@ const MemoryGame = () => {
                 key={rowIndex * 2 + colIndex}
                 className={`card ${isCardFlipped(rowIndex * 2 + colIndex) ? "flipped" : ""}`}
                 onClick={() => handleCardClick(rowIndex * 2 + colIndex)}
-                style={{ width: '17vw', maxWidth: '100px', height: 'auto' }}
+                style={{ width: '17vw', maxWidth: '130px', height: 'auto' }}
               >
                 <img
                   src={isCardFlipped(rowIndex * 2 + colIndex) ? cards[rowIndex * 2 + colIndex].image : "src/assets/Mountain/interrogacion.png"}
