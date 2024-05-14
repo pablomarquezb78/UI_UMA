@@ -1,0 +1,45 @@
+{
+    "animals":
+    [
+        {
+            "src": "BearSoundEffect.mp3",
+            "text": "Oso🐻"
+        },
+        {
+            "src": "CricketSoundEffect.mp3",
+            "text": "Grillo🦗"
+        },
+        {
+            "src": "DuckSoundEffect.mp3",
+            "text": "Pato🦆"
+        },
+        {
+            "src": "EagleSoundEffect.mp3",
+            "text": "Aguila🦅"
+        },
+        {
+            "src": "FrogSoundEffect.mp3",
+            "text": "Rana🐸"
+        },
+        {
+            "src": "GoatSoundEffect.mp3",
+            "text": "Cabra🐐"
+        },
+        {
+            "src": "HorseSoundEffect.mp3",
+            "text": "Caballo🐎"
+        },
+        {
+            "src": "PigSoundEffect.mp3",
+            "text": "Cerdo🐷"
+        },
+        {
+            "src": "SnakeSoundEffect.mp3",
+            "text": "Serpiente🐍"
+        },
+        {
+            "src": "WolfSoundEffect.mp3",
+            "text": "Lobo🐺"
+        }
+    ]
+}

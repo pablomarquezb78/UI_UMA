@@ -124,9 +124,9 @@ function navBar({ scrollToGridInfo, position}) {
                 </ul>
             </nav>
             <div id="divAyudaLogoStart" className="navBarItem">
-                <button id="ayudaLogoStart" onClick={scrollToGridInfo}>
+                <a id="ayudaLogoStart" onClick={scrollToGridInfo}>
                     <img src={ayudaWeb}></img>
-                </button>
+                </a>
             </div>
         </header>
         <div id="overlay">
@@ -157,3 +157,4 @@ function navBar({ scrollToGridInfo, position}) {
 }
 
 export default navBar
+
