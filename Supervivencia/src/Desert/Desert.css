@@ -15,16 +15,34 @@
     box-shadow: 0 8px 32px 0 rgba( 0, 0, 0, 0.18 );
     border-radius: 10px;
     border: 1px solid rgba( 255, 255, 255, 0.18 );
-    z-index: 4;
 }
 
+/*middle side*/
+
 #imgContainer{
-    height: 80%;
+    height: 60%;
 }
 
 #buttonContainer{
     height: 20%;
+    gap: 5%;
 }
+
+/**/
+
+/*Left side*/
+
+#CapacityContainer{
+    height: 10%;
+}
+
+#BagContainer{
+    height: 80%;
+}
+
+/**/
+
+/*Right side*/
 
 #itemsContainer{
     width: 30%;
@@ -34,22 +52,19 @@
     width: 20%;
 }
 
-/*
-background: rgba( 165, 165, 165, 0.1 );
-backdrop-filter: blur( 7.5px );
--webkit-backdrop-filter: blur( 7.5px );
-box-shadow: 0 8px 32px 0 rgba( 0, 0, 0, 0.18 );
-border-radius: 10px;
-border: 1px solid rgba( 255, 255, 255, 0.18 );
-z-index: 4;
-*/
+/**/
+
+#resultDisplay{
+    position: relative;
+    top: 10%;
+}
 
 @keyframes growAndShrink {
     0% {
         transform: scale(1);
     }
     50% {
-        transform: scale(1.2);
+        transform: scale(1.1);
     }
     100% {
         transform: scale(1);
@@ -65,10 +80,25 @@ z-index: 4;
         transform: translateX(0) scale(1);
     }
     100% {
-        transform: translateX(-75vh) scale(0.1);
+        transform: translateX(-60vh) scale(0.01);
     }
 }
 
 .move-left-scale-animation {
     animation: moveAndScale 0.6s linear;
+}
+
+@keyframes appear {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.appear-animation {
+    animation: appear 0.5s ease-in-out;
 }

@@ -13,7 +13,7 @@ function navBar({ scrollToGridInfo, position}) {
     //Control background blanco
     const bg = position == "absolute" ? "" : "bg-white";
 
-    //0 es equivalente a hamburguesa no pulsads,  1 a pulsada y 2 es equivalente a ver pagina en grande (flex)
+    //0 es equivalente a hamburguesa no pulsada,  1 a pulsada y 2 es equivalente a ver pagina en grande (flex)
     const [showMenu,setShowMenu] = useState(2);
     const [prevShowMenu, setPrevShowMenu] = useState(2); // Estado previo del menú
 
@@ -69,6 +69,7 @@ function navBar({ scrollToGridInfo, position}) {
                 overlay.classList.add('hidden');
             }
 
+            ayudaLogoStart.style.display = 'flex';
             hamburger.setAttribute('src', hamburguesa);
         }
         // Actualiza el estado previo del menú

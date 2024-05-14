@@ -5,10 +5,23 @@ import itemList from './itemsBag.json';
 
 function DesertBagGame() {
     const imgPath = "src/Desert/DesertImages/";
+    //Control de puntos de supervivencia conseguidos
     const [suma,setSuma] = useState(0);
+    //Indice de la lista actual
     const [currentIndex, setCurrentIndex] = useState(0);
+    //Animacion de objeto a mochila
     const [isAnimating, setIsAnimating] = useState(false);
+    //animacion mochila
     const [isItemIncluded, setIsItemIncluded] = useState(false);
+    //control cambio indice
+    const [indexChanged,setIndexChanged] = useState(false);
+
+    useEffect(() =>{
+        setIndexChanged(true);
+        setTimeout(() => {
+            setIndexChanged(false);
+        }, 500);
+    },[currentIndex])
 
     useEffect(() => {
         //Si termina la animacion y se ha introducido item animamos la mochila
@@ -21,11 +34,11 @@ function DesertBagGame() {
     }, [isAnimating, isItemIncluded]);
 
     const nextImage = () => {
-        setCurrentIndex((currentIndex + 1) % itemList.length);
+        setCurrentIndex((currentIndex + 1) % itemList.length); // Actualiza el índice actual
     };
 
     const prevImage = () => {
-        setCurrentIndex((currentIndex - 1 + itemList.length) % itemList.length);
+        setCurrentIndex((currentIndex - 1 + itemList.length) % itemList.length); // Actualiza el índice actual
     };
 
     const includeItem = () => {
@@ -55,21 +68,29 @@ function DesertBagGame() {
                 <h2 className={`text-center text-white ${itemList.length === 7 ? "" : "d-none"}`}>¡Fin del juego! Has conseguido {suma} puntos de supervivencia</h2>
             </div>
             <div id="bagGameDisplay" className="position-absolute d-flex justify-content-center w-100">
-                <div id="BagContainer" className={`d-flex flex-grow-0 h-100 ${isItemIncluded ? "item-included" : ""}`}>
-                    <img src={Bag} alt="Bag" className="img-fluid"></img>
+                <div className="d-flex flex-grow-0 h-100 flex-column justify-content-center">
+                    <div id="CapacityContainer">
+                        <h5 className="d-block text-center text-white f-size-4">{14-itemList.length}/7</h5>
+                    </div>
+                    <div id="BagContainer" className={`d-flex justify-content-center flex-grow-0 w-100  ${isItemIncluded ? "item-included" : ""}`}>
+                        <img src={Bag} alt="Bag" className="img-fluid"></img>
+                    </div>
                 </div>
                 <div id="itemsContainer" className="h-100 d-flex flex-column align-items-center justify-content-center">
                     <div id="imgContainer" className="d-flex justify-content-center flex-grow-0 w-100">
-                         <img src={imgPath + itemList[currentIndex].imagen} alt={`Imagen ${itemList[currentIndex].id}`}
-                          className={`img-fluid ${isAnimating ? "move-left-scale-animation" : ""}`}
-                          onAnimationEnd={() => {
-                              setIsAnimating(false); // Indica que la animación del objeto ha terminado
-                          }} />
+                    <img
+                        src={imgPath + itemList[currentIndex].imagen}
+                        alt={`Imagen ${itemList[currentIndex].id}`}
+                        className={`img-fluid ${isAnimating ? "move-left-scale-animation" : ""} ${(isItemIncluded || indexChanged) ? "appear-animation" : ""} `}
+                        onAnimationEnd={() => {
+                            setIsAnimating(false); // Indica que la animación del objeto ha terminado
+                        }}
+                    />
                     </div>
-                    <div id="buttonContainer">
-                        <button className="btn btn-primary" onClick={prevImage}>&lt;-</button>
-                        <button className="btn btn-primary" onClick={includeItem}>Incluir</button>
-                        <button className="btn btn-primary" onClick={nextImage}>-&gt;</button>
+                    <div id="buttonContainer" className="d-flex justify-content-center align-items-center">
+                        <button className="btn btn-primary h-50" onClick={prevImage}>&lt;</button>
+                        <button className="btn btn-primary h-50" onClick={includeItem}>Incluir</button>
+                        <button className="btn btn-primary h-50" onClick={nextImage}>&gt;</button>
                     </div>
                 </div>
                 <div id="itemInfoContainer">
