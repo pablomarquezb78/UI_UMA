@@ -1,7 +1,7 @@
 [
     {
       "id": 1,
-      "nombre": "Tiburon",
+      "nombre": "Tiburón",
       "foto": "tiburon.jpg",
       "mortalidad": "15"
     },
@@ -34,6 +34,6 @@
       "id": 6,
       "nombre": "Sol",
       "foto": "sol.jpg",
-      "mortalidad": "60.000"
+      "mortalidad": "60000"
     }
 ]
