@@ -23,13 +23,13 @@ function Index(){
                 <Start scrollToGridInfo={scrollToGridInfo}/>
                 </div>
             
-                <div className='sliderItem'>
+                <div className='sliderItem' ref={gridInfoRef}>
                 <GridBiomes/>
                 </div>
 
-                <div className='sliderItem' ref={gridInfoRef}>
+                <footer className='sliderItem' ref={gridInfoRef}>
                 <InfoSection/>
-                </div>
+                </footer>
 
             </main>  
         </>

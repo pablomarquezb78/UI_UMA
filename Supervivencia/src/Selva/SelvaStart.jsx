@@ -5,7 +5,7 @@ import './CSS/Tinder.css'
 import NavBar from '../Start/NavBar';
 import UnderConstruction from '../Components/UnderConstructionScreen'
 import downScroll from '../assets/Start/Logos/down_scroll.png'
-import tinderCard from './RandomFood';
+import getRandom from './RandomFood';
 import {useState, useEffect} from 'react';
 import TinderDeck from './TinderDeck.jsx'
 
@@ -16,7 +16,7 @@ function SelvaStart({scrollToGridInfo}) {
         
     useEffect(() => {
      
-        const numberOfCardAux = new Array(tinderCard.longData()).fill().map((_, index) => index + 1);
+        const numberOfCardAux = new Array(getRandom.longData()).fill().map((_, index) => index + 1);
         const shuffleCard = numberOfCardAux.sort(() => Math.random() - 0.5);
         setNumberOfCard(shuffleCard);
     },[])

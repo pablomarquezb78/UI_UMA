@@ -1,3 +1,8 @@
+@font-face {
+    font-family: Stretched;
+    src: url('../../public/Fonts/stretch-pro/StretchPro-Basic.otf');
+}
+
 #sectionGrid{
     background-color: #F5F5F5;
     display: flex;
@@ -13,12 +18,20 @@
    
     display: grid;
     /* gap: 10px; */
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(auto-fill, minmax(59vh, 1fr));
+    /* grid-template-columns: 1fr 1fr 1fr; */
     justify-content: center;
     align-content: center;
     align-items: center;
 }
+
+@media only screen and (max-width: 1249px) {
+    
+    article.gridCard{
+      
+        grid-row-end: 1;
+    }
+  }
 
 .gridCard{
     height: 100%;
@@ -29,15 +42,6 @@
     white-space: pre-wrap;
 }
 
-#topCard{
-    grid-row-start: 1;
-    grid-row-end: 3;
-}
-
-#bottomCard{
-    grid-row-start: 3;
-    grid-row-end: 5;
-}
 
 .gridCard video{
     height: 100%;
@@ -46,39 +50,18 @@
     object-fit: cover;
 }
 
-.flexDivContent{
-   
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    margin: auto;
-
-    width: 100%;
-    height: 100%;
-
-    position: absolute;
-    display: flex;
-    justify-items: center;
-    align-items: center;
-    align-content: center;
-}
-
 .gridText{
     
-    text-align: center;
-    color: rgb(255, 255, 255);
-    font-size:3vw;
+    font-size:5vh;
     word-wrap: break-word;
     font-family: 'Noto_Serif_M',NotoSerifKR-Medium;
-    width: 100%;
 }
-
 
 .gridBiomeSection h1{
     color: rgb(0, 0, 0);
-    font-size: 2vw;
-    padding: 15px;
+    font-size: 3vw;
+    transform: scale(1.3, 1.1);    
+    padding-top:6%;
     text-align: center;
     align-self: center;
     font-family: 'Noto_Serif_B', NotoSerifKR-Black
@@ -86,7 +69,7 @@
 
 .gridBiomeSection h2{
     color: rgb(0, 0, 0);
-    font-size: 2vw;
+    font-size: 3vh;
     padding: 15px;
     text-align: center;
     align-self: center;
@@ -95,16 +78,11 @@
 
 .frontCard button{
    
-    position: absolute;
-   
-    right: 0;
-    bottom: 0;
-    left: 0;
-    margin: auto;
-
-    margin-bottom: 2%;
-    width: 50px; 
-    height: 50px; 
+    margin-bottom: 1%;
+    min-width: 30px; 
+    max-width: 2.5vw;
+    min-height: 30px; 
+    max-height: 2.5vw;
     border: none;
     background: none;
 
@@ -112,20 +90,13 @@
 
 .reverseCard button{
    
-    margin: auto;
-
     margin-bottom: 2%;
     width: 50px; 
     height: 50px; 
     border: none;
     background: none;
-
 }
 
-button img{
-    width: 50px;
-    height: 50px;
-}
 
 .gridCard{
     transform-style: preserve-3d;
@@ -134,15 +105,7 @@ button img{
 
 .frontCard{
     transition: .5s;
-    position: absolute;
-    right: 0;
-    left: 0;
-    bottom: 0;
-    top: 0;
-    margin: 0;
     transform: perspective(600px) rotateY(0deg);
-    width: 100%;
-    height: 100%;
     /* backface-visibility: hidden; */
 }
 
@@ -152,7 +115,7 @@ button img{
 
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 4fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
     place-items: center;
     width: 100%;
     height: 100%;
@@ -181,3 +144,34 @@ button img{
     width: 100px;
     height: 50px;
 }
+
+article.gridCard img{
+
+    margin-bottom: 3%;
+    width: 24vh;
+    height: 24vh;
+
+}
+
+@keyframes shake {
+    0% {
+      transform: rotateZ(0deg);
+    }
+    25% {
+      transform: rotateZ(-10deg);
+    }
+    50% {
+      transform: rotateZ(10deg);
+    }
+    75% {
+      transform: rotateZ(-5deg);
+    }
+    100% {
+      transform: rotateZ(0deg);
+    }
+  }
+  
+  .shake-animation {
+    animation: shake 0.5s ease-in-out;
+  }
+  

@@ -1,3 +1,6 @@
+
+/* TIPOGRAFIAS */
+
 @font-face {
     font-family: Noto_Serif_B;
     src: url('../../public/Fonts/Noto_Serif_KR/NotoSerifKR-Black.otf');
@@ -15,6 +18,9 @@
     src: url('../../public/Fonts/Noto_Serif_KR/NotoSerifKR-Medium.otf');
 }
 
+/* SECCION DEL VIDEO */
+
+
 .imgFlechaScroll{
     position: absolute;
     bottom: 0;
@@ -24,43 +30,24 @@
     padding-bottom: 20px;
 }
 
-.startDiv{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    bottom: 0;
-    z-index: 0;
-}
-
-.startVideo{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
 .startArticle{
-    position: absolute;
     left: 0;
-    top: 25%;
-    /* padding-top: 250px; */
+    top: 10%;
     padding-left: 5vw;
-    z-index: 10;
-
 }
 
 #typeWriteText{
-    /* padding-top: 150px; */
+    padding-top: 150px; 
     font-style: italic;
     font-weight: bold;
-    font-size: clamp(50px, 9vw, 65px);  
+    font-size: 7vh;
 }
 
 #resilencia{
     padding-top: 20px;
     padding-left: 15px;
     width: 30px;
-    font-size: clamp(25px, 6vw, 40px);  
+    font-size: 5vh;
     font-family: 'Noto_Serif_B', NotoSerifKR-Black
 }
 
@@ -68,203 +55,9 @@
     padding-top: 5px;
     padding-left: 15px;
     width: 40vw;
-    font-size: clamp(12px, 3vw, 30px);  
+    font-size: 3vh;
     font-family: 'Noto_Serif_M',NotoSerifKR-Medium;
 }
 
-#landingSection{
-    position: relative; 
-    text-align: left;
-    width: 100vw;
-    height: 100vh;
-}
-
-.navBar{
-
-    box-sizing: border-box;
-    /* background-color: rgba(214, 194, 194, 0.187); */
-    
-    padding-top: 3vh;
-    padding-right: 5vw;
-    padding-left: 5vw;
-    padding-bottom: 10px;
-
-    display: flex;
-    flex-direction: row;
-   
-    z-index: 400;
-    
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    width: 100vw;
-    height: 9vh;
-}
-
-
-#navList{
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-    height: 100%;
-}
-
-#navList li *{
-    width: 100%;
-    height: 100%;
-}
-
-#navList li a span{
-    display: inline-block;
-    padding-right: 12px;
-    padding-left: 12px;
-    font-size: clamp(15px, 2vw, 20px);  
-}
-
-.navBarItem{
-    flex-grow: 1;
-    width: 100%;
-    height: 100%;
-}
-
-#divAyudaLogoStart{
-    position: relative;
-}
-
-#ayudaLogoStart{
-    object-fit: cover;
-    position: absolute;
-    right: 0;
-    top: 0;
-    cursor: pointer;
-    background-color: transparent;
-    border: none;
-}
-
-#ayudaLogoStart img{
-    width: 60px;
-    height: 50px;
-}
-
-#webLogoStart{
-    width: 50px; 
-    height: 50px; 
-    object-fit: cover;
-    cursor: pointer;
-    background-color: transparent;
-    border: none;
-}
-
-li img{
-    width: 50px; 
-    height: 50px; 
-    object-fit: cover;
-}
-
-
-.animatedSpanNavBar{
-    box-sizing: inherit;
-    transition-property: all;
-    transition-duration: .6s;
-    transition-timing-function: ease;
-    letter-spacing: 0;
-    cursor: pointer;
-  }
-
-.animatedSpanNavBar:hover,
-.animatedSpanNavBar:active {
-    background-color: rgba(250, 235, 215, 0.313);
-    border-radius: 7px;
-    letter-spacing: 5px;
-}
-
-#hamburger{
-    display: none;
-    width: 50px;
-    height: 50px;
-}
-
-#hamburger {
-    transition: transform 0.3s ease;
-}
-
-#hamburger:hover{
-    transform: scale(1.2);
-}
-
-a{
-    color: black;
-}
-
-.active span{
-    font-weight: bold;
-    text-decoration: underline;
-}
-
-#overlay {
-    width: 100%;
-    height: 100vh;
-    z-index: 20;
-    position: fixed;
-    top: -120%; /* Empieza arriba de la pantalla */
-    right: 0;
-    bottom: 0;
-    left: 0;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    overflow-y: auto;
-    background-color: white;
-    transition: top 0.5s ease; /* Transición de movimiento */
-    animation: slideDown 0.5s forwards; /* Animación de entrada */
-}
-
-@keyframes slideDown {
-    from {
-        top: -120%; /* Empieza arriba de la pantalla */
-    }
-    to {
-        top: 0; /* Se desplaza hacia abajo */
-    }
-}
-
-#overlay.hidden {
-    animation: slideUp 0.5s forwards; /* Animación de salida */
-}
-
-@keyframes slideUp {
-    from {
-        top: 0; /* Empieza en la posición actual */
-    }
-    to {
-        top: -120%; /* Se desplaza hacia arriba y desaparece */
-    }
-}
-
-#overlay ul{
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    text-align: center;
-    justify-content: center;
-    height: 100%;
-}
-
-#overlay li{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10vw;
-    height: 20vh;
-}
-
-#overlay ul li a{
-    text-decoration: none;
-}
 
  
