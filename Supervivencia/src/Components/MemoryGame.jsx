@@ -80,7 +80,7 @@ const MemoryGame = () => {
       <h1>Memory Game</h1>
       <p>Movimientos: {moves}</p>
       {shouldFlipIncorrect && (
-        <button onClick={handleResetIncorrectCards}>
+        <button onClick={handleResetIncorrectCards} className="btn btn-primary">
           Voltear Cartas Incorrectas
         </button>
       )}
