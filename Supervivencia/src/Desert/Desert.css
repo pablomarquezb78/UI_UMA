@@ -1,20 +1,25 @@
+#completeSection{
+    background-image: url('src/Desert/DesertImages/FondoDesierto.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 #bagGameDisplay{
-    /*Posicionamos en el eje y*/
-    position: relative;
-    top: 20%;
-    height: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 15%;
+    bottom: 25%;
+    height: 40%;
+    gap: 5%;
+
+    background: rgba( 165, 165, 165, 0.1 );
+    backdrop-filter: blur( 7.5px );
+    -webkit-backdrop-filter: blur( 7.5px );
+    box-shadow: 0 8px 32px 0 rgba( 0, 0, 0, 0.18 );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    z-index: 4;
 }
 
 #imgContainer{
-    display: flex;
-    justify-content: center;
-    flex-grow: 0;
     height: 80%;
-    width: 100%;
 }
 
 #buttonContainer{
@@ -22,13 +27,22 @@
 }
 
 #itemsContainer{
-    height: 100%;
     width: 30%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
 }
+
+#itemInfoContainer{
+    width: 20%;
+}
+
+/*
+background: rgba( 165, 165, 165, 0.1 );
+backdrop-filter: blur( 7.5px );
+-webkit-backdrop-filter: blur( 7.5px );
+box-shadow: 0 8px 32px 0 rgba( 0, 0, 0, 0.18 );
+border-radius: 10px;
+border: 1px solid rgba( 255, 255, 255, 0.18 );
+z-index: 4;
+*/
 
 @keyframes growAndShrink {
     0% {
@@ -51,7 +65,7 @@
         transform: translateX(0) scale(1);
     }
     100% {
-        transform: translateX(-150%) scale(0.5);
+        transform: translateX(-75vh) scale(0.1);
     }
 }
 
