@@ -1,46 +1,51 @@
-.game{
+.gameHOL{
   flex-direction: column;
 }
 
-.cabecera{
+.cabeceraHOL{
   position: relative;
   top: 10%;
 }
 
-.botones{
+.botonesHOL{
   display: flex;
   flex-direction: column;
-  width: 100%;
-  height: 100%;
+  right: 50%;
+  left: 50%;
+  top: 50%;
   justify-content: center;
   align-items: center;
 
 }
 
 
-#informacion_imagen_d{
-  position: absolute;
+#informacion_imagen_d {
   display: flex;
-  flex-direction: column;
-  width: 100%;
-  height: 175%;
+  flex-direction: row; 
   justify-content: center;
   align-items: center;
-  font: bold;
+  right: 50%;
+  left: 50%;
+  bottom: 0;
+  font-weight: bold; 
   color: black;
+  white-space: nowrap;
+  z-index: 1;
 }
 
 #informacion_imagen_i {
   position: absolute;
   display: flex;
-  flex-direction: column;
-  width: 100%;
-  height: 175%;
+  flex-direction: row; 
   justify-content: center;
   align-items: center;
-  font: bold;
+  right: 50%;
+  left: 50%;
+  bottom: 0;
+  font-weight: bold; 
   color: black;
-
+  white-space: nowrap;
+  z-index: 1;
 }
 
 .card-text{
@@ -48,7 +53,6 @@
   background: rgba(255, 255, 255, 0.641);
   backdrop-filter: blur( 7.5px );
   -webkit-backdrop-filter: blur(7.5px);
-
 
   box-shadow: 0 8px 32px 0 rgba( 0, 0, 0, 0.18);
 
@@ -91,17 +95,18 @@
 }
 
 @media only screen and (max-width: 700px) {
-  .cards{
+  .imagenesHOL{
     flex-direction: column;
   }
 
-  .card{
+  .imagenHOL{
     width: 100vw;
     height: auto;
   }
 
   #informacion_imagen_i{
-    height: 30%;
+    top: 0;
+    bottom: auto;
   }
 }
 

@@ -76,27 +76,24 @@ function HigherLowerGame() {
     };
 
     return (
-        <section className='game container d-flex justify-content-center align-items-center text-center vh-100 vw-100'>
-            <div className='cabecera'>
+        <section className='gameHOL container d-flex justify-content-center align-items-center text-center vh-100 vw-100'>
+            <div className='cabeceraHOL'>
                 <h1>Higher or Lower</h1>
                 <h2>¿Cuál es más letal 💀?</h2>
             </div>
-            <section className='cards position-relative d-flex justify-content-center align-items-center vh-100 vw-100'>
-                <div className='card position-relative'>
-                    <img alt='{data.randomImage(imageArray[leftCardIndex])?.nombre}' src={`src/assets/Coast/${data.randomImage(imageArray[leftCardIndex])?.foto}`}/>
+            <section className='imagenesHOL position-relative d-flex justify-content-center align-items-center vh-100 vw-100'>
+                <div className='imagenHOL position-relative'>
+                    <img alt='{data.randomImage(imageArray[leftCardIndex])?.nombre}'className='img-fluid' src={`src/assets/Coast/${data.randomImage(imageArray[leftCardIndex])?.foto}`}/>
                     <div id='informacion_imagen_i'>
-                        <h3 className='card-text'> {data.randomImage(imageArray[leftCardIndex])?.nombre} </h3>
-                        <h3 className='card-text'>{data.randomImage(imageArray[leftCardIndex])?.mortalidad} muertes al año</h3>
-                    </div>
-                    
+                        <h3 className='card-text'> {data.randomImage(imageArray[leftCardIndex])?.nombre}: {data.randomImage(imageArray[leftCardIndex])?.mortalidad} muertes al año </h3>
+                    </div>      
                 </div>
-                <div className='card position-relative'>
-                    <img alt="{data.randomImage(imageArray[rightCardIndex])?.nombre}" src={`src/assets/Coast/${data.randomImage(imageArray[rightCardIndex])?.foto}`}/>
-                    <div id='informacion_imagen_d'>
-                        <h3 className='card-text'> {data.randomImage(imageArray[rightCardIndex])?.nombre} </h3>
-                        <h3 className='card-text'>? muertes al año</h3>
+                <div className='imagenHOL position-relative'>
+                    <img alt="{data.randomImage(imageArray[rightCardIndex])?.nombre}" className='img-fluid' src={`src/assets/Coast/${data.randomImage(imageArray[rightCardIndex])?.foto}`}/>
+                    <div id='informacion_imagen_d'  className='position-absolute text-center'>
+                        <h3 className='card-text'> {data.randomImage(imageArray[rightCardIndex])?.nombre}: ? muertes al año </h3>
                     </div>
-                    <div className='botones position-absolute'>
+                    <div className='botonesHOL position-absolute'>
                         <button className='custom-button d-flex justify-content-center mb-1' onClick={handleHigherClick}>Higher</button>
                         <button className='custom-button d-flex justify-content-center' onClick={handleLowerClick}>Lower</button>
                     </div> 
@@ -108,7 +105,6 @@ function HigherLowerGame() {
                 </div>
             </section>
             <div>
-                
             </div>
         </section>
     );
