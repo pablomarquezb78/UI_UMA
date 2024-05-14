@@ -78,14 +78,14 @@ function DesertBagGame() {
                 </div>
                 <div id="itemsContainer" className="h-100 d-flex flex-column align-items-center justify-content-center">
                     <div id="imgContainer" className="d-flex justify-content-center flex-grow-0 w-100">
-                    <img
-                        src={imgPath + itemList[currentIndex].imagen}
-                        alt={`Imagen ${itemList[currentIndex].id}`}
-                        className={`img-fluid ${isAnimating ? "move-left-scale-animation" : ""} ${(isItemIncluded || indexChanged) ? "appear-animation" : ""} `}
-                        onAnimationEnd={() => {
-                            setIsAnimating(false); // Indica que la animación del objeto ha terminado
-                        }}
-                    />
+                        <img
+                            src={imgPath + itemList[currentIndex].imagen}
+                            alt={`Imagen ${itemList[currentIndex].id}`}
+                            className={`img-fluid ${isAnimating ? "move-left-scale-animation" : ""} ${(isItemIncluded || indexChanged) ? "appear-animation" : ""} `}
+                            onAnimationEnd={() => {
+                                setIsAnimating(false); // Indica que la animación del objeto ha terminado
+                            }}
+                        />
                     </div>
                     <div id="buttonContainer" className="d-flex justify-content-center align-items-center">
                         <button className="btn btn-primary h-50" onClick={prevImage}>&lt;</button>

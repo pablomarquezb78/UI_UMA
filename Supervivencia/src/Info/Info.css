@@ -25,21 +25,21 @@
 
 #FaqDiv{
     position: relative;
-    top: 15%;
+    top: 0;
 }
 
-#APND_Logo{
+#imgContainer img{
+    max-width: calc(400px + (650 - 400) * ((100vmin - 350px) / (1080 - 350)));
+    height: auto;
+}
+
+.fontControl{
+    /*max-min*/
+    font-size: calc(14px + (30 - 14) * ((100vmin - 350px) / (1080 - 350)));
+}
+
+#container{
     position: relative;
-    max-width: 600px;
-    height: 80%;
-    margin: 0 auto;
-    padding: 0 30px;
-    display: block;
-    top: 15%;
-    text-align: center;
-}
-
-#APND_Logo img{
-    max-width: 100%;
-    height: 70%;
+    height: 90vh;
+    top: 10vh;
 }
