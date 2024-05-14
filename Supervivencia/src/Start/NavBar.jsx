@@ -8,8 +8,11 @@ import { Link ,NavLink} from "react-router-dom";
 import {useState ,useEffect} from 'react';
 import React from 'react';
 
-function navBar({ scrollToGridInfo }) {
+function navBar({ scrollToGridInfo, position}) {
  
+    //Control background blanco
+    const bg = position == "absolute" ? "" : "bg-white";
+
     //0 es equivalente a hamburguesa no pulsads,  1 a pulsada y 2 es equivalente a ver pagina en grande (flex)
     const [showMenu,setShowMenu] = useState(2);
     const [prevShowMenu, setPrevShowMenu] = useState(2); // Estado previo del menú
@@ -81,7 +84,7 @@ function navBar({ scrollToGridInfo }) {
 
     return(
     <>
-        <header className="d-flex flex-row position-absolute top-0 start-0 end-0 z-3 vw-100 vh-9 navBar">
+        <header className={`d-flex flex-row position-${position} ${bg} top-0 start-0 end-0 z-3 vw-100 vh-9 navBar`}>
             <div className="navBarItem">
                 <Link to='/UI_UMA/' onClick={handleInicioClick}><img id="webLogoStart" src={logoWeb}></img></Link>
                 <input type='image' id="hamburger" src={hamburguesa} onClick={toggleMenu}/>
