@@ -8,7 +8,7 @@ import { Link ,NavLink} from "react-router-dom";
 import {useState ,useEffect} from 'react';
 import React from 'react';
 
-function navBar({ scrollToGridInfo }) {
+function navBar({ scrollToGridInfo}) {
  
     //0 es equivalente a hamburguesa no pulsads,  1 a pulsada y 2 es equivalente a ver pagina en grande (flex)
     const [showMenu,setShowMenu] = useState(2);
@@ -81,7 +81,7 @@ function navBar({ scrollToGridInfo }) {
 
     return(
     <>
-        <header className="d-flex flex-row position-absolute top-0 start-0 end-0 z-3 vw-100 vh-9 navBar">
+        <header className="position-absolute top-0 z-3 vw-100 navBar">
             <div className="navBarItem">
                 <Link to='/UI_UMA/' onClick={handleInicioClick}><img id="webLogoStart" src={logoWeb}></img></Link>
                 <input type='image' id="hamburger" src={hamburguesa} onClick={toggleMenu}/>
@@ -121,9 +121,9 @@ function navBar({ scrollToGridInfo }) {
                 </ul>
             </nav>
             <div id="divAyudaLogoStart" className="navBarItem">
-                <button id="ayudaLogoStart" onClick={scrollToGridInfo}>
+                <a id="ayudaLogoStart" onClick={scrollToGridInfo}>
                     <img src={ayudaWeb}></img>
-                </button>
+                </a>
             </div>
         </header>
         <div id="overlay">
@@ -154,3 +154,4 @@ function navBar({ scrollToGridInfo }) {
 }
 
 export default navBar
+
