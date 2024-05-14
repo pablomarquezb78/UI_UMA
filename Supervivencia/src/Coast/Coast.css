@@ -1,30 +1,72 @@
-
-/* HigherLowerGame.css */
-
 .container {
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* Alinea los elementos en la parte superior e inferior */
-    align-items: center;
-    text-align: center; /* Centra el texto */
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
-
 .cards {
-    display: flex;
-    justify-content: center; /* Centra horizontalmente los elementos */
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .card {
-    width: 90%;
-    height: 75%; /* Altura automática para mantener la relación de aspecto de la imagen */
-    margin: 10px;
+  width: 45vw;
+  height: 45vh; 
+  margin: 10px;
 }
 
-.nombre{
-    margin-top: 20px;
+.nombre {
+  margin-top: 20px;
+}
+
+
+/* Estilo específico para el botón */
+.custom-button {
+  background: #33ccff;
+  color: black;
+  border: none;
+  position: relative;
+  height: 60px;
+  font-size: 1.6em;
+  padding: 0 2em;
+  cursor: pointer;
+  transition: 800ms ease all;
+  outline: none;
+  margin: 10px;
+}
+
+.custom-button:hover {
+  background: #fff;
+  color: black;
+}
+
+.custom-button:before,
+.custom-button:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 2px;
+  width: 0;
+  background: black;
+  transition: 400ms ease all;
+}
+
+.custom-button:after {
+  right: inherit;
+  top: inherit;
+  left: 0;
+  bottom: 0;
+}
+
+.custom-button:hover:before,
+.custom-button:hover:after {
+  width: 100%;
+  transition: 800ms ease all;
 }
 

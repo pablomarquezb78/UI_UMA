@@ -3,7 +3,6 @@ import React from 'react';
 import '../CSS/Start.css';
 import NavBar from '../Start/NavBar';
 import UnderConstruction from '../Components/UnderConstructionScreen'
-import downScroll from '../assets/Start/Logos/down_scroll.png'
 
 function DesertStart({scrollToGridInfo}) {
     
@@ -16,11 +15,6 @@ function DesertStart({scrollToGridInfo}) {
             <NavBar scrollToGridInfo={scrollToGridInfo}/>
 
             <UnderConstruction nombrePagina={'desierto'}/>
-
-            <footer>
-                <img className="imgFlechaScroll" src={downScroll}></img>
-            </footer>
-
 
        </section>
  

@@ -1,7 +1,74 @@
-#Bag {
-    transition: transform 0.3s ease;
+#completeSection{
+    background-image: url('src/Desert/DesertImages/FondoDesierto.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
-#Bag:hover{
-    transform: scale(1.1);
+#bagGameDisplay{
+    bottom: 25%;
+    height: 40%;
+    gap: 5%;
+
+    background: rgba( 165, 165, 165, 0.1 );
+    backdrop-filter: blur( 7.5px );
+    -webkit-backdrop-filter: blur( 7.5px );
+    box-shadow: 0 8px 32px 0 rgba( 0, 0, 0, 0.18 );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    z-index: 4;
+}
+
+#imgContainer{
+    height: 80%;
+}
+
+#buttonContainer{
+    height: 20%;
+}
+
+#itemsContainer{
+    width: 30%;
+}
+
+#itemInfoContainer{
+    width: 20%;
+}
+
+/*
+background: rgba( 165, 165, 165, 0.1 );
+backdrop-filter: blur( 7.5px );
+-webkit-backdrop-filter: blur( 7.5px );
+box-shadow: 0 8px 32px 0 rgba( 0, 0, 0, 0.18 );
+border-radius: 10px;
+border: 1px solid rgba( 255, 255, 255, 0.18 );
+z-index: 4;
+*/
+
+@keyframes growAndShrink {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.item-included {
+    animation: growAndShrink 0.5s ease;
+}
+
+@keyframes moveAndScale {
+    0% {
+        transform: translateX(0) scale(1);
+    }
+    100% {
+        transform: translateX(-75vh) scale(0.1);
+    }
+}
+
+.move-left-scale-animation {
+    animation: moveAndScale 0.6s linear;
 }

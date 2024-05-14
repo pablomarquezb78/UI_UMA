@@ -1,15 +1,84 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import Bag from './DesertImages/Bag.png';
+import './Desert.css';
+import itemList from './itemsBag.json';
 
-import Bag from '../assets/Dessert/Bag.png'
-import './Desert.css'
+function DesertBagGame() {
+    const imgPath = "src/Desert/DesertImages/";
+    const [suma,setSuma] = useState(0);
+    const [currentIndex, setCurrentIndex] = useState(0);
+    const [isAnimating, setIsAnimating] = useState(false);
+    const [isItemIncluded, setIsItemIncluded] = useState(false);
 
-function DesertBagGame(){
-    return(
-        <>
-        
-        <img id="Bag" src={Bag}></img>
+    useEffect(() => {
+        //Si termina la animacion y se ha introducido item animamos la mochila
+        if (!isAnimating && isItemIncluded) {
+            setTimeout(() => {
+                //Acabamos la animacion de la mochila
+                setIsItemIncluded(false);
+            }, 500);
+        }
+    }, [isAnimating, isItemIncluded]);
 
-        </>
+    const nextImage = () => {
+        setCurrentIndex((currentIndex + 1) % itemList.length);
+    };
+
+    const prevImage = () => {
+        setCurrentIndex((currentIndex - 1 + itemList.length) % itemList.length);
+    };
+
+    const includeItem = () => {
+        if (itemList.length === 7) {
+            //Control Fin del Juego
+            return;
+        }
+        setSuma(suma + itemList[currentIndex].puntuacion);
+        setIsAnimating(true);
+
+        setTimeout(() => {
+            //Termina la animacion del item
+            setIsAnimating(false);
+            //Iniciamos animacion de la mochila
+            setIsItemIncluded(true);
+
+            //Elimino el elemento y avanzo el índice
+            itemList.splice(currentIndex, 1);
+            setCurrentIndex((currentIndex + 1) % itemList.length);
+        }, 500);
+    };
+
+    return (
+        <section id="completeSection" className="position-relative vw-100 vh-100">
+            <div id="resultDisplay" className="">
+                <h1 className="text-center text-white">¡Prepara la mochila para sobrevivir!</h1>
+                <h2 className={`text-center text-white ${itemList.length === 7 ? "" : "d-none"}`}>¡Fin del juego! Has conseguido {suma} puntos de supervivencia</h2>
+            </div>
+            <div id="bagGameDisplay" className="position-absolute d-flex justify-content-center w-100">
+                <div id="BagContainer" className={`d-flex flex-grow-0 h-100 ${isItemIncluded ? "item-included" : ""}`}>
+                    <img src={Bag} alt="Bag" className="img-fluid"></img>
+                </div>
+                <div id="itemsContainer" className="h-100 d-flex flex-column align-items-center justify-content-center">
+                    <div id="imgContainer" className="d-flex justify-content-center flex-grow-0 w-100">
+                         <img src={imgPath + itemList[currentIndex].imagen} alt={`Imagen ${itemList[currentIndex].id}`}
+                          className={`img-fluid ${isAnimating ? "move-left-scale-animation" : ""}`}
+                          onAnimationEnd={() => {
+                              setIsAnimating(false); // Indica que la animación del objeto ha terminado
+                          }} />
+                    </div>
+                    <div id="buttonContainer">
+                        <button className="btn btn-primary" onClick={prevImage}>&lt;-</button>
+                        <button className="btn btn-primary" onClick={includeItem}>Incluir</button>
+                        <button className="btn btn-primary" onClick={nextImage}>-&gt;</button>
+                    </div>
+                </div>
+                <div id="itemInfoContainer">
+                    <h3 id="itemDisplayed" className="text-white text-center">{itemList[currentIndex].nombre}</h3><br/>
+                    <span className="fw-bold text-white">Ventajas: {itemList[currentIndex].ventajas}</span> <br/><br/>
+                    <span className="fw-bold text-white">Desventajas: {itemList[currentIndex].desventajas}</span>
+                </div>
+            </div>
+        </section>
     );
 }
 

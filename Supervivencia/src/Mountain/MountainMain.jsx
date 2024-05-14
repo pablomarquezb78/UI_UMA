@@ -1,6 +1,6 @@
 import React from 'react'
 import MountainStart from './MountainStart.jsx'
-import InfoSection from '../Info/InfoSection.jsx'
+import GridInfo from '../Info/InfoSection.jsx'
 import {useRef} from 'react';
 import '../CSS/main.css'
 import '../CSS/Start.css'
@@ -16,6 +16,10 @@ function MountainMain(){
         gridInfoRef.current.scrollIntoView({ behavior: 'smooth' });
     };
 
+    const scrollToStart = () => {
+        startRef.current.scrollIntoView({ behavior: 'smooth' });
+    };
+
     return(
         <>
             <main className='sliderContainer'>
@@ -29,7 +33,7 @@ function MountainMain(){
                 </div>
 
                 <div className='sliderItem' ref={gridInfoRef}>
-                    <InfoSection/>
+                    <GridInfo scrollToStart={scrollToStart}/>
                 </div>
 
             </main>  
