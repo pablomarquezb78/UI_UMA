@@ -70,8 +70,8 @@ function HigherLowerGame() {
                     <h2 className='nombre'>{data.randomImage(imageArray[rightCardIndex])?.nombre}</h2>        
                 </div>
             </section>
-            <button onClick={handleHigherClick}>Higher</button>
-            <button onClick={handleLowerClick}>Lower</button>
+            <button className='custom-button' onClick={handleHigherClick}>Higher</button>
+            <button className='custom-button' onClick={handleLowerClick}>Lower</button>
         </section>
     );
 }
