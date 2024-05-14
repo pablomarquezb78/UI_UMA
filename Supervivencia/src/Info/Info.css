@@ -28,14 +28,32 @@
     top: 0;
 }
 
+/*About Us*/
+
+/*Containers*/
+
+#titleContainer{
+    height: 10vh;
+}
+
+#textContainer{
+    height: 30vh;
+}
+
+#imgContainer{
+    height: 35vh;
+    padding-bottom: 5vh;
+}
+
+/*Containers*/
+
 #imgContainer img{
-    max-width: calc(400px + (650 - 400) * ((100vmin - 350px) / (1080 - 350)));
-    height: auto;
+    width: auto;
+    max-height: 100%;
 }
 
 .fontControl{
-    /*max-min*/
-    font-size: calc(14px + (30 - 14) * ((100vmin - 350px) / (1080 - 350)));
+    font-size: calc(14px + (32 - 14) * ((100vmin - 350px) / (1080 - 350)));
 }
 
 #container{
@@ -43,3 +61,5 @@
     height: 90vh;
     top: 10vh;
 }
+
+/*About Us*/
