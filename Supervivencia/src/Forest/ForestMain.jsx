@@ -1,7 +1,7 @@
 import React from 'react'
 import ForestStart from './ForestStart.jsx'
 import ForestAudioGame from './ForestAudioGame.jsx'
-import GridInfo from '../GridZone/GridInfo.jsx'
+import GridInfo from '../Info/InfoSection.jsx'
 import {useRef} from 'react';
 import '../CSS/main.css'
 import '../CSS/Start.css'

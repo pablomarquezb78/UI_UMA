@@ -1,0 +1,114 @@
+[
+    {
+        "id": 1,
+        "nombre": "Chaqueta",
+        "imagen": "abrigoDesierto.png",
+        "puntuacion": 13,
+        "ventajas": "Chaqueta liviana que proteje del sol, ofrece aislamiento térmico y proteje contra el viento y la arena",
+        "desventajas":"Pueden acumular calor, pueden ser pesados o voluminosos y restringir el movimiento."
+    },
+    {
+        "id": 2,
+        "nombre": "Botella de agua",
+        "imagen": "botellaDeAgua.png",
+        "puntuacion": 14,
+        "ventajas": "Esencial para la hidratación y la supervivencia en el desierto. Recipiente reutilizable",
+        "desventajas": "Cantidad limitada de agua, requiere reabastecimiento."
+    },
+    {
+        "id": 3,
+        "nombre": "Brújula",
+        "imagen": "brujula.png",
+        "puntuacion": 2,
+        "ventajas": "Ayuda a orientarse y encontrar la dirección correcta.",
+        "desventajas":"Dependencia de las baterías o imanes, que pueden fallar."
+    },
+    {
+        "id": 4,
+        "nombre": "Chubasquero",
+        "imagen": "chubasqueroDesierto.png",
+        "puntuacion": 10,
+        "ventajas": "Protección contra la lluvia ocasional en el desierto, resistente al viento.",
+        "desventajas": "Puede ser voluminoso, limitar la movilidad y tiene poca transpirabilidad."
+    },
+    {
+        "id": 5,
+        "nombre": "Espejo",
+        "imagen": "espejo.png",
+        "puntuacion": 4,
+        "ventajas": "Útil para señales de rescate reflejando la luz del sol.",
+        "desventajas": "Fácilmente se puede romper o perder, además depende de que se de la situación de poder ser visto"
+    },
+    {
+        "id": 6,
+        "nombre": "Gafas de Sol",
+        "imagen": "gafasSol.png",
+        "puntuacion": 9,
+        "ventajas": "Protegen los ojos de la intensa luz solar.",
+        "desventajas":"Pueden rayarse o romperse fácilmente, además se vuelve inútil por la noche."
+    },
+    {
+        "id": 7,
+        "nombre": "Gasa",
+        "imagen": "gasa.png",
+        "puntuacion": 6,
+        "ventajas": "Útil para tratar heridas y prevenir infecciones.",
+        "desventajas": "Limitada durabilidad y puede agotarse rápidamente."
+    },
+    {
+        "id": 8,
+        "nombre": "Libro de comestibles en el desierto",
+        "imagen": "libroComestibleDesierto.jpg",
+        "puntuacion": 11,
+        "ventajas":"Ayuda a identificar plantas y animales comestibles en el entorno.",
+        "desventajas": "Requiere tiempo de consulta y encontrar los especímenes."
+    },
+    {
+        "id": 9,
+        "nombre": "Linterna",
+        "imagen": "linterna.png",
+        "puntuacion": 8,
+        "ventajas": "Mejora la visibilidad durante las noches en el desierto.",
+        "desventajas": "Dependencia de las baterías, que pueden agotarse. Inútil durante el día en pleno desierto."
+    },
+    {
+        "id": 10,
+        "nombre": "Mapa",
+        "imagen": "mapa.png",
+        "puntuacion": 3,
+        "ventajas": "Ayuda a navegar y encontrar rutas de escape.",
+        "desventajas": "Puede ser inexacto o incompleto, especialmente en terreno desconocido, además de requerir tener buena orientación."
+    },
+    {
+        "id": 11,
+        "nombre": "Navaja",
+        "imagen": "navaja.png",
+        "puntuacion": 7,
+        "ventajas": "Útil para cortar alimentos, hacer herramientas y protegerse.",
+        "desventajas": "Requiere habilidad para su uso seguro y puede ser peligrosa si se maneja incorrectamente."
+    },
+    {
+        "id": 12,
+        "nombre": "Pistola",
+        "imagen": "pistola.png",
+        "puntuacion": 12,
+        "ventajas": "Ofrece una defensa personal en situaciones de peligro y puede ser útil para cazar.",
+        "desventajas": "Requiere habilidad de manejo seguro y puede atraer problemas legales."
+    },
+    {
+        "id": 13,
+        "nombre": "Tabletas de sal",
+        "imagen": "tabletaDeSal.png",
+        "puntuacion": 1,
+        "ventajas": "Ayudan a reponer los electrolitos perdidos por la sudoración.",
+        "desventajas":"Uso limitado y no sustituyen la necesidad de agua."
+    },
+    {
+        "id": 14,
+        "nombre": "Botella de vodka",
+        "imagen": "vodka.png",
+        "puntuacion": 5,
+        "ventajas": "Puede usarse como desinfectante para heridas, recipiente reutilizable.",
+        "desventajas":"No es recomendable para la hidratación y puede causar deshidratación si se consume."
+    }
+]

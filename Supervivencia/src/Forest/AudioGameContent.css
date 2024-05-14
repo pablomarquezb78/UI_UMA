@@ -1,0 +1,222 @@
+#gameZoneCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+#gameBox {
+
+    /* Setting the size of the upper layer to 60% of the screen size*/
+    /*
+    height: 60vh;
+    width: 60vw;
+    */
+    align-items: center;
+    justify-content:center;
+
+    /*padding: top and bottom || left and right*/
+    /* padding: 2rem 4rem; */
+    padding-top: calc(14px + (32 - 14) * ((100vmin - 350px) / (1080 - 350)));
+    padding-bottom: calc(14px + (32 - 14) * ((100vmin - 350px) / (1080 - 350)));
+    padding-left: calc(14px + (64 - 14) * ((100vmin - 350px) / (1080 - 350)));
+    padding-right: calc(14px + (64 - 14) * ((100vmin - 350px) / (1080 - 350)));
+
+    /*the alpha value controls the transparency*/
+    background: rgba( 165, 165, 165, 0.1 );
+
+    /* This controls the blurring effect*/
+    backdrop-filter: blur( 7.5px );
+    -webkit-backdrop-filter: blur( 7.5px );
+
+    /*Adding the shadow*/
+    box-shadow: 0 8px 32px 0 rgba( 0, 0, 0, 0.18 );
+
+    /* Adding our borders*/
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    z-index: 4;
+}
+
+#gameBox .topElement button{
+    background: transparent;
+    border: none;
+    font-weight: 550;
+    width: 100%;
+
+    transition: ease-in-out;
+    transition-duration: 150ms;
+
+    font-size: calc(14px + (22 - 14) * ((100vmin - 350px) / (1080 - 350)));
+}
+
+#gameBox .topElement button:hover, #gameBox .topElement button:focus
+{
+    transition-duration: 300ms;
+    color: #eeeeee;
+    text-shadow: 0em 2px 4px rgba(0, 0, 0, 1);
+}
+
+#gameBox .topElement button .iconSVG
+{
+    transition: filter 100ms ease-in-out;
+}
+
+#gameBox .topElement button:hover .iconSVG, #gameBox .topElement button:focus .iconSVG
+{
+    transition-duration: 250ms;
+    filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 1));
+}
+
+#gameBox .midElement button{
+
+    /*the alpha value controls the transparency*/
+    background: rgba( 255, 255, 255, 0.3);
+
+    /* This controls the blurring effect*/
+    backdrop-filter: blur( 7.5px );
+    -webkit-backdrop-filter: blur(7.5px);
+
+    /*Adding the shadow*/
+    box-shadow: 0 8px 32px 0 rgba( 0, 0, 0, 0.18);
+
+    /* Adding our borders*/
+    border-radius: 4%;
+    border: 1px solid rgba( 0, 0, 0, 0.3);
+    z-index: 4;
+
+    height: 100%;
+    width: 100%;
+    transition: ease-in-out;
+    transition-duration: 150ms;
+
+    font-size: calc(10px + (22 - 10) * ((100vmin - 350px) / (1080 - 350)));
+}
+
+#gameBox .midElement button:hover, #gameBox .midElement button:focus
+{
+    transition-duration: 300ms;
+    color: #ffffff;
+    /*box-shadow: 0 0 2em #ffffff;*/
+    text-shadow: 0 0 2em #ffffff;
+}
+
+#gameBox .bottomElement button{
+    background: transparent;
+    border: none;
+    font-weight: 550;
+    width: 100%;
+    color: #bbbbbb;
+
+    /* font-size: 16px; */
+    font-size: calc(12px + (18 - 12) * ((100vmin - 350px) / (1080 - 350)));
+
+    transition: ease-in-out;
+    transition-duration: 150ms;
+}
+
+#gameBox .bottomElement button:hover, #gameBox .bottomElement button:focus
+{
+    transition-duration: 300ms;
+    color: #eeeeee;
+    text-shadow: 0em 2px 4px rgba(255, 255, 255, 0.5);
+}
+
+#gameBox .bottomElement button .iconSVG
+{
+    transition: filter 100ms ease-in-out;
+}
+
+#gameBox .bottomElement button:hover .iconSVG, #gameBox .bottomElement button:focus .iconSVG
+{
+    transition-duration: 250ms;
+    filter: drop-shadow(0px 0px 4px rgba(255, 255, 255, 1));
+}
+
+#score {
+    color: white;
+    text-shadow: 0px 0px 4px black;
+    filter: drop-shadow(0px 0px 4px rgba(255, 255, 255, 0.25));   
+    font-size: calc(12px + (22 - 12) * ((100vmin - 350px) / (1080 - 350)));
+}
+
+.bottomIconSVG
+{
+    display: inline-block;
+    font-size: calc(10px + (18 - 10) * ((100vmin - 350px) / (1080 - 350)));
+    svg {
+        width: calc(10px + (40 - 10) * ((100vmax - 350px) / (1080 - 350)));
+        height: calc(12px + (40 - 12) * ((100vmax - 350px) / (1080 - 350)));
+    }
+}
+
+.playerIconSVG
+{
+    display: inline-block;
+    font-size: calc(10px + (22 - 10) * ((100vmin - 350px) / (1080 - 350)));
+    svg {
+        width: calc(10px + (46 - 10) * ((100vmax - 350px) / (1080 - 350)));
+        height: calc(10px + (46 - 10) * ((100vmax - 350px) / (1080 - 350)));
+    }
+}
+
+#gameBox .bottomElement button.scaleDown .iconSVG
+{
+    transform: scale(0.7);
+}
+
+#textCenter {
+    /* font-size: 22px; */
+    
+    /* https://stackoverflow.com/questions/15649244/responsive-font-size-in-css */
+    /* font-size: calc([minimum size] + ([maximum size] - [minimum size]) * ((100vw - [minimum viewport width]) / ([maximum viewport width] - [minimum viewport width]))); */
+    font-size: calc(6px + (18 - 6) * ((100vmax - 350px) / (1080 - 350)));
+    color: white;
+    text-shadow: 0px 0px 4px black;  
+    text-align: center;
+    padding: 1px;
+}
+
+#textCenter h1{
+    /* font-size: 58px; */
+    
+    font-size: calc(10px + (58 - 10) * ((100vmax - 350px) / (1080 - 350)));
+    -webkit-text-stroke-color: black;
+    padding: 1px;
+}
+
+#textCenterTutorial {
+    font-size: calc(4px + (16 - 4) * ((100vmax - 350px) / (1080 - 350)));  
+    color: white;
+    text-shadow: 0px 0px 4px black;  
+    text-align: center;
+    padding: 1px;
+}
+
+.audioIconSVG {
+    /* filter: drop-shadow(0px 0px 6px rgba(255, 255, 255, 0.25));
+    transform: scale(1.3);
+    z-index: 10; */
+    color: #000000;
+
+    display: inline-block;
+    font-size: calc(10px + (22 - 10) * ((100vmin - 350px) / (1080 - 350)));
+    svg {
+        filter: drop-shadow(0px 0px 6px rgba(255, 255, 255, 0.2));
+        width: calc(10px + (32 - 10) * ((100vmax - 350px) / (1080 - 350)));
+        height: calc(10px + (32 - 10) * ((100vmax - 350px) / (1080 - 350)));
+    }
+
+    input
+    {
+        color: white;
+    }
+
+    input:hover, input:focus
+    {
+        transition-duration: 300ms;
+        filter: drop-shadow(0px 0px 6px rgba(255, 255, 255, 0.2));
+    }
+}
+

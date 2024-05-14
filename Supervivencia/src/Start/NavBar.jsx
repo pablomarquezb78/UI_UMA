@@ -4,38 +4,34 @@ import hamburguesa from '../assets/Start/Logos/new_burger.png'
 import cross from '../assets/Start/Logos/X.png'
 
 import '../CSS/Start.css';
-import '../CSS/BootstrapEdit.css';
-import { Link } from "react-router-dom";
+import { Link ,NavLink} from "react-router-dom";
 import {useState ,useEffect} from 'react';
 import React from 'react';
 
-function navBar({ scrollToGridInfo }) {
+function navBar({ scrollToGridInfo, position}) {
  
-    //Control de como mostar el navList
+    //Control background blanco
+    const bg = position == "absolute" ? "" : "bg-white";
+
+    //0 es equivalente a hamburguesa no pulsada,  1 a pulsada y 2 es equivalente a ver pagina en grande (flex)
     const [showMenu,setShowMenu] = useState(2);
-    //0 es equivalente a no pulsado y 1 a pulsado 2 es equivalente a ver en grande (flex)
-    const [showOverlay, setShowOverlay] = useState(false);
+    const [prevShowMenu, setPrevShowMenu] = useState(2); // Estado previo del menú
 
     const toggleMenu = () => {
         setShowMenu(prevState => (prevState + 1)%2);
-        setShowOverlay(prevState => !prevState);
-        
     };
 
+    //Control de tamaño de pantalla y el estado del menu de navegacion
     useEffect(() => {
         const handleResize = () => {
             const screenWidth = window.innerWidth;
             
             if(screenWidth > 750) { //Vuelve a mostrar el menu con flex y setea la hamburguesa a no pulsado
                 setShowMenu(2);
-                setShowOverlay(false);
             }else{
                 setShowMenu(0);
             }
 
-            if(showMenu == 1){
-                setShowOverlay(true);
-            }
         };
         
         window.addEventListener('resize', handleResize);
@@ -47,76 +43,113 @@ function navBar({ scrollToGridInfo }) {
         };
     }, []);
 
+    //Control cambios del estado del menu de navegacion
     useEffect(() => {
-        console.log(showMenu);
-
         const overlay = document.getElementById('overlay');
-        const LogoStart = document.getElementById('ayudaLogoStart');
+        const ayudaLogoStart = document.getElementById('ayudaLogoStart');
         const hamburger = document.getElementById('hamburger');
-        if(showMenu == 1){
-            overlay.style.display = 'block';
-            LogoStart.style.display = 'none';
+        const webLogoStart = document.getElementById('webLogoStart')
+
+        if (showMenu === 1) {
+            ayudaLogoStart.style.display = 'none';
             hamburger.setAttribute('src', cross);
-        }else{
-            overlay.style.display = 'none';
+
+            //Se muestra el overlay
+            overlay.style.display = 'block';
+            overlay.classList.remove('hidden');
+        } else {
+            webLogoStart.style.display = showMenu === 0 ? 'none' : 'block';
+            hamburger.style.display = showMenu === 0 ? 'block' : 'none';
+
+            //En grande desaparece el overlay.
+            if(showMenu === 2) overlay.style.display = 'none'; 
+           
+            //Si se estaba mostrando el overlay y se quita se oculta
+            if(prevShowMenu !==2 && showMenu === 0){
+                overlay.classList.add('hidden');
+            }
+
+            ayudaLogoStart.style.display = 'flex';
             hamburger.setAttribute('src', hamburguesa);
         }
-    }, [showOverlay]);
+        // Actualiza el estado previo del menú
+        setPrevShowMenu(showMenu);
+    }, [showMenu]);
+
+    //Si estoy en inicio y pulso inicio otra vez debe haber un reload
+    const handleInicioClick = () => {
+        if (window.location.pathname === '/UI_UMA/') {
+            window.location.reload();
+        }
+    };
 
     return(
     <>
-        <header className="navBar">
+        <header className={`d-flex flex-row position-${position} ${bg} top-0 start-0 end-0 z-3 vw-100 vh-9 navBar`}>
             <div className="navBarItem">
-                <Link to='/UI_UMA/'><img id="webLogoStart" src={logoWeb}></img></Link>
+                <Link to='/UI_UMA/' onClick={handleInicioClick}><img alt='paginaInicio' id="webLogoStart" src={logoWeb}></img></Link>
                 <input type='image' id="hamburger" src={hamburguesa} onClick={toggleMenu}/>
             </div>
             <nav>
                 <ul id="navList" style={{ 
-                    display: showMenu === 0 ? 'none' : showMenu === 2 ? 'flex' : 'none',
+                    display: showMenu === 2 ? 'flex' : 'none',
                     }}>
                     <li>
-                        <Link to='/mountain'>
+                        <NavLink to='/UI_UMA/mountain' activeClassName="active">
                         <span className='animatedSpanNavBar'>Montaña</span>
-                        </Link>
+                        </NavLink>
                     </li>
                     
                     <li>
-                        <Link to='/forest'>
+                        <NavLink to='/UI_UMA/forest' activeClassName="active">
                         <span className='animatedSpanNavBar'>Bosque</span>
-                        </Link>
+                        </NavLink>
                     </li>
                     
                     <li>
-                        <Link to='/desert'>
+                        <NavLink to='/UI_UMA/desert' activeClassName="active">
                             <span className='animatedSpanNavBar'>Desierto</span>
-                        </Link>
+                        </NavLink>
                     </li>
 
                     <li>
-                        <Link to='/coast'>
+                        <NavLink to='/UI_UMA/coast' activeClassName="active">
                             <span className='animatedSpanNavBar'>Costa</span>
-                        </Link>
+                        </NavLink>
                     </li>
                     <li>
-                        <Link to='/city'>
-                            <span className='animatedSpanNavBar'>Ciudad</span>
-                        </Link>
+                        <NavLink to='/UI_UMA/jungle' activeClassName="active">
+                            <span className='animatedSpanNavBar'>Jungla</span>
+                        </NavLink>
                     </li>
                 </ul>
             </nav>
             <div id="divAyudaLogoStart" className="navBarItem">
-                <button id="ayudaLogoStart" onClick={scrollToGridInfo}>
-                    <img src={ayudaWeb}></img>
-                </button>
+                <a id="ayudaLogoStart" onClick={scrollToGridInfo}>
+                    <img alt='seccionAyuda' src={ayudaWeb}></img>
+                </a>
             </div>
         </header>
         <div id="overlay">
             <ul>
-                <li><Link to='/mountain'><span className='animatedSpanNavBar'>Montaña</span></Link></li>
-                <li><Link to='/forest'><span className='animatedSpanNavBar'>Bosque</span></Link></li>
-                <li><Link to='/desert'><span className='animatedSpanNavBar'>Desierto</span></Link></li>
-                <li><Link to='/coast'><span className='animatedSpanNavBar'>Costa</span></Link></li>
-                <li><Link to='/city'><span className='animatedSpanNavBar'>Ciudad</span></Link></li>
+                <li><NavLink end to='/UI_UMA/' activeClassName="active" onClick={handleInicioClick}>
+                    <span className='animatedSpanNavBar'>Inicio</span></NavLink>
+                </li>
+                <li><NavLink to='/UI_UMA/mountain' activeClassName="active">
+                    <span className='animatedSpanNavBar'>Montaña</span></NavLink>
+                </li>
+                <li><NavLink to='/UI_UMA/forest' activeClassName="active">
+                    <span className='animatedSpanNavBar'>Bosque</span></NavLink>
+                </li>
+                <li><NavLink to='/UI_UMA/desert' activeClassName="active">
+                    <span className='animatedSpanNavBar'>Desierto</span></NavLink>
+                </li>
+                <li><NavLink to='/UI_UMA/coast' activeClassName="active">
+                    <span className='animatedSpanNavBar'>Costa</span></NavLink>
+                </li>
+                <li><NavLink to='/UI_UMA/jungle' activeClassName="active">
+                    <span className='animatedSpanNavBar'>Jungla</span></NavLink>
+                </li>
             </ul>
         </div> 
     </>
@@ -125,3 +158,4 @@ function navBar({ scrollToGridInfo }) {
 }
 
 export default navBar
+

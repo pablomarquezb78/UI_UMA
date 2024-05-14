@@ -1,7 +1,7 @@
 import React from 'react'
 import Start from './Start/Start.jsx'
 import GridBiomes from './GridZone/GridBiomes.jsx'
-import GridInfo from './GridZone/GridInfo.jsx'
+import InfoSection from './Info/InfoSection.jsx'
 import {useRef} from 'react';
 import './CSS/main.css'
 import './CSS/Start.css'
@@ -15,10 +15,6 @@ function Index(){
         gridInfoRef.current.scrollIntoView({ behavior: 'smooth' });
     };
 
-    const scrollToStart = () => {
-        startRef.current.scrollIntoView({ behavior: 'smooth' });
-    };
-
     return(
         <>
             <main className='sliderContainer'>
@@ -27,13 +23,13 @@ function Index(){
                 <Start scrollToGridInfo={scrollToGridInfo}/>
                 </div>
             
-                <div className='sliderItem'>
+                <div className='sliderItem' ref={gridInfoRef}>
                 <GridBiomes/>
                 </div>
 
-                <div className='sliderItem' ref={gridInfoRef}>
-                <GridInfo scrollToStart={scrollToStart}/>
-                </div>
+                <footer className='sliderItem' ref={gridInfoRef}>
+                <InfoSection/>
+                </footer>
 
             </main>  
         </>

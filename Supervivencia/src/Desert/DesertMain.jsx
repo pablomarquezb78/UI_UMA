@@ -1,6 +1,7 @@
 import React from 'react'
 import DesertStart from './DesertStart.jsx'
-import GridInfo from '../GridZone/GridInfo.jsx'
+import InfoSection from '../Info/InfoSection.jsx'
+import DesertBagGame from './DesertBagGame.jsx';
 import {useRef} from 'react';
 import '../CSS/main.css'
 import '../CSS/Start.css'
@@ -14,10 +15,6 @@ function DesertMain(){
         gridInfoRef.current.scrollIntoView({ behavior: 'smooth' });
     };
 
-    const scrollToStart = () => {
-        startRef.current.scrollIntoView({ behavior: 'smooth' });
-    };
-
     return(
         <>
             <main className='sliderContainer'>
@@ -26,8 +23,12 @@ function DesertMain(){
                     <DesertStart scrollToGridInfo={scrollToGridInfo}/>
                 </div>
 
+                <div className='sliderItem'>
+                    <DesertBagGame/>
+                </div>
+
                 <div className='sliderItem' ref={gridInfoRef}>
-                    <GridInfo scrollToStart={scrollToStart}/>
+                    <InfoSection/>
                 </div>
 
             </main>  

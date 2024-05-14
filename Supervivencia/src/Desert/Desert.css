@@ -1,0 +1,104 @@
+#completeSection{
+    background-image: url('src/Desert/DesertImages/FondoDesierto.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#bagGameDisplay{
+    bottom: 25%;
+    height: 40%;
+    gap: 5%;
+
+    background: rgba( 165, 165, 165, 0.1 );
+    backdrop-filter: blur( 7.5px );
+    -webkit-backdrop-filter: blur( 7.5px );
+    box-shadow: 0 8px 32px 0 rgba( 0, 0, 0, 0.18 );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+/*middle side*/
+
+#imgContainer{
+    height: 60%;
+}
+
+#buttonContainer{
+    height: 20%;
+    gap: 5%;
+}
+
+/**/
+
+/*Left side*/
+
+#CapacityContainer{
+    height: 10%;
+}
+
+#BagContainer{
+    height: 80%;
+}
+
+/**/
+
+/*Right side*/
+
+#itemsContainer{
+    width: 30%;
+}
+
+#itemInfoContainer{
+    width: 20%;
+}
+
+/**/
+
+#resultDisplay{
+    position: relative;
+    top: 10%;
+}
+
+@keyframes growAndShrink {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.item-included {
+    animation: growAndShrink 0.5s ease;
+}
+
+@keyframes moveAndScale {
+    0% {
+        transform: translateX(0) scale(1);
+    }
+    100% {
+        transform: translateX(-60vh) scale(0.01);
+    }
+}
+
+.move-left-scale-animation {
+    animation: moveAndScale 0.6s linear;
+}
+
+@keyframes appear {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.appear-animation {
+    animation: appear 0.5s ease-in-out;
+}

@@ -7,19 +7,23 @@ import ForestMain from './Forest/ForestMain';
 import MountainMain from './Mountain/MountainMain.jsx';
 import DesertMain from './Desert/DesertMain.jsx';
 import CoastMain from './Coast/CoastMain.jsx';
-import CityMain from './City/CityMain.jsx';
+import FaqPage from './Info/FaqPageMain.jsx';
+import SelvaStart from './Selva/SelvaStart.jsx';
+import AboutUs from './Info/AboutUsMain.jsx';
 
 function App() {
     return (
             <Routes>
                 <Route path="/UI_UMA/" element={<Index />} />
-                <Route path="/mountain" element={<MountainMain/>}/>
-                <Route path="/forest" element={<ForestMain/>}/>
-                <Route path='/desert' element={<DesertMain/>}/>
-                <Route path='/coast' element={<CoastMain/>}/>
-                <Route path='/city' element={<CityMain/>}/>
-                <Route path="/prueba" element={<Prueba/>}/>
-                <Route path="/memory" element={<MemoryGame/>}/>
+                <Route path="/UI_UMA/mountain" element={<MountainMain/>}/>
+                <Route path="/UI_UMA/forest" element={<ForestMain/>}/>
+                <Route path='/UI_UMA/desert' element={<DesertMain/>}/>
+                <Route path='/UI_UMA/coast' element={<CoastMain/>}/>
+                <Route path='/UI_UMA/jungle' element={<SelvaStart/>}/>
+                <Route path="/UI_UMA/prueba" element={<Prueba/>}/>
+                <Route path="/UI_UMA/memory" element={<MemoryGame/>}/>
+                <Route path="/UI_UMA/FAQ" element={<FaqPage/>}/>
+                <Route path="/UI_UMA/AboutUs" element={<AboutUs/>}/>
                 {/* <Route path="/:name" element={<Index/>}/> */}
             </Routes>
     );

@@ -1,4 +1,4 @@
-import react from 'react';
+import React from 'react';
 
 import '../CSS/Start.css';
 import { Typewriter, useTypewriter} from 'react-simple-typewriter';
@@ -17,8 +17,8 @@ function VideoStart() {
     
     return(
         
-        <div className='startDiv'>
-                <video className='startVideo' autoPlay loop muted src={videoStart}></video>
+        <div className='position-absolute w-100 h-100 top-0 bottom-0 z-0'>
+                <video className='w-100 h-100 object-fit-cover' autoPlay loop muted src={videoStart}></video>
         </div>
     )
 }

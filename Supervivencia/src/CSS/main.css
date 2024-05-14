@@ -17,5 +17,41 @@
     scroll-snap-align: start;
 }
 
+footer .sliderItem{
+  scroll-snap-align: start;
+  height: 25vh;
+  width: 25vw;
+}
 
+/* Estilos para la barra de desplazamiento personalizada en Chromium */
+/* Ancho y color de la barra */
+::-webkit-scrollbar {
+    width: 7px;
+  }
 
+  ::-webkit-scrollbar:hover {
+    width: 150px;
+  }
+  
+  /* Fondo del track */
+  ::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+  
+  /* Estilo del thumb */
+  ::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+  }
+  
+  /* Cambiar el estilo del thumb cuando se haga hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+  
+  /* Estilo del thumb cuando está presionado */
+  ::-webkit-scrollbar-thumb:active {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+
+  
