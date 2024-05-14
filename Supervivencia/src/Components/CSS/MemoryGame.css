@@ -1,45 +1,40 @@
 .memory-game {
-  text-align: center;
-}
-
-.memory-game .cards-grid {
-  width: 50vw;
-  height: 80vh;
-  flex-direction: column;
-  align-items: center;
-}
-
-.card-group {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.memory-game .card {
-  width: 250px;
-  height: 250px;
-  perspective: 1000px;
-  cursor: pointer;
-
-  margin: 10px;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
-}
-
-.memory-game .card img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  backface-visibility: hidden;
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-}
-
-.card.flipped {
-  transform: rotateY(180deg);
-  transition: transform 0.7s ease;
-}
-
-.question-mark-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
+    text-align: center; /* Centra el contenido horizontalmente */
+  }
+  
+  .cards-grid {
+    display: flex; /* Usa flexbox para alinear las cartas */
+    flex-wrap: wrap; /* Permite que las cartas se envuelvan en varias filas */
+    justify-content: center; /* Centra las cartas horizontalmente */
+  }
+  
+  .card-group {
+    margin-bottom: 20px; /* Espacio entre las filas de cartas */
+  }
+  
+  .card {
+    flex: 0 0 calc(50% - 20px); /* Establece el ancho de la carta al 50% del contenedor, con margen */
+    max-width: calc(50% - 20px); /* Establece el ancho máximo de la carta */
+    margin-right: 20px; /* Espacio entre las cartas */
+    margin-bottom: 20px; /* Espacio entre las cartas y las filas */
+    border: 2px solid #ccc; /* Añade un borde a las cartas */
+    border-radius: 8px; /* Añade bordes redondeados a las cartas */
+    overflow: hidden; /* Evita que las imágenes se desborden de las cartas */
+    width: 200px; /* Ajusta el ancho de la carta */
+    height: 250px; /* Ajusta el alto de la carta */
+  }
+  
+  .card .card-image {
+    width: 100%; /* Haz que la imagen ocupe todo el ancho de la carta */
+    height: 100%; /* Haz que la imagen ocupe todo el alto de la carta */
+    object-fit: cover; /* Escala la imagen para que llene completamente su contenedor */
+  }
+  
+  
+  @media only screen and (max-width: 768px) {
+    .card {
+      flex: 0 0 calc(100% - 20px); /* En dispositivos con ancho menor o igual a 768px, establece el ancho de la carta al 100% del contenedor, con margen */
+      max-width: calc(100% - 20px); /* Establece el ancho máximo de la carta */
+    }
+  }
+  
