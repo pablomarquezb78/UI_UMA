@@ -1,4 +1,4 @@
-import React from 'react';
+import react from 'react';
 
 import '../CSS/Start.css';
 import NavBar from '../Start/NavBar';
@@ -18,9 +18,9 @@ function ForestStart({scrollToGridInfo}) {
             {/* Temporalmente está el archivo de bosque */}
             <UnderConstruction nombrePagina={'bosque'}/>
 
-            <footer>
+            {/* <footer>
                 <img className="imgFlechaScroll" src={downScroll}></img>
-            </footer>
+            </footer> */}
 
 
        </section>
