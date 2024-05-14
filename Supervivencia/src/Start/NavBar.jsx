@@ -87,7 +87,7 @@ function navBar({ scrollToGridInfo, position}) {
     <>
         <header className={`d-flex flex-row position-${position} ${bg} top-0 start-0 end-0 z-3 vw-100 vh-9 navBar`}>
             <div className="navBarItem">
-                <Link to='/UI_UMA/' onClick={handleInicioClick}><img id="webLogoStart" src={logoWeb}></img></Link>
+                <Link to='/UI_UMA/' onClick={handleInicioClick}><img alt='paginaInicio' id="webLogoStart" src={logoWeb}></img></Link>
                 <input type='image' id="hamburger" src={hamburguesa} onClick={toggleMenu}/>
             </div>
             <nav>
@@ -126,7 +126,7 @@ function navBar({ scrollToGridInfo, position}) {
             </nav>
             <div id="divAyudaLogoStart" className="navBarItem">
                 <a id="ayudaLogoStart" onClick={scrollToGridInfo}>
-                    <img src={ayudaWeb}></img>
+                    <img alt='seccionAyuda' src={ayudaWeb}></img>
                 </a>
             </div>
         </header>
