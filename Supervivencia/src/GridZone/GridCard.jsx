@@ -71,7 +71,7 @@ function GridCard({nameVideo,texto, linkTo}) {
 
         <button className="position-absolute bottom-0 start-0 end-0 mx-auto" onClick={() => {setReverseCard(true)}}>
             
-            <img className="w-100 h-100" src={infoCardIcon} hidden={reverseCard}></img>    
+            <img alt={"información "+nameVideo} className="w-100 h-100" src={infoCardIcon} hidden={reverseCard}></img>    
         
         </button> 
     

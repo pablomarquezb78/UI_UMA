@@ -56,8 +56,8 @@ function GridZone() {
             <h1 >sobrevive.</h1>
             {/* <h2>Desde lo más básico a lo más avanzado.</h2> */}
             <div className="d-flex flex-column justify-content-center align-items-center w-100 h-100">
-                <img className='bonfire'  hidden={isFire != 2} src={Smoke}></img>
-                <img className="bonfire" hidden={isFire != 1} onClick={() => {overFireHandler()}} src={hogueraPrendida}></img>
+                <img alt="hoguera" className='bonfire'  hidden={isFire != 2} src={Smoke}></img>
+                <img alt="hoguera" className="bonfire" hidden={isFire != 1} onClick={() => {overFireHandler()}} src={hogueraPrendida}></img>
                 <img className={`${isShake ? 'shake-animation' : ''} bonfire`} hidden={isFire != 0} onClick={() => {fireHandler()}} src={hogueraSeca}></img>
             </div>
             {/* <h2>Adéntrate en el mundo de la supervivencia.</h2> */}

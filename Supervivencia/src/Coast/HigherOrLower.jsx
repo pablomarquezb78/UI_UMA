@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import data from './RandomImage.jsx';
 import './Coast.css';
+import { Translate } from '@mui/icons-material';
 
 function HigherLowerGame() {
     const [leftCardIndex, setLeftCardIndex] = useState(0);
@@ -35,7 +36,7 @@ function HigherLowerGame() {
                 setIsCorrect(0);
                 setShowTickAnimation(false);
                 setShowDeaths(false);
-            }, 1000);
+            }, 1500);
             return () => clearTimeout(timer);
         }
     }, [showTickAnimation]);
@@ -52,7 +53,7 @@ function HigherLowerGame() {
             setTimeout(() => {
                 resetGame();
                 setShowCrossAnimation(false);
-            }, 1000); 
+            }, 1500); 
         }
     };
     
@@ -68,7 +69,7 @@ function HigherLowerGame() {
             setTimeout(() => {
                 resetGame();
                 setShowCrossAnimation(false);
-            }, 1000); 
+            }, 1500); 
         }
     };
 
@@ -98,17 +99,17 @@ function HigherLowerGame() {
                 <div className='imagenHOL position-relative'>
                     <img alt="{data.randomImage(imageArray[rightCardIndex])?.nombre}" className='img-fluid' src={`src/assets/Coast/${data.randomImage(imageArray[rightCardIndex])?.foto}`}/>
                     <div id='informacion_imagen_d'  className='position-absolute text-center'>
-                    <h3 className='card-text'> {data.randomImage(imageArray[rightCardIndex])?.nombre}: {showDeaths ? data.randomImage(imageArray[rightCardIndex])?.mortalidad : '?'} muertes al año </h3>
+                        <h3 className='card-text'> {data.randomImage(imageArray[rightCardIndex])?.nombre}: {showDeaths ? data.randomImage(imageArray[rightCardIndex])?.mortalidad : '?'} muertes al año </h3>
                     </div>
                     <div className='botonesHOL position-absolute'>
-                        <button className='custom-button d-flex justify-content-center mb-1' onClick={handleHigherClick}>Higher</button>
-                        <button className='custom-button d-flex justify-content-center' onClick={handleLowerClick}>Lower</button>
+                        <button className='custom-button mb-1' onClick={handleHigherClick}>Higher</button>
+                        <button className='custom-button' onClick={handleLowerClick}>Lower</button>
                     </div> 
                 </div>
-                <div className={`position-absolute top-50 start-50 translate-middle ${isCorrect !== 0 && 'fade-icon'}`}>
-                    {isCorrect === 0 && <img src="src/assets/Coast/versus-icon.png"  alt="VS" style={{ width: '80px', height: '80px', backgroundColor: 'black', borderRadius:'50%'}} />}
-                    {showTickAnimation && <img src="src/assets/Coast/tick-icon.png" alt="Tick" style={{ width: '80px', height: '80px', backgroundColor: 'green', borderRadius:'50%' }} />}
-                    {isCorrect === 2 && <img src="src/assets/Coast/cross-icon.png" alt="Cross" style={{ width: '80px', height: '80px', backgroundColor: 'red', borderRadius:'50%' }} />}
+                <div className={`position-absolute ${isCorrect !== 0 && 'fade-icon'}`}>
+                    {isCorrect === 0 && <img src="src/assets/Coast/versus-icon.png"  alt="VS" style={{ maxWidth: 'calc(50px + (100 - 50) * ((100vmin - 350px) / (1080 - 350)))', backgroundColor: 'black', borderRadius:'50%'}} />}
+                    {showTickAnimation && <img src="src/assets/Coast/tick-icon.png" alt="Tick" style={{ maxWidth: 'calc(50px + (100 - 50) * ((100vmin - 350px) / (1080 - 350)))', backgroundColor: 'green', borderRadius:'50%' }} />}
+                    {isCorrect === 2 && <img src="src/assets/Coast/cross-icon.png" alt="Cross" style={{ maxWidth: 'calc(50px + (100 - 50) * ((100vmin - 350px) / (1080 - 350)))', backgroundColor: 'red', borderRadius:'50%' }} />}
                 </div>
             </section>
             <div>

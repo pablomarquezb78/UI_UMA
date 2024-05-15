@@ -95,30 +95,30 @@ function navBar({ scrollToGridInfo, position}) {
                     display: showMenu === 2 ? 'flex' : 'none',
                     }}>
                     <li>
-                        <NavLink to='/UI_UMA/mountain' activeClassName="active">
+                        <NavLink to='/UI_UMA/mountain' activeclassname="active">
                         <span className='animatedSpanNavBar'>Montaña</span>
                         </NavLink>
                     </li>
                     
                     <li>
-                        <NavLink to='/UI_UMA/forest' activeClassName="active">
+                        <NavLink to='/UI_UMA/forest' activeclassname="active">
                         <span className='animatedSpanNavBar'>Bosque</span>
                         </NavLink>
                     </li>
                     
                     <li>
-                        <NavLink to='/UI_UMA/desert' activeClassName="active">
+                        <NavLink to='/UI_UMA/desert' activeclassname="active">
                             <span className='animatedSpanNavBar'>Desierto</span>
                         </NavLink>
                     </li>
 
                     <li>
-                        <NavLink to='/UI_UMA/coast' activeClassName="active">
+                        <NavLink to='/UI_UMA/coast' activeclassname="active">
                             <span className='animatedSpanNavBar'>Costa</span>
                         </NavLink>
                     </li>
                     <li>
-                        <NavLink to='/UI_UMA/jungle' activeClassName="active">
+                        <NavLink to='/UI_UMA/jungle' activeclassname="active">
                             <span className='animatedSpanNavBar'>Jungla</span>
                         </NavLink>
                     </li>
@@ -132,22 +132,22 @@ function navBar({ scrollToGridInfo, position}) {
         </header>
         <div id="overlay">
             <ul>
-                <li><NavLink end to='/UI_UMA/' activeClassName="active" onClick={handleInicioClick}>
+                <li><NavLink end to='/UI_UMA/' activeclassname="active" onClick={handleInicioClick}>
                     <span className='animatedSpanNavBar'>Inicio</span></NavLink>
                 </li>
-                <li><NavLink to='/UI_UMA/mountain' activeClassName="active">
+                <li><NavLink to='/UI_UMA/mountain' activeclassname="active">
                     <span className='animatedSpanNavBar'>Montaña</span></NavLink>
                 </li>
-                <li><NavLink to='/UI_UMA/forest' activeClassName="active">
+                <li><NavLink to='/UI_UMA/forest' activeclassname="active">
                     <span className='animatedSpanNavBar'>Bosque</span></NavLink>
                 </li>
-                <li><NavLink to='/UI_UMA/desert' activeClassName="active">
+                <li><NavLink to='/UI_UMA/desert' activeclassname="active">
                     <span className='animatedSpanNavBar'>Desierto</span></NavLink>
                 </li>
-                <li><NavLink to='/UI_UMA/coast' activeClassName="active">
+                <li><NavLink to='/UI_UMA/coast' activeclassname="active">
                     <span className='animatedSpanNavBar'>Costa</span></NavLink>
                 </li>
-                <li><NavLink to='/UI_UMA/jungle' activeClassName="active">
+                <li><NavLink to='/UI_UMA/jungle' activeclassname="active">
                     <span className='animatedSpanNavBar'>Jungla</span></NavLink>
                 </li>
             </ul>
