@@ -19,8 +19,15 @@
 
 /*middle side*/
 
-#imgContainer{
+#itemImgContainer{
     height: 60%;
+    overflow: hidden;
+}
+
+#itemImgContainer img{
+    object-fit: cover;
+    height: auto;
+    max-width: 100%;
 }
 
 #buttonContainer{
@@ -38,6 +45,13 @@
 
 #BagContainer{
     height: 80%;
+    overflow: hidden;
+}
+
+#BagContainer img{
+    object-fit: cover;
+    height: auto;
+    max-width: 100%;
 }
 
 /**/
@@ -50,7 +64,9 @@
 
 #itemInfoContainer{
     width: 20%;
+    overflow-wrap: break-word;
 }
+
 
 /**/
 
