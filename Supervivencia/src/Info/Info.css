@@ -1,26 +1,5 @@
-#infoSection{
-    background-color: #F5F5F5;
-    justify-content: space-around;
-    align-items: flex-start;
-    display: flex;
-    padding-right: 20px;
-    padding-top: 50px;
-    padding-bottom: 70px;
-}
-
 #infoSection a{
     display: block;
-    text-decoration: none;
-    margin-bottom: -10px;
-}
-
-#infoSection h5{
-    padding-bottom: 20px;
-}
-
-#socialNetWorkDisplayer{
-    display: flex;
-    justify-content: space-around;
 }
 
 #FaqDiv{
@@ -42,10 +21,10 @@
 
 #imgContainer{
     height: 35vh;
-    padding-bottom: 5vh;
+    padding-bottom: 10vh;
 }
 
-/*Containers*/
+/* Fin Containers*/
 
 #imgContainer img{
     width: auto;
@@ -54,7 +33,7 @@
 
 .fontControl{
     font-size: calc(14px + (32 - 14) * ((100vmin - 350px) / (1080 - 350)));
-}
+} 
 
 #container{
     position: relative;
@@ -62,4 +41,4 @@
     top: 10vh;
 }
 
-/*About Us*/
+/* Fin About Us*/
