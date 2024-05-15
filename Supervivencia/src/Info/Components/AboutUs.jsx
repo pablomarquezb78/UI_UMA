@@ -5,10 +5,10 @@ import '../Info.css';
 function AboutUs() {
     return (
         <div id="container" className="container">
-            <div id="titleContainer" className="row justify-content-center align-items-center w-100 fontControl text-center">
+            <div id="titleContainer" className="row justify-content-center align-items-center w-100 fontControlAboutUs text-center">
                 <h1>Sobre Nosotros</h1>
             </div>
-            <div id="textContainer" className="row w-100 fontControl text-center">
+            <div id="textContainer" className="row w-100 fontControlAboutUs text-center">
                 <p>
                     Somos un grupo de estudiantes de tercer curso de Ingeniería del Software en la Universidad de Málaga,
                      este es nuestro proyecto para la asignatura "Interfaces de Usuario", donde hemos creado una página web
