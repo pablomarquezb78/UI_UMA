@@ -31,9 +31,17 @@
     max-height: 100%;
 }
 
-.fontControl{
+.fontControlAboutUs{
     font-size: calc(14px + (32 - 14) * ((100vmin - 350px) / (1080 - 350)));
 } 
+
+.fontControlInfoSection{
+    font-size: calc(10px + (20 - 10) * ((100vmin - 350px) / (1080 - 350)));
+}
+
+.fontControlInfoSectionh5{
+    font-size: calc(20px + (30 - 20) * ((100vmin - 350px) / (1080 - 350)));
+}
 
 #container{
     position: relative;
