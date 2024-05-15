@@ -10,9 +10,10 @@
 .botonesHOL{
   display: flex;
   flex-direction: column;
-  right: 50%;
-  left: 50%;
-  top: 50%;
+  right: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
   justify-content: center;
   align-items: center;
 
@@ -47,6 +48,7 @@
   white-space: nowrap;
   z-index: 1;
 }
+
 
 .card-text{
   
@@ -90,11 +92,10 @@
 .custom-button:hover {
   transition-duration: 300ms;
   color: #ffffff;
-  /*box-shadow: 0 0 2em #ffffff;*/
   text-shadow: 0 0 2em #ffffff;
 }
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 660px) {
   .imagenesHOL{
     flex-direction: column;
   }
@@ -109,6 +110,7 @@
     bottom: auto;
   }
 }
+
 
 .icon-animation{
   animation: fadeIcon 2s ease forwards;
