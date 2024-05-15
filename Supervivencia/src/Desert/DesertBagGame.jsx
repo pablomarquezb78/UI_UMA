@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Bag from './DesertImages/Bag.png';
 import './Desert.css';
 import itemList from './itemsBag.json';
+import useFitText from "use-fit-text";
 
 function DesertBagGame() {
     const imgPath = "src/Desert/DesertImages/";
@@ -15,6 +16,8 @@ function DesertBagGame() {
     const [isItemIncluded, setIsItemIncluded] = useState(false);
     //control cambio indice
     const [indexChanged,setIndexChanged] = useState(false);
+
+    const { fontSize, ref } = useFitText();
 
     useEffect(() =>{
         setIndexChanged(true);
@@ -67,7 +70,7 @@ function DesertBagGame() {
                 <h1 className="text-center text-white">¡Prepara la mochila para sobrevivir!</h1>
                 <h2 className={`text-center text-white ${itemList.length === 8 ? "" : "d-none"}`}>¡Fin del juego! Has conseguido {suma} puntos de supervivencia</h2>
             </div>
-            <div id="bagGameDisplay" className="position-absolute d-flex justify-content-center w-75 start-50 translate-middle-x align-items-center">
+            <div id="bagGameDisplay" className="position-absolute d-flex justify-content-center start-50 translate-middle-x align-items-center">
                 <div className="d-flex flex-grow-0 h-100 flex-column justify-content-center">
                     <div id="CapacityContainer">
                         <h5 className="d-block text-center text-white f-size-4">{16-itemList.length}/8</h5>
@@ -93,10 +96,10 @@ function DesertBagGame() {
                         <button className="btn btn-primary h-50" onClick={nextImage}>&gt;</button>
                     </div>
                 </div>
-                <div id="itemInfoContainer">
-                    <h3 id="itemDisplayed" className="text-white text-center fontControlDesert">{itemList[currentIndex].nombre}</h3><br/>
-                    <span className="fw-bold text-white fontControlDesert">Ventajas: {itemList[currentIndex].ventajas}</span> <br/><br/>
-                    <span className="fw-bold text-white fontControlDesert">Desventajas: {itemList[currentIndex].desventajas}</span>
+                <div id="itemInfoContainer" ref={ref} style={{ fontSize, height: 250, width: 250 }}>
+                        <h3 id="itemDisplayed" className="text-white text-center">{itemList[currentIndex].nombre}</h3><br/>
+                        <span className="text-white">Ventajas: {itemList[currentIndex].ventajas}</span> <br/><br/>
+                        <span className="text-white">Desventajas: {itemList[currentIndex].desventajas}</span>
                 </div>
             </div>
         </section>
