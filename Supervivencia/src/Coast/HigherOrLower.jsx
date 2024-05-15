@@ -11,6 +11,7 @@ function HigherLowerGame() {
     const [isCorrect, setIsCorrect] = useState(0);
     const [showTickAnimation, setShowTickAnimation] = useState(false);
     const [showCrossAnimation, setShowCrossAnimation] = useState(false);
+    const [showDeaths, setShowDeaths] = useState(false);
 
     useEffect(() => {
         const numberOfCardAux = new Array(data.longData()).fill().map((_, index) => index + 1);
@@ -33,6 +34,7 @@ function HigherLowerGame() {
                 setRightCardIndex(rightCardIndex + 1);
                 setIsCorrect(0);
                 setShowTickAnimation(false);
+                setShowDeaths(false);
             }, 1000);
             return () => clearTimeout(timer);
         }
@@ -41,9 +43,11 @@ function HigherLowerGame() {
     const handleHigherClick = () => {
         if (parseInt(data.randomImage(imageArray[leftCardIndex]).mortalidad) < parseInt(data.randomImage(imageArray[rightCardIndex]).mortalidad)) {
             setIsCorrect(1);
+            setShowDeaths(true);
             setShowTickAnimation(true);
         } else {
             setIsCorrect(2);
+            setShowDeaths(true);
             setShowCrossAnimation(true);
             setTimeout(() => {
                 resetGame();
@@ -55,9 +59,11 @@ function HigherLowerGame() {
     const handleLowerClick = () => {
         if (parseInt(data.randomImage(imageArray[leftCardIndex]).mortalidad) > parseInt(data.randomImage(imageArray[rightCardIndex]).mortalidad)) {
             setIsCorrect(1);
+            setShowDeaths(true);
             setShowTickAnimation(true);
         } else {
             setIsCorrect(2);
+            setShowDeaths(true);
             setShowCrossAnimation(true);
             setTimeout(() => {
                 resetGame();
@@ -73,6 +79,7 @@ function HigherLowerGame() {
         const shuffleCard = numberOfCardAux.sort(() => Math.random() - 0.5);
         setImageArray(shuffleCard);
         setIsCorrect(0);
+        setShowDeaths(false);
     };
 
     return (
@@ -91,7 +98,7 @@ function HigherLowerGame() {
                 <div className='imagenHOL position-relative'>
                     <img alt="{data.randomImage(imageArray[rightCardIndex])?.nombre}" className='img-fluid' src={`src/assets/Coast/${data.randomImage(imageArray[rightCardIndex])?.foto}`}/>
                     <div id='informacion_imagen_d'  className='position-absolute text-center'>
-                        <h3 className='card-text'> {data.randomImage(imageArray[rightCardIndex])?.nombre}: ? muertes al año </h3>
+                    <h3 className='card-text'> {data.randomImage(imageArray[rightCardIndex])?.nombre}: {showDeaths ? data.randomImage(imageArray[rightCardIndex])?.mortalidad : '?'} muertes al año </h3>
                     </div>
                     <div className='botonesHOL position-absolute'>
                         <button className='custom-button d-flex justify-content-center mb-1' onClick={handleHigherClick}>Higher</button>
