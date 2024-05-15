@@ -42,7 +42,7 @@ function DesertBagGame() {
     };
 
     const includeItem = () => {
-        if (itemList.length === 7) {
+        if (itemList.length === 8) {
             //Control Fin del Juego
             return;
         }
@@ -65,23 +65,23 @@ function DesertBagGame() {
         <section id="completeSection" className="position-relative vw-100 vh-100">
             <div id="resultDisplay" className="">
                 <h1 className="text-center text-white">¡Prepara la mochila para sobrevivir!</h1>
-                <h2 className={`text-center text-white ${itemList.length === 7 ? "" : "d-none"}`}>¡Fin del juego! Has conseguido {suma} puntos de supervivencia</h2>
+                <h2 className={`text-center text-white ${itemList.length === 8 ? "" : "d-none"}`}>¡Fin del juego! Has conseguido {suma} puntos de supervivencia</h2>
             </div>
-            <div id="bagGameDisplay" className="position-absolute d-flex justify-content-center w-100">
+            <div id="bagGameDisplay" className="position-absolute d-flex justify-content-center w-75 start-50 translate-middle-x align-items-center">
                 <div className="d-flex flex-grow-0 h-100 flex-column justify-content-center">
                     <div id="CapacityContainer">
-                        <h5 className="d-block text-center text-white f-size-4">{14-itemList.length}/7</h5>
+                        <h5 className="d-block text-center text-white f-size-4">{16-itemList.length}/8</h5>
                     </div>
                     <div id="BagContainer" className={`d-flex justify-content-center flex-grow-0 w-100  ${isItemIncluded ? "item-included" : ""}`}>
                         <img src={Bag} alt="Bag" className="img-fluid"></img>
                     </div>
                 </div>
                 <div id="itemsContainer" className="h-100 d-flex flex-column align-items-center justify-content-center">
-                    <div id="imgContainer" className="d-flex justify-content-center flex-grow-0 w-100">
+                    <div id="itemImgContainer" className="d-flex justify-content-center w-100">
                         <img
                             src={imgPath + itemList[currentIndex].imagen}
                             alt={`Imagen ${itemList[currentIndex].id}`}
-                            className={`img-fluid ${isAnimating ? "move-left-scale-animation" : ""} ${(isItemIncluded || indexChanged) ? "appear-animation" : ""} `}
+                            className={`${isAnimating ? "move-left-scale-animation" : ""} ${(isItemIncluded || indexChanged) ? "appear-animation" : ""} `}
                             onAnimationEnd={() => {
                                 setIsAnimating(false); // Indica que la animación del objeto ha terminado
                             }}
@@ -94,9 +94,9 @@ function DesertBagGame() {
                     </div>
                 </div>
                 <div id="itemInfoContainer">
-                    <h3 id="itemDisplayed" className="text-white text-center">{itemList[currentIndex].nombre}</h3><br/>
-                    <span className="fw-bold text-white">Ventajas: {itemList[currentIndex].ventajas}</span> <br/><br/>
-                    <span className="fw-bold text-white">Desventajas: {itemList[currentIndex].desventajas}</span>
+                    <h3 id="itemDisplayed" className="text-white text-center fontControlDesert">{itemList[currentIndex].nombre}</h3><br/>
+                    <span className="fw-bold text-white fontControlDesert">Ventajas: {itemList[currentIndex].ventajas}</span> <br/><br/>
+                    <span className="fw-bold text-white fontControlDesert">Desventajas: {itemList[currentIndex].desventajas}</span>
                 </div>
             </div>
         </section>
