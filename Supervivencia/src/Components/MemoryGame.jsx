@@ -7,6 +7,7 @@ const MemoryGame = () => {
   const [matchedCards, setMatchedCards] = useState([]);
   const [moves, setMoves] = useState(0);
   const [shouldFlipIncorrect, setShouldFlipIncorrect] = useState(false);
+  const [difficulty, setDifficulty] = useState("button"); // Por defecto, elige la dificultad de botón
 
   // Función para mezclar las cartas
   const shuffleCards = array => {
@@ -60,7 +61,13 @@ const MemoryGame = () => {
         setMatchedCards([...matchedCards, firstCardIndex, secondCardIndex]);
         setFlippedCards([]);
       } else {
-        setShouldFlipIncorrect(true);
+        if (difficulty === "button") {
+          setShouldFlipIncorrect(true);
+        } else if (difficulty === "time") {
+          setTimeout(() => {
+            setFlippedCards([]);
+          }, 1000); // Espera 1 segundo antes de voltear las cartas incorrectas
+        }
       }
     }
   };
@@ -77,13 +84,23 @@ const MemoryGame = () => {
 
   return (
     <div className="memory-game">
-      <h1>Memory Game</h1>
+      <h1>Juego de Memoria</h1>
+      <p> Relaciona a cada animal con su huella</p>
       <p>Movimientos: {moves}</p>
-      {shouldFlipIncorrect && (
+      <div>
+        <label>
+          Dificultad:
+          <select value={difficulty} onChange={e => setDifficulty(e.target.value)} className="form-select">
+            <option value="button">EASY</option>
+            <option value="time">HARD</option>
+          </select>
+        </label>
+      </div>
+      <div style={{ visibility: shouldFlipIncorrect ? 'visible' : 'hidden' }}>
         <button onClick={handleResetIncorrectCards} className="btn btn-primary">
           Voltear Cartas Incorrectas
         </button>
-      )}
+      </div>
       <div className="cards-grid">
         {Array.from({ length: 4 }, (_, rowIndex) => (
           <div key={rowIndex} className="card-group">
