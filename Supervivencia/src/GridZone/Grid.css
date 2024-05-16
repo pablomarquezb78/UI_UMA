@@ -56,24 +56,25 @@
 
 @keyframes shake {
     0% {
-      transform: rotateZ(0deg);
+    transform: rotateZ(0deg);
     }
     25% {
-      transform: rotateZ(-10deg);
+    transform: rotateZ(-10deg);
     }
     50% {
-      transform: rotateZ(10deg);
+    transform: rotateZ(10deg);
     }
     75% {
-      transform: rotateZ(-5deg);
+    transform: rotateZ(-5deg);
     }
     100% {
-      transform: rotateZ(0deg);
+    transform: rotateZ(0deg);
     }
-  }
-  
-  .shake-animation {
+}
+
+.shake-animation {
     animation: shake 0.5s ease-in-out;
+<<<<<<< HEAD
   }
 
 
@@ -124,3 +125,10 @@
   
   }
   
+=======
+}
+
+.bonfire:hover{
+    cursor: pointer;
+}
+>>>>>>> 037b7cd039d0c0226f4fd71378e78db86bad7ba0

@@ -15,9 +15,9 @@ function CoastMain(){
         gridInfoRef.current.scrollIntoView({ behavior: 'smooth' });
     };
 
-    const scrollToStart = () => {
-        startRef.current.scrollIntoView({ behavior: 'smooth' });
-    };
+    // const scrollToStart = () => {
+    //     startRef.current.scrollIntoView({ behavior: 'smooth' });
+    // };
 
     return(
         <>

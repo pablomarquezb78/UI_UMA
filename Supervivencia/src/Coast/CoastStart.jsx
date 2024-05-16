@@ -1,8 +1,6 @@
 import React from 'react';
 import '../CSS/Start.css';
 import NavBar from '../Start/NavBar';
-import UnderConstruction from '../Components/UnderConstructionScreen'
-import downScroll from '../assets/Start/Logos/down_scroll.png'
 
 function CoastStart({scrollToGridInfo}) {
     
@@ -13,14 +11,6 @@ function CoastStart({scrollToGridInfo}) {
     
             {/* Envuelto por una etiqueta header dentro del componente NavBar*/}
             <NavBar scrollToGridInfo={scrollToGridInfo} position={"fixed"}/>
-
-            <UnderConstruction nombrePagina={'costa'}/>
-
-            <footer>
-                <img className="imgFlechaScroll" src={downScroll}></img>
-            </footer>
-
-
        </section>
  
     )
