@@ -120,7 +120,7 @@ function HigherLowerGame() {
         <section className='gameHOL container d-flex justify-content-center align-items-center text-center vh-100 vw-100'>
             <div className='cabeceraHOL'>
                 <h1>Higher or Lower</h1>
-                <h2>¿Cuál es más letal 💀?</h2>
+                <h2>¿Cuál es más letal para el humano 💀?</h2>
             </div>
             <section className='imagenesHOL position-relative d-flex justify-content-center align-items-center vh-100 vw-100'>
                 <div className='imagenHOL position-relative'>
@@ -144,7 +144,7 @@ function HigherLowerGame() {
                     </div> 
                 </div>
                 {showResult && (
-                    <div className=" puntuacionHOL position-absolute z-1 bg-white rounded">
+                    <div className=" puntuacionHOL position-absolute z-1 bg-white rounded p-2">
                         <div>
                             <h2 className={`${isCorrect == 2 ? 'text-danger' : 'text-success'}`}>{isCorrect === 2 ? '¡Fallaste!' : '¡Ganaste!'}</h2>
                             <button className='custom-button m-2' onClick={cancelGame}>Cancelar</button>
