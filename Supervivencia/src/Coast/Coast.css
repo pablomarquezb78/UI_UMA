@@ -75,7 +75,6 @@
 
 
 .custom-button {
-  display: inline-block;
   padding: 10px 20px;
   font-size: 16px;
   font-weight: bold;
@@ -125,3 +124,18 @@
   }
 }
 
+@keyframes growAndShrinkHOL {
+  0% {
+      transform: scale(1);
+  }
+  50% {
+      transform: scale(3);
+  }
+  100% {
+      transform: scale(1);
+  }
+}
+
+.puntuacionHOL{
+  animation: growAndShrink 0.5s ease;
+}
