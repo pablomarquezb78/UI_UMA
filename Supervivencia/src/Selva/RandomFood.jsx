@@ -13,9 +13,15 @@ function longData(){
     return data.length;
 }
 
+function isDangerous(id){
+
+    return json[id-1].mortalidad;
+}
+
 
 export default {
     randomFood,
     longData,
+    isDangerous,
   };
   

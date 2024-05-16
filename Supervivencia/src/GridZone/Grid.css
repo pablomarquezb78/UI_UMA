@@ -1,156 +1,57 @@
-@font-face {
-    font-family: Stretched;
-    src: url('../../public/Fonts/stretch-pro/StretchPro-Basic.otf');
-}
 
-#sectionGrid{
-    background-color: #F5F5F5;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-    position: relative;
-}
 
-.gridBiomeSection{
-    width: 101vw;
+.gridSection{
+
+    width: 100vw;
     height: 100vh;
-   
     display: grid;
-    /* gap: 10px; */
-    grid-template-columns: repeat(auto-fill, minmax(59vh, 1fr));
-    /* grid-template-columns: 1fr 1fr 1fr; */
-    justify-content: center;
-    align-content: center;
-    align-items: center;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows:1fr 1fr;
 }
 
-@media only screen and (max-width: 1249px) {
-    
-    article.gridCard{
-      
-        grid-row-end: 1;
-    }
-  }
 
 .gridCard{
-    height: 100%;
-    width: 100%;
-    position: relative;
-    overflow: hidden;
-    word-wrap: break-word;
-    white-space: pre-wrap;
+  overflow: hidden;
+    width: auto;
+    height: auto;
 }
 
-
 .gridCard video{
-    height: 100%;
+
     width: 100%;
-    /* border-radius: 10px; */
+    height: 100%;
     object-fit: cover;
 }
 
-.gridText{
-    
-    font-size:5vh;
-    word-wrap: break-word;
-    font-family: 'Noto_Serif_M',NotoSerifKR-Medium;
-}
-
-.gridBiomeSection h1{
-    color: rgb(0, 0, 0);
-    font-size: 3vw;
-    transform: scale(1.3, 1.1);    
-    padding-top:6%;
-    text-align: center;
-    align-self: center;
-    font-family: 'Noto_Serif_B', NotoSerifKR-Black
-}
-
-.gridBiomeSection h2{
-    color: rgb(0, 0, 0);
-    font-size: 3vh;
-    padding: 15px;
-    text-align: center;
-    align-self: center;
-    font-family: 'Noto_Serif_M',NotoSerifKR-Medium;
-}
-
-.frontCard button{
-   
-    margin-bottom: 1%;
-    min-width: 30px; 
-    max-width: 2.5vw;
-    min-height: 30px; 
-    max-height: 2.5vw;
-    border: none;
-    background: none;
-
-}
-
-.reverseCard button{
-   
-    margin-bottom: 2%;
-    width: 50px; 
-    height: 50px; 
-    border: none;
-    background: none;
-}
-
-
-.gridCard{
-    transform-style: preserve-3d;
-    /* border-radius: 10px; */
-}
 
 .frontCard{
-    transition: .5s;
-    transform: perspective(600px) rotateY(0deg);
-    /* backface-visibility: hidden; */
-}
-
-
-.reverseCard{
-    transition: .3s;
-
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-    place-items: center;
     width: 100%;
     height: 100%;
-    transform: perspective(600px) rotateY(180deg);
-    backface-visibility: hidden;
-    
-
-    /*the alpha value controls the transparency*/
-    background: rgba(165, 165, 165, 0.175);
-
-    /* This controls the blurring effect*/
-    backdrop-filter: blur( 4.5px );
-    -webkit-backdrop-filter: blur( 4.5px );
-
-    /*Adding the shadow*/
-    box-shadow: 0 8px 32px 0 rgba( 0, 0, 0, 0.18 );
-
-    /* Adding our borders*/
-    /* border-radius: 10px; */
-    border: 1px solid rgba( 255, 255, 255, 0.18 );
-    z-index: 4;
-
+    position: relative;
 }
 
-.reverseCard a{
-    width: 100px;
-    height: 50px;
+.textCard{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    flex-shrink: 1;
 }
 
-article.gridCard img{
-
-    margin-bottom: 3%;
-    width: 24vh;
-    height: 24vh;
-
+.gridCard a{
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
 }
 
 @keyframes shake {
@@ -173,5 +74,53 @@ article.gridCard img{
   
   .shake-animation {
     animation: shake 0.5s ease-in-out;
+  }
+
+
+  .sobrevive{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .fogata{
+    padding-top: 12%;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    width: 60%;
+    height: 100%;
+  }
+
+  .fogata img{
+    width: 100%;
+    height: 100%;
+    padding-bottom: 60%;
+  }
+
+  @media screen and (max-width: 600px) {
+  
+    .gridSection{
+      grid-template-columns: 1fr;
+      grid-template-rows:1fr 1fr 1fr 1fr 1fr 1fr;
+    }
+  
+    .textCard{
+      width: 100vw;
+    }
+  
+    .fogata{
+      padding-top: 5%;
+      width: 18%;
+      height: 140%;
+      padding-bottom: 20%;
+    }
+
+    .fogata img{
+      width: 100%;
+      height: 160%;
+      padding-bottom: 100%;
+    }
+  
   }
   
