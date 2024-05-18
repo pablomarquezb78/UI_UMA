@@ -3,31 +3,31 @@
         "id": 1,
         "nombre": "Chaqueta",
         "imagen": "abrigoDesierto.png",
-        "puntuacion": 13,
-        "ventajas": "Chaqueta liviana que proteje del sol, ofrece aislamiento térmico y proteje contra el viento y la arena",
-        "desventajas":"Pueden acumular calor, pueden ser pesados o voluminosos y restringir el movimiento."
+        "puntuacion": 15,
+        "ventajas": "Chaqueta liviana que proteje del sol, viento, arena  y ofrece aislamiento térmico.",
+        "desventajas": "Pueden acumular calor, pueden ser pesados o voluminosos y restringir el movimiento."
     },
     {
         "id": 2,
         "nombre": "Botella de agua",
         "imagen": "botellaDeAgua.png",
-        "puntuacion": 14,
-        "ventajas": "Esencial para la hidratación y la supervivencia en el desierto. Recipiente reutilizable",
+        "puntuacion": 16,
+        "ventajas": "Esencial para la hidratación y la supervivencia. Recipiente reutilizable",
         "desventajas": "Cantidad limitada de agua, requiere reabastecimiento."
     },
     {
         "id": 3,
         "nombre": "Brújula",
         "imagen": "brujula.png",
-        "puntuacion": 2,
+        "puntuacion": 3,
         "ventajas": "Ayuda a orientarse y encontrar la dirección correcta.",
-        "desventajas":"Dependencia de las baterías o imanes, que pueden fallar."
+        "desventajas": "Dependencia de las baterías o imanes, que pueden fallar."
     },
     {
         "id": 4,
         "nombre": "Chubasquero",
         "imagen": "chubasqueroDesierto.png",
-        "puntuacion": 10,
+        "puntuacion": 11,
         "ventajas": "Protección contra la lluvia ocasional en el desierto, resistente al viento.",
         "desventajas": "Puede ser voluminoso, limitar la movilidad y tiene poca transpirabilidad."
     },
@@ -35,7 +35,7 @@
         "id": 5,
         "nombre": "Espejo",
         "imagen": "espejo.png",
-        "puntuacion": 4,
+        "puntuacion": 5,
         "ventajas": "Útil para señales de rescate reflejando la luz del sol.",
         "desventajas": "Fácilmente se puede romper o perder, además depende de que se de la situación de poder ser visto"
     },
@@ -45,22 +45,22 @@
         "imagen": "gafasSol.png",
         "puntuacion": 9,
         "ventajas": "Protegen los ojos de la intensa luz solar.",
-        "desventajas":"Pueden rayarse o romperse fácilmente, además se vuelve inútil por la noche."
+        "desventajas": "Pueden rayarse o romperse fácilmente, además se vuelve inútil por la noche."
     },
     {
         "id": 7,
         "nombre": "Gasa",
         "imagen": "gasa.png",
-        "puntuacion": 6,
+        "puntuacion": 7,
         "ventajas": "Útil para tratar heridas y prevenir infecciones.",
         "desventajas": "Limitada durabilidad y puede agotarse rápidamente."
     },
     {
         "id": 8,
-        "nombre": "Libro de comestibles en el desierto",
+        "nombre": "Libro de comestibles",
         "imagen": "libroComestibleDesierto.jpg",
-        "puntuacion": 11,
-        "ventajas":"Ayuda a identificar plantas y animales comestibles en el entorno.",
+        "puntuacion": 13,
+        "ventajas": "Ayuda a identificar plantas y animales comestibles en el entorno",
         "desventajas": "Requiere tiempo de consulta y encontrar los especímenes."
     },
     {
@@ -75,7 +75,7 @@
         "id": 10,
         "nombre": "Mapa",
         "imagen": "mapa.png",
-        "puntuacion": 3,
+        "puntuacion": 4,
         "ventajas": "Ayuda a navegar y encontrar rutas de escape.",
         "desventajas": "Puede ser inexacto o incompleto, especialmente en terreno desconocido, además de requerir tener buena orientación."
     },
@@ -83,7 +83,7 @@
         "id": 11,
         "nombre": "Navaja",
         "imagen": "navaja.png",
-        "puntuacion": 7,
+        "puntuacion": 6,
         "ventajas": "Útil para cortar alimentos, hacer herramientas y protegerse.",
         "desventajas": "Requiere habilidad para su uso seguro y puede ser peligrosa si se maneja incorrectamente."
     },
@@ -92,39 +92,39 @@
         "nombre": "Pistola",
         "imagen": "pistola.png",
         "puntuacion": 12,
-        "ventajas": "Ofrece una defensa personal en situaciones de peligro y puede ser útil para cazar.",
+        "ventajas": "Útil para la defensa personal y la caza",
         "desventajas": "Requiere habilidad de manejo seguro y puede atraer problemas legales."
     },
     {
         "id": 13,
         "nombre": "Tabletas de sal",
         "imagen": "tabletaDeSal.png",
-        "puntuacion": 1,
+        "puntuacion": 2,
         "ventajas": "Ayudan a reponer los electrolitos perdidos por la sudoración.",
-        "desventajas":"Uso limitado y no sustituyen la necesidad de agua."
+        "desventajas": "Uso limitado y no sustituyen la necesidad de agua."
     },
     {
         "id": 14,
         "nombre": "Botella de vodka",
         "imagen": "vodka.png",
-        "puntuacion": 5,
+        "puntuacion": 10,
         "ventajas": "Puede usarse como desinfectante para heridas, recipiente reutilizable.",
-        "desventajas":"No es recomendable para la hidratación y puede causar deshidratación si se consume."
+        "desventajas": "No es recomendable para la hidratación y puede causar deshidratación si se consume."
     },
     {
         "id": 15,
         "nombre": "Paquete de tabaco",
         "imagen": "camel.png",
         "puntuacion": 1,
-        "ventajas": "Puede usarse como desinfectante para heridas, recipiente reutilizable.",
-        "desventajas":"No es recomendable para la hidratación y puede causar deshidratación si se consume."
+        "ventajas": "Puede servir como elemento de intercambio, el papel de tabaco puede ser útil para encender fuego y puede ayudar a aliviar el estrés o la ansiedad.",
+        "desventajas": "El tabaco puede deshidratarte más rápido. Puede atraer insectos o animales debido a su olor. Si el paquete se moja, el tabaco puede volverse inutilizable."
     },
     {
         "id": 16,
         "nombre": "Mechero",
         "imagen": "mechero.png",
         "puntuacion": 14,
-        "ventajas": "Puede usarse como desinfectante para heridas, recipiente reutilizable.",
-        "desventajas":"No es recomendable para la hidratación y puede causar deshidratación si se consume."
-    } 
+        "ventajas": "Esencial para encender fuegos y para esterilizar instrumentos para el tratamiento de heridas.",
+        "desventajas": "Requiere recarga de combustible y puede ser peligroso si se maneja sin precaución."
+    }
 ]

@@ -1,40 +1,58 @@
-#completeSection{
+#desertGameCompleteSection{
     background-image: url('src/Desert/DesertImages/FondoDesierto.jpg');
     background-repeat: no-repeat;
     background-size: cover;
 }
 
-#bagGameDisplay{
+#completeGameSection{
     width: 80%;
-    bottom: 25%;
-    height: 40%;
-    gap: 5%;
+    bottom: 20%;
+    height: 60%;
 
     background: rgba( 165, 165, 165, 0.1 );
     backdrop-filter: blur( 7.5px );
     -webkit-backdrop-filter: blur( 7.5px );
     box-shadow: 0 8px 32px 0 rgba( 0, 0, 0, 0.18 );
-    border-radius: 10px;
+    border-radius: 20px;
     border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+#bagGameDisplay{
+    gap: 2%;    
+    height: 80%;
 }
 
 /*middle side*/
 
 #itemImgContainer{
     height: 70%;
-    overflow: hidden;
 }
 
 #itemImgContainer img{
     object-fit: contain;
     height: auto;
     max-width: 100%;
-    z-index: 1;
 }
 
-#buttonContainer{
-    height: 20%;
+#bagButtonContainer{
+    height: 30%;
     gap: 5%;
+}
+
+#itemsContainer{
+    width: 30%;
+}
+
+#leftButtonBag{
+    height: 30%;
+}
+
+#addButtonBag{
+    height: 45%;
+}
+
+#rigtButtonBag{
+    height: 30%;
 }
 
 /**/
@@ -43,12 +61,15 @@
 
 #CapacityContainer{
     height: 10%;
+    bottom: 0;
+}
+
+#CapacityContainer h5{
+    font-size: calc(8px + (32 - 8) * ((100vmin - 350px) / (1080 - 350)));
 }
 
 #BagContainer{
     height: 80%;
-    overflow: hidden;
-    z-index: 0;
 }
 
 #BagContainer img{
@@ -57,26 +78,37 @@
     max-width: 100%;
 }
 
+#bagPlace{
+    width: 30%;
+}
+
 /**/
 
 /*Right side*/
 
-#itemsContainer{
+#itemInfoContainer{
+    position: relative;
+    height: 80%;
     width: 30%;
 }
 
-#itemInfoContainer{
-    width: 20%;
-    overflow-wrap: break-word;
-    overflow: hidden;
+#itemDisplayed{
+    height: 20%;
 }
 
+#pros{
+    height: 40%;
+}
+
+#cons{
+    height: 40%;
+}
 
 /**/
 
+
 #resultDisplay{
-    position: relative;
-    top: 10%;
+    height: 20%;
 }
 
 @keyframes growAndShrink {
@@ -100,7 +132,7 @@
         transform: translateX(0) scale(1);
     }
     100% {
-        transform: translateX(-60vh) scale(0.01);
+        transform: translateX(-30vw) scale(0.01);
     }
 }
 
@@ -121,4 +153,14 @@
 
 .appear-animation {
     animation: appear 0.5s ease-in-out;
+}
+
+.btn-hover-zoom img {
+    transition: filter 0.3s ease, transform 0.3s ease, filter 0.3s ease;
+}
+
+.btn-hover-zoom:hover img, .btn-hover-zoom:focus img {
+    filter: grayscale(100%) invert(100%);
+    transform: scale(1.1);
+    filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.5));
 }
