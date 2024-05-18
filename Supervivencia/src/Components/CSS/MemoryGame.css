@@ -1,61 +1,45 @@
-  .memory-game {
-    text-align: center; /* Centra el contenido horizontalmente */
-  }
-  
-  .memory-game .cards-grid {
-    display: flex; /* Usa flexbox para alinear las cartas */
-    flex-wrap: wrap; /* Permite que las cartas se envuelvan en varias filas */
-    justify-content: center; /* Centra las cartas horizontalmente */
-  }
-  
-  .memory-game .card-group {
-    margin-bottom: 20px; /* Espacio entre las filas de cartas */
-  }
-  
-  .memory-game .card-group .card {
-    cursor: pointer;
-    flex: 0 0 calc(50% - 20px); /* Establece el ancho de la carta al 50% del contenedor, con margen */
-    max-width: calc(50% - 20px); /* Establece el ancho máximo de la carta */
-    margin-right: 20px; /* Espacio entre las cartas */
-    margin-bottom: 20px; /* Espacio entre las cartas y las filas */
-    border-radius: 14px 14px 0 0; /* Añade bordes redondeados a las cartas, solo en las esquinas superiores */
-    overflow: hidden; /* Evita que las imágenes se desborden de las cartas */
-    width: 200px; /* Ajusta el ancho de la carta */
-    height: 250px; /* Ajusta el alto de la carta */
-    border: 0;
-    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5); /* Sombreado */
+.memory-game {
+  text-align: center;
+}
 
-  }
-  
-  .memory-game .card-group .card:first-child,
-  .memory-game .card-group .card:last-child {
-    border-radius: 14px; /* Reinicia el borde superior o inferior para las cartas en los extremos */
+.memory-game .cards-grid {
+  width: 50vw;
+  height: 80vh;
+  flex-direction: column;
+  align-items: center;
+}
 
-  }
-  
-  
-  .memory-game .btn {
-    margin: 10px; /* Ajusta el valor según sea necesario */
-  }
+.card-group {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
 
-  .memory-game .button-container {
-    display: none; /* Oculta el contenedor y, por lo tanto, el botón */
-  }
-  
-  .memory-game .button-container {
-    display: block; /* Muestra el contenedor y el botón cuando shouldFlipIncorrect es verdadero */
-  }
-  .memory-game .card .card-image {
-    width: 100%; /* Haz que la imagen ocupe todo el ancho de la carta */
-    height: 100%; /* Haz que la imagen ocupe todo el alto de la carta */
-    object-fit: cover; /* Escala la imagen para que llene completamente su contenedor */
-  }
-  
-  
-  @media only screen and (max-width: 768px) {
-    .card {
-      flex: 0 0 calc(100% - 20px); /* En dispositivos con ancho menor o igual a 768px, establece el ancho de la carta al 100% del contenedor, con margen */
-      max-width: calc(100% - 20px); /* Establece el ancho máximo de la carta */
-    }
-  }
-  
+.memory-game .card {
+  width: 250px;
+  height: 250px;
+  perspective: 1000px;
+  cursor: pointer;
+
+  margin: 10px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+.memory-game .card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  backface-visibility: hidden;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.card.flipped {
+  transform: rotateY(180deg);
+  transition: transform 0.7s ease;
+}
+
+.question-mark-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

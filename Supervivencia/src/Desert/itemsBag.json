@@ -110,21 +110,5 @@
         "puntuacion": 5,
         "ventajas": "Puede usarse como desinfectante para heridas, recipiente reutilizable.",
         "desventajas":"No es recomendable para la hidratación y puede causar deshidratación si se consume."
-    },
-    {
-        "id": 15,
-        "nombre": "Paquete de tabaco",
-        "imagen": "camel.png",
-        "puntuacion": 1,
-        "ventajas": "Puede usarse como desinfectante para heridas, recipiente reutilizable.",
-        "desventajas":"No es recomendable para la hidratación y puede causar deshidratación si se consume."
-    },
-    {
-        "id": 16,
-        "nombre": "Mechero",
-        "imagen": "mechero.png",
-        "puntuacion": 14,
-        "ventajas": "Puede usarse como desinfectante para heridas, recipiente reutilizable.",
-        "desventajas":"No es recomendable para la hidratación y puede causar deshidratación si se consume."
-    } 
+    }
 ]

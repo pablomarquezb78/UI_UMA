@@ -11,7 +11,7 @@ function underConstruction({nombrePagina}) {
 
         <div className="adviseDiv">
             <div className='row'>
-                <img className='resizeImageSmall img-fluid' src={cleaningPenguin}></img>
+                <img className='img-fluid' class='resizeImageSmall' src={cleaningPenguin}></img>
             </div>
             <div className='row'>
                 <h4 className='text-center'>Oops...</h4>

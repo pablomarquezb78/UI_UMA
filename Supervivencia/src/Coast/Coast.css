@@ -1,127 +1,72 @@
-.gameHOL{
-  flex-direction: column;
-}
-
-.cabeceraHOL{
-  position: relative;
-  top: 10%;
-}
-
-.botonesHOL{
+.container {
+  width: 100vw;
+  height: 100vh;
   display: flex;
   flex-direction: column;
-  right: 0;
-  left: 0;
-  top: 0;
-  bottom: 0;
   justify-content: center;
   align-items: center;
-
-}
-
-
-#informacion_imagen_d {
-  display: flex;
-  flex-direction: row; 
-  justify-content: center;
-  align-items: center;
-  right: 50%;
-  left: 50%;
-  bottom: 0;
-  font-weight: bold; 
-  color: black;
-  white-space: nowrap;
-  z-index: 1;
-}
-
-#informacion_imagen_i {
-  position: absolute;
-  display: flex;
-  flex-direction: row; 
-  justify-content: center;
-  align-items: center;
-  right: 50%;
-  left: 50%;
-  bottom: 0;
-  font-weight: bold; 
-  color: black;
-  white-space: nowrap;
-  z-index: 1;
-}
-
-
-.card-text{
-  
-  background: rgba(255, 255, 255, 0.641);
-  backdrop-filter: blur( 7.5px );
-  -webkit-backdrop-filter: blur(7.5px);
-
-  box-shadow: 0 8px 32px 0 rgba( 0, 0, 0, 0.18);
-
-  border-radius: 4%;
-  border: 1px solid rgba( 0, 0, 0, 0.3);
-  z-index: 4;
-
-  transition: ease-in-out;
-  transition-duration: 150ms; 
-}
-
-.card-text:hover
-{
-    transition-duration: 300ms;
-    color: black;
-    text-shadow: 0 0 2em black;
-}
-
-
-.custom-button {
-  display: inline-block;
-  padding: 10px 20px;
-  font-size: 16px;
-  font-weight: bold;
   text-align: center;
-  text-decoration: none;
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  width: 45vw;
+  height: 45vh; 
+  margin: 10px;
+}
+
+.nombre {
+  margin-top: 20px;
+}
+
+
+/* Estilo específico para el botón */
+.custom-button {
+  background: #33ccff;
+  color: black;
   border: none;
-  border-radius: 5px;
-  background-color: black;
-  color: white;
+  position: relative;
+  height: 60px;
+  font-size: 1.6em;
+  padding: 0 2em;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: 800ms ease all;
+  outline: none;
+  margin: 10px;
 }
 
 .custom-button:hover {
-  transition-duration: 300ms;
-  color: #ffffff;
-  text-shadow: 0 0 2em #ffffff;
+  background: #fff;
+  color: black;
 }
 
-@media only screen and (max-width: 660px) {
-  .imagenesHOL{
-    flex-direction: column;
-  }
-
-  .imagenHOL{
-    width: 100vw;
-    height: auto;
-  }
-
-  #informacion_imagen_i{
-    top: 0;
-    bottom: auto;
-  }
+.custom-button:before,
+.custom-button:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 2px;
+  width: 0;
+  background: black;
+  transition: 400ms ease all;
 }
 
-
-.icon-animation{
-  animation: fadeIcon 2s ease forwards;
+.custom-button:after {
+  right: inherit;
+  top: inherit;
+  left: 0;
+  bottom: 0;
 }
 
-@keyframes fadeIcon {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+.custom-button:hover:before,
+.custom-button:hover:after {
+  width: 100%;
+  transition: 800ms ease all;
 }
 

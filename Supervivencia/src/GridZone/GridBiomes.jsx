@@ -55,18 +55,10 @@ function GridZone() {
         <GridCard nameVideo='desierto' texto='DESIERTO' linkTo='desert'/>
         <article className='gridCard sobrevive'>
             <h1 >sobrevive.</h1>
-<<<<<<< HEAD
             <div className='fogata'>
                 <img hidden={isFire != 2} src={Smoke}></img>
                 <img hidden={isFire != 1} onClick={() => {overFireHandler()}} src={hogueraPrendida}></img>
                 <img className={isShake ? 'shake-animation' : ''} hidden={isFire != 0} onClick={() => {fireHandler()}} src={hogueraSeca}></img>
-=======
-            {/* <h2>Desde lo más básico a lo más avanzado.</h2> */}
-            <div className="d-flex flex-column justify-content-center align-items-center w-100 h-100">
-                <img alt="hoguera" className='bonfire'  hidden={isFire != 2} src={Smoke}></img>
-                <img alt="hoguera" className="bonfire" hidden={isFire != 1} onClick={() => {overFireHandler()}} src={hogueraPrendida}></img>
-                <img className={`${isShake ? 'shake-animation' : ''} bonfire`} hidden={isFire != 0} onClick={() => {fireHandler()}} src={hogueraSeca}></img>
->>>>>>> 037b7cd039d0c0226f4fd71378e78db86bad7ba0
             </div>
         </article>
         <GridCard nameVideo='montana' texto='MONTAÑA' linkTo='mountain'/>

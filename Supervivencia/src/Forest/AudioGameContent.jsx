@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect, useLayoutEffect } from 'react';
+import react, { useRef, useState, useEffect, useLayoutEffect } from 'react';
 
 import './AudioGameContent.css';
 import PlayArrowIcon from "@mui/icons-material/PlayArrow"
