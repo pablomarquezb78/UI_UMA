@@ -1,12 +1,19 @@
+<<<<<<< HEAD
+=======
+// HigherLowerGame.jsx
+
+>>>>>>> parent of f63b3ba (TINDER = PASIÓN)
 import React, { useState, useEffect } from 'react';
 import data from './RandomImage.jsx';
 import './Coast.css';
+import { Translate } from '@mui/icons-material';
 
 function HigherLowerGame() {
 
     const [leftCardIndex, setLeftCardIndex] = useState(0);
     const [rightCardIndex, setRightCardIndex] = useState(1);
     const [imageArray, setImageArray] = useState([]);
+<<<<<<< HEAD
     const [showDeaths, setShowDeaths] = useState(false);
     const [buttonsVisible, setButtonsVisible] = useState(true);
 
@@ -17,6 +24,12 @@ function HigherLowerGame() {
     const [showAnimation, setShowAnimation] = useState(false);
     const [counter, setCounter] = useState(0);
     const [showResult, setShowResult] = useState(false); 
+=======
+    const [isCorrect, setIsCorrect] = useState(0);
+    const [showTickAnimation, setShowTickAnimation] = useState(false);
+    const [showCrossAnimation, setShowCrossAnimation] = useState(false);
+    const [showDeaths, setShowDeaths] = useState(false);
+>>>>>>> parent of f63b3ba (TINDER = PASIÓN)
 
     useEffect(() => {
         const numberOfCardAux = new Array(data.longData()).fill().map((_, index) => index + 1);
@@ -26,6 +39,7 @@ function HigherLowerGame() {
 
 
     useEffect(() => {
+<<<<<<< HEAD
         setShowAnimation(true);
         setTimeout(() => {
             setShowAnimation(false);
@@ -50,10 +64,30 @@ function HigherLowerGame() {
 
             }, 1500);
             return () => clearTimeout(timer);
+=======
+        if (rightCardIndex === imageArray.length) {
+            window.alert('GANASTE');
+            setIsCorrect(0);
+            resetGame();
+>>>>>>> parent of f63b3ba (TINDER = PASIÓN)
         }
     }, [tickAnimation]);
 
+    useEffect(() => {
+        if (showTickAnimation) {
+            const timer = setTimeout(() => {
+                setLeftCardIndex(rightCardIndex);
+                setRightCardIndex(rightCardIndex + 1);
+                setIsCorrect(0);
+                setShowTickAnimation(false);
+                setShowDeaths(false);
+            }, 1500);
+            return () => clearTimeout(timer);
+        }
+    }, [showTickAnimation]);
+
     const handleHigherClick = () => {
+<<<<<<< HEAD
         setButtonsVisible(false);
         if (parseInt(data.randomImage(imageArray[leftCardIndex]).mortalidad) < parseInt(data.randomImage(imageArray[rightCardIndex]).mortalidad)) {
             setIsCorrect(1);
@@ -72,14 +106,28 @@ function HigherLowerGame() {
             setTimeout(() => {
                 setCrossAnimation(false);
                 setShowResult(true); 
+=======
+        if (parseInt(data.randomImage(imageArray[leftCardIndex]).mortalidad) < parseInt(data.randomImage(imageArray[rightCardIndex]).mortalidad)) {
+            setIsCorrect(1);
+            setShowDeaths(true);
+            setShowTickAnimation(true);
+        } else {
+            setIsCorrect(2);
+            setShowDeaths(true);
+            setShowCrossAnimation(true);
+            setTimeout(() => {
+                resetGame();
+                setShowCrossAnimation(false);
+>>>>>>> parent of f63b3ba (TINDER = PASIÓN)
             }, 1500); 
         }
     };
-
+    
     const handleLowerClick = () => {
         if (parseInt(data.randomImage(imageArray[leftCardIndex]).mortalidad) > parseInt(data.randomImage(imageArray[rightCardIndex]).mortalidad)) {
             setIsCorrect(1);
             setShowDeaths(true);
+<<<<<<< HEAD
             setTickAnimation(true);
             setTimeout(() => {
                 setCounter(counter+1);
@@ -94,11 +142,22 @@ function HigherLowerGame() {
             setTimeout(() => {
                 setCrossAnimation(false);
                 setShowResult(true);
+=======
+            setShowTickAnimation(true);
+        } else {
+            setIsCorrect(2);
+            setShowDeaths(true);
+            setShowCrossAnimation(true);
+            setTimeout(() => {
+                resetGame();
+                setShowCrossAnimation(false);
+>>>>>>> parent of f63b3ba (TINDER = PASIÓN)
             }, 1500); 
         }
     };
 
     const resetGame = () => {
+<<<<<<< HEAD
         const numberOfCardAux = new Array(data.longData()).fill().map((_, index) => index + 1);
         const shuffleCard = numberOfCardAux.sort(() => Math.random() - 0.5);
         setImageArray(shuffleCard);
@@ -114,14 +173,26 @@ function HigherLowerGame() {
 
     const cancelGame = () => {
         setShowResult(false);
+=======
+        setLeftCardIndex(0);
+        setRightCardIndex(1);
+        const numberOfCardAux = new Array(data.longData()).fill().map((_, index) => index + 1);
+        const shuffleCard = numberOfCardAux.sort(() => Math.random() - 0.5);
+        setImageArray(shuffleCard);
+        setIsCorrect(0);
+        setShowDeaths(false);
+>>>>>>> parent of f63b3ba (TINDER = PASIÓN)
     };
-
 
     return (
         <section className='gameHOL container d-flex justify-content-center align-items-center text-center vh-100 vw-100'>
             <div className='cabeceraHOL'>
                 <h1>Higher or Lower</h1>
+<<<<<<< HEAD
                 <h2>¿Cuál es más letal para el humano 💀?</h2>
+=======
+                <h2>¿Cuál es más letal 💀?</h2>
+>>>>>>> parent of f63b3ba (TINDER = PASIÓN)
             </div>
             <section className='imagenesHOL position-relative d-flex justify-content-center align-items-center vh-100 vw-100'>
                 <div className='imagenHOL position-relative'>
@@ -136,6 +207,7 @@ function HigherLowerGame() {
                         <h3 className='card-text'> {data.randomImage(imageArray[rightCardIndex])?.nombre}: {showDeaths ? data.randomImage(imageArray[rightCardIndex])?.mortalidad : '?'} muertes al año </h3>
                     </div>
                     <div className='botonesHOL position-absolute'>
+<<<<<<< HEAD
                         {buttonsVisible && (
                             <>
                                 <button className='custom-button mb-1' onClick={handleHigherClick}>Higher</button>
@@ -162,6 +234,19 @@ function HigherLowerGame() {
             <div className="d-flex justify-content-center align-items-center m-3 vw-100">
                 <button className='custom-button m-4' onClick={resetGame}>Reiniciar</button>
                 <h3 className={`${showAnimation ? "puntuacionHOL" : ""}`}>Puntuación: {counter}</h3>
+=======
+                        <button className='custom-button mb-1' onClick={handleHigherClick}>Higher</button>
+                        <button className='custom-button' onClick={handleLowerClick}>Lower</button>
+                    </div> 
+                </div>
+                <div className={`position-absolute ${isCorrect !== 0 && 'fade-icon'}`}>
+                    {isCorrect === 0 && <img src="src/assets/Coast/versus-icon.png"  alt="VS" style={{ maxWidth: 'calc(50px + (100 - 50) * ((100vmin - 350px) / (1080 - 350)))', backgroundColor: 'black', borderRadius:'50%'}} />}
+                    {showTickAnimation && <img src="src/assets/Coast/tick-icon.png" alt="Tick" style={{ maxWidth: 'calc(50px + (100 - 50) * ((100vmin - 350px) / (1080 - 350)))', backgroundColor: 'green', borderRadius:'50%' }} />}
+                    {isCorrect === 2 && <img src="src/assets/Coast/cross-icon.png" alt="Cross" style={{ maxWidth: 'calc(50px + (100 - 50) * ((100vmin - 350px) / (1080 - 350)))', backgroundColor: 'red', borderRadius:'50%' }} />}
+                </div>
+            </section>
+            <div>
+>>>>>>> parent of f63b3ba (TINDER = PASIÓN)
             </div>
         </section>
     );
@@ -174,4 +259,7 @@ export default HigherLowerGame;
 
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> parent of f63b3ba (TINDER = PASIÓN)
