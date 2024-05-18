@@ -56,7 +56,6 @@
   backdrop-filter: blur( 7.5px );
   -webkit-backdrop-filter: blur(7.5px);
 
-<<<<<<< HEAD
   
   box-shadow: 0 8px 32px 0 rgba( 0, 0, 0, 0.18);
 
@@ -66,16 +65,6 @@
   transition-duration: 150ms; 
 
   max-width: calc(400px + (600 - 400) * ((100vmin - 350px) / (1080 - 350)))
-=======
-  box-shadow: 0 8px 32px 0 rgba( 0, 0, 0, 0.18);
-
-  border-radius: 4%;
-  border: 1px solid rgba( 0, 0, 0, 0.3);
-  z-index: 4;
-
-  transition: ease-in-out;
-  transition-duration: 150ms; 
->>>>>>> parent of f63b3ba (TINDER = PASIÓN)
 }
 
 .card-text:hover
@@ -87,10 +76,6 @@
 
 
 .custom-button {
-<<<<<<< HEAD
-=======
-  display: inline-block;
->>>>>>> parent of f63b3ba (TINDER = PASIÓN)
   padding: 10px 20px;
   font-size: 16px;
   font-weight: bold;

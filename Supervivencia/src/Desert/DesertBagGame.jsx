@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useCallback } from "react";
 import Bag from './DesertImages/Bag.png';
 import './Desert.css';
-<<<<<<< HEAD
 import initialItemList from './itemsBag.json';
 import useFitText from "use-fit-text";
 import rightButton from './DesertImages/rightButton.png';
@@ -11,22 +10,11 @@ import addButton from './DesertImages/add.png';
 function DesertBagGame() {
     const imgPath = "src/Desert/DesertImages/";
     const [suma, setSuma] = useState(0);
-=======
-import itemList from './itemsBag.json';
-import useFitText from "use-fit-text";
-
-function DesertBagGame() {
-    const imgPath = "src/Desert/DesertImages/";
-    //Control de puntos de supervivencia conseguidos
-    const [suma,setSuma] = useState(0);
-    //Indice de la lista actual
->>>>>>> parent of f63b3ba (TINDER = PASIÓN)
     const [currentIndex, setCurrentIndex] = useState(0);
     //Animacion de objeto a mochila
     const [isAnimating, setIsAnimating] = useState(false);
     //animacion mochila
     const [isItemIncluded, setIsItemIncluded] = useState(false);
-<<<<<<< HEAD
     const [indexChanged, setIndexChanged] = useState(false);
     const [itemList, setItemList] = useState([...initialItemList]);
 
@@ -36,23 +24,11 @@ function DesertBagGame() {
     });
 
     useEffect(() => {
-=======
-    //control cambio indice
-    const [indexChanged,setIndexChanged] = useState(false);
-
-    const { fontSize, ref } = useFitText();
-
-    useEffect(() =>{
->>>>>>> parent of f63b3ba (TINDER = PASIÓN)
         setIndexChanged(true);
         setTimeout(() => {
             setIndexChanged(false);
         }, 500);
-<<<<<<< HEAD
     }, [currentIndex]);
-=======
-    },[currentIndex])
->>>>>>> parent of f63b3ba (TINDER = PASIÓN)
 
     useEffect(() => {
         if (!isAnimating && isItemIncluded) {
@@ -72,10 +48,6 @@ function DesertBagGame() {
 
     const includeItem = () => {
         if (itemList.length === 8) {
-<<<<<<< HEAD
-=======
-            //Control Fin del Juego
->>>>>>> parent of f63b3ba (TINDER = PASIÓN)
             return;
         }
         setSuma(suma + itemList[currentIndex].puntuacion);

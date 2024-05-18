@@ -4,18 +4,10 @@
     background-size: cover;
 }
 
-<<<<<<< HEAD
 #completeGameSection{
     width: 80%;
     bottom: 20%;
     height: 60%;
-=======
-#bagGameDisplay{
-    width: 80%;
-    bottom: 25%;
-    height: 40%;
-    gap: 5%;
->>>>>>> parent of f63b3ba (TINDER = PASIÓN)
 
     background: rgba( 165, 165, 165, 0.1 );
     backdrop-filter: blur( 7.5px );
@@ -25,7 +17,6 @@
     border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
 
-<<<<<<< HEAD
 #bagGameDisplay{
     gap: 2%;    
     height: 80%;
@@ -45,24 +36,6 @@
 
 #bagButtonContainer{
     height: 30%;
-=======
-/*middle side*/
-
-#itemImgContainer{
-    height: 70%;
-    overflow: hidden;
-}
-
-#itemImgContainer img{
-    object-fit: contain;
-    height: auto;
-    max-width: 100%;
-    z-index: 1;
-}
-
-#buttonContainer{
-    height: 20%;
->>>>>>> parent of f63b3ba (TINDER = PASIÓN)
     gap: 5%;
 }
 
@@ -94,7 +67,6 @@
     width: 30%;
 }
 
-<<<<<<< HEAD
 #leftButtonBag{
     height: 30%;
 }
@@ -161,20 +133,6 @@
 
 #resultDisplay{
     height: 20%;
-=======
-#itemInfoContainer{
-    width: 20%;
-    overflow-wrap: break-word;
-    overflow: hidden;
-}
-
-
-/**/
-
-#resultDisplay{
-    position: relative;
-    top: 10%;
->>>>>>> parent of f63b3ba (TINDER = PASIÓN)
 }
 
 @keyframes growAndShrink {
@@ -198,11 +156,7 @@
         transform: translateX(0) scale(1);
     }
     100% {
-<<<<<<< HEAD
         transform: translateX(-30vw) scale(0.01);
-=======
-        transform: translateX(-60vh) scale(0.01);
->>>>>>> parent of f63b3ba (TINDER = PASIÓN)
     }
 }
 
@@ -223,7 +177,6 @@
 
 .appear-animation {
     animation: appear 0.5s ease-in-out;
-<<<<<<< HEAD
 }
 
 .btn-hover-zoom img {
@@ -234,6 +187,4 @@
     filter: grayscale(100%) invert(100%);
     transform: scale(1.1);
     filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.5));
-=======
->>>>>>> parent of f63b3ba (TINDER = PASIÓN)
 }
