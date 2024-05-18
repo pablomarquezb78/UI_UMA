@@ -75,7 +75,7 @@ function HigherLowerGame() {
             }, 1500); 
         }
     };
-    
+
     const handleLowerClick = () => {
         if (parseInt(data.randomImage(imageArray[leftCardIndex]).mortalidad) > parseInt(data.randomImage(imageArray[rightCardIndex]).mortalidad)) {
             setIsCorrect(1);
@@ -115,6 +115,7 @@ function HigherLowerGame() {
     const cancelGame = () => {
         setShowResult(false);
     };
+
 
     return (
         <section className='gameHOL container d-flex justify-content-center align-items-center text-center vh-100 vw-100'>

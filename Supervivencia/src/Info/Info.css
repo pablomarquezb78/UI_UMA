@@ -1,52 +1,45 @@
+#infoSection{
+    background-color: #F5F5F5;
+    justify-content: space-around;
+    align-items: flex-start;
+    display: flex;
+    padding-right: 20px;
+    padding-top: 50px;
+    padding-bottom: 70px;
+}
+
 #infoSection a{
     display: block;
+    text-decoration: none;
+    margin-bottom: -10px;
+}
+
+#infoSection h5{
+    padding-bottom: 20px;
+}
+
+#socialNetWorkDisplayer{
+    display: flex;
+    justify-content: space-around;
 }
 
 #FaqDiv{
     position: relative;
-    top: 0;
+    top: 15%;
 }
 
-/*About Us*/
-
-/*Containers*/
-
-#titleContainer{
-    height: 10vh;
-}
-
-#textContainer{
-    height: 30vh;
-}
-
-#imgContainer{
-    height: 35vh;
-    padding-bottom: 10vh;
-}
-
-/* Fin Containers*/
-
-#imgContainer img{
-    width: auto;
-    max-height: 100%;
-}
-
-.fontControlAboutUs{
-    font-size: calc(14px + (32 - 14) * ((100vmin - 350px) / (1080 - 350)));
-} 
-
-.fontControlInfoSection{
-    font-size: calc(10px + (20 - 10) * ((100vmin - 350px) / (1080 - 350)));
-}
-
-.fontControlInfoSectionh5{
-    font-size: calc(20px + (30 - 20) * ((100vmin - 350px) / (1080 - 350)));
-}
-
-#container{
+#APND_Logo{
     position: relative;
-    height: 90vh;
-    top: 10vh;
+    max-width: 600px;
+    height: 80%;
+    margin: 0 auto;
+    padding: 0 30px;
+    display: block;
+    top: 15%;
+    text-align: center;
 }
 
-/* Fin About Us*/
+#APND_Logo img{
+    max-width: 100%;
+    height: 70%;
+}

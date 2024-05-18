@@ -68,59 +68,33 @@ function DesertBagGame() {
     };
 
     return (
-        <section id="desertGameCompleteSection" className="position-relative vw-100 vh-100">
-            <div id="completeGameSection" className="d-flex flex-column position-absolute start-50 translate-middle-x">
-                <div id="resultDisplay" className="d-flex justify-content-center">
-                    <h1 className="text-center text-white">¡Prepara la mochila para sobrevivir!</h1>
-                    <button className="btn btn-transparent" onClick={restartGame}>Reiniciar</button>
-                    <button className="btn btn-transparent" onClick={restartGame}>Tutorial</button>
+        <section id="completeSection" className="position-relative vw-100 vh-100">
+            <div id="resultDisplay" className="">
+                <h1 className="text-center text-white">¡Prepara la mochila para sobrevivir!</h1>
+                <h2 className={`text-center text-white ${itemList.length === 7 ? "" : "d-none"}`}>¡Fin del juego! Has conseguido {suma} puntos de supervivencia</h2>
+            </div>
+            <div id="bagGameDisplay" className="position-absolute d-flex justify-content-center w-100">
+                <div id="BagContainer" className={`d-flex flex-grow-0 h-100 ${isItemIncluded ? "item-included" : ""}`}>
+                    <img src={Bag} alt="Bag" className="img-fluid"></img>
                 </div>
-                <div id="bagGameDisplay" className="d-flex justify-content-center align-items-center">
-                    <div id="bagPlace" className="d-flex flex-grow-0 h-100 flex-column justify-content-center">
-                        <div id="CapacityContainer">
-                            <h5 className="d-block text-center text-white f-size-4">{16 - itemList.length}/8</h5>
-                        </div>
-                        <div id="BagContainer" className={`d-flex justify-content-center flex-grow-0 w-100  ${isItemIncluded ? "item-included" : ""}`}>
-                            <img src={Bag} alt="Bag" className="img-fluid"></img>
-                        </div>
+                <div id="itemsContainer" className="h-100 d-flex flex-column align-items-center justify-content-center">
+                    <div id="imgContainer" className="d-flex justify-content-center flex-grow-0 w-100">
+                         <img src={imgPath + itemList[currentIndex].imagen} alt={`Imagen ${itemList[currentIndex].id}`}
+                          className={`img-fluid ${isAnimating ? "move-left-scale-animation" : ""}`}
+                          onAnimationEnd={() => {
+                              setIsAnimating(false); // Indica que la animación del objeto ha terminado
+                          }} />
                     </div>
-                    <div id="itemsContainer" className="h-100 d-flex flex-column align-items-center justify-content-center">
-                        <div id="itemImgContainer" className="d-flex justify-content-center w-100">
-                            <img
-                                src={imgPath + itemList[currentIndex].imagen}
-                                alt={`Imagen ${itemList[currentIndex].id}`}
-                                className={`${isAnimating ? "move-left-scale-animation" : ""} ${(isItemIncluded || indexChanged) ? "appear-animation" : ""} `}
-                                onAnimationEnd={() => {
-                                    setIsAnimating(false); // Indica que la animación del objeto ha terminado
-                                }}
-                            />
-                        </div>
-                        {itemList.length === 8 && (
-                            <div className=" position-absolute z-1 bg-white rounded p-3">
-                                <div className="d-flex flex-column justify-content-center align-items-center">
-                                    <h2 className="text-center">¡Fin del juego! Has conseguido {suma} puntos de supervivencia</h2>
-                                    <button className="btn btn-dark" onClick={restartGame}>Reiniciar</button>
-                                </div>
-                            </div>
-                        )}
-                        <div id="bagButtonContainer" className="d-flex justify-content-center align-items-center">
-                            <button id="leftButtonBag" className="mb-1 bg-transparent border-0 btn-hover-zoom" onClick={prevImage}><img src={leftButton} className="w-100 h-100"></img></button>
-                            <button id="addButtonBag" className="bg-transparent border-0 btn-hover-zoom" onClick={includeItem}><img src={addButton} className="w-100 h-100"></img></button>
-                            <button id="rigtButtonBag" className="mb-1 bg-transparent border-0 btn-hover-zoom" onClick={nextImage}><img src={rightButton} className="w-100 h-100"></img></button>
-                        </div>
+                    <div id="buttonContainer">
+                        <button className="btn btn-primary" onClick={prevImage}>&lt;-</button>
+                        <button className="btn btn-primary" onClick={includeItem}>Incluir</button>
+                        <button className="btn btn-primary" onClick={nextImage}>-&gt;</button>
                     </div>
-                    <div id="itemInfoContainer" className='d-flex flex-column justify-content-center'>
-                        <span id="itemDisplayed" ref={ref} style={{fontSize , height: '20%', width:'100%', letterSpacing: '1px', lineHeight: '1.2'}} className="text-white text-center">
-                            {itemList[currentIndex].nombre}
-                        </span>
-                        <span id='pros' ref={ref} style={{fontSize , height: '40%', width:'100%' , letterSpacing: '1px', lineHeight: '1.2'}} className="text-white">
-                            Ventajas: {itemList[currentIndex].ventajas}
-                        </span><br/>
-                        <span id='cons' ref={ref} style={{fontSize , height: '40%', width:'100%', letterSpacing: '1px', lineHeight: '1.2'}} className="text-white">
-                            Desventajas: {itemList[currentIndex].desventajas}
-                        </span>
-                         {/*PARA DEBUGEAR EL FITTEXT AÑADIR border: "1px solid red" AL STYLE*/}
-                    </div>
+                </div>
+                <div id="itemInfoContainer">
+                    <h3 id="itemDisplayed" className="text-white text-center">{itemList[currentIndex].nombre}</h3><br/>
+                    <span className="fw-bold text-white">Ventajas: {itemList[currentIndex].ventajas}</span> <br/><br/>
+                    <span className="fw-bold text-white">Desventajas: {itemList[currentIndex].desventajas}</span>
                 </div>
             </div>
         </section>

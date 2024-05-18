@@ -1,12 +1,12 @@
 import React from 'react'
-import CoastStart from './CoastStart.jsx';
-import InfoSection from '../Info/InfoSection.jsx'
-import HigerOrLowerGame from './HigherOrLower.jsx'
+import GridInfo from '../Info/InfoSection.jsx'
 import {useRef} from 'react';
 import '../CSS/main.css'
 import '../CSS/Start.css'
+import TinderGame from './TinderGame.jsx';
+import SelvaStart from './SelvaStart.jsx';
 
-function CoastMain(){
+function SelvaMain(){
 
     const gridInfoRef = useRef(null);
     const startRef = useRef(null);
@@ -24,15 +24,15 @@ function CoastMain(){
             <main className='sliderContainer'>
 
                 <div className='sliderItem' ref={startRef}>
-                    <CoastStart scrollToGridInfo={scrollToGridInfo}/>
+                    <SelvaStart scrollToGridInfo={scrollToGridInfo}/>
+                </div>
+            
+                <div className='sliderItem'>
+                    <TinderGame/>
                 </div>
 
                 <div className='sliderItem' ref={gridInfoRef}>
-                    <HigerOrLowerGame/>
-                </div>
-
-                <div className='sliderItem' ref={gridInfoRef}>
-                    <InfoSection/>
+                    <GridInfo scrollToStart={scrollToStart}/>
                 </div>
 
             </main>  
@@ -41,4 +41,4 @@ function CoastMain(){
 
 }
 
-export default CoastMain;
+export default SelvaMain;

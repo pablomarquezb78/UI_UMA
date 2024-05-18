@@ -8,6 +8,7 @@ import Smoke from '../assets/VideosGrid/smoke.gif'
 
 import './Grid.css';
 import GridCard from './GridCard';
+import Prueba from './prueba';
 
 function GridZone() {
 
@@ -47,20 +48,18 @@ function GridZone() {
 
    return(
     
-    <section id="sectionGrid" className="vw-100 vh-100">
-
-    <div className='gridBiomeSection'>
+    <section>
+    
+    <div className='gridSection'>
        
         <GridCard nameVideo='desierto' texto='DESIERTO' linkTo='desert'/>
-        <article className="d-flex flex-column justify-content-center align-items-center gridCard">
+        <article className='gridCard sobrevive'>
             <h1 >sobrevive.</h1>
-            {/* <h2>Desde lo más básico a lo más avanzado.</h2> */}
-            <div className="d-flex flex-column justify-content-center align-items-center w-100 h-100">
-                <img alt="hoguera" className='bonfire'  hidden={isFire != 2} src={Smoke}></img>
-                <img alt="hoguera" className="bonfire" hidden={isFire != 1} onClick={() => {overFireHandler()}} src={hogueraPrendida}></img>
-                <img className={`${isShake ? 'shake-animation' : ''} bonfire`} hidden={isFire != 0} onClick={() => {fireHandler()}} src={hogueraSeca}></img>
+            <div className='fogata'>
+                <img hidden={isFire != 2} src={Smoke}></img>
+                <img hidden={isFire != 1} onClick={() => {overFireHandler()}} src={hogueraPrendida}></img>
+                <img className={isShake ? 'shake-animation' : ''} hidden={isFire != 0} onClick={() => {fireHandler()}} src={hogueraSeca}></img>
             </div>
-            {/* <h2>Adéntrate en el mundo de la supervivencia.</h2> */}
         </article>
         <GridCard nameVideo='montana' texto='MONTAÑA' linkTo='mountain'/>
         <GridCard nameVideo='jungla' texto='JUNGLA' linkTo='jungle'/>
@@ -70,6 +69,8 @@ function GridZone() {
     </div>
 
     </section>
+
+    // <Prueba></Prueba>
 
     )
 }

@@ -1,6 +1,7 @@
 import React from 'react';
 import '../CSS/Start.css';
 import NavBar from '../Start/NavBar';
+import UnderConstruction from '../Components/UnderConstructionScreen'
 
 function CoastStart({scrollToGridInfo}) {
     
@@ -11,6 +12,10 @@ function CoastStart({scrollToGridInfo}) {
     
             {/* Envuelto por una etiqueta header dentro del componente NavBar*/}
             <NavBar scrollToGridInfo={scrollToGridInfo} position={"fixed"}/>
+
+            <UnderConstruction nombrePagina={'costa'}/>
+
+
        </section>
  
     )

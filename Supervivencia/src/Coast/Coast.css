@@ -60,8 +60,6 @@
   box-shadow: 0 8px 32px 0 rgba( 0, 0, 0, 0.18);
 
   border-radius: 4%;
-  border: 1px solid rgba( 0, 0, 0, 0.3);
-  z-index: 4;
 
   transition: ease-in-out;
   transition-duration: 150ms; 
