@@ -39,30 +39,6 @@
     gap: 5%;
 }
 
-/**/
-
-/*Left side*/
-
-#CapacityContainer{
-    height: 10%;
-}
-
-#BagContainer{
-    height: 80%;
-    overflow: hidden;
-    z-index: 0;
-}
-
-#BagContainer img{
-    object-fit: contain;
-    height: auto;
-    max-width: 100%;
-}
-
-/**/
-
-/*Right side*/
-
 #itemsContainer{
     width: 30%;
 }
@@ -180,11 +156,14 @@
 }
 
 .btn-hover-zoom img {
-    transition: filter 0.3s ease, transform 0.3s ease, filter 0.3s ease;
+    transition: filter 0.3s ease, transform 0.3s ease;
 }
 
 .btn-hover-zoom:hover img, .btn-hover-zoom:focus img {
     filter: grayscale(100%) invert(100%);
     transform: scale(1.1);
-    filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.5));
+}
+
+.btn-hover-zoom img:hover, .btn-hover-zoom img:focus {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
 }
