@@ -2,6 +2,9 @@ import { useState, useRef } from "react";
 import getRandom from './RandomFood';
 import TinderCard from './TinderCard.jsx';
 import help from './FotosAlimentos/ayuda.png';
+import veneno from './FotosAlimentos/veneno.png'
+import correcto from './FotosAlimentos/correcto.png'
+
 
 function TinderDeck({ numberOfCard }) {
     const [showCard, setShowCard] = useState([1, 0]);
@@ -91,6 +94,7 @@ function TinderDeck({ numberOfCard }) {
 
             const actualCard = event.currentTarget;
             const startPosition = event.pageX ?? event.touches[0].pageX;
+            actualCard.style.cursor = 'pointer';
             document.addEventListener('mousemove', (moveEvent) => moveDrag(actualCard, startPosition, moveEvent));
             document.addEventListener('mouseup', (upEvent) => endDrag(actualCard, upEvent));
             document.addEventListener('touchmove', (moveEvent) => moveDrag(actualCard, startPosition, moveEvent));
@@ -127,7 +131,23 @@ function TinderDeck({ numberOfCard }) {
                     {needHelp && (
                         <div id="helpTinder" onMouseDown={(event) => startDrag(event)} onTouchStart={(event) => startDrag(event)}>
                             <h2>Veo que necesitas algo de ayuda</h2>
-                            <p>El juego consiste en arrastrar la tarjeta a la derecha si crees que el alimento es venenoso o arrastrarlo a la izquierda si crees que no lo es.</p>
+                            <p>El juego consiste en arrastrar la tarjeta a la derecha si crees que el alimento no es venenoso o arrastrarlo a la izquierda si crees que lo es.</p>
+                            <h2>Los indicadores son:</h2>
+                            <div>
+                                <div className='helpResultImage'>
+                                    <h3>VENENOSO</h3>
+                                    <span>
+                                        <img src={veneno}></img>
+                                    </span>
+                                </div>
+                                <div className='helpResultImage'>
+                                    <h3>NO VENENOSO</h3>
+                                    <span>
+                                        <img src={correcto}></img>
+                                    </span>
+                                </div>
+                            
+                            </div>
                             <h3>Prueba a deslizarme!</h3>
                         </div>
                     )}
