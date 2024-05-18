@@ -1,8 +1,19 @@
-.container {
-  width: 100vw;
-  height: 100vh;
+.gameHOL{
+  flex-direction: column;
+}
+
+.cabeceraHOL{
+  position: relative;
+  top: 10%;
+}
+
+.botonesHOL{
   display: flex;
   flex-direction: column;
+  right: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
   justify-content: center;
   align-items: center;
 
@@ -49,8 +60,6 @@
   box-shadow: 0 8px 32px 0 rgba( 0, 0, 0, 0.18);
 
   border-radius: 4%;
-  border: 1px solid rgba( 0, 0, 0, 0.3);
-  z-index: 4;
 
   transition: ease-in-out;
   transition-duration: 150ms; 
@@ -71,68 +80,49 @@
   font-size: 16px;
   font-weight: bold;
   text-align: center;
-}
-
-.cards {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.card {
-  width: 45vw;
-  height: 45vh; 
-  margin: 10px;
-}
-
-.nombre {
-  margin-top: 20px;
-}
-
-
-/* Estilo específico para el botón */
-.custom-button {
-  background: #33ccff;
-  color: black;
+  text-decoration: none;
   border: none;
-  position: relative;
-  height: 60px;
-  font-size: 1.6em;
-  padding: 0 2em;
+  border-radius: 5px;
+  background-color: black;
+  color: white;
   cursor: pointer;
-  transition: 800ms ease all;
-  outline: none;
-  margin: 10px;
+  transition: background-color 0.3s;
 }
 
 .custom-button:hover {
-  background: #fff;
-  color: black;
+  transition-duration: 300ms;
+  color: #ffffff;
+  text-shadow: 0 0 2em #ffffff;
 }
 
-.custom-button:before,
-.custom-button:after {
-  content: '';
-  position: absolute;
-  top: 0;
-  right: 0;
-  height: 2px;
-  width: 0;
-  background: black;
-  transition: 400ms ease all;
+@media only screen and (max-width: 660px) {
+  .imagenesHOL{
+    flex-direction: column;
+  }
+
+  .imagenHOL{
+    width: 100vw;
+    height: auto;
+  }
+
+  #informacion_imagen_i{
+    top: 0;
+    bottom: auto;
+  }
 }
 
-.custom-button:after {
-  right: inherit;
-  top: inherit;
-  left: 0;
-  bottom: 0;
+
+.icon-animation{
+  animation: fadeIcon 2s ease forwards;
 }
 
-.custom-button:hover:before,
-.custom-button:hover:after {
-  width: 100%;
-  transition: 800ms ease all;
+@keyframes fadeIcon {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes growAndShrinkHOL {
