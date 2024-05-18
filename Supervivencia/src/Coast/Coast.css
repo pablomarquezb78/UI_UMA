@@ -5,6 +5,74 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+<<<<<<< HEAD
+=======
+
+}
+
+
+#informacion_imagen_d {
+  display: flex;
+  flex-direction: row; 
+  justify-content: center;
+  align-items: center;
+  right: 50%;
+  left: 50%;
+  bottom: 0;
+  font-weight: bold; 
+  color: black;
+  white-space: nowrap;
+  z-index: 1;
+}
+
+#informacion_imagen_i {
+  position: absolute;
+  display: flex;
+  flex-direction: row; 
+  justify-content: center;
+  align-items: center;
+  right: 50%;
+  left: 50%;
+  bottom: 0;
+  font-weight: bold; 
+  color: black;
+  white-space: nowrap;
+  z-index: 1;
+}
+
+
+.card-text{
+  
+  background: rgba(255, 255, 255, 0.641);
+  backdrop-filter: blur( 7.5px );
+  -webkit-backdrop-filter: blur(7.5px);
+
+  
+  box-shadow: 0 8px 32px 0 rgba( 0, 0, 0, 0.18);
+
+  border-radius: 4%;
+  border: 1px solid rgba( 0, 0, 0, 0.3);
+  z-index: 4;
+
+  transition: ease-in-out;
+  transition-duration: 150ms; 
+
+  max-width: calc(400px + (600 - 400) * ((100vmin - 350px) / (1080 - 350)))
+}
+
+.card-text:hover
+{
+    transition-duration: 300ms;
+    color: black;
+    text-shadow: 0 0 2em black;
+}
+
+
+.custom-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+>>>>>>> 5693e81f28b891b452bd82a37d55926f92594b3d
   text-align: center;
 }
 
@@ -70,3 +138,18 @@
   transition: 800ms ease all;
 }
 
+@keyframes growAndShrinkHOL {
+  0% {
+      transform: scale(1);
+  }
+  50% {
+      transform: scale(3);
+  }
+  100% {
+      transform: scale(1);
+  }
+}
+
+.puntuacionHOL{
+  animation: growAndShrink 0.5s ease;
+}
