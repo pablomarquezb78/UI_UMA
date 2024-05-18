@@ -1,9 +1,3 @@
-<<<<<<< HEAD
-// HigherLowerGame.jsx
-
-
-=======
->>>>>>> 5693e81f28b891b452bd82a37d55926f92594b3d
 import React, { useState, useEffect } from 'react';
 import data from './RandomImage.jsx';
 import './Coast.css';
@@ -13,8 +7,6 @@ function HigherLowerGame() {
     const [leftCardIndex, setLeftCardIndex] = useState(0);
     const [rightCardIndex, setRightCardIndex] = useState(1);
     const [imageArray, setImageArray] = useState([]);
-<<<<<<< HEAD
-=======
     const [showDeaths, setShowDeaths] = useState(false);
     const [buttonsVisible, setButtonsVisible] = useState(true);
 
@@ -25,7 +17,6 @@ function HigherLowerGame() {
     const [showAnimation, setShowAnimation] = useState(false);
     const [counter, setCounter] = useState(0);
     const [showResult, setShowResult] = useState(false); 
->>>>>>> 5693e81f28b891b452bd82a37d55926f92594b3d
 
     useEffect(() => {
         const numberOfCardAux = new Array(data.longData()).fill().map((_, index) => index + 1);
@@ -33,23 +24,6 @@ function HigherLowerGame() {
         setImageArray(shuffleCard);
     }, []);
 
-<<<<<<< HEAD
-    useEffect(() => {
-        if(rightCardIndex == imageArray.length){
-            window.alert('GANASTE');
-            resetGame();
-        }
-    }, [rightCardIndex]);
-
-    const handleHigherClick = () => {
-        if (parseInt(data.randomImage(imageArray[leftCardIndex]).mortalidad) > parseInt(data.randomImage(imageArray[rightCardIndex]).mortalidad)) {
-            setLeftCardIndex(rightCardIndex);
-            setRightCardIndex(rightCardIndex + 1);
-        } else {
-            window.alert('Fallaste');
-            // Maneja la lógica de reinicio o finalización del juego aquí
-            resetGame();
-=======
 
     useEffect(() => {
         setShowAnimation(true);
@@ -99,20 +73,10 @@ function HigherLowerGame() {
                 setCrossAnimation(false);
                 setShowResult(true); 
             }, 1500); 
->>>>>>> 5693e81f28b891b452bd82a37d55926f92594b3d
         }
     };
 
     const handleLowerClick = () => {
-<<<<<<< HEAD
-        if (parseInt(data.randomImage(imageArray[leftCardIndex]).mortalidad) < parseInt(data.randomImage(imageArray[rightCardIndex]).mortalidad)) {
-            setLeftCardIndex(rightCardIndex);
-            setRightCardIndex(rightCardIndex + 1);
-        } else {
-            window.alert('Fallaste');
-            // Maneja la lógica de reinicio o finalización del juego aquí
-            resetGame();
-=======
         if (parseInt(data.randomImage(imageArray[leftCardIndex]).mortalidad) > parseInt(data.randomImage(imageArray[rightCardIndex]).mortalidad)) {
             setIsCorrect(1);
             setShowDeaths(true);
@@ -131,19 +95,10 @@ function HigherLowerGame() {
                 setCrossAnimation(false);
                 setShowResult(true);
             }, 1500); 
->>>>>>> 5693e81f28b891b452bd82a37d55926f92594b3d
         }
     };
 
     const resetGame = () => {
-<<<<<<< HEAD
-        // Reiniciar el juego aquí
-        setLeftCardIndex(0);
-        setRightCardIndex(1);
-        const numberOfCardAux = new Array(data.longData()).fill().map((_, index) => index + 1);
-        const shuffleCard = numberOfCardAux.sort(() => Math.random() - 0.5);
-        setImageArray(shuffleCard);
-=======
         const numberOfCardAux = new Array(data.longData()).fill().map((_, index) => index + 1);
         const shuffleCard = numberOfCardAux.sort(() => Math.random() - 0.5);
         setImageArray(shuffleCard);
@@ -159,29 +114,10 @@ function HigherLowerGame() {
 
     const cancelGame = () => {
         setShowResult(false);
->>>>>>> 5693e81f28b891b452bd82a37d55926f92594b3d
     };
 
 
     return (
-<<<<<<< HEAD
-        <section className='container'>
-            <h1>Higher or Lower</h1>
-            <h2>¿Cúal es más letal 💀?</h2>
-            <section className='cards'>
-                <div className='card'>
-                    <img src={`src/assets/Coast/${data.randomImage(imageArray[leftCardIndex])?.foto}`}/>
-                    <h2 className='nombre'>{data.randomImage(imageArray[leftCardIndex])?.nombre}</h2>
-                    <h2>{data.randomImage(imageArray[leftCardIndex])?.mortalidad} muertes al año</h2>
-                </div>
-                <div className='card'>
-                    <img src={`src/assets/Coast/${data.randomImage(imageArray[rightCardIndex])?.foto}`}/>
-                    <h2 className='nombre'>{data.randomImage(imageArray[rightCardIndex])?.nombre}</h2>        
-                </div>
-            </section>
-            <button className='custom-button' onClick={handleHigherClick}>Higher</button>
-            <button className='custom-button' onClick={handleLowerClick}>Lower</button>
-=======
         <section className='gameHOL container d-flex justify-content-center align-items-center text-center vh-100 vw-100'>
             <div className='cabeceraHOL'>
                 <h1>Higher or Lower</h1>
@@ -227,7 +163,6 @@ function HigherLowerGame() {
                 <button className='custom-button m-4' onClick={resetGame}>Reiniciar</button>
                 <h3 className={`${showAnimation ? "puntuacionHOL" : ""}`}>Puntuación: {counter}</h3>
             </div>
->>>>>>> 5693e81f28b891b452bd82a37d55926f92594b3d
         </section>
     );
 }
@@ -237,9 +172,6 @@ export default HigherLowerGame;
 
 
 
-<<<<<<< HEAD
-=======
 
 
 
->>>>>>> 5693e81f28b891b452bd82a37d55926f92594b3d
