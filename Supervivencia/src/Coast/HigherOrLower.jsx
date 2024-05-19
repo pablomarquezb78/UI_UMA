@@ -118,12 +118,10 @@ function HigherLowerGame() {
     const cancelGame = () => {
         setShowResult(false);
         setNeedHelp(false);
-        setButtonsVisible(true);
     };
 
     const helpHandler = () => {
         setNeedHelp(true);
-        setButtonsVisible(false);
     }
 
     return (
@@ -157,9 +155,10 @@ function HigherLowerGame() {
                     </div> 
                 </div>
                 {needHelp && (
-                    <div className="puntuacionHOL position-absolute z-1 bg-white rounded p-2" style={{ width: '80%', maxWidth: '700px', textAlign: 'center'}}>
+                    <div className="puntuacionHOL position-absolute z-1 bg-white rounded p-2" style={{ width: '80%', maxWidth: '1050px', textAlign: 'center'}}>
                         <h2 style={{fontSize:'calc(20px + (30 - 20) * ((100vmin - 350px) / (1080 - 350)))'}}>Ayuda</h2>
-                        <p style={{ whiteSpace: 'normal' }}>El juego consiste en seleccionar si el ser vivo de la imagen de la derecha mata más o menos personas al año que el ser vivo izquierda</p>
+                        <p style={{ whiteSpace: 'normal' }}>El juego está basado en el típico juego de Higher Or Lower pero con una pequeña modificación. <br/>
+                        Tienes que seleccionar si el ser vivo de la imagen de la derecha mata más o menos personas al año que el ser vivo izquierda.</p>
                         <button className='custom-button m-2' onClick={cancelGame}>Volver al juego</button>         
                     </div>
                 )}
