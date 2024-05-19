@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import data from './RandomImage.jsx';
+import help from '../Selva/FotosAlimentos/ayuda.png';
 import './Coast.css';
 
 function HigherLowerGame() {
@@ -17,6 +18,7 @@ function HigherLowerGame() {
     const [showAnimation, setShowAnimation] = useState(false);
     const [counter, setCounter] = useState(0);
     const [showResult, setShowResult] = useState(false); 
+    const [needHelp, setNeedHelp] = useState(false);
 
     useEffect(() => {
         const numberOfCardAux = new Array(data.longData()).fill().map((_, index) => index + 1);
@@ -115,14 +117,24 @@ function HigherLowerGame() {
 
     const cancelGame = () => {
         setShowResult(false);
+        setNeedHelp(false);
+        setButtonsVisible(true);
     };
+
+    const helpHandler = () => {
+        setNeedHelp(true);
+        setButtonsVisible(false);
+    }
 
     return (
         <section className='gameHOL d-flex flex-column justify-content-center align-items-center text-center vh-100 vw-100'>
-            <div id='cabeceraHOL'>
+            <div id='cabeceraHOL' className='position-relative w-100 d-flex justify-content-center align-items-center'>
+            <div>
                 <h2 className='tituloHOL'>Higher or Lower</h2>
                 <h2 className='tituloHOL'>¿Cuál es más letal para el humano 💀?</h2>
             </div>
+            <img className='helpHOL position-absolute' style={{ right: '0', top: '70%', transform: 'translateY(-50%)', marginRight: '12px' }} src={help} alt="Help" onClick={() => { helpHandler() }}/>
+        </div>
             <section className='imagenesHOL position-relative d-flex justify-content-center align-items-center'>
                 <div className='imagenHOL position-relative'>
                     <img alt={data.randomImage(imageArray[leftCardIndex])?.nombre} className='img-fluid' src={`src/assets/Coast/${data.randomImage(imageArray[leftCardIndex])?.foto}`}/>
@@ -144,13 +156,18 @@ function HigherLowerGame() {
                         )}
                     </div> 
                 </div>
+                {needHelp && (
+                    <div className="puntuacionHOL position-absolute z-1 bg-white rounded p-2" style={{ width: '80%', maxWidth: '700px', textAlign: 'center'}}>
+                        <h2 style={{fontSize:'calc(20px + (30 - 20) * ((100vmin - 350px) / (1080 - 350)))'}}>Ayuda</h2>
+                        <p style={{ whiteSpace: 'normal' }}>El juego consiste en seleccionar si el ser vivo de la imagen de la derecha mata más o menos personas al año que el ser vivo izquierda</p>
+                        <button className='custom-button m-2' onClick={cancelGame}>Volver al juego</button>         
+                    </div>
+                )}
                 {showResult && (
-                    <div className=" puntuacionHOL position-absolute z-1 bg-white rounded p-2">
-                        <div>
-                            <h2 style={{fontSize:'calc(20px + (30 - 20) * ((100vmin - 350px) / (1080 - 350)))'}} className={`${isCorrect == 2 ? 'text-danger' : 'text-success'}`}>{isCorrect === 2 ? '¡Fallaste!' : '¡Ganaste!'}</h2>
-                            <button className='custom-button m-2' onClick={cancelGame}>Cancelar</button>
-                            <button className='custom-button m-2' onClick={resetGame}>Volver a jugar</button>      
-                        </div>
+                    <div className=" puntuacionHOL position-absolute z-1 bg-white rounded p-2" >
+                        <h2 style={{fontSize:'calc(20px + (30 - 20) * ((100vmin - 350px) / (1080 - 350)))'}} className={`${isCorrect == 2 ? 'text-danger' : 'text-success'}`}>{isCorrect === 2 ? '¡Fallaste!' : '¡Ganaste!'}</h2>
+                        <button className='custom-button m-2' onClick={cancelGame}>Cancelar</button>
+                        <button className='custom-button m-2' onClick={resetGame}>Volver a jugar</button>      
                     </div>
                 )}
                 <div className={`position-absolute ${isCorrect !== 0 && 'fade-icon'}`}>

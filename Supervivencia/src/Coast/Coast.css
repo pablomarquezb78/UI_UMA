@@ -2,6 +2,11 @@
   background-image: url('/src/assets/Coast/fondo.jpg');
 }
 
+.helpHOL {
+  cursor:pointer;
+  width: 5%;
+}
+
 #cabeceraHOL{
   margin-top: 70px;
 }
