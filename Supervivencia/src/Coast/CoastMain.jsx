@@ -5,6 +5,7 @@ import HigerOrLowerGame from './HigherOrLower.jsx'
 import {useRef} from 'react';
 import '../CSS/main.css'
 import '../CSS/Start.css'
+import NavBar from '../Start/NavBar';
 
 function CoastMain(){
 
@@ -22,6 +23,7 @@ function CoastMain(){
     return(
         <>
             <main className='sliderContainer'>
+                <NavBar scrollToGridInfo={scrollToGridInfo} position={"fixed"}/>
 
                 <div className='sliderItem' ref={startRef}>
                     <CoastStart scrollToGridInfo={scrollToGridInfo}/>

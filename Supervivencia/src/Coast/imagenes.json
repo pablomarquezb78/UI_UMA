@@ -35,5 +35,40 @@
       "nombre": "Sol",
       "foto": "sol.jpg",
       "mortalidad": "60000"
+    },
+
+    {
+      "id": 7,
+      "nombre": "Océano",
+      "foto": "oceano.jpg",
+      "mortalidad": "360000"
+    },
+
+    {
+      "id": 8,
+      "nombre": "Serpiente marina",
+      "foto": "serpiente-marina.jpg",
+      "mortalidad": "12"
+    },
+
+    {
+      "id": 9,
+      "nombre": "Cocodrilo marino",
+      "foto": "cocodrilo-marino.jpeg",
+      "mortalidad": "30"
+    },
+
+    {
+      "id": 10,
+      "nombre": "Pulpo de anillos azules",
+      "foto": "pulpo-azul.jpg",
+      "mortalidad": "8"
+    },
+
+    {
+      "id": 11,
+      "nombre": "Caracol cono",
+      "foto": "caracol-cono.jpg",
+      "mortalidad": "4"
     }
 ]

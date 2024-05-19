@@ -56,7 +56,7 @@ function HigherLowerGame() {
 
     const handleHigherClick = () => {
         setButtonsVisible(false);
-        if (parseInt(data.randomImage(imageArray[leftCardIndex]).mortalidad) < parseInt(data.randomImage(imageArray[rightCardIndex]).mortalidad)) {
+        if (parseInt(data.randomImage(imageArray[leftCardIndex]).mortalidad) <= parseInt(data.randomImage(imageArray[rightCardIndex]).mortalidad)) {
             setIsCorrect(1);
             setShowDeaths(true);
             setButtonsVisible(false);
@@ -78,7 +78,7 @@ function HigherLowerGame() {
     };
     
     const handleLowerClick = () => {
-        if (parseInt(data.randomImage(imageArray[leftCardIndex]).mortalidad) > parseInt(data.randomImage(imageArray[rightCardIndex]).mortalidad)) {
+        if (parseInt(data.randomImage(imageArray[leftCardIndex]).mortalidad) >= parseInt(data.randomImage(imageArray[rightCardIndex]).mortalidad)) {
             setIsCorrect(1);
             setShowDeaths(true);
             setTickAnimation(true);
@@ -118,20 +118,20 @@ function HigherLowerGame() {
     };
 
     return (
-        <section className='gameHOL container d-flex justify-content-center align-items-center text-center vh-100 vw-100'>
-            <div className='cabeceraHOL'>
-                <h1>Higher or Lower</h1>
-                <h2>¿Cuál es más letal para el humano 💀?</h2>
+        <section className='gameHOL d-flex flex-column justify-content-center align-items-center text-center vh-100 vw-100'>
+            <div id='cabeceraHOL'>
+                <h2 className='tituloHOL'>Higher or Lower</h2>
+                <h2 className='tituloHOL'>¿Cuál es más letal para el humano 💀?</h2>
             </div>
-            <section className='imagenesHOL position-relative d-flex justify-content-center align-items-center vh-100 vw-100'>
+            <section className='imagenesHOL position-relative d-flex justify-content-center align-items-center'>
                 <div className='imagenHOL position-relative'>
-                    <img alt='{data.randomImage(imageArray[leftCardIndex])?.nombre}'className='img-fluid' src={`src/assets/Coast/${data.randomImage(imageArray[leftCardIndex])?.foto}`}/>
+                    <img alt={data.randomImage(imageArray[leftCardIndex])?.nombre} className='img-fluid' src={`src/assets/Coast/${data.randomImage(imageArray[leftCardIndex])?.foto}`}/>
                     <div id='informacion_imagen_i'>
                         <h3 className='card-text'> {data.randomImage(imageArray[leftCardIndex])?.nombre}: {data.randomImage(imageArray[leftCardIndex])?.mortalidad} muertes al año </h3>
                     </div>      
                 </div>
                 <div className='imagenHOL position-relative'>
-                    <img alt="{data.randomImage(imageArray[rightCardIndex])?.nombre}" className='img-fluid' src={`src/assets/Coast/${data.randomImage(imageArray[rightCardIndex])?.foto}`}/>
+                    <img alt={data.randomImage(imageArray[rightCardIndex])?.nombre} className='img-fluid' src={`src/assets/Coast/${data.randomImage(imageArray[rightCardIndex])?.foto}`}/>
                     <div id='informacion_imagen_d'  className='position-absolute text-center'>
                         <h3 className='card-text'> {data.randomImage(imageArray[rightCardIndex])?.nombre}: {showDeaths ? data.randomImage(imageArray[rightCardIndex])?.mortalidad : '?'} muertes al año </h3>
                     </div>
@@ -147,7 +147,7 @@ function HigherLowerGame() {
                 {showResult && (
                     <div className=" puntuacionHOL position-absolute z-1 bg-white rounded p-2">
                         <div>
-                            <h2 className={`${isCorrect == 2 ? 'text-danger' : 'text-success'}`}>{isCorrect === 2 ? '¡Fallaste!' : '¡Ganaste!'}</h2>
+                            <h2 style={{fontSize:'calc(20px + (30 - 20) * ((100vmin - 350px) / (1080 - 350)))'}} className={`${isCorrect == 2 ? 'text-danger' : 'text-success'}`}>{isCorrect === 2 ? '¡Fallaste!' : '¡Ganaste!'}</h2>
                             <button className='custom-button m-2' onClick={cancelGame}>Cancelar</button>
                             <button className='custom-button m-2' onClick={resetGame}>Volver a jugar</button>      
                         </div>
@@ -159,9 +159,9 @@ function HigherLowerGame() {
                     {isCorrect === 2 && <img src="src/assets/Coast/cross-icon.png" alt="Cross" style={{ maxWidth: 'calc(50px + (100 - 50) * ((100vmin - 350px) / (1080 - 350)))', backgroundColor: 'red', borderRadius:'50%' }} />}
                 </div>
             </section>
-            <div className="d-flex justify-content-center align-items-center m-3 vw-100">
-                <button className='custom-button m-4' onClick={resetGame}>Reiniciar</button>
-                <h3 className={`${showAnimation ? "puntuacionHOL" : ""}`}>Puntuación: {counter}</h3>
+            <div className="d-flex justify-content-center align-items-center">
+                <button className='custom-button m-3' onClick={resetGame}>Reiniciar</button>
+                <h3 style={{fontSize:'calc(15px + (30 - 15) * ((100vmin - 350px) / (1080 - 350)))'}} className={`${showAnimation ? "puntuacionHOL" : ""}`}>Puntuación: {counter}</h3>
             </div>
         </section>
     );
