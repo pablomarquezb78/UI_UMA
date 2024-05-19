@@ -6,7 +6,7 @@ function MountainInitGame() {
    return(
       <section className='vw-100 vh-100'>
          <div className='zoneContainer'>
-            <div className='zoneContent memory-game-container'>
+            <div className='zoneContentMont memory-game-container'>
                <MemoryGame/>
             </div>
          </div>

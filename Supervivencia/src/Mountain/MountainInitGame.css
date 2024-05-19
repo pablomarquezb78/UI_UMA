@@ -6,7 +6,9 @@
   height: 100%;
 }
 
-.zoneContent {
+.zoneContentMont {
+  background-image: url('src/assets/Mountain/fondomont.png');
+
     display: flex;
     justify-content: center; /* Centrar horizontalmente */
     align-items: center; /* Centrar verticalmente */
