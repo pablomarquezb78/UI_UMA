@@ -1,19 +1,71 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect } from "react";
 import Bag from './DesertImages/Bag.png';
 import './Desert.css';
 import initialItemList from './itemsBag.json';
 import useFitText from "use-fit-text";
-import rightButton from './DesertImages/rightButton.png';
-import leftButton from './DesertImages/leftButton.png';
-import addButton from './DesertImages/add.png';
+
+import { IconButton } from '@mui/material';
+import { styled } from '@mui/system';
+import NavigateNextIcon from '@mui/icons-material/NavigateNext';
+import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
+import RestartAltIcon from '@mui/icons-material/RestartAlt';
+import HelpCenterIcon from '@mui/icons-material/HelpCenter';
+import AddIcon from '@mui/icons-material/Add';
+
+function HelpSection({ showHelp }) {
+    const { fontSize: titleFontSize, ref: refTitle } = useFitText({
+        maxFontSize: 150,
+        minFontSize: 10,
+    });
+
+    const { fontSize: itemFontSize, ref: refItemInfo } = useFitText({
+        maxFontSize: 150,
+        minFontSize: 10,
+    });
+
+    return (
+        <div className="position-absolute z-1 bg-white rounded p-3 mb-5 puntuacionHOL w-75 h-75 d-flex flex-column justify-content-center align-items-center" style={{ maxWidth: '600px' }}>
+            <span id="bagTutoralTitle" className="text-center" ref={refTitle} style={{ fontSize: titleFontSize, height: '20%', width: '100%', letterSpacing: '1px', lineHeight: '1.2' }}>
+                ¡Bienvenido al juego de la mochila!
+            </span>
+            <span id="bagTutorialText" className="text-center" ref={refItemInfo} style={{ fontSize: itemFontSize, height: '60%', width: '100%', letterSpacing: '1px', lineHeight: '1.2' }}>
+                Este juego está basado en las típicas preguntas de ¿Qué te llevarías a una isla desierta? Pero con una pequeña modificación, de 14 objetos
+                podrás elegir solo 8 de ellos para llevártelos al desierto. <br /><br />Cada uno tiene unos puntos de supervivencia asociados y unas ventajas y desventajas para que
+                puedas analizar su utilidad. La máxima puntuación es de 100 ¡A por ello!
+            </span>
+            <button id="bagTutorialBackButton" className="btn btn-dark mt-3" onClick={showHelp}>Volver</button>
+        </div>
+    );
+}
 
 function DesertBagGame() {
+
+    const AnimatedIconButton = styled(IconButton)`
+    color: black;
+
+    &:hover {
+        color: white;
+        transition: transform color 0.15s ease;
+    }
+
+    &:focus {
+        transform: scale(1.1);
+        transition: transform 0.1s ease;
+    }
+
+    .MuiSvgIcon-root {
+        width: calc(22px + (64 - 22) * ((100vmin - 350px) / (1080 - 350)));
+        height: calc(22px + (64 - 22) * ((100vmin - 350px) / (1080 - 350)));
+    }
+    `;
+
     const imgPath = "src/Desert/DesertImages/";
     const [suma, setSuma] = useState(0);
     const [currentIndex, setCurrentIndex] = useState(0);
     const [isAnimating, setIsAnimating] = useState(false);
     const [isItemIncluded, setIsItemIncluded] = useState(false);
     const [indexChanged, setIndexChanged] = useState(false);
+    const [helpPressed, setHelPressed] = useState(false);
     const [itemList, setItemList] = useState([...initialItemList]);
 
     const { fontSize, ref } = useFitText({
@@ -54,10 +106,9 @@ function DesertBagGame() {
         setTimeout(() => {
             setIsAnimating(false);
             setIsItemIncluded(true);
-            const newItemList = [...itemList];
-            newItemList.splice(currentIndex, 1);
-            setItemList(newItemList);
-            setCurrentIndex((currentIndex) % newItemList.length);
+
+            itemList.splice(currentIndex, 1);
+            setCurrentIndex((currentIndex) % itemList.length);
         }, 500);
     };
 
@@ -67,18 +118,22 @@ function DesertBagGame() {
         setItemList([...initialItemList]);
     };
 
+    const showHelp = () => {
+        setHelPressed(prevState => !prevState);
+    }
+
     return (
         <section id="desertGameCompleteSection" className="position-relative vw-100 vh-100">
             <div id="completeGameSection" className="d-flex flex-column position-absolute start-50 translate-middle-x">
-                <div id="resultDisplay" className="d-flex justify-content-center">
-                    <h1 className="text-center text-white">¡Prepara la mochila para sobrevivir!</h1>
-                    <button className="btn btn-transparent" onClick={restartGame}>Reiniciar</button>
-                    <button className="btn btn-transparent" onClick={restartGame}>Tutorial</button>
+                <div id="resultDisplay" className="d-flex justify-content-around mt-2">
+                    <h2 className="text-center text-white d-flex align-items-center">¡Prepara la mochila para sobrevivir!</h2>
+                    <AnimatedIconButton disableRipple={true} className={(helpPressed || itemList.length === 8) ? "d-none" : ""} onClick={restartGame}><RestartAltIcon /> Reiniciar</AnimatedIconButton>
+                    <AnimatedIconButton disableRipple={true} className={(helpPressed || itemList.length === 8) ? "d-none" : ""} onClick={showHelp}><HelpCenterIcon /> Tutorial</AnimatedIconButton>
                 </div>
                 <div id="bagGameDisplay" className="d-flex justify-content-center align-items-center">
                     <div id="bagPlace" className="d-flex flex-grow-0 h-100 flex-column justify-content-center">
                         <div id="CapacityContainer">
-                            <h5 className="d-block text-center text-white f-size-4">{16 - itemList.length}/8</h5>
+                            <h5 className="d-block text-center text-white f-size-4">Capacidad: {16 - itemList.length}/8</h5>
                         </div>
                         <div id="BagContainer" className={`d-flex justify-content-center flex-grow-0 w-100  ${isItemIncluded ? "item-included" : ""}`}>
                             <img src={Bag} alt="Bag" className="img-fluid"></img>
@@ -96,27 +151,28 @@ function DesertBagGame() {
                             />
                         </div>
                         {itemList.length === 8 && (
-                            <div className=" position-absolute z-1 bg-white rounded p-3">
-                                <div className="d-flex flex-column justify-content-center align-items-center">
-                                    <h2 className="text-center">¡Fin del juego! Has conseguido {suma} puntos de supervivencia</h2>
-                                    <button className="btn btn-dark" onClick={restartGame}>Reiniciar</button>
-                                </div>
+                            <div className="position-absolute z-1 bg-white rounded p-3 mb-5 puntuacionHOL w-50 h-50 d-flex flex-column justify-content-center align-items-center" style={{ maxHeight: '200px' }}>
+                                <h2 className="text-center">¡Fin del juego!<br/> Has conseguido {suma} puntos de supervivencia</h2>
+                                <button className="btn btn-dark mt-3" onClick={restartGame}>Reiniciar</button>
                             </div>
                         )}
+                        {(helpPressed && itemList.length !== 8) && (
+                            <HelpSection showHelp={showHelp} />
+                        )}
                         <div id="bagButtonContainer" className="d-flex justify-content-center align-items-center">
-                            <button id="leftButtonBag" className="mb-1 bg-transparent border-0 btn-hover-zoom" onClick={prevImage}><img src={leftButton} className="w-100 h-100"></img></button>
-                            <button id="addButtonBag" className="bg-transparent border-0 btn-hover-zoom" onClick={includeItem}><img src={addButton} className="w-100 h-100"></img></button>
-                            <button id="rigtButtonBag" className="mb-1 bg-transparent border-0 btn-hover-zoom" onClick={nextImage}><img src={rightButton} className="w-100 h-100"></img></button>
+                            <AnimatedIconButton onClick={prevImage}><NavigateBeforeIcon /></AnimatedIconButton >
+                            <AnimatedIconButton onClick={includeItem}><AddIcon /></AnimatedIconButton >
+                            <AnimatedIconButton onClick={nextImage}><NavigateNextIcon /></AnimatedIconButton >
                         </div>
                     </div>
                     <div id="itemInfoContainer" className='d-flex flex-column justify-content-center'>
-                        <span id="itemDisplayed" ref={ref} style={{fontSize , height: '20%', width:'100%', letterSpacing: '1px', lineHeight: '1.2'}} className="text-white text-center">
+                        <h1 id="itemDisplayed" ref={ref} style={{ fontSize, height: '20%', width: '100%', letterSpacing: '1px', lineHeight: '1.2' }} className="text-white text-center">
                             {itemList[currentIndex].nombre}
-                        </span>
-                        <span id='pros' ref={ref} style={{fontSize , height: '40%', width:'100%' , letterSpacing: '1px', lineHeight: '1.2'}} className="text-white">
+                        </h1>
+                        <span id='pros' ref={ref} style={{ fontSize, height: '40%', width: '100%', letterSpacing: '1px', lineHeight: '1.2' }} className="text-white">
                             Ventajas: {itemList[currentIndex].ventajas}
-                        </span><br/>
-                        <span id='cons' ref={ref} style={{fontSize , height: '40%', width:'100%', letterSpacing: '1px', lineHeight: '1.2'}} className="text-white">
+                        </span><br />
+                        <span id='cons' ref={ref} style={{ fontSize, height: '40%', width: '100%', letterSpacing: '1px', lineHeight: '1.2' }} className="text-white">
                             Desventajas: {itemList[currentIndex].desventajas}
                         </span>
                          {/*PARA DEBUGEAR EL FITTEXT AÑADIR border: "1px solid red" AL STYLE*/}

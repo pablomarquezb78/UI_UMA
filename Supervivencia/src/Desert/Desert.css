@@ -65,7 +65,7 @@
 }
 
 #CapacityContainer h5{
-    font-size: calc(8px + (32 - 8) * ((100vmin - 350px) / (1080 - 350)));
+    font-size: calc(8px + (30 - 8) * ((100vmin - 350px) / (1080 - 350)));
 }
 
 #BagContainer{

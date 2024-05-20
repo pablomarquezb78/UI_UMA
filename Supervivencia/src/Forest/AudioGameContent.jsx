@@ -162,7 +162,7 @@ function GameContent({backFunction, passFunction}) {
         }
     }
 
-    return(
+    return( 
         <div id='gameZoneCenter'>
             <div className='container-fluid h-75 w-75' id='gameBox'>
                 <div className='topElement row justify-content-center align-items-center h-25'>

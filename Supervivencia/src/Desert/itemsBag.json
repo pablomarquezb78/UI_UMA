@@ -19,7 +19,7 @@
         "id": 3,
         "nombre": "Brújula",
         "imagen": "brujula.png",
-        "puntuacion": 3,
+        "puntuacion": 4,
         "ventajas": "Ayuda a orientarse y encontrar la dirección correcta.",
         "desventajas": "Dependencia de las baterías o imanes, que pueden fallar."
     },
@@ -27,7 +27,7 @@
         "id": 4,
         "nombre": "Chubasquero",
         "imagen": "chubasqueroDesierto.png",
-        "puntuacion": 11,
+        "puntuacion": 7,
         "ventajas": "Protección contra la lluvia ocasional en el desierto, resistente al viento.",
         "desventajas": "Puede ser voluminoso, limitar la movilidad y tiene poca transpirabilidad."
     },
@@ -51,7 +51,7 @@
         "id": 7,
         "nombre": "Gasa",
         "imagen": "gasa.png",
-        "puntuacion": 7,
+        "puntuacion": 6,
         "ventajas": "Útil para tratar heridas y prevenir infecciones.",
         "desventajas": "Limitada durabilidad y puede agotarse rápidamente."
     },
@@ -75,7 +75,7 @@
         "id": 10,
         "nombre": "Mapa",
         "imagen": "mapa.png",
-        "puntuacion": 4,
+        "puntuacion": 3,
         "ventajas": "Ayuda a navegar y encontrar rutas de escape.",
         "desventajas": "Puede ser inexacto o incompleto, especialmente en terreno desconocido, además de requerir tener buena orientación."
     },
@@ -83,7 +83,7 @@
         "id": 11,
         "nombre": "Navaja",
         "imagen": "navaja.png",
-        "puntuacion": 6,
+        "puntuacion": 11,
         "ventajas": "Útil para cortar alimentos, hacer herramientas y protegerse.",
         "desventajas": "Requiere habilidad para su uso seguro y puede ser peligrosa si se maneja incorrectamente."
     },
