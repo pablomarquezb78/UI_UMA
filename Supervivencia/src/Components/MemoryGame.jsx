@@ -152,10 +152,9 @@ const MemoryGame = () => {
       </div>
         {/* Botón de ayuda */}
       <img className='helpmont position-absolute' style={{ right: '10%', top: '35%', marginRight: '12px' }} src={helpIcon} alt="Ayuda" tabIndex={0} onClick={() => { toggleHelp() }} onKeyDown={(e) => {
-    if (e.key === 'Enter') {
-      toggleHelp();
-    }
-  }}/>
+        if (e.key === 'Enter') {
+        toggleHelp();
+      }}}/>
       {/* Sección de ayuda */}
       {showHelp && (
         <div className="resultmont position-absolute top-50 start-50 translate-middle bg-white rounded p-3 z-1 border border-dark">
