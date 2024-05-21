@@ -24,7 +24,7 @@ const MemoryGame = () => {
     const image1 = "src/assets/Mountain/numero1.png";
     const image2 = "src/assets/Mountain/numero2.png";
     const image3 = "src/assets/Mountain/numero3.png";
-    const image4 = "src/assets/Mountain/numero4.png";
+    const image4 = "src/assets/Mountain/numero4b.png";
     const image5 = "src/assets/Mountain/numero5.png";
     const image6 = "src/assets/Mountain/numero6.png";
     const image7 = "src/assets/Mountain/numero7.png";
@@ -97,6 +97,33 @@ const MemoryGame = () => {
     setShowHelp(false); // Cambia el estado de la visibilidad de la ayuda
   };
 
+
+  
+
+  const handleKeyPress = (e) => {
+    if (e.key === "Enter") {
+      // Encuentra la carta que está seleccionada actualmente
+      const selectedCardIndex = document.activeElement.tabIndex - 1;
+      // Verifica si la carta está volteada o ya emparejada
+      if (!isCardFlipped(selectedCardIndex) && !matchedCards.includes(selectedCardIndex)) {
+        // Maneja el clic en la carta
+        handleCardClick(selectedCardIndex);
+      }
+    } else if (e.key >= "1" && e.key <= "8") {
+      // Verifica si la tecla presionada es un número del 1 al 8
+      const cardIndex = parseInt(e.key) - 1;
+      // Verifica si la carta correspondiente existe y no está volteada ni emparejada
+      if (cardIndex >= 0 && cardIndex < cards.length && !isCardFlipped(cardIndex) && !matchedCards.includes(cardIndex)) {  
+        // Maneja el clic en la carta
+        handleCardClick(cardIndex);
+      }
+    } else if (e.key.toUpperCase() === "R") {
+      // Verifica si la tecla presionada es "R" para volver a intentar
+      handleResetIncorrectCards(); // Activa la función para volver a intentar
+    }
+  };
+  
+
   const handleResetGame = () => {
     setMoves(0);
     setMatchedCards([]);
@@ -124,13 +151,17 @@ const MemoryGame = () => {
         </label>
       </div>
         {/* Botón de ayuda */}
-      <img className='helpmont position-absolute' style={{ right: '10%', top: '35%', marginRight: '12px' }} src={helpIcon} alt="Ayuda" onClick={() => { toggleHelp() }}/>
+      <img className='helpmont position-absolute' style={{ right: '10%', top: '35%', marginRight: '12px' }} src={helpIcon} alt="Ayuda" tabIndex={0} onClick={() => { toggleHelp() }} onKeyDown={(e) => {
+    if (e.key === 'Enter') {
+      toggleHelp();
+    }
+  }}/>
       {/* Sección de ayuda */}
       {showHelp && (
         <div className="resultmont position-absolute top-50 start-50 translate-middle bg-white rounded p-3 z-1 border border-dark">
         <h2 style={{fontSize:'calc(20px + (30 - 20) * ((100vmin - 350px) / (1080 - 350)))'}}>Ayuda</h2>
         <p style={{ whiteSpace: 'normal' }}>En este juego de memoria, empareja imágenes de seres vivos con sus huellas.
-        El borde de cada huella refleja el color del animal asociado.</p>
+        El color del borde de cada huella coincide con el color del borde del animal asociado.</p>
         <button className='custom-button m-2' onClick={cancelGame}>Volver al juego</button>         
         </div>
       )}
@@ -140,27 +171,30 @@ const MemoryGame = () => {
           Volver a Intentar
         </button>
       </div>
-      <div className="cards-grid">
-        {Array.from({ length: 4 }, (_, rowIndex) => (
-          <div key={rowIndex} className="card-group">
-            {Array.from({ length: 2 }, (_, colIndex) => (
-              <div
-                key={rowIndex * 2 + colIndex}
-                className={`card ${isCardFlipped(rowIndex * 2 + colIndex) ? "flipped" : ""}`}
-                onClick={() => handleCardClick(rowIndex * 2 + colIndex)}
-                style={{ width: '17vw', maxWidth: '130px', height: 'auto' }}
-              >
-                <img
-                  src={isCardFlipped(rowIndex * 2 + colIndex) ? cards[rowIndex * 2 + colIndex].image : "src/assets/Mountain/interrogacion.png"}
-                  alt="Card"
-                  className="card-image"
-                  style={{ width: '100%', height: 'auto' }}
-                />
-              </div>
-            ))}
-          </div>
-        ))}
-      </div>
+
+      <div className="cards-grid" tabIndex="0" onKeyDown={(e) => handleKeyPress(e)}>
+      {Array.from({ length: 4 }, (_, rowIndex) => (
+        <div key={rowIndex} className="card-group">
+          {Array.from({ length: 2 }, (_, colIndex) => (
+            <div
+              key={rowIndex * 2 + colIndex}
+              className={`card ${isCardFlipped(rowIndex * 2 + colIndex) ? "flipped" : ""}`}
+              onClick={() => handleCardClick(rowIndex * 2 + colIndex)}
+              tabIndex={rowIndex * 2 + colIndex + 1} // Establece un índice único para cada carta
+              style={{ width: '17vw', maxWidth: '130px', height: 'auto' }}
+            >
+              <img
+                src={isCardFlipped(rowIndex * 2 + colIndex) ? cards[rowIndex * 2 + colIndex].image : "src/assets/Mountain/interrogacion.png"}
+                alt="Card"
+                className="card-image"
+                style={{ width: '100%', height: 'auto' }}
+              />
+            </div>
+          ))}
+        </div>
+      ))}
+    </div>
+
 
       {showResult && (
         <div className="resultmont position-absolute top-50 start-50 translate-middle bg-white rounded p-3 z-1 border border-dark">
