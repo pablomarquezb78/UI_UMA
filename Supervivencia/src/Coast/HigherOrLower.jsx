@@ -1,9 +1,21 @@
 import React, { useState, useEffect } from 'react';
 import data from './RandomImage.jsx';
-import help from '../Selva/FotosAlimentos/ayuda.png';
+import { IconButton } from '@mui/material';
+import { styled } from '@mui/system';
+import SosIcon from '@mui/icons-material/Sos';
 import './Coast.css';
 
 function HigherLowerGame() {
+    const AnimatedIconButton = styled(IconButton)`
+    color: black;
+
+    &:focus {
+        transform: scale(1.1);
+        transition: transform 0.1s ease;
+    }
+
+    `;
+
 
     const [leftCardIndex, setLeftCardIndex] = useState(0);
     const [rightCardIndex, setRightCardIndex] = useState(1);
@@ -131,7 +143,7 @@ function HigherLowerGame() {
                 <h2 className='tituloHOL'>Higher or Lower</h2>
                 <h2 className='tituloHOL'>¿Cuál es más letal para el humano 💀?</h2>
             </div>
-            <img className='helpHOL position-absolute' style={{ right: '0', top: '70%', transform: 'translateY(-50%)', marginRight: '12px' }} src={help} alt="Help" onClick={() => { helpHandler() }}/>
+           <AnimatedIconButton className='helpHOL position-absolute' title='Ayuda' style={{ right: '0', top: '70%', transform: 'translateY(-50%)', marginRight: '1%' }} onClick={() => { helpHandler() }}><SosIcon fontSize='large'/></AnimatedIconButton>
         </div>
             <section className='imagenesHOL position-relative d-flex justify-content-center align-items-center'>
                 <div className='imagenHOL position-relative'>
