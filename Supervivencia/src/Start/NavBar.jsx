@@ -4,10 +4,11 @@ import hamburguesa from '../assets/Start/Logos/new_burger.png'
 import cross from '../assets/Start/Logos/X.png'
 
 import '../CSS/Start.css';
+import '../CSS/NavBar.css';
 import { Link ,NavLink} from "react-router-dom";
 import {useState ,useEffect} from 'react';
 import React from 'react';
-
+ 
 function navBar({ scrollToGridInfo, position}) {
  
     //Control background blanco
@@ -26,7 +27,7 @@ function navBar({ scrollToGridInfo, position}) {
         const handleResize = () => {
             const screenWidth = window.innerWidth;
             
-            if(screenWidth > 750) { //Vuelve a mostrar el menu con flex y setea la hamburguesa a no pulsado
+            if(screenWidth > 600) { //Vuelve a mostrar el menu con flex y setea la hamburguesa a no pulsado
                 setShowMenu(2);
             }else{
                 setShowMenu(0);

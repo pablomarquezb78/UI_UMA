@@ -91,11 +91,6 @@
 
 /*Right side*/
 
-#itemInfoContainer{
-    height: 80%;
-    width: 30%;
-}
-
 #itemDisplayed{
     height: 20%;
 }
@@ -154,22 +149,51 @@
     animation: appear 0.5s ease-in-out;
 }
 
-.btn-hover-zoom img {
-    transition: filter 0.3s ease, transform 0.3s ease;
-}
-
-.btn-hover-zoom:hover img, .btn-hover-zoom:focus img {
-    filter: grayscale(100%) invert(100%);
-    transform: scale(1.1);
-}
-
-.btn-hover-zoom img:hover, .btn-hover-zoom img:focus {
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
-}
-
 #helpIconDesertSection{
     width: 100%;
     height: 15%;
     display: flex;
     justify-content: flex-end;
+}
+
+#itemInfoTop{
+    display: none;
+}
+
+#itemInfoBottom{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 80%;
+    width: 30%;
+}
+
+@media screen and (max-width: 600px) {
+    #itemInfoTop {
+        display: flex;
+        justify-content: center;
+        height: 20%;
+        width: 100%;
+    }
+
+    #itemInfoBottom{
+        display: none;
+    }
+
+    #resultDisplay{
+        height: 20%;
+    }
+
+    #bagGameDisplay{  
+        height: 60%;
+    }
+
+    #bagPlace{
+        width: 50%;
+    }
+    
+    #itemsContainer{
+        width: 50%;
+    }
+
 }

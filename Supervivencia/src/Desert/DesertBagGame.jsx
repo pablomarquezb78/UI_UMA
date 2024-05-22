@@ -9,27 +9,21 @@ import { styled } from '@mui/system';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
 import RestartAltIcon from '@mui/icons-material/RestartAlt';
-import HelpCenterIcon from '@mui/icons-material/HelpCenter';
+import SosIcon from '@mui/icons-material/Sos';
 import AddIcon from '@mui/icons-material/Add';
-import helpIcon from '../Selva/FotosAlimentos/ayuda.png';
 
 function HelpSection({ showHelp }) {
-    const { fontSize: titleFontSize, ref: refTitle } = useFitText({
-        maxFontSize: 150,
-        minFontSize: 10,
-    });
-
-    const { fontSize: itemFontSize, ref: refItemInfo } = useFitText({
+    const { fontSize: fontSize1, ref: ref1 } = useFitText({
         maxFontSize: 150,
         minFontSize: 10,
     });
 
     return (
         <div className="position-absolute z-1 bg-white rounded p-3 mb-5 puntuacionHOL w-75 h-75 d-flex flex-column justify-content-center align-items-center" style={{ maxWidth: '600px' }}>
-            <span id="bagTutoralTitle" className="text-center" ref={refTitle} style={{ fontSize: titleFontSize, height: '20%', width: '100%', letterSpacing: '1px', lineHeight: '1.2' }}>
+            <span id="bagTutoralTitle" className="text-center" ref={ref1} style={{ fontSize: fontSize1, height: '20%', width: '100%', letterSpacing: '1px', lineHeight: '1.2' }}>
                 ¡Bienvenido al juego de la mochila!
             </span>
-            <span id="bagTutorialText" className="text-center" ref={refItemInfo} style={{ fontSize: itemFontSize, height: '60%', width: '100%', letterSpacing: '1px', lineHeight: '1.2' }}>
+            <span id="bagTutorialText" className="text-center" ref={ref1} style={{ fontSize: fontSize1, height: '60%', width: '100%', letterSpacing: '1px', lineHeight: '1.2' }}>
                 Este juego está basado en las típicas preguntas de ¿Qué te llevarías a una isla desierta? Pero con una pequeña modificación, de 14 objetos
                 podrás elegir solo 8 de ellos para llevártelos al desierto. <br /><br />Cada uno tiene unos puntos de supervivencia asociados y unas ventajas y desventajas para que
                 puedas analizar su utilidad. La máxima puntuación es de 100 ¡A por ello!
@@ -39,19 +33,41 @@ function HelpSection({ showHelp }) {
     );
 }
 
+function ItemInfoContainer({itemList,currentIndex,id,top}){
+    const { fontSize, ref } = useFitText({
+        maxFontSize: 200,
+        minFontSize: 10,
+    });
+
+    const heightTitle = top===true ? '90%' : '20%';
+    const widthTitle = top===true ? '20%' : '100%';
+
+    const heightText = top===true ? '90%' : '40%';
+    const widthText = top===true ? '40%' : '100%';
+
+    return(
+        <div id={id}>
+        <h1 id="itemDisplayed" ref={ref} style={{ fontSize, height: heightTitle , width: widthTitle, letterSpacing: '1px', lineHeight: '1.2' }} className="text-white text-center">
+            {itemList[currentIndex].nombre}
+        </h1>
+        <span id='pros' ref={ref} style={{ fontSize, height: heightText, width: widthText, letterSpacing: '1px', lineHeight: '1.2'}} className="text-white">
+            Ventajas: {itemList[currentIndex].ventajas}
+        </span>
+        <span id='cons' ref={ref} style={{ fontSize, height: heightText, width: widthText, letterSpacing: '1px', lineHeight: '1.2' }} className="text-white">
+            Desventajas: {itemList[currentIndex].desventajas}
+        </span>
+        {/*PARA DEBUGEAR EL FITTEXT AÑADIR border: "1px solid red" AL STYLE*/}
+    </div>
+    );
+}
+
 function DesertBagGame() {
 
     const AnimatedIconButton = styled(IconButton)`
     color: black;
 
-    &:hover {
+    &:hover{
         color: white;
-        transition: transform color 0.15s ease;
-    }
-
-    &:focus {
-        transform: scale(1.1);
-        transition: transform 0.1s ease;
     }
 
     .MuiSvgIcon-root {
@@ -68,11 +84,6 @@ function DesertBagGame() {
     const [indexChanged, setIndexChanged] = useState(false);
     const [helpPressed, setHelPressed] = useState(false);
     const [itemList, setItemList] = useState([...initialItemList]);
-
-    const { fontSize, ref } = useFitText({
-        maxFontSize: 200,
-        minFontSize: 10,
-    });
 
     useEffect(() => {
         setIndexChanged(true);
@@ -110,7 +121,7 @@ function DesertBagGame() {
 
             itemList.splice(currentIndex, 1);
             setCurrentIndex((currentIndex) % itemList.length);
-        }, 500);
+        }, 500); 
     };
 
     const restartGame = () => {
@@ -128,9 +139,10 @@ function DesertBagGame() {
             <div id="completeGameSectionHelp" className="d-flex flex-column position-absolute start-50 translate-middle-x">
                 <div id="resultDisplay" className="d-flex justify-content-around mt-2">
                     <h2 className="text-center text-white d-flex align-items-center">¡Prepara la mochila para sobrevivir!</h2>
-                    <AnimatedIconButton disableRipple={true} className={(helpPressed || itemList.length === 8) ? "d-none" : ""} onClick={restartGame}><RestartAltIcon /> Reiniciar</AnimatedIconButton>
-                    <AnimatedIconButton disableRipple={true} className={(helpPressed || itemList.length === 8) ? "d-none" : ""} onClick={showHelp}><HelpCenterIcon /> Tutorial</AnimatedIconButton>
+                    <AnimatedIconButton disableRipple={true} onClick={restartGame}><RestartAltIcon /> Reiniciar</AnimatedIconButton>
+                    <AnimatedIconButton disableRipple={true} onClick={showHelp}><SosIcon /></AnimatedIconButton>
                 </div>
+                <ItemInfoContainer id={"itemInfoTop"} itemList={itemList} currentIndex={currentIndex} top={true}/>
                 <div id="bagGameDisplay" className="d-flex justify-content-center align-items-center">
                     <div id="bagPlace" className="d-flex flex-grow-0 h-100 flex-column justify-content-center">
                         <div id="CapacityContainer">
@@ -166,18 +178,7 @@ function DesertBagGame() {
                             <AnimatedIconButton onClick={nextImage}><NavigateNextIcon /></AnimatedIconButton >
                         </div>
                     </div>
-                    <div id="itemInfoContainer" className='d-flex flex-column justify-content-center'>
-                        <h1 id="itemDisplayed" ref={ref} style={{ fontSize, height: '20%', width: '100%', letterSpacing: '1px', lineHeight: '1.2' }} className="text-white text-center">
-                            {itemList[currentIndex].nombre}
-                        </h1>
-                        <span id='pros' ref={ref} style={{ fontSize, height: '40%', width: '100%', letterSpacing: '1px', lineHeight: '1.2' }} className="text-white">
-                            Ventajas: {itemList[currentIndex].ventajas}
-                        </span><br />
-                        <span id='cons' ref={ref} style={{ fontSize, height: '40%', width: '100%', letterSpacing: '1px', lineHeight: '1.2' }} className="text-white">
-                            Desventajas: {itemList[currentIndex].desventajas}
-                        </span>
-                        {/*PARA DEBUGEAR EL FITTEXT AÑADIR border: "1px solid red" AL STYLE*/}
-                    </div>
+                   <ItemInfoContainer id={"itemInfoBottom"} itemList={itemList} currentIndex={currentIndex} top={false}/>
                 </div>
             </div>
         </section>
@@ -185,3 +186,4 @@ function DesertBagGame() {
 }
 
 export default DesertBagGame;
+
