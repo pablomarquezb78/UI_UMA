@@ -1,10 +1,7 @@
 .gameHOL{
   background-image: url('/src/assets/Coast/fondo.jpg');
-}
-
-.helpHOL {
-  cursor:pointer;
-  width: 5%;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 #cabeceraHOL{
