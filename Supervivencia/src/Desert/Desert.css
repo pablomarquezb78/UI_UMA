@@ -4,22 +4,27 @@
     background-size: cover;
 }
 
-#completeGameSection{
-    width: 80%;
+#completeGameSectionHelp{
+    width: 85%;
     bottom: 20%;
     height: 60%;
 
-    background: rgba( 165, 165, 165, 0.1 );
-    backdrop-filter: blur( 7.5px );
-    -webkit-backdrop-filter: blur( 7.5px );
-    box-shadow: 0 8px 32px 0 rgba( 0, 0, 0, 0.18 );
+    background: rgba(165, 165, 165, 0.1);
+    backdrop-filter: blur(7.5px);
+    -webkit-backdrop-filter: blur(7.5px);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.18);
     border-radius: 20px;
-    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-bottom: none; /* Quita el borde inferior */
 }
 
 #bagGameDisplay{
     gap: 2%;    
     height: 80%;
+}
+
+#resultDisplay{
+    height: 20%;
 }
 
 /*middle side*/
@@ -87,7 +92,6 @@
 /*Right side*/
 
 #itemInfoContainer{
-    position: relative;
     height: 80%;
     width: 30%;
 }
@@ -105,11 +109,6 @@
 }
 
 /**/
-
-
-#resultDisplay{
-    height: 20%;
-}
 
 @keyframes growAndShrink {
     0% {
@@ -166,4 +165,11 @@
 
 .btn-hover-zoom img:hover, .btn-hover-zoom img:focus {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+}
+
+#helpIconDesertSection{
+    width: 100%;
+    height: 15%;
+    display: flex;
+    justify-content: flex-end;
 }

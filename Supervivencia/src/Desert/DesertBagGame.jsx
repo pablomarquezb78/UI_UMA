@@ -11,6 +11,7 @@ import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
 import RestartAltIcon from '@mui/icons-material/RestartAlt';
 import HelpCenterIcon from '@mui/icons-material/HelpCenter';
 import AddIcon from '@mui/icons-material/Add';
+import helpIcon from '../Selva/FotosAlimentos/ayuda.png';
 
 function HelpSection({ showHelp }) {
     const { fontSize: titleFontSize, ref: refTitle } = useFitText({
@@ -124,7 +125,7 @@ function DesertBagGame() {
 
     return (
         <section id="desertGameCompleteSection" className="position-relative vw-100 vh-100">
-            <div id="completeGameSection" className="d-flex flex-column position-absolute start-50 translate-middle-x">
+            <div id="completeGameSectionHelp" className="d-flex flex-column position-absolute start-50 translate-middle-x">
                 <div id="resultDisplay" className="d-flex justify-content-around mt-2">
                     <h2 className="text-center text-white d-flex align-items-center">¡Prepara la mochila para sobrevivir!</h2>
                     <AnimatedIconButton disableRipple={true} className={(helpPressed || itemList.length === 8) ? "d-none" : ""} onClick={restartGame}><RestartAltIcon /> Reiniciar</AnimatedIconButton>
@@ -175,7 +176,7 @@ function DesertBagGame() {
                         <span id='cons' ref={ref} style={{ fontSize, height: '40%', width: '100%', letterSpacing: '1px', lineHeight: '1.2' }} className="text-white">
                             Desventajas: {itemList[currentIndex].desventajas}
                         </span>
-                         {/*PARA DEBUGEAR EL FITTEXT AÑADIR border: "1px solid red" AL STYLE*/}
+                        {/*PARA DEBUGEAR EL FITTEXT AÑADIR border: "1px solid red" AL STYLE*/}
                     </div>
                 </div>
             </div>

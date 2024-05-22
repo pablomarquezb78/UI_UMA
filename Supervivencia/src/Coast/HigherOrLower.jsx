@@ -127,12 +127,12 @@ function HigherLowerGame() {
     return (
         <section className='gameHOL d-flex flex-column justify-content-center align-items-center text-center vh-100 vw-100'>
             <div id='cabeceraHOL' className='position-relative w-100 d-flex justify-content-center align-items-center'>
-            <div>
-                <h2 className='tituloHOL'>Higher or Lower</h2>
-                <h2 className='tituloHOL'>¿Cuál es más letal para el humano 💀?</h2>
+                <div>
+                    <h2 className='tituloHOL'>Higher or Lower</h2>
+                    <h2 className='tituloHOL'>¿Cuál es más letal para el humano 💀?</h2>
+                </div>
+                <img className='helpHOL position-absolute d-flex' style={{ right: '0', top: '70%', transform: 'translateY(-50%)', marginRight: '12px' }} src={help} alt="Help" onClick={() => { helpHandler() }}/>
             </div>
-            <img className='helpHOL position-absolute' style={{ right: '0', top: '70%', transform: 'translateY(-50%)', marginRight: '12px' }} src={help} alt="Help" onClick={() => { helpHandler() }}/>
-        </div>
             <section className='imagenesHOL position-relative d-flex justify-content-center align-items-center'>
                 <div className='imagenHOL position-relative'>
                     <img alt={data.randomImage(imageArray[leftCardIndex])?.nombre} className='img-fluid' src={`src/assets/Coast/${data.randomImage(imageArray[leftCardIndex])?.foto}`}/>
