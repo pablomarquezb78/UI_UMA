@@ -1,7 +1,5 @@
   .memory-game {
     text-align: center; /* Centra el contenido horizontalmente */
-    
-
   }
   
   .memory-game .cards-grid {
@@ -9,10 +7,10 @@
     flex-wrap: wrap; /* Permite que las cartas se envuelvan en varias filas */
     justify-content: center; /* Centra las cartas horizontalmente */
   }
-  
+
   .memory-game .helpmont {
     cursor:pointer;
-    width: 5%;
+    margin-top: 2%;
   }
   
 
@@ -23,6 +21,12 @@
     transition: transform 0.5s ease; /* Duración y función de la transición */
   }
 
+  .memory-game .controls {
+    display: flex;
+    justify-content: center; /* Cambiado a "center" para centrar los elementos */
+    align-items: center;
+    gap: 10%; /* Agregado para establecer un espacio entre los elementos */
+  }
   .memory-game .card-group {
     margin-bottom: 20px; /* Espacio entre las filas de cartas */
   }
@@ -87,11 +91,5 @@
     .card {
       flex: 0 0 calc(100% - 20px); /* En dispositivos con ancho menor o igual a 768px, establece el ancho de la carta al 100% del contenedor, con margen */
       max-width: calc(100% - 20px); /* Establece el ancho máximo de la carta */
-    }
-
-    .memory-game .helpmont {
-      cursor:pointer;
-      width: 15%;
-      right: 8%;
     }
   }

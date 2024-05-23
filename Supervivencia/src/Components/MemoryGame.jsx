@@ -1,8 +1,26 @@
 import React, { useState, useEffect } from "react";
 import './CSS/MemoryGame.css';
-import helpIcon from '../Selva/FotosAlimentos/ayuda.png';
+
+import { IconButton } from '@mui/material';
+import { styled } from '@mui/system';
+
+import SosIcon from '@mui/icons-material/Sos';
+
 
 const MemoryGame = () => {
+  const AnimatedIconButton = styled(IconButton)`
+  color: black;
+
+  &:hover{
+      color: white;
+  }
+
+  .MuiSvgIcon-root {
+      width: calc(33px + (64 - 33) * ((100vmin - 350px) / (1080 - 350)));
+      height: calc(33px + (64 - 33) * ((100vmin - 350px) / (1080 - 350)));
+  }
+  `;
+
   const [cards, setCards] = useState([]);
   const [flippedCards, setFlippedCards] = useState([]);
   const [matchedCards, setMatchedCards] = useState([]);
@@ -141,7 +159,7 @@ const MemoryGame = () => {
     <div className="memory-game">
       <h1>Juego de Memoria</h1>
       <p>Relaciona a cada animal con su huella</p>
-      <div>
+      <div className="controls">
         <label>
           Dificultad:
           <select value={difficulty} onChange={e => setDifficulty(e.target.value)} className="form-select">
@@ -149,12 +167,19 @@ const MemoryGame = () => {
             <option value="time">DIFÍCIL</option>
           </select>
         </label>
-      </div>
+
         {/* Botón de ayuda */}
-      <img className='helpmont position-absolute' style={{ right: '10%', top: '35%', marginRight: '12px' }} src={helpIcon} alt="Ayuda" tabIndex={0} onClick={() => { toggleHelp() }} onKeyDown={(e) => {
+      <AnimatedIconButton className='helpmont' 
+      title="Ayuda" tabIndex={0} 
+      onClick={() => { toggleHelp() }} 
+      onKeyDown={(e) => {
         if (e.key === 'Enter') {
         toggleHelp();
-      }}}/>
+      }}}>
+        <SosIcon/>
+      </AnimatedIconButton>
+      </div>
+        
       {/* Sección de ayuda */}
       {showHelp && (
         <div className="resultmont position-absolute top-50 start-50 translate-middle bg-white rounded p-3 z-1 border border-dark">

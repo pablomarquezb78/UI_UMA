@@ -1,9 +1,9 @@
 import { useState, useRef } from "react";
 import getRandom from './RandomFood';
 import TinderCard from './TinderCard.jsx';
-import help from './FotosAlimentos/ayuda.png';
 import veneno from './FotosAlimentos/veneno.png'
 import correcto from './FotosAlimentos/correcto.png'
+import SosIcon from '@mui/icons-material/Sos';
 
 
 function TinderDeck({ numberOfCard }) {
@@ -109,7 +109,7 @@ function TinderDeck({ numberOfCard }) {
                     {wiseChoice.current} / {getRandom.longData()}
                 </label>
                 <span onClick={() => { helpHandler() }}>
-                    <img src={help} alt="Help" />
+                     <SosIcon fontSize="large"/>
                 </span>
             </div>
 
