@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback  } from 'react';
+import React, { useState, useEffect } from 'react';
 import data from './RandomImage.jsx';
 import { IconButton } from '@mui/material';
 import { styled } from '@mui/system';
@@ -15,8 +15,8 @@ function HigherLowerGame() {
     }
 
     .MuiSvgIcon-root {
-        width: calc(22px + (64 - 22) * ((100vmin - 350px) / (1080 - 350)));
-        height: calc(22px + (64 - 22) * ((100vmin - 350px) / (1080 - 350)));
+        width: calc(22px + (50 - 22) * ((100vmin - 350px) / (1080 - 350)));
+        height: calc(22px + (50 - 22) * ((100vmin - 350px) / (1080 - 350)));
     }
     `;
 
@@ -206,7 +206,7 @@ function HigherLowerGame() {
                 </div>
             </section>
             <div className="d-flex justify-content-center align-items-center">
-                <button className='custom-button m-3' onClick={resetGame}>Reiniciar</button>
+                {!showResult && <button className='custom-button m-3' onClick={resetGame}>Reiniciar</button>}
                 <h3 style={{fontSize:'calc(15px + (30 - 15) * ((100vmin - 350px) / (1080 - 350)))'}} className={`${showAnimation ? "puntuacionHOL" : ""}`}>Puntuación: {counter}</h3>
             </div>
         </section>
@@ -214,9 +214,4 @@ function HigherLowerGame() {
 }
 
 export default HigherLowerGame;
-
-
-
-
-
 
