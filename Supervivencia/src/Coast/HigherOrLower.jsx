@@ -42,46 +42,6 @@ function HigherLowerGame() {
         setImageArray(shuffleCard);
     }, []);
 
-    const handleHigherClick = useCallback(() => {
-        setButtonsVisible(false);
-        if (parseInt(data.randomImage(imageArray[leftCardIndex]).mortalidad) <= parseInt(data.randomImage(imageArray[rightCardIndex]).mortalidad)) {
-            setIsCorrect(1);
-            setShowDeaths(true);
-            setTickAnimation(true);
-            setTimeout(() => {
-                setCounter(prevCounter => prevCounter + 1);
-            }, 1500);
-        } else {
-            setIsCorrect(2);
-            setShowDeaths(true);
-            setCrossAnimation(true);
-            setTimeout(() => {
-                setCrossAnimation(false);
-                setShowResult(true);
-            }, 1500);
-        }
-    }, [leftCardIndex, rightCardIndex, imageArray]);
-
-    const handleLowerClick = useCallback(() => {
-        setButtonsVisible(false);
-        if (parseInt(data.randomImage(imageArray[leftCardIndex]).mortalidad) >= parseInt(data.randomImage(imageArray[rightCardIndex]).mortalidad)) {
-            setIsCorrect(1);
-            setShowDeaths(true);
-            setTickAnimation(true);
-            setTimeout(() => {
-                setCounter(prevCounter => prevCounter + 1);
-            }, 1500);
-        } else {
-            setIsCorrect(2);
-            setShowDeaths(true);
-            setCrossAnimation(true);
-            setTimeout(() => {
-                setCrossAnimation(false);
-                setShowResult(true);
-            }, 1500);
-        }
-    }, [leftCardIndex, rightCardIndex, imageArray]);
-
     useEffect(() => {
         setShowAnimation(true);
         setTimeout(() => {
@@ -108,18 +68,47 @@ function HigherLowerGame() {
         }
     }, [tickAnimation, rightCardIndex, imageArray.length]);
 
-
-    const cancelGame = () => {
-        setShowResult(false);
-        setNeedHelp(false);
+    const handleHigherClick = () => {
+        setButtonsVisible(false);
+        if (parseInt(data.randomImage(imageArray[leftCardIndex]).mortalidad) <= parseInt(data.randomImage(imageArray[rightCardIndex]).mortalidad)) {
+            setIsCorrect(1);
+            setShowDeaths(true);
+            setTickAnimation(true);
+            setTimeout(() => {
+                setCounter(prevCounter => prevCounter + 1);
+            }, 1500);
+        } else {
+            setIsCorrect(2);
+            setShowDeaths(true);
+            setCrossAnimation(true);
+            setTimeout(() => {
+                setCrossAnimation(false);
+                setShowResult(true);
+            }, 1500);
+        }
     };
 
-    const helpHandler = () => {
-        setNeedHelp(true);
+    const handleLowerClick = () => {
+        setButtonsVisible(false);
+        if (parseInt(data.randomImage(imageArray[leftCardIndex]).mortalidad) >= parseInt(data.randomImage(imageArray[rightCardIndex]).mortalidad)) {
+            setIsCorrect(1);
+            setShowDeaths(true);
+            setTickAnimation(true);
+            setTimeout(() => {
+                setCounter(prevCounter => prevCounter + 1);
+            }, 1500);
+        } else {
+            setIsCorrect(2);
+            setShowDeaths(true);
+            setCrossAnimation(true);
+            setTimeout(() => {
+                setCrossAnimation(false);
+                setShowResult(true);
+            }, 1500);
+        }
     };
 
-
-    const resetGame = useCallback(() => {
+    const resetGame = () => {
         const numberOfCardAux = new Array(data.longData()).fill().map((_, index) => index + 1);
         const shuffleCard = numberOfCardAux.sort(() => Math.random() - 0.5);
         setImageArray(shuffleCard);
@@ -130,7 +119,17 @@ function HigherLowerGame() {
         setCounter(0);
         setButtonsVisible(true);
         setShowResult(false);
-    }, []);
+    };
+
+    const cancelGame = () => {
+        setShowResult(false);
+        setNeedHelp(false);
+    };
+
+    const helpHandler = () => {
+        setNeedHelp(true);
+    };
+
 
     useEffect(() => {
         const handleKeyDown = (e) => {
@@ -152,10 +151,9 @@ function HigherLowerGame() {
         return () => {
             window.removeEventListener('keydown', handleKeyDown);
         };
-    }, [resetGame, helpHandler, handleHigherClick, handleLowerClick, cancelGame]);
+    },);
 
 
-   
     return (
         <section className='gameHOL d-flex flex-column justify-content-center align-items-center text-center vh-100 vw-100'>
             <div id='cabeceraHOL' className='position-relative w-100 d-flex justify-content-center align-items-center'>
