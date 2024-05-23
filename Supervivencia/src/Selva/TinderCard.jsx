@@ -3,15 +3,16 @@
 function TinderCard({card, index}){
     
 
-    let urlImage = 'src/Selva/FotosAlimentos/'+card.foto
-    
+    const urlImage = 'src/Selva/FotosAlimentos/'+card.foto
+    const nombre = card.nombre
+
     return(
         
         <>
-        <img src={urlImage}></img>
+        <img alt={nombre} src={urlImage}></img>
 
         <h2>
-            {card.nombre}
+            {nombre}
         </h2>
         </>
     )

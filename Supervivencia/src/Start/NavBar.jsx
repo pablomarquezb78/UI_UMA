@@ -2,6 +2,7 @@ import logoWeb from '../assets/Start/Logos/logo_web.png'
 import hamburguesa from '../assets/Start/Logos/new_burger.png'
 import cross from '../assets/Start/Logos/X.png'
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
+import MenuIcon from '@mui/icons-material/Menu';
 
 import '../CSS/Start.css';
 import '../CSS/NavBar.css';

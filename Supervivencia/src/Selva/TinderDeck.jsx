@@ -1,10 +1,12 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import getRandom from './RandomFood';
 import TinderCard from './TinderCard.jsx';
 
-
+import { IconButton } from '@mui/material';
+import { styled } from '@mui/system';
 import SosIcon from '@mui/icons-material/Sos';
 import TinderHelpCard from "./TinderHelpCard.jsx";
+import TinderCardResut from "./TinderCardResults.jsx";
 
 
 function TinderDeck({ numberOfCard }) {
@@ -15,8 +17,42 @@ function TinderDeck({ numberOfCard }) {
     const deltaPosition = useRef(0);
     const numberOfCardAux = useRef(numberOfCard);
     const [needHelp, setNeedHelp] = useState(false);
+    
+    const AnimatedIconButton = styled(IconButton)`
+    color: black;
 
+    &:focus {
+        transform: scale(1.1);
+        transition: transform 0.1s ease;
+    }
 
+    .MuiSvgIcon-root {
+        width: calc(20px + (40 - 10) * ((100vmin - 350px) / (1080 - 350)));
+        height: calc(20px + (40 - 10) * ((100vmin - 350px) / (1080 - 350)));
+    }
+    `;
+   
+    useEffect(() => {
+        const handleKeyDown = (e) => {
+                if (e.key.toLowerCase() === 'arrowleft') {
+                    deltaPosition.current = -271
+                    const tinderDeckDivs = document.querySelectorAll('.tinderDeck div');
+                    const actualCard = tinderDeckDivs.length<=2 ? tinderDeckDivs[tinderDeckDivs.length - 1] : tinderDeckDivs[2];
+                    cardDecision(actualCard);
+                } else if (e.key.toLowerCase() === 'arrowright') {
+                    const tinderDeckDivs = document.querySelectorAll('.tinderDeck div');
+                    const actualCard = tinderDeckDivs.length<=2 ? tinderDeckDivs[tinderDeckDivs.length - 1] : tinderDeckDivs[2];
+                    deltaPosition.current = 353
+                    cardDecision(actualCard);
+                }
+            };
+            window.addEventListener('keydown', handleKeyDown);
+    
+            return () => {
+                window.removeEventListener('keydown', handleKeyDown);
+            };
+        },);
+    
 
     const restartGame = () => {
         setShowCard([1, 0]);
@@ -55,6 +91,11 @@ function TinderDeck({ numberOfCard }) {
         document.removeEventListener('mouseup', endDrag);
         document.removeEventListener('touchmove', moveDrag);
         document.removeEventListener('touchend', endDrag);
+
+        cardDecision(actualCard)
+    }
+
+    const cardDecision = (actualCard) => {
 
         if (Math.abs(deltaPosition.current) > limit) {
             const positive = deltaPosition.current >= 0;
@@ -107,13 +148,18 @@ function TinderDeck({ numberOfCard }) {
 
     return (
         <div className="allTinderCards">
+
+            {showCard[0] > getRandom.longData() && (
+                <TinderCardResut resetAction={restartGame} wiseChoice={wiseChoice.current} totalCards={numberOfCard.length}></TinderCardResut>
+            )}
+
             <div className="tinderHeader">
                 <label className={showCard[0] > getRandom.longData() ? 'wiseChoiceCount' : ''}>
                     {wiseChoice.current} / {getRandom.longData()}
                 </label>
-                <span onClick={() => { helpHandler() }}>
+                <AnimatedIconButton onClick={() => { helpHandler() }}>
                      <SosIcon fontSize="large"/>
-                </span>
+                </AnimatedIconButton>
             </div>
 
             {showCard[0] < getRandom.longData() ? (
@@ -145,9 +191,13 @@ function TinderDeck({ numberOfCard }) {
                     )}
                 </div>
             )}
-            <button onClick={() => { restartGame() }}>Reiniciar</button>
+            {showCard[0] <= getRandom.longData() &&
+            <button id='restartTinder' onClick={() => { restartGame() }}>Reiniciar</button>
+            }
         </div>
     );
 }
 
 export default TinderDeck;
+
+
