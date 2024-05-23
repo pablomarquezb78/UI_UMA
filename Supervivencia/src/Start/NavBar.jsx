@@ -1,7 +1,7 @@
 import logoWeb from '../assets/Start/Logos/logo_web.png'
-import ayudaWeb from '../assets/Start/Logos/ayuda_logo.png'
 import hamburguesa from '../assets/Start/Logos/new_burger.png'
 import cross from '../assets/Start/Logos/X.png'
+import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 
 import '../CSS/Start.css';
 import '../CSS/NavBar.css';
@@ -10,6 +10,7 @@ import {useState ,useEffect} from 'react';
 import React from 'react';
  
 function navBar({ scrollToGridInfo, position}) {
+
  
     //Control background blanco
     const bg = position == "absolute" ? "" : "bg-white";
@@ -127,7 +128,7 @@ function navBar({ scrollToGridInfo, position}) {
             </nav>
             <div id="divAyudaLogoStart" className="navBarItem">
                 <a id="ayudaLogoStart" onClick={scrollToGridInfo}>
-                    <img alt='seccionAyuda' src={ayudaWeb}></img>
+                    <HelpOutlineIcon alt='seccionAyuda'></HelpOutlineIcon>
                 </a>
             </div>
         </header>

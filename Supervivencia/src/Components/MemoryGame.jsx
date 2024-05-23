@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import './CSS/MemoryGame.css';
-import helpIcon from '../Selva/FotosAlimentos/ayuda.png';
 
 const MemoryGame = () => {
   const [cards, setCards] = useState([]);
@@ -151,7 +150,7 @@ const MemoryGame = () => {
         </label>
       </div>
         {/* Botón de ayuda */}
-      <img className='helpmont position-absolute' style={{ right: '10%', top: '35%', marginRight: '12px' }} src={helpIcon} alt="Ayuda" tabIndex={0} onClick={() => { toggleHelp() }} onKeyDown={(e) => {
+      <img className='helpmont position-absolute' style={{ right: '10%', top: '35%', marginRight: '12px' }}  alt="Ayuda" tabIndex={0} onClick={() => { toggleHelp() }} onKeyDown={(e) => {
         if (e.key === 'Enter') {
         toggleHelp();
       }}}/>
