@@ -109,14 +109,14 @@ function HigherLowerGame() {
     }, [tickAnimation, rightCardIndex, imageArray.length]);
 
 
-    const cancelGame = useCallback(() => {
+    const cancelGame = () => {
         setShowResult(false);
         setNeedHelp(false);
-    }, []);
+    };
 
-    const helpHandler = useCallback(() => {
+    const helpHandler = () => {
         setNeedHelp(true);
-    }, []);
+    };
 
 
     const resetGame = useCallback(() => {
