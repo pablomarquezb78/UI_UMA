@@ -1,9 +1,10 @@
 import { useState, useRef } from "react";
 import getRandom from './RandomFood';
 import TinderCard from './TinderCard.jsx';
-import veneno from './FotosAlimentos/veneno.png'
-import correcto from './FotosAlimentos/correcto.png'
+
+
 import SosIcon from '@mui/icons-material/Sos';
+import TinderHelpCard from "./TinderHelpCard.jsx";
 
 
 function TinderDeck({ numberOfCard }) {
@@ -14,6 +15,8 @@ function TinderDeck({ numberOfCard }) {
     const deltaPosition = useRef(0);
     const numberOfCardAux = useRef(numberOfCard);
     const [needHelp, setNeedHelp] = useState(false);
+
+
 
     const restartGame = () => {
         setShowCard([1, 0]);
@@ -129,27 +132,7 @@ function TinderDeck({ numberOfCard }) {
                         );
                     })}
                     {needHelp && (
-                        <div id="helpTinder" onMouseDown={(event) => startDrag(event)} onTouchStart={(event) => startDrag(event)}>
-                            <h2>Veo que necesitas algo de ayuda</h2>
-                            <p>El juego consiste en arrastrar la tarjeta a la derecha si crees que el alimento no es venenoso o arrastrarlo a la izquierda si crees que lo es.</p>
-                            <h2>Los indicadores son:</h2>
-                            <div>
-                                <div className='helpResultImage'>
-                                    <h3>VENENOSO</h3>
-                                    <span>
-                                        <img src={veneno}></img>
-                                    </span>
-                                </div>
-                                <div className='helpResultImage'>
-                                    <h3>NO VENENOSO</h3>
-                                    <span>
-                                        <img src={correcto}></img>
-                                    </span>
-                                </div>
-                            
-                            </div>
-                            <h3>Prueba a deslizarme!</h3>
-                        </div>
+                        <TinderHelpCard dragEvent={startDrag}></TinderHelpCard>
                     )}
                 </div>
             ) : (
