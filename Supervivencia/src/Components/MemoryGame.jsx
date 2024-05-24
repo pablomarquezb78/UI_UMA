@@ -6,7 +6,6 @@ import { styled } from '@mui/system';
 
 import SosIcon from '@mui/icons-material/Sos';
 
-
 const MemoryGame = () => {
   const AnimatedIconButton = styled(IconButton)`
   color: black;
@@ -39,14 +38,14 @@ const MemoryGame = () => {
   useEffect(() => {
     // Cargar imágenes
     const backgroundImage = "src/assets/Mountain/fondomont.jpg";
-    const image1 = "src/assets/Mountain/numero1.png";
-    const image2 = "src/assets/Mountain/numero2.png";
-    const image3 = "src/assets/Mountain/numero3.png";
-    const image4 = "src/assets/Mountain/numero4b.png";
-    const image5 = "src/assets/Mountain/numero5.png";
-    const image6 = "src/assets/Mountain/numero6.png";
-    const image7 = "src/assets/Mountain/numero7.png";
-    const image8 = "src/assets/Mountain/numero8.png";
+    const image1 = "src/assets/Mountain/huella_de_oso.png";
+    const image2 = "src/assets/Mountain/foto_de_oso.png";
+    const image3 = "src/assets/Mountain/huella_de_lobo.png";
+    const image4 = "src/assets/Mountain/foto_de_lobo.png";
+    const image5 = "src/assets/Mountain/huella_de_ciervo.png";
+    const image6 = "src/assets/Mountain/foto_de_ciervo.png";
+    const image7 = "src/assets/Mountain/huella_de_cabra.png";
+    const image8 = "src/assets/Mountain/foto_de_cabra.png";
 
     // Crear lista de pares de imágenes
     const cardPairs = [
@@ -94,7 +93,7 @@ const MemoryGame = () => {
         } else if (difficulty === "time") {
           setTimeout(() => {
             setFlippedCards([]);
-          }, 1000); // Espera 1 segundo antes de voltear las cartas incorrectas
+          }, 1500); // Espera 1.5 segundos antes de voltear las cartas incorrectas
         }
       }
     }
@@ -121,7 +120,7 @@ const MemoryGame = () => {
   const handleKeyPress = (e) => {
     if (e.key === "Enter") {
       // Encuentra la carta que está seleccionada actualmente
-      const selectedCardIndex = document.activeElement.tabIndex - 1;
+      const selectedCardIndex = parseInt(e.target.getAttribute("indice")) - 1;
       // Verifica si la carta está volteada o ya emparejada
       if (!isCardFlipped(selectedCardIndex) && !matchedCards.includes(selectedCardIndex)) {
         // Maneja el clic en la carta
@@ -170,7 +169,9 @@ const MemoryGame = () => {
 
         {/* Botón de ayuda */}
       <AnimatedIconButton className='helpmont' 
-      title="Ayuda" tabIndex={0} 
+      title="Ayuda" 
+      alt="Boton Ayuda"
+      tabIndex={0} 
       onClick={() => { toggleHelp() }} 
       onKeyDown={(e) => {
         if (e.key === 'Enter') {
@@ -184,12 +185,16 @@ const MemoryGame = () => {
       {showHelp && (
         <div className="resultmont position-absolute top-50 start-50 translate-middle bg-white rounded p-3 z-1 border border-dark">
         <h2 style={{fontSize:'calc(20px + (30 - 20) * ((100vmin - 350px) / (1080 - 350)))'}}>Ayuda</h2>
-        <p style={{ whiteSpace: 'normal' }}>En este juego de memoria, empareja imágenes de seres vivos con sus huellas.
-        El color del borde de cada huella coincide con el color del borde del animal asociado.</p>
-        <button className='custom-button m-2' onClick={cancelGame}>Volver al juego</button>         
+        <p style={{ whiteSpace: 'normal' }}>En este juego de memoria, empareja imágenes de seres vivos con sus huellas.</p>
+        <p>El color del borde de cada huella coincide con el color del borde del animal asociado.</p>
+        <p>Si eliges el modo fácil podrás voltear las cartas sin tiempo límite con el botón <span style={{ fontWeight: 'bold' }}>Volver a Intentar</span>.</p>
+        <h6> Atajos: </h6>
+        <img src="src/assets/Mountain/atajosmont.png"
+        style={{ width: '100%', maxWidth: '600px', height: 'auto' }}
+        alt="Atajos: Con los numeros 1-8 del teclado se eligen las cartas y con R puedes girarlas en el modo fácil."></img>
+        <button tabIndex="0" className='custom-button m-2' onClick={cancelGame}>Volver al juego</button>         
         </div>
       )}
-      {/* Resto de tu JSX */}
       <div style={{ visibility: shouldFlipIncorrect ? 'visible' : 'hidden' }}>
         <button onClick={handleResetIncorrectCards} className="btn btn-primary">
           Volver a Intentar
@@ -204,12 +209,13 @@ const MemoryGame = () => {
               key={rowIndex * 2 + colIndex}
               className={`card ${isCardFlipped(rowIndex * 2 + colIndex) ? "flipped" : ""}`}
               onClick={() => handleCardClick(rowIndex * 2 + colIndex)}
-              tabIndex={rowIndex * 2 + colIndex + 1} // Establece un índice único para cada carta
+              indice={rowIndex * 2 + colIndex + 1} // Establece un índice único para cada carta
+              tabIndex="0"
               style={{ width: '17vw', maxWidth: '130px', height: 'auto' }}
             >
               <img
                 src={isCardFlipped(rowIndex * 2 + colIndex) ? cards[rowIndex * 2 + colIndex].image : "src/assets/Mountain/interrogacion.png"}
-                alt="Card"
+                alt={isCardFlipped(rowIndex * 2 + colIndex) ? cards[rowIndex * 2 + colIndex].image.split('/').pop().replace(/\.[^/.]+$/, "") : "Carta Misteriosa"}
                 className="card-image"
                 style={{ width: '100%', height: 'auto' }}
               />
