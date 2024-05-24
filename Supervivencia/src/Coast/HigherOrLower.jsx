@@ -14,6 +14,10 @@ function HigherLowerGame() {
         transition: transform 0.1s ease;
     }
 
+    .MuiSvgIcon-root {
+        width: calc(22px + (50 - 22) * ((100vmin - 350px) / (1080 - 350)));
+        height: calc(22px + (50 - 22) * ((100vmin - 350px) / (1080 - 350)));
+    }
     `;
 
 
@@ -38,7 +42,6 @@ function HigherLowerGame() {
         setImageArray(shuffleCard);
     }, []);
 
-
     useEffect(() => {
         setShowAnimation(true);
         setTimeout(() => {
@@ -46,14 +49,13 @@ function HigherLowerGame() {
         }, 500);
     }, [rightCardIndex, showResult]);
 
-
     useEffect(() => {
         if (tickAnimation) {
             const timer = setTimeout(() => {
-                if(rightCardIndex + 1 > imageArray.length - 1){
+                if (rightCardIndex + 1 > imageArray.length - 1) {
                     setShowResult(true);
                     setTickAnimation(false);
-                }else{
+                } else {
                     setLeftCardIndex(rightCardIndex);
                     setRightCardIndex(rightCardIndex + 1);
                     setIsCorrect(0);
@@ -61,55 +63,48 @@ function HigherLowerGame() {
                     setShowDeaths(false);
                     setButtonsVisible(true);
                 }
-
             }, 1500);
             return () => clearTimeout(timer);
         }
-    }, [tickAnimation]);
-
+    }, [tickAnimation, rightCardIndex, imageArray.length]);
 
     const handleHigherClick = () => {
         setButtonsVisible(false);
         if (parseInt(data.randomImage(imageArray[leftCardIndex]).mortalidad) <= parseInt(data.randomImage(imageArray[rightCardIndex]).mortalidad)) {
             setIsCorrect(1);
             setShowDeaths(true);
-            setButtonsVisible(false);
             setTickAnimation(true);
             setTimeout(() => {
-                setCounter(counter+1);
+                setCounter(prevCounter => prevCounter + 1);
             }, 1500);
-            
         } else {
             setIsCorrect(2);
             setShowDeaths(true);
             setCrossAnimation(true);
-            setButtonsVisible(false);
             setTimeout(() => {
                 setCrossAnimation(false);
-                setShowResult(true); 
-            }, 1500); 
+                setShowResult(true);
+            }, 1500);
         }
     };
-    
+
     const handleLowerClick = () => {
+        setButtonsVisible(false);
         if (parseInt(data.randomImage(imageArray[leftCardIndex]).mortalidad) >= parseInt(data.randomImage(imageArray[rightCardIndex]).mortalidad)) {
             setIsCorrect(1);
             setShowDeaths(true);
             setTickAnimation(true);
             setTimeout(() => {
-                setCounter(counter+1);
+                setCounter(prevCounter => prevCounter + 1);
             }, 1500);
-            setButtonsVisible(false);
         } else {
             setIsCorrect(2);
             setShowDeaths(true);
             setCrossAnimation(true);
-            setButtonsVisible(false);
-            
             setTimeout(() => {
                 setCrossAnimation(false);
                 setShowResult(true);
-            }, 1500); 
+            }, 1500);
         }
     };
 
@@ -123,8 +118,7 @@ function HigherLowerGame() {
         setShowDeaths(false);
         setCounter(0);
         setButtonsVisible(true);
-        setShowResult(false); 
-        setReset(false);
+        setShowResult(false);
     };
 
     const cancelGame = () => {
@@ -134,7 +128,31 @@ function HigherLowerGame() {
 
     const helpHandler = () => {
         setNeedHelp(true);
-    }
+    };
+
+
+    useEffect(() => {
+        const handleKeyDown = (e) => {
+            if (e.key.toLowerCase() === 'r') {
+                resetGame();
+            } else if (e.key.toLowerCase() === 'h') {
+                helpHandler();
+            } else if (e.key === '8') {
+                handleHigherClick();
+            } else if (e.key === '2') {
+                handleLowerClick();
+            } else if (e.key.toLowerCase() === 'c') {
+                cancelGame();
+            }
+        };
+
+        window.addEventListener('keydown', handleKeyDown);
+
+        return () => {
+            window.removeEventListener('keydown', handleKeyDown);
+        };
+    },);
+
 
     return (
         <section className='gameHOL d-flex flex-column justify-content-center align-items-center text-center vh-100 vw-100'>
@@ -143,7 +161,7 @@ function HigherLowerGame() {
                 <h2 className='tituloHOL'>Higher or Lower</h2>
                 <h2 className='tituloHOL'>¿Cuál es más letal para el humano 💀?</h2>
             </div>
-            <AnimatedIconButton className='helpHOL position-absolute' title='Ayuda' style={{ right: '0', top: '70%', transform: 'translateY(-50%)', marginRight: '1%' }} onClick={() => { helpHandler() }}><SosIcon fontSize='large'/></AnimatedIconButton>
+            <AnimatedIconButton className='helpHOL position-absolute' title='Ayuda' style={{ right: '0', top: '70%', transform: 'translateY(-50%)', marginRight: '1%' }} onClick={() => { helpHandler() }}><SosIcon/></AnimatedIconButton>
         </div>
             <section className='imagenesHOL position-relative d-flex justify-content-center align-items-center'>
                 <div className='imagenHOL position-relative'>
@@ -188,7 +206,7 @@ function HigherLowerGame() {
                 </div>
             </section>
             <div className="d-flex justify-content-center align-items-center">
-                <button className='custom-button m-3' onClick={resetGame}>Reiniciar</button>
+                {!showResult && <button className='custom-button m-3' onClick={resetGame}>Reiniciar</button>}
                 <h3 style={{fontSize:'calc(15px + (30 - 15) * ((100vmin - 350px) / (1080 - 350)))'}} className={`${showAnimation ? "puntuacionHOL" : ""}`}>Puntuación: {counter}</h3>
             </div>
         </section>
@@ -196,9 +214,4 @@ function HigherLowerGame() {
 }
 
 export default HigherLowerGame;
-
-
-
-
-
 

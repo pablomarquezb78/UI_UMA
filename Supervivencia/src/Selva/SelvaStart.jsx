@@ -15,7 +15,6 @@ function SelvaStart({scrollToGridInfo}) {
             {/* Envuelto por una etiqueta header dentro del componente NavBar*/}
             <NavBar scrollToGridInfo={scrollToGridInfo} position={"fixed"}/>
 
-            <UnderConstruction nombrePagina={'selva'}/>
 
        </section>
  
