@@ -47,10 +47,7 @@
 #ayudaLogoStart{
     display: flex;
     justify-content: end;
-    object-fit: cover;
     cursor: pointer;
-    background-color: transparent;
-    border: none;
 }
 
 #ayudaLogoStart img{
@@ -92,17 +89,9 @@ li img{
 
 #hamburger{
     display: none;
+    z-index: 3;
     width: 50px;
     height: 50px;
-    z-index: 3;
-}
-
-#hamburger {
-    transition: transform 0.3s ease;
-}
-
-#hamburger:hover{
-    transform: scale(1.2);
 }
 
 a{

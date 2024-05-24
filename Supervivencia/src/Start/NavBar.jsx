@@ -2,15 +2,26 @@ import logoWeb from '../assets/Start/Logos/logo_web.png'
 import hamburguesa from '../assets/Start/Logos/new_burger.png'
 import cross from '../assets/Start/Logos/X.png'
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
+import MenuIcon from '@mui/icons-material/Menu';
 
 import '../CSS/Start.css';
 import '../CSS/NavBar.css';
 import { Link ,NavLink} from "react-router-dom";
 import {useState ,useEffect} from 'react';
+import { styled } from '@mui/system';
+import { IconButton } from '@mui/material';
 import React from 'react';
  
 function navBar({ scrollToGridInfo, position}) {
 
+    const AnimatedIconButton = styled(IconButton)`
+    .MuiSvgIcon-root {
+        color: black;
+
+        width: calc(22px + (80 - 22) * ((100vmin - 350px) / (1080 - 350)));
+        height: calc(22px + (80 - 22) * ((100vmin - 350px) / (1080 - 350)));
+    }
+    `;
  
     //Control background blanco
     const bg = position == "absolute" ? "" : "bg-white";
@@ -126,10 +137,8 @@ function navBar({ scrollToGridInfo, position}) {
                     </li>
                 </ul>
             </nav>
-            <div id="divAyudaLogoStart" className="navBarItem">
-                <a id="ayudaLogoStart" onClick={scrollToGridInfo}>
-                    <HelpOutlineIcon alt='seccionAyuda'></HelpOutlineIcon>
-                </a>
+            <div className="navBarItem">
+                <AnimatedIconButton className="navBarItem" id="ayudaLogoStart" disableRipple={true} onClick={scrollToGridInfo}><HelpOutlineIcon alt='seccionAyuda'></HelpOutlineIcon></AnimatedIconButton>
             </div>
         </header>
         <div id="overlay">
