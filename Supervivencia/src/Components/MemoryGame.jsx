@@ -1,23 +1,19 @@
 import React, { useState, useEffect } from "react";
 import './CSS/MemoryGame.css';
-
 import { IconButton } from '@mui/material';
 import { styled } from '@mui/system';
-
 import SosIcon from '@mui/icons-material/Sos';
 
 const MemoryGame = () => {
   const AnimatedIconButton = styled(IconButton)`
-  color: black;
-
-  &:hover{
+    color: black;
+    &:hover {
       color: white;
-  }
-
-  .MuiSvgIcon-root {
+    }
+    .MuiSvgIcon-root {
       width: calc(33px + (64 - 33) * ((100vmin - 350px) / (1080 - 350)));
       height: calc(33px + (64 - 33) * ((100vmin - 350px) / (1080 - 350)));
-  }
+    }
   `;
 
   const [cards, setCards] = useState([]);
@@ -25,45 +21,34 @@ const MemoryGame = () => {
   const [matchedCards, setMatchedCards] = useState([]);
   const [moves, setMoves] = useState(0);
   const [shouldFlipIncorrect, setShouldFlipIncorrect] = useState(false);
-  const [difficulty, setDifficulty] = useState("button"); // Por defecto, elige la dificultad de botón
+  const [difficulty, setDifficulty] = useState("button");
   const [showResult, setShowResult] = useState(false);
-  const [showHelp, setShowHelp] = useState(false); // Nuevo estado para controlar la visibilidad de la ayuda
+  const [showHelp, setShowHelp] = useState(false);
 
-  // Función para mezclar las cartas
   const shuffleCards = array => {
     return array.sort(() => Math.random() - 0.5);
   };
 
-  // Inicializar el juego al cargar el componente
   useEffect(() => {
-    // Cargar imágenes
-    const backgroundImage = "src/assets/Mountain/fondomont.jpg";
-    const image1 = "src/assets/Mountain/huella_de_oso.png";
-    const image2 = "src/assets/Mountain/foto_de_oso.png";
-    const image3 = "src/assets/Mountain/huella_de_lobo.png";
-    const image4 = "src/assets/Mountain/foto_de_lobo.png";
-    const image5 = "src/assets/Mountain/huella_de_ciervo.png";
-    const image6 = "src/assets/Mountain/foto_de_ciervo.png";
-    const image7 = "src/assets/Mountain/huella_de_cabra.png";
-    const image8 = "src/assets/Mountain/foto_de_cabra.png";
-
-    // Crear lista de pares de imágenes
-    const cardPairs = [
-      { id: 1, image: image1 },
-      { id: 1, image: image2 },
-      { id: 2, image: image3 },
-      { id: 2, image: image4 },
-      { id: 3, image: image5 },
-      { id: 3, image: image6 },
-      { id: 4, image: image7 },
-      { id: 4, image: image8 }
+    const images = [
+      "src/assets/Mountain/huella_de_oso.png",
+      "src/assets/Mountain/foto_de_oso.png",
+      "src/assets/Mountain/huella_de_lobo.png",
+      "src/assets/Mountain/foto_de_lobo.png",
+      "src/assets/Mountain/huella_de_ciervo.png",
+      "src/assets/Mountain/foto_de_ciervo.png",
+      "src/assets/Mountain/huella_de_cabra.png",
+      "src/assets/Mountain/foto_de_cabra.png"
     ];
 
-    // Mezclar las cartas y establecerlas en el estado
+    const cardPairs = images.map((image, index) => ({
+      id: Math.floor(index / 2),
+      image
+    }));
+
     setCards(shuffleCards(cardPairs));
   }, []);
 
-  // Función para manejar el clic en una carta
   const handleCardClick = index => {
     if (matchedCards.includes(index) || flippedCards.includes(index) || flippedCards.length >= 2) return;
 
@@ -82,8 +67,6 @@ const MemoryGame = () => {
         const newMatchedCards = [...matchedCards, firstCardIndex, secondCardIndex];
         setMatchedCards(newMatchedCards);
         setFlippedCards([]);
-
-        // Mostrar el modal si todas las cartas están emparejadas
         if (newMatchedCards.length === cards.length) {
           setShowResult(true);
         }
@@ -93,53 +76,41 @@ const MemoryGame = () => {
         } else if (difficulty === "time") {
           setTimeout(() => {
             setFlippedCards([]);
-          }, 1500); // Espera 1.5 segundos antes de voltear las cartas incorrectas
+          }, 1500);
         }
       }
     }
   };
 
-  // Función para manejar el clic en el botón de ayuda
   const toggleHelp = () => {
-    setShowHelp(!showHelp); // Cambia el estado de la visibilidad de la ayuda
+    setShowHelp(!showHelp);
   };
 
-  // Función para manejar el clic en el botón de reinicio de cartas incorrectas
   const handleResetIncorrectCards = () => {
     setFlippedCards([]);
     setShouldFlipIncorrect(false);
   };
 
   const cancelGame = () => {
-    setShowHelp(false); // Cambia el estado de la visibilidad de la ayuda
+    setShowHelp(false);
   };
 
-
-  
+  const handleCardKeyPress = (e, index) => {
+    if (e.key === "Enter" || e.key === " ") {
+      handleCardClick(index);
+    }
+  };
 
   const handleKeyPress = (e) => {
-    if (e.key === "Enter") {
-      // Encuentra la carta que está seleccionada actualmente
-      const selectedCardIndex = parseInt(e.target.getAttribute("indice")) - 1;
-      // Verifica si la carta está volteada o ya emparejada
-      if (!isCardFlipped(selectedCardIndex) && !matchedCards.includes(selectedCardIndex)) {
-        // Maneja el clic en la carta
-        handleCardClick(selectedCardIndex);
-      }
-    } else if (e.key >= "1" && e.key <= "8") {
-      // Verifica si la tecla presionada es un número del 1 al 8
+    if (e.key >= "1" && e.key <= "8") {
       const cardIndex = parseInt(e.key) - 1;
-      // Verifica si la carta correspondiente existe y no está volteada ni emparejada
-      if (cardIndex >= 0 && cardIndex < cards.length && !isCardFlipped(cardIndex) && !matchedCards.includes(cardIndex)) {  
-        // Maneja el clic en la carta
+      if (cardIndex >= 0 && cardIndex < cards.length && !isCardFlipped(cardIndex) && !matchedCards.includes(cardIndex)) {
         handleCardClick(cardIndex);
       }
     } else if (e.key.toUpperCase() === "R") {
-      // Verifica si la tecla presionada es "R" para volver a intentar
-      handleResetIncorrectCards(); // Activa la función para volver a intentar
+      handleResetIncorrectCards();
     }
   };
-  
 
   const handleResetGame = () => {
     setMoves(0);
@@ -155,7 +126,12 @@ const MemoryGame = () => {
   };
 
   return (
-    <div className="memory-game">
+    <div 
+      className="memory-game" 
+      tabIndex="0" 
+      onKeyDown={handleKeyPress}
+      role="application" 
+      aria-label="Juego de Memoria">
       <h1>Juego de Memoria</h1>
       <p>Relaciona a cada animal con su huella</p>
       <div className="controls">
@@ -167,70 +143,85 @@ const MemoryGame = () => {
           </select>
         </label>
 
-        {/* Botón de ayuda */}
-      <AnimatedIconButton className='helpmont' 
-      title="Ayuda" 
-      alt="Boton Ayuda"
-      tabIndex={0} 
-      onClick={() => { toggleHelp() }} 
-      onKeyDown={(e) => {
-        if (e.key === 'Enter') {
-        toggleHelp();
-      }}}>
-        <SosIcon/>
-      </AnimatedIconButton>
+        <AnimatedIconButton 
+          className='helpmont' 
+          title="Ayuda" 
+          alt="Botón de Ayuda"
+          tabIndex={0} 
+          onClick={toggleHelp} 
+          onKeyDown={(e) => {
+            if (e.key === 'Enter') toggleHelp();
+          }}>
+          <SosIcon />
+        </AnimatedIconButton>
       </div>
-        
-      {/* Sección de ayuda */}
+
       {showHelp && (
-        <div className="resultmont position-absolute top-50 start-50 translate-middle bg-white rounded p-3 z-1 border border-dark">
-        <h2 style={{fontSize:'calc(20px + (30 - 20) * ((100vmin - 350px) / (1080 - 350)))'}}>Ayuda</h2>
-        <p style={{ whiteSpace: 'normal' }}>En este juego de memoria, empareja imágenes de seres vivos con sus huellas.</p>
-        <p>El color del borde de cada huella coincide con el color del borde del animal asociado.</p>
-        <p>Si eliges el modo fácil podrás voltear las cartas sin tiempo límite con el botón <span style={{ fontWeight: 'bold' }}>Volver a Intentar</span>.</p>
-        <h6> Atajos: </h6>
-        <img src="src/assets/Mountain/atajosmont.png"
-        style={{ width: '100%', maxWidth: '600px', height: 'auto' }}
-        alt="Atajos: Con los numeros 1-8 del teclado se eligen las cartas y con R puedes girarlas en el modo fácil."></img>
-        <button tabIndex="0" className='custom-button m-2' onClick={cancelGame}>Volver al juego</button>         
+        <div 
+          tabIndex="0" 
+          className="resultmont position-absolute top-50 start-50 translate-middle bg-white rounded p-3 z-1 border border-dark"
+          role="dialog" 
+          aria-labelledby="helpTitle"
+          aria-describedby="helpDescription">
+          <h2 id="helpTitle" style={{fontSize:'calc(20px + (30 - 20) * ((100vmin - 350px) / (1080 - 350)))'}}>Ayuda</h2>
+          <p id="helpDescription" style={{ whiteSpace: 'normal' }}>En este juego de memoria, empareja imágenes de seres vivos con sus huellas. El color del borde de cada huella coincide con el color del borde del animal asociado. Si eliges el modo fácil podrás voltear las cartas sin tiempo límite con el botón <span style={{ fontWeight: 'bold' }}>Volver a Intentar</span>.</p>
+          <h6> Atajos: </h6>
+          <img tabIndex="0"  src="src/assets/Mountain/atajosmont.png"
+            style={{ width: '100%', maxWidth: '600px', height: 'auto' }}
+            alt="Atajos: Con los números 1-8 del teclado se eligen las cartas y con R puedes girarlas en el modo fácil." />
+          <button 
+            tabIndex="0" 
+            className='custom-button m-2' 
+            onClick={cancelGame}
+            aria-label="Volver al juego">Volver al juego</button>
         </div>
       )}
+
       <div style={{ visibility: shouldFlipIncorrect ? 'visible' : 'hidden' }}>
         <button onClick={handleResetIncorrectCards} className="btn btn-primary">
           Volver a Intentar
         </button>
       </div>
 
-      <div className="cards-grid" tabIndex="0" onKeyDown={(e) => handleKeyPress(e)}>
-      {Array.from({ length: 4 }, (_, rowIndex) => (
-        <div key={rowIndex} className="card-group">
-          {Array.from({ length: 2 }, (_, colIndex) => (
-            <div
-              key={rowIndex * 2 + colIndex}
-              className={`card ${isCardFlipped(rowIndex * 2 + colIndex) ? "flipped" : ""}`}
-              onClick={() => handleCardClick(rowIndex * 2 + colIndex)}
-              indice={rowIndex * 2 + colIndex + 1} // Establece un índice único para cada carta
-              tabIndex="0"
-              style={{ width: '17vw', maxWidth: '130px', height: 'auto' }}
-            >
-              <img
-                src={isCardFlipped(rowIndex * 2 + colIndex) ? cards[rowIndex * 2 + colIndex].image : "src/assets/Mountain/interrogacion.png"}
-                alt={isCardFlipped(rowIndex * 2 + colIndex) ? cards[rowIndex * 2 + colIndex].image.split('/').pop().replace(/\.[^/.]+$/, "") : "Carta Misteriosa"}
-                className="card-image"
-                style={{ width: '100%', height: 'auto' }}
-              />
-            </div>
-          ))}
-        </div>
-      ))}
-    </div>
-
+      <div className="cards-grid">
+        {Array.from({ length: 4 }, (_, rowIndex) => (
+          <div key={rowIndex} className="card-group">
+            {Array.from({ length: 2 }, (_, colIndex) => (
+              <div
+                key={rowIndex * 2 + colIndex}
+                className={`card ${isCardFlipped(rowIndex * 2 + colIndex) ? "flipped" : ""}`}
+                onClick={() => handleCardClick(rowIndex * 2 + colIndex)}
+                onKeyDown={(e) => handleCardKeyPress(e, rowIndex * 2 + colIndex)}
+                tabIndex="0"
+                role="button"
+                aria-pressed={isCardFlipped(rowIndex * 2 + colIndex)}
+                aria-label={
+                  isCardFlipped(rowIndex * 2 + colIndex) 
+                  ? `Carta con imagen de ${cards[rowIndex * 2 + colIndex].image.split('/').pop().replace(/\.[^/.]+$/, "")}`
+                  : `Carta Misteriosa ${rowIndex * 2 + colIndex +1}`}                
+                style={{ width: '17vw', maxWidth: '130px', height: 'auto' }}
+              >
+                <img
+                  src={isCardFlipped(rowIndex * 2 + colIndex) ? cards[rowIndex * 2 + colIndex].image : "src/assets/Mountain/interrogacion.png"}
+                  alt={isCardFlipped(rowIndex * 2 + colIndex) ? cards[rowIndex * 2 + colIndex].image.split('/').pop().replace(/\.[^/.]+$/, "") : "Carta Misteriosa"}
+                  className="card-image"
+                  style={{ width: '100%', height: 'auto' }}
+                />
+              </div>
+            ))}
+          </div>
+        ))}
+      </div>
 
       {showResult && (
-        <div className="resultmont position-absolute top-50 start-50 translate-middle bg-white rounded p-3 z-1 border border-dark">
+        <div 
+          className="resultmont position-absolute top-50 start-50 translate-middle bg-white rounded p-3 z-1 border border-dark"
+          role="alertdialog"
+          aria-labelledby="resultTitle"
+          aria-describedby="resultDescription">
           <div className="d-flex flex-column justify-content-center align-items-center">
-            <h2 className="text-center">¡Has completado el juego en {moves} movimientos!</h2>
-            <button className="btn btn-dark m-2" onClick={handleResetGame}>Reiniciar</button>
+            <h2 id="resultTitle" className="text-center">¡Has completado el juego en {moves} movimientos!</h2>
+            <button id="resultDescription" className="btn btn-dark m-2" onClick={handleResetGame}>Reiniciar</button>
           </div>
         </div>
       )}
