@@ -1,0 +1,74 @@
+{
+    "plants": [
+        {
+            "src": "",
+            "cardTitle": "Helecho",
+            "cardSubtitle": "Pteridophyta",
+            "cardText": "Los helechos son plantas sin flores que pertenecen a la división Pteridophyta. Son comunes en bosques húmedos y sombreados y tienen frondes que se desenrollan a medida que crecen.",
+            "img": "public/Forest/PlantInfoPublicAssets/Images/Helecho.jpg"
+        },
+        {
+            "src": "",
+            "cardTitle": "Musgo",
+            "cardSubtitle": "Bryophyta",
+            "cardText": "Los musgos son plantas no vasculares pertenecientes a la división Bryophyta. Crecen en ambientes húmedos y sombreados, formando una alfombra verde sobre el suelo del bosque, rocas y troncos de árboles.",
+            "img": "public/Forest/PlantInfoPublicAssets/Images/Musgo.jpg"
+        },
+        {
+            "src": "",
+            "cardTitle": "Roble",
+            "cardSubtitle": "Quercus",
+            "cardText": "Los robles son árboles de la familia Fagaceae, conocidos por su madera fuerte y sus bellotas. Crecen en diversas regiones del mundo y son una parte importante de muchos ecosistemas forestales.",
+            "img": "public/Forest/PlantInfoPublicAssets/Images/Roble.webp"
+        },
+        {
+            "src": "",
+            "cardTitle": "Pino",
+            "cardSubtitle": "Pinus",
+            "cardText": "Los pinos son árboles coníferos de la familia Pinaceae. Son conocidos por sus hojas en forma de aguja y sus piñas. Los pinos crecen en diversos climas y son una fuente importante de madera y resina.",
+            "img": "public/Forest/PlantInfoPublicAssets/Images/Pino.jpg"
+        },
+        {
+            "src": "",
+            "cardTitle": "Arce",
+            "cardSubtitle": "Acer",
+            "cardText": "Los arces son árboles de la familia Sapindaceae, conocidos por sus hojas palmeadas y su savia que se utiliza para producir jarabe de arce. Son comunes en bosques templados.",
+            "img": "public/Forest/PlantInfoPublicAssets/Images/Arce.jpg"
+        },
+        {
+            "src": "",
+            "cardTitle": "Hiedra",
+            "cardSubtitle": "Hedera",
+            "cardText": "La hiedra es una planta trepadora de la familia Araliaceae. Es común en bosques y áreas sombreadas, donde trepa árboles y muros, ayudada por sus raíces aéreas.",
+            "img": "public/Forest/PlantInfoPublicAssets/Images/Hiedra.jpg"
+        },
+        {
+            "src": "",
+            "cardTitle": "Flor de Lis",
+            "cardSubtitle": "Lilium",
+            "cardText": "Las flores de lis son plantas con flores pertenecientes a la familia Liliaceae. Son conocidas por sus grandes y vistosas flores y son comunes en áreas forestales y jardines.",
+            "img": "public/Forest/PlantInfoPublicAssets/Images/FlorDeLis.jpg"
+        },
+        {
+            "src": "",
+            "cardTitle": "Trébol",
+            "cardSubtitle": "Trifolium",
+            "cardText": "El trébol es una planta herbácea de la familia Fabaceae. Es conocida por sus hojas trifoliadas y sus pequeñas flores, y crece en praderas y claros de bosques.",
+            "img": "public/Forest/PlantInfoPublicAssets/Images/Trebol.jpg"
+        },
+        {
+            "src": "",
+            "cardTitle": "Amapola",
+            "cardSubtitle": "Papaver",
+            "cardText": "Las amapolas son plantas con flores de la familia Papaveraceae. Son conocidas por sus vibrantes flores rojas y crecen en campos y claros de bosques.",
+            "img": "public/Forest/PlantInfoPublicAssets/Images/Amapola.jpg"
+        },
+        {
+            "src": "",
+            "cardTitle": "Violeta",
+            "cardSubtitle": "Viola",
+            "cardText": "Las violetas son pequeñas plantas con flores de la familia Violaceae. Crecen en áreas sombreadas y húmedas de bosques y son conocidas por sus delicadas flores de color violeta.",
+            "img": "public/Forest/PlantInfoPublicAssets/Images/Violeta.jpg"
+        }
+    ]
+}

@@ -1,9 +1,24 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 
 import './AudioGameContent.css';
 import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore'
 
 function GameLost({backFunction}) {
+
+    useEffect(() => {
+        const handleKeyDown = (e) => {
+          if (e.key === 'ArrowLeft') {
+            backFunction();
+          }
+        };
+    
+        window.addEventListener('keydown', handleKeyDown);
+    
+        // Limpieza del event listener cuando el componente se desmonte
+        return () => {
+          window.removeEventListener('keydown', handleKeyDown);
+        };
+    }, []);
 
     return(
         <div id='gameZoneCenter'>

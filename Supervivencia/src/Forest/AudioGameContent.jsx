@@ -13,6 +13,8 @@ import {animals} from '../assets/Forest/AudioGameAssets/AudioGameDataset.json'
 
 function GameContent({backFunction, passFunction}) {
 
+    //Editing
+
     const [play, setPlay] = useState(false);
     const [ended, setEnded] = useState(false);
     const [started, setStarted] = useState(false);
@@ -23,8 +25,10 @@ function GameContent({backFunction, passFunction}) {
     const [volumeMute, setVolumeMute] = useState(false);
 
     const [responsesArray, setResponsesArray] = useState([]);
-    const [audioSrc, setAudioSrc] = useState('');
-    const [correctResponse, setCorrectResponse] = useState(0);
+    //const [audioSrc, setAudioSrc] = useState('');
+    const audioSrc = useRef();
+    //const [correctResponse, setCorrectResponse] = useState(0);
+    const correctResponse = useRef();
     const [score, setScore] = useState(0);
     
     useLayoutEffect(() =>{
@@ -71,7 +75,8 @@ function GameContent({backFunction, passFunction}) {
     {
         if(!started)
         {
-            audioRef.current.src = `public/Forest/AudioGamePublicAssets/AudiosMP3/${audioSrc}`;
+            //audioRef.current.src = `public/Forest/AudioGamePublicAssets/AudiosMP3/${audioSrc}`;
+            audioRef.current.src = `public/Forest/AudioGamePublicAssets/AudiosMP3/${audioSrc.current}`;
             setEnded(false);
         }
         if(play)
@@ -113,7 +118,8 @@ function GameContent({backFunction, passFunction}) {
         } while(randomIncorrectIndex03 == randomCorrectIndex || randomIncorrectIndex03 == randomIncorrectIndex01 || randomIncorrectIndex03 == randomIncorrectIndex02)
 
         let randomCorrectPosition = Math.floor(Math.random() * 4);
-        setCorrectResponse(randomCorrectPosition);
+        //setCorrectResponse(randomCorrectPosition);
+        correctResponse.current = randomCorrectPosition;
         switch (randomCorrectPosition){
             case 0:
                 const responses0 = [randomCorrectIndex, randomIncorrectIndex01, randomIncorrectIndex02, randomIncorrectIndex03].map(index => animals[index].text);
@@ -136,7 +142,8 @@ function GameContent({backFunction, passFunction}) {
                 setResponsesArray(responses);
             break;
         }
-        setAudioSrc(animals[randomCorrectIndex].src);
+        //setAudioSrc(animals[randomCorrectIndex].src);
+        audioSrc.current = animals[randomCorrectIndex].src
     }
 
     function tutorialClickHandle()
@@ -150,7 +157,7 @@ function GameContent({backFunction, passFunction}) {
 
     function pressResponse(num)
     {
-        if(correctResponse == num)
+        if(correctResponse.current == num)
         {
             setScore(score + 1);
             loadGameResources();
@@ -162,7 +169,35 @@ function GameContent({backFunction, passFunction}) {
         }
     }
 
-    return( 
+    useEffect(() => {
+        const handleKeyDown = (e) => {
+          if (e.key === 'S' || e.key === 's') {
+            loadGameResources();
+          } else if (e.key === 'R' || e.key === 'r') {
+            playAudio();
+          } else if (e.key === '1') {
+            pressResponse(0);
+          } else if (e.key === '2') {
+            pressResponse(1);
+          } else if (e.key === '3') {
+            pressResponse(2);
+          } else if (e.key === '4') {
+            pressResponse(3);
+          } else if (e.key === 'T' || e.key === 't' || e.key === 'ArrowLeft') {
+            tutorialClickHandle();
+          }
+        };
+    
+        window.addEventListener('keydown', handleKeyDown);
+    
+        // Limpieza del event listener cuando el componente se desmonte
+        return () => {
+          window.removeEventListener('keydown', handleKeyDown);
+        };
+    }, []);
+
+
+    return(
         <div id='gameZoneCenter'>
             <div className='container-fluid h-75 w-75' id='gameBox'>
                 <div className='topElement row justify-content-center align-items-center h-25'>
