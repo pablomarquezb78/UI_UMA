@@ -20,10 +20,10 @@ function HelpSection({ showHelp }) {
 
     return (
         <div className="position-absolute z-1 bg-white rounded p-3 mb-5 puntuacionHOL w-75 h-75 d-flex flex-column justify-content-center align-items-center top-50 start-50 translate-middle item-included " style={{ maxWidth: '600px' }}>
-            <span id="bagTutoralTitle" className="text-center" ref={ref1} style={{ fontSize: fontSize1, height: '20%', width: '100%', letterSpacing: '1px', lineHeight: '1.2' }}>
+            <span id="bagTutoralTitle" tabIndex="0" className="text-center" ref={ref1} style={{ fontSize: fontSize1, height: '20%', width: '100%', letterSpacing: '1px', lineHeight: '1.2' }}>
                 ¡Bienvenido al juego de la mochila!
             </span>
-            <span id="bagTutorialText" className="text-center" ref={ref1} style={{ fontSize: fontSize1, height: '60%', width: '100%', letterSpacing: '1px', lineHeight: '1.2' }}>
+            <span id="bagTutorialText" tabIndex="0" className="text-center" ref={ref1} style={{ fontSize: fontSize1, height: '60%', width: '100%', letterSpacing: '1px', lineHeight: '1.2' }}>
                 Este juego está basado en las típicas preguntas de ¿Qué te llevarías a una isla desierta? Pero con una pequeña modificación, de 14 objetos
                 podrás elegir solo 8 de ellos para llevártelos al desierto. <br /><br />Cada uno tiene unos puntos de supervivencia asociados y unas ventajas y desventajas para que
                 puedas analizar su utilidad. La máxima puntuación es de 100 ¡A por ello!
@@ -51,10 +51,10 @@ function ItemInfoContainerBottom({itemList,currentIndex,}){
                 <h1 id="itemDisplayedBottom" ref={ref} style={{ fontSize, height: heightTitle , width: widthTitle, letterSpacing: '1px', lineHeight: '1.2' }} className="text-white text-center">
                     {itemList[currentIndex].nombre}
                 </h1>
-                <span id='pros' ref={ref} style={{ fontSize, height: heightText, width: widthText, letterSpacing: '1px', lineHeight: '1.2'}} className="text-white">
+                <span id='pros' tabIndex="0" ref={ref} style={{ fontSize, height: heightText, width: widthText, letterSpacing: '1px', lineHeight: '1.2'}} className="text-white">
                     Ventajas: {itemList[currentIndex].ventajas}
                 </span><br/>
-                <span id='cons' ref={ref} style={{ fontSize, height: heightText, width: widthText, letterSpacing: '1px', lineHeight: '1.2' }} className="text-white">
+                <span id='cons' tabIndex="0" ref={ref} style={{ fontSize, height: heightText, width: widthText, letterSpacing: '1px', lineHeight: '1.2' }} className="text-white">
                     Desventajas: {itemList[currentIndex].desventajas}
                 </span>
                 {/*PARA DEBUGEAR EL FITTEXT AÑADIR border: "1px solid red" AL STYLE*/}
@@ -81,10 +81,10 @@ function ItemInfoContainerTop({itemList,currentIndex}){
                 {itemList[currentIndex].nombre}
             </h1>
             <div id="itemInfoTop"> 
-                <span id='pros' ref={ref} style={{ fontSize, height: heightText, width: widthText, letterSpacing: '1px', lineHeight: '1.2'}} className="text-white">
+                <span id='pros' tabIndex="0" ref={ref} style={{ fontSize, height: heightText, width: widthText, letterSpacing: '1px', lineHeight: '1.2'}} className="text-white">
                     Ventajas: {itemList[currentIndex].ventajas}
                 </span>
-                <span id='cons' ref={ref} style={{ fontSize, height: heightText, width: widthText, letterSpacing: '1px', lineHeight: '1.2'}} className="text-white">
+                <span id='cons' tabIndex="0" ref={ref} style={{ fontSize, height: heightText, width: widthText, letterSpacing: '1px', lineHeight: '1.2'}} className="text-white">
                     Desventajas: {itemList[currentIndex].desventajas}
                 </span>
                 {/*PARA DEBUGEAR EL FITTEXT AÑADIR border: "1px solid red" AL STYLE*/}
@@ -178,13 +178,13 @@ function DesertBagGame() {
         <section id="desertGameCompleteSection" className="position-relative vw-100 vh-100">
             <div id="completeGameSectionHelp" className="d-flex flex-column position-absolute start-50 translate-middle-x">
                 <div id="resultDisplay" className="d-flex justify-content-around mt-2">
-                    <h2 id="bagGameTitle" className="text-center text-white d-flex align-items-center letter-spacing-1 line-height-1-2">¡Prepara la mochila para sobrevivir!</h2>
-                    <AnimatedIconButton disableRipple={true} onClick={restartGame}><RestartAltIcon /></AnimatedIconButton>
-                    <AnimatedIconButton disableRipple={true} onClick={showHelp}><SosIcon /></AnimatedIconButton>
+                    <h2 id="bagGameTitle" tabIndex="0" className="text-center text-white d-flex align-items-center letter-spacing-1 line-height-1-2">¡Prepara la mochila para sobrevivir!</h2>
+                    <AnimatedIconButton title="Reiniciar juego" onClick={restartGame}><RestartAltIcon /></AnimatedIconButton>
+                    <AnimatedIconButton title="Ayuda del juego" onClick={showHelp}><SosIcon /></AnimatedIconButton>
                 </div>
                 <ItemInfoContainerTop  itemList={itemList} currentIndex={currentIndex}/>
                 {(helpPressed && itemList.length !== 8) && (
-                            <HelpSection showHelp={showHelp} />
+                        <HelpSection  showHelp={showHelp} />
                 )}
                 {itemList.length === 8 && (
                             <div className="position-absolute z-1 bg-white rounded p-3 mb-5 item-included
@@ -196,17 +196,18 @@ function DesertBagGame() {
                 <div id="bagGameDisplay" className="d-flex justify-content-center align-items-center">
                     <div id="bagPlace" className="d-flex flex-grow-0 h-100 flex-column justify-content-center">
                         <div id="CapacityContainer">
-                            <h4 className="d-block text-center text-white f-size-4 letter-spacing-1 line-height-1-2">Capacidad: {16 - itemList.length}/8</h4>
+                            <h4 tabIndex="0" aria-label={`Capacidad ${16 - itemList.length} de 8`} className="d-block text-center text-white f-size-4 letter-spacing-1 line-height-1-2">Capacidad: {16 - itemList.length}/8</h4>
                         </div>
                         <div id="BagContainer" className={`d-flex justify-content-center flex-grow-0 w-100  ${isItemIncluded ? "item-included" : ""}`}>
-                            <img src={Bag} alt="Bag" className="img-fluid"></img>
+                            <img tabIndex="0" src={Bag} alt="Mochila de supervivencia" className="img-fluid"></img>
                         </div>
                     </div>
                     <div id="itemsContainer" className="h-100 d-flex flex-column align-items-center justify-content-center">
                         <div id="itemImgContainer" className="d-flex justify-content-center w-100">
                             <img
                                 src={imgPath + itemList[currentIndex].imagen}
-                                alt={`Imagen ${itemList[currentIndex].id}`}
+                                alt={`Imagen de ${itemList[currentIndex].nombre}`}
+                                tabIndex="0"
                                 className={`${isAnimating ? "move-left-scale-animation" : ""} ${(isItemIncluded || indexChanged) ? "appear-animation" : ""} `}
                                 onAnimationEnd={() => {
                                     setIsAnimating(false); // Indica que la animación del objeto ha terminado
@@ -214,9 +215,9 @@ function DesertBagGame() {
                             />
                         </div>
                         <div id="bagButtonContainer" className="d-flex justify-content-center align-items-center">
-                            <AnimatedIconButton onClick={() => handleButtonClick(prevImage)} disabled={cooldown}><NavigateBeforeIcon /></AnimatedIconButton>
-                            <AnimatedIconButton onClick={() => handleButtonClick(includeItem)} disabled={cooldown}><AddIcon /></AnimatedIconButton>
-                            <AnimatedIconButton onClick={() => handleButtonClick(nextImage)} disabled={cooldown}><NavigateNextIcon /></AnimatedIconButton>
+                            <AnimatedIconButton title="Objeto anterior" tabIndex="0" onClick={() => handleButtonClick(prevImage)} disabled={cooldown}><NavigateBeforeIcon /></AnimatedIconButton>
+                            <AnimatedIconButton title="Añadir objeto a la mochila" tabIndex="0" onClick={() => handleButtonClick(includeItem)} disabled={cooldown}><AddIcon /></AnimatedIconButton>
+                            <AnimatedIconButton title="Objeto siguiente" tabIndex="0" onClick={() => handleButtonClick(nextImage)} disabled={cooldown}><NavigateNextIcon /></AnimatedIconButton>
                         </div>
                     </div>
                    <ItemInfoContainerBottom itemList={itemList} currentIndex={currentIndex}/>

@@ -138,7 +138,7 @@ function navBar({ scrollToGridInfo, position}) {
                 </ul>
             </nav>
             <div className="navBarItem">
-                <AnimatedIconButton className="navBarItem" id="ayudaLogoStart" disableRipple={true} onClick={scrollToGridInfo}><HelpOutlineIcon alt='seccionAyuda'></HelpOutlineIcon></AnimatedIconButton>
+                <AnimatedIconButton title="Ayuda Página" className="navBarItem" id="ayudaLogoStart" disableRipple={true} onClick={scrollToGridInfo}><HelpOutlineIcon alt='seccionAyuda'></HelpOutlineIcon></AnimatedIconButton>
             </div>
         </header>
         <div id="overlay">
