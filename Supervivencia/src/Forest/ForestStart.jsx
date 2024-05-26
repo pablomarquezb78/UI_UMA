@@ -2,7 +2,6 @@ import React from 'react';
 
 import '../CSS/Start.css';
 import NavBar from '../Start/NavBar';
-import UnderConstruction from '../Components/UnderConstructionScreen'
 
 function ForestStart({scrollToGridInfo}) {
     
@@ -13,9 +12,6 @@ function ForestStart({scrollToGridInfo}) {
     
             {/* Envuelto por una etiqueta header dentro del componente NavBar*/}
             <NavBar scrollToGridInfo={scrollToGridInfo} currentLink={3}/>
-
-            {/* Temporalmente está el archivo de bosque */}
-            <UnderConstruction nombrePagina={'bosque'}/>
 
        </section>
  

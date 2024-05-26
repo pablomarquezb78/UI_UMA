@@ -19,7 +19,7 @@ function HelpSection({ showHelp }) {
     });
 
     return (
-        <div className="position-absolute z-1 bg-white rounded p-3 mb-5 puntuacionHOL w-75 h-75 d-flex flex-column justify-content-center align-items-center top-50 start-50 translate-middle item-included " style={{ maxWidth: '600px' }}>
+        <div className="position-absolute z-1 bg-white rounded p-3 mb-5 appear-animation w-75 h-75 d-flex flex-column justify-content-center align-items-center top-50 start-50 translate-middle item-included " style={{ maxWidth: '600px' }}>
             <span id="bagTutoralTitle" tabIndex="0" className="text-center" ref={ref1} style={{ fontSize: fontSize1, height: '20%', width: '100%', letterSpacing: '1px', lineHeight: '1.2' }}>
                 ¡Bienvenido al juego de la mochila!
             </span>
@@ -187,7 +187,7 @@ function DesertBagGame() {
                         <HelpSection  showHelp={showHelp} />
                 )}
                 {itemList.length === 8 && (
-                            <div className="position-absolute z-1 bg-white rounded p-3 mb-5 item-included
+                            <div className="position-absolute z-1 bg-white rounded p-3 mb-5 appear-animation
                              w-50 h-50 d-flex flex-column justify-content-center align-items-center top-50 start-50 translate-middle" style={{ maxHeight: '200px' }}>
                                 <h2 id="bagPuntuation" className="text-center h-75 letter-spacing-1 line-height-1-2">¡Fin del juego!<br/><br/> Has conseguido {suma} puntos de supervivencia</h2>
                                 <button id="bagRestartPuntuation" className="btn btn-dark mt-3 h-25" onClick={restartGame}>Reiniciar</button>

@@ -5,7 +5,7 @@ import './CSS/UnderConstruction.css'
 import cleaningPenguin from "../assets/UnderConstructionScreen/club-penguin-mop.gif";
 
 
-function underConstruction({nombrePagina}) {
+function underConstruction() {
     
     return(
 
@@ -17,7 +17,7 @@ function underConstruction({nombrePagina}) {
                 <h4 className='text-center'>Oops...</h4>
             </div>
             <div className='row'>
-                <h3 className='text-center'>La pagina de {nombrePagina} sigue en construccion.</h3>
+                <h3 className='text-center'>La pagina sigue en construccion.</h3>
             </div>
             <div className='row'>
                 <h5 className='text-center'>Lo sentimos pero no esta disponible por el momento.</h5>

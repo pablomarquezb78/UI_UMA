@@ -6,11 +6,10 @@ import NavBar from '../Start/NavBar';
 
 function FaqPage({scrollToGridInfo}){
     return(
-        <>
+        <> 
 
-        <section id="landingSection" className="position-absolute bg-white vw-100 vh-100">
+        <section id="landingSection" className="bg-white vw-100 vh-100">
             
-            {/* Envuelto por una etiqueta header dentro del componente NavBar*/}
             <NavBar scrollToGridInfo={scrollToGridInfo}/>
 
             <FAQ/>
@@ -19,6 +18,6 @@ function FaqPage({scrollToGridInfo}){
 
         </>
     );
-}
+} 
 
 export default FaqPage;
