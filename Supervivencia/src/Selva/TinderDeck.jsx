@@ -175,7 +175,7 @@ function TinderDeck({ numberOfCard }) {
                                 onTouchStart={index === 1 ? (event) => startDrag(event) : null}
                                 tabIndex={index === 1 ? '0' : '-1'}
                             >
-                                <TinderCard card={getRandom.randomFood(number)}/>
+                                <TinderCard card={getRandom.randomFood(number)} index={index}/>
                             </section>
                         );
                     })}
