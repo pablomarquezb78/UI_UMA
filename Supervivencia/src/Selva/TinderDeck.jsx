@@ -34,24 +34,25 @@ function TinderDeck({ numberOfCard }) {
    
     useEffect(() => {
         const handleKeyDown = (e) => {
-                if (e.key.toLowerCase() === 'arrowleft') {
-                    deltaPosition.current = -271
-                    const tinderDeckDivs = document.querySelectorAll('.tinderDeck div');
-                    const actualCard = tinderDeckDivs.length<=2 ? tinderDeckDivs[tinderDeckDivs.length - 1] : tinderDeckDivs[2];
-                    cardDecision(actualCard);
-                } else if (e.key.toLowerCase() === 'arrowright') {
-                    const tinderDeckDivs = document.querySelectorAll('.tinderDeck div');
-                    const actualCard = tinderDeckDivs.length<=2 ? tinderDeckDivs[tinderDeckDivs.length - 1] : tinderDeckDivs[2];
-                    deltaPosition.current = 353
-                    cardDecision(actualCard);
-                }
-            };
-            window.addEventListener('keydown', handleKeyDown);
+            // Verificar si el evento proviene de una interacción del usuario y no de una repetición
+            if (!e.repeat && (e.key.toLowerCase() === 'a' || e.key.toLowerCase() === 'd')) {
+                // Ejecutar acciones de atajos de teclado
+                const tinderDeckDivs = document.querySelectorAll('.tinderDeck section');
+                const actualCard = tinderDeckDivs[tinderDeckDivs.length - 1];
+                deltaPosition.current = e.key.toLowerCase() === 'a' ? -271 : 353;
+                cardDecision(actualCard);
+            }
+        };
     
-            return () => {
-                window.removeEventListener('keydown', handleKeyDown);
-            };
-        },);
+        window.addEventListener('keydown', handleKeyDown);
+    
+        return () => {
+            window.removeEventListener('keydown', handleKeyDown);
+        };
+    }, []);
+    
+    
+    
     
 
     const restartGame = () => {
@@ -167,27 +168,28 @@ function TinderDeck({ numberOfCard }) {
                     {showCard.map((value, index) => {
                         let number = numberOfCardAux.current[value];
                         return (
-                            <div
+                            <section
                                 className="tinderCard"
                                 key={value}
                                 onMouseDown={index === 1 ? (event) => startDrag(event) : null}
                                 onTouchStart={index === 1 ? (event) => startDrag(event) : null}
+                                tabIndex={index === 1 ? '0' : '-1'}
                             >
-                                <TinderCard card={getRandom.randomFood(number)} />
-                            </div>
+                                <TinderCard card={getRandom.randomFood(number)}/>
+                            </section>
                         );
                     })}
                     {needHelp && (
-                        <TinderHelpCard dragEvent={startDrag}></TinderHelpCard>
+                        <TinderHelpCard tabIndex={'0'} dragEvent={startDrag}></TinderHelpCard>
                     )}
                 </div>
             ) : (
                 
                 <div className="tinderDeck">
                     {showCard[0] === getRandom.longData() && (
-                        <div className="tinderCard" key={showCard[1]} onMouseDown={(event) => startDrag(event)} onTouchStart={(event) => startDrag(event)}>
+                        <section tabIndex='0' className="tinderCard" key={showCard[1]} onMouseDown={(event) => startDrag(event)} onTouchStart={(event) => startDrag(event)}>
                             <TinderCard card={getRandom.randomFood(numberOfCardAux.current[showCard[1]])} />
-                        </div>
+                        </section>
                     )}
                 </div>
             )}
