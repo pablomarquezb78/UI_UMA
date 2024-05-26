@@ -103,7 +103,7 @@ function DesertBagGame() {
         },
         '.MuiSvgIcon-root': {
             width: 'calc(30px + (80 - 30) * ((100vmin - 350px) / (1080 - 350)))',
-            height: 'calc(30px + (80 - 30) * ((100vmin - 350px) / (1080 - 350)))',
+            height: 'auto',
         }
     }));
     
@@ -199,7 +199,7 @@ function DesertBagGame() {
                             <h4 tabIndex="0" aria-label={`Capacidad ${16 - itemList.length} de 8`} className="d-block text-center text-white f-size-4 letter-spacing-1 line-height-1-2">Capacidad: {16 - itemList.length}/8</h4>
                         </div>
                         <div id="BagContainer" className={`d-flex justify-content-center flex-grow-0 w-100  ${isItemIncluded ? "item-included" : ""}`}>
-                            <img tabIndex="0" src={Bag} alt="Mochila de supervivencia" className="img-fluid"></img>
+                            <img tabIndex="0" src={Bag} alt="Imagen de mochila de supervivencia" className="img-fluid"></img>
                         </div>
                     </div>
                     <div id="itemsContainer" className="h-100 d-flex flex-column align-items-center justify-content-center">
@@ -215,9 +215,12 @@ function DesertBagGame() {
                             />
                         </div>
                         <div id="bagButtonContainer" className="d-flex justify-content-center align-items-center">
-                            <AnimatedIconButton title="Objeto anterior" tabIndex="0" onClick={() => handleButtonClick(prevImage)} disabled={cooldown}><NavigateBeforeIcon /></AnimatedIconButton>
-                            <AnimatedIconButton title="Añadir objeto a la mochila" tabIndex="0" onClick={() => handleButtonClick(includeItem)} disabled={cooldown}><AddIcon /></AnimatedIconButton>
-                            <AnimatedIconButton title="Objeto siguiente" tabIndex="0" onClick={() => handleButtonClick(nextImage)} disabled={cooldown}><NavigateNextIcon /></AnimatedIconButton>
+                            <AnimatedIconButton aria-label="Objeto anterior" title="Objeto anterior" tabIndex="0" role="button"
+                            onClick={() => handleButtonClick(prevImage)} disabled={cooldown}><NavigateBeforeIcon /></AnimatedIconButton>
+                            <AnimatedIconButton aria-label="Añadir objeto a la mochila" title="Añadir objeto a la mochila" tabIndex="0" role="button"
+                            onClick={() => handleButtonClick(includeItem)} disabled={cooldown}><AddIcon /></AnimatedIconButton>
+                            <AnimatedIconButton aria-label="Objeto siguiente" title="Objeto siguiente" tabIndex="0" role="button"
+                             onClick={() => handleButtonClick(nextImage)} disabled={cooldown}><NavigateNextIcon /></AnimatedIconButton>
                         </div>
                     </div>
                    <ItemInfoContainerBottom itemList={itemList} currentIndex={currentIndex}/>

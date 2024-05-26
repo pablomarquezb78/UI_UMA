@@ -24,7 +24,6 @@ function App() {
                 <Route path="/UI_UMA/memory" element={<MemoryGame/>}/>
                 <Route path="/UI_UMA/FAQ" element={<FaqPage/>}/>
                 <Route path="/UI_UMA/AboutUs" element={<AboutUs/>}/>
-                {/* <Route path="/:name" element={<Index/>}/> */}
             </Routes>
     );
 };

@@ -12,7 +12,8 @@ import { styled } from '@mui/system';
 import { IconButton } from '@mui/material';
 import React from 'react';
  
-function navBar({ scrollToGridInfo, position}) {
+/*currentLink: 1->Index, 2->Montaña, 3->Bosque, 4->Desierto, 5->Costa, 6->Jungla*/ 
+function navBar({ scrollToGridInfo, currentLink}) {
 
     const AnimatedIconButton = styled(IconButton)`
     .MuiSvgIcon-root {
@@ -24,7 +25,7 @@ function navBar({ scrollToGridInfo, position}) {
     `;
  
     //Control background blanco
-    const bg = position == "absolute" ? "" : "bg-white";
+    const bg = currentLink == "1" ? "" : "bg-white";
 
     //0 es equivalente a hamburguesa no pulsada,  1 a pulsada y 2 es equivalente a ver pagina en grande (flex)
     const [showMenu,setShowMenu] = useState(2);
@@ -98,7 +99,7 @@ function navBar({ scrollToGridInfo, position}) {
 
     return(
     <>
-        <header className={`d-flex flex-row position-${position} ${bg} top-0 start-0 end-0 z-3 vw-100 vh-9 navBar`}>
+        <header className={`d-flex flex-row position-${currentLink === 1 ? "absolute" : "fixed"} ${bg} top-0 start-0 end-0 z-3 vw-100 vh-9 navBar`}>
             <div className="navBarItem">
                 <Link to='/UI_UMA/' onClick={handleInicioClick}><img alt='paginaInicio' id="webLogoStart" src={logoWeb}></img></Link>
                 <input type='image' id="hamburger" src={hamburguesa} onClick={toggleMenu}/>
@@ -108,30 +109,30 @@ function navBar({ scrollToGridInfo, position}) {
                     display: showMenu === 2 ? 'flex' : 'none',
                     }}>
                     <li>
-                        <NavLink to='/UI_UMA/mountain' activeclassname="active">
+                        <NavLink to='/UI_UMA/mountain' activeclassname={`${currentLink == 2 ? "active" : ""}`}>
                         <span className='animatedSpanNavBar'>Montaña</span>
                         </NavLink>
                     </li>
                     
                     <li>
-                        <NavLink to='/UI_UMA/forest' activeclassname="active">
+                        <NavLink to='/UI_UMA/forest' activeclassname={`${currentLink == 3 ? "active" : ""}`}>
                         <span className='animatedSpanNavBar'>Bosque</span>
                         </NavLink>
                     </li>
                     
                     <li>
-                        <NavLink to='/UI_UMA/desert' activeclassname="active">
+                        <NavLink to='/UI_UMA/desert' activeclassname={`${currentLink == 4 ? "active" : ""}`}>
                             <span className='animatedSpanNavBar'>Desierto</span>
                         </NavLink>
                     </li>
 
                     <li>
-                        <NavLink to='/UI_UMA/coast' activeclassname="active">
+                        <NavLink to='/UI_UMA/coast' activeclassname={`${currentLink == 5 ? "active" : ""}`}>
                             <span className='animatedSpanNavBar'>Costa</span>
                         </NavLink>
                     </li>
                     <li>
-                        <NavLink to='/UI_UMA/jungle' activeclassname="active">
+                        <NavLink to='/UI_UMA/jungle' activeclassname={`${currentLink == 6 ? "active" : ""}`}>
                             <span className='animatedSpanNavBar'>Jungla</span>
                         </NavLink>
                     </li>
@@ -143,22 +144,22 @@ function navBar({ scrollToGridInfo, position}) {
         </header>
         <div id="overlay">
             <ul>
-                <li><NavLink end to='/UI_UMA/' activeclassname="active" onClick={handleInicioClick}>
+                <li><NavLink end to='/UI_UMA/' activeclassname={`${currentLink == 1 ? "active" : ""}`} onClick={handleInicioClick}>
                     <span className='animatedSpanNavBar'>Inicio</span></NavLink>
                 </li>
-                <li><NavLink to='/UI_UMA/mountain' activeclassname="active">
+                <li><NavLink to='/UI_UMA/mountain' activeclassname={`${currentLink == 2 ? "active" : ""}`}>
                     <span className='animatedSpanNavBar'>Montaña</span></NavLink>
                 </li>
-                <li><NavLink to='/UI_UMA/forest' activeclassname="active">
+                <li><NavLink to='/UI_UMA/forest' activeclassname={`${currentLink == 3 ? "active" : ""}`}>
                     <span className='animatedSpanNavBar'>Bosque</span></NavLink>
                 </li>
-                <li><NavLink to='/UI_UMA/desert' activeclassname="active">
+                <li><NavLink to='/UI_UMA/desert' activeclassname={`${currentLink == 4 ? "active" : ""}`}>
                     <span className='animatedSpanNavBar'>Desierto</span></NavLink>
                 </li>
-                <li><NavLink to='/UI_UMA/coast' activeclassname="active">
+                <li><NavLink to='/UI_UMA/coast' activeclassname={`${currentLink == 5 ? "active" : ""}`}>
                     <span className='animatedSpanNavBar'>Costa</span></NavLink>
                 </li>
-                <li><NavLink to='/UI_UMA/jungle' activeclassname="active">
+                <li><NavLink to='/UI_UMA/jungle' activeclassname={`${currentLink == 6 ? "active" : ""}`}>
                     <span className='animatedSpanNavBar'>Jungla</span></NavLink>
                 </li>
             </ul>

@@ -7,7 +7,7 @@ function MountainStart({scrollToGridInfo}) {
     
     return(       
         <section id="landingSection" className="bg-white vw-100 vh-100 d-flex flex-column justify-content-between">
-            <NavBar scrollToGridInfo={scrollToGridInfo} position={"fixed"}/>
+            <NavBar scrollToGridInfo={scrollToGridInfo} currentLink={2}/>
             <UnderConstruction nombrePagina={'montaña'}/>
        </section> 
     )
