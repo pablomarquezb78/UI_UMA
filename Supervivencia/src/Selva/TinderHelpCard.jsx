@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import useFitText from "use-fit-text";
 import veneno from './FotosAlimentos/veneno.png';
-import correcto from './FotosAlimentos/correcto.png';
+import comestible from './FotosAlimentos/saludable.png';
 
 function TinderHelpCard({ dragEvent, tabIndex}) {
     const { fontSize: fontSize1, ref: ref1 } = useFitText({
@@ -26,7 +26,7 @@ function TinderHelpCard({ dragEvent, tabIndex}) {
 
     return (
         <section 
-            id="helpTinder" 
+            className="helpTinder" 
             onMouseDown={(event) => dragEvent(event)} 
             onTouchStart={(event) => dragEvent(event)}
             tabIndex={tabIndex} 
@@ -76,7 +76,7 @@ function TinderHelpCard({ dragEvent, tabIndex}) {
                         COMESTIBLE
                     </h3>
                     <span>
-                        <img src={correcto} alt="Correcto"></img>
+                        <img src={comestible} alt="Correcto"></img>
                     </span>
                 </div>
             </div>
