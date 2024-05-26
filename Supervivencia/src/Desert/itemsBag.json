@@ -7,7 +7,7 @@
         "ventajas": "Chaqueta liviana que proteje del sol, viento, arena  y ofrece aislamiento térmico.",
         "desventajas": "Pueden acumular calor, pueden ser pesados o voluminosos y restringir el movimiento."
     },
-    {
+    { 
         "id": 2,
         "nombre": "Botella de agua",
         "imagen": "botellaDeAgua.png",
