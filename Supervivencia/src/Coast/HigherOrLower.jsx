@@ -206,7 +206,7 @@ function HigherLowerGame() {
                 </div>
             </section>
             <div className="d-flex justify-content-center align-items-center">
-                {!showResult && <button className='custom-button m-3' onClick={resetGame}>Reiniciar</button>}
+                <button className={`custom-button m-3 ${!showResult && !crossAnimation && !tickAnimation ? '' : 'esconderBoton'}`} onClick={resetGame}>Reiniciar</button>
                 <h3 tabIndex='0' style={{fontSize:'calc(15px + (30 - 15) * ((100vmin - 350px) / (1080 - 350)))'}} className={`${showAnimation ? "puntuacionHOL" : ""}`}>Puntuación: {counter}</h3>
             </div>
         </section>
