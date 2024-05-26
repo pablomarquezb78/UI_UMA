@@ -35,11 +35,11 @@ function TinderDeck({ numberOfCard }) {
     useEffect(() => {
         const handleKeyDown = (e) => {
             // Verificar si el evento proviene de una interacción del usuario y no de una repetición
-            if (!e.repeat && (e.key.toLowerCase() === '1' || e.key.toLowerCase() === '1')) {
+            if (!e.repeat && (e.key.toLowerCase() === '4' || e.key.toLowerCase() === '6')) {
                 // Ejecutar acciones de atajos de teclado
                 const tinderDeckDivs = document.querySelectorAll('.tinderDeck section');
                 const actualCard = tinderDeckDivs[tinderDeckDivs.length - 1];
-                deltaPosition.current = e.key.toLowerCase() === '1' ? -271 : 353;
+                deltaPosition.current = e.key.toLowerCase() === '4' ? -271 : 353;
                 cardDecision(actualCard);
             }
         };
@@ -49,7 +49,7 @@ function TinderDeck({ numberOfCard }) {
         return () => {
             window.removeEventListener('keydown', handleKeyDown);
         };
-    }, []);
+    },);
     
     
     
