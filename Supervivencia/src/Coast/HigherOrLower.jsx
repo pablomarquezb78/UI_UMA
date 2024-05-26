@@ -161,7 +161,7 @@ function HigherLowerGame() {
                 <h2 className='tituloHOL'>Higher or Lower</h2>
                 <h2 className='tituloHOL'>¿Cuál es más letal para el humano 💀?</h2>
             </div>
-            <AnimatedIconButton className='helpHOL position-absolute' title='Ayuda' style={{ right: '0', top: '70%', transform: 'translateY(-50%)', marginRight: '1%' }} onClick={() => { helpHandler() }}><SosIcon/></AnimatedIconButton>
+            <AnimatedIconButton className='helpHOL position-absolute' aria-label='Ayuda' aria-hidden='false' role='img' style={{ right: '0', top: '70%', transform: 'translateY(-50%)', marginRight: '1%' }} onClick={() => { helpHandler() }}><SosIcon/></AnimatedIconButton>
         </div>
             <section className='imagenesHOL position-relative d-flex justify-content-center align-items-center'>
                 <div className='imagenHOL position-relative'>
