@@ -179,8 +179,8 @@ function DesertBagGame() {
             <div id="completeGameSectionHelp" className="d-flex flex-column position-absolute start-50 translate-middle-x">
                 <div id="resultDisplay" className="d-flex justify-content-around mt-2">
                     <h2 id="bagGameTitle" tabIndex="0" className="text-center text-white d-flex align-items-center letter-spacing-1 line-height-1-2">¡Prepara la mochila para sobrevivir!</h2>
-                    <AnimatedIconButton title="Reiniciar juego" onClick={restartGame}><RestartAltIcon /></AnimatedIconButton>
-                    <AnimatedIconButton title="Ayuda del juego" onClick={showHelp}><SosIcon /></AnimatedIconButton>
+                    <AnimatedIconButton title="Reiniciar juego" role="img" onClick={restartGame}><RestartAltIcon /></AnimatedIconButton>
+                    <AnimatedIconButton title="Ayuda del juego" role="img" onClick={showHelp}><SosIcon /></AnimatedIconButton>
                 </div>
                 <ItemInfoContainerTop  itemList={itemList} currentIndex={currentIndex}/>
                 {(helpPressed && itemList.length !== 8) && (
@@ -215,11 +215,11 @@ function DesertBagGame() {
                             />
                         </div>
                         <div id="bagButtonContainer" className="d-flex justify-content-center align-items-center">
-                            <AnimatedIconButton aria-label="Objeto anterior" title="Objeto anterior" tabIndex="0" role="button"
+                            <AnimatedIconButton title="Objeto anterior" tabIndex="0" role="img"
                             onClick={() => handleButtonClick(prevImage)} disabled={cooldown}><NavigateBeforeIcon /></AnimatedIconButton>
-                            <AnimatedIconButton aria-label="Añadir objeto a la mochila" title="Añadir objeto a la mochila" tabIndex="0" role="button"
+                            <AnimatedIconButton  title="Añadir objeto a la mochila" tabIndex="0" role="img"
                             onClick={() => handleButtonClick(includeItem)} disabled={cooldown}><AddIcon /></AnimatedIconButton>
-                            <AnimatedIconButton aria-label="Objeto siguiente" title="Objeto siguiente" tabIndex="0" role="button"
+                            <AnimatedIconButton title="Objeto siguiente" tabIndex="0" role="img"
                              onClick={() => handleButtonClick(nextImage)} disabled={cooldown}><NavigateNextIcon /></AnimatedIconButton>
                         </div>
                     </div>
