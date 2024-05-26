@@ -10,6 +10,7 @@ import CoastMain from './Coast/CoastMain.jsx';
 import FaqPage from './Info/FaqPageMain.jsx';
 import AboutUs from './Info/AboutUsMain.jsx';
 import SelvaMain from './Selva/SelvaMain.jsx';
+import UnderConstruction from './UnderCronstuction/UnderConstructionMain.jsx';
 
 function App() {
     return (
@@ -24,7 +25,7 @@ function App() {
                 <Route path="/UI_UMA/memory" element={<MemoryGame/>}/>
                 <Route path="/UI_UMA/FAQ" element={<FaqPage/>}/>
                 <Route path="/UI_UMA/AboutUs" element={<AboutUs/>}/>
-                {/* <Route path="/:name" element={<Index/>}/> */}
+                <Route path='/UI_UMA/UnderConstruction' element={<UnderConstruction/>}/>
             </Routes>
     );
 };

@@ -23,7 +23,7 @@ function Start({scrollToGridInfo}) {
         <section className="position-relative text-left vw-100 vh-100 bg-black">
     
             {/* Envuelto por una etiqueta header dentro del componente NavBar*/}
-            <NavBar scrollToGridInfo={scrollToGridInfo} position={"absolute"}/>
+            <NavBar scrollToGridInfo={scrollToGridInfo} currentLink={1}/>
 
             {/* Envuelto por un etiqueta div dentro del componente VideoStart*/}
             <VideoStart/>

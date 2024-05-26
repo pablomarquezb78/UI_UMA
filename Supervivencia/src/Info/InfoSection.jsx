@@ -29,9 +29,9 @@ function GridInfo() {
         <div className='px-1'>
             <h4 className='pb-4 fontControlInfoSectionh5'>Información</h4>
             <Link to="/UI_UMA/AboutUs" className='text-decoration-none fontControlInfoSection'>Sobre Nosotros</Link><br/>
-            <a className='fontControlInfoSection text-decoration-none'>Política de Privacidad</a><br/>
-            <a className='fontControlInfoSection text-decoration-none'>Aviso Legal</a><br/>
-            <a className='fontControlInfoSection text-decoration-none'>Política de Cookies</a>
+            <Link to="/UI_UMA/UnderConstruction" className='fontControlInfoSection text-decoration-none'>Política de Privacidad</Link><br/>
+            <Link to="/UI_UMA/UnderConstruction" className='fontControlInfoSection text-decoration-none'>Aviso Legal</Link><br/>
+            <Link to="/UI_UMA/UnderConstruction" className='fontControlInfoSection text-decoration-none'>Política de Cookies</Link>
         </div>
 
     </div>
