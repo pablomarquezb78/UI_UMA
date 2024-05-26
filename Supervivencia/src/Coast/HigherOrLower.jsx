@@ -156,7 +156,7 @@ function HigherLowerGame() {
 
     return (
         <section className='gameHOL d-flex flex-column justify-content-center align-items-center text-center vh-100 vw-100'>
-            <div id='cabeceraHOL' className='position-relative w-100 d-flex justify-content-center align-items-center'>
+            <div tabIndex='0' id='cabeceraHOL' className='position-relative w-100 d-flex justify-content-center align-items-center'>
             <div>
                 <h2 className='tituloHOL'>Higher or Lower</h2>
                 <h2 className='tituloHOL'>¿Cuál es más letal para el humano 💀?</h2>
@@ -164,6 +164,14 @@ function HigherLowerGame() {
             <AnimatedIconButton className='helpHOL position-absolute' aria-label='Ayuda juego' aria-hidden='false' role='img' style={{ right: '0', top: '70%', transform: 'translateY(-50%)', marginRight: '1%' }} onClick={() => { helpHandler() }}><SosIcon/></AnimatedIconButton>
         </div>
             <section className='imagenesHOL position-relative d-flex justify-content-center align-items-center'>
+            {needHelp && (
+                    <div className="puntuacionHOL position-absolute z-1 bg-white rounded p-2 border border-black" style={{ width: '80%', maxWidth: '1050px', textAlign: 'center'}}>
+                        <h2 tabIndex='0' style={{fontSize:'calc(20px + (30 - 20) * ((100vmin - 350px) / (1080 - 350)))'}}>Ayuda juego</h2>
+                        <p tabIndex='0' style={{ whiteSpace: 'normal' }}>El juego está basado en el típico juego de Higher Or Lower pero con una pequeña modificación. <br/>
+                        Tienes que seleccionar si el ser vivo de la imagen de la derecha mata más o menos personas al año que el ser vivo de la izquierda.</p>
+                        <button tabIndex='0' className='custom-button m-2' onClick={cancelGame}>Volver al juego</button>         
+                    </div>
+                )}
                 <div className='imagenHOL position-relative'>
                     <img alt={data.randomImage(imageArray[leftCardIndex])?.nombre} className='img-fluid' src={`src/assets/Coast/${data.randomImage(imageArray[leftCardIndex])?.foto}`}/>
                     <div id='informacion_imagen_i'>
@@ -184,19 +192,11 @@ function HigherLowerGame() {
                         )}
                     </div> 
                 </div>
-                {needHelp && (
-                    <div className="puntuacionHOL position-absolute z-1 bg-white rounded p-2 border border-black" style={{ width: '80%', maxWidth: '1050px', textAlign: 'center'}}>
-                        <h2 style={{fontSize:'calc(20px + (30 - 20) * ((100vmin - 350px) / (1080 - 350)))'}}>Ayuda</h2>
-                        <p style={{ whiteSpace: 'normal' }}>El juego está basado en el típico juego de Higher Or Lower pero con una pequeña modificación. <br/>
-                        Tienes que seleccionar si el ser vivo de la imagen de la derecha mata más o menos personas al año que el ser vivo izquierda.</p>
-                        <button className='custom-button m-2' onClick={cancelGame}>Volver al juego</button>         
-                    </div>
-                )}
                 {showResult && (
                     <div className=" puntuacionHOL position-absolute z-1 bg-white rounded p-2 border border-black" >
-                        <h2 style={{fontSize:'calc(20px + (30 - 20) * ((100vmin - 350px) / (1080 - 350)))'}} className={`${isCorrect == 2 ? 'text-danger' : 'text-success'}`}>{isCorrect === 2 ? '¡Fallaste!' : '¡Ganaste!'}</h2>
-                        <button className='custom-button m-2' onClick={cancelGame}>Cancelar</button>
-                        <button className='custom-button m-2' onClick={resetGame}>Volver a jugar</button>      
+                        <h2 tabIndex='0' style={{fontSize:'calc(20px + (30 - 20) * ((100vmin - 350px) / (1080 - 350)))'}} className={`${isCorrect == 2 ? 'text-danger' : 'text-success'}`}>{isCorrect === 2 ? '¡Fallaste!' : '¡Ganaste!'}</h2>
+                        <button tabIndex='0' className='custom-button m-2' onClick={cancelGame}>Cancelar</button>
+                        <button tabIndex='0' className='custom-button m-2' onClick={resetGame}>Volver a jugar</button>      
                     </div>
                 )}
                 <div className={`position-absolute ${isCorrect !== 0 && 'fade-icon'}`}>
@@ -207,7 +207,7 @@ function HigherLowerGame() {
             </section>
             <div className="d-flex justify-content-center align-items-center">
                 {!showResult && <button className='custom-button m-3' onClick={resetGame}>Reiniciar</button>}
-                <h3 style={{fontSize:'calc(15px + (30 - 15) * ((100vmin - 350px) / (1080 - 350)))'}} className={`${showAnimation ? "puntuacionHOL" : ""}`}>Puntuación: {counter}</h3>
+                <h3 tabIndex='0' style={{fontSize:'calc(15px + (30 - 15) * ((100vmin - 350px) / (1080 - 350)))'}} className={`${showAnimation ? "puntuacionHOL" : ""}`}>Puntuación: {counter}</h3>
             </div>
         </section>
     );
