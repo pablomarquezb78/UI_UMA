@@ -5,7 +5,7 @@ import useFitText from "use-fit-text";
 function HelpSection({ showHelp }) {
     const { fontSize: fontSize1, ref: ref1 } = useFitText({
         maxFontSize: 150,
-        minFontSize: 10,
+        minFontSize: 5,
     });
 
     return (
@@ -18,7 +18,7 @@ function HelpSection({ showHelp }) {
                 podrás elegir solo 8 de ellos para llevártelos al desierto. <br /><br />Cada uno tiene unos puntos de supervivencia asociados y unas ventajas y desventajas para que
                 puedas analizar su utilidad. La máxima puntuación es de 100 ¡A por ello!
             </span>
-            <button className="btn btn-dark mt-3" onClick={showHelp}>Volver</button>
+            <button id="bagCloseHelp" className="btn btn-dark h-25 mt-1" style={{ maxHeight: '50px' }} onClick={showHelp}>Volver</button>
         </div>
     );
 }

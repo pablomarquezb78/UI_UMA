@@ -168,11 +168,23 @@
 }
 
 #bagRestartPuntuation{
-    font-size:  calc(8px + (30 - 8) * ((100vmin - 350px) / (1080 - 350)));
+    font-size:  calc(10px + (20 - 10) * ((100vmin - 350px) / (1080 - 350)));
+}
+
+#bagRestartPuntuation{
+    font-size:  calc(10px + (20 - 10) * ((100vmin - 350px) / (1080 - 350)));
+}
+
+#bagCloseHelp{
+    font-size:  calc(10px + (20 - 10) * ((100vmin - 350px) / (1080 - 350)));
 }
 
 #bagCapacityDisplay{
     font-size:  calc(14px + (30 - 14) * ((100vmin - 350px) / (1080 - 350)));
+}
+
+#bagPuntuation{
+    font-size:  calc(14px + (22 - 14) * ((100vmin - 350px) / (1080 - 350)));
 }
 
 /*Control modo móvil*/

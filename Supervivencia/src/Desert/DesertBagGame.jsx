@@ -97,13 +97,15 @@ function DesertBagGame() {
 
     useEffect(() => {
         const handleKeyDown = (event) => {
-            console.log(event.key)
-            if (cooldown) return;
             if (event.key === '1') {
-                handleButtonClick(prevImage);
+                restartGame();
             } else if (event.key === '2') {
+                showHelp();
+            }if (event.key === '3' && !cooldown) {
+                handleButtonClick(prevImage);
+            } else if (event.key === '4' && !cooldown) {
                 handleButtonClick(includeItem);
-            } else if (event.key === '3') {
+            } else if (event.key === '5' && !cooldown) {
                 handleButtonClick(nextImage);
             }
         };
@@ -114,13 +116,19 @@ function DesertBagGame() {
         };
     }, [cooldown]);
 
+    /*esconderBoton*/
+
     return (
         <section id="desertGameCompleteSection" className="position-relative vw-100 vh-100">
             <div id="completeGameSectionHelp" className="d-flex flex-column position-absolute start-50 translate-middle-x">
                 <div id="resultDisplay" className="d-flex justify-content-around mt-2">
                     <h2 id="bagGameTitle" tabIndex="0" className="text-center text-white d-flex align-items-center letter-spacing-1 line-height-1-2">¡Prepara la mochila para sobrevivir!</h2>
-                    <AnimatedIconButton title="Reiniciar juego" role="img" onClick={restartGame}><RestartAltIcon /></AnimatedIconButton>
-                    <AnimatedIconButton title="Ayuda del juego" role="img" onClick={showHelp}><SosIcon /></AnimatedIconButton>
+                    <AnimatedIconButton title="Reiniciar juego" className={`${(helpPressed || itemList.length === 8) ? "esconderBoton" : ""}`}  role="img" onClick={restartGame}>
+                        <RestartAltIcon />
+                    </AnimatedIconButton>
+                    <AnimatedIconButton title="Ayuda del juego" className={`${(helpPressed || itemList.length === 8) ? "esconderBoton" : ""}`} role="img" onClick={showHelp}>
+                        <SosIcon />
+                    </AnimatedIconButton>
                 </div>
                 <ItemInfoContainer  itemList={itemList} currentIndex={currentIndex} Bottom={false}/>
                 {(helpPressed && itemList.length !== 8) && (
@@ -129,8 +137,8 @@ function DesertBagGame() {
                 {itemList.length === 8 && (
                             <div className="position-absolute z-1 bg-white rounded p-3 mb-5 appear-animation w-50 h-50 d-flex flex-column justify-content-center align-items-center top-50 
                             start-50 translate-middle" style={{ maxHeight: '200px' }} tabIndex="0">
-                                <h2 id="bagPuntuation" className="text-center h-75 letter-spacing-1 line-height-1-2">¡Fin del juego!<br/><br/> Has conseguido {suma} puntos de supervivencia</h2>
-                                <button id="bagRestartPuntuation" className="btn btn-dark mt-3 h-25" onClick={restartGame}>Reiniciar</button>
+                                <h2 id="bagPuntuation" className="text-center h-50 letter-spacing-1 line-height-1-2">¡Fin del juego!<br/><br/> Has conseguido {suma} puntos de supervivencia</h2>
+                                <button id="bagRestartPuntuation" className="btn btn-dark h-50 mt-1" style={{ maxHeight: '50px' }} onClick={restartGame}><span className="my-auto">Reiniciar</span></button>
                             </div>
                 )}
                 <div id="bagGameDisplay" className="d-flex justify-content-center align-items-center">
