@@ -5,70 +5,80 @@
             "cardTitle": "Oso",
             "cardSubtitle": "Ursidae",
             "cardText": "Los osos o úrsidos son una familia de mamíferos omnívoros. Son animales de gran tamaño, generalmente omnívoros, ya que, a pesar de su temible dentadura, comen frutos, raíces e insectos, además de carne.",
-            "img": "public/Forest/AnimalInfoPublicAssets/Images/BrownBear.jpg"
+            "img": "public/Forest/AnimalInfoPublicAssets/Images/BrownBear.jpg",
+            "imgAlt": "Imagen de oso"
         },
         {
             "src": "CricketSoundEffect.mp3",
             "cardTitle": "Grillo",
             "cardSubtitle": "Gryllidae",
             "cardText": "Los grillos son insectos de la familia Gryllidae. Son conocidos por su característico canto, producido por el frotamiento de sus alas. Los grillos son omnívoros y pueden encontrarse en diversas regiones del mundo.",
-            "img": "public/Forest/AnimalInfoPublicAssets/Images/Cricket.webp"
+            "img": "public/Forest/AnimalInfoPublicAssets/Images/Cricket.webp",
+            "imgAlt": "Imagen de grillo"
         },
         {
             "src": "DuckSoundEffect.mp3",
             "cardTitle": "Pato",
             "cardSubtitle": "Anatidae",
             "cardText": "Los patos son aves acuáticas de la familia Anatidae. Se encuentran en casi todas partes del mundo, y son conocidos por su graznido y su habilidad para nadar y volar. Son omnívoros, alimentándose de plantas acuáticas, insectos y pequeños peces.",
-            "img": "public/Forest/AnimalInfoPublicAssets/Images/Duck.avif"
+            "img": "public/Forest/AnimalInfoPublicAssets/Images/Duck.avif",
+            "imgAlt": "Imagen de pato"
         },
         {
             "src": "EagleSoundEffect.mp3",
             "cardTitle": "Águila",
             "cardSubtitle": "Accipitridae",
             "cardText": "Las águilas son grandes aves rapaces pertenecientes a la familia Accipitridae. Son conocidas por su aguda visión y poderosas garras. Las águilas cazan una variedad de presas, incluyendo peces, pequeños mamíferos y otras aves.",
-            "img": "public/Forest/AnimalInfoPublicAssets/Images/BaldEagle.jpg"
+            "img": "public/Forest/AnimalInfoPublicAssets/Images/BaldEagle.jpg",
+            "imgAlt": "Imagen de águila"
         },
         {
             "src": "FrogSoundEffect.mp3",
             "cardTitle": "Rana",
             "cardSubtitle": "Anura",
             "cardText": "Las ranas son anfibios pertenecientes al orden Anura. Son conocidas por sus habilidades de salto y su piel húmeda. Las ranas tienen una dieta principalmente insectívora, aunque algunas especies también comen pequeños animales.",
-            "img": "public/Forest/AnimalInfoPublicAssets/Images/Frog.png"
+            "img": "public/Forest/AnimalInfoPublicAssets/Images/Frog.png",
+            "imgAlt": "Imagen de rana"
         },
         {
             "src": "GoatSoundEffect.mp3",
             "cardTitle": "Cabra",
             "cardSubtitle": "Bovidae",
             "cardText": "Las cabras son mamíferos rumiantes pertenecientes a la familia Bovidae. Son animales domésticos muy adaptables que se crían por su carne, leche y piel. Las cabras son herbívoras y pueden alimentarse de una amplia variedad de vegetación.",
-            "img": "public/Forest/AnimalInfoPublicAssets/Images/Goat.jpg"
+            "img": "public/Forest/AnimalInfoPublicAssets/Images/Goat.jpg",
+            "imgAlt": "Imagen de cabra"
         },
         {
             "src": "HorseSoundEffect.mp3",
             "cardTitle": "Caballo",
             "cardSubtitle": "Equidae",
             "cardText": "Los caballos son grandes mamíferos herbívoros de la familia Equidae. Han sido domesticados por el ser humano durante miles de años y se utilizan para el transporte, el trabajo y la recreación. Los caballos tienen una dieta principalmente basada en pasto y heno.",
-            "img": "public/Forest/AnimalInfoPublicAssets/Images/Horse.png"
+            "img": "public/Forest/AnimalInfoPublicAssets/Images/Horse.png",
+            "imgAlt": "Imagen de caballo"
         },
         {
             "src": "PigSoundEffect.mp3",
             "cardTitle": "Cerdo",
             "cardSubtitle": "Suidae",
             "cardText": "Los cerdos son mamíferos omnívoros pertenecientes a la familia Suidae. Son conocidos por su inteligencia y su capacidad para adaptarse a diferentes ambientes. Los cerdos tienen una dieta variada que incluye raíces, frutas, pequeños animales y restos de alimentos.",
-            "img": "public/Forest/AnimalInfoPublicAssets/Images/Pig.jpg"
+            "img": "public/Forest/AnimalInfoPublicAssets/Images/Pig.jpg",
+            "imgAlt": "Imagen de cerdo"
         },
         {
             "src": "SnakeSoundEffect.mp3",
             "cardTitle": "Serpiente",
             "cardSubtitle": "Serpentes",
             "cardText": "Las serpientes son reptiles pertenecientes al suborden Serpentes. Se caracterizan por su cuerpo alargado y sin extremidades. Las serpientes son carnívoras y se alimentan de una variedad de presas, que incluyen roedores, aves y otros reptiles.",
-            "img": "public/Forest/AnimalInfoPublicAssets/Images/Snake.jpg"
+            "img": "public/Forest/AnimalInfoPublicAssets/Images/Snake.jpg",
+            "imgAlt": "Imagen de serpiente"
         },
         {
             "src": "WolfSoundEffect.mp3",
             "cardTitle": "Lobo",
             "cardSubtitle": "Canidae",
             "cardText": "Los lobos son grandes carnívoros de la familia Canidae. Son conocidos por vivir y cazar en manadas. Los lobos tienen una dieta principalmente carnívora, cazando animales como ciervos, alces y otros mamíferos grandes.",
-            "img": "public/Forest/AnimalInfoPublicAssets/Images/GrayWolf.webp"
+            "img": "public/Forest/AnimalInfoPublicAssets/Images/GrayWolf.webp",
+            "imgAlt": "Imagen de lobo"
         }
     ]
 }
