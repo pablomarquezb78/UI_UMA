@@ -132,8 +132,8 @@ const MemoryGame = () => {
       onKeyDown={handleKeyPress}
       role="application" 
       aria-label="Juego de Memoria">
-      <h1>Juego de Memoria</h1>
-      <p>Relaciona a cada animal con su huella</p>
+      <div className="titulomem">Juego de Memoria</div>
+      <div className="descmem">Relaciona a cada animal con su huella</div>
       <div className="controls">
         <label>
           Dificultad:
@@ -199,7 +199,6 @@ const MemoryGame = () => {
                   isCardFlipped(rowIndex * 2 + colIndex) 
                   ? `Carta con imagen de ${cards[rowIndex * 2 + colIndex].image.split('/').pop().replace(/\.[^/.]+$/, "")}`
                   : `Carta Misteriosa ${rowIndex * 2 + colIndex +1}`}                
-                style={{ width: '17vw', maxWidth: '130px', height: 'auto' }}
               >
                 <img
                   src={isCardFlipped(rowIndex * 2 + colIndex) ? cards[rowIndex * 2 + colIndex].image : "src/assets/Mountain/interrogacion.png"}
