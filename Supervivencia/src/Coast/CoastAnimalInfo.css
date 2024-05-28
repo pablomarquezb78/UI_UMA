@@ -1,4 +1,4 @@
-.background#ForestInfo {
+.background#CoastInfo {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -9,9 +9,9 @@
     background-size: cover;
 }
 
-.tituloCarouselInfo#Forest {
+.tituloCarouselInfo#Coast {
   
-  background: rgba(9, 82, 26, 0.9)!important;
+  background: rgb(0, 35, 99)!important;
 
   backdrop-filter: blur( 7.5px );
   -webkit-backdrop-filter: blur( 7.5px );
