@@ -4,14 +4,14 @@
     align-items: center;
     height: 100vh;
     width: 100vw;
-    background-image: url('./backgrounds/ForestPlantInfoBackground.png');
+    /* background-image: url('./backgrounds/ForestPlantInfoBackground.png'); */
     background-repeat: no-repeat;
     background-size: cover;
 }
 
 .tituloAnimalInfo {
   
-  background: rgba( 255, 255, 255, 0.9)!important;
+  background: rgba(9, 82, 26, 0.9)!important;
 
   backdrop-filter: blur( 7.5px );
   -webkit-backdrop-filter: blur( 7.5px );
@@ -24,7 +24,7 @@
 
 
   font-weight: bold;
-  color: black;
+  color: rgb(255, 255, 255);
   text-shadow: 0px 0px 30px rgba(255, 255, 255, 0.5);
   text-align: center;
 

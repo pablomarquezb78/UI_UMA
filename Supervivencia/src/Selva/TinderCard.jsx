@@ -7,7 +7,7 @@ function TinderCard({card, index}) {
 
     return (
         <>
-            <img className='fruta' alt={index === 1 ? 'el shokas' : ''}src={urlImage} />
+            <img className='fruta' alt={index === 1 ? {nombre} : ''}src={urlImage} />
             <img src={veneno} className='venenoso'></img>
             <img src={comestible} className='comestible'></img>
             <h2>{nombre}</h2>

@@ -4,7 +4,7 @@
     align-items: center;
     height: 100vh;
     width: 100vw;
-    background-image: url('./backgrounds/ForestAnimalInfoBackground_v2.jpg');
+    /* background-image: url('./backgrounds/ForestAnimalInfoBackground_v2.jpg'); */
     /*background-color: white;*/
     background-repeat: no-repeat;
     background-size: cover;
@@ -12,7 +12,7 @@
 
 .tituloAnimalInfo {
   
-  background: rgba( 255, 255, 255, 0.9)!important;
+  background: rgba(188, 188, 188, 0.455)!important;
 
   backdrop-filter: blur( 7.5px );
   -webkit-backdrop-filter: blur( 7.5px );

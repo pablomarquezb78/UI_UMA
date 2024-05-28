@@ -75,6 +75,7 @@
 
 #BagContainer{
     height: 80%;
+    padding-bottom: 17%;
 }
 
 #BagContainer img{
@@ -85,6 +86,7 @@
 
 #bagPlace{
     width: 30%;
+    padding-bottom: 2%;
 }
 
 /**/
@@ -162,7 +164,7 @@
 }
 
 #bagGameTitle{
-    font-size:  calc(20px + (30 - 20) * ((100vmin - 350px) / (1080 - 350)));
+    font-size:  calc(18px + (60 - 18) * ((100vmin - 350px) / (1080 - 350)));
 }
 
 #bagPuntuation{
