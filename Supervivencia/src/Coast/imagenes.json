@@ -1,74 +1,101 @@
 [
-    {
-      "id": 1,
-      "nombre": "Tiburón",
-      "foto": "tiburon.jpg",
-      "mortalidad": "15"
-    },
-    {
-        "id": 2,
-        "nombre": "Medusa",
-        "foto": "medusa.jpg",
-        "mortalidad": "40"
-      },
-    {
-      "id": 3,
-      "nombre": "Orca",
-      "foto": "orca.jpg",
-      "mortalidad": "0"
-    },
-    {
-      "id": 4,
-      "nombre": "Coco",
-      "foto": "coco.jpg",
-      "mortalidad": "150"
-    },
-    {
-      "id": 5,
-      "nombre": "Mantarraya",
-      "foto": "mantarraya.jpg",
-      "mortalidad": "5"
-    },
-
-    {
-      "id": 6,
-      "nombre": "Sol",
-      "foto": "sol.jpg",
-      "mortalidad": "60000"
-    },
-
-    {
-      "id": 7,
-      "nombre": "Océano",
-      "foto": "oceano.jpg",
-      "mortalidad": "360000"
-    },
-
-    {
-      "id": 8,
-      "nombre": "Serpiente marina",
-      "foto": "serpiente-marina.jpg",
-      "mortalidad": "12"
-    },
-
-    {
-      "id": 9,
-      "nombre": "Cocodrilo marino",
-      "foto": "cocodrilo-marino.jpeg",
-      "mortalidad": "30"
-    },
-
-    {
-      "id": 10,
-      "nombre": "Pulpo de anillos azules",
-      "foto": "pulpo-azul.jpg",
-      "mortalidad": "8"
-    },
-
-    {
-      "id": 11,
-      "nombre": "Caracol cono",
-      "foto": "caracol-cono.jpg",
-      "mortalidad": "4"
-    }
+  {
+    "id": 1,
+    "nombre": "Tiburón",
+    "nombre_cientifico": "Selachimorpha",
+    "foto": "tiburon.jpg",
+    "mortalidad": "15",
+    "descripcion": "Los tiburones son peces grandes con una reputación temida por su capacidad de cazar eficazmente.",
+    "peligrosidad": "Algunos tiburones, como el tiburón blanco o el tiburón tigre, pueden ser peligrosos para los humanos aunque los ataques son raros."
+  },
+  {
+    "id": 2,
+    "nombre": "Medusa",
+    "nombre_cientifico": "Scyphozoa",
+    "foto": "medusa.jpg",
+    "mortalidad": "40",
+    "descripcion": "Criaturas marinas gelatinosas con tentáculos que pueden causar picaduras.",
+    "peligrosidad": "Algunas medusas, como la avispa de mar, tienen picaduras extremadamente peligrosas que pueden ser fatales para los humanos."
+  },
+  {
+    "id": 3,
+    "nombre": "Orca",
+    "nombre_cientifico": "Orcinus orca",
+    "foto": "orca.jpg",
+    "mortalidad": "0",
+    "descripcion": "Las orcas, son grandes cetáceos con patrones distintivos en blanco y negro.",
+    "peligrosidad": "Las orcas rara vez atacan a los humanos. Sin embargo, en cautiverio, han habido incidentes con entrenadores."
+  },
+  {
+    "id": 4,
+    "nombre": "Coco",
+    "nombre_cientifico": "Cocos nucifera",
+    "foto": "coco.jpg",
+    "mortalidad": "150",
+    "descripcion": "Frutos de la palma de coco, comúnmente encontrados en zonas costeras tropicales.",
+    "peligrosidad": "Sin embargo, las caídas de cocos pueden causar lesiones graves si golpean a una persona en la cabeza."
+  },
+  {
+    "id": 5,
+    "nombre": "Mantarraya",
+    "nombre_cientifico": "Myliobatiformes",
+    "foto": "mantarraya.jpg",
+    "mortalidad": "5",
+    "descripcion": "Rayas grandes y planas que nadan elegantemente en el océano.",
+    "peligrosidad": "Generalmente son inofensivas, pero pueden atacar con su aguijón venenoso si se sienten amenazadas o pisadas."
+  },
+  {
+    "id": 6,
+    "nombre": "Sol",
+    "nombre_cientifico": "Sol",
+    "foto": "sol.jpg",
+    "mortalidad": "60000",
+    "descripcion": "El sol es la estrella en el centro de nuestro sistema solar, vital para la vida en la Tierra.",
+    "peligrosidad": "La exposición excesiva al sol puede causar quemaduras solares, insolación y aumentar el riesgo de cáncer de piel."
+  },
+  {
+    "id": 7,
+    "nombre": "Océano",
+    "nombre_cientifico": "Océano",
+    "foto": "oceano.jpg",
+    "mortalidad": "360000",
+    "descripcion": "El océano cubre más del 70% de la superficie terrestre y es el hogar de una increíble diversidad de vida marina.",
+    "peligrosidad": "Las condiciones del océano pueden ser peligrosas debido a corrientes, mareas, y fenómenos climáticos extremos."
+  },
+  {
+    "id": 8,
+    "nombre": "Serpiente marina",
+    "nombre_cientifico": "Hydrophiinae",
+    "foto": "serpiente-marina.jpg",
+    "mortalidad": "12",
+    "descripcion": "Serpientes adaptadas a la vida marina, conocidas por su cuerpo alargado y capacidad de respirar aire.",
+    "peligrosidad": "Su veneno es muy tóxico, aunque son generalmente tímidas y los incidentes son raros."
+  },
+  {
+    "id": 9,
+    "nombre": "Cocodrilo marino",
+    "nombre_cientifico": "Crocodylus porosus",
+    "foto": "cocodrilo-marino.jpeg",
+    "mortalidad": "30",
+    "descripcion": "El cocodrilo de mar es el reptil más grande del mundo, encontrándose en hábitats de agua salada y dulce.",
+    "peligrosidad": "Son extremadamente agresivos y territoriales, y han sido responsables de numerosos ataques mortales a humanos."
+  },
+  {
+    "id": 10,
+    "nombre": "Pulpo de anillos azules",
+    "nombre_cientifico": "Hapalochlaena",
+    "foto": "pulpo-azul.jpg",
+    "mortalidad": "8",
+    "descripcion": "Pulpo pequeño pero llamativo, con anillos azules brillantes que aparecen cuando se siente amenazado.",
+    "peligrosidad": "Su mordedura libera una toxina que puede causar parálisis y muerte en humanos si no se trata a tiempo."
+  },
+  {
+    "id": 11,
+    "nombre": "Caracol cono",
+    "nombre_cientifico": "Conus",
+    "foto": "caracol-cono.jpg",
+    "mortalidad": "4",
+    "descripcion": "Estos caracoles marinos tienen conchas hermosas y poseen un veneno potente.",
+    "peligrosidad": "Su picadura puede ser mortal para los humanos debido a su veneno neurotóxico."
+  }
 ]
