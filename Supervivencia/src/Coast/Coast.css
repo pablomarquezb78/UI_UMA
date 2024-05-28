@@ -162,7 +162,3 @@
       transform: scale(1);
   }
 }
-
-.puntuacionHOL{
-  animation: growAndShrink 0.5s ease;
-}
