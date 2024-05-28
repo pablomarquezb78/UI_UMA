@@ -165,7 +165,7 @@ function HigherLowerGame() {
         </div>
             <section className='imagenesHOL position-relative d-flex justify-content-center align-items-center'>
             {needHelp && (
-                    <div className="puntuacionHOL position-absolute z-1 bg-white rounded p-2 border border-black" style={{ width: '80%', maxWidth: '1050px', textAlign: 'center'}}>
+                    <div className="position-absolute z-1 bg-white rounded p-2 border border-black" style={{ width: '80%', maxWidth: '1050px', textAlign: 'center'}}>
                         <h2 tabIndex='0' style={{fontSize:'calc(20px + (30 - 20) * ((100vmin - 350px) / (1080 - 350)))'}}>Ayuda juego</h2>
                         <p tabIndex='0' style={{ whiteSpace: 'normal' }}>El juego está basado en el típico juego de Higher Or Lower pero con una pequeña modificación. <br/>
                         Tienes que seleccionar si el ser vivo de la imagen de la derecha mata más o menos personas al año que el ser vivo de la izquierda.</p>
@@ -180,7 +180,7 @@ function HigherLowerGame() {
                 </div>
                 <div className='imagenHOL position-relative'>
                     <img alt={data.randomImage(imageArray[rightCardIndex])?.nombre} className='img-fluid' src={`src/assets/Coast/${data.randomImage(imageArray[rightCardIndex])?.foto}`}/>
-                    <div id='informacion_imagen_d'  className='position-absolute text-center'>
+                    <div id='informacion_imagen_d'  className='position-absolute text-center z-0'>
                         <h3 tabIndex='0' className='card-text'> {data.randomImage(imageArray[rightCardIndex])?.nombre}: {showDeaths ? data.randomImage(imageArray[rightCardIndex])?.mortalidad : '?'} muertes al año </h3>
                     </div>
                     <div className='botonesHOL position-absolute'>
@@ -193,7 +193,7 @@ function HigherLowerGame() {
                     </div> 
                 </div>
                 {showResult && (
-                    <div className=" puntuacionHOL position-absolute z-1 bg-white rounded p-2 border border-black" >
+                    <div className="position-absolute z-1 bg-white rounded p-2 border border-black" >
                         <h2 tabIndex='0' style={{fontSize:'calc(20px + (30 - 20) * ((100vmin - 350px) / (1080 - 350)))'}} className={`${isCorrect == 2 ? 'text-danger' : 'text-success'}`}>{isCorrect === 2 ? '¡Fallaste!' : '¡Ganaste!'}</h2>
                         <button tabIndex='0' className='custom-button m-2' onClick={cancelGame}>Cancelar</button>
                         <button tabIndex='0' className='custom-button m-2' onClick={resetGame}>Volver a jugar</button>      
