@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './ForestAnimalInfo.css'
+import './ForestCarouselInfo.css'
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 
@@ -33,10 +33,10 @@ function ForestAnimalInfo() {
 
     return(
         
-        <section className="background" id='ForestAnimalInfo'>
+        <section className="background" id='ForestInfo'>
             <div className='container justify-content-center align-items-center h-75 w-100'>
                 <div className='row justify-content-center align-items-center h-25 mb-2'>
-                    <div className='col-4 col-sm-6 col-lg-8 justify-content-center align-items-center tituloAnimalInfo'>
+                    <div tabIndex='0' className='col-4 col-sm-6 col-lg-8 justify-content-center align-items-center tituloCarouselInfo' id='Forest'>
                         ANIMALES DEL BOSQUE
                     </div>
                 </div>
@@ -55,6 +55,7 @@ function ForestAnimalInfo() {
                                 <ForestInfoCard
                                     key={index}
                                     imgSrc={animal.img} 
+                                    imgAlt={animal.imgAlt}
                                     cardTitle={animal.cardTitle} 
                                     cardSubtitle={animal.cardSubtitle}
                                     cardText={animal.cardText}
