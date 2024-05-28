@@ -27,11 +27,11 @@ function GameTutorial({backFunction, passFunction}) {
         <div id='gameZoneCenter'>
             <div className='container-fluid h-75 w-75' id='gameBox'>
                 <div className='topElement row justify-content-center align-items-center h-25' id='textCenter'>
-                    <h1>Tutorial</h1>
+                    <h1 tabIndex='0'>Tutorial</h1>
                 </div>
                 <div className='row justify-content-center align-items-center h-50' id='textCenterTutorial'>
                     <div className='col-sm-10'>
-                        <p>
+                        <p tabIndex='0' >
                             Se trata de un minijuego de sonido, se seleccionara un audio
                             y se mostraran cuatro opciones de animales a los que pueden
                             corresponder el audio, tendras que identificar que animal de
@@ -44,7 +44,7 @@ function GameTutorial({backFunction, passFunction}) {
                 </div>
                 <div className='bottomElement row justify-content-evenly align-items-center h-25'>
                     <div className='col-6'>
-                        <button onClick={backFunction}>
+                        <button tabIndex='0' onClick={backFunction}>
                             <div className='bottomIconSVG'>
                                 <NavigateBeforeIcon className='iconSVG'/>
                                 <br/>
@@ -54,7 +54,7 @@ function GameTutorial({backFunction, passFunction}) {
                     </div>
                     {/*<div className='col-sm-6 col-lg-9'></div>*/}
                     <div className='col-6'>
-                        <button onClick={passFunction}>
+                        <button tabIndex='0' onClick={passFunction}>
                             <div className='bottomIconSVG'>
                                 <NavigateNextIcon className='iconSVG' />
                                 <br/>

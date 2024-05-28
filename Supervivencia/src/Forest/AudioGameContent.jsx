@@ -204,7 +204,7 @@ function GameContent({backFunction, passFunction}) {
                     <div className='topElement row justify-content-center align-items-center h-50'>
                         {/* <div className='col-md-2'></div> */}
                         <div className='col-4 col-md-2'>
-                            <button onClick={playAudio}>
+                            <button tabIndex='0' onClick={playAudio}>
                                 <div className='playerIconSVG'>
                                     {!play ? (
                                         !started ? (
@@ -233,7 +233,7 @@ function GameContent({backFunction, passFunction}) {
                         {/* <div className='col-md-2'></div> */}
                         <div className='col-3 col-md-3'></div>
                         <div className='col-4 col-md-2'>
-                            <button onClick={loadGameResources}>
+                            <button tabIndex='0' onClick={loadGameResources}>
                                 <div className='playerIconSVG'>
                                     <SkipNextIcon/>
                                     <br />
@@ -260,7 +260,7 @@ function GameContent({backFunction, passFunction}) {
                         {/* <div className='topElement row justify-content-center align-items-center h-50'> */}
                             {/* <div className='col-3'></div> */}
                             <div className='d-flex justify-content-center'>
-                                <input type="range" min={0} max={100} value={volume} onChange={(e) => setVolume(e.target.value)}/>
+                                <input tabIndex='0' title='Nivel de volumen' type="range" min={0} max={100} value={volume} onChange={(e) => setVolume(e.target.value)}/>
                             </div>
                             {/* <div className='col-3'></div> */}
                         </div>
@@ -270,24 +270,24 @@ function GameContent({backFunction, passFunction}) {
                 <div className='midElement row justify-content-center align-items-center h-50'>
                     <div className='midElement row justify-content-center align-items-center h-50'>
                         <div className='col h-75'>
-                            <button onClick={() => pressResponse(0)}>
+                            <button tabIndex='0' onClick={() => pressResponse(0)}>
                                 {responsesArray[0]}
                             </button>
                         </div>
                         <div className='col h-75'>
-                            <button onClick={() => pressResponse(1)}>
+                            <button tabIndex='0' onClick={() => pressResponse(1)}>
                                 {responsesArray[1]}
                             </button>
                         </div>
                     </div>
                     <div className='midElement row justify-content-center align-items-center h-50'>
                         <div className='col h-75'>
-                            <button onClick={() => pressResponse(2)}>
+                            <button tabIndex='0' onClick={() => pressResponse(2)}>
                                 {responsesArray[2]}
                             </button>
                         </div>
                         <div className='col h-75'>
-                            <button onClick={() => pressResponse(3)}>
+                            <button tabIndex='0' onClick={() => pressResponse(3)}>
                                 {responsesArray[3]}
                             </button>
                         </div>
@@ -296,11 +296,11 @@ function GameContent({backFunction, passFunction}) {
                 <div className='bottomElement row justify-content-center align-items-center h-25'>
                     <div className='bottomElement row justify-content-center align-items-center h-50' id='score'>
                         <div className='col-auto'>
-                            <p>Puntuacion: {score}</p>
+                            <p tabIndex='0'>Puntuacion: {score}</p>
                         </div>
                     </div>
                     <div className='bottomElement row justify-content-center align-items-center h-50'>
-                        <button onClick={tutorialClickHandle} className='scaleDown'>
+                        <button tabIndex='0' onClick={tutorialClickHandle} className='scaleDown'>
                             <div className='bottomIconSVG'>
                                 <LibraryBooksIcon className='iconSVG'/>
                                 <br/>
