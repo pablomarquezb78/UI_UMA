@@ -180,7 +180,7 @@ function HigherLowerGame() {
                 </div>
                 <div className='imagenHOL position-relative'>
                     <img alt={data.randomImage(imageArray[rightCardIndex])?.nombre} className='img-fluid' src={`src/assets/Coast/${data.randomImage(imageArray[rightCardIndex])?.foto}`}/>
-                    <div id='informacion_imagen_d'  className='position-absolute text-center'>
+                    <div id='informacion_imagen_d'  className='position-absolute text-center z-0'>
                         <h3 tabIndex='0' className='card-text'> {data.randomImage(imageArray[rightCardIndex])?.nombre}: {showDeaths ? data.randomImage(imageArray[rightCardIndex])?.mortalidad : '?'} muertes al año </h3>
                     </div>
                     <div className='botonesHOL position-absolute'>
