@@ -2,17 +2,19 @@
     text-align: center; /* Centra el contenido horizontalmente */
     display: flex;
     flex-direction: column;
+    justify-content: center;
     margin: auto;
-    top:20%;
-    position: relative;
-    width: 80%;
+    width: 100%;
     height: 80%;
+    position: absolute;
+    padding: 5%;
   }
   
   .memory-game .cards-grid {
-    display: flex; /* Usa flexbox para alinear las cartas */
-    flex-wrap: wrap; /* Permite que las cartas se envuelvan en varias filas */
-    justify-content: center; /* Centra las cartas horizontalmente */
+    display: grid; /* Usa flexbox para alinear las cartas */
+    grid-template-columns: repeat(auto-fit,minmax(9vh, 1fr));
+    /* grid-template-rows: repeat(auto-fill,minmax(20vh, 1fr)) */
+    gap: 1%;
   }
 
   .memory-game .helpmont {
@@ -95,9 +97,4 @@
     }
   }
 
-  @media only screen and (max-width: 769px) {
-    .card {
-      flex: 0 0 calc(100% - 20px); /* En dispositivos con ancho menor o igual a 768px, establece el ancho de la carta al 100% del contenedor, con margen */
-      max-width: calc(100% - 20px); /* Establece el ancho máximo de la carta */
-    }
-  }
+ 

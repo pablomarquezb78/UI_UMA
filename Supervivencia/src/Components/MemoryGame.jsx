@@ -184,32 +184,28 @@ const MemoryGame = () => {
       </div>
 
       <div className="cards-grid">
-        {Array.from({ length: 4 }, (_, rowIndex) => (
-          <div key={rowIndex} className="card-group">
-            {Array.from({ length: 2 }, (_, colIndex) => (
+        {Array.from({ length: 8 }, (_, rowIndex) => (
               <div
-                key={rowIndex * 2 + colIndex}
-                className={`card ${isCardFlipped(rowIndex * 2 + colIndex) ? "flipped" : ""}`}
-                onClick={() => handleCardClick(rowIndex * 2 + colIndex)}
-                onKeyDown={(e) => handleCardKeyPress(e, rowIndex * 2 + colIndex)}
+                key={rowIndex}
+                className={`card ${isCardFlipped(rowIndex) ? "flipped" : ""}`}
+                onClick={() => handleCardClick(rowIndex)}
+                onKeyDown={(e) => handleCardKeyPress(e, rowIndex)}
                 tabIndex="0"
                 role="button"
-                aria-pressed={isCardFlipped(rowIndex * 2 + colIndex)}
+                aria-pressed={isCardFlipped(rowIndex)}
                 aria-label={
-                  isCardFlipped(rowIndex * 2 + colIndex) 
-                  ? `Carta con imagen de ${cards[rowIndex * 2 + colIndex].image.split('/').pop().replace(/\.[^/.]+$/, "")}`
-                  : `Carta Misteriosa ${rowIndex * 2 + colIndex +1}`}                
+                  isCardFlipped(rowIndex) 
+                  ? `Carta con imagen de ${cards[rowIndex].image.split('/').pop().replace(/\.[^/.]+$/, "")}`
+                  : `Carta Misteriosa ${rowIndex +1}`}                
               >
                 <img
-                  src={isCardFlipped(rowIndex * 2 + colIndex) ? cards[rowIndex * 2 + colIndex].image : "src/assets/Mountain/interrogacion.png"}
-                  alt={isCardFlipped(rowIndex * 2 + colIndex) ? cards[rowIndex * 2 + colIndex].image.split('/').pop().replace(/\.[^/.]+$/, "") : "Carta Misteriosa"}
+                  src={isCardFlipped(rowIndex) ? cards[rowIndex].image : "src/assets/Mountain/interrogacion.png"}
+                  alt={isCardFlipped(rowIndex) ? cards[rowIndex].image.split('/').pop().replace(/\.[^/.]+$/, "") : "Carta Misteriosa"}
                   className="card-image"
                   style={{ width: '100%', height: 'auto' }}
                 />
               </div>
             ))}
-          </div>
-        ))}
       </div>
 
       {showResult && (
