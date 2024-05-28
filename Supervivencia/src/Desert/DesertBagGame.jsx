@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import Bag from './DesertImages/Bag.png';
 import './Desert.css';
 import initialItemList from './itemsBag.json';
-import useFitText from "use-fit-text";
 
 import { IconButton } from '@mui/material';
 import { styled } from '@mui/system';
@@ -13,66 +12,7 @@ import SosIcon from '@mui/icons-material/Sos';
 import AddIcon from '@mui/icons-material/Add';
 
 import HelpSection from "./HelpSection";
-
-function ItemInfoContainerBottom({itemList,currentIndex,}){
-    const { fontSize, ref } = useFitText({
-        maxFontSize: 150,
-        minFontSize: 10,
-    });
-
-    const heightTitle = '20%';
-    const widthTitle = '100%';
-
-    const heightText =  '40%';
-    const widthText = '100%';
-
-    return(
-        <>
-            <div id="itemInfoBottom">
-                <h1 id="itemDisplayedBottom" ref={ref} style={{ fontSize, height: heightTitle , width: widthTitle, letterSpacing: '1px', lineHeight: '1.2' }} className="text-white text-center">
-                    {itemList[currentIndex].nombre}
-                </h1>
-                <span id='pros' tabIndex="0" ref={ref} style={{ fontSize, height: heightText, width: widthText, letterSpacing: '1px', lineHeight: '1.2'}} className="text-white">
-                    Ventajas✅: {itemList[currentIndex].ventajas}
-                </span>
-                <span id='cons' tabIndex="0" ref={ref} style={{ fontSize, height: heightText, width: widthText, letterSpacing: '1px', lineHeight: '1.2' }} className="text-white">
-                    Desventajas❌: {itemList[currentIndex].desventajas}
-                </span>
-                {/*PARA DEBUGEAR EL FITTEXT AÑADIR border: "1px solid red" AL STYLE*/}
-            </div>
-        </>
-    );
-}
-
-function ItemInfoContainerTop({itemList,currentIndex}){
-    const { fontSize, ref } = useFitText({
-        maxFontSize: 100,
-        minFontSize: 10,
-    });
-
-    const heightTitle = '5%';
-    const widthTitle = '100%';
-
-    const heightText = '100%';
-    const widthText = '45%';
-
-    return(
-        <>
-            <h1 id="itemDisplayedTop" ref={ref} style={{ fontSize, height: heightTitle , width: widthTitle, letterSpacing: '1px', lineHeight: '1.2' }} className="text-white text-center">
-                {itemList[currentIndex].nombre}
-            </h1>
-            <div id="itemInfoTop"> 
-                <span id='pros' tabIndex="0" ref={ref} style={{ fontSize, height: heightText, width: widthText, letterSpacing: '1px', lineHeight: '1.2'}} className="text-white">
-                    Ventajas✅: {itemList[currentIndex].ventajas}
-                </span>
-                <span id='cons' tabIndex="0" ref={ref} style={{ fontSize, height: heightText, width: widthText, letterSpacing: '1px', lineHeight: '1.2'}} className="text-white">
-                    Desventajas❌: {itemList[currentIndex].desventajas}
-                </span>
-                {/*PARA DEBUGEAR EL FITTEXT AÑADIR border: "1px solid red" AL STYLE*/}
-            </div>
-        </>
-    );
-}
+import ItemInfoContainer from "./ItemInfoContainer";
 
 function DesertBagGame() {
 
@@ -155,6 +95,25 @@ function DesertBagGame() {
         setTimeout(() => setCooldown(false), 500);
     };
 
+    useEffect(() => {
+        const handleKeyDown = (event) => {
+            console.log(event.key)
+            if (cooldown) return;
+            if (event.key === '1') {
+                handleButtonClick(prevImage);
+            } else if (event.key === '2') {
+                handleButtonClick(includeItem);
+            } else if (event.key === '3') {
+                handleButtonClick(nextImage);
+            }
+        };
+
+        window.addEventListener('keydown', handleKeyDown);
+        return () => {
+            window.removeEventListener('keydown', handleKeyDown);
+        };
+    }, [cooldown]);
+
     return (
         <section id="desertGameCompleteSection" className="position-relative vw-100 vh-100">
             <div id="completeGameSectionHelp" className="d-flex flex-column position-absolute start-50 translate-middle-x">
@@ -163,24 +122,24 @@ function DesertBagGame() {
                     <AnimatedIconButton title="Reiniciar juego" role="img" onClick={restartGame}><RestartAltIcon /></AnimatedIconButton>
                     <AnimatedIconButton title="Ayuda del juego" role="img" onClick={showHelp}><SosIcon /></AnimatedIconButton>
                 </div>
-                <ItemInfoContainerTop  itemList={itemList} currentIndex={currentIndex}/>
+                <ItemInfoContainer  itemList={itemList} currentIndex={currentIndex} Bottom={false}/>
                 {(helpPressed && itemList.length !== 8) && (
                         <HelpSection  showHelp={showHelp} />
                 )}
                 {itemList.length === 8 && (
-                            <div className="position-absolute z-1 bg-white rounded p-3 mb-5 appear-animation
-                             w-50 h-50 d-flex flex-column justify-content-center align-items-center top-50 start-50 translate-middle" style={{ maxHeight: '200px' }}>
+                            <div className="position-absolute z-1 bg-white rounded p-3 mb-5 appear-animation w-50 h-50 d-flex flex-column justify-content-center align-items-center top-50 
+                            start-50 translate-middle" style={{ maxHeight: '200px' }} tabIndex="0">
                                 <h2 id="bagPuntuation" className="text-center h-75 letter-spacing-1 line-height-1-2">¡Fin del juego!<br/><br/> Has conseguido {suma} puntos de supervivencia</h2>
                                 <button id="bagRestartPuntuation" className="btn btn-dark mt-3 h-25" onClick={restartGame}>Reiniciar</button>
                             </div>
                 )}
                 <div id="bagGameDisplay" className="d-flex justify-content-center align-items-center">
-                    <div id="bagPlace" className="d-flex flex-grow-0 h-100 flex-column justify-content-center">
-                        <div id="BagContainer" className={`d-flex justify-content-center flex-grow-0 w-100  ${isItemIncluded ? "item-included" : ""}`}>
+                    <div id="bagPlace" className={`d-flex flex-grow-0 h-100 flex-column justify-content-center  ${isItemIncluded ? "item-included" : ""}`}>
+                        <div id="BagContainer" className={`d-flex justify-content-center flex-grow-0 w-100`}>
                             <img tabIndex="0" src={Bag} alt="Imagen de mochila de supervivencia" className="img-fluid"></img>
                         </div>
                         <div id="CapacityContainer">
-                            <h4 id="bagCapacityDisplay" tabIndex="0" aria-label={`Capacidad ${16 - itemList.length} de 8`} className="d-block text-center text-white letter-spacing-1 line-height-1-2">Capacidad: {16 - itemList.length}/8</h4>
+                            <h4 id="bagCapacityDisplay" tabIndex="0" aria-label={`La capacidad actual de la mochila es ${16 - itemList.length} de 8`} className="d-block text-center text-white letter-spacing-1 line-height-1-2">Capacidad: {16 - itemList.length}/8</h4>
                         </div>
                     </div>
                     <div id="itemsContainer" className="h-100 d-flex flex-column align-items-center justify-content-center">
@@ -188,7 +147,6 @@ function DesertBagGame() {
                             <img
                                 src={imgPath + itemList[currentIndex].imagen}
                                 alt={`Imagen de ${itemList[currentIndex].nombre}`}
-                                tabIndex="0"
                                 className={`${isAnimating ? "move-left-scale-animation" : ""} ${(isItemIncluded || indexChanged) ? "appear-animation" : ""} `}
                                 onAnimationEnd={() => {
                                     setIsAnimating(false); // Indica que la animación del objeto ha terminado
@@ -204,7 +162,7 @@ function DesertBagGame() {
                              onClick={() => handleButtonClick(nextImage)} disabled={cooldown}><NavigateNextIcon /></AnimatedIconButton>
                         </div>
                     </div>
-                   <ItemInfoContainerBottom itemList={itemList} currentIndex={currentIndex}/>
+                   <ItemInfoContainer itemList={itemList} currentIndex={currentIndex} Bottom={true}/>
                 </div>
             </div>
         </section>
