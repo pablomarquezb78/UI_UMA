@@ -4,12 +4,8 @@ import './MountainInitGame.css';
 
 function MountainInitGame() {
    return(
-      <section className='vw-100 vh-100'>
-         <div className='zoneContainer'>
-            <div className='zoneContentMont memory-game-container'>
+      <section className='vw-100 vh-100 zoneContainer'>
                <MemoryGame/>
-            </div>
-         </div>
       </section>
    );
 }

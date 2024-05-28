@@ -1,20 +1,5 @@
 .zoneContainer {
-  display: flex;
-  justify-content: center; /* Centrar horizontalmente */
-  align-items: center; /* Centrar verticalmente */
-  width: 100%;
-  height: 100%;
-}
-
-.zoneContentMont {
   background-image: url('src/assets/Mountain/fondomont2.png');
   background-repeat: no-repeat;
   background-size: cover;
-
-    display: flex;
-    justify-content: center; /* Centrar horizontalmente */
-    align-items: center; /* Centrar verticalmente */
-    width: 100%;
-    height: 100%;
-  }
-  
+}
