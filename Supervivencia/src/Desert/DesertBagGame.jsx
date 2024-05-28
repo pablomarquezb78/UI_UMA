@@ -12,30 +12,11 @@ import RestartAltIcon from '@mui/icons-material/RestartAlt';
 import SosIcon from '@mui/icons-material/Sos';
 import AddIcon from '@mui/icons-material/Add';
 
-function HelpSection({ showHelp }) {
-    const { fontSize: fontSize1, ref: ref1 } = useFitText({
-        maxFontSize: 150,
-        minFontSize: 10,
-    });
-
-    return (
-        <div className="position-absolute z-1 bg-white border border-black rounded p-3 mb-5 appear-animation w-75 h-75 d-flex flex-column justify-content-center align-items-center top-50 start-50 translate-middle item-included " style={{ maxWidth: '600px' }}>
-            <span id="bagTutoralTitle" tabIndex="0" className="text-center" ref={ref1} style={{ fontSize: fontSize1, height: '20%', width: '100%', letterSpacing: '1px', lineHeight: '1.2' }}>
-                ¡Bienvenido al juego de la mochila!
-            </span>
-            <span id="bagTutorialText" tabIndex="0" className="text-center" ref={ref1} style={{ fontSize: fontSize1, height: '60%', width: '100%', letterSpacing: '1px', lineHeight: '1.2' }}>
-                Este juego está basado en las típicas preguntas de ¿Qué te llevarías a una isla desierta? Pero con una pequeña modificación, de 14 objetos
-                podrás elegir solo 8 de ellos para llevártelos al desierto. <br /><br />Cada uno tiene unos puntos de supervivencia asociados y unas ventajas y desventajas para que
-                puedas analizar su utilidad. La máxima puntuación es de 100 ¡A por ello!
-            </span>
-            <button className="btn btn-dark mt-3" onClick={showHelp}>Volver</button>
-        </div>
-    );
-}
+import HelpSection from "./HelpSection";
 
 function ItemInfoContainerBottom({itemList,currentIndex,}){
     const { fontSize, ref } = useFitText({
-        maxFontSize: 200,
+        maxFontSize: 150,
         minFontSize: 10,
     });
 
@@ -52,10 +33,10 @@ function ItemInfoContainerBottom({itemList,currentIndex,}){
                     {itemList[currentIndex].nombre}
                 </h1>
                 <span id='pros' tabIndex="0" ref={ref} style={{ fontSize, height: heightText, width: widthText, letterSpacing: '1px', lineHeight: '1.2'}} className="text-white">
-                    Ventajas: {itemList[currentIndex].ventajas}
-                </span><br/>
+                    Ventajas✅: {itemList[currentIndex].ventajas}
+                </span>
                 <span id='cons' tabIndex="0" ref={ref} style={{ fontSize, height: heightText, width: widthText, letterSpacing: '1px', lineHeight: '1.2' }} className="text-white">
-                    Desventajas: {itemList[currentIndex].desventajas}
+                    Desventajas❌: {itemList[currentIndex].desventajas}
                 </span>
                 {/*PARA DEBUGEAR EL FITTEXT AÑADIR border: "1px solid red" AL STYLE*/}
             </div>
@@ -82,10 +63,10 @@ function ItemInfoContainerTop({itemList,currentIndex}){
             </h1>
             <div id="itemInfoTop"> 
                 <span id='pros' tabIndex="0" ref={ref} style={{ fontSize, height: heightText, width: widthText, letterSpacing: '1px', lineHeight: '1.2'}} className="text-white">
-                    Ventajas: {itemList[currentIndex].ventajas}
+                    Ventajas✅: {itemList[currentIndex].ventajas}
                 </span>
                 <span id='cons' tabIndex="0" ref={ref} style={{ fontSize, height: heightText, width: widthText, letterSpacing: '1px', lineHeight: '1.2'}} className="text-white">
-                    Desventajas: {itemList[currentIndex].desventajas}
+                    Desventajas❌: {itemList[currentIndex].desventajas}
                 </span>
                 {/*PARA DEBUGEAR EL FITTEXT AÑADIR border: "1px solid red" AL STYLE*/}
             </div>
@@ -199,7 +180,7 @@ function DesertBagGame() {
                             <img tabIndex="0" src={Bag} alt="Imagen de mochila de supervivencia" className="img-fluid"></img>
                         </div>
                         <div id="CapacityContainer">
-                            <h4 tabIndex="0" aria-label={`Capacidad ${16 - itemList.length} de 8`} className="d-block text-center text-white f-size-4 letter-spacing-1 line-height-1-2">Capacidad: {16 - itemList.length}/8</h4>
+                            <h4 id="bagCapacityDisplay" tabIndex="0" aria-label={`Capacidad ${16 - itemList.length} de 8`} className="d-block text-center text-white letter-spacing-1 line-height-1-2">Capacidad: {16 - itemList.length}/8</h4>
                         </div>
                     </div>
                     <div id="itemsContainer" className="h-100 d-flex flex-column align-items-center justify-content-center">

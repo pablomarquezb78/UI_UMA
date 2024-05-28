@@ -69,13 +69,9 @@
     bottom: 0;
 }
 
-#CapacityContainer h4{
-    font-size: 3vh;
-}
-
 #BagContainer{
     height: 80%;
-    padding-bottom: 17%;
+    padding-bottom: 5%;
 }
 
 #BagContainer img{
@@ -173,6 +169,10 @@
 
 #bagRestartPuntuation{
     font-size:  calc(8px + (30 - 8) * ((100vmin - 350px) / (1080 - 350)));
+}
+
+#bagCapacityDisplay{
+    font-size:  calc(14px + (30 - 14) * ((100vmin - 350px) / (1080 - 350)));
 }
 
 /*Control modo móvil*/
