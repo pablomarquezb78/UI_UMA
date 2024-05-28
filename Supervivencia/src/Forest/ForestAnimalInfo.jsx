@@ -44,7 +44,6 @@ function ForestAnimalInfo() {
                     <div className='col-10 col-lg-12'>
                         {/* Zona carousel */}
                         <Carousel 
-                            tabIndex='0' 
                             swipeable={true}
                             draggable={true}
                             infinite={true}
