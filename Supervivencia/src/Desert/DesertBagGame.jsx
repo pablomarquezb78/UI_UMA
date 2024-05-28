@@ -195,11 +195,11 @@ function DesertBagGame() {
                 )}
                 <div id="bagGameDisplay" className="d-flex justify-content-center align-items-center">
                     <div id="bagPlace" className="d-flex flex-grow-0 h-100 flex-column justify-content-center">
-                        <div id="CapacityContainer">
-                            <h4 tabIndex="0" aria-label={`Capacidad ${16 - itemList.length} de 8`} className="d-block text-center text-white f-size-4 letter-spacing-1 line-height-1-2">Capacidad: {16 - itemList.length}/8</h4>
-                        </div>
                         <div id="BagContainer" className={`d-flex justify-content-center flex-grow-0 w-100  ${isItemIncluded ? "item-included" : ""}`}>
                             <img tabIndex="0" src={Bag} alt="Imagen de mochila de supervivencia" className="img-fluid"></img>
+                        </div>
+                        <div id="CapacityContainer">
+                            <h4 tabIndex="0" aria-label={`Capacidad ${16 - itemList.length} de 8`} className="d-block text-center text-white f-size-4 letter-spacing-1 line-height-1-2">Capacidad: {16 - itemList.length}/8</h4>
                         </div>
                     </div>
                     <div id="itemsContainer" className="h-100 d-flex flex-column align-items-center justify-content-center">
