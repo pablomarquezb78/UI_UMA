@@ -40,9 +40,7 @@ function TinderDeck({ numberOfCard }) {
    
     useEffect(() => {
         const handleKeyDown = (e) => {
-            // Verificar si el evento proviene de una interacción del usuario y no de una repetición
             if (!e.repeat && (e.key.toLowerCase() === '4' || e.key.toLowerCase() === '6')) {
-                // Ejecutar acciones de atajos de teclado
                 const tinderDeckDivs = document.querySelectorAll('.tinderDeck section');
                 const actualCard = tinderDeckDivs[tinderDeckDivs.length - 1];
                 deltaPosition.current = e.key.toLowerCase() === '4' ? -271 : 353;
@@ -103,8 +101,14 @@ function TinderDeck({ numberOfCard }) {
         document.removeEventListener('touchmove', moveDrag);
         document.removeEventListener('touchend', endDrag);
 
+        cardDecision(actualCard)
+    }
+
+    const cardDecision = (actualCard) => {
+
+        let typeFoodImage;
+
         if(!actualCard.classList.contains('helpTinder')){
-            let typeFoodImage;
             typeFoodImage = actualCard.querySelector('img.comestible');
             typeFoodImage.style.opacity = '0'
     
@@ -112,16 +116,16 @@ function TinderDeck({ numberOfCard }) {
             typeFoodImage.style.opacity = '0'    
         }
        
-        cardDecision(actualCard)
-    }
-
-    const cardDecision = (actualCard) => {
 
         if (Math.abs(deltaPosition.current) > limit) {
             const positive = deltaPosition.current >= 0;
-            actualCard.classList.add(positive ? 'right' : 'left');
+            
+            let decision;
+
+            actualCard.classList.add(positive ? decision = 'right' : decision = 'left');
 
             if (!needHelp) {
+                (decision==='right' ? actualCard.querySelector('img.comestible').style.opacity = '1' : actualCard.querySelector('img.venenoso').style.opacity = '1')
                 actualCard.addEventListener('transitionend', () => {
                     load(positive);
                 });
