@@ -120,6 +120,23 @@
   }
 }
 
+@media only screen and ((max-width: 475px) and (max-height: 700px)) {
+  .imagenesHOL{
+    flex-direction: row;
+  }
+
+  .imagenHOL{
+    height: auto;
+  }
+
+  #informacion_imagen_i{
+    top: auto;
+    bottom: 0;
+  }
+
+}
+
+
 
 .icon-animation{
   animation: fadeIcon 2s ease forwards;
