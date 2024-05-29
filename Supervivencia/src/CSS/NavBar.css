@@ -56,8 +56,8 @@
 }
 
 #webLogoStart{
-    width: 50px; 
-    height: 50px; 
+    width: calc(30px + (80 - 30) * ((100vmin - 350px) / (1080 - 350)));
+    height: auto; 
     object-fit: cover;
     cursor: pointer;
     background-color: transparent;
@@ -89,10 +89,7 @@ li img{
 }
 
 #hamburger{
-    display: none;
     z-index: 3;
-    width: 50px;
-    height: 50px;
 }
 
 a{
