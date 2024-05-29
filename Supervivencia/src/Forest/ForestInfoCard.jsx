@@ -34,7 +34,7 @@ function ForestInfoCard({imgSrc, imgAlt, cardTitle, cardSubtitle, cardText}) {
                 <h4 tabIndex='0' className="card-title" id='forestInfoCard'>{cardTitle}</h4> 
                 <h6 tabIndex='0'  className='card-subtitle' id='forestInfoCard'>{cardSubtitle}</h6>
                 {!isHidden && (
-                    <div tabIndex='0' class="card-text d-flex justify-content-center align-items-center" id='forestInfoCard'>
+                    <div tabIndex='0' className="card-text d-flex justify-content-center align-items-center" id='forestInfoCard'>
                         {cardText}
                     </div>
                 )}
