@@ -186,6 +186,7 @@ function TinderDeck({ numberOfCard }) {
     }
     
     const startDrag = (event) => {
+        moveEvent.preventDefault();
         if (!isAnimated.current) {
             isAnimated.current = true;
             setIsShake('');
