@@ -133,11 +133,10 @@ function TinderDeck({ numberOfCard }) {
                 
                 if(decision === 'right'){
                     actualCard.querySelector('img.comestible').style.opacity = '1';
-                    (decisionAccesbilityTool == 'Has seleccionado comestible' ? setDecisionAccesbilityTool('Has seleccionado comestible '): setDecisionAccesbilityTool('Has seleccionado comestible'));
+                    (decisionAccesbilityTool == 'Has seleccionado comestible' ? setDecisionAccesbilityTool('Has seleccionado comestible.'): setDecisionAccesbilityTool('Has seleccionado comestible'));
 
                 }else{
                     actualCard.querySelector('img.venenoso').style.opacity = '1'
-                    setDecisionAccesbilityTool('Has seleccionado venenoso');
                     (decisionAccesbilityTool == 'Has seleccionado venenoso' ? setDecisionAccesbilityTool('Has seleccionado venenoso '): setDecisionAccesbilityTool('Has seleccionado venenoso'));
 
                 }
@@ -188,6 +187,7 @@ function TinderDeck({ numberOfCard }) {
     }
     
     const startDrag = (event) => {
+        event.preventDefault();
         if (!isAnimated.current) {
             isAnimated.current = true;
             setIsShake('');
