@@ -135,7 +135,7 @@ function DesertBagGame() {
                         <HelpSection  showHelp={showHelp} />
                 )}
                 {itemList.length === 8 && (
-                            <div className="position-absolute z-1 bg-white rounded p-3 mb-5 appear-animation w-50 h-50 d-flex flex-column justify-content-center align-items-center top-50 
+                            <div className="position-absolute z-1 bg-white rounded p-3 mb-5 appear-animation w-50 h-50 d-flex flex-column justify-content-center align-items-center top-50 fw-bold
                             start-50 translate-middle" style={{ maxHeight: '200px' }} tabIndex="0">
                                 <h2 id="bagPuntuation" className="text-center h-50 letter-spacing-1 line-height-1-2">¡Fin del juego!<br/><br/> Has conseguido {suma} puntos de supervivencia</h2>
                                 <button id="bagRestartPuntuation" className="btn btn-dark h-50 mt-1" style={{ maxHeight: '50px' }} onClick={restartGame}><span className="my-auto">Reiniciar</span></button>
@@ -147,7 +147,7 @@ function DesertBagGame() {
                             <img tabIndex="0" src={Bag} alt="Imagen de mochila de supervivencia" className="img-fluid"></img>
                         </div>
                         <div id="CapacityContainer">
-                            <h4 id="bagCapacityDisplay" tabIndex="0" aria-label={`La capacidad actual de la mochila es ${16 - itemList.length} de 8`} className="d-block text-center text-white letter-spacing-1 line-height-1-2">Capacidad: {16 - itemList.length}/8</h4>
+                            <span id="bagCapacityDisplay" tabIndex="0" aria-label={`La capacidad actual de la mochila es ${16 - itemList.length} de 8`} className="d-block text-center text-white letter-spacing-1 line-height-1-2">Capacidad: {16 - itemList.length}/8</span>
                         </div>
                     </div>
                     <div id="itemsContainer" className="h-100 d-flex flex-column align-items-center justify-content-center">

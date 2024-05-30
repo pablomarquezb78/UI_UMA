@@ -4,10 +4,12 @@
 }
 
 .sliderContainer {
+    position: absolute;
     height: 100vh;
     width: 100vw;
     scroll-snap-type: y mandatory;
     overflow: auto;
+    z-index: 4 !important;
 
     overflow-y: auto;
     overflow-x: hidden;

@@ -180,7 +180,7 @@
 }
 
 #bagCapacityDisplay{
-    font-size:  calc(14px + (30 - 14) * ((100vmin - 350px) / (1080 - 350)));
+    font-size:  calc(10px + (30 - 10) * ((100vmin - 350px) / (1080 - 350)));
 }
 
 #bagPuntuation{
