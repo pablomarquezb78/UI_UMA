@@ -29,12 +29,12 @@ function ForestInfoCard({imgSrc, imgAlt, cardTitle, cardSubtitle, cardText}) {
 
     return(
         <div className="card" id='forestInfoCard'>
-            <img tabIndex='0' src={imgSrc} className="card-img-top" alt={imgAlt} id='forestInfoCard'/>
+            <img src={imgSrc} className="card-img-top" alt={imgAlt} id='forestInfoCard'/>
             <div className="card-body justify-content-center align-items-center" id='forestInfoCard'>
-                <h4 tabIndex='0' className="card-title" id='forestInfoCard'>{cardTitle}</h4> 
-                <h6 tabIndex='0'  className='card-subtitle' id='forestInfoCard'>{cardSubtitle}</h6>
+                <h4 className="card-title" id='forestInfoCard'>{cardTitle}</h4> 
+                <h6  className='card-subtitle' id='forestInfoCard'>{cardSubtitle}</h6>
                 {!isHidden && (
-                    <div tabIndex='0' className="card-text d-flex justify-content-center align-items-center" id='forestInfoCard'>
+                    <div className="card-text d-flex justify-content-center align-items-center" id='forestInfoCard'>
                         {cardText}
                     </div>
                 )}
