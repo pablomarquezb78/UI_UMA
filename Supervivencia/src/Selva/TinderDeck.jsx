@@ -13,16 +13,18 @@ import incorrecto from './FotosAlimentos/incorrecto.png';
 import neutro from './FotosAlimentos/neutro.png'
 
 function TinderDeck({ numberOfCard }) {
-    const [showCard, setShowCard] = useState([1, 0]);
-    const wiseChoice = useRef(0);
     const limit = 200;
+
+    const wiseChoice = useRef(0);
     const isAnimated = useRef(false);
     const deltaPosition = useRef(0);
     const numberOfCardAux = useRef(numberOfCard);
+    
     const [needHelp, setNeedHelp] = useState(false);
     const [isCorrect, setIsCorrect] = useState(neutro)
     const [isShake, setIsShake] = useState(undefined);
-
+    const [showCard, setShowCard] = useState([1, 0]);
+    const [decisionAccesbilityTool, setDecisionAccesbilityTool] = useState('');
 
     const AnimatedIconButton = styled(IconButton)`
     color: black;
@@ -38,6 +40,8 @@ function TinderDeck({ numberOfCard }) {
     }
     `;
    
+
+
     useEffect(() => {
         const handleKeyDown = (e) => {
             if (!e.repeat && (e.key.toLowerCase() === '4' || e.key.toLowerCase() === '6')) {
@@ -58,6 +62,7 @@ function TinderDeck({ numberOfCard }) {
     const restartGame = () => {
         setShowCard([1, 0]);
         setIsCorrect(neutro);
+        setDecisionAccesbilityTool('');
         wiseChoice.current = 0;
         numberOfCardAux.current = numberOfCardAux.current.sort(() => Math.random() - 0.5);
     }
@@ -100,7 +105,7 @@ function TinderDeck({ numberOfCard }) {
         document.removeEventListener('mouseup', endDrag);
         document.removeEventListener('touchmove', moveDrag);
         document.removeEventListener('touchend', endDrag);
-
+        
         cardDecision(actualCard)
     }
 
@@ -125,7 +130,16 @@ function TinderDeck({ numberOfCard }) {
             actualCard.classList.add(positive ? decision = 'right' : decision = 'left');
 
             if (!needHelp) {
-                (decision==='right' ? actualCard.querySelector('img.comestible').style.opacity = '1' : actualCard.querySelector('img.venenoso').style.opacity = '1')
+                
+                if(decision === 'right'){
+                    actualCard.querySelector('img.comestible').style.opacity = '1';
+                    setDecisionAccesbilityTool('Has seleccionado comestible');
+
+                }else{
+                    actualCard.querySelector('img.venenoso').style.opacity = '1'
+                    setDecisionAccesbilityTool('Has seleccionado venenoso');
+                }
+                
                 actualCard.addEventListener('transitionend', () => {
                     load(positive);
                 });
@@ -187,24 +201,36 @@ function TinderDeck({ numberOfCard }) {
     
 
     return (
+
+       
         <div className="allTinderCards">
+
+      
 
             {showCard[0] > getRandom.longData() && (
                 
                 <TinderCardResut resetAction={restartGame} wiseChoice={wiseChoice.current} totalCards={numberOfCard.length}></TinderCardResut>
             )}
 
-            <div className="tinderHeader">
-                <label className={showCard[0] > getRandom.longData() ? 'wiseChoiceCount' : ''}>
-                    {wiseChoice.current} / {getRandom.longData()}
-                </label>
-                <span>
-                    <img className={isShake} src={isCorrect}></img>
-                </span>
-                <div>
-                <AnimatedIconButton onClick={() => { helpHandler() }}>
-                     <SosIcon fontSize="large"/>
-                </AnimatedIconButton>
+            <div className="tinderOverHeader">
+                
+                <div aria-live="assertive" aria-atomic="true">
+                    <label>{decisionAccesbilityTool}</label>
+                </div>
+               
+                <div className="tinderHeader">
+                    <label className={showCard[0] > getRandom.longData() ? 'wiseChoiceCount' : ''}>
+                        {wiseChoice.current} / {getRandom.longData()}
+                    </label>
+                    <span>
+                            <img className={isShake} src={isCorrect} alt={isCorrect == correcto ? 'Acertaste' : 'Fallaste'}></img>
+                            <label aria-live="assertive" aria-atomic="true" style={{ position: 'absolute', left: '-9999px' }}>{isCorrect == correcto ? 'Acertaste' : 'Fallaste'}</label>
+                    </span>
+                    <div className="sosTinderDiv">
+                    <AnimatedIconButton onClick={() => { helpHandler() }}>
+                        <SosIcon name='Botón de ayuda' fontSize="large"/>
+                    </AnimatedIconButton>
+                    </div>
                 </div>
             </div>
 
@@ -218,9 +244,8 @@ function TinderDeck({ numberOfCard }) {
                                 key={value}
                                 onMouseDown={index === 1 ? (event) => startDrag(event) : null}
                                 onTouchStart={index === 1 ? (event) => startDrag(event) : null}
-                                tabIndex={index === 1 ? '0' : '-1'}
                             >
-                                <TinderCard card={getRandom.randomFood(number)} index={index}/>
+                                <TinderCard tab={index === 1 ? '0' : '-1'} card={getRandom.randomFood(number)} index={index}/>
                             </section>
                         );
                     })}

@@ -123,19 +123,13 @@
 
 .tinderHeader{
     padding-left: 13%;
-    padding-right: 10%;
-    height: 10%;
+    padding-right: 13%;
+    height: 50%;
     width: 100%;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-}
-
-.tinderHeader div{
-    width: 100%;
-    display: flex;
-    justify-content: end;
 }
 
 .tinderHeader span{
@@ -260,4 +254,26 @@
 
   .shake-animation {
     animation: shake 0.65s;
+  }
+
+ .sosTinderDiv{
+    width: 100%;
+    justify-content: end !important;
+ }
+
+  .tinderOverHeader{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .tinderOverHeader div{
+   
+    display: flex;
+    justify-content: center;
+    font-size:  calc(12px + (20 - 12) * ((100vmin - 350px) / (1080 - 350)));
+
+  }
+
+  .helpResult{
+    display: flex;
   }
