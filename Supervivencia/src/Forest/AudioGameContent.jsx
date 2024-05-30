@@ -171,9 +171,9 @@ function GameContent({backFunction, passFunction}) {
 
     useEffect(() => {
         const handleKeyDown = (e) => {
-          if (e.key === 'S' || e.key === 's') {
+          if (e.key === '6') {
             loadGameResources();
-          } else if (e.key === 'R' || e.key === 'r') {
+          } else if (e.key === '5') {
             playAudio();
           } else if (e.key === '1') {
             pressResponse(0);
@@ -183,7 +183,7 @@ function GameContent({backFunction, passFunction}) {
             pressResponse(2);
           } else if (e.key === '4') {
             pressResponse(3);
-          } else if (e.key === 'T' || e.key === 't' || e.key === 'ArrowLeft') {
+          } else if (e.key === '8') {
             tutorialClickHandle();
           }
         };
