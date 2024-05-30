@@ -8,7 +8,7 @@ function GamePresentation({passFunction}) {
 
     useEffect(() => {
         const handleKeyDown = (e) => {
-          if (e.key === 'ArrowRight') {
+          if (e.key === '9') {
             passFunction();
           }
         };
