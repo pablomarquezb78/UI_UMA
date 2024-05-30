@@ -133,11 +133,11 @@ function TinderDeck({ numberOfCard }) {
                 
                 if(decision == 'right'){
                     actualCard.querySelector('img.comestible').style.opacity = '1';
-                    (decisionAccesbilityTool == 'Has seleccionado comestible' ? setDecisionAccesbilityTool('Has seleccionado comestible.'): setDecisionAccesbilityTool('Has seleccionado comestible'));
+                    setDecisionAccesbilityTool('Has seleccionado comestible');
 
                 }else{
                     actualCard.querySelector('img.venenoso').style.opacity = '1';
-                    (decisionAccesbilityTool == 'Has seleccionado venenoso' ? setDecisionAccesbilityTool('Has seleccionado venenoso.'): setDecisionAccesbilityTool('Has seleccionado venenoso'));
+                    setDecisionAccesbilityTool('Has seleccionado venenoso');
 
                 }
                 
