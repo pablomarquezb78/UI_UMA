@@ -8,9 +8,9 @@ function GameTutorial({backFunction, passFunction}) {
 
     useEffect(() => {
         const handleKeyDown = (e) => {
-          if (e.key === 'ArrowRight') {
+          if (e.key === '9') {
             passFunction();
-          } else if (e.key === 'ArrowLeft') {
+          } else if (e.key === '8') {
             backFunction();
           }
         };

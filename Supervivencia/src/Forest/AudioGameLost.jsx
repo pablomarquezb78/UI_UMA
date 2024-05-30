@@ -7,7 +7,7 @@ function GameLost({backFunction}) {
 
     useEffect(() => {
         const handleKeyDown = (e) => {
-          if (e.key === 'ArrowLeft') {
+          if (e.key === '8') {
             backFunction();
           }
         };
