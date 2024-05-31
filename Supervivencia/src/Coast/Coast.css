@@ -1,21 +1,31 @@
 .gameHOL{
-  flex-direction: column;
+  background-image: url('/src/assets/Coast/fondo.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-.cabeceraHOL{
-  position: relative;
-  top: 10%;
+#cabeceraHOL{
+  margin-top: 70px;
 }
+
+.tituloHOL{
+  font-size: calc(15px + (40 - 15) * ((100vmin - 350px) / (1080 - 350)));
+}
+
+.esconderBoton{
+  visibility: hidden;
+}
+
 
 .botonesHOL{
   display: flex;
   flex-direction: column;
-  right: 50%;
-  left: 50%;
-  top: 50%;
+  right: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
   justify-content: center;
   align-items: center;
-
 }
 
 
@@ -45,23 +55,26 @@
   font-weight: bold; 
   color: black;
   white-space: nowrap;
-  z-index: 1;
+  z-index: 0;
 }
+
 
 .card-text{
   
+  font-size: calc(10px + (25 - 10) * ((100vmin - 350px) / (1080 - 350)));
   background: rgba(255, 255, 255, 0.641);
   backdrop-filter: blur( 7.5px );
   -webkit-backdrop-filter: blur(7.5px);
 
+  
   box-shadow: 0 8px 32px 0 rgba( 0, 0, 0, 0.18);
 
   border-radius: 4%;
-  border: 1px solid rgba( 0, 0, 0, 0.3);
-  z-index: 4;
 
   transition: ease-in-out;
   transition-duration: 150ms; 
+
+  max-width: calc(300px + (600 - 300) * ((100vmin - 350px) / (1080 - 350)))
 }
 
 .card-text:hover
@@ -73,9 +86,8 @@
 
 
 .custom-button {
-  display: inline-block;
-  padding: 10px 20px;
-  font-size: 16px;
+  padding: 5px 15px;
+  font-size:  calc(10px + (20 - 10) * ((100vmin - 350px) / (1080 - 350)));
   font-weight: bold;
   text-align: center;
   text-decoration: none;
@@ -90,17 +102,15 @@
 .custom-button:hover {
   transition-duration: 300ms;
   color: #ffffff;
-  /*box-shadow: 0 0 2em #ffffff;*/
   text-shadow: 0 0 2em #ffffff;
 }
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 475px) {
   .imagenesHOL{
     flex-direction: column;
   }
 
   .imagenHOL{
-    width: 100vw;
     height: auto;
   }
 
@@ -109,6 +119,39 @@
     bottom: auto;
   }
 }
+
+@media only screen and (max-height: 350px) {
+  .imagenesHOL{
+    flex-direction: row;
+  }
+
+  .containerHOL{
+    width: 75%;
+  }
+
+  #informacion_imagen_i{
+    top: auto;
+    bottom: 0;
+  }
+}
+
+@media only screen and ((max-width: 475px) and (max-height: 650px)) {
+  .imagenesHOL{
+    flex-direction: row;
+  }
+
+  .imagenHOL{
+    height: auto;
+  }
+
+  #informacion_imagen_i{
+    top: auto;
+    bottom: 0;
+  }
+  
+}
+
+
 
 .icon-animation{
   animation: fadeIcon 2s ease forwards;
@@ -123,3 +166,18 @@
   }
 }
 
+@keyframes growAndShrinkHOL {
+  0% {
+      transform: scale(1);
+  }
+  50% {
+      transform: scale(1.1);
+  }
+  100% {
+      transform: scale(1);
+  }
+}
+
+.puntuacionHOL{
+  animation: growAndShrinkHOL 0.5s ease;
+}

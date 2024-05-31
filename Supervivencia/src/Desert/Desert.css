@@ -1,31 +1,63 @@
-#completeSection{
+#desertGameCompleteSection{
     background-image: url('src/Desert/DesertImages/FondoDesierto.jpg');
     background-repeat: no-repeat;
     background-size: cover;
 }
 
-#bagGameDisplay{
-    bottom: 25%;
-    height: 40%;
-    gap: 5%;
+#completeGameSectionHelp{
+    width: 85%;
+    bottom: 20%;
+    height: 60%; 
 
-    background: rgba( 165, 165, 165, 0.1 );
-    backdrop-filter: blur( 7.5px );
-    -webkit-backdrop-filter: blur( 7.5px );
-    box-shadow: 0 8px 32px 0 rgba( 0, 0, 0, 0.18 );
-    border-radius: 10px;
-    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    background: rgba(165, 165, 165, 0.1);
+    backdrop-filter: blur(7.5px);
+    -webkit-backdrop-filter: blur(7.5px);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.18);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-bottom: none; /* Quita el borde inferior */
+}
+
+#bagGameDisplay{
+    gap: 2%;    
+    height: 80%;
+}
+
+#resultDisplay{
+    height: 20%;
 }
 
 /*middle side*/
 
-#imgContainer{
-    height: 60%;
+#itemImgContainer{
+    height: 70%;
 }
 
-#buttonContainer{
-    height: 20%;
+#itemImgContainer img{
+    object-fit: contain;
+    height: auto;
+    max-width: 100%;
+}
+
+#bagButtonContainer{
+    height: 30%;
     gap: 5%;
+}
+
+#itemsContainer{
+    width: 30%;
+}
+
+#leftButtonBag{
+    height: 30%;
+}
+
+#addButtonBag{
+    height: 45%;
+}
+
+#rigtButtonBag{
+    height: 30%;
 }
 
 /**/
@@ -34,30 +66,42 @@
 
 #CapacityContainer{
     height: 10%;
+    bottom: 0;
 }
 
 #BagContainer{
     height: 80%;
+    padding-bottom: 5%;
+}
+
+#BagContainer img{
+    object-fit: contain;
+    height: auto;
+    max-width: 100%;
+}
+
+#bagPlace{
+    width: 30%;
+    padding-bottom: 2%;
 }
 
 /**/
 
 /*Right side*/
 
-#itemsContainer{
-    width: 30%;
+#itemDisplayedBottom{
+    height: 20%;
 }
 
-#itemInfoContainer{
-    width: 20%;
+#pros{
+    height: 40%;
+}
+
+#cons{
+    height: 40%;
 }
 
 /**/
-
-#resultDisplay{
-    position: relative;
-    top: 10%;
-}
 
 @keyframes growAndShrink {
     0% {
@@ -80,7 +124,7 @@
         transform: translateX(0) scale(1);
     }
     100% {
-        transform: translateX(-60vh) scale(0.01);
+        transform: translateX(-30vw) scale(0.01);
     }
 }
 
@@ -101,4 +145,97 @@
 
 .appear-animation {
     animation: appear 0.5s ease-in-out;
+}
+
+#itemInfoTop, #itemDisplayedTop{
+    display: none;
+}
+
+#itemInfoBottom{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 80%;
+    width: 30%;
+}
+
+#bagGameTitle{
+    font-size:  calc(18px + (60 - 18) * ((100vmin - 350px) / (1080 - 350)));
+}
+
+#bagPuntuation{
+    font-size:  calc(15px + (30 - 15) * ((100vmin - 350px) / (1080 - 350)));
+}
+
+#bagRestartPuntuation{
+    font-size:  calc(10px + (20 - 10) * ((100vmin - 350px) / (1080 - 350)));
+}
+
+#bagRestartPuntuation{
+    font-size:  calc(10px + (20 - 10) * ((100vmin - 350px) / (1080 - 350)));
+}
+
+#bagCloseHelp{
+    font-size:  calc(10px + (20 - 10) * ((100vmin - 350px) / (1080 - 350)));
+}
+
+#bagCapacityDisplay{
+    font-size:  calc(10px + (30 - 10) * ((100vmin - 350px) / (1080 - 350)));
+}
+
+#bagPuntuation{
+    font-size:  calc(14px + (22 - 14) * ((100vmin - 350px) / (1080 - 350)));
+}
+
+/*Control modo móvil*/
+
+@media screen and (max-width: 600px) {
+    #itemInfoTop {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        height: 20%;
+        gap: 3%;
+    }
+
+    #itemInfoBottom{
+        display: none;
+    }
+
+    #itemDisplayedTop{
+        display: block;
+    }
+
+    #resultDisplay{
+        height: 20%;
+    }
+
+    #bagGameDisplay{  
+        height: 50%;
+    }
+
+    #bagPlace{
+        width: 45%;
+    }
+    
+    #itemsContainer{
+        width: 45%;
+    }
+
+    #completeGameSectionHelp{
+        height: 80%;
+        bottom: 5%;
+    }
+
+}
+
+/*Mantener el texto consistente*/
+
+.letter-spacing-1 {
+    letter-spacing: 1px;
+}
+
+.line-height-1-2 {
+    line-height: 1.2;
 }

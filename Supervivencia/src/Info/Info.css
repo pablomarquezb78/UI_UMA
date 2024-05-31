@@ -1,65 +1,70 @@
-#infoSection{
-    background-color: #F5F5F5;
-    justify-content: space-around;
-    align-items: flex-start;
-    display: flex;
-    padding-right: 20px;
-    padding-top: 50px;
-    padding-bottom: 70px;
-}
-
 #infoSection a{
     display: block;
-    text-decoration: none;
-    margin-bottom: -10px;
-}
-
-#infoSection h5{
-    padding-bottom: 20px;
-}
-
-#socialNetWorkDisplayer{
-    display: flex;
-    justify-content: space-around;
 }
 
 #FaqDiv{
-    position: relative;
-    top: 0;
+    width: 50%;
+    top: 10%;
+    overflow: auto; 
+    margin: 0 auto;
+}
+
+.fontControlFaq{
+    font-size: calc(8px + (18 - 8) * ((100vmin - 350px) / (1080 - 350)));
+}
+
+#FaqIntro{
+    margin-top: 5%;
+    margin-bottom: 5%;
 }
 
 /*About Us*/
 
 /*Containers*/
 
-#titleContainer{
-    height: 10vh;
-}
-
-#textContainer{
-    height: 30vh;
+#titleContainer{ 
+    height: auto;
 }
 
 #imgContainer{
-    height: 35vh;
-    padding-bottom: 5vh;
+    height: auto;
 }
 
-/*Containers*/
+/* Fin Containers*/ 
 
 #imgContainer img{
-    width: auto;
-    max-height: 100%;
+    object-fit: contain;
+    height: auto;
 }
 
-.fontControl{
-    font-size: calc(14px + (32 - 14) * ((100vmin - 350px) / (1080 - 350)));
+.fontControlAboutUs{
+    font-size: calc(20px + (64 - 20) * ((100vmin - 350px) / (1080 - 350)));
+} 
+
+.fontControlAboutUsAPND{
+    max-width: calc(250px + (550 - 250) * ((100vmin - 350px) / (1080 - 350)));
+} 
+
+.fontControlInfoSection{
+    font-size: calc(10px + (20 - 10) * ((100vmin - 350px) / (1080 - 350)));
+}
+
+.fontControlInfoSectionh4{
+    font-size: calc(20px + (30 - 20) * ((100vmin - 350px) / (1080 - 350)));
 }
 
 #container{
-    position: relative;
-    height: 90vh;
-    top: 10vh;
+    width: 70%;
+    height: 90%;
+    top: 10%;
 }
 
-/*About Us*/
+/* Fin About Us*/
+
+@media screen and (max-width: 600px) {
+
+#FaqDiv{
+    width: 75%;
+}
+
+}

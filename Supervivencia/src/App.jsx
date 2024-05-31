@@ -2,14 +2,15 @@ import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import Index from './Index.jsx';
 import Prueba from './Prueba.jsx';
-import MemoryGame from './Components/MemoryGame.jsx';
+import MemoryGame from './Mountain/MemoryGame.jsx';
 import ForestMain from './Forest/ForestMain';
 import MountainMain from './Mountain/MountainMain.jsx';
 import DesertMain from './Desert/DesertMain.jsx';
 import CoastMain from './Coast/CoastMain.jsx';
 import FaqPage from './Info/FaqPageMain.jsx';
-import SelvaStart from './Selva/SelvaStart.jsx';
 import AboutUs from './Info/AboutUsMain.jsx';
+import SelvaMain from './Selva/SelvaMain.jsx';
+import UnderConstruction from './UnderCronstuction/UnderConstructionMain.jsx';
 
 function App() {
     return (
@@ -19,12 +20,12 @@ function App() {
                 <Route path="/UI_UMA/forest" element={<ForestMain/>}/>
                 <Route path='/UI_UMA/desert' element={<DesertMain/>}/>
                 <Route path='/UI_UMA/coast' element={<CoastMain/>}/>
-                <Route path='/UI_UMA/jungle' element={<SelvaStart/>}/>
+                <Route path='/UI_UMA/jungle' element={<SelvaMain/>}/>
                 <Route path="/UI_UMA/prueba" element={<Prueba/>}/>
                 <Route path="/UI_UMA/memory" element={<MemoryGame/>}/>
                 <Route path="/UI_UMA/FAQ" element={<FaqPage/>}/>
                 <Route path="/UI_UMA/AboutUs" element={<AboutUs/>}/>
-                {/* <Route path="/:name" element={<Index/>}/> */}
+                <Route path='/UI_UMA/UnderConstruction' element={<UnderConstruction/>}/>
             </Routes>
     );
 };

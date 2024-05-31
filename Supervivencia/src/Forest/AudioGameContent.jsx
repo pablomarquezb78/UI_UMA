@@ -13,6 +13,8 @@ import {animals} from '../assets/Forest/AudioGameAssets/AudioGameDataset.json'
 
 function GameContent({backFunction, passFunction}) {
 
+    //Editing
+
     const [play, setPlay] = useState(false);
     const [ended, setEnded] = useState(false);
     const [started, setStarted] = useState(false);
@@ -23,8 +25,10 @@ function GameContent({backFunction, passFunction}) {
     const [volumeMute, setVolumeMute] = useState(false);
 
     const [responsesArray, setResponsesArray] = useState([]);
-    const [audioSrc, setAudioSrc] = useState('');
-    const [correctResponse, setCorrectResponse] = useState(0);
+    //const [audioSrc, setAudioSrc] = useState('');
+    const audioSrc = useRef();
+    //const [correctResponse, setCorrectResponse] = useState(0);
+    const correctResponse = useRef();
     const [score, setScore] = useState(0);
     
     useLayoutEffect(() =>{
@@ -71,7 +75,8 @@ function GameContent({backFunction, passFunction}) {
     {
         if(!started)
         {
-            audioRef.current.src = `public/Forest/AudioGamePublicAssets/AudiosMP3/${audioSrc}`;
+            //audioRef.current.src = `public/Forest/AudioGamePublicAssets/AudiosMP3/${audioSrc}`;
+            audioRef.current.src = `public/Forest/AudioGamePublicAssets/AudiosMP3/${audioSrc.current}`;
             setEnded(false);
         }
         if(play)
@@ -113,7 +118,8 @@ function GameContent({backFunction, passFunction}) {
         } while(randomIncorrectIndex03 == randomCorrectIndex || randomIncorrectIndex03 == randomIncorrectIndex01 || randomIncorrectIndex03 == randomIncorrectIndex02)
 
         let randomCorrectPosition = Math.floor(Math.random() * 4);
-        setCorrectResponse(randomCorrectPosition);
+        //setCorrectResponse(randomCorrectPosition);
+        correctResponse.current = randomCorrectPosition;
         switch (randomCorrectPosition){
             case 0:
                 const responses0 = [randomCorrectIndex, randomIncorrectIndex01, randomIncorrectIndex02, randomIncorrectIndex03].map(index => animals[index].text);
@@ -136,7 +142,8 @@ function GameContent({backFunction, passFunction}) {
                 setResponsesArray(responses);
             break;
         }
-        setAudioSrc(animals[randomCorrectIndex].src);
+        //setAudioSrc(animals[randomCorrectIndex].src);
+        audioSrc.current = animals[randomCorrectIndex].src
     }
 
     function tutorialClickHandle()
@@ -150,7 +157,7 @@ function GameContent({backFunction, passFunction}) {
 
     function pressResponse(num)
     {
-        if(correctResponse == num)
+        if(correctResponse.current == num)
         {
             setScore(score + 1);
             loadGameResources();
@@ -162,6 +169,34 @@ function GameContent({backFunction, passFunction}) {
         }
     }
 
+    useEffect(() => {
+        const handleKeyDown = (e) => {
+          if (e.key === '6') {
+            loadGameResources();
+          } else if (e.key === '5') {
+            playAudio();
+          } else if (e.key === '1') {
+            pressResponse(0);
+          } else if (e.key === '2') {
+            pressResponse(1);
+          } else if (e.key === '3') {
+            pressResponse(2);
+          } else if (e.key === '4') {
+            pressResponse(3);
+          } else if (e.key === '8') {
+            tutorialClickHandle();
+          }
+        };
+    
+        window.addEventListener('keydown', handleKeyDown);
+    
+        // Limpieza del event listener cuando el componente se desmonte
+        return () => {
+          window.removeEventListener('keydown', handleKeyDown);
+        };
+    }, []);
+
+
     return(
         <div id='gameZoneCenter'>
             <div className='container-fluid h-75 w-75' id='gameBox'>
@@ -169,7 +204,7 @@ function GameContent({backFunction, passFunction}) {
                     <div className='topElement row justify-content-center align-items-center h-50'>
                         {/* <div className='col-md-2'></div> */}
                         <div className='col-4 col-md-2'>
-                            <button onClick={playAudio}>
+                            <button tabIndex='0' onClick={playAudio}>
                                 <div className='playerIconSVG'>
                                     {!play ? (
                                         !started ? (
@@ -198,7 +233,7 @@ function GameContent({backFunction, passFunction}) {
                         {/* <div className='col-md-2'></div> */}
                         <div className='col-3 col-md-3'></div>
                         <div className='col-4 col-md-2'>
-                            <button onClick={loadGameResources}>
+                            <button tabIndex='0' onClick={loadGameResources}>
                                 <div className='playerIconSVG'>
                                     <SkipNextIcon/>
                                     <br />
@@ -225,7 +260,7 @@ function GameContent({backFunction, passFunction}) {
                         {/* <div className='topElement row justify-content-center align-items-center h-50'> */}
                             {/* <div className='col-3'></div> */}
                             <div className='d-flex justify-content-center'>
-                                <input type="range" min={0} max={100} value={volume} onChange={(e) => setVolume(e.target.value)}/>
+                                <input tabIndex='0' title='Nivel de volumen' type="range" min={0} max={100} value={volume} onChange={(e) => setVolume(e.target.value)}/>
                             </div>
                             {/* <div className='col-3'></div> */}
                         </div>
@@ -235,24 +270,24 @@ function GameContent({backFunction, passFunction}) {
                 <div className='midElement row justify-content-center align-items-center h-50'>
                     <div className='midElement row justify-content-center align-items-center h-50'>
                         <div className='col h-75'>
-                            <button onClick={() => pressResponse(0)}>
+                            <button tabIndex='0' onClick={() => pressResponse(0)}>
                                 {responsesArray[0]}
                             </button>
                         </div>
                         <div className='col h-75'>
-                            <button onClick={() => pressResponse(1)}>
+                            <button tabIndex='0' onClick={() => pressResponse(1)}>
                                 {responsesArray[1]}
                             </button>
                         </div>
                     </div>
                     <div className='midElement row justify-content-center align-items-center h-50'>
                         <div className='col h-75'>
-                            <button onClick={() => pressResponse(2)}>
+                            <button tabIndex='0' onClick={() => pressResponse(2)}>
                                 {responsesArray[2]}
                             </button>
                         </div>
                         <div className='col h-75'>
-                            <button onClick={() => pressResponse(3)}>
+                            <button tabIndex='0' onClick={() => pressResponse(3)}>
                                 {responsesArray[3]}
                             </button>
                         </div>
@@ -261,11 +296,11 @@ function GameContent({backFunction, passFunction}) {
                 <div className='bottomElement row justify-content-center align-items-center h-25'>
                     <div className='bottomElement row justify-content-center align-items-center h-50' id='score'>
                         <div className='col-auto'>
-                            <p>Puntuacion: {score}</p>
+                            <p tabIndex='0'>Puntuacion: {score}</p>
                         </div>
                     </div>
                     <div className='bottomElement row justify-content-center align-items-center h-50'>
-                        <button onClick={tutorialClickHandle} className='scaleDown'>
+                        <button tabIndex='0' onClick={tutorialClickHandle} className='scaleDown'>
                             <div className='bottomIconSVG'>
                                 <LibraryBooksIcon className='iconSVG'/>
                                 <br/>

@@ -1,0 +1,220 @@
+@font-face {
+    font-family: Stretched;
+    src: url('../../public/Fonts/stretch-pro/StretchPro-Basic.otf');
+}
+
+
+.gridBiomeSection{
+    width: 101vw;
+    height: 100vh;
+   
+    display: grid;
+    /* gap: 10px; */
+    grid-template-columns: repeat(auto-fill, minmax(58vh, 1fr));
+    grid-auto-rows: minmax(100px, 1fr); /* Ajustar altura mínima y máxima de las filas */
+    max-width: 2700px;
+    /* grid-template-columns: 1fr 1fr 1fr; */
+}
+
+.gridCard{
+    height: auto;
+    max-height: 50vh;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+}
+
+.gridCard video{
+
+    width: 100%;
+    height: 100%;
+}
+
+.frontCard{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    /* backface-visibility: hidden; */
+}
+
+
+.frontCard a{
+    width: 100%;
+    height: 100%;
+    display: block;
+   
+}
+
+.textCard{
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+}
+
+.textCard h3{
+    display: inline-block;
+}
+
+.infoGridButton{
+   
+    display: flex;
+    justify-content: center;
+
+}
+
+
+
+#sectionGrid{
+    background-color: #F5F5F5;
+    position: relative;
+}
+
+
+@media only screen and (max-width: 1249px) {
+    
+    article.gridCard{
+      
+        grid-row-end: 1;
+    }
+  }
+
+
+
+.gridCard video{
+    height: 100%;
+    width: 100%;
+    /* border-radius: 10px; */
+    object-fit: cover;
+}
+
+.gridText{
+    
+    font-size:5vh;
+    word-wrap: break-word;
+    font-family: 'Noto_Serif_M',NotoSerifKR-Medium;
+}
+
+.gridBiomeSection h1{
+    color: rgb(0, 0, 0);
+    font-size: 3vw;
+    transform: scale(1.3, 1.1);    
+    padding-top:6%;
+    text-align: center;
+    align-self: center;
+    font-family: 'Noto_Serif_B', NotoSerifKR-Black
+}
+
+.gridBiomeSection h2{
+    color: rgb(0, 0, 0);
+    font-size: 3vh;
+    padding: 15px;
+    text-align: center;
+    align-self: center;
+    font-family: 'Noto_Serif_M',NotoSerifKR-Medium;
+}
+
+.frontCard button{
+   
+    margin-bottom: 1%;
+    min-width: 30px; 
+    max-width: 2.5vw;
+    min-height: 30px; 
+    max-height: 2.5vw;
+    border: none;
+    background: none;
+
+}
+
+.reverseCard button{
+   
+    margin-bottom: 2%;
+    width: 50px; 
+    height: 50px; 
+    border: none;
+    background: none;
+}
+
+
+.gridCard{
+    transform-style: preserve-3d;
+    /* border-radius: 10px; */
+
+}
+
+
+.reverseCard{
+    transition: .3s;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    place-items: center;
+    width: 100%;
+    height: 100%;
+    transform: perspective(600px) rotateY(180deg);
+    backface-visibility: hidden;
+    
+
+    /*the alpha value controls the transparency*/
+    background: rgba(165, 165, 165, 0.175);
+
+    /* This controls the blurring effect*/
+    backdrop-filter: blur( 4.5px );
+    -webkit-backdrop-filter: blur( 4.5px );
+
+    /*Adding the shadow*/
+    box-shadow: 0 8px 32px 0 rgba( 0, 0, 0, 0.18 );
+
+    /* Adding our borders*/
+    /* border-radius: 10px; */
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    z-index: 4;
+
+}
+
+.reverseCard a{
+    width: 100px;
+    height: 50px;
+}
+
+article.gridCard img{
+
+    margin-bottom: 3%;
+    width: 20vh;
+    height: 20vh;
+
+}
+
+@keyframes shake {
+    0% {
+      transform: rotateZ(0deg);
+    }
+    25% {
+      transform: rotateZ(-10deg);
+    }
+    50% {
+      transform: rotateZ(10deg);
+    }
+    75% {
+      transform: rotateZ(-5deg);
+    }
+    100% {
+      transform: rotateZ(0deg);
+    }
+  }
+  
+  .shake-animation {
+    animation: shake 0.5s ease-in-out;
+  }
+  

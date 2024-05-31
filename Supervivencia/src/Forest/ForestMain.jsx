@@ -2,9 +2,13 @@ import React from 'react'
 import ForestStart from './ForestStart.jsx'
 import ForestAudioGame from './ForestAudioGame.jsx'
 import GridInfo from '../Info/InfoSection.jsx'
+import CarouselInfo from '../Components/carouselPage/CarouselInfo.jsx'
 import {useRef} from 'react';
 import '../CSS/main.css'
 import '../CSS/Start.css'
+
+import plantsData from '../assets/Forest/PlantInfoAssets/ForestPlantInfo.json'
+import animalsData from '../assets/Forest/AnimalInfoAssets/ForestAnimalInfo.json'
 
 function ForestMain(){
 
@@ -25,6 +29,14 @@ function ForestMain(){
 
                 <div className='sliderItem' ref={startRef}>
                     <ForestStart scrollToGridInfo={scrollToGridInfo}/>
+                </div>
+
+                <div className='sliderItem'>
+                    <CarouselInfo data={plantsData} id='Forest' title='PLANTAS DEL BOSQUE'/>
+                </div>
+
+                <div className='sliderItem'>
+                    <CarouselInfo data={animalsData} id='Forest' title='ANIMALES DEL BOSQUE'/>
                 </div>
             
                 <div className='sliderItem'>

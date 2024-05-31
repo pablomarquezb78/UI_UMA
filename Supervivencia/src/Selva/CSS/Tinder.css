@@ -1,4 +1,6 @@
-#landingSectionSelva{
+/* Estilos generales */
+#landingSectionSelva {
+    padding-top: 5%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -6,48 +8,71 @@
     justify-items: center;
 }
 
-#tinderZone{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 500px;
-    height: 500px;
-    position: relative;
+#tinderZone {
     
+    width: 50vh;
+    height: 65vh;
+    position: relative;
 }
 
-.tinderCard{
+.tinderCard {
     width: 75%;
-    height: 100%;
+    height: 78%;
     position: absolute;
     border-radius: 15px;
+    transition: transform .3s ease;
 }
 
-.left{
+.allTinderCards {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.left {
     transform: translateX(-100%) rotate(-20deg) !important;
 }
 
-.right{
+.right {
     transform: translateX(100%) rotate(20deg) !important;
 }
 
-.right,.left{
-    transition: transform .3s ease, rotate .3s ease;
-}
-
-.restart{
-    transition: transform .3s ease;
+.restart {
     transform: translateX(0) !important;
 }
 
-.tinderCard img{
+.fruta {
     width: 100%;
-    height: 95%;
+    height: 100%;
     position: absolute;
     border-radius: 20px;
 }
 
-.tinderCard h2{
+
+.venenoso ,.comestible{
+    width: 12vh;
+    height: 12vh;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    margin: auto;   
+  }
+
+.venenoso{
+   opacity: 0;
+}
+
+.comestible{
+    opacity: 0;
+}
+
+.tinderCard h2 {
     position: absolute;
     background-color: white;
     left: 0;
@@ -57,3 +82,207 @@
     font-size: 20px;
 }
 
+.tinderDeck{
+    display: flex;
+    align-items: center;
+    height: 80%;
+    justify-content: center;
+}
+
+.tinderDeck section{
+    cursor: grab;
+}
+
+.wiseChoiceCount {
+   display: none;
+}
+
+#restartTinder{
+    margin-top: 5%;
+    background-color:  rgb(255, 197, 197);
+    border-radius: 7px;
+    width: 14vh;
+    height: 4vh;
+    border: 0;
+    font-size: 2.5vh;
+}
+
+#restartTinder:hover{
+    background-color:  rgb(255, 0, 0);
+
+}
+
+.tinderHeader span img{
+    height: 80%;
+    width: 80%; 
+}
+
+.tinderHeader label{
+    width: 100%;
+}
+
+.tinderHeader{
+    padding-left: 13%;
+    padding-right: 13%;
+    height: 50%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.tinderHeader span{
+    cursor:pointer;
+    width: 30%;
+    display: block;
+}
+
+.helpTinder{
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    height: 78%;
+    position: absolute;
+    border-radius: 10px;
+    transition: transform .3s ease;
+    background-color: rgb(74, 118, 252);
+}
+
+
+.helpTinder *{
+    margin: 3%;
+}
+
+.helpTinder h2{
+    color: white;
+    text-align: center;
+}
+
+.helpTinder h3{
+    text-align: center;
+    color: white;
+}
+
+.helpTinder > div{
+    margin: 0 !important;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.helpResultImage{
+    margin: 0 !important;
+    width: 50%;
+    height: 100%;
+}
+
+.helpResultImage span{
+    margin: 0 !important;
+    display: block;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.helpResultImage span img{
+    width: 50%;
+    height: 50%;
+}
+
+
+
+#cabeceraHOL{
+    margin-top: 70px;
+  }
+  
+  .tituloHOL{
+    font-size: calc(15px + (40 - 15) * ((100vmin - 350px) / (1080 - 350)));
+  }
+
+
+  .custom-button {
+    padding: 5px 15px;
+    font-size:  calc(10px + (20 - 10) * ((100vmin - 350px) / (1080 - 350)));
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    white-space: nowrap;
+  }
+  
+  .resultstinderdiv{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 5%;
+}
+
+.puntuacionTinder{
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+
+}
+
+@keyframes shake {
+    0% {
+        transform: rotateZ(0deg);
+    }
+    25% {
+        transform: rotateZ(-10deg);
+    }
+    50% {
+        transform: rotateZ(10deg);
+    }
+    75% {
+        transform: rotateZ(-5deg);
+    }
+    100% {
+        transform: rotateZ(0deg);
+    }
+  }
+
+  .shake-animation {
+    animation: shake 0.65s;
+  }
+
+ .sosTinderDiv{
+    width: 100%;
+    justify-content: end !important;
+ }
+
+  .tinderOverHeader{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .tinderOverHeader div{
+   
+    display: flex;
+    justify-content: center;
+    font-size:  calc(12px + (20 - 12) * ((100vmin - 350px) / (1080 - 350)));
+
+  }
+
+  .helpResult{
+    display: flex;
+  }
+
+  .helpTinder{
+
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+  }

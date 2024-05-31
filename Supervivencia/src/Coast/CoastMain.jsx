@@ -1,10 +1,14 @@
 import React from 'react'
 import CoastStart from './CoastStart.jsx';
 import InfoSection from '../Info/InfoSection.jsx'
-import HigerOrLowerGame from './HigherOrLower.jsx'
+import HigherOrLowerGame from './HigherOrLower.jsx'
+import CoastCarousel from '../Components/carouselPage/CarouselInfo.jsx';
+import coastData from '../Coast/imagenes.json';
+
 import {useRef} from 'react';
 import '../CSS/main.css'
 import '../CSS/Start.css'
+import NavBar from '../Start/NavBar';
 
 function CoastMain(){
 
@@ -15,20 +19,25 @@ function CoastMain(){
         gridInfoRef.current.scrollIntoView({ behavior: 'smooth' });
     };
 
-    const scrollToStart = () => {
-        startRef.current.scrollIntoView({ behavior: 'smooth' });
-    };
+    // const scrollToStart = () => {
+    //     startRef.current.scrollIntoView({ behavior: 'smooth' });
+    // };
 
     return(
         <>
             <main className='sliderContainer'>
+                <NavBar scrollToGridInfo={scrollToGridInfo} currentLink={5}/>
 
                 <div className='sliderItem' ref={startRef}>
                     <CoastStart scrollToGridInfo={scrollToGridInfo}/>
                 </div>
 
+                <div className='sliderItem' ref={startRef}>
+                    <CoastCarousel data={coastData} id='Coast' title={'FAUNA DE LA COSTA'} scrollToGridInfo={scrollToGridInfo}/>
+                </div>
+
                 <div className='sliderItem' ref={gridInfoRef}>
-                    <HigerOrLowerGame/>
+                    <HigherOrLowerGame/>
                 </div>
 
                 <div className='sliderItem' ref={gridInfoRef}>
