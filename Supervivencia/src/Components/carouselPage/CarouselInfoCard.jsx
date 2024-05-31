@@ -80,7 +80,7 @@ function CarouselInfoCard({imgSrc, imgAlt, cardTitle, cardSubtitle, cardText}) {
                     )}
                     <div className="card-body justify-content-center align-items-center forestInfoCard" >
                         <h4 className="card-title" id='forestInfoCard'>{cardTitle}</h4> 
-                        <h6  className='card-subtitle' id='forestInfoCard'>{cardSubtitle}</h6>
+                        <h5  className='card-subtitle' id='forestInfoCard'>{cardSubtitle}</h5>
                         {!isHidden && (
                             <div className="card-text d-flex justify-content-center align-items-center forestInfoCard">
                                 {cardText}
