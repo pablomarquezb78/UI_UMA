@@ -132,8 +132,8 @@ const MemoryGame = () => {
       onKeyDown={handleKeyPress}
       role="application" 
       aria-label="Juego de Memoria">
-      <h1>Juego de Memoria</h1>
-      <p>Relaciona a cada animal con su huella</p>
+      {/* <h1>Juego de Memoria</h1> */}
+      <h2>Relaciona a cada animal con su huella</h2>
       <div className="controls">
         <label>
           Dificultad:
@@ -156,7 +156,7 @@ const MemoryGame = () => {
         </AnimatedIconButton>
 
         <button tabIndex="0"
-            style={{ marginTop : 35}}
+                    style={{ marginTop : 35}}
             onClick={handleResetGame} 
           className="btn btn-dark">
           Reiniciar
@@ -212,7 +212,7 @@ const MemoryGame = () => {
       </div>
 
       <div style={{ visibility: shouldFlipIncorrect ? 'visible' : 'hidden' }}>
-        <button onClick={handleResetIncorrectCards} className="btn btn-primary">
+        <button onClick={handleResetIncorrectCards} style={{ height: 'auto'}} className="btn btn-primary"> 
           Volver a Intentar
         </button>
       </div>
