@@ -31,12 +31,12 @@ function ItemInfoContainer({itemList,currentIndex,Bottom}){
                     {itemList[currentIndex].nombre}
                     </h1>
                 )}
-                <span id='pros' tabIndex="0" ref={ref} style={{ fontSize, height: heightText, width: widthText, letterSpacing: '1px', lineHeight: '1.2'}} className="text-white">
+                <p id='pros' tabIndex="0" ref={ref} style={{ fontSize, height: heightText, width: widthText, letterSpacing: '1px', lineHeight: '1.2'}} className="text-white">
                     Ventajas✅: {itemList[currentIndex].ventajas}
-                </span>
-                <span id='cons' tabIndex="0" ref={ref} style={{ fontSize, height: heightText, width: widthText, letterSpacing: '1px', lineHeight: '1.2' }} className="text-white">
+                </p>
+                <p id='cons' tabIndex="0" ref={ref} style={{ fontSize, height: heightText, width: widthText, letterSpacing: '1px', lineHeight: '1.2' }} className="text-white">
                     Desventajas❌: {itemList[currentIndex].desventajas}
-                </span>
+                </p>
                 {/*PARA DEBUGEAR EL FITTEXT AÑADIR border: "1px solid red" AL STYLE*/}
             </div>
         </>

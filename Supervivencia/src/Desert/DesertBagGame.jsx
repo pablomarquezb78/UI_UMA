@@ -97,15 +97,15 @@ function DesertBagGame() {
 
     useEffect(() => {
         const handleKeyDown = (event) => {
-            if (event.key === '1') {
+            if (event.key === '0') {
                 restartGame();
-            } else if (event.key === '2') {
+            } else if (event.key === '9') {
                 showHelp();
-            }if (event.key === '3' && !cooldown) {
+            }if (event.key === '1' && !cooldown) {
                 handleButtonClick(prevImage);
-            } else if (event.key === '4' && !cooldown) {
+            } else if (event.key === '2' && !cooldown) {
                 handleButtonClick(includeItem);
-            } else if (event.key === '5' && !cooldown) {
+            } else if (event.key === '3' && !cooldown) {
                 handleButtonClick(nextImage);
             }
         };

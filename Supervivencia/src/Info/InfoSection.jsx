@@ -6,12 +6,12 @@ import 'react-accessible-accordion/dist/fancy-example.css';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import XIcon from '@mui/icons-material/X';
 
-function GridInfo() {
+function InfoSection() {
 
    return(
     <>
 
-    <div id="infoSection" className='bg-light d-flex align-items-start justify-content-around py-5 px-3'>
+    <div id="infoSection" className='position-relative bg-light d-flex align-items-start justify-content-around py-5 px-3'>
 
         <div className='px-1'>
             <h4 className='pb-4 fontControlInfoSectionh5' tabIndex={0}>Ayuda</h4>
@@ -40,4 +40,4 @@ function GridInfo() {
     )
 }
 
-export default GridInfo;
+export default InfoSection;

@@ -3,15 +3,26 @@
 }
 
 #FaqDiv{
-    position: relative;
+    width: 50%;
     top: 10%;
-    overflow: auto;
+    overflow: auto; 
+    margin: 0 auto;
 }
+
+.fontControlFaq{
+    font-size: calc(8px + (18 - 8) * ((100vmin - 350px) / (1080 - 350)));
+}
+
+#FaqIntro{
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
 /*About Us*/
 
 /*Containers*/
 
-#titleContainer{
+#titleContainer{ 
     height: auto;
 }
 
@@ -49,3 +60,11 @@
 }
 
 /* Fin About Us*/
+
+@media screen and (max-width: 600px) {
+
+#FaqDiv{
+    width: 75%;
+}
+
+}
