@@ -2,7 +2,7 @@ import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import Index from './Index.jsx';
 import Prueba from './Prueba.jsx';
-import MemoryGame from './Components/MemoryGame.jsx';
+import MemoryGame from './Mountain/MemoryGame.jsx';
 import ForestMain from './Forest/ForestMain';
 import MountainMain from './Mountain/MountainMain.jsx';
 import DesertMain from './Desert/DesertMain.jsx';

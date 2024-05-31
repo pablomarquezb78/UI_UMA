@@ -4,7 +4,7 @@ import GridInfo from '../Info/InfoSection.jsx';
 import {useRef} from 'react';
 import '../CSS/main.css';
 import '../CSS/Start.css';
-import MemoryGame from '../Components/MemoryGame.jsx';
+import MemoryGame from './MemoryGame.jsx';
 import MountainInitGame from './MountainInitGame.jsx';
 
 function MountainMain(){

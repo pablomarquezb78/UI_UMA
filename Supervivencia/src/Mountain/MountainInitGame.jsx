@@ -1,5 +1,5 @@
 import React from 'react';
-import MemoryGame from '../Components/MemoryGame';
+import MemoryGame from './MemoryGame';
 import './MountainInitGame.css';
 
 function MountainInitGame() {
