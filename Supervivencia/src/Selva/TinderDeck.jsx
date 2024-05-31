@@ -56,12 +56,25 @@ function TinderDeck({ numberOfCard }) {
                     deltaPosition.current = 353;
                     cardDecision(actualCard);
 
-                }else{
-                    const tinderDeckDivs = document.querySelectorAll('.tinderDeck section');
-                    if(tinderDeckDivs.length > 0){
-                        const lastCard = tinderDeckDivs[tinderDeckDivs.length - 1];
-                        lastCard.focus();
+                }else if(e.key.toLowerCase() === '5'){
+                    const tinderDeck = document.querySelectorAll('.tinderDeck section');
+                    if(tinderDeck.length > 0){
+                        const lastCard = tinderDeck[tinderDeck.length - 1];
+                        if(!lastCard.classList.contains('helpTinder')){
+                            const firstImage = lastCard.querySelector('.fruta');
+                            if(firstImage){
+                                firstImage.focus();
+                            }
+
+                        }else{
+                            lastCard.focus();
+                        }
                     }
+                }else if(e.key.toLowerCase() === '0'){
+                    restartGame();
+
+                }else if(e.key.toLowerCase() === '9'){
+                    helpHandler();
                 }
             }
         };
@@ -101,9 +114,11 @@ function TinderDeck({ numberOfCard }) {
         }else {
             if (getRandom.isDangerous(numberAux) === 'Mortal') {
                 wiseChoice.current = (wiseChoice.current + 1);
+                setIsCorrect(correcto);
                 resultDecisionCorrect()
             
             }else{
+                setIsCorrect(incorrecto);
                 resultDecisionIncorrect()
             }
         }
@@ -274,9 +289,8 @@ function TinderDeck({ numberOfCard }) {
                                 key={value}
                                 onMouseDown={index === 1 ? (event) => startDrag(event) : null}
                                 onTouchStart={index === 1 ? (event) => startDrag(event) : null}
-                                tabIndex={index === 1 ? '0' : '-1'}
                             >
-                                <TinderCard card={getRandom.randomFood(number)} index={index}/>
+                                <TinderCard tab={index === 1 ? '0' : '-1'} card={getRandom.randomFood(number)} index={index}/>
                             </section>
                         );
                     })}
