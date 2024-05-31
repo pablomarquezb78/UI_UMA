@@ -15,17 +15,17 @@ import UnderConstruction from './UnderCronstuction/UnderConstructionMain.jsx';
 function App() {
     return (
             <Routes>
-                <Route path="/UI_UMA/" element={<Index />} />
-                <Route path="/UI_UMA/mountain" element={<MountainMain/>}/>
-                <Route path="/UI_UMA/forest" element={<ForestMain/>}/>
-                <Route path='/UI_UMA/desert' element={<DesertMain/>}/>
-                <Route path='/UI_UMA/coast' element={<CoastMain/>}/>
-                <Route path='/UI_UMA/jungle' element={<SelvaMain/>}/>
-                <Route path="/UI_UMA/prueba" element={<Prueba/>}/>
-                <Route path="/UI_UMA/memory" element={<MemoryGame/>}/>
-                <Route path="/UI_UMA/FAQ" element={<FaqPage/>}/>
-                <Route path="/UI_UMA/AboutUs" element={<AboutUs/>}/>
-                <Route path='/UI_UMA/UnderConstruction' element={<UnderConstruction/>}/>
+                <Route path="/" element={<Index />} />
+                <Route path="mountain" element={<MountainMain/>}/>
+                <Route path="/forest" element={<ForestMain/>}/>
+                <Route path='/desert' element={<DesertMain/>}/>
+                <Route path='/coast' element={<CoastMain/>}/>
+                <Route path='/jungle' element={<SelvaMain/>}/>
+                <Route path="/prueba" element={<Prueba/>}/>
+                <Route path="/memory" element={<MemoryGame/>}/>
+                <Route path="/FAQ" element={<FaqPage/>}/>
+                <Route path="/AboutUs" element={<AboutUs/>}/>
+                <Route path='/UnderConstruction' element={<UnderConstruction/>}/>
             </Routes>
     );
 };

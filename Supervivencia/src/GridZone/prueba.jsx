@@ -56,7 +56,7 @@ function GridCard({nameVideo,texto, linkTo}) {
         <div className='frontCard' onMouseEnter={() => {setTime2Play(true)} } onMouseLeave={() => {setTime2Play(false)}}>
             
 
-            <Link to={'/UI_UMA/' + linkTo}>
+            <Link to={'/' + linkTo}>
        
                 <video id={videoId} control={"false"} src={url} muted>
                     
@@ -90,7 +90,7 @@ function GridCard({nameVideo,texto, linkTo}) {
             </article>
 
 
-            <Link to={'/UI_UMA/' + linkTo}>
+            <Link to={'/' + linkTo}>
             <button className="knowMore">SABER MÁS</button>
             </Link>
 
