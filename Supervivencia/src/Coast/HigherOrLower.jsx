@@ -167,13 +167,13 @@ function HigherLowerGame() {
             <section className='imagenesHOL position-relative d-flex justify-content-center align-items-center'>
                 {needHelp && (<HelpHOL cancelGame={cancelGame}/>)}
                 <div className='imagenHOL position-relative'>
-                    <img alt={data.randomImage(imageArray[leftCardIndex])?.nombre} className='img-fluid' src={`src/assets/Coast/${data.randomImage(imageArray[leftCardIndex])?.foto}`}/>
+                    <img alt={data.randomImage(imageArray[leftCardIndex])?.nombre} className='img-fluid containerHOL' src={`src/assets/Coast/${data.randomImage(imageArray[leftCardIndex])?.foto}`}/>
                     <div id='informacion_imagen_i'>
                         <h3 tabIndex='0' className='card-text'> {data.randomImage(imageArray[leftCardIndex])?.nombre}: {data.randomImage(imageArray[leftCardIndex])?.mortalidad} muertes al año </h3>
                     </div>      
                 </div>
                 <div className='imagenHOL position-relative'>
-                    <img alt={data.randomImage(imageArray[rightCardIndex])?.nombre} className='img-fluid' src={`src/assets/Coast/${data.randomImage(imageArray[rightCardIndex])?.foto}`}/>
+                    <img alt={data.randomImage(imageArray[rightCardIndex])?.nombre} className='img-fluid containerHOL' src={`src/assets/Coast/${data.randomImage(imageArray[rightCardIndex])?.foto}`}/>
                     <div id='informacion_imagen_d'  className='position-absolute text-center z-0'>
                         <h3 tabIndex='0' className='card-text'> {data.randomImage(imageArray[rightCardIndex])?.nombre}: {showDeaths ? data.randomImage(imageArray[rightCardIndex])?.mortalidad : '?'} muertes al año </h3>
                     </div>
