@@ -40,10 +40,10 @@ function CarouselInfo({data, id, title}) {
 
     return(
         <React.Fragment>
-        <section className="background" id={id}>
+        <section className={`background ${id}`}>
             <div className='container justify-content-center align-items-center h-75 w-100'>
                 <div className='row justify-content-center align-items-center h-25 mb-2'>
-                    <div tabIndex='0' className='col-9 col-sm-6 col-lg-8 justify-content-center align-items-center tituloCarouselInfo' id={id}>
+                    <div tabIndex='0' className={`col-9 col-sm-6 col-lg-8 justify-content-center align-items-center tituloCarouselInfo ${id}`}>
                         {title}
                     </div>
                 </div>

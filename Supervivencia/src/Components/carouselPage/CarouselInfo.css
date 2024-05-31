@@ -1,4 +1,4 @@
-.background#Forest {
+.background.Forest {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -9,7 +9,7 @@
     background-size: cover;
 }
 
-.tituloCarouselInfo#Forest {
+.tituloCarouselInfo.Forest {
   
   background: rgba(9, 82, 26, 0.9)!important;
 
@@ -31,7 +31,7 @@
   font-size: calc(20px + (60 - 20) * ((100vmin - 350px) / (1080 - 350)));
 }
 
-.background#Mountain {
+.background.Mountain {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -42,7 +42,7 @@
   background-size: cover;
 }
 
-.tituloCarouselInfo#Mountain {
+.tituloCarouselInfo.Mountain {
 
 background: rgba(9, 82, 26, 0.9)!important;
 
@@ -64,7 +64,7 @@ text-align: center;
 font-size: calc(20px + (60 - 20) * ((100vmin - 350px) / (1080 - 350)));
 }
 
-.background#Desert {
+.background.Desert {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -75,7 +75,7 @@ font-size: calc(20px + (60 - 20) * ((100vmin - 350px) / (1080 - 350)));
   background-size: cover;
 }
 
-.tituloCarouselInfo#Desert {
+.tituloCarouselInfo.Desert {
 
 background: rgba(9, 82, 26, 0.9)!important;
 
@@ -97,7 +97,7 @@ text-align: center;
 font-size: calc(20px + (60 - 20) * ((100vmin - 350px) / (1080 - 350)));
 }
 
-.background#Coast {
+.background.Coast {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -108,7 +108,7 @@ font-size: calc(20px + (60 - 20) * ((100vmin - 350px) / (1080 - 350)));
   background-size: cover;
 }
 
-.tituloCarouselInfo#Coast {
+.tituloCarouselInfo.Coast {
 
   background: rgb(0, 35, 99)!important;
 
@@ -130,7 +130,7 @@ text-align: center;
 font-size: calc(20px + (60 - 20) * ((100vmin - 350px) / (1080 - 350)));
 }
 
-.background#Jungle {
+.background.Jungle {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -141,7 +141,7 @@ font-size: calc(20px + (60 - 20) * ((100vmin - 350px) / (1080 - 350)));
   background-size: cover;
 }
 
-.tituloCarouselInfo#Jungle {
+.tituloCarouselInfo.Jungle {
 
 background: rgba(9, 82, 26, 0.9)!important;
 
