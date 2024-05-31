@@ -25,6 +25,7 @@ function TinderDeck({ numberOfCard }) {
     const [isShake, setIsShake] = useState(undefined);
     const [showCard, setShowCard] = useState([1, 0]);
     const [decisionAccesbilityTool, setDecisionAccesbilityTool] = useState('');
+    const [resultDecisionAccesibilityTool, setResultDecisionAccesibilityTool] = useState('');
 
     const AnimatedIconButton = styled(IconButton)`
     color: black;
@@ -78,20 +79,35 @@ function TinderDeck({ numberOfCard }) {
             if (getRandom.isDangerous(numberAux) === 'No mortal') {
                 wiseChoice.current = (wiseChoice.current + 1);
                 setIsCorrect(correcto);
+                resultDecisionCorrect()
+                
             }else{
                 setIsCorrect(incorrecto);
+                resultDecisionIncorrect()
             }
-        } else {
+        }else {
             if (getRandom.isDangerous(numberAux) === 'Mortal') {
                 wiseChoice.current = (wiseChoice.current + 1);
-                setIsCorrect(correcto);
+                resultDecisionCorrect()
+            
             }else{
-                setIsCorrect(incorrecto);
+                resultDecisionIncorrect()
             }
         }
         
         setIsShake('shake-animation');
         setShowCard([showCard[0] + 1, showCard[0]]);
+    }
+
+    const resultDecisionCorrect = () => {
+
+        (resultDecisionAccesibilityTool === 'Acertaste' ? setResultDecisionAccesibilityTool('Acertaste.') : setResultDecisionAccesibilityTool('Acertaste'))
+    }
+
+
+    const resultDecisionIncorrect = () => {
+
+        (resultDecisionAccesibilityTool === 'Fallaste' ? setResultDecisionAccesibilityTool('Fallaste.') : setResultDecisionAccesibilityTool('Fallaste'))
     }
 
     const endDrag = (actualCard, upEvent) => {
@@ -133,11 +149,11 @@ function TinderDeck({ numberOfCard }) {
                 
                 if(decision == 'right'){
                     actualCard.querySelector('img.comestible').style.opacity = '1';
-                    setDecisionAccesbilityTool('Has seleccionado comestible');
+                    (decisionAccesbilityTool ===  'Has seleccionado comestible' ? setDecisionAccesbilityTool('Has seleccionado comestible.') : setDecisionAccesbilityTool('Has seleccionado comestible'));
 
                 }else{
                     actualCard.querySelector('img.venenoso').style.opacity = '1';
-                    setDecisionAccesbilityTool('Has seleccionado venenoso');
+                    (decisionAccesbilityTool ===  'Has seleccionado venenoso' ? setDecisionAccesbilityTool('Has seleccionado venenoso.') : setDecisionAccesbilityTool('Has seleccionado venenoso'));
 
                 }
                 
@@ -224,8 +240,8 @@ function TinderDeck({ numberOfCard }) {
                         {wiseChoice.current} / {getRandom.longData()}
                     </label>
                     <span>
-                            <img className={isShake} src={isCorrect} alt={isCorrect == correcto ? 'Acertaste' : 'Fallaste'}></img>
-                            <label aria-live="assertive" aria-atomic="true" style={{ position: 'absolute', left: '-9999px' }}>{isCorrect == correcto ? 'Acertaste' : 'Fallaste'}</label>
+                            <img className={isShake} src={isCorrect} alt={resultDecisionAccesibilityTool}></img>
+                            <label aria-live="assertive" aria-atomic="true" style={{ position: 'absolute', left: '-9999px' }}>{resultDecisionAccesibilityTool}</label>
                     </span>
                     <div className="sosTinderDiv">
                     <AnimatedIconButton onClick={() => { helpHandler() }}>
