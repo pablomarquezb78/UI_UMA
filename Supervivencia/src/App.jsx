@@ -16,7 +16,7 @@ function App() {
     return (
             <Routes>
                 <Route path="/" element={<Index />} />
-                <Route path="mountain" element={<MountainMain/>}/>
+                <Route path="/mountain" element={<MountainMain/>}/>
                 <Route path="/forest" element={<ForestMain/>}/>
                 <Route path='/desert' element={<DesertMain/>}/>
                 <Route path='/coast' element={<CoastMain/>}/>
