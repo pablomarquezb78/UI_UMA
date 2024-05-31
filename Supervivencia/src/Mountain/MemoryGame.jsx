@@ -119,7 +119,7 @@ const MemoryGame = () => {
     setShouldFlipIncorrect(false);
     setShowResult(false);
     setCards(shuffleCards(cards));
-  };
+  };  
 
   const isCardFlipped = index => {
     return flippedCards.includes(index) || matchedCards.includes(index);
@@ -132,8 +132,8 @@ const MemoryGame = () => {
       onKeyDown={handleKeyPress}
       role="application" 
       aria-label="Juego de Memoria">
-      <div className="titulomem">Juego de Memoria</div>
-      <div className="descmem">Relaciona a cada animal con su huella</div>
+      <h1>Juego de Memoria</h1>
+      <p>Relaciona a cada animal con su huella</p>
       <div className="controls">
         <label>
           Dificultad:
@@ -154,6 +154,13 @@ const MemoryGame = () => {
           }}>
           <SosIcon />
         </AnimatedIconButton>
+
+        <button tabIndex="0"
+            style={{ marginTop : 35}}
+            onClick={handleResetGame} 
+          className="btn btn-dark">
+          Reiniciar
+        </button>
       </div>
 
       {showHelp && (
@@ -177,11 +184,7 @@ const MemoryGame = () => {
         </div>
       )}
 
-      <div style={{ visibility: shouldFlipIncorrect ? 'visible' : 'hidden' }}>
-        <button onClick={handleResetIncorrectCards} className="btn btn-primary">
-          Volver a Intentar
-        </button>
-      </div>
+      
 
       <div className="cards-grid">
         {Array.from({ length: 8 }, (_, rowIndex) => (
@@ -207,6 +210,14 @@ const MemoryGame = () => {
               </div>
             ))}
       </div>
+
+      <div style={{ visibility: shouldFlipIncorrect ? 'visible' : 'hidden' }}>
+        <button onClick={handleResetIncorrectCards} className="btn btn-primary">
+          Volver a Intentar
+        </button>
+      </div>
+
+
 
       {showResult && (
         <div 
