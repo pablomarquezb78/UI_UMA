@@ -64,7 +64,7 @@ function TinderHelpCard({ dragEvent, tabIndex}) {
                         VENENOSO
                     </h3>
                     <span>
-                        <img src={veneno} alt="Veneno"></img>
+                        <img draggable="false" src={veneno} alt="Veneno"></img>
                     </span>
                 </div>
                 <div className='helpResultImage'>
@@ -76,7 +76,7 @@ function TinderHelpCard({ dragEvent, tabIndex}) {
                         COMESTIBLE
                     </h3>
                     <span>
-                        <img src={comestible} alt="Correcto"></img>
+                        <img draggable="false" src={comestible} alt="Correcto"></img>
                     </span>
                 </div>
             </div>

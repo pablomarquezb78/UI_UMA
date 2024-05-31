@@ -45,7 +45,7 @@ function TinderDeck({ numberOfCard }) {
 
     useEffect(() => {
         const handleKeyDown = (e) => {
-            if (!e.repeat && (e.key.toLowerCase() === '4' || e.key.toLowerCase() === '6' || e.key.toLowerCase() === '5')) {
+            if (!e.repeat && (e.key.toLowerCase() === '4' || e.key.toLowerCase() === '6' || e.key.toLowerCase() === '5' || e.key.toLowerCase() === '0' || e.key.toLowerCase() === '9')) {
                 const tinderDeckDivs = document.querySelectorAll('.tinderDeck section');
                 const actualCard = tinderDeckDivs[tinderDeckDivs.length - 1];
                 if(e.key.toLowerCase() === '4'){
@@ -56,12 +56,25 @@ function TinderDeck({ numberOfCard }) {
                     deltaPosition.current = 353;
                     cardDecision(actualCard);
 
-                }else{
-                    const tinderDeckDivs = document.querySelectorAll('.tinderDeck section');
-                    if(tinderDeckDivs.length > 0){
-                        const lastCard = tinderDeckDivs[tinderDeckDivs.length - 1];
-                        lastCard.focus();
+                }else if(e.key.toLowerCase() === '5'){
+                    const tinderDeck = document.querySelectorAll('.tinderDeck section');
+                    if(tinderDeck.length > 0){
+                        const lastCard = tinderDeck[tinderDeck.length - 1];
+                        if(!lastCard.classList.contains('helpTinder')){
+                            const firstImage = lastCard.querySelector('.fruta');
+                            if(firstImage){
+                                firstImage.focus();
+                            }
+
+                        }else{
+                            lastCard.focus();
+                        }
                     }
+                }else if(e.key.toLowerCase() === '0'){
+                    restartGame();
+
+                }else if(e.key.toLowerCase() === '9'){
+                    helpHandler();
                 }
             }
         };
@@ -101,9 +114,11 @@ function TinderDeck({ numberOfCard }) {
         }else {
             if (getRandom.isDangerous(numberAux) === 'Mortal') {
                 wiseChoice.current = (wiseChoice.current + 1);
+                setIsCorrect(correcto);
                 resultDecisionCorrect()
             
             }else{
+                setIsCorrect(incorrecto);
                 resultDecisionIncorrect()
             }
         }
@@ -142,7 +157,7 @@ function TinderDeck({ numberOfCard }) {
 
         let typeFoodImage;
 
-        if(!actualCard.classList.contains('helpTinder')){
+        if(!needHelp){
             typeFoodImage = actualCard.querySelector('img.comestible');
             typeFoodImage.style.opacity = '0'
     
@@ -159,21 +174,19 @@ function TinderDeck({ numberOfCard }) {
             actualCard.classList.add(positive ? decision = 'right' : decision = 'left');
 
             if (!needHelp) {
-                
-                if(decision == 'right'){
+                if(decision === 'right' && !needHelp){
                     actualCard.querySelector('img.comestible').style.opacity = '1';
                     (decisionAccesbilityTool ===  'Has seleccionado comestible' ? setDecisionAccesbilityTool('Has seleccionado comestible.') : setDecisionAccesbilityTool('Has seleccionado comestible'));
 
-                }else{
+                }else if(decision === 'left' && !needHelp){
                     actualCard.querySelector('img.venenoso').style.opacity = '1';
                     (decisionAccesbilityTool ===  'Has seleccionado venenoso' ? setDecisionAccesbilityTool('Has seleccionado venenoso.') : setDecisionAccesbilityTool('Has seleccionado venenoso'));
-
                 }
                 
                 actualCard.addEventListener('transitionend', () => {
                     load(positive);
                 });
-            } else {
+            }else {
                 actualCard.addEventListener('transitionend', () => {
                     setNeedHelp(false);
                 });
@@ -274,9 +287,8 @@ function TinderDeck({ numberOfCard }) {
                                 key={value}
                                 onMouseDown={index === 1 ? (event) => startDrag(event) : null}
                                 onTouchStart={index === 1 ? (event) => startDrag(event) : null}
-                                tabIndex={index === 1 ? '0' : '-1'}
                             >
-                                <TinderCard card={getRandom.randomFood(number)} index={index}/>
+                                <TinderCard tab={index === 1 ? '0' : '-1'} card={getRandom.randomFood(number)} index={index}/>
                             </section>
                         );
                     })}

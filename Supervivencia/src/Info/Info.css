@@ -49,7 +49,7 @@
     font-size: calc(10px + (20 - 10) * ((100vmin - 350px) / (1080 - 350)));
 }
 
-.fontControlInfoSectionh5{
+.fontControlInfoSectionh4{
     font-size: calc(20px + (30 - 20) * ((100vmin - 350px) / (1080 - 350)));
 }
 

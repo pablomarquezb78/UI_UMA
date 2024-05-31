@@ -2,7 +2,8 @@ import React from 'react'
 import CoastStart from './CoastStart.jsx';
 import InfoSection from '../Info/InfoSection.jsx'
 import HigherOrLowerGame from './HigherOrLower.jsx'
-import CoastAnimalInfo from './CoastAnimalInfo.jsx';
+import CoastCarousel from '../Components/carouselPage/CarouselInfo.jsx';
+import coastData from '../Coast/imagenes.json';
 
 import {useRef} from 'react';
 import '../CSS/main.css'
@@ -32,7 +33,7 @@ function CoastMain(){
                 </div>
 
                 <div className='sliderItem' ref={startRef}>
-                    <CoastAnimalInfo scrollToGridInfo={scrollToGridInfo}/>
+                    <CoastCarousel data={coastData} id='Coast' title={'FAUNA DE LA COSTA'} scrollToGridInfo={scrollToGridInfo}/>
                 </div>
 
                 <div className='sliderItem' ref={gridInfoRef}>
