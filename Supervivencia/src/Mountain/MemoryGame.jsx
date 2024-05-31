@@ -109,6 +109,8 @@ const MemoryGame = () => {
       }
     } else if (e.key.toUpperCase() === "R") {
       handleResetIncorrectCards();
+    } else if (e.key.toUpperCase() === "0") {
+      handleResetGame();
     }
   };
 
