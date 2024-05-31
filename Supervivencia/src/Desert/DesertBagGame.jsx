@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Bag from '/public/Desert/DesertImages/Bag.png';
+import Bag from '/Desert/DesertImages/Bag.png';
 import './Desert.css';
 import initialItemList from '/public/Desert/itemsBag.json';
 
@@ -29,7 +29,7 @@ function DesertBagGame() {
     }));
     
 
-    const imgPath = "/public/Desert/DesertImages/";
+    const imgPath = "/Desert/DesertImages/";
     const [suma, setSuma] = useState(0);
     const [currentIndex, setCurrentIndex] = useState(0);
     const [isAnimating, setIsAnimating] = useState(false);

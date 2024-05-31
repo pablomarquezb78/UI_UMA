@@ -2,15 +2,13 @@
 import './Grid.css';
 import {useState,useEffect,useRef,useId} from 'react';
 import { Link } from 'react-router-dom';
-import infoCardIcon from '../assets/Start/Logos/info.png'
-import reverseCardIcon from '../assets/Start/Logos/reverse.webp'
 function GridCard({nameVideo,texto, linkTo}) {
 
     const[time2Play, setTime2Play] = useState(false)
 
     const videoId = useId();
 
-    const url = 'src/assets/VideosGrid/' + nameVideo + '.mp4'
+    const url = '/VideosGrid/' + nameVideo + '.mp4'
 
     useEffect(() => {
         

@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import useFitText from "use-fit-text";
-import veneno from '/public/Selva//FotosAlimentos/veneno.png';
-import comestible from '/public/Selva//FotosAlimentos/saludable.png';
+import veneno from '/Selva/FotosAlimentos/veneno.png';
+import comestible from '/Selva/FotosAlimentos/saludable.png';
 
 function TinderHelpCard({ dragEvent, tabIndex}) {
     const { fontSize: fontSize1, ref: ref1 } = useFitText({
