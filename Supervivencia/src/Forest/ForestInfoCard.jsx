@@ -92,7 +92,7 @@ function ForestInfoCard({imgSrc, imgAlt, cardTitle, cardSubtitle, cardText}) {
                                     {!showImageButton && (
                                         <div className="col-9 d-flex justify-content-center align-items-center" id='forestInfoCard'>
                                             <button tabIndex='0' onClick={mostrarInfo}>
-                                                <div className='bottomIconSVG'>
+                                                <div className='bottomIconSVG' id='forestInfoCard'>
                                                     {!iconHidden && (
                                                         <React.Fragment>
                                                             <InfoIcon className='iconSVG' />
@@ -108,7 +108,7 @@ function ForestInfoCard({imgSrc, imgAlt, cardTitle, cardSubtitle, cardText}) {
                                         <React.Fragment>
                                             <div className="col-8 d-flex justify-content-center align-items-center mb-2" id='forestInfoCard'>
                                                 <button tabIndex='0' onClick={mostrarInfo}>
-                                                    <div className='bottomIconSVG'>
+                                                    <div className='bottomIconSVG' id='forestInfoCard'>
                                                         {!iconHidden && (
                                                             <React.Fragment>
                                                                 <InfoIcon className='iconSVG' />
@@ -121,7 +121,7 @@ function ForestInfoCard({imgSrc, imgAlt, cardTitle, cardSubtitle, cardText}) {
                                             </div> 
                                             <div className="col-8 d-flex justify-content-center align-items-center" id='forestInfoCard'>
                                                 <button tabIndex='0' onClick={mostrarImagen}>
-                                                    <div className='bottomIconSVG'>
+                                                    <div className='bottomIconSVG' id='forestInfoCard'>
                                                         {!iconHidden && (
                                                             <React.Fragment>
                                                                 <ImageIcon className='iconSVG' />
@@ -147,7 +147,7 @@ function ForestInfoCard({imgSrc, imgAlt, cardTitle, cardSubtitle, cardText}) {
                     </div>
                     <div className="d-flex justify-content-center align-items-center" id='forestInfoCard'>
                         <button tabIndex='0' onClick={mostrarInfo}>
-                            <div className='bottomIconSVG'>
+                            <div className='bottomIconSVG' id='forestInfoCard'>
                                 {!iconHidden && (
                                     <React.Fragment>
                                         <UTurnLeftIcon className='iconSVG' />
@@ -167,7 +167,7 @@ function ForestInfoCard({imgSrc, imgAlt, cardTitle, cardSubtitle, cardText}) {
                     </div>
                     <div className="d-flex justify-content-center align-items-center" id='forestInfoCard'>
                         <button tabIndex='0' onClick={mostrarImagen}>
-                            <div className='bottomIconSVG'>
+                            <div className='bottomIconSVG' id='forestInfoCard'>
                                 {!iconHidden && (
                                     <React.Fragment>
                                         <UTurnLeftIcon className='iconSVG' />
