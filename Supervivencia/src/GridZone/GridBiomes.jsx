@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import hogueraSeca from '../assets/VideosGrid/hoguera_seca.png';
-import hogueraPrendida from '../assets/VideosGrid/hoguera_prendida.gif';
-import Smoke from '../assets/VideosGrid/smoke.gif';
+import hogueraSeca from '/VideosGrid/hoguera_seca.png';
+import hogueraPrendida from '/VideosGrid/hoguera_prendida.gif';
+import Smoke from '/VideosGrid/smoke.gif';
 
 import './Grid.css';
 import GridCard from './GridCard';
