@@ -43,18 +43,12 @@
     height: 10%;
   }
 
-  .memory-game .card-group .card {
+  .memory-game .card {
     cursor: pointer;
-    /*flex: 0 0 calc(50% - 20px); /* Establece el ancho de la carta al 50% del contenedor, con margen */
-    max-width: 30%;
     margin-right: 3%; /* Espacio entre las cartas */
-/*    margin-bottom: 20px; /* Espacio entre las cartas y las filas */
-/*    border-radius: 14px 14px 0 0; /* Añade bordes redondeados a las cartas, solo en las esquinas superiores */
     overflow: hidden; /* Evita que las imágenes se desborden de las cartas */
-    height: auto; /* Ajusta el alto de la carta */
-    /* border: 0; */
+    border: 0;
     box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5); /* Sombreado */
-    border-color: red;
   }
   
   .memory-game .card-group .card:first-child,
