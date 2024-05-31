@@ -7,7 +7,7 @@ import {useRef} from 'react';
 import '../CSS/main.css'
 import '../CSS/Start.css'
 
-import plantsData from '../assets/Forest/PlantInfoAssets/ForestPlantInfo.json'
+import plantsData from '/public/Forest/PlantInfoAssets/ForestPlantInfo.json'
 import animalsData from '../assets/Forest/AnimalInfoAssets/ForestAnimalInfo.json'
 
 function ForestMain(){
