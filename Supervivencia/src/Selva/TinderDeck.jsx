@@ -45,7 +45,7 @@ function TinderDeck({ numberOfCard }) {
 
     useEffect(() => {
         const handleKeyDown = (e) => {
-            if (!e.repeat && (e.key.toLowerCase() === '4' || e.key.toLowerCase() === '6' || e.key.toLowerCase() === '5')) {
+            if (!e.repeat && (e.key.toLowerCase() === '4' || e.key.toLowerCase() === '6' || e.key.toLowerCase() === '5' || e.key.toLowerCase() === '0' || e.key.toLowerCase() === '9')) {
                 const tinderDeckDivs = document.querySelectorAll('.tinderDeck section');
                 const actualCard = tinderDeckDivs[tinderDeckDivs.length - 1];
                 if(e.key.toLowerCase() === '4'){
@@ -157,7 +157,7 @@ function TinderDeck({ numberOfCard }) {
 
         let typeFoodImage;
 
-        if(!actualCard.classList.contains('helpTinder')){
+        if(!needHelp){
             typeFoodImage = actualCard.querySelector('img.comestible');
             typeFoodImage.style.opacity = '0'
     
@@ -174,21 +174,19 @@ function TinderDeck({ numberOfCard }) {
             actualCard.classList.add(positive ? decision = 'right' : decision = 'left');
 
             if (!needHelp) {
-                
-                if(decision == 'right'){
+                if(decision === 'right' && !needHelp){
                     actualCard.querySelector('img.comestible').style.opacity = '1';
                     (decisionAccesbilityTool ===  'Has seleccionado comestible' ? setDecisionAccesbilityTool('Has seleccionado comestible.') : setDecisionAccesbilityTool('Has seleccionado comestible'));
 
-                }else{
+                }else if(decision === 'left' && !needHelp){
                     actualCard.querySelector('img.venenoso').style.opacity = '1';
                     (decisionAccesbilityTool ===  'Has seleccionado venenoso' ? setDecisionAccesbilityTool('Has seleccionado venenoso.') : setDecisionAccesbilityTool('Has seleccionado venenoso'));
-
                 }
                 
                 actualCard.addEventListener('transitionend', () => {
                     load(positive);
                 });
-            } else {
+            }else {
                 actualCard.addEventListener('transitionend', () => {
                     setNeedHelp(false);
                 });
