@@ -1,11 +1,11 @@
 import React, {useState, useEffect}from 'react';
 
-import './ForestInfoCard.css'
+import './CarouselInfoCard.css'
 import InfoIcon from '@mui/icons-material/Info'
 import ImageIcon from '@mui/icons-material/Image';
 import UTurnLeftIcon from '@mui/icons-material/UTurnLeft';
 
-function ForestInfoCard({imgSrc, imgAlt, cardTitle, cardSubtitle, cardText}) {
+function CarouselInfoCard({imgSrc, imgAlt, cardTitle, cardSubtitle, cardText}) {
 
     const [isHidden, setIsHidden] = useState(false);
     const [iconHidden, setIconHidden] = useState(false);
@@ -72,17 +72,17 @@ function ForestInfoCard({imgSrc, imgAlt, cardTitle, cardSubtitle, cardText}) {
     }
 
     return(
-        <div className="card" id='forestInfoCard'>
+        <div className="card forestInfoCard">
             {!showInfo && !showMidImage && (
                 <React.Fragment>
                     {!showImageButton && (
-                        <img src={imgSrc} className="card-img-top" alt={imgAlt} id='forestInfoCard'/>
+                        <img src={imgSrc} className="card-img-top forestInfoCard" alt={imgAlt}/>
                     )}
-                    <div className="card-body justify-content-center align-items-center" id='forestInfoCard'>
+                    <div className="card-body justify-content-center align-items-center forestInfoCard" >
                         <h4 className="card-title" id='forestInfoCard'>{cardTitle}</h4> 
                         <h6  className='card-subtitle' id='forestInfoCard'>{cardSubtitle}</h6>
                         {!isHidden && (
-                            <div className="card-text d-flex justify-content-center align-items-center" id='forestInfoCard'>
+                            <div className="card-text d-flex justify-content-center align-items-center forestInfoCard">
                                 {cardText}
                             </div>
                         )}
@@ -90,9 +90,9 @@ function ForestInfoCard({imgSrc, imgAlt, cardTitle, cardSubtitle, cardText}) {
                             <React.Fragment>
                                 <div className='row justify-content-center align-items-center'>
                                     {!showImageButton && (
-                                        <div className="col-9 d-flex justify-content-center align-items-center" id='forestInfoCard'>
+                                        <div className="col-9 d-flex justify-content-center align-items-center forestInfoCard">
                                             <button tabIndex='0' onClick={mostrarInfo}>
-                                                <div className='bottomIconSVG' id='forestInfoCard'>
+                                                <div className='bottomIconSVG forestInfoCard'>
                                                     {!iconHidden && (
                                                         <React.Fragment>
                                                             <InfoIcon className='iconSVG' />
@@ -106,7 +106,7 @@ function ForestInfoCard({imgSrc, imgAlt, cardTitle, cardSubtitle, cardText}) {
                                     )}
                                     {showImageButton && (
                                         <React.Fragment>
-                                            <div className="col-8 d-flex justify-content-center align-items-center mb-2" id='forestInfoCard'>
+                                            <div className="col-8 d-flex justify-content-center align-items-center mb-2 forestInfoCard">
                                                 <button tabIndex='0' onClick={mostrarInfo}>
                                                     <div className='bottomIconSVG' id='forestInfoCard'>
                                                         {!iconHidden && (
@@ -119,9 +119,9 @@ function ForestInfoCard({imgSrc, imgAlt, cardTitle, cardSubtitle, cardText}) {
                                                     </div>
                                                 </button>
                                             </div> 
-                                            <div className="col-8 d-flex justify-content-center align-items-center" id='forestInfoCard'>
+                                            <div className="col-8 d-flex justify-content-center align-items-center forestInfoCard">
                                                 <button tabIndex='0' onClick={mostrarImagen}>
-                                                    <div className='bottomIconSVG' id='forestInfoCard'>
+                                                    <div className='bottomIconSVG forestInfoCard'>
                                                         {!iconHidden && (
                                                             <React.Fragment>
                                                                 <ImageIcon className='iconSVG' />
@@ -141,13 +141,13 @@ function ForestInfoCard({imgSrc, imgAlt, cardTitle, cardSubtitle, cardText}) {
                 </React.Fragment>
             )}
             {showInfo && (
-                <div className="card-body mini justify-content-center align-items-center" id='forestInfoCard'>
-                    <div className="card-text mini d-flex justify-content-center align-items-center" id='forestInfoCard'>
+                <div className="card-body mini justify-content-center align-items-center forestInfoCard">
+                    <div className="card-text mini d-flex justify-content-center align-items-center forestInfoCard">
                         {cardText}
                     </div>
-                    <div className="d-flex justify-content-center align-items-center" id='forestInfoCard'>
+                    <div className="d-flex justify-content-center align-items-center forestInfoCard">
                         <button tabIndex='0' onClick={mostrarInfo}>
-                            <div className='bottomIconSVG' id='forestInfoCard'>
+                            <div className='bottomIconSVG forestInfoCard'>
                                 {!iconHidden && (
                                     <React.Fragment>
                                         <UTurnLeftIcon className='iconSVG' />
@@ -184,4 +184,4 @@ function ForestInfoCard({imgSrc, imgAlt, cardTitle, cardSubtitle, cardText}) {
     )
 }
 
-export default ForestInfoCard
+export default CarouselInfoCard

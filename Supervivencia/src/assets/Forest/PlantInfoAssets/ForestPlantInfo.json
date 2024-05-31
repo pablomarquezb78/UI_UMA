@@ -1,5 +1,4 @@
-{
-    "plants": [
+[
         {
             "cardTitle": "Helecho",
             "cardSubtitle": "Pteridophyta",
@@ -70,5 +69,4 @@
             "img": "public/Forest/PlantInfoPublicAssets/Images/Violeta.jpg",
             "imgAlt": "Imagen de violeta"
         }
-    ]
-}
+]
