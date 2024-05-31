@@ -45,11 +45,24 @@ function TinderDeck({ numberOfCard }) {
 
     useEffect(() => {
         const handleKeyDown = (e) => {
-            if (!e.repeat && (e.key.toLowerCase() === '4' || e.key.toLowerCase() === '6')) {
+            if (!e.repeat && (e.key.toLowerCase() === '4' || e.key.toLowerCase() === '6' || e.key.toLowerCase() === '5')) {
                 const tinderDeckDivs = document.querySelectorAll('.tinderDeck section');
                 const actualCard = tinderDeckDivs[tinderDeckDivs.length - 1];
-                deltaPosition.current = e.key.toLowerCase() === '4' ? -271 : 353;
-                cardDecision(actualCard);
+                if(e.key.toLowerCase() === '4'){
+                    deltaPosition.current = -271;
+                    cardDecision(actualCard);
+
+                }else if(e.key.toLowerCase() === '6'){
+                    deltaPosition.current = 353;
+                    cardDecision(actualCard);
+
+                }else{
+                    const tinderDeckDivs = document.querySelectorAll('.tinderDeck section');
+                    if(tinderDeckDivs.length > 0){
+                        const lastCard = tinderDeckDivs[tinderDeckDivs.length - 1];
+                        lastCard.focus();
+                    }
+                }
             }
         };
     
@@ -261,8 +274,9 @@ function TinderDeck({ numberOfCard }) {
                                 key={value}
                                 onMouseDown={index === 1 ? (event) => startDrag(event) : null}
                                 onTouchStart={index === 1 ? (event) => startDrag(event) : null}
+                                tabIndex={index === 1 ? '0' : '-1'}
                             >
-                                <TinderCard tab={index === 1 ? '0' : '-1'} card={getRandom.randomFood(number)} index={index}/>
+                                <TinderCard card={getRandom.randomFood(number)} index={index}/>
                             </section>
                         );
                     })}
