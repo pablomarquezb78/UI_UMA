@@ -91,7 +91,12 @@
     }
   }
 
-  @media only screen and (max-height: 360px) {
-    .memory-game .cards-grid {
+  @media only screen and (max-height: 260px) {
+    .memory-game {
+      margin-top: 15%;
+    }
+
+    .memory-game .btn {
+      margin: 1px; /* Ajusta el valor según sea necesario */
     }
   }
