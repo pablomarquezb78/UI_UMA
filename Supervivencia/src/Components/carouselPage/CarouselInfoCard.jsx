@@ -1,11 +1,11 @@
 import React, {useState, useEffect}from 'react';
 
-import './ForestInfoCard.css'
+import './CarouselInfoCard.css'
 import InfoIcon from '@mui/icons-material/Info'
 import ImageIcon from '@mui/icons-material/Image';
 import UTurnLeftIcon from '@mui/icons-material/UTurnLeft';
 
-function ForestInfoCard({imgSrc, imgAlt, cardTitle, cardSubtitle, cardText}) {
+function CarouselInfoCard({imgSrc, imgAlt, cardTitle, cardSubtitle, cardText}) {
 
     const [isHidden, setIsHidden] = useState(false);
     const [iconHidden, setIconHidden] = useState(false);
@@ -184,4 +184,4 @@ function ForestInfoCard({imgSrc, imgAlt, cardTitle, cardSubtitle, cardText}) {
     )
 }
 
-export default ForestInfoCard
+export default CarouselInfoCard

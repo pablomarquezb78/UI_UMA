@@ -4,12 +4,11 @@ import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 
 //import { Carousel } from 'primereact/carousel' //ELIMINAR
-import ForestInfoCard from './ForestInfoCard';
+import CarouselInfoCard from './CarouselInfoCard';
 
-import './ForestCarouselInfo.css'
-import animalsData from '../assets/Forest/AnimalInfoAssets/ForestAnimalInfo.json'
+import './CarouselInfo.css'
 
-function ForestAnimalInfo() {
+function CarouselInfo({data, id, title}) {
 
     const small = 464;
     const mid = 1024;
@@ -40,12 +39,12 @@ function ForestAnimalInfo() {
     };
 
     return(
-        
-        <section className="background" id='ForestInfo'>
+        <React.Fragment>
+        <section className="background" id={id}>
             <div className='container justify-content-center align-items-center h-75 w-100'>
                 <div className='row justify-content-center align-items-center h-25 mb-2'>
-                    <div tabIndex='0' className='col-6 col-sm-6 col-lg-8 justify-content-center align-items-center tituloCarouselInfo' id='Forest'>
-                        ANIMALES DEL BOSQUE
+                    <div tabIndex='0' className='col-9 col-sm-6 col-lg-8 justify-content-center align-items-center tituloCarouselInfo' id={id}>
+                        {title}
                     </div>
                 </div>
                 <div className='row justify-content-center align-items-center h-75'>
@@ -60,14 +59,14 @@ function ForestAnimalInfo() {
                             //centerMode={true}
                             responsive={responsive}
                         >
-                            {animalsData.animals.map((animal, index) => (
-                                <ForestInfoCard
+                            {data.map((item, index) => (
+                                <CarouselInfoCard
                                     key={index}
-                                    imgSrc={animal.img} 
-                                    imgAlt={animal.imgAlt}
-                                    cardTitle={animal.cardTitle} 
-                                    cardSubtitle={animal.cardSubtitle}
-                                    cardText={animal.cardText}
+                                    imgSrc={item.img} 
+                                    imgAlt={item.imgAlt}
+                                    cardTitle={item.cardTitle} 
+                                    cardSubtitle={item.cardSubtitle}
+                                    cardText={item.cardText}
                                 />
                             ))}
                         </Carousel>
@@ -75,8 +74,8 @@ function ForestAnimalInfo() {
                 </div>
             </div>
        </section>
- 
+       </React.Fragment>
     )
 }
 
-export default ForestAnimalInfo
+export default CarouselInfo

@@ -1,5 +1,4 @@
-{
-    "animals": [
+[
         {
             "src": "BearSoundEffect.mp3",
             "cardTitle": "Oso",
@@ -70,6 +69,7 @@
             "cardSubtitle": "Serpentes",
             "cardText": "Las serpientes son reptiles pertenecientes al suborden Serpentes. Se caracterizan por su cuerpo alargado y sin extremidades. Las serpientes son carnívoras y se alimentan de una variedad de presas, que incluyen roedores, aves y otros reptiles.",
             "img": "public/Forest/AnimalInfoPublicAssets/Images/Snake.jpg",
+
             "imgAlt": "Imagen de serpiente"
         },
         {
@@ -80,5 +80,4 @@
             "img": "public/Forest/AnimalInfoPublicAssets/Images/GrayWolf.webp",
             "imgAlt": "Imagen de lobo"
         }
-    ]
-}
+]

@@ -1,0 +1,171 @@
+.background#Forest {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    /* background-image: url('./backgrounds/ForestPlantInfoBackground.png'); */
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.tituloCarouselInfo#Forest {
+  
+  background: rgba(9, 82, 26, 0.9)!important;
+
+  backdrop-filter: blur( 7.5px );
+  -webkit-backdrop-filter: blur( 7.5px );
+
+  box-shadow: 0 8px 32px 0 rgba( 0, 0, 0, 0.3 );
+
+  border-radius: 10px;
+  border: 1px solid rgba( 255, 255, 255, 0.3 );
+  z-index: 2;
+
+
+  font-weight: bold;
+  color: rgb(255, 255, 255);
+  text-shadow: 0px 0px 30px rgba(255, 255, 255, 0.5);
+  text-align: center;
+
+  font-size: calc(20px + (60 - 20) * ((100vmin - 350px) / (1080 - 350)));
+}
+
+.background#Mountain {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  /* background-image: url('./backgrounds/ForestPlantInfoBackground.png'); */
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.tituloCarouselInfo#Mountain {
+
+background: rgba(9, 82, 26, 0.9)!important;
+
+backdrop-filter: blur( 7.5px );
+-webkit-backdrop-filter: blur( 7.5px );
+
+box-shadow: 0 8px 32px 0 rgba( 0, 0, 0, 0.3 );
+
+border-radius: 10px;
+border: 1px solid rgba( 255, 255, 255, 0.3 );
+z-index: 2;
+
+
+font-weight: bold;
+color: rgb(255, 255, 255);
+text-shadow: 0px 0px 30px rgba(255, 255, 255, 0.5);
+text-align: center;
+
+font-size: calc(20px + (60 - 20) * ((100vmin - 350px) / (1080 - 350)));
+}
+
+.background#Desert {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  /* background-image: url('./backgrounds/ForestPlantInfoBackground.png'); */
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.tituloCarouselInfo#Desert {
+
+background: rgba(9, 82, 26, 0.9)!important;
+
+backdrop-filter: blur( 7.5px );
+-webkit-backdrop-filter: blur( 7.5px );
+
+box-shadow: 0 8px 32px 0 rgba( 0, 0, 0, 0.3 );
+
+border-radius: 10px;
+border: 1px solid rgba( 255, 255, 255, 0.3 );
+z-index: 2;
+
+
+font-weight: bold;
+color: rgb(255, 255, 255);
+text-shadow: 0px 0px 30px rgba(255, 255, 255, 0.5);
+text-align: center;
+
+font-size: calc(20px + (60 - 20) * ((100vmin - 350px) / (1080 - 350)));
+}
+
+.background#Coast {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  /* background-image: url('./backgrounds/ForestPlantInfoBackground.png'); */
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.tituloCarouselInfo#Coast {
+
+background: rgba(9, 82, 26, 0.9)!important;
+
+backdrop-filter: blur( 7.5px );
+-webkit-backdrop-filter: blur( 7.5px );
+
+box-shadow: 0 8px 32px 0 rgba( 0, 0, 0, 0.3 );
+
+border-radius: 10px;
+border: 1px solid rgba( 255, 255, 255, 0.3 );
+z-index: 2;
+
+
+font-weight: bold;
+color: rgb(255, 255, 255);
+text-shadow: 0px 0px 30px rgba(255, 255, 255, 0.5);
+text-align: center;
+
+font-size: calc(20px + (60 - 20) * ((100vmin - 350px) / (1080 - 350)));
+}
+
+.background#Jungle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  /* background-image: url('./backgrounds/ForestPlantInfoBackground.png'); */
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.tituloCarouselInfo#Jungle {
+
+background: rgba(9, 82, 26, 0.9)!important;
+
+backdrop-filter: blur( 7.5px );
+-webkit-backdrop-filter: blur( 7.5px );
+
+box-shadow: 0 8px 32px 0 rgba( 0, 0, 0, 0.3 );
+
+border-radius: 10px;
+border: 1px solid rgba( 255, 255, 255, 0.3 );
+z-index: 2;
+
+
+font-weight: bold;
+color: rgb(255, 255, 255);
+text-shadow: 0px 0px 30px rgba(255, 255, 255, 0.5);
+text-align: center;
+
+font-size: calc(20px + (60 - 20) * ((100vmin - 350px) / (1080 - 350)));
+}
+
+/* @media screen and (min-width: 550px) and (max-width: 1000px) {
+  .tituloAnimalInfo
+  {
+      font-size: calc(14px + (60 - 14) * ((100vmin - 350px) / (1080 - 350)));
+  }
+} */

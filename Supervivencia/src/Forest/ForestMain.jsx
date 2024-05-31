@@ -2,11 +2,13 @@ import React from 'react'
 import ForestStart from './ForestStart.jsx'
 import ForestAudioGame from './ForestAudioGame.jsx'
 import GridInfo from '../Info/InfoSection.jsx'
-import ForestAnimalInfo from './ForestAnimalInfo.jsx'
-import ForestPlantInfo from './ForestPlantInfo.jsx'
+import CarouselInfo from '../Components/carouselPage/CarouselInfo.jsx'
 import {useRef} from 'react';
 import '../CSS/main.css'
 import '../CSS/Start.css'
+
+import plantsData from '../assets/Forest/PlantInfoAssets/ForestPlantInfo.json'
+import animalsData from '../assets/Forest/AnimalInfoAssets/ForestAnimalInfo.json'
 
 function ForestMain(){
 
@@ -30,11 +32,11 @@ function ForestMain(){
                 </div>
 
                 <div className='sliderItem'>
-                    <ForestPlantInfo/>
+                    <CarouselInfo data={plantsData} id='Forest' title='PLANTAS DEL BOSQUE'/>
                 </div>
 
                 <div className='sliderItem'>
-                    <ForestAnimalInfo/>
+                    <CarouselInfo data={animalsData} id='Forest' title='ANIMALES DEL BOSQUE'/>
                 </div>
             
                 <div className='sliderItem'>
