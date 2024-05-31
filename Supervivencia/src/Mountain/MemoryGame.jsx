@@ -30,15 +30,15 @@ const MemoryGame = () => {
   };
 
   useEffect(() => {
-    const images = [
-      "src/assets/Mountain/huella_de_oso.png",
-      "src/assets/Mountain/foto_de_oso.png",
-      "src/assets/Mountain/huella_de_lobo.png",
-      "src/assets/Mountain/foto_de_lobo.png",
-      "src/assets/Mountain/huella_de_ciervo.png",
-      "src/assets/Mountain/foto_de_ciervo.png",
-      "src/assets/Mountain/huella_de_cabra.png",
-      "src/assets/Mountain/foto_de_cabra.png"
+    const images= [
+      "/public/Mountain/huella_de_oso.png",
+      "/public/Mountain/foto_de_oso.png",
+      "/public/Mountain/huella_de_lobo.png",
+      "/public/Mountain/foto_de_lobo.png",
+      "/public/Mountain/huella_de_ciervo.png",
+      "/public/Mountain/foto_de_ciervo.png",
+      "/public/Mountain/huella_de_cabra.png",
+      "/public/Mountain/foto_de_cabra.png"
     ];
 
     const cardPairs = images.map((image, index) => ({
@@ -175,7 +175,7 @@ const MemoryGame = () => {
           <h2 id="helpTitle" style={{fontSize:'calc(20px + (30 - 20) * ((100vmin - 350px) / (1080 - 350)))'}}>Ayuda</h2>
           <p id="helpDescription" style={{ whiteSpace: 'normal' }}>En este juego de memoria, empareja imágenes de seres vivos con sus huellas. El color del borde de cada huella coincide con el color del borde del animal asociado. Si eliges el modo fácil podrás voltear las cartas sin tiempo límite con el botón <span style={{ fontWeight: 'bold' }}>Volver a Intentar</span>.</p>
           <h6> Atajos: </h6>
-          <img tabIndex="0"  src="src/assets/Mountain/atajosmont.png"
+      <img tabIndex="0"  src="src/assets/Mountain/atajosmont.png"
             style={{ width: '100%', maxWidth: '600px', height: 'auto' }}
             alt="Atajos: Con los números 1-8 del teclado se eligen las cartas y con R puedes girarlas en el modo fácil." />
           <button 
@@ -204,7 +204,7 @@ const MemoryGame = () => {
                   : `Carta Misteriosa ${rowIndex +1}`}                
               >
                 <img
-                  src={isCardFlipped(rowIndex) ? cards[rowIndex].image : "src/assets/Mountain/interrogacion.png"}
+              src={isCardFlipped(rowIndex) ? cards[rowIndex].image : "/public/Mountain/interrogacion.png"}
                   alt={isCardFlipped(rowIndex) ? cards[rowIndex].image.split('/').pop().replace(/\.[^/.]+$/, "") : "Carta Misteriosa"}
                   className="card-image"
                   style={{ width: '100%', height: 'auto' }}

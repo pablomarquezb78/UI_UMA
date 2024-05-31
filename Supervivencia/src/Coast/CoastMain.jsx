@@ -3,7 +3,7 @@ import CoastStart from './CoastStart.jsx';
 import InfoSection from '../Info/InfoSection.jsx'
 import HigherOrLowerGame from './HigherOrLower.jsx'
 import CoastCarousel from '../Components/carouselPage/CarouselInfo.jsx';
-import coastData from '../Coast/imagenes.json';
+import coastData from '/public/Coast/imagenes.json';
 
 import {useRef} from 'react';
 import '../CSS/main.css'

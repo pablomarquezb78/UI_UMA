@@ -1,5 +1,5 @@
 #desertGameCompleteSection{
-    background-image: url('src/Desert/DesertImages/FondoDesierto.jpg');
+    background-image: url('/public/Desert/DesertImages/FondoDesierto.jpg');
     background-repeat: no-repeat;
     background-size: cover;
 }

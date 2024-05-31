@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import Bag from './DesertImages/Bag.png';
+import Bag from '/public/Desert/DesertImages/Bag.png';
 import './Desert.css';
-import initialItemList from './itemsBag.json';
+import initialItemList from '/public/Desert/itemsBag.json';
 
 import { IconButton } from '@mui/material';
 import { styled } from '@mui/system';
@@ -29,7 +29,7 @@ function DesertBagGame() {
     }));
     
 
-    const imgPath = "src/Desert/DesertImages/";
+    const imgPath = "/public/Desert/DesertImages/";
     const [suma, setSuma] = useState(0);
     const [currentIndex, setCurrentIndex] = useState(0);
     const [isAnimating, setIsAnimating] = useState(false);

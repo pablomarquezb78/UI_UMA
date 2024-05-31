@@ -1,4 +1,4 @@
-import data from './imagenes.json';
+import data from '/public/Coast/imagenes.json';
 
 
 const json = data;

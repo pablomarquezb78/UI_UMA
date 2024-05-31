@@ -3,7 +3,7 @@
     "id": 1,
     "cardTitle": "Tiburón",
     "cardSubtitle": "Selachimorpha",
-    "img": "src/assets/Coast/tiburon.jpg",
+    "img": "/Coast/CoastImages/tiburon.jpg",
     "imgAlt": "Imagen de Tiburón",
     "cardText": "Los tiburones son peces grandes con una reputación temida por su capacidad de cazar eficazmente. Algunos tiburones, como el tiburón blanco o el tiburón tigre, pueden ser peligrosos para los humanos aunque los ataques son raros.",
     "mortalidad": "15"
@@ -12,7 +12,7 @@
     "id": 2,
     "cardTitle": "Medusa",
     "cardSubtitle": "Scyphozoa",
-    "img": "src/assets/Coast/medusa.jpg",
+    "img": "/Coast/CoastImages/medusa.jpg",
     "imgAlt": "Imagen de Medusa",
     "cardText": "Criaturas marinas gelatinosas con tentáculos que pueden causar picaduras. Algunas medusas, como la avispa de mar, tienen picaduras extremadamente peligrosas que pueden ser fatales para los humanos.",
     "mortalidad": "40"
@@ -21,7 +21,7 @@
     "id": 3,
     "cardTitle": "Orca",
     "cardSubtitle": "Orcinus orca",
-    "img": "src/assets/Coast/orca.jpg",
+    "img": "/Coast/CoastImages/orca.jpg",
     "imgAlt": "Imagen de Orca",
     "cardText": "Las orcas, son grandes cetáceos con patrones distintivos en blanco y negro. Las orcas rara vez atacan a los humanos. Sin embargo, en cautiverio, han habido incidentes con entrenadores.",
     "mortalidad": "0"
@@ -30,7 +30,7 @@
     "id": 4,
     "cardTitle": "Coco",
     "cardSubtitle": "Cocos nucifera",
-    "img": "src/assets/Coast/coco.jpg",
+    "img": "/Coast/CoastImages/coco.jpg",
     "imgAlt": "Imagen de Coco",
     "cardText": "Frutos de la palma de coco, comúnmente encontrados en zonas costeras tropicales. Sin embargo, las caídas de cocos pueden causar lesiones graves si golpean a una persona en la cabeza.",
     "mortalidad": "150"
@@ -39,7 +39,7 @@
     "id": 5,
     "cardTitle": "Mantarraya",
     "cardSubtitle": "Myliobatiformes",
-    "img": "src/assets/Coast/mantarraya.jpg",
+    "img": "/Coast/CoastImages/mantarraya.jpg",
     "imgAlt": "Imagen de Mantarraya",
     "cardText": "Animal grande y plano que nada elegantemente en el océano. Generalmente son inofensivas, pero pueden atacar con su aguijón venenoso si se sienten amenazadas o pisadas.",
     "mortalidad": "5"
@@ -48,7 +48,7 @@
     "id": 6,
     "cardTitle": "Sol",
     "cardSubtitle": "Sol",
-    "img": "src/assets/Coast/sol.jpg",
+    "img": "/Coast/CoastImages/sol.jpg",
     "imgAlt": "Imagen de Sol",
     "cardText": "El sol es la estrella en el centro de nuestro sistema solar, vital para la vida en la Tierra. La exposición excesiva al sol puede causar quemaduras solares, insolación y aumentar el riesgo de cáncer de piel.",
     "mortalidad": "60000"
@@ -57,7 +57,7 @@
     "id": 7,
     "cardTitle": "Océano",
     "cardSubtitle": "Océano",
-    "img": "src/assets/Coast/oceano.jpg",
+    "img": "/Coast/CoastImages/oceano.jpg",
     "imgAlt": "Imagen de Océano",
     "cardText": "El océano cubre más del 70% de la superficie terrestre y es el hogar de una increíble diversidad de vida marina. Las condiciones del océano pueden ser peligrosas debido a corrientes, mareas, y fenómenos climáticos extremos.",
     "mortalidad": "360000"
@@ -66,7 +66,7 @@
     "id": 8,
     "cardTitle": "Serpiente marina",
     "cardSubtitle": "Hydrophiinae",
-    "img": "src/assets/Coast/serpiente-marina.jpg",
+    "img": "/Coast/CoastImages/serpiente-marina.jpg",
     "imgAlt": "Imagen de Serpiente marina",
     "cardText": "Serpientes adaptadas a la vida marina, conocidas por su cuerpo alargado y capacidad de respirar aire. Su veneno es muy tóxico, aunque son generalmente tímidas y los incidentes son raros.",
     "mortalidad": "12"
@@ -75,7 +75,7 @@
     "id": 9,
     "cardTitle": "Cocodrilo marino",
     "cardSubtitle": "Crocodylus porosus",
-    "img": "src/assets/Coast/cocodrilo-marino.jpeg",
+    "img": "/Coast/CoastImages/cocodrilo-marino.jpeg",
     "imgAlt": "Imagen de Cocodrilo marino",
     "cardText": "El cocodrilo de mar es el reptil más grande del mundo, encontrándose en hábitats de agua salada y dulce. Son extremadamente agresivos y territoriales, y han sido responsables de numerosos ataques mortales a humanos.",
     "mortalidad": "30"
@@ -84,7 +84,7 @@
     "id": 10,
     "cardTitle": "Pulpo de anillos azules",
     "cardSubtitle": "Hapalochlaena",
-    "img": "src/assets/Coast/pulpo-azul.jpg",
+    "img": "/Coast/CoastImages/pulpo-azul.jpg",
     "imgAlt": "Imagen de Pulpo de anillos azules",
     "cardText": "Pulpo pequeño pero llamativo, con anillos azules brillantes que aparecen cuando se siente amenazado. Su mordedura libera una toxina que puede causar parálisis y muerte en humanos si no se trata a tiempo.",
     "mortalidad": "8"
@@ -93,7 +93,7 @@
     "id": 11,
     "cardTitle": "Caracol cono",
     "cardSubtitle": "Conus",
-    "img": "src/assets/Coast/caracol-cono.jpg",
+    "img": "/Coast/CoastImages/caracol-cono.jpg",
     "imgAlt": "Imagen de Caracol cono",
     "cardText": "Estos caracoles marinos tienen conchas hermosas y poseen un veneno potente. Su picadura puede ser mortal para los humanos debido a su veneno neurotóxico.",
     "mortalidad": "4"

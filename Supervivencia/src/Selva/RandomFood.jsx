@@ -1,4 +1,4 @@
-import data from './alimentos-veneno.json';
+import data from '/public/Selva/alimentos-veneno.json';
 
 
 const json = data;

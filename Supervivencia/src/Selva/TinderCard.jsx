@@ -1,8 +1,8 @@
-import veneno from './FotosAlimentos/veneno.png';
-import comestible from './FotosAlimentos/saludable.png';
+import veneno from '/public/Selva//FotosAlimentos/veneno.png';
+import comestible from '/public/Selva//FotosAlimentos/saludable.png';
 
 function TinderCard({card, index, tab}) {
-    const urlImage = 'src/Selva/FotosAlimentos/' + card.foto;
+    const urlImage = card.foto;
     const nombre = card.nombre;
 
     return (
