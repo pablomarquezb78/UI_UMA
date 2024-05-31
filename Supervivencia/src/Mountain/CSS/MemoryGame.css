@@ -91,4 +91,7 @@
     }
   }
 
- 
+  @media only screen and (max-height: 360px) {
+    .memory-game .cards-grid {
+    }
+  }
