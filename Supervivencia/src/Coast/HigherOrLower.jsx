@@ -194,9 +194,9 @@ function HigherLowerGame() {
                     </div>
                 )}
                 <div className={`position-absolute ${isCorrect !== 0 && 'fade-icon'}`}>
-                    {isCorrect === 0 && <img src="/Coast/CoastImages/versus-icon.png"  alt="VS" style={{ maxWidth: 'calc(50px + (100 - 50) * ((100vmin - 350px) / (1080 - 350)))', backgroundColor: 'black', borderRadius:'50%'}} />}
-                    {isCorrect === 1 && <img src="/Coast/CoastImages/tick-icon.png" alt="Tick" style={{ maxWidth: 'calc(50px + (100 - 50) * ((100vmin - 350px) / (1080 - 350)))', backgroundColor: 'green', borderRadius:'50%' }} />}
-                    {isCorrect === 2 && <img src="/Coast/CoastImages/cross-icon.png" alt="Cross" style={{ maxWidth: 'calc(50px + (100 - 50) * ((100vmin - 350px) / (1080 - 350)))', backgroundColor: 'red', borderRadius:'50%' }} />}
+                    {isCorrect === 0 && <img src="/Coast/CoastGame/versus-icon.png"  alt="VS" style={{ maxWidth: 'calc(50px + (100 - 50) * ((100vmin - 350px) / (1080 - 350)))', backgroundColor: 'black', borderRadius:'50%'}} />}
+                    {isCorrect === 1 && <img src="/Coast/CoastGame/tick-icon.png" alt="Tick" style={{ maxWidth: 'calc(50px + (100 - 50) * ((100vmin - 350px) / (1080 - 350)))', backgroundColor: 'green', borderRadius:'50%' }} />}
+                    {isCorrect === 2 && <img src="/Coast/CoastGame/cross-icon.png" alt="Cross" style={{ maxWidth: 'calc(50px + (100 - 50) * ((100vmin - 350px) / (1080 - 350)))', backgroundColor: 'red', borderRadius:'50%' }} />}
                 </div>
             </section>
             <div className="d-flex justify-content-center align-items-center">

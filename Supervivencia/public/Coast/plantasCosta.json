@@ -1,0 +1,82 @@
+[
+    {
+      "id": 1,
+      "cardTitle": "Coco",
+      "cardSubtitle": "Cocos nucifera",
+      "img": "/Coast/CoastGame/coco.jpg",
+      "imgAlt": "Imagen de Coco",
+      "cardText": "Frutos de la palma de coco, comúnmente encontrados en zonas costeras tropicales. Son una fuente importante de alimento y agua. Cuidado, las caídas de cocos pueden causar lesiones graves si golpean a una persona en la cabeza."
+    },
+    {
+      "id": 2,
+      "cardTitle": "Mango",
+      "cardSubtitle": "Mangifera indica",
+      "img": "/Coast/CoastPlants/mango.jpg",
+      "imgAlt": "Imagen de Mango",
+      "cardText": "Árbol frutal tropical que produce mangos, un fruto dulce y jugoso muy apreciado. Los mangos son ricos en vitaminas y antioxidantes."
+    },
+    {
+      "id": 3,
+      "cardTitle": "Papaya",
+      "cardSubtitle": "Carica papaya",
+      "img": "/Coast/CoastPlants/papaya.jpg",
+      "imgAlt": "Imagen de Papaya",
+      "cardText": "Planta tropical que produce grandes frutos naranjas conocidos como papayas. Son ricos en enzimas que ayudan a la digestión."
+    },
+    {
+      "id": 4,
+      "cardTitle": "Guayaba",
+      "cardSubtitle": "Psidium guajava",
+      "img": "/Coast/CoastPlants/guayaba.jpg",
+      "imgAlt": "Imagen de Guayaba",
+      "cardText": "Arbusto o árbol pequeño que produce frutos dulces y aromáticos. Las guayabas son una buena fuente de vitamina C y fibra."
+    },
+    {
+      "id": 5,
+      "cardTitle": "Piña",
+      "cardSubtitle": "Ananas comosus",
+      "img": "/Coast/CoastPlants/pina.jpg",
+      "imgAlt": "Imagen de Piña",
+      "cardText": "Planta tropical que produce una fruta grande y jugosa conocida como piña. Es apreciada por su sabor dulce y contenido de bromelina, una enzima que ayuda a la digestión."
+    },
+    {
+      "id": 6,
+      "cardTitle": "Plátano",
+      "cardSubtitle": "Musa paradisiaca",
+      "img": "/Coast/CoastPlants/platano.jpg",
+      "imgAlt": "Imagen de Plátano",
+      "cardText": "Planta herbácea de gran tamaño que produce plátanos, una fruta rica en potasio y carbohidratos, fundamental en la dieta de muchas regiones tropicales."
+    },
+    {
+      "id": 7,
+      "cardTitle": "Hibisco",
+      "cardSubtitle": "Hibiscus rosa-sinensis",
+      "img": "/Coast/CoastPlants/hibisco.jpg",
+      "imgAlt": "Imagen de Hibisco",
+      "cardText": "Planta ornamental con grandes flores vistosas. Los hibiscos son populares en jardines tropicales y se utilizan para hacer té de hibisco."
+    },
+    {
+      "id": 8,
+      "cardTitle": "Frangipani",
+      "cardSubtitle": "Plumeria",
+      "img": "/Coast/CoastPlants/frangipani.jpg",
+      "imgAlt": "Imagen de Frangipani",
+      "cardText": "Árbol pequeño conocido por sus flores fragantes y hermosas. Es común en regiones tropicales y utilizado en jardinería y decoración."
+    },
+    {
+      "id": 9,
+      "cardTitle": "Aceituna",
+      "cardSubtitle": "Olea europaea",
+      "img": "/Coast/CoastPlants/aceituna.jpg",
+      "imgAlt": "Imagen de Aceituna",
+      "cardText": "Árbol frutal que produce aceitunas, utilizadas para hacer aceite de oliva y como alimento. Es común en regiones costeras mediterráneas."
+    },
+    {
+      "id": 10,
+      "cardTitle": "Nopal",
+      "cardSubtitle": "Opuntia",
+      "img": "/Coast/CoastPlants/nopal.jpg",
+      "imgAlt": "Imagen de Nopal",
+      "cardText": "Cactus conocido por sus pencas comestibles y frutos llamados tunas. Es una planta resistente que se encuentra en regiones áridas y costeras."
+    }
+  ]

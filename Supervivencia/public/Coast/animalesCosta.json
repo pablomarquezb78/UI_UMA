@@ -1,0 +1,146 @@
+[
+    {
+      "id": 1,
+      "cardTitle": "Gaviota",
+      "cardSubtitle": "Larus argentatus",
+      "img": "/Coast/CoastAnimals/gaviota.jpg",
+      "imgAlt": "Imagen de Gaviota",
+      "cardText": "Las gaviotas son aves costeras comunes, conocidas por su capacidad de adaptarse a diferentes ambientes. Se alimentan de peces y restos de comida encontrados en las playas."
+    },
+    {
+      "id": 2,
+      "cardTitle": "Cangrejo de arena",
+      "cardSubtitle": "Ocypode quadrata",
+      "img": "/Coast/CoastAnimals/cangrejo-arena.jpg",
+      "imgAlt": "Imagen de Cangrejo de arena",
+      "cardText": "Cangrejos pequeños que se encuentran en las playas, conocidos por su habilidad para cavar rápidamente en la arena. Son nocturnos y se alimentan de restos orgánicos."
+    },
+    {
+      "id": 3,
+      "cardTitle": "Pelícano",
+      "cardSubtitle": "Pelecanus occidentalis",
+      "img": "/Coast/CoastAnimals/pelicano.jpg",
+      "imgAlt": "Imagen de Pelícano",
+      "cardText": "Aves grandes con un característico pico largo y una bolsa en la garganta. Los pelícanos suelen ser vistos en las costas, donde pescan en grupos."
+    },
+    {
+      "id": 4,
+      "cardTitle": "Erizo de mar",
+      "cardSubtitle": "Echinoidea",
+      "img": "/Coast/CoastAnimals/erizo-mar.jpg",
+      "imgAlt": "Imagen de Erizo de mar",
+      "cardText": "Invertebrados marinos con cuerpos globulares y espinas móviles. Los erizos de mar se encuentran en aguas costeras y juegan un papel importante en el ecosistema marino."
+    },
+    {
+      "id": 5,
+      "cardTitle": "Estrella de mar",
+      "cardSubtitle": "Asteroidea",
+      "img": "/Coast/CoastAnimals/estrella-mar.jpg",
+      "imgAlt": "Imagen de Estrella de mar",
+      "cardText": "Invertebrados marinos con brazos radiales. Las estrellas de mar son depredadores importantes en el fondo del océano y se encuentran en diversas áreas costeras."
+    },
+    {
+      "id": 6,
+      "cardTitle": "Alcatraz",
+      "cardSubtitle": "Morus bassanus",
+      "img": "/Coast/CoastAnimals/alcatraz.jpg",
+      "imgAlt": "Imagen de Alcatraz",
+      "cardText": "Aves marinas grandes que se alimentan de peces, realizando espectaculares zambullidas para capturarlos. Son comunes en las costas y en las islas."
+    },
+    {
+      "id": 7,
+      "cardTitle": "Foca",
+      "cardSubtitle": "Phocidae",
+      "img": "/Coast/CoastAnimals/foca.jpg",
+      "imgAlt": "Imagen de Foca",
+      "cardText": "Mamíferos marinos que pasan gran parte de su vida en el agua, pero se reproducen y descansan en tierra. Las focas son comunes en muchas costas del mundo."
+    },
+    {
+      "id": 8,
+      "cardTitle": "Cangrejo ermitaño",
+      "cardSubtitle": "Paguroidea",
+      "img": "/Coast/CoastAnimals/cangrejo-ermitano.jpg",
+      "imgAlt": "Imagen de Cangrejo ermitaño",
+      "cardText": "Cangrejos que utilizan conchas vacías para proteger sus cuerpos blandos. Se encuentran comúnmente en zonas intermareales y en las playas."
+    },
+    {
+      "id": 9,
+      "cardTitle": "Iguana marina",
+      "cardSubtitle": "Amblyrhynchus cristatus",
+      "img": "/Coast/CoastAnimals/iguana-marina.jpg",
+      "imgAlt": "Imagen de Iguana marina",
+      "cardText": "Reptil endémico de las Islas Galápagos. La iguana marina es única entre los lagartos por su habilidad para nadar y alimentarse de algas en el océano."
+    },
+    {
+      "id": 10,
+      "cardTitle": "Pez payaso",
+      "cardSubtitle": "Amphiprioninae",
+      "img": "/Coast/CoastAnimals/pez-payaso.jpg",
+      "imgAlt": "Imagen de Pez payaso",
+      "cardText": "Peces de colores brillantes conocidos por su simbiosis con las anémonas de mar. Se encuentran en los arrecifes de coral costeros y son populares en acuarios."
+    },
+    {
+      "id": 11,
+      "cardTitle": "Tiburón",
+      "cardSubtitle": "Selachimorpha",
+      "img": "/Coast/CoastGame/tiburon.jpg",
+      "imgAlt": "Imagen de Tiburón",
+      "cardText": "Los tiburones son peces grandes con una reputación temida por su capacidad de cazar eficazmente. Algunos tiburones, como el tiburón blanco o el tiburón tigre, pueden ser peligrosos para los humanos aunque los ataques son raros."
+    },
+    {
+      "id": 12,
+      "cardTitle": "Medusa",
+      "cardSubtitle": "Scyphozoa",
+      "img": "/Coast/CoastGame/medusa.jpg",
+      "imgAlt": "Imagen de Medusa",
+      "cardText": "Criaturas marinas gelatinosas con tentáculos que pueden causar picaduras. Algunas medusas, como la avispa de mar, tienen picaduras extremadamente peligrosas que pueden ser fatales para los humanos."
+    },
+    {
+      "id": 13,
+      "cardTitle": "Orca",
+      "cardSubtitle": "Orcinus orca",
+      "img": "/Coast/CoastGame/orca.jpg",
+      "imgAlt": "Imagen de Orca",
+      "cardText": "Las orcas, son grandes cetáceos con patrones distintivos en blanco y negro. Las orcas rara vez atacan a los humanos. Sin embargo, en cautiverio, han habido incidentes con entrenadores."
+    },
+    {
+      "id": 14,
+      "cardTitle": "Mantarraya",
+      "cardSubtitle": "Myliobatiformes",
+      "img": "/Coast/CoastGame/mantarraya.jpg",
+      "imgAlt": "Imagen de Mantarraya",
+      "cardText": "Animal grande y plano que nada elegantemente en el océano. Generalmente son inofensivas, pero pueden atacar con su aguijón venenoso si se sienten amenazadas o pisadas."
+    },
+    {
+      "id": 15,
+      "cardTitle": "Serpiente marina",
+      "cardSubtitle": "Hydrophiinae",
+      "img": "/Coast/CoastGame/serpiente-marina.jpg",
+      "imgAlt": "Imagen de Serpiente marina",
+      "cardText": "Serpientes adaptadas a la vida marina, conocidas por su cuerpo alargado y capacidad de respirar aire. Su veneno es muy tóxico, aunque son generalmente tímidas y los incidentes son raros."
+    },
+    {
+      "id": 16,
+      "cardTitle": "Cocodrilo marino",
+      "cardSubtitle": "Crocodylus porosus",
+      "img": "/Coast/CoastGame/cocodrilo-marino.jpeg",
+      "imgAlt": "Imagen de Cocodrilo marino",
+      "cardText": "El cocodrilo de mar es el reptil más grande del mundo, encontrándose en hábitats de agua salada y dulce. Son extremadamente agresivos y territoriales, y han sido responsables de numerosos ataques mortales a humanos."
+    },
+    {
+      "id": 17,
+      "cardTitle": "Pulpo de anillos azules",
+      "cardSubtitle": "Hapalochlaena",
+      "img": "/Coast/CoastGame/pulpo-azul.jpg",
+      "imgAlt": "Imagen de Pulpo de anillos azules",
+      "cardText": "Pulpo pequeño pero llamativo, con anillos azules brillantes que aparecen cuando se siente amenazado. Su mordedura libera una toxina que puede causar parálisis y muerte en humanos si no se trata a tiempo."
+    },
+    {
+      "id": 18,
+      "cardTitle": "Caracol cono",
+      "cardSubtitle": "Conus",
+      "img": "/Coast/CoastGame/caracol-cono.jpg",
+      "imgAlt": "Imagen de Caracol cono",
+      "cardText": "Estos caracoles marinos tienen conchas hermosas y poseen un veneno potente. Su picadura puede ser mortal para los humanos debido a su veneno neurotóxico."
+    }
+  ]

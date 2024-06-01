@@ -1,4 +1,4 @@
-import data from '/public/Coast/imagenes.json';
+import data from '/public/Coast/juegoCosta.json';
 
 
 const json = data;
