@@ -23,10 +23,9 @@ function CoastMain(){
     return(
         <>
             <main className='sliderContainer'>
-                <NavBar currentLink={5}/>
 
-                <div className='sliderItem'>
-                    <CoastStart ref={startRef}/>
+                <div className='sliderItem' ref={startRef}>
+                    <CoastStart scrollToGridInfo={scrollToGridInfo}/>
                 </div>
 
                 <div className='sliderItem'>
