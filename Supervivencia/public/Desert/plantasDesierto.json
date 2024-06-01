@@ -1,0 +1,82 @@
+[
+  {
+      "id": 1,
+      "cardTitle": "Saguaro",
+      "cardSubtitle": "Carnegiea gigantea",
+      "img": "/Desert/DesertPlants/saguaro.jpg",
+      "imgAlt": "Imagen de Saguaro",
+      "cardText": "Un icónico cactus del desierto de Sonora, conocido por su gran tamaño y brazos característicos. Proporciona hábitat y alimento a numerosas especies de fauna desértica."
+  },
+  {
+      "id": 2,
+      "cardTitle": "Agave",
+      "cardSubtitle": "Agave americana",
+      "img": "/Desert/DesertPlants/agave.jpeg",
+      "imgAlt": "Imagen de Agave",
+      "cardText": "Planta suculenta conocida por sus hojas largas y espinosas. Es utilizada para la producción de tequila y mezcal, además de tener propiedades medicinales."
+  },
+  {
+      "id": 3,
+      "cardTitle": "Cholla",
+      "cardSubtitle": "Cylindropuntia",
+      "img": "/Desert/DesertPlants/cholla.jpg",
+      "imgAlt": "Imagen de Cholla",
+      "cardText": "Cactus del desierto con segmentos de tallo que se desprenden fácilmente. Sus espinas son extremadamente afiladas y pueden ser difíciles de remover si se adhieren a la piel."
+  },
+  {
+      "id": 4,
+      "cardTitle": "Palo Verde",
+      "cardSubtitle": "Parkinsonia florida",
+      "img": "/Desert/DesertPlants/paloverde.jpg",
+      "imgAlt": "Imagen de Palo Verde",
+      "cardText": "Árbol del desierto con hojas pequeñas y verdes, que realiza fotosíntesis a través de su corteza. Florece con vistosas flores amarillas en primavera."
+  },
+  {
+      "id": 5,
+      "cardTitle": "Ocotillo",
+      "cardSubtitle": "Fouquieria splendens",
+      "img": "/Desert/DesertPlants/ocotillo.jpg",
+      "imgAlt": "Imagen de Ocotillo",
+      "cardText": "Planta del desierto que produce tallos largos y delgados con espinas. En primavera, florece con brillantes flores rojas en la punta de los tallos."
+  },
+  {
+      "id": 6,
+      "cardTitle": "Cactus Barril",
+      "cardSubtitle": "Ferocactus",
+      "img": "/Desert/DesertPlants/barril.jpg",
+      "imgAlt": "Imagen de Cactus Barril",
+      "cardText": "Cactus de forma cilíndrica que puede alcanzar gran tamaño. Sus espinas son robustas y puede almacenar grandes cantidades de agua."
+  },
+  {
+      "id": 7,
+      "cardTitle": "Mezquite",
+      "cardSubtitle": "Prosopis",
+      "img": "/Desert/DesertPlants/mezquite.jpg",
+      "imgAlt": "Imagen de Mezquite",
+      "cardText": "Árbol resistente del desierto que produce vainas de semillas comestibles. Sus raíces profundas le permiten acceder a agua subterránea."
+  },
+  {
+      "id": 8,
+      "cardTitle": "Creosota",
+      "cardSubtitle": "Larrea tridentata",
+      "img": "/Desert/DesertPlants/creosota.jpg",
+      "imgAlt": "Imagen de Creosota",
+      "cardText": "Arbusto perenne que domina muchos paisajes desérticos. Conocido por su longevidad y por el olor característico que emite tras la lluvia."
+  },
+  {
+      "id": 9,
+      "cardTitle": "Yuca",
+      "cardSubtitle": "Yucca brevifolia",
+      "img": "/Desert/DesertPlants/yuca.jpeg",
+      "imgAlt": "Imagen de Yuca",
+      "cardText": "También conocida como Joshua Tree, esta planta es famosa en el desierto de Mojave. Tiene hojas en forma de daga y produce flores blancas."
+  },
+  {
+    "id": 10,
+    "cardTitle": "Chumbera",
+    "cardSubtitle": "Opuntia ficus-indica",
+    "img": "/Desert/DesertPlants/chumbera.jpg",
+    "imgAlt": "Imagen de Chumbera",
+    "cardText": "También conocida como nopal, esta planta es un cactus con hojas planas y espinosas. Sus frutos, llamados tunas, son comestibles y ricos en nutrientes."
+}
+]
