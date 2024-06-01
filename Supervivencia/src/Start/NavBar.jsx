@@ -13,7 +13,7 @@ import { IconButton } from '@mui/material';
 import React from 'react';
  
 function navBar({ scrollToGridInfo, currentLink}) {
-
+ 
     const AnimatedIconButton = styled(IconButton)`
     .MuiSvgIcon-root {
         color: black;
@@ -103,30 +103,30 @@ function navBar({ scrollToGridInfo, currentLink}) {
                     display: showMenu === 2 ? 'flex' : 'none',
                     }}>
                     <li>
-                        <NavLink to='/mountain' activeclassname={`${currentLink == 2 ? "active" : ""}`}>
+                        <NavLink to='/mountain' className={`${currentLink == 2 ? "activeMontaña" : ""}`}>
                         <span className='animatedSpanNavBar'>Montaña</span>
                         </NavLink>
                     </li>
                     
                     <li>
-                        <NavLink to='/forest' activeclassname={`${currentLink == 3 ? "active" : ""}`}>
+                        <NavLink to='/forest' className={`${currentLink == 3 ? "activeBosque" : ""}`}>
                         <span className='animatedSpanNavBar'>Bosque</span>
                         </NavLink>
                     </li>
                     
                     <li>
-                        <NavLink to='/desert' activeclassname={`${currentLink == 4 ? "active" : ""}`}>
+                        <NavLink to='/desert' className={`${currentLink == 4 ? "activeDesierto" : ""}`}>
                             <span className='animatedSpanNavBar'>Desierto</span>
                         </NavLink>
                     </li>
 
                     <li>
-                        <NavLink to='/coast' activeclassname={`${currentLink == 5 ? "active" : ""}`}>
+                        <NavLink to='/coast' className={`${currentLink == 5 ? "activeCosta" : ""}`}>
                             <span className='animatedSpanNavBar'>Costa</span>
                         </NavLink>
                     </li>
                     <li>
-                        <NavLink to='/jungle' activeclassname={`${currentLink == 6 ? "active" : ""}`}>
+                        <NavLink to='/jungle' className={`${currentLink == 6 ? "activeJungla" : ""}`}>
                             <span className='animatedSpanNavBar'>Jungla</span>
                         </NavLink>
                     </li>
@@ -138,22 +138,22 @@ function navBar({ scrollToGridInfo, currentLink}) {
         </header>
         <div id="overlay">
             <ul>
-                <li><NavLink end to='/' activeclassname={`${currentLink == 1 ? "active" : ""}`}>
+                <li><NavLink end to='/' className={`${currentLink == 1 ? "activeIndice" : ""}`}>
                     <span className='animatedSpanNavBar'>Inicio</span></NavLink>
                 </li>
-                <li><NavLink to='/mountain' activeclassname={`${currentLink == 2 ? "active" : ""}`}>
+                <li><NavLink to='/mountain' className={`${currentLink == 2 ? "activeMontaña" : ""}`}>
                     <span className='animatedSpanNavBar'>Montaña</span></NavLink>
                 </li>
-                <li><NavLink to='/forest' activeclassname={`${currentLink == 3 ? "active" : ""}`}>
+                <li><NavLink to='/forest' className={`${currentLink == 3 ? "activeBosque" : ""}`}>
                     <span className='animatedSpanNavBar'>Bosque</span></NavLink>
                 </li>
-                <li><NavLink to='/desert' activeclassname={`${currentLink == 4 ? "active" : ""}`}>
+                <li><NavLink to='/desert' className={`${currentLink == 4 ? "activeDesierto" : ""}`}>
                     <span className='animatedSpanNavBar'>Desierto</span></NavLink>
                 </li>
-                <li><NavLink to='/coast' activeclassname={`${currentLink == 5 ? "active" : ""}`}>
+                <li><NavLink to='/coast' className={`${currentLink == 5 ? "activeCosta" : ""}`}>
                     <span className='animatedSpanNavBar'>Costa</span></NavLink>
                 </li>
-                <li><NavLink to='/jungle' activeclassname={`${currentLink == 6 ? "active" : ""}`}>
+                <li><NavLink to='/jungle' className={`${currentLink == 6 ? "activeJungla" : ""}`}>
                     <span className='animatedSpanNavBar'>Jungla</span></NavLink>
                 </li>
             </ul>

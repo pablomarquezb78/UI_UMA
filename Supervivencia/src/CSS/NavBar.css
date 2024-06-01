@@ -96,8 +96,38 @@ a{
     color: black !important;
 }
 
-.active span{
+.activeIndice span{
     font-weight: bold;
+    text-decoration: underline;
+}
+
+.activeDesierto span{
+    font-weight: bold;
+    color:  #F4A460;
+    text-decoration: underline;
+}
+
+.activeBosque span{
+    font-weight: bold;
+    color:  #388E3C;
+    text-decoration: underline;
+}
+
+.activeCosta span{
+    font-weight: bold;
+    color:  #1565C0;
+    text-decoration: underline;
+}
+
+.activeJungla span{
+    font-weight: bold;
+    color: #CDDC39;
+    text-decoration: underline;
+}
+
+.activeMontaña span{
+    font-weight: bold;
+    color: #424242;
     text-decoration: underline;
 }
 

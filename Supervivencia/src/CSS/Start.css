@@ -10,7 +10,7 @@
     /* src: url('../../public/Fonts/Noto_Serif_KR/NotoSerifKR-Regular.otf');
     src: url('../../public/Fonts/Noto_Serif_KR/NotoSerifKR-SemiBold.otf');
  */
-
+ 
 }
 
 @font-face {
@@ -28,7 +28,7 @@
     height: 50px;
     width: 50px;
     padding-bottom: 20px;
-}
+} 
 
 .startArticle{
     left: 0;
@@ -37,17 +37,17 @@
 }
 
 #typeWriteText{
-    padding-top: 150px; 
+    padding-top: 20vh; 
     font-style: italic;
     font-weight: bold;
-    font-size: 7vh;
+    font-size:  calc(30px + (65 - 30) * ((100vmin - 350px) / (1080 - 350)));
 }
-
+  
 #resilencia{
     padding-top: 20px;
     padding-left: 15px;
     width: 30px;
-    font-size: 5vh;
+    font-size:  calc(22px + (45 - 22) * ((100vmin - 350px) / (1080 - 350)));
     font-family: 'Noto_Serif_B', NotoSerifKR-Black
 }
 
@@ -55,9 +55,12 @@
     padding-top: 5px;
     padding-left: 15px;
     width: 40vw;
-    font-size: 3vh;
+    font-size:  calc(14px + (30 - 14) * ((100vmin - 350px) / (1080 - 350)));
     font-family: 'Noto_Serif_M',NotoSerifKR-Medium;
 }
 
-
- 
+@media screen and (max-width: 600px) {
+    #resilenciaDefinition{
+        width: 80vw;
+    }
+}
