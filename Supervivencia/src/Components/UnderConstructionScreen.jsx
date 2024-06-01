@@ -10,8 +10,8 @@ function underConstruction() {
     return(
 
         <div className="adviseDiv">
-            <div className='row'>
-                <img className='resizeImageSmall img-fluid' src={cleaningPenguin}></img>
+            <div>
+                <img className='resizeImageSmall' src={cleaningPenguin}></img>
             </div>
             <div className='row'>
                 <h4 className='text-center'>Oops...</h4>
