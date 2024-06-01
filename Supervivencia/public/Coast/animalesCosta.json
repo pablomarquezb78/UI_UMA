@@ -142,5 +142,13 @@
       "img": "/Coast/CoastGame/caracol-cono.jpg",
       "imgAlt": "Imagen de Caracol cono",
       "cardText": "Estos caracoles marinos tienen conchas hermosas y poseen un veneno potente. Su picadura puede ser mortal para los humanos debido a su veneno neurotóxico."
+    },
+    {
+      "id": 19,
+      "cardTitle": "Tortuga Verde",
+      "cardSubtitle": "Chelonia mydas",
+      "img": "/Coast/CoastAnimals/tortuga-verde.jpg",
+      "imgAlt": "Imagen de Tortuga Verde",
+      "cardText": "Es la tortuga marina más común en muchas áreas costeras. Su nombre proviene de la grasa de color verde que se encuentra bajo su caparazón. Se alimenta principalmente de algas y pastos marinos."
     }
-  ]
+]

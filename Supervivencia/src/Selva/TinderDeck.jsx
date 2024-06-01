@@ -139,7 +139,6 @@ function TinderDeck({ numberOfCard }) {
     }
 
     const endDrag = (actualCard, upEvent) => {
-        upEvent.preventDefault();
         isAnimated.current = false;
 
         actualCard.style.transform = 'none';
@@ -147,8 +146,8 @@ function TinderDeck({ numberOfCard }) {
 
         document.removeEventListener('mousemove', moveDrag);
         document.removeEventListener('mouseup', endDrag);
-        document.removeEventListener('touchmove', moveDrag);
-        document.removeEventListener('touchend', endDrag);
+        document.removeEventListener('touchmove', moveDrag, { passive: true });
+        document.removeEventListener('touchend', endDrag, { passive: true });
         
         cardDecision(actualCard)
     }
@@ -200,7 +199,6 @@ function TinderDeck({ numberOfCard }) {
     }
 
     const moveDrag = (actualCard, startPosition, moveEvent) => {
-        moveEvent.preventDefault();
     
         const currentPosition = moveEvent.pageX ?? moveEvent.touches[0].pageX;
         deltaPosition.current = currentPosition - startPosition;
@@ -237,8 +235,8 @@ function TinderDeck({ numberOfCard }) {
             actualCard.style.cursor = 'pointer';
             document.addEventListener('mousemove', (moveEvent) => moveDrag(actualCard, startPosition, moveEvent));
             document.addEventListener('mouseup', (upEvent) => endDrag(actualCard, upEvent));
-            document.addEventListener('touchmove', (moveEvent) => moveDrag(actualCard, startPosition, moveEvent), { passive: false }); // Agregar { passive: false }
-            document.addEventListener('touchend', (upEvent) => endDrag(actualCard, upEvent), { passive: false }); // Agregar { passive: false }
+            document.addEventListener('touchmove', (moveEvent) => moveDrag(actualCard, startPosition, moveEvent), { passive: true }); // Agregar { passive: false }
+            document.addEventListener('touchend', (upEvent) => endDrag(actualCard, upEvent), { passive: true }); // Agregar { passive: false }
         }
     }
     
