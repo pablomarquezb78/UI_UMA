@@ -9,7 +9,7 @@ import LibraryBooksIcon from "@mui/icons-material/LibraryBooks"
 import VolumeUpIcon from "@mui/icons-material/VolumeUp"
 import VolumeDownIcon from "@mui/icons-material/VolumeDown"
 import VolumeMuteIcon from "@mui/icons-material/VolumeMute"
-import {animals} from '../assets/Forest/AudioGameAssets/AudioGameDataset.json'
+import {animals} from '../../public/Forest/AudioGameAssets/AudioGameDataset.json'
 
 function GameContent({backFunction, passFunction}) {
 

@@ -1,8 +1,10 @@
 import React, { useRef, useState, useEffect } from 'react';
+import {useNavigate} from "react-router-dom";
 
 import './AudioGameContent.css';
 import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore'
 import NavigateNextIcon from '@mui/icons-material/NavigateNext'
+import KeyboardIcon from '@mui/icons-material/Keyboard';
 
 function GameTutorial({backFunction, passFunction}) {
 
@@ -23,6 +25,14 @@ function GameTutorial({backFunction, passFunction}) {
         };
     }, []);
 
+    const navigate = useNavigate();
+
+    function redirectToShortcuts()
+    {
+        let path = '/';
+        navigate(path);
+    }
+
     return(
         <div id='gameZoneCenter'>
             <div className='container-fluid h-75 w-75' id='gameBox'>
@@ -30,16 +40,29 @@ function GameTutorial({backFunction, passFunction}) {
                     <h1 tabIndex='0'>Tutorial</h1>
                 </div>
                 <div className='row justify-content-center align-items-center h-50' id='textCenterTutorial'>
-                    <div className='col-sm-10'>
-                        <p tabIndex='0' >
-                            Se trata de un minijuego de sonido, se seleccionara un audio
-                            y se mostraran cuatro opciones de animales a los que pueden
-                            corresponder el audio, tendras que identificar que animal de
-                            los propuestos hace ese sonido. <br/>
-                            Tienes la opcion de saltar el audio al siguiente. <br/>
-                            Mientras aciertes seguiras jugando, el juego termina cuando
-                            falles.
-                        </p>
+                    <div className='row justify-content-center align-items-center h-75' id='textCenterTutorial'>
+                        <div className='col-sm-10'>
+                            <p tabIndex='0' >
+                                Se trata de un minijuego de sonido, se seleccionara un audio
+                                y se mostraran cuatro opciones de animales a los que pueden
+                                corresponder el audio, tendras que identificar que animal de
+                                los propuestos hace ese sonido. <br/>
+                                Tienes la opcion de saltar el audio al siguiente. <br/>
+                                Mientras aciertes seguiras jugando, el juego termina cuando
+                                falles.
+                            </p>
+                        </div>
+                    </div>
+                    <div className='bottomElement row justify-content-center align-items-center h-25'>
+                        <div className='col-4'>
+                            <button tabIndex='0' onClick={redirectToShortcuts}>
+                                <div className='bottomIconSVG'>
+                                    <KeyboardIcon className='iconSVG'/>
+                                    <br/>
+                                    <p>Atajos de teclado</p>
+                                </div>
+                            </button>
+                        </div>
                     </div>
                 </div>
                 <div className='bottomElement row justify-content-evenly align-items-center h-25'>
@@ -63,8 +86,7 @@ function GameTutorial({backFunction, passFunction}) {
                         </button>
                     </div>  
                 </div>
-            </div>
-            
+            </div>            
         </div>
     )
 }

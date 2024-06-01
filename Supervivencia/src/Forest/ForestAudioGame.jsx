@@ -2,7 +2,7 @@ import React,{useEffect, useRef, useState} from 'react';
 
 import '../Components/CSS/BackgroundVideoUsage.css'
 import VideoBackground from '../Components/BackgroundVideoComponent';
-import gameVideoBackground from '../assets/Forest/AudioGameAssets/SoundGameBackground.mp4'
+import gameVideoBackground from '../../public/Forest/AudioGameAssets/SoundGameBackground.mp4'
 import GameContent from './AudioGameContent';
 import GamePresentation from './AudioGamePresentation';
 import GameTutorial from './AudioGameTutorial';

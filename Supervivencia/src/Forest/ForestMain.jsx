@@ -8,7 +8,7 @@ import '../CSS/main.css'
 import '../CSS/Start.css'
 
 import plantsData from '/public/Forest/PlantInfoAssets/ForestPlantInfo.json'
-import animalsData from '../assets/Forest/AnimalInfoAssets/ForestAnimalInfo.json'
+import animalsData from '../../public/Forest/AnimalInfoAssets/ForestAnimalInfo.json'
 
 function ForestMain(){
 
