@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1,
+    "cardTitle": "Camello bactriano",
+    "cardSubtitle": "Camelus bactrianus",
+    "img": "/Desert/DesertAnimals/camello-bactriano.jpg",
+    "imgAlt": "Imagen de Camello bactriano",
+    "cardText": "El camello bactriano, conocido por sus dos jorobas, es un animal adaptado a los desiertos fríos de Asia Central. Puede soportar temperaturas extremas y largos periodos sin agua, siendo utilizado para transporte y carga en regiones desérticas y montañosas."
+  },
+  {
+      "id": 2,
+      "cardTitle": "Lagarto de collar",
+      "cardSubtitle": "Crotaphytus collaris",
+      "img": "/Desert/DesertAnimals/lagarto-collar.jpg",
+      "imgAlt": "Imagen de Lagarto de collar",
+      "cardText": "Este lagarto es conocido por el collar negro distintivo alrededor de su cuello. Habita en zonas áridas y es un excelente corredor."
+  },
+  {
+      "id": 3,
+      "cardTitle": "Escorpión",
+      "cardSubtitle": "Scorpiones",
+      "img": "/Desert/DesertAnimals/escorpion.jpg",
+      "imgAlt": "Imagen de Escorpión",
+      "cardText": "Los escorpiones son arácnidos conocidos por su veneno y sus pinzas. Son nocturnos y se encuentran en muchos desiertos del mundo."
+  },
+  {
+      "id": 4,
+      "cardTitle": "Serpiente de cascabel",
+      "cardSubtitle": "Crotalus",
+      "img": "/Desert/DesertAnimals/serpiente-cascabel.png",
+      "imgAlt": "Imagen de Serpiente de cascabel",
+      "cardText": "Esta serpiente venenosa es famosa por el sonido de su cascabel. Es una habitante común de los desiertos de América del Norte."
+  },
+  {
+      "id": 5,
+      "cardTitle": "Fenec",
+      "cardSubtitle": "Vulpes zerda",
+      "img": "/Desert/DesertAnimals/fenec.jpg",
+      "imgAlt": "Imagen de Fenec",
+      "cardText": "El fenec es el zorro más pequeño del mundo, conocido por sus grandes orejas que le ayudan a disipar el calor. Vive en el desierto del Sahara."
+  },
+  {
+    "id": 6,
+    "cardTitle": "Buitre",
+    "cardSubtitle": "Gyps fulvus",
+    "img": "/Desert/DesertAnimals/buitre.jpg",
+    "imgAlt": "Imagen de Buitre",
+    "cardText": "El buitre es una ave carroñera conocida por su capacidad para localizar y consumir animales muertos. Habita en regiones desérticas y montañosas, y juega un papel crucial en el ecosistema al ayudar a limpiar los restos de animales."
+  },
+  {
+      "id": 7,
+      "cardTitle": "Geco leopardo",
+      "cardSubtitle": "Eublepharis macularius",
+      "img": "/Desert/DesertAnimals/geco-leopardo.jpg",
+      "imgAlt": "Imagen de Geco leopardo",
+      "cardText": "Un lagarto nocturno y terrestre, el geco leopardo es conocido por su piel moteada y su capacidad de almacenar grasa en la cola."
+  },
+  {
+      "id": 8,
+      "cardTitle": "Ratón canguro",
+      "cardSubtitle": "Dipodomys",
+      "img": "/Desert/DesertAnimals/raton-canguro.jpg",
+      "imgAlt": "Imagen de Ratón canguro",
+      "cardText": "Estos pequeños roedores son conocidos por sus largos saltos y su habilidad para sobrevivir sin agua directa, obteniendo humedad de su comida."
+  },
+  {
+      "id": 9,
+      "cardTitle": "Dromedario",
+      "cardSubtitle": "Camelus dromedarius",
+      "img": "/Desert/DesertAnimals/dromedario.jpg",
+      "imgAlt": "Imagen de Dromedario",
+      "cardText": "Similar al camello, el dromedario tiene una sola joroba y es altamente adaptado a las condiciones del desierto, siendo capaz de recorrer largas distancias bajo el sol ardiente."
+  },
+  {
+    "id": 10,
+    "cardTitle": "Hiena",
+    "cardSubtitle": "Crocuta crocuta",
+    "img": "/Desert/DesertAnimals/hiena.jpg",
+    "imgAlt": "Imagen de Hiena",
+    "cardText": "La hiena es un carnívoro robusto conocido por su poderosa mandíbula y su distintivo llamado risueño. Habita en regiones desérticas y sabanas, donde es tanto cazador como carroñero, desempeñando un papel importante en el ecosistema."
+  }
+]

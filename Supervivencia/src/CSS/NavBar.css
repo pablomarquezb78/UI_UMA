@@ -106,7 +106,7 @@ a{
     height: 100vh;
     z-index: 2;
     position: fixed;
-    top: -120%; /* Empieza arriba de la pantalla */
+    top: -120%; 
     right: 0;
     bottom: 0;
     left: 0;
@@ -121,10 +121,10 @@ a{
 
 @keyframes slideDown {
     from {
-        top: -120%; /* Empieza arriba de la pantalla */
+        top: -120%; 
     }
     to {
-        top: 0; /* Se desplaza hacia abajo */
+        top: 0; 
     }
 }
 
@@ -154,8 +154,8 @@ a{
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-top: 5%;
-    height: 16vh;
+    padding-top: 3%;
+    height: 15vh;
 }
 
 #overlay ul li a{

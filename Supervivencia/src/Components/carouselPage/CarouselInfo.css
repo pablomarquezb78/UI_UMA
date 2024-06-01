@@ -70,14 +70,13 @@ font-size: calc(20px + (60 - 20) * ((100vmin - 350px) / (1080 - 350)));
   align-items: center;
   height: 100vh;
   width: 100vw;
-  /* background-image: url('./backgrounds/ForestPlantInfoBackground.png'); */
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 .tituloCarouselInfo.Desert {
 
-background: rgba(9, 82, 26, 0.9)!important;
+background: rgba(223, 116, 1, 0.9)!important;
 
 backdrop-filter: blur( 7.5px );
 -webkit-backdrop-filter: blur( 7.5px );

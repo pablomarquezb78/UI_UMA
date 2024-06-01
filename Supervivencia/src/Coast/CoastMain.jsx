@@ -20,28 +20,24 @@ function CoastMain(){
         gridInfoRef.current.scrollIntoView({ behavior: 'smooth' });
     };
 
-    // const scrollToStart = () => {
-    //     startRef.current.scrollIntoView({ behavior: 'smooth' });
-    // };
-
     return(
         <>
             <main className='sliderContainer'>
-                <NavBar scrollToGridInfo={scrollToGridInfo} currentLink={5}/>
+                <NavBar currentLink={5}/>
 
-                <div className='sliderItem' ref={startRef}>
-                    <CoastStart scrollToGridInfo={scrollToGridInfo}/>
+                <div className='sliderItem'>
+                    <CoastStart ref={startRef}/>
                 </div>
 
-                <div className='sliderItem' ref={startRef}>
-                    <CoastCarousel data={coastPlants} id='Coast' title={'PLANTAS DE LA COSTA'} scrollToGridInfo={scrollToGridInfo}/>
+                <div className='sliderItem'>
+                    <CoastCarousel data={coastPlants} id='Coast' title={'PLANTAS DE LA COSTA'}/>
                 </div>
 
-                <div className='sliderItem' ref={startRef}>
-                    <CoastCarousel data={coastAnimals} id='Coast' title={'ANIMALES DE LA COSTA'} scrollToGridInfo={scrollToGridInfo}/>
+                <div className='sliderItem'>
+                    <CoastCarousel data={coastAnimals} id='Coast' title={'ANIMALES DE LA COSTA'}/>
                 </div>
 
-                <div className='sliderItem' ref={gridInfoRef}>
+                <div className='sliderItem'>
                     <HigherOrLowerGame/>
                 </div>
 
