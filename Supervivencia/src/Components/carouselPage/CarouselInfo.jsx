@@ -43,7 +43,7 @@ function CarouselInfo({data, id, title}) {
         <section className={`background ${id}`}>
             <div className='container justify-content-center align-items-center h-75 w-100'>
                 <div className='row justify-content-center align-items-center h-25 mb-2'>
-                    <div tabIndex='0' className={`col-9 col-sm-6 col-lg-8 justify-content-center align-items-center z-1 tituloCarouselInfo ${id}`}>
+                    <div tabIndex='0' className={`col-9 col-sm-6 col-lg-9 justify-content-center align-items-center z-1 tituloCarouselInfo ${id}`}>
                         {title}
                     </div>
                 </div>

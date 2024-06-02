@@ -17,7 +17,7 @@ function CarouselInfoCard({imgSrc, imgAlt, cardTitle, cardSubtitle, cardText}) {
         const handleResize = () => {
             if (window.innerHeight <= 750) {
                 setIsHidden(true);
-                if(window.innerHeight > 500)
+                if(window.innerHeight > 344)
                 {
                     setShowImageButton(false)
                 } else {
@@ -79,8 +79,8 @@ function CarouselInfoCard({imgSrc, imgAlt, cardTitle, cardSubtitle, cardText}) {
                         <img src={imgSrc} className="card-img-top forestInfoCard" alt={imgAlt}/>
                     )}
                     <div className="card-body justify-content-center align-items-center forestInfoCard" >
-                        <h4 className="card-title" id='forestInfoCard'>{cardTitle}</h4> 
-                        <h5  className='card-subtitle' id='forestInfoCard'>{cardSubtitle}</h5>
+                        <h4 className="card-title forestInfoCard">{cardTitle}</h4> 
+                        <h5  className='card-subtitle forestInfoCard'>{cardSubtitle}</h5>
                         {!isHidden && (
                             <div className="card-text d-flex justify-content-center align-items-center forestInfoCard">
                                 {cardText}
@@ -108,7 +108,7 @@ function CarouselInfoCard({imgSrc, imgAlt, cardTitle, cardSubtitle, cardText}) {
                                         <React.Fragment>
                                             <div className="col-8 d-flex justify-content-center align-items-center mb-2 forestInfoCard">
                                                 <button tabIndex='0' onClick={mostrarInfo}>
-                                                    <div className='bottomIconSVG' id='forestInfoCard'>
+                                                    <div className='bottomIconSVG forestInfoCard'>
                                                         {!iconHidden && (
                                                             <React.Fragment>
                                                                 <InfoIcon className='iconSVG' />
@@ -161,13 +161,13 @@ function CarouselInfoCard({imgSrc, imgAlt, cardTitle, cardSubtitle, cardText}) {
                 </div>
             )}
             {showMidImage && (
-                <div className="card-body mini justify-content-center align-items-center" id='forestInfoCard'>
+                <div className="card-body mini justify-content-center align-items-center forestInfoCard">
                     <div className='row justify-content-center align-items-center'>
-                        <img src={imgSrc} className="card-img-top r-top" alt={imgAlt} id='forestInfoCard'/>
+                        <img src={imgSrc} className="card-img-top r-top forestInfoCard" alt={imgAlt}/>
                     </div>
-                    <div className="d-flex justify-content-center align-items-center" id='forestInfoCard'>
+                    <div className="d-flex justify-content-center align-items-center forestInfoCard">
                         <button tabIndex='0' onClick={mostrarImagen}>
-                            <div className='bottomIconSVG' id='forestInfoCard'>
+                            <div className='bottomIconSVG forestInfoCard'>
                                 {!iconHidden && (
                                     <React.Fragment>
                                         <UTurnLeftIcon className='iconSVG' />
