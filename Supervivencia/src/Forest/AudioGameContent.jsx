@@ -9,15 +9,18 @@ import LibraryBooksIcon from "@mui/icons-material/LibraryBooks"
 import VolumeUpIcon from "@mui/icons-material/VolumeUp"
 import VolumeDownIcon from "@mui/icons-material/VolumeDown"
 import VolumeMuteIcon from "@mui/icons-material/VolumeMute"
-import {animals} from '../../public/Forest/AudioGameAssets/AudioGameDataset.json'
+import {animals} from '/public/Forest/AudioGameAssets/AudioGameDataset.json'
 
 function GameContent({backFunction, passFunction}) {
 
     //Editing
 
-    const [play, setPlay] = useState(false);
-    const [ended, setEnded] = useState(false);
-    const [started, setStarted] = useState(false);
+    const [playShow, setPlayShow] = useState(false);
+    const play = useRef(false);
+    const [endedShow, setEndedShow] = useState(false);
+    const ended = useRef(false);
+    const [startedShow, setStartedShow] = useState(false);
+    const started = useRef(false);
     const audioRef = useRef(new Audio());
     const timeRef = useRef();
     const [volume, setVolume] = useState(60);
@@ -29,7 +32,8 @@ function GameContent({backFunction, passFunction}) {
     const audioSrc = useRef();
     //const [correctResponse, setCorrectResponse] = useState(0);
     const correctResponse = useRef();
-    const [score, setScore] = useState(0);
+    //const [score, setScore] = useState(0);
+    const score = useRef(0);
     
     useLayoutEffect(() =>{
         loadGameResources();
@@ -64,8 +68,10 @@ function GameContent({backFunction, passFunction}) {
         {
             if (audioRef.current.ended)
             {
-                setPlay(false);
-                setEnded(true);
+                setPlayShow(false);
+                play.current = false;
+                setEndedShow(true);
+                ended.current = true;
             }
         }
         ,[1000])
@@ -73,37 +79,44 @@ function GameContent({backFunction, passFunction}) {
 
     function playAudio()
     {
-        if(!started)
+        if(!started.current)
         {
             //audioRef.current.src = `public/Forest/AudioGamePublicAssets/AudiosMP3/${audioSrc}`;
-            audioRef.current.src = `public/Forest/AudioGamePublicAssets/AudiosMP3/${audioSrc.current}`;
-            setEnded(false);
+            audioRef.current.src = `/Forest/AudioGamePublicAssets/AudiosMP3/${audioSrc.current}`;
+            setEndedShow(false);
+            ended.current = false;
         }
-        if(play)
+        if(play.current)
         {
             audioRef.current.pause();
-            setPlay(false);
+            setPlayShow(false);
+            play.current = false;
             clearInterval(timeRef.current);
         }
         else
         {
             audioRef.current.play()
-            setPlay(true);
-            setStarted(true);
+            setPlayShow(true);
+            play.current = true;
+            setStartedShow(true);
+            started.current = true;
             startTimer();
         }
     }
 
     const loadGameResources = () =>
     {
-        if(play)
+        if(play.current)
         {
             audioRef.current.pause();
             clearInterval(timeRef.current);
         }
-        setPlay(false);
-        setStarted(false);
-        setEnded(false);
+        setPlayShow(false);
+        play.current = false;
+        setStartedShow(false);
+        started.current = false;
+        setEndedShow(false);
+        ended.current = false;
 
         let randomCorrectIndex = Math.floor(Math.random() * animals.length);
         let randomIncorrectIndex01 = 0; let randomIncorrectIndex02 = 0; let randomIncorrectIndex03 = 0;
@@ -148,7 +161,7 @@ function GameContent({backFunction, passFunction}) {
 
     function tutorialClickHandle()
     {
-        if(play)
+        if(play.current)
         {
             playAudio();
         }
@@ -159,12 +172,11 @@ function GameContent({backFunction, passFunction}) {
     {
         if(correctResponse.current == num)
         {
-            setScore(score + 1);
+            score.current = score.current + 1;
             loadGameResources();
         }
         else
         {
-            console.log("eliminado");
             passFunction();
         }
     }
@@ -206,11 +218,11 @@ function GameContent({backFunction, passFunction}) {
                         <div className='col-4 col-md-2'>
                             <button tabIndex='0' onClick={playAudio}>
                                 <div className='playerIconSVG'>
-                                    {!play ? (
-                                        !started ? (
+                                    {!playShow ? (
+                                        !startedShow ? (
                                             <PlayArrowIcon/>
                                         ) : (
-                                            !ended ? (
+                                            !endedShow ? (
                                                 <PlayArrowIcon/>
                                             ) : (   
                                                 <ReplayIcon/>
@@ -221,7 +233,7 @@ function GameContent({backFunction, passFunction}) {
                                         <PauseIcon/>
                                     )}
                                     <br />
-                                    {!play ? (
+                                    {!playShow ? (
                                         <p>Reproducir</p>
                                     )
                                     : (
@@ -296,7 +308,7 @@ function GameContent({backFunction, passFunction}) {
                 <div className='bottomElement row justify-content-center align-items-center h-25'>
                     <div className='bottomElement row justify-content-center align-items-center h-50' id='score'>
                         <div className='col-auto'>
-                            <p tabIndex='0'>Puntuacion: {score}</p>
+                            <p tabIndex='0'>Puntuacion: {score.current}</p>
                         </div>
                     </div>
                     <div className='bottomElement row justify-content-center align-items-center h-50'>

@@ -15,6 +15,9 @@ function GameTutorial({backFunction, passFunction}) {
           } else if (e.key === '8') {
             backFunction();
           }
+          else if (e.key === '0') {
+            redirectToShortcuts();
+          }
         };
     
         window.addEventListener('keydown', handleKeyDown);
