@@ -46,12 +46,12 @@ function GameTutorial({backFunction, passFunction}) {
                     <div className='row justify-content-center align-items-center h-75' id='textCenterTutorial'>
                         <div className='col-sm-10'>
                             <p tabIndex='0' >
-                                Se trata de un minijuego de sonido, se seleccionara un audio
-                                y se mostraran cuatro opciones de animales a los que pueden
-                                corresponder el audio, tendras que identificar que animal de
+                                Se trata de un minijuego de sonido, se seleccionará un audio
+                                y se mostrarán cuatro opciones de animales a los que pueden
+                                corresponder el audio, tendrás que identificar que animal de
                                 los propuestos hace ese sonido. <br/>
-                                Tienes la opcion de saltar el audio al siguiente. <br/>
-                                Mientras aciertes seguiras jugando, el juego termina cuando
+                                Tienes la opcion de saltar el audio y pasar al siguiente. <br/>
+                                Mientras aciertes seguirás jugando, el juego termina cuando
                                 falles.
                             </p>
                         </div>

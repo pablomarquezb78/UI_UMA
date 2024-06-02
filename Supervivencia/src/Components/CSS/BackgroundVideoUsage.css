@@ -4,7 +4,7 @@
     width: 100vw;
     height: 100vh;
     object-fit: cover;
-    z-index: -1;
+    z-index: 0;
 }
 
 .zoneContainer {
@@ -12,7 +12,7 @@
 }
 
 .zoneContent {
-    z-index: 0;
+    z-index: 1;
     position: absolute;
     top: 0;
     left: 0;

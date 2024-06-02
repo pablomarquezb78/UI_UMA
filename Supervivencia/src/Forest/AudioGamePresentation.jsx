@@ -31,9 +31,9 @@ function GamePresentation({passFunction}) {
                     <div className='col-sm-10'>
                         <p tabIndex='0'>
                             Cae la noche y dejamos de ver con claridad, por tanto, la vista 
-                            no nos sera util, sin embargo, si usamos nuestro oido y prestamos atencion,
+                            no nos será útil, sin embargo, si usamos nuestro oido y prestamos atención,
                             podremos distinguir los animales en nuestro entorno. <br/>
-                            Tratamos de sobrevivir asi que mientras que aciertes seguiremos vivos.
+                            Tratamos de sobrevivir así que mientras aciertes seguiremos vivos.
                         </p>
                     </div>
                 </div>
