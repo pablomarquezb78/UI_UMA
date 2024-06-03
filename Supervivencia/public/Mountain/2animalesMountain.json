@@ -17,11 +17,11 @@
   },
   {
     "id": 3,
-    "cardTitle": "Quebrantahuesos",
-    "cardSubtitle": "Gypaetus barbatus",
-    "img": "/Mountain/MountainAnimals/quebrantahuesos.jpg",
-    "imgAlt": "Imagen de Quebrantahuesos",
-    "cardText": "Un impresionante ave carroñera que habita en regiones montañosas. Se alimenta principalmente de huesos, que rompe dejando caer desde grandes alturas."
+    "cardTitle": "Águila Real",
+    "cardSubtitle": "Aquila chrysaetos",
+    "img": "/Mountain/MountainAnimals/aguila_real.jpg",
+    "imgAlt": "Imagen de Águila Real",
+    "cardText": "Una majestuosa ave rapaz que habita en regiones montañosas de todo el hemisferio norte. Es conocida por su gran tamaño y su habilidad para cazar presas grandes."
   },
   {
     "id": 4,
@@ -32,12 +32,13 @@
     "cardText": "Un roedor grande que vive en madrigueras en prados alpinos. Es conocida por sus silbidos de alerta y su hábito de hibernar durante el invierno."
   },
   {
+
     "id": 5,
-    "cardTitle": "Águila Real",
-    "cardSubtitle": "Aquila chrysaetos",
-    "img": "/Mountain/MountainAnimals/aguila_real.jpg",
-    "imgAlt": "Imagen de Águila Real",
-    "cardText": "Una majestuosa ave rapaz que habita en regiones montañosas de todo el hemisferio norte. Es conocida por su gran tamaño y su habilidad para cazar presas grandes."
+    "cardTitle": "Quebrantahuesos",
+    "cardSubtitle": "Gypaetus barbatus",
+    "img": "/Mountain/MountainAnimals/quebrantahuesos.jpg",
+    "imgAlt": "Imagen de Quebrantahuesos",
+    "cardText": "Un impresionante ave carroñera que habita en regiones montañosas. Se alimenta principalmente de huesos, que rompe dejando caer desde grandes alturas."    
   },
   {
     "id": 6,

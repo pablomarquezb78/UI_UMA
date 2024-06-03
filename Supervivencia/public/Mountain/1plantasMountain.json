@@ -19,11 +19,11 @@
     },
     {
       "id": 3,
-      "cardTitle": "Genciana",
-      "cardSubtitle": "Gentiana acaulis",
-      "img": "/Mountain/MountainPlants/genciana.jpg",
-      "imgAlt": "Imagen de Genciana",
-      "cardText": "Planta alpina conocida por sus flores azules intensas. Crece en prados y zonas rocosas de montaña y es apreciada por su belleza y propiedades medicinales."
+      "cardTitle": "Sempervivum",
+      "cardSubtitle": "Sempervivum montanum",
+      "img": "/Mountain/MountainPlants/sempervivum.jpg",
+      "imgAlt": "Imagen de Sempervivum",
+      "cardText": "Planta suculenta que forma rosetas compactas y produce flores estrelladas. Es muy resistente y puede crecer en suelos pobres y rocosos de montaña."
     },
     {
         "id": 4,
@@ -75,10 +75,10 @@
     },
     {
       "id": 10,
-      "cardTitle": "Sempervivum",
-      "cardSubtitle": "Sempervivum montanum",
-      "img": "/Mountain/MountainPlants/sempervivum.jpg",
-      "imgAlt": "Imagen de Sempervivum",
-      "cardText": "Planta suculenta que forma rosetas compactas y produce flores estrelladas. Es muy resistente y puede crecer en suelos pobres y rocosos de montaña."
+      "cardTitle": "Genciana",
+      "cardSubtitle": "Gentiana acaulis",
+      "img": "/Mountain/MountainPlants/genciana.jpg",
+      "imgAlt": "Imagen de Genciana",
+      "cardText": "Planta alpina conocida por sus flores azules intensas. Crece en prados y zonas rocosas de montaña y es apreciada por su belleza y propiedades medicinales."
     }
   ]
