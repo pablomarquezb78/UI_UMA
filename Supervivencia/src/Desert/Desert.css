@@ -240,9 +240,6 @@
     line-height: 1.2;
 }
 
-#shortcutsContainer{
-}
-
 #shortcutsContainer img{
     object-fit: contain;
     max-width: 100%;
