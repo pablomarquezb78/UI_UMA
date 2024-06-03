@@ -21,20 +21,20 @@ function ItemInfoContainer({itemList,currentIndex,Bottom}){
     return(
         <>
             {!Bottom && (
-                    <h1 id="itemDisplayedTop" tabIndex="0" ref={ref} style={{ fontSize, height: heightTitle , width: widthTitle, letterSpacing: '1px', lineHeight: '1.2' }} className="text-white text-center">
+                    <h1 id="itemDisplayedTop" ref={ref} style={{ fontSize, height: heightTitle , width: widthTitle, letterSpacing: '1px', lineHeight: '1.2' }} className="text-white text-center">
                     {itemList[currentIndex].nombre}
                     </h1>
             )}
             <div id={idItemInfo}>
                 {Bottom && (
-                    <h1 id="itemDisplayedBottom" tabIndex="0" ref={ref} style={{ fontSize, height: heightTitle , width: widthTitle, letterSpacing: '1px', lineHeight: '1.2' }} className="text-white text-center">
+                    <h1 id="itemDisplayedBottom" ref={ref} style={{ fontSize, height: heightTitle , width: widthTitle, letterSpacing: '1px', lineHeight: '1.2' }} className="text-white text-center">
                     {itemList[currentIndex].nombre}
                     </h1>
                 )}
-                <p id='pros' tabIndex="0" ref={ref} style={{ fontSize, height: heightText, width: widthText, letterSpacing: '1px', lineHeight: '1.2'}} className="text-white">
+                <p id='pros' ref={ref} style={{ fontSize, height: heightText, width: widthText, letterSpacing: '1px', lineHeight: '1.2'}} className="text-white">
                     Ventajas✅: {itemList[currentIndex].ventajas}
                 </p>
-                <p id='cons' tabIndex="0" ref={ref} style={{ fontSize, height: heightText, width: widthText, letterSpacing: '1px', lineHeight: '1.2' }} className="text-white">
+                <p id='cons' ref={ref} style={{ fontSize, height: heightText, width: widthText, letterSpacing: '1px', lineHeight: '1.2' }} className="text-white">
                     Desventajas❌: {itemList[currentIndex].desventajas}
                 </p>
                 {/*PARA DEBUGEAR EL FITTEXT AÑADIR border: "1px solid red" AL STYLE*/}

@@ -10,9 +10,11 @@ import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
 import RestartAltIcon from '@mui/icons-material/RestartAlt';
 import SosIcon from '@mui/icons-material/Sos';
 import AddIcon from '@mui/icons-material/Add';
+import KeyboardIcon from '@mui/icons-material/Keyboard';
 
 import HelpSection from "./HelpSection";
 import ItemInfoContainer from "./ItemInfoContainer";
+import ShortcutsSection from "./ShortcutsSection";
 
 function DesertBagGame() {
 
@@ -36,6 +38,7 @@ function DesertBagGame() {
     const [isItemIncluded, setIsItemIncluded] = useState(false);
     const [indexChanged, setIndexChanged] = useState(false);
     const [helpPressed, setHelPressed] = useState(false);
+    const [shortcutsPressed, setShortcutsPressed] = useState(false);
     const [itemList, setItemList] = useState([...initialItemList]);
     const [cooldown, setCooldown] = useState(false);
 
@@ -88,6 +91,10 @@ function DesertBagGame() {
         setHelPressed(prevState => !prevState);
     }
 
+    const showShortcuts = () => {
+        setShortcutsPressed(prevState => !prevState);
+    }
+
     const handleButtonClick = (callback) => {
         if (cooldown) return;
         setCooldown(true);
@@ -122,21 +129,27 @@ function DesertBagGame() {
         <section id="desertGameCompleteSection" className="position-relative vw-100 vh-100">
             <div id="completeGameSectionHelp" className="d-flex flex-column position-absolute start-50 translate-middle-x">
                 <div id="resultDisplay" className="d-flex justify-content-around mt-2">
-                    <h2 id="bagGameTitle" tabIndex="0" className="text-center text-white d-flex align-items-center letter-spacing-1 line-height-1-2">¡Prepara la mochila para sobrevivir!</h2>
-                    <AnimatedIconButton title="Reiniciar juego" className={`${(helpPressed || itemList.length === 8) ? "esconderBoton" : ""}`}  role="img" onClick={restartGame}>
+                    <h2 id="bagGameTitle" className="text-center text-white d-flex align-items-center letter-spacing-1 line-height-1-2">¡Prepara la mochila para sobrevivir!</h2>
+                    <AnimatedIconButton title="Reiniciar juego" className={`${(helpPressed || itemList.length === 8 || shortcutsPressed) ? "esconderBoton" : ""}`}  role="img" onClick={restartGame}>
                         <RestartAltIcon />
                     </AnimatedIconButton>
-                    <AnimatedIconButton title="Ayuda del juego" className={`${(helpPressed || itemList.length === 8) ? "esconderBoton" : ""}`} role="img" onClick={showHelp}>
+                    <AnimatedIconButton title="Ayuda del juego" className={`${(helpPressed || itemList.length === 8 || shortcutsPressed) ? "esconderBoton" : ""}`} role="img" onClick={showHelp}>
                         <SosIcon />
+                    </AnimatedIconButton>
+                    <AnimatedIconButton title="Atajos de teclado" className={`${(helpPressed || itemList.length === 8 || shortcutsPressed) ? "esconderBoton" : ""}`} role="img" onClick={showShortcuts}>
+                        <KeyboardIcon />
                     </AnimatedIconButton>
                 </div>
                 <ItemInfoContainer  itemList={itemList} currentIndex={currentIndex} Bottom={false}/>
-                {(helpPressed && itemList.length !== 8) && (
-                        <HelpSection  showHelp={showHelp} />
+                {(helpPressed) && (
+                    <HelpSection  showHelp={showHelp} />
+                )}
+                {(shortcutsPressed) && (
+                    <ShortcutsSection  showShortcuts={showShortcuts} />
                 )}
                 {itemList.length === 8 && (
                             <div className="position-absolute z-1 bg-white rounded p-3 mb-5 appear-animation w-50 h-50 d-flex flex-column justify-content-center align-items-center top-50 fw-bold
-                            start-50 translate-middle" style={{ maxHeight: '200px' }} tabIndex="0">
+                            start-50 translate-middle" style={{ maxHeight: '200px' }}>
                                 <h2 id="bagPuntuation" className="text-center h-50 letter-spacing-1 line-height-1-2">¡Fin del juego!<br/><br/> Has conseguido {suma} puntos de supervivencia</h2>
                                 <button id="bagRestartPuntuation" className="btn btn-dark h-50 mt-1" style={{ maxHeight: '50px' }} onClick={restartGame}><span className="my-auto">Reiniciar</span></button>
                             </div>
@@ -144,10 +157,10 @@ function DesertBagGame() {
                 <div id="bagGameDisplay" className="d-flex justify-content-center align-items-center">
                     <div id="bagPlace" className={`d-flex flex-grow-0 h-100 flex-column justify-content-center  ${isItemIncluded ? "item-included" : ""}`}>
                         <div id="BagContainer" className={`d-flex justify-content-center flex-grow-0 w-100`}>
-                            <img tabIndex="0" src={Bag} alt="Imagen de mochila de supervivencia" className="img-fluid"></img>
+                            <img src={Bag} alt="Imagen de mochila de supervivencia" className="img-fluid"></img>
                         </div>
                         <div id="CapacityContainer">
-                            <span id="bagCapacityDisplay" tabIndex="0" aria-label={`La capacidad actual de la mochila es ${16 - itemList.length} de 8`} className="d-block text-center text-white letter-spacing-1 line-height-1-2">Capacidad: {16 - itemList.length}/8</span>
+                            <span id="bagCapacityDisplay" aria-label={`La capacidad actual de la mochila es ${16 - itemList.length} de 8`} className="d-block text-center text-white letter-spacing-1 line-height-1-2">Capacidad: {16 - itemList.length}/8</span>
                         </div>
                     </div>
                     <div id="itemsContainer" className="h-100 d-flex flex-column align-items-center justify-content-center">
@@ -162,11 +175,11 @@ function DesertBagGame() {
                             />
                         </div>
                         <div id="bagButtonContainer" className="d-flex justify-content-center align-items-center">
-                            <AnimatedIconButton title="Objeto anterior" tabIndex="0" role="img"
+                            <AnimatedIconButton title="Objeto anterior" role="img"
                             onClick={() => handleButtonClick(prevImage)} disabled={cooldown}><NavigateBeforeIcon /></AnimatedIconButton>
-                            <AnimatedIconButton  title="Añadir objeto a la mochila" tabIndex="0" role="img"
+                            <AnimatedIconButton  title="Añadir objeto a la mochila" role="img"
                             onClick={() => handleButtonClick(includeItem)} disabled={cooldown}><AddIcon /></AnimatedIconButton>
-                            <AnimatedIconButton title="Objeto siguiente" tabIndex="0" role="img"
+                            <AnimatedIconButton title="Objeto siguiente" role="img"
                              onClick={() => handleButtonClick(nextImage)} disabled={cooldown}><NavigateNextIcon /></AnimatedIconButton>
                         </div>
                     </div>

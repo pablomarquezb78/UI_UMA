@@ -1,0 +1,83 @@
+[
+  {
+    "id": 1,
+    "cardTitle": "Cabra Montés",
+    "cardSubtitle": "Capra pyrenaica",
+    "img": "/Mountain/MountainAnimals/cabra_montes.jpg",
+    "imgAlt": "Imagen de Cabra Montés",
+    "cardText": "Un habitante típico de las montañas, conocida por su habilidad para escalar terrenos rocosos. Sus cuernos curvados y su agilidad le permiten vivir en altitudes elevadas."
+  },
+  {
+    "id": 2,
+    "cardTitle": "Lince Boreal",
+    "cardSubtitle": "Lynx lynx",
+    "img": "/Mountain/MountainAnimals/lince_boreal.jpg",
+    "imgAlt": "Imagen de Lince Boreal",
+    "cardText": "Este felino es nativo de las zonas boscosas de montaña de Europa y Asia. Es conocido por sus orejas con pinceles de pelo y su habilidad para cazar en terrenos difíciles."
+  },
+  {
+    "id": 3,
+    "cardTitle": "Águila Real",
+    "cardSubtitle": "Aquila chrysaetos",
+    "img": "/Mountain/MountainAnimals/aguila_real.jpg",
+    "imgAlt": "Imagen de Águila Real",
+    "cardText": "Una majestuosa ave rapaz que habita en regiones montañosas de todo el hemisferio norte. Es conocida por su gran tamaño y su habilidad para cazar presas grandes."
+  },
+  {
+    "id": 4,
+    "cardTitle": "Marmota Alpina",
+    "cardSubtitle": "Marmota marmota",
+    "img": "/Mountain/MountainAnimals/marmota_alpina.jpg",
+    "imgAlt": "Imagen de Marmota Alpina",
+    "cardText": "Un roedor grande que vive en madrigueras en prados alpinos. Es conocida por sus silbidos de alerta y su hábito de hibernar durante el invierno."
+  },
+  {
+
+    "id": 5,
+    "cardTitle": "Quebrantahuesos",
+    "cardSubtitle": "Gypaetus barbatus",
+    "img": "/Mountain/MountainAnimals/quebrantahuesos.jpg",
+    "imgAlt": "Imagen de Quebrantahuesos",
+    "cardText": "Un impresionante ave carroñera que habita en regiones montañosas. Se alimenta principalmente de huesos, que rompe dejando caer desde grandes alturas."    
+  },
+  {
+    "id": 6,
+    "cardTitle": "Yak",
+    "cardSubtitle": "Bos grunniens",
+    "img": "/Mountain/MountainAnimals/yak.jpg",
+    "imgAlt": "Imagen de Yak",
+    "cardText": "Un gran bovino adaptado a vivir en altitudes elevadas de Asia Central. Tiene un pelaje espeso para protegerse del frío extremo."
+  },
+  {
+    "id": 7,
+    "cardTitle": "Íbice Alpino",
+    "cardSubtitle": "Capra ibex",
+    "img": "/Mountain/MountainAnimals/ibice_alpino.jpg",
+    "imgAlt": "Imagen de Íbice Alpino",
+    "cardText": "Un símbolo de los Alpes, este animal es conocido por sus impresionantes cuernos y su habilidad para trepar por paredes rocosas verticales."
+  },
+  {
+    "id": 8,
+    "cardTitle": "Leopardo de las Nieves",
+    "cardSubtitle": "Panthera uncia",
+    "img": "/Mountain/MountainAnimals/leopardo_nieves.jpg",
+    "imgAlt": "Imagen de Leopardo de las Nieves",
+    "cardText": "Este esquivo felino vive en las montañas de Asia Central. Es conocido por su pelaje camuflado y su habilidad para cazar en condiciones de alta montaña."
+  },
+  {
+    "id": 9,
+    "cardTitle": "Condor Andino",
+    "cardSubtitle": "Vultur gryphus",
+    "img": "/Mountain/MountainAnimals/condor_andino.jpg",
+    "imgAlt": "Imagen de Condor Andino",
+    "cardText": "Una de las aves voladoras más grandes del mundo, el cóndor andino habita en las montañas de América del Sur. Es un ave carroñera crucial para el ecosistema."
+  },
+  {
+    "id": 10,
+    "cardTitle": "Oso Pardo",
+    "cardSubtitle": "Ursus arctos",
+    "img": "/Mountain/MountainAnimals/oso_pardo.jpg",
+    "imgAlt": "Imagen de Oso Pardo",
+    "cardText": "Este poderoso depredador se encuentra en regiones montañosas de Eurasia y América del Norte. Es conocido por su fuerza y su capacidad para adaptarse a diferentes hábitats."
+  }
+]
