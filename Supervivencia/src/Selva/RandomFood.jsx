@@ -15,7 +15,7 @@ function longData(){
 
 function isDangerous(id){
 
-    return json[id-1].mortalidad;
+    return json[id-1].Mortalidad;
 }
 
 

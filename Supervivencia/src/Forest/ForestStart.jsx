@@ -2,6 +2,7 @@ import React from 'react';
 
 import '../CSS/Start.css';
 import NavBar from '../Start/NavBar';
+import BiomeStart from '../Components/BiomeStart/BiomeStart'
 
 function ForestStart({scrollToGridInfo}) {
     
@@ -12,6 +13,8 @@ function ForestStart({scrollToGridInfo}) {
     
             {/* Envuelto por una etiqueta header dentro del componente NavBar*/}
             <NavBar scrollToGridInfo={scrollToGridInfo} currentLink={3}/>
+
+            <BiomeStart video={'bosque'} title={'Bosque'} subtitle={"Un bioma forestal, frondoso y sereno, un santuario verde donde la vida florece bajo el dosel de árboles centenarios."}></BiomeStart>
 
        </section>
  

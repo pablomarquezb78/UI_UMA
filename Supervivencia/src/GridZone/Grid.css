@@ -71,6 +71,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 
 .fogata {
@@ -82,6 +83,7 @@
   margin: auto;
   max-width: 32vh; /* Tamaño más grande fuera de la media query */
   aspect-ratio: 1;
+  margin-bottom: 2%;
 }
 
 .fogata img {
@@ -106,5 +108,12 @@
 
     padding-bottom: 2%;
 }
+}
+
+.sobrevive h1{
+  position: absolute;
+  margin: 0 !important;
+  font-size: calc(20px + (80 - 20) * ((100vmin - 350px) / (1080 - 350)));
+  top: 0;
 }
 

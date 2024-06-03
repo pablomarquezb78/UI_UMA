@@ -1,8 +1,8 @@
 import React from 'react';
 import '../CSS/Start.css';
 import NavBar from '../Start/NavBar';
-
 import UnderConstruction from '../Components/UnderConstructionScreen'
+import BiomeStart from '../Components/BiomeStart/BiomeStart'
 
 function CoastStart({scrollToGridInfo}) {
     
@@ -13,6 +13,8 @@ function CoastStart({scrollToGridInfo}) {
     
             {/* Envuelto por una etiqueta header dentro del componente NavBar*/}
             <NavBar scrollToGridInfo={scrollToGridInfo} currentLink={5}/>
+
+            <BiomeStart video={'costa'} title={'Costa'} subtitle={"Un bioma costero, dinámico y vibrante, un encuentro perpetuo entre tierra y mar donde la vida prospera en armoniosa diversidad."}></BiomeStart>
 
        </section>
  

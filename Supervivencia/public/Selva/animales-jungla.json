@@ -1,0 +1,83 @@
+[
+    {
+      "id": 1,
+      "cardTitle": "Pantera",
+      "cardSubtitle": "Panthera pardus",
+      "img": "/Selva/SelvaAnimals/pantera.jpg",
+      "imgAlt": "Imagen de Pantera",
+      "cardText": "La pantera es uno de los grandes felinos de la selva, conocido por su fuerza, agilidad y capacidad para adaptarse a diferentes hábitats. Es un depredador ápice que juega un papel crucial en mantener el equilibrio del ecosistema."
+    },
+    {
+      "id": 2,
+      "cardTitle": "Mono aullador",
+      "cardSubtitle": "Alouatta",
+      "img": "/Selva/SelvaAnimals/mono_aullador.jpg",
+      "imgAlt": "Imagen de Mono aullador",
+      "cardText": "El mono aullador es famoso por sus vocalizaciones fuertes que pueden escucharse a kilómetros de distancia. Vive en la copa de los árboles y se alimenta principalmente de hojas y frutas."
+    },
+    {
+      "id": 3,
+      "cardTitle": "Guacamayo azul",
+      "cardSubtitle": "Ara ararauna",
+      "img": "/Selva/SelvaAnimals/guacamayo_azul.jpg",
+      "imgAlt": "Imagen de Guacamayo azul",
+      "cardText": "El guacamayo azul es un ave vibrante y social que habita en las selvas tropicales. Su plumaje colorido y su capacidad para imitar sonidos humanos lo hacen muy popular."
+    },
+    {
+      "id": 4,
+      "cardTitle": "Capibara",
+      "cardSubtitle": "Hydrochoerus hydrochaeris",
+      "img": "/Selva/SelvaAnimals/capibara.jpg",
+      "imgAlt": "Imagen de Capibara",
+      "cardText": "El capibara es el roedor más grande del mundo. Es semiacuático y se encuentra cerca de cuerpos de agua en la selva, donde se alimenta de vegetación acuática."
+    },
+    {
+      "id": 5,
+      "cardTitle": "Tucán",
+      "cardSubtitle": "Ramphastos toco",
+      "img": "/Selva/SelvaAnimals/tucan.jpg",
+      "imgAlt": "Imagen de Tucán",
+      "cardText": "El tucán es fácilmente reconocible por su gran pico colorido. Habita en las selvas tropicales y se alimenta principalmente de frutas, aunque también consume insectos y pequeños reptiles."
+    },
+    {
+      "id": 6,
+      "cardTitle": "Ocelote",
+      "cardSubtitle": "Leopardus pardalis",
+      "img": "/Selva/SelvaAnimals/ocelote.jpg",
+      "imgAlt": "Imagen de Ocelote",
+      "cardText": "El ocelote es un felino pequeño y elegante que habita en la selva. Es un cazador nocturno que se alimenta de pequeños mamíferos, aves y reptiles."
+    },
+    {
+      "id": 7,
+      "cardTitle": "Pereza de tres dedos",
+      "cardSubtitle": "Bradypus variegatus",
+      "img": "/Selva/SelvaAnimals/pereza.jpg",
+      "imgAlt": "Imagen de Pereza de tres dedos",
+      "cardText": "La pereza de tres dedos es conocida por su lento movimiento y su vida en los árboles. Se alimenta principalmente de hojas y desciende al suelo una vez a la semana para defecar."
+    },
+    {
+      "id": 8,
+      "cardTitle": "Tigre",
+      "cardSubtitle": "Panthera tigris",
+      "img": "/Selva/SelvaAnimals/tigre.jpg",
+      "imgAlt": "Imagen de Tigre",
+      "cardText": "El tigre es uno de los felinos más majestuosos de la selva, conocido por su fuerza y ferocidad. Es un depredador solitario que caza grandes presas como ciervos y jabalíes."
+    },
+    {
+      "id": 9,
+      "cardTitle": "Tapir amazónico",
+      "cardSubtitle": "Tapirus terrestris",
+      "img": "/Selva/SelvaAnimals/tapir.jpg",
+      "imgAlt": "Imagen de Tapir amazónico",
+      "cardText": "El tapir amazónico es un herbívoro grande que se encuentra en las selvas de Sudamérica. Tiene un hocico prehensil que usa para agarrar hojas y frutas."
+    },
+    {
+      "id": 10,
+      "cardTitle": "Pecarí de collar",
+      "cardSubtitle": "Pecari tajacu",
+      "img": "/Selva/SelvaAnimals/pecari.jpg",
+      "imgAlt": "Imagen de Pecarí de collar",
+      "cardText": "El pecarí de collar es un mamífero similar al cerdo que vive en manadas en la selva. Es omnívoro y se alimenta de raíces, frutas e insectos."
+    }
+  ]
+  

@@ -5,6 +5,12 @@ import '../CSS/main.css'
 import '../CSS/Start.css'
 import TinderGame from './TinderGame.jsx';
 import SelvaStart from './SelvaStart.jsx';
+import junglePlants from '../../public/Selva/alimentos-veneno.json'
+import jungleAnimals from '../../public/Selva/animales-jungla.json'
+
+import JungleCarrousel from '../Components/carouselPage/CarouselInfo.jsx';
+
+
 
 function SelvaMain(){
 
@@ -27,6 +33,14 @@ function SelvaMain(){
                     <SelvaStart scrollToGridInfo={scrollToGridInfo}/>
                 </div>
             
+                <div className='sliderItem'>
+                    <JungleCarrousel data={junglePlants} id='Jungle' title={'PLANTAS DE LA SELVA'}/>
+                </div>
+
+                <div className='sliderItem'>
+                    <JungleCarrousel data={jungleAnimals} id='Jungle' title={'ANIMALES DE LA JUNGLA'}/>
+                </div>
+
                 <div className='sliderItem'>
                     <TinderGame/>
                 </div>
