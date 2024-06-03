@@ -7,6 +7,12 @@ import '../CSS/Start.css';
 import MemoryGame from './MemoryGame.jsx';
 import MountainInitGame from './MountainInitGame.jsx';
 
+
+import MountainCarousel from '../Components/carouselPage/CarouselInfo.jsx';
+import MountainPlants from '/public/Mountain/1plantasMountain.json';
+import MountainAnimals from '/public/Mountain/2animalesMountain.json';
+
+
 function MountainMain(){
 
     const gridInfoRef = useRef(null);
@@ -26,6 +32,14 @@ function MountainMain(){
 
                 <div className='sliderItem' ref={startRef}>
                     <MountainStart scrollToGridInfo={scrollToGridInfo}/>
+                </div>
+
+                <div className='sliderItem'>
+                    <MountainCarousel data={MountainPlants} id='Mountain' title={'PLANTAS DE MONTAÑA'}/>
+                </div>
+
+                <div className='sliderItem'>
+                    <MountainCarousel data={MountainAnimals} id='Mountain' title={'FAUNA DE MONTAÑA'}/>
                 </div>
 
                 <div className='sliderItem'>

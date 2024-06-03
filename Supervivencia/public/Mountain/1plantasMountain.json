@@ -1,0 +1,84 @@
+[       
+
+
+    {
+        "id": 1,
+        "cardTitle": "Aconito de los Alpes",
+        "cardSubtitle": "Aconitum napellus",
+        "img": "/Mountain/MountainPlants/aconito.jpg",
+        "imgAlt": "Imagen de Aconito de los Alpes",
+        "cardText": "Planta herbácea con flores moradas en forma de casco. Es muy venenosa y se encuentra en zonas montañosas de Europa."
+    },
+    {
+      "id": 2,
+      "cardTitle": "Rododendro Alpino",
+      "cardSubtitle": "Rhododendron ferrugineum",
+      "img": "/Mountain/MountainPlants/rododendro_alpino.jpg",
+      "imgAlt": "Imagen de Rododendro Alpino",
+      "cardText": "Arbusto perenne que produce flores rosadas a rojas. Es común en las zonas montañosas de Europa y Asia, y florece a finales de la primavera y principios del verano."
+    },
+    {
+      "id": 3,
+      "cardTitle": "Genciana",
+      "cardSubtitle": "Gentiana acaulis",
+      "img": "/Mountain/MountainPlants/genciana.jpg",
+      "imgAlt": "Imagen de Genciana",
+      "cardText": "Planta alpina conocida por sus flores azules intensas. Crece en prados y zonas rocosas de montaña y es apreciada por su belleza y propiedades medicinales."
+    },
+    {
+        "id": 4,
+        "cardTitle": "Edelweiss",
+        "cardSubtitle": "Leontopodium alpinum",
+        "img": "/Mountain/MountainPlants/edelweiss.jpg",
+        "imgAlt": "Imagen de Edelweiss",
+        "cardText": "Una icónica planta de montaña conocida por sus flores blancas y peludas. Crece en altitudes elevadas y es un símbolo de los Alpes."
+    },
+    {
+      "id": 5,
+      "cardTitle": "Artemisia Alpina",
+      "cardSubtitle": "Artemisia umbelliformis",
+      "img": "/Mountain/MountainPlants/artemisia_alpina.jpg",
+      "imgAlt": "Imagen de Artemisia Alpina",
+      "cardText": "Planta aromática que crece en zonas rocosas y prados de montaña. Es conocida por su uso en la medicina tradicional y su olor característico."
+    },
+    {
+      "id": 6,
+      "cardTitle": "Campanula Alpina",
+      "cardSubtitle": "Campanula alpina",
+      "img": "/Mountain/MountainPlants/campanula_alpina.jpg",
+      "imgAlt": "Imagen de Campanula Alpina",
+      "cardText": "Planta perenne con flores en forma de campana, generalmente de color azul o púrpura. Crece en prados y laderas rocosas de montaña."
+    },
+    {
+      "id": 7,
+      "cardTitle": "Silene de los Alpes",
+      "cardSubtitle": "Silene acaulis",
+      "img": "/Mountain/MountainPlants/silene.jpg",
+      "imgAlt": "Imagen de Silene de los Alpes",
+      "cardText": "Planta de cojín que forma matas densas con flores rosadas o blancas. Es común en las zonas alpinas de Europa y América del Norte."
+    },
+    {
+      "id": 8,
+      "cardTitle": "Pino de Montaña",
+      "cardSubtitle": "Pinus mugo",
+      "img": "/Mountain/MountainPlants/pino_montaña.jpg",
+      "imgAlt": "Imagen de Pino de Montaña",
+      "cardText": "Pequeño árbol o arbusto que crece en las regiones montañosas de Europa. Es conocido por su resistencia y capacidad para crecer en condiciones adversas."
+    },
+    {
+      "id": 9,
+      "cardTitle": "Androsace Alpina",
+      "cardSubtitle": "Androsace alpina",
+      "img": "/Mountain/MountainPlants/androsace.jpg",
+      "imgAlt": "Imagen de Androsace Alpina",
+      "cardText": "Planta pequeña y perenne que forma rosetas con flores rosadas o blancas. Se encuentra en las altas montañas de Europa y Asia."
+    },
+    {
+      "id": 10,
+      "cardTitle": "Sempervivum",
+      "cardSubtitle": "Sempervivum montanum",
+      "img": "/Mountain/MountainPlants/sempervivum.jpg",
+      "imgAlt": "Imagen de Sempervivum",
+      "cardText": "Planta suculenta que forma rosetas compactas y produce flores estrelladas. Es muy resistente y puede crecer en suelos pobres y rocosos de montaña."
+    }
+  ]
