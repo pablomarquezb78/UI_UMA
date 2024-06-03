@@ -30,7 +30,7 @@
 /*middle side*/
 
 #itemImgContainer{
-    height: 70%;
+    height: 60%;
 }
 
 #itemImgContainer img{
@@ -238,4 +238,13 @@
 
 .line-height-1-2 {
     line-height: 1.2;
+}
+
+#shortcutsContainer{
+}
+
+#shortcutsContainer img{
+    object-fit: contain;
+    max-width: 100%;
+    height: auto;
 }
