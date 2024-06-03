@@ -44,7 +44,7 @@
 
 .tituloCarouselInfo.Mountain {
 
-background: rgba(9, 82, 26, 0.9)!important;
+background:  #424242!important;
 
 backdrop-filter: blur( 7.5px );
 -webkit-backdrop-filter: blur( 7.5px );
