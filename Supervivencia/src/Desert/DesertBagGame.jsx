@@ -22,7 +22,7 @@ function DesertBagGame() {
         color: disabled ? 'gray' : 'black',
         pointerEvents: disabled ? 'none' : 'auto',
         '&:hover': {
-            color: disabled ? 'gray' : 'white',
+            color: disabled ? 'gray' : '',
         },
         '.MuiSvgIcon-root': {
             width: 'calc(30px + (80 - 30) * ((100vmin - 350px) / (1080 - 350)))',

@@ -35,6 +35,19 @@ function FAQ(){
                     <AccordionItem>
                         <AccordionItemHeading>
                             <AccordionItemButton>
+                                ¿Es posible usar atajos de teclado en los diferentes minijuegos?
+                            </AccordionItemButton>
+                        </AccordionItemHeading>
+                        <AccordionItemPanel>
+                            <p className='fontControlFaq'>
+                                Sí, en cada minijuego encontrarás junto al botón de SOS un botón para ver los atajos de teclado asociados a ese minijuego además de esto,
+                                tanto los minijuegos como la propia web es navegable haciendo uso del tabulador.
+                            </p>
+                        </AccordionItemPanel>
+                    </AccordionItem>
+                    <AccordionItem>
+                        <AccordionItemHeading>
+                            <AccordionItemButton>
                                 ¿Es posible acceder a la información de más biomas?
                             </AccordionItemButton>
                         </AccordionItemHeading>
@@ -48,24 +61,13 @@ function FAQ(){
                     <AccordionItem>
                         <AccordionItemHeading>
                             <AccordionItemButton>
-                                ¿Pregunta 3?
+                                ¿Se ampliará el contenido de cada bioma?
                             </AccordionItemButton>
                         </AccordionItemHeading>
                         <AccordionItemPanel>
                             <p className='fontControlFaq'>
-                                Respuesta 3
-                            </p>
-                        </AccordionItemPanel>
-                    </AccordionItem>
-                    <AccordionItem>
-                        <AccordionItemHeading>
-                            <AccordionItemButton>
-                                ¿Pregunta 4?
-                            </AccordionItemButton>
-                        </AccordionItemHeading>
-                        <AccordionItemPanel>
-                            <p className='fontControlFaq'>
-                                Respuesta 4
+                                Por ahora hemos decidido incluir solo el contenido dispuesto en cada bioma, pero con las actualizaciones progresivas
+                                que recibirá la página estos contenidos (animales, plantas, tips de supervivencia...) pueden verse aumentados.
                             </p>
                         </AccordionItemPanel>
                     </AccordionItem>
