@@ -40,7 +40,6 @@
   font-weight: bold; 
   color: black;
   white-space: nowrap;
-  z-index: 1;
 }
 
 #informacion_imagen_i {
@@ -55,7 +54,6 @@
   font-weight: bold; 
   color: black;
   white-space: nowrap;
-  z-index: 0;
 }
 
 

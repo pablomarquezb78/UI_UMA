@@ -2,7 +2,7 @@ import React from 'react';
 import './Coast.css';
 import useFitText from "use-fit-text";
 
-function HelpHOL({cancelGame}){
+function HelpHOL({helpHandler}){
     const { fontSize: fontSize1, ref: ref1 } = useFitText({
         maxFontSize: 180,
         minFontSize: 5,
@@ -17,7 +17,7 @@ function HelpHOL({cancelGame}){
                 El juego está basado en el típico juego de Higher Or Lower pero con una pequeña modificación.<br /><br />
                 Tienes que seleccionar si el ser vivo de la imagen de la derecha (o abajo) mata más o menos personas al año que el ser vivo de la izquierda.
             </span>
-            <button tabIndex='0' className='custom-button m-2' onClick={cancelGame}>Cancelar</button>         
+            <button tabIndex='0' className='custom-button m-2' onClick={helpHandler}>Cancelar</button>         
         </div>
         // border: "1px solid red"
     );

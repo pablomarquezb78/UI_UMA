@@ -17,11 +17,11 @@ function CarouselInfoCard({imgSrc, imgAlt, cardTitle, cardSubtitle, cardText}) {
         const handleResize = () => {
             if (window.innerHeight <= 750) {
                 setIsHidden(true);
-                if(window.innerHeight > 344)
+                if(window.innerHeight > 340)
                 {
                     setShowImageButton(false)
                 } else {
-                    if(window.innerWidth > 464 && window.innerWidth < 1024)
+                    if( window.innerWidth > 10) //Modificar para mejorar la logica
                     {
                         setShowImageButton(true);
                     } else {
