@@ -62,7 +62,7 @@
 .card-text{
   
   font-size: calc(10px + (25 - 10) * ((100vmin - 350px) / (1080 - 350)));
-  background: rgba(255, 255, 255, 0.641);
+  background: rgba(255, 255, 255, 0.8);
   backdrop-filter: blur( 7.5px );
   -webkit-backdrop-filter: blur(7.5px);
 
@@ -85,21 +85,20 @@
 }
 
 
-.custom-button {
+.custom-buttonHOL {
   padding: 5px 15px;
-  font-size:  calc(10px + (20 - 10) * ((100vmin - 350px) / (1080 - 350)));
+  font-size:  calc(7px + (20 - 7) * ((100vmin - 350px) / (1080 - 350)));
   font-weight: bold;
   text-align: center;
   text-decoration: none;
+  background-color: black;
   border: none;
   border-radius: 5px;
-  background-color: black;
   color: white;
   cursor: pointer;
-  transition: background-color 0.3s;
 }
 
-.custom-button:hover {
+.custom-buttonHOL:hover {
   transition-duration: 300ms;
   color: #ffffff;
   text-shadow: 0 0 2em #ffffff;
@@ -126,8 +125,16 @@
   }
 
   .containerHOL{
-    width: 75%;
+    width: 34vw;
   }
+
+  #sosHOL{
+      right: 65%;
+  }
+
+  #keyboardHOL{
+    left: 65%;
+}
 
   #informacion_imagen_i{
     top: auto;
