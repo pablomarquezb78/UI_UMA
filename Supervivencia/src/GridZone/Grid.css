@@ -113,7 +113,7 @@
 .sobrevive h1{
   position: absolute;
   margin: 0 !important;
-  font-size: calc(20px + (80 - 20) * ((100vmin - 350px) / (1080 - 350)));
+  font-size: calc(20px + (70 - 20) * ((100vmin - 350px) / (1080 - 350)));
   top: 0;
 }
 

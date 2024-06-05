@@ -49,7 +49,10 @@
     .biomeStartHeader{
         padding-top: 9vh;
     }
-
+    .biomeStartTextHeader footer{
+        max-width: 320px;
+    }
 }
+
 
 

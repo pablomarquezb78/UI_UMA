@@ -27,7 +27,7 @@ function Index(){
                 <GridBiomes/>
                 </div>
 
-                <footer className='sliderItem' ref={gridInfoRef}>
+                <footer className='sliderItem helpSlider' ref={gridInfoRef}>
                 <InfoSection/>
                 </footer>
 

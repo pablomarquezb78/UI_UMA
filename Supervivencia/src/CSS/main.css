@@ -1,16 +1,32 @@
 *{
     padding: 0;
     margin: 0;
+
 }
 
-.sliderContainer {
-    position: absolute;
-    height: 100vh;
-    width: 100vw;
-    scroll-snap-type: y mandatory;
-    overflow: auto;
-    z-index: 4 !important;
+.sliderContainer{
+  overflow: auto;
+  overflow-x:hidden;
+  z-index: 4 !important;
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+}
 
+.sliderItem{
+  width: 100vw;
+}
+
+.helpSlider{
+  width: auto;
+  height: auto;
+}
+
+@media only screen and (min-width: 1025px) {
+ 
+  .sliderContainer {
+  
+    scroll-snap-type: y mandatory;
     overflow-y: auto;
     overflow-x: hidden;
 }
@@ -19,11 +35,16 @@
     scroll-snap-align: start;
 }
 
+
 footer .sliderItem{
   scroll-snap-align: start;
   height: 25vh;
   width: 25vw;
 }
+
+}
+
+
 
 /* Estilos para la barra de desplazamiento personalizada en Chromium */
 /* Ancho y color de la barra */

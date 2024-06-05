@@ -38,7 +38,7 @@ function DesertMain(){
                     <DesertBagGame/>
                 </div>
 
-                <div className='sliderItem' ref={gridInfoRef}>
+                <div className='sliderItem helpSlider' ref={gridInfoRef}>
                     <InfoSection/>
                 </div>
 
