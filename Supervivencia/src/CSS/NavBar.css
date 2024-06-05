@@ -51,10 +51,6 @@
 }
 
 
-#test{
-    cursor: pointer;
-}
-
 
 #webLogoStart{
     width: calc(30px + (80 - 30) * ((100vmin - 350px) / (1080 - 350)));
