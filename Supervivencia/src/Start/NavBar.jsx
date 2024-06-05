@@ -85,13 +85,13 @@ function navBar({ scrollToGridInfo, currentLink}) {
         <header className={`d-flex flex-row position-${currentLink === 1 ? "absolute" : "fixed"} ${bg} top-0 start-0 end-0 z-3 vw-100 vh-9 navBar`}>
             <div className="navBarItem">
                 {showMenu === 0 && (
-                    <AnimatedIconButton title="Menú despliegue navegación" disableRipple={true}>
-                        <MenuIcon id="hamburger" onClick={toggleMenu} />
+                    <AnimatedIconButton title="Menú despliegue navegación" disableRipple={true} onClick={toggleMenu}>
+                        <MenuIcon id="hamburger"  />
                     </AnimatedIconButton>
                 )}
                 {showMenu === 1 && (
-                    <AnimatedIconButton title="Cerrar Menú navegación" disableRipple={true}>
-                        <CloseIcon id="hamburger" onClick={toggleMenu} />
+                    <AnimatedIconButton title="Cerrar Menú navegación" disableRipple={true} onClick={toggleMenu}>
+                        <CloseIcon id="hamburger" />
                     </AnimatedIconButton>
                 )}
                 {showMenu === 2 && (
@@ -133,7 +133,7 @@ function navBar({ scrollToGridInfo, currentLink}) {
                 </ul>
             </nav>
             <div className="navBarItem">
-                <AnimatedIconButton title="Ayuda Página" className="navBarItem" id="ayudaLogoStart" disableRipple={true} onClick={scrollToGridInfo}><HelpOutlineIcon alt='seccionAyuda'></HelpOutlineIcon></AnimatedIconButton>
+                <AnimatedIconButton title="Sección de ayuda" className="navBarItem" id="ayudaLogoStart" disableRipple={true} onClick={scrollToGridInfo} ><HelpOutlineIcon/></AnimatedIconButton>
             </div>
         </header>
         <div id="overlay">

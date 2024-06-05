@@ -17,11 +17,11 @@ function CarouselInfoCard({imgSrc, imgAlt, cardTitle, cardSubtitle, cardText}) {
         const handleResize = () => {
             if (window.innerHeight <= 750) {
                 setIsHidden(true);
-                if(window.innerHeight > 344)
+                if(window.innerHeight > 340)
                 {
                     setShowImageButton(false)
                 } else {
-                    if(window.innerWidth > 464 && window.innerWidth < 1024)
+                    if( window.innerWidth > 10) //Modificar para mejorar la logica
                     {
                         setShowImageButton(true);
                     } else {
@@ -79,8 +79,8 @@ function CarouselInfoCard({imgSrc, imgAlt, cardTitle, cardSubtitle, cardText}) {
                         <img src={imgSrc} className="card-img-top forestInfoCard" alt={imgAlt}/>
                     )}
                     <div className="card-body justify-content-center align-items-center forestInfoCard" >
-                        <h4 className="card-title forestInfoCard">{cardTitle}</h4> 
-                        <h5  className='card-subtitle forestInfoCard'>{cardSubtitle}</h5>
+                        <h1 className="card-title forestInfoCard">{cardTitle}</h1> 
+                        <h2  className='card-subtitle forestInfoCard'>{cardSubtitle}</h2>
                         {!isHidden && (
                             <div className="card-text d-flex justify-content-center align-items-center forestInfoCard">
                                 {cardText}

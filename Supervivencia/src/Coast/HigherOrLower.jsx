@@ -6,6 +6,7 @@ import SosIcon from '@mui/icons-material/Sos';
 import KeyboardIcon from '@mui/icons-material/Keyboard';
 import './Coast.css';
 import HelpHOL from './HelpHOL.jsx';
+import ShortcutsSection from './ShortcutsSection.jsx';
 
 function HigherLowerGame() {
     const AnimatedIconButton = styled(IconButton)`
@@ -18,7 +19,7 @@ function HigherLowerGame() {
 
     .MuiSvgIcon-root {
         width: calc(22px + (50 - 22) * ((100vmin - 350px) / (1080 - 350)));
-        height: calc(22px + (50 - 22) * ((100vmin - 350px) / (1080 - 350)));
+        height: auto;
     }
     `;
 
@@ -37,6 +38,7 @@ function HigherLowerGame() {
     const [counter, setCounter] = useState(0);
     const [showResult, setShowResult] = useState(false); 
     const [needHelp, setNeedHelp] = useState(false);
+    const [shortcutsPressed, setShortcutsPressed] = useState(false);
 
     useEffect(() => {
         const numberOfCardAux = new Array(data.longData()).fill().map((_, index) => index + 1);
@@ -72,6 +74,8 @@ function HigherLowerGame() {
 
     const handleHigherClick = () => {
         setButtonsVisible(false);
+        setNeedHelp(false);
+        setShortcutsPressed(false);
         if (parseInt(data.randomImage(imageArray[leftCardIndex]).mortalidad) <= parseInt(data.randomImage(imageArray[rightCardIndex]).mortalidad)) {
             setIsCorrect(1);
             setShowDeaths(true);
@@ -92,6 +96,8 @@ function HigherLowerGame() {
 
     const handleLowerClick = () => {
         setButtonsVisible(false);
+        setNeedHelp(false);
+        setShortcutsPressed(false);
         if (parseInt(data.randomImage(imageArray[leftCardIndex]).mortalidad) >= parseInt(data.randomImage(imageArray[rightCardIndex]).mortalidad)) {
             setIsCorrect(1);
             setShowDeaths(true);
@@ -126,11 +132,18 @@ function HigherLowerGame() {
     const cancelGame = () => {
         setShowResult(false);
         setNeedHelp(false);
+        setShortcutsPressed(false);
     };
 
     const helpHandler = () => {
-        setNeedHelp(true);
+        setNeedHelp(prevState => !prevState);
+        setShortcutsPressed(false);
     };
+
+    const showShortcuts = () => {
+        setShortcutsPressed(prevState => !prevState);
+        setNeedHelp(false);
+    }
 
 
     useEffect(() => {
@@ -163,11 +176,12 @@ function HigherLowerGame() {
                 <h2 className='tituloHOL'>Higher or Lower</h2>
                 <h2 className='tituloHOL'>¿Cuál es más letal para el humano 💀?</h2>
             </div>
-            <AnimatedIconButton title="Atajos de teclado" aria-label='Atajos del juego' aria-hidden='false' className='position-absolute' id='keyboardHOL' style={{ right: '0', top: '70%', transform: 'translateY(-50%)', marginRight: '1%' }}><KeyboardIcon /></AnimatedIconButton>
-            <AnimatedIconButton title="Ayuda para el juego" className='sosHOL position-absolute' aria-label='Ayuda para el juego' aria-hidden='false' id='sosHOL' style={{ left: '0', top: '70%', transform: 'translateY(-50%)', marginLeft: '1%'}} onClick={() => { helpHandler() }}><SosIcon/></AnimatedIconButton>
+            <AnimatedIconButton title="Atajos de teclado" aria-label='Atajos del juego' aria-hidden='false' className={`position-absolute ${!showResult ? '' : 'esconderBoton'}`} id='keyboardHOL' onClick={showShortcuts}><KeyboardIcon /></AnimatedIconButton>
+            <AnimatedIconButton title="Ayuda para el juego" aria-label='Ayuda para el juego' aria-hidden='false' className={`position-absolute ${!showResult ? '' : 'esconderBoton'}`}  id='sosHOL' onClick={helpHandler}><SosIcon/></AnimatedIconButton>
         </div>
             <section className='imagenesHOL position-relative d-flex justify-content-center align-items-center'>
-                {needHelp && (<HelpHOL cancelGame={cancelGame}/>)}
+                {needHelp && (<HelpHOL helpHandler={helpHandler}/>)}
+                {shortcutsPressed && (<ShortcutsSection  showShortcuts={showShortcuts}/>)}
                 <div className='imagenHOL position-relative'>
                     <img alt={data.randomImage(imageArray[leftCardIndex])?.imgAlt} className='img-fluid containerHOL' src={data.randomImage(imageArray[leftCardIndex])?.img}/>
                     <div id='informacion_imagen_i'>

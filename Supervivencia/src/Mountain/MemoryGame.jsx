@@ -3,6 +3,12 @@ import './CSS/MemoryGame.css';
 import { IconButton } from '@mui/material';
 import { styled } from '@mui/system';
 import SosIcon from '@mui/icons-material/Sos';
+import KeyboardIcon from '@mui/icons-material/Keyboard';
+
+
+import HelpSection from "./HelpSection";
+import ShortcutsSection from "./ShortcutsSection";
+
 
 const MemoryGame = () => {
   const AnimatedIconButton = styled(IconButton)`
@@ -16,6 +22,8 @@ const MemoryGame = () => {
     }
   `;
 
+
+
   const [cards, setCards] = useState([]);
   const [flippedCards, setFlippedCards] = useState([]);
   const [matchedCards, setMatchedCards] = useState([]);
@@ -24,6 +32,8 @@ const MemoryGame = () => {
   const [difficulty, setDifficulty] = useState("button");
   const [showResult, setShowResult] = useState(false);
   const [showHelp, setShowHelp] = useState(false);
+  const [shortcutsPressed, setShortcutsPressed] = useState(false);
+
 
   const shuffleCards = array => {
     return array.sort(() => Math.random() - 0.5);
@@ -82,7 +92,12 @@ const MemoryGame = () => {
     }
   };
 
+  const showShortcuts = () => {
+    setShortcutsPressed(prevState => !prevState);
+  }
+
   const toggleHelp = () => {
+    
     setShowHelp(!showHelp);
   };
 
@@ -133,8 +148,7 @@ const MemoryGame = () => {
       tabIndex="0" 
       onKeyDown={handleKeyPress}
       role="application" 
-      aria-label="Juego de Memoria">
-      {/* <h1>Juego de Memoria</h1> */}
+      aria-label="Relaciona a cada animal con su huella">
       <h2>Relaciona a cada animal con su huella</h2>
       <div className="controls">
         <label>
@@ -157,6 +171,10 @@ const MemoryGame = () => {
           <SosIcon />
         </AnimatedIconButton>
 
+        <AnimatedIconButton className='helpmont' title="Atajos de teclado" role="img" onClick={showShortcuts}>
+                        <KeyboardIcon /> 
+        </AnimatedIconButton>  
+
         <button tabIndex="0"
                     style={{ marginTop : 35}}
             onClick={handleResetGame} 
@@ -166,26 +184,11 @@ const MemoryGame = () => {
       </div>
 
       {showHelp && (
-        <div 
-          tabIndex="0" 
-          className="resultmont position-absolute top-50 start-50 translate-middle bg-white rounded p-3 z-1 border border-dark"
-          role="dialog" 
-          aria-labelledby="helpTitle"
-          aria-describedby="helpDescription">
-          <h2 id="helpTitle" style={{fontSize:'calc(20px + (30 - 20) * ((100vmin - 350px) / (1080 - 350)))'}}>Ayuda</h2>
-          <p id="helpDescription" style={{ whiteSpace: 'normal' }}>En este juego de memoria, empareja imágenes de seres vivos con sus huellas. El color del borde de cada huella coincide con el color del borde del animal asociado. Si eliges el modo fácil podrás voltear las cartas sin tiempo límite con el botón <span style={{ fontWeight: 'bold' }}>Volver a Intentar</span>.</p>
-          <h6> Atajos: </h6>
-      <img tabIndex="0"  src="/Mountain/atajosmont.png"
-            style={{ width: '100%', maxWidth: '600px', height: 'auto' }}
-            alt="Atajos: Con los números 1-8 del teclado se eligen las cartas y con R puedes girarlas en el modo fácil." />
-          <button 
-            tabIndex="0" 
-            className='custom-button m-2' 
-            onClick={cancelGame}
-            aria-label="Volver al juego">Volver al juego</button>
-        </div>
+       <HelpSection  cancelGame={cancelGame} />
       )}
-
+      {(shortcutsPressed) && (
+                    <ShortcutsSection  showShortcuts={showShortcuts} />
+      )}
       
 
       <div className="cards-grid">

@@ -47,13 +47,10 @@
 #ayudaLogoStart{
     display: flex;
     justify-content: end;
-    cursor: pointer;
+    
 }
 
-#ayudaLogoStart img{
-    width: 60px;
-    height: 50px;
-}
+
 
 #webLogoStart{
     width: calc(30px + (80 - 30) * ((100vmin - 350px) / (1080 - 350)));

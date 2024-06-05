@@ -244,3 +244,7 @@
     max-width: 100%;
     height: auto;
 }
+
+#shortcutsContainer{
+    width: 90%;
+}

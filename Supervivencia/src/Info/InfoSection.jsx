@@ -35,7 +35,7 @@ function InfoSection() {
             </div>
         </div>
         <div className='px-2 pb-3'>
-            <img id="APNDLOGO" className='"position-absolute bottom-0 end-0"' src={APNDLogo}></img> <span style={{ fontSize: 'calc(10px + (14 - 10) * ((100vmin - 350px) / (1080 - 350)))'}}>2024 - APND Team</span>
+            <img id="APNDLOGO" className='"position-absolute bottom-0 end-0"' alt='Logo del equipo APND' src={APNDLogo}></img> <span style={{ fontSize: 'calc(10px + (14 - 10) * ((100vmin - 350px) / (1080 - 350)))'}}>2024 - APND Team</span>
         </div>
     </div>
     )
