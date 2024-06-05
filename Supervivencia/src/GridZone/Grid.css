@@ -35,6 +35,11 @@
   justify-content: center;
   flex: 1;
   flex-shrink: 1;
+  font-family: 'Noto_Serif_B', NotoSerifKR-Black
+}
+
+#sobrevive{
+  font-family: 'Noto_Serif_B', NotoSerifKR-Black
 }
 
 .gridCard a {
@@ -84,6 +89,7 @@
   max-width: 32vh; /* Tamaño más grande fuera de la media query */
   aspect-ratio: 1;
   margin-bottom: 2%;
+  cursor: pointer;
 }
 
 .fogata img {

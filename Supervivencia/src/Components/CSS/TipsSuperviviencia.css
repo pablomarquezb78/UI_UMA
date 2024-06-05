@@ -49,6 +49,7 @@
     text-align: center;
     color: #2c3e50;
     font-size: calc(25px + (40 - 25) * ((100vmin - 350px) / (1080 - 350)));
+    font-weight: bold;
 
 }
 

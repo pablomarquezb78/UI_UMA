@@ -38,7 +38,7 @@ function GridZone() {
             <div className='gridSection'>
                 <GridCard nameVideo='desierto' texto='DESIERTO' linkTo='desert' />
                 <article className='gridCard sobrevive'>
-                    <h1>sobrevive.</h1>
+                    <h1 id='sobrevive'>sobrevive.</h1>
                     <div className='fogata'>
                         <img hidden={isFire !== 2} src={Smoke} alt="Smoke" />
                         <img hidden={isFire !== 1} onClick={overFireHandler} src={hogueraPrendida} alt="Hoguera Prendida" />

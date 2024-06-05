@@ -11,10 +11,11 @@
 .biomeStartTextHeader h1 {
     font-size: calc(30px + (100 - 30) * ((100vmin - 350px) / (1080 - 350)));
     text-align: center;
+    font-family: 'Noto_Serif_B', NotoSerifKR-Black
 }
 
 .biomeStartTextHeader footer {
-    font-size: calc(12px + (17 - 12) * ((100vmin - 350px) / (1080 - 350)));
+    font-size: calc(17px + (22 - 17) * ((100vmin - 350px) / (1080 - 350)));
     font-style: italic;
     text-align: center;
 }
