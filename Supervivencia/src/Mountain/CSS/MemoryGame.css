@@ -36,7 +36,7 @@
     display: flex;
     justify-content: center; /* Cambiado a "center" para centrar los elementos */
     align-items: center;
-    gap: 10%; /* Agregado para establecer un espacio entre los elementos */
+    gap: 5%; /* Agregado para establecer un espacio entre los elementos */
   }
   .memory-game .card-group {
     margin-bottom: 20px; /* Espacio entre las filas de cartas */
@@ -100,3 +100,38 @@
       margin: 1px; /* Ajusta el valor según sea necesario */
     }
   }
+
+
+  #bagCloseHelp{
+    font-size:  calc(10px + (20 - 10) * ((100vmin - 350px) / (1080 - 350)));
+  }
+
+  
+  @media screen and (max-width: 600px) {
+  
+    #completeGameSectionHelp{
+      height: 80%;
+      bottom: 5%;
+  }
+
+  .memory-game .controls {
+    display: flex;
+    justify-content: center; /* Cambiado a "center" para centrar los elementos */
+    align-items: center;
+    gap: 2%; /* Agregado para establecer un espacio entre los elementos */
+  }
+
+  }
+
+#completeGameSectionHelp{
+  width: 85%;
+  bottom: 20%;
+  height: 60%; 
+
+  background: rgba(165, 165, 165, 0.1);
+  backdrop-filter: blur(7.5px);
+  -webkit-backdrop-filter: blur(7.5px);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.18);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
