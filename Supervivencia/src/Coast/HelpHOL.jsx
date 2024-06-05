@@ -9,7 +9,7 @@ function HelpHOL({helpHandler}){
     });
 
     return(
-        <div className="position-absolute z-1 bg-white rounded p-1 border border-black w-75 d-flex flex-column justify-content-center align-items-center top-50 start-50 translate-middle" style={{maxWidth: '600px', height: '90%'}}>
+        <div className="position-absolute z-1 bg-white rounded p-1 border border-black appear-animation w-75 d-flex flex-column justify-content-center align-items-center top-50 start-50 translate-middle" style={{maxWidth: '600px', height: '90%'}}>
             <span tabIndex='0' ref={ref1} style={{ fontSize: fontSize1, height: '10%', width: '100%', letterSpacing: '1px', lineHeight: '1.2', fontWeight: 'bold'}}>
                 Higher or Lower   
             </span>

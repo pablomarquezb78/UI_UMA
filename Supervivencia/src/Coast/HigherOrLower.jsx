@@ -19,7 +19,7 @@ function HigherLowerGame() {
 
     .MuiSvgIcon-root {
         width: calc(22px + (50 - 22) * ((100vmin - 350px) / (1080 - 350)));
-        height: calc(22px + (50 - 22) * ((100vmin - 350px) / (1080 - 350)));
+        height: auto;
     }
     `;
 
@@ -176,8 +176,8 @@ function HigherLowerGame() {
                 <h2 className='tituloHOL'>Higher or Lower</h2>
                 <h2 className='tituloHOL'>¿Cuál es más letal para el humano 💀?</h2>
             </div>
-            <AnimatedIconButton title="Atajos de teclado" aria-label='Atajos del juego' aria-hidden='false' className={`position-absolute ${!showResult ? '' : 'esconderBoton'}`} id='keyboardHOL' style={{ right: '0', top: '70%', transform: 'translateY(-50%)', marginRight: '1%' }} onClick={showShortcuts}><KeyboardIcon /></AnimatedIconButton>
-            <AnimatedIconButton title="Ayuda para el juego" className={`sosHOL position-absolute ${!showResult ? '' : 'esconderBoton'}`} aria-label='Ayuda para el juego' aria-hidden='false' id='sosHOL' style={{ left: '0', top: '70%', transform: 'translateY(-50%)', marginLeft: '1%'}} onClick={() => { helpHandler() }}><SosIcon/></AnimatedIconButton>
+            <AnimatedIconButton title="Atajos de teclado" aria-label='Atajos del juego' aria-hidden='false' className={`position-absolute ${!showResult ? '' : 'esconderBoton'}`} id='keyboardHOL' onClick={showShortcuts}><KeyboardIcon /></AnimatedIconButton>
+            <AnimatedIconButton title="Ayuda para el juego" aria-label='Ayuda para el juego' aria-hidden='false' className={`position-absolute ${!showResult ? '' : 'esconderBoton'}`}  id='sosHOL' onClick={helpHandler}><SosIcon/></AnimatedIconButton>
         </div>
             <section className='imagenesHOL position-relative d-flex justify-content-center align-items-center'>
                 {needHelp && (<HelpHOL helpHandler={helpHandler}/>)}
