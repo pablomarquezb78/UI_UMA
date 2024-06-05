@@ -1,6 +1,5 @@
 import React from "react";
 import './CSS/MemoryGame.css';
-import atajos from '../../public/Desert/DesertImages/atajosdesert.png'
 
 function ShortcutsSection({ showShortcuts }) {
     return (

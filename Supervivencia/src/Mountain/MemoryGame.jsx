@@ -97,6 +97,7 @@ const MemoryGame = () => {
   }
 
   const toggleHelp = () => {
+    
     setShowHelp(!showHelp);
   };
 
@@ -147,7 +148,7 @@ const MemoryGame = () => {
       tabIndex="0" 
       onKeyDown={handleKeyPress}
       role="application" 
-      aria-label="Juego de Memoria">
+      aria-label="Relaciona a cada animal con su huella">
       <h2>Relaciona a cada animal con su huella</h2>
       <div className="controls">
         <label>

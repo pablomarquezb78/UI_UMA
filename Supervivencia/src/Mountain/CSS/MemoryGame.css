@@ -105,7 +105,12 @@
   #bagCloseHelp{
     font-size:  calc(10px + (20 - 10) * ((100vmin - 350px) / (1080 - 350)));
   }
-
+/* MemoryGame.css */
+  #bagCloseHelp:focus {
+    outline: none; /* Elimina el borde por defecto del navegador */
+    border: 2px solid #ff6347; /* Define un borde más grueso y de un color llamativo */
+    box-shadow: 0 0 10px #ff6347; /* Añade un efecto de sombra para hacerlo más visible */
+  }
   
   @media screen and (max-width: 600px) {
   
