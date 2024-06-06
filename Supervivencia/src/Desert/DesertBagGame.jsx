@@ -22,7 +22,7 @@ function DesertBagGame() {
         color: disabled ? 'gray' : 'black',
         pointerEvents: disabled ? 'none' : 'auto',
         '&:hover': {
-            color: disabled ? 'gray' : '',
+            color: disabled ? 'gray' : 'white',
         },
         '.MuiSvgIcon-root': {
             width: 'calc(30px + (80 - 30) * ((100vmin - 350px) / (1080 - 350)))',
@@ -130,13 +130,13 @@ function DesertBagGame() {
             <div id="completeGameSectionHelp" className="d-flex flex-column position-absolute start-50 translate-middle-x">
                 <div id="resultDisplay" className="d-flex justify-content-around mt-2">
                     <h2 id="bagGameTitle" className="text-center text-white d-flex align-items-center letter-spacing-1 line-height-1-2">¡Prepara la mochila para sobrevivir!</h2>
-                    <AnimatedIconButton title="Reiniciar juego" className={`${(helpPressed || itemList.length === 8 || shortcutsPressed) ? "esconderBoton" : ""}`}  role="img" onClick={restartGame}>
+                    <AnimatedIconButton disableRipple={true} title="Reiniciar juego" className={`${(helpPressed || itemList.length === 8 || shortcutsPressed) ? "esconderBoton" : ""}`}  onClick={restartGame}>
                         <RestartAltIcon />
                     </AnimatedIconButton>
-                    <AnimatedIconButton title="Ayuda del juego" className={`${(helpPressed || itemList.length === 8 || shortcutsPressed) ? "esconderBoton" : ""}`} role="img" onClick={showHelp}>
+                    <AnimatedIconButton disableRipple={true} title="Ayuda del juego" className={`${(helpPressed || itemList.length === 8 || shortcutsPressed) ? "esconderBoton" : ""}`} onClick={showHelp}>
                         <SosIcon />
                     </AnimatedIconButton>
-                    <AnimatedIconButton title="Atajos de teclado" className={`${(helpPressed || itemList.length === 8 || shortcutsPressed) ? "esconderBoton" : ""}`} role="img" onClick={showShortcuts}>
+                    <AnimatedIconButton disableRipple={true} title="Atajos de teclado" className={`${(helpPressed || itemList.length === 8 || shortcutsPressed) ? "esconderBoton" : ""}`} onClick={showShortcuts}>
                         <KeyboardIcon />
                     </AnimatedIconButton>
                 </div>
@@ -175,11 +175,11 @@ function DesertBagGame() {
                             />
                         </div>
                         <div id="bagButtonContainer" className="d-flex justify-content-center align-items-center">
-                            <AnimatedIconButton title="Objeto anterior" role="img"
+                            <AnimatedIconButton title="Objeto anterior" 
                             onClick={() => handleButtonClick(prevImage)} disabled={cooldown}><NavigateBeforeIcon /></AnimatedIconButton>
-                            <AnimatedIconButton  title="Añadir objeto a la mochila" role="img"
+                            <AnimatedIconButton  title="Añadir objeto a la mochila"
                             onClick={() => handleButtonClick(includeItem)} disabled={cooldown}><AddIcon /></AnimatedIconButton>
-                            <AnimatedIconButton title="Objeto siguiente" role="img"
+                            <AnimatedIconButton title="Objeto siguiente" 
                              onClick={() => handleButtonClick(nextImage)} disabled={cooldown}><NavigateNextIcon /></AnimatedIconButton>
                         </div>
                     </div>

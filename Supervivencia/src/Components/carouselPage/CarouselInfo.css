@@ -76,7 +76,7 @@ font-size: calc(20px + (60 - 20) * ((100vmin - 350px) / (1080 - 350)));
 
 .tituloCarouselInfo.Desert {
 
-background: #F4A460!important;
+background:  #A0522D!important;
 
 backdrop-filter: blur( 7.5px );
 -webkit-backdrop-filter: blur( 7.5px );
@@ -142,7 +142,7 @@ font-size: calc(20px + (60 - 20) * ((100vmin - 350px) / (1080 - 350)));
 
 .tituloCarouselInfo.Jungle {
 
-background: rgb(205, 220, 57)!important;
+background: #556B2F!important;
 
 backdrop-filter: blur( 7.5px );
 -webkit-backdrop-filter: blur( 7.5px );
