@@ -6,9 +6,10 @@ import CoastCarousel from '../Components/carouselPage/CarouselInfo.jsx';
 import coastAnimals from '/public/Coast/animalesCosta.json';
 import coastPlants from '/public/Coast/plantasCosta.json';
 
+
 import {useRef} from 'react';
-import '../CSS/main.css'
-import '../CSS/Start.css'
+import '../CSS/main.css';
+import '../CSS/Start.css';
 
 function CoastMain(){
 
