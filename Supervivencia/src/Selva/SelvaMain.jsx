@@ -3,7 +3,7 @@ import { useRef } from 'react';
 import GridInfo from '../Info/InfoSection.jsx';
 import '../CSS/main.css';
 import '../CSS/Start.css';
-import '../Components/CSS/TipsSuperviviencia.css';
+import '../Components/CSS/TipsSupervivencia.css';
 import TinderGame from './TinderGame.jsx';
 import SelvaStart from './SelvaStart.jsx';
 import junglePlants from '../../public/Selva/alimentos-veneno.json';
@@ -30,7 +30,7 @@ function SelvaMain() {
                 </div>
 
                 <div className='sliderItem sliderTips'>
-                    <article className='tipsSuperviviencia'>
+                    <article className='tipsSupervivencia'>
                         <h1>Tips de supervivencia en la Jungla:</h1>
                         <h2>Prepárate adecuadamente:</h2>
                         <p>
@@ -75,7 +75,7 @@ function SelvaMain() {
                 </div>
 
                 <div className='sliderItem sliderTips'>
-                    <article className='tipsSuperviviencia tipsSuperviviencia2'>
+                    <article className='tipsSupervivencia tipsSupervivencia2'>
                         <h2>Conoce las plantas comestibles y medicinales:</h2>
                         <p>
                             Aprende a identificar las plantas que puedes comer y aquellas que tienen propiedades medicinales. 
