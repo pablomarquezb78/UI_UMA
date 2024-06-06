@@ -1,8 +1,6 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import Index from './Index.jsx';
-import Prueba from './Prueba.jsx';
-import MemoryGame from './Mountain/MemoryGame.jsx';
 import ForestMain from './Forest/ForestMain';
 import MountainMain from './Mountain/MountainMain.jsx';
 import DesertMain from './Desert/DesertMain.jsx';
@@ -21,14 +19,11 @@ function App() {
                 <Route path='/desert' element={<DesertMain/>}/>
                 <Route path='/coast' element={<CoastMain/>}/>
                 <Route path='/jungle' element={<SelvaMain/>}/>
-                <Route path="/prueba" element={<Prueba/>}/>
-                <Route path="/memory" element={<MemoryGame/>}/>
                 <Route path="/FAQ" element={<FaqPage/>}/>
                 <Route path="/AboutUs" element={<AboutUs/>}/>
                 <Route path='/UnderConstruction' element={<UnderConstruction/>}/>
             </Routes>
     );
 };
-
 
 export default App;
