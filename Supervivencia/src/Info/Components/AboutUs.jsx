@@ -11,7 +11,7 @@ function AboutUs() {
     });
 
     return (
-        <div id="container" className="position-relative d-flex flex-column align-items-center justify-content-center mx-auto">
+        <div id="AboutUsContainer" className="position-relative d-flex flex-column align-items-center justify-content-center mx-auto">
             <div id="titleContainer" className="justify-content-center align-items-center text-center">
                 <h1 className="fontControlAboutUs">Sobre Nosotros</h1>
             </div>
@@ -24,8 +24,8 @@ function AboutUs() {
                      posible. Esperemos que os guste :)
                 </p>
             </div>
-            <div id="imgContainer" className="d-flex justify-content-center align-items-center">
-                <img src={APND} alt="APND Logo" className="fontControlAboutUsAPND"/>
+            <div id="imgAboutUsContainer" className="d-flex justify-content-center align-items-center">
+                <img src={APND} alt="APND Logo" className="imgControlAboutUsAPND"/>
             </div>
         </div>
     );

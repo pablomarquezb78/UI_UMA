@@ -32,7 +32,7 @@ function DesertMain(){
                         <h2>Prepárate adecuadamente:</h2>
                         <p>
                             Antes de adentrarte en el desierto, lleva equipo esencial 
-                            como un sombrero de ala ancha, gafas de sol, una brújula, un mapa, 
+                            como ropa adecuada, gafas de sol, una brújula, un mapa, 
                             un botiquín de primeros auxilios, protector solar y una buena cantidad de agua y alimentos no perecederos.
                         </p>
 

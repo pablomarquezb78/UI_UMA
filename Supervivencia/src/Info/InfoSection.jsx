@@ -22,8 +22,8 @@ function InfoSection() {
                 <a className='fontControlInfoSection text-decoration-none' tabIndex={0}>Correo: APND@gmail.com</a><br/>
                 <a className='fontControlInfoSection text-decoration-none' tabIndex={0}>Teléfono: 123-456-789</a><br/>
                 <div id='socialNetWorkDisplayer' className='d-flex justify-content-around'>
-                    <InstagramIcon tabIndex={0}/>
-                    <XIcon tabIndex={0}/>
+                    <Link to="/UnderConstruction"><InstagramIcon/></Link>
+                    <Link to="/UnderConstruction"><XIcon/></Link>
                 </div>
             </div>
             <div className='px-1'>

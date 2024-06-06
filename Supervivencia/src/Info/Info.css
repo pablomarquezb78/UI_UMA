@@ -26,22 +26,22 @@
     height: auto;
 }
 
-#imgContainer{
+#imgAboutUsContainer{
     height: auto;
 }
 
 /* Fin Containers*/ 
 
-#imgContainer img{
+#imgAboutUsContainer img{
     object-fit: contain;
-    height: auto;
+    height: auto; 
 }
 
 .fontControlAboutUs{
     font-size: calc(20px + (64 - 20) * ((100vmin - 350px) / (1080 - 350)));
 } 
 
-.fontControlAboutUsAPND{
+.imgControlAboutUsAPND{
     max-width: calc(250px + (550 - 250) * ((100vmin - 350px) / (1080 - 350)));
 } 
 
@@ -53,7 +53,7 @@
     font-size: calc(20px + (30 - 20) * ((100vmin - 350px) / (1080 - 350)));
 }
 
-#container{
+#AboutUsContainer{
     width: 70%;
     height: 90%;
     top: 10%;
@@ -67,6 +67,14 @@
     width: 75%;
 }
 
+}
+
+@media screen and (max-height: 540px) {
+
+    #imgAboutUsContainer img{
+        max-width: 150px;
+    }
+    
 }
 
 #APNDLOGO{
