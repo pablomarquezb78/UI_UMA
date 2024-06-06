@@ -5,6 +5,7 @@ import InfoSection from './Info/InfoSection.jsx'
 import {useRef} from 'react';
 import './CSS/main.css'
 import './CSS/Start.css'
+import './Components/CSS/Slider.css'
 
 function Index(){
 
