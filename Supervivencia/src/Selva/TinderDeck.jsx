@@ -72,7 +72,6 @@ function TinderDeck({ numberOfCard }) {
     }, []);
 
     const restartGame = () => {
-        console.log(12)
         setShowCard([1, 0]);
         setIsCorrect(neutro);
         setDecisionAccesbilityTool('');
@@ -122,8 +121,8 @@ function TinderDeck({ numberOfCard }) {
 
         document.removeEventListener('mousemove', moveDrag);
         document.removeEventListener('mouseup', endDrag);
-        document.removeEventListener('touchmove', moveDrag, { passive: true });
-        document.removeEventListener('touchend', endDrag, { passive: true });
+        document.removeEventListener('touchmove', moveDrag);
+        document.removeEventListener('touchend', endDrag);
         
         
         cardDecision(actualCard);
@@ -142,7 +141,6 @@ function TinderDeck({ numberOfCard }) {
 
         if (Math.abs(deltaPosition.current) > limit) {
             const positive = deltaPosition.current >= 0;
-            let decision;
 
             actualCard.classList.add(positive ? 'right' : 'left');
 
@@ -190,19 +188,36 @@ function TinderDeck({ numberOfCard }) {
         }
     };
 
-    const startDrag = (event) => {
-        if (!isAnimated.current) {
-            isAnimated.current = true;
-            setIsShake('');
-            const actualCard = event.currentTarget;
-            const startPosition = event.pageX ?? event.touches[0].pageX;
-            actualCard.style.cursor = 'pointer';
-            document.addEventListener('mousemove', (moveEvent) => moveDrag(actualCard, startPosition, moveEvent));
-            document.addEventListener('mouseup', (upEvent) => endDrag(actualCard, upEvent));
-            document.addEventListener('touchmove', (moveEvent) => moveDrag(actualCard, startPosition, moveEvent), { passive: true });
-            document.addEventListener('touchend', (upEvent) => endDrag(actualCard, upEvent), { passive: true });
-        }
-    };
+        const startDrag = (event) => {
+            if (!isAnimated.current) {
+                isAnimated.current = true;
+                setIsShake('');
+                const actualCard = event.currentTarget;
+                const startPosition = event.pageX ?? event.touches[0].pageX;
+                actualCard.style.cursor = 'pointer';
+                
+                const moveHandler = (moveEvent) => moveDrag(actualCard, startPosition, moveEvent);
+                const endHandler = (upEvent) => {
+                    endDrag(actualCard, upEvent);
+                    document.removeEventListener('mousemove', moveHandler);
+                    document.removeEventListener('mouseup', endHandler);
+                };
+                
+                document.addEventListener('mousemove', moveHandler);
+                document.addEventListener('mouseup', endHandler);
+        
+                const touchMoveHandler = (moveEvent) => moveDrag(actualCard, startPosition, moveEvent);
+                const touchEndHandler = (upEvent) => {
+                    endDrag(actualCard, upEvent);
+                    document.removeEventListener('touchmove', touchMoveHandler);
+                    document.removeEventListener('touchend', touchEndHandler);
+                };
+                
+                document.addEventListener('touchmove', touchMoveHandler, { passive: true });
+                document.addEventListener('touchend', touchEndHandler, { passive: true });
+            }
+        };
+        
 
     return (
         <div className="allTinderCards">

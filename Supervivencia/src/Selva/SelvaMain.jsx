@@ -76,6 +76,8 @@ function SelvaMain() {
 
                 <div className='sliderItem sliderTips'>
                     <article className='tipsSupervivencia tipsSupervivencia2'>
+                        
+                        
                         <h2>Conoce las plantas comestibles y medicinales:</h2>
                         <p>
                             Aprende a identificar las plantas que puedes comer y aquellas que tienen propiedades medicinales. 
@@ -92,13 +94,6 @@ function SelvaMain() {
                         <p>
                             La jungla alberga muchos animales peligrosos, como serpientes, jaguares y arañas. 
                             Mantén tu distancia y nunca molestes a los animales. Aprende a identificar sus rastros y comportamientos.
-                        </p>
-
-                        <h2>Mantén la calma y ten un plan de emergencia:</h2>
-                        <p>
-                            En situaciones de emergencia, es crucial mantener la calma y pensar con claridad. 
-                            Ten un plan de emergencia y comunica tus planes a alguien antes de partir. 
-                            Si te pierdes, quédate en un lugar seguro y trata de señalizar tu ubicación para que los rescatistas puedan encontrarte.
                         </p>
 
                         <h2>Ten cuidado con la fauna:</h2>

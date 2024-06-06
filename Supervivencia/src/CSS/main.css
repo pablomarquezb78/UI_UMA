@@ -77,4 +77,8 @@ footer .sliderItem{
     background-color: rgba(0, 0, 0, 0.8);
   }
 
+
+  video{
+      pointer-events: none;
+  }
   
