@@ -119,6 +119,8 @@ function TinderDeck({ numberOfCard }) {
         actualCard.style.transform = 'none';
         actualCard.style.cursor = 'grab';
 
+        document.body.style.overflow = '';
+
         document.removeEventListener('mousemove', moveDrag);
         document.removeEventListener('mouseup', endDrag);
         document.removeEventListener('touchmove', moveDrag);
@@ -166,6 +168,7 @@ function TinderDeck({ numberOfCard }) {
     };
 
     const moveDrag = (actualCard, startPosition, moveEvent) => {
+              
         const currentPosition = moveEvent.pageX ?? moveEvent.touches[0].pageX;
         deltaPosition.current = currentPosition - startPosition;
 
@@ -196,6 +199,8 @@ function TinderDeck({ numberOfCard }) {
                 const startPosition = event.pageX ?? event.touches[0].pageX;
                 actualCard.style.cursor = 'pointer';
                 
+                document.body.style.overflow = 'hidden';
+
                 const moveHandler = (moveEvent) => moveDrag(actualCard, startPosition, moveEvent);
                 const endHandler = (upEvent) => {
                     endDrag(actualCard, upEvent);
