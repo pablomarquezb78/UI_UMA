@@ -30,6 +30,7 @@ const MemoryGame = () => {
   const [showResult, setShowResult] = useState(false);
   const [showHelp, setShowHelp] = useState(false);
   const [shortcutsPressed, setShortcutsPressed] = useState(false);
+  const [announcement, setAnnouncement] = useState('');
 
 
   const shuffleCards = array => {
@@ -78,9 +79,13 @@ const MemoryGame = () => {
           setShowResult(true);
         }
       } else {
-        if (difficulty === "button") {
+        if (difficulty === "facil") {
           setShouldFlipIncorrect(true);
-        } else if (difficulty === "time") {
+          setAnnouncement('Seleccionaste modo facil');
+
+        } else if (difficulty === "dificil") {
+          setAnnouncement('Seleccionaste modo dificil');
+
           setTimeout(() => {
             setFlippedCards([]);
           }, 1500);
@@ -90,20 +95,27 @@ const MemoryGame = () => {
   };
 
   const showShortcuts = () => {
+    setAnnouncement('Abriste Seccion Atajos');
+
     setShortcutsPressed(prevState => !prevState);
   }
 
   const toggleHelp = () => {
-    
+    setAnnouncement('Abriste Seccion Ayuda');
+
     setShowHelp(!showHelp);
   };
 
   const handleResetIncorrectCards = () => {
+    setAnnouncement('Volteaste las 2 cartas incorrectas');
+
     setFlippedCards([]);
     setShouldFlipIncorrect(false);
   };
 
   const cancelGame = () => {
+    setAnnouncement('Volviste a la ventana de juego');
+
     setShowHelp(false);
   };
 
@@ -127,6 +139,8 @@ const MemoryGame = () => {
   };
 
   const handleResetGame = () => {
+    setAnnouncement('El juego ha sido reiniciado');
+
     setMoves(0);
     setMatchedCards([]);
     setFlippedCards([]);
@@ -214,6 +228,10 @@ const MemoryGame = () => {
               </div>
             ))}
       </div>
+
+      <span aria-live="assertive" aria-atomic="true" className="sr-only" id="anunciosHOL">
+                {announcement}
+      </span>
 
       <div style={{ visibility: shouldFlipIncorrect ? 'visible' : 'hidden' }}>
         <button onClick={handleResetIncorrectCards} style={{ height: 'auto'}} className="btn btn-primary"> 
