@@ -167,6 +167,7 @@
 
 #bagCloseHelp{
     font-size:  calc(10px + (20 - 10) * ((100vmin - 350px) / (1080 - 350)));
+    max-height: 40px;
 }
 
 #bagCapacityDisplay{
@@ -216,6 +217,10 @@
     #completeGameSectionHelp{
         height: 80%;
         bottom: 5%;
+    }
+
+    #bagCloseHelp{
+        max-height: 30px;
     }
 
 }
