@@ -173,8 +173,8 @@ function HigherLowerGame() {
         <section className='gameHOL d-flex flex-column justify-content-center align-items-center text-center vh-100 vw-100'>
             <div tabIndex='0' id='cabeceraHOL' className='position-relative w-100 d-flex justify-content-center align-items-center'>
             <div>
-                <h2 className='tituloHOL'>Higher or Lower</h2>
-                <h2 className='tituloHOL'>¿Cuál es más letal para el humano 💀?</h2>
+                <h1 className='tituloHOL'>Higher or Lower</h1>
+                <h2 className='descripcionHOL'>¿Cuál es más letal para el humano 💀?</h2>
             </div>
             <AnimatedIconButton title="Atajos de teclado" aria-label='Atajos de teclado' aria-hidden='false' className={`position-absolute ${!showResult ? '' : 'esconderBoton'}`} id='keyboardHOL' onClick={showShortcuts}><KeyboardIcon /></AnimatedIconButton>
             <AnimatedIconButton title="Ayuda para el juego" aria-label='Ayuda para el juego' aria-hidden='false' className={`position-absolute ${!showResult ? '' : 'esconderBoton'}`}  id='sosHOL' onClick={helpHandler}><SosIcon/></AnimatedIconButton>
@@ -191,7 +191,7 @@ function HigherLowerGame() {
                 <div className='imagenHOL position-relative'>
                     <img alt={data.randomImage(imageArray[rightCardIndex])?.imgAlt} className='img-fluid containerHOL' src={data.randomImage(imageArray[rightCardIndex])?.img}/>
                     <div id='informacion_imagen_d'  className='position-absolute text-center'>
-                        <h3 tabIndex='0' className='card-text'> {data.randomImage(imageArray[rightCardIndex])?.cardTitle}: {showDeaths ? data.randomImage(imageArray[rightCardIndex])?.mortalidad : '?'} muertes al año </h3>
+                        <h2 tabIndex='0' className='card-text'> {data.randomImage(imageArray[rightCardIndex])?.cardTitle}: {showDeaths ? data.randomImage(imageArray[rightCardIndex])?.mortalidad : '?'} muertes al año </h2>
                     </div>
                     <div className='botonesHOL position-absolute'>
                         {buttonsVisible && (
@@ -217,7 +217,7 @@ function HigherLowerGame() {
             </section>
             <div className="d-flex justify-content-center align-items-center">
                 <button className={`custom-buttonHOL m-3 ${!showResult && !crossAnimation && !tickAnimation ? '' : 'esconderBoton'}`} onClick={resetGame}>Reiniciar</button>
-                <h3 tabIndex='0' style={{fontSize:'calc(15px + (30 - 15) * ((100vmin - 350px) / (1080 - 350)))'}} className={`${showAnimation ? "puntuacionHOL" : ""}`}>Puntuación: {counter}</h3>
+                <h2 tabIndex='0' style={{fontSize:'calc(10px + (30 - 10) * ((100vmin - 350px) / (1080 - 350)))'}} className={`${showAnimation ? "puntuacionHOL" : ""}`}>Puntuación: {counter}</h2>
             </div>
         </section>
     );
