@@ -3,7 +3,7 @@
 
 @font-face {
     font-family: Noto_Serif_B;
-    src: url('../../public/Fonts/Noto_Serif_KR/NotoSerifKR-Black.otf');
+    src: url('/Fonts/Noto_Serif_KR/NotoSerifKR-Black.otf');
     /*src: url('../../public/Fonts/Noto_Serif_KR/NotoSerifKR-Bold.otf');
     src: url('../../public/Fonts/Noto_Serif_KR/NotoSerifKR-ExtraLight.otf');
     src: url('../../public/Fonts/Noto_Serif_KR/NotoSerifKR-Light.otf'); */
@@ -15,7 +15,7 @@
 
 @font-face {
     font-family: Noto_Serif_M;
-    src: url('../../public/Fonts/Noto_Serif_KR/NotoSerifKR-Medium.otf');
+    src: url('/Fonts/Noto_Serif_KR/NotoSerifKR-Medium.otf');
 }
 
 /* SECCION DEL VIDEO */

@@ -12,9 +12,9 @@ import TinderCardResut from "./TinderCardResults.jsx";
 
 import ShortcutsSection from '../Components/ShortcutsSection.jsx';
 
-import correcto from '../../public/Selva/FotosAlimentos/correcto.png';
-import incorrecto from '../../public/Selva/FotosAlimentos/incorrecto.png';
-import neutro from '../../public/Selva/FotosAlimentos/neutro.png';
+import correcto from '/Selva/FotosAlimentos/correcto.png';
+import incorrecto from '/Selva/FotosAlimentos/incorrecto.png';
+import neutro from '/Selva/FotosAlimentos/neutro.png';
 
 function TinderDeck({ numberOfCard }) {
     const limit = 200;
