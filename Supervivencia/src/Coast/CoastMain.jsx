@@ -116,7 +116,7 @@ function CoastMain(){
                 </div>
 
                 <div className='sliderItem helpSlider' ref={gridInfoRef}>
-                    <InfoSection scrollToStart={scrollToStart}/>
+                    <InfoSection/>
                 </div>
 
             </main>  
