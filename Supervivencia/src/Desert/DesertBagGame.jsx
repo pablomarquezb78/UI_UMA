@@ -41,21 +41,6 @@ function DesertBagGame() {
     const [shortcutsPressed, setShortcutsPressed] = useState(false);
     const [itemList, setItemList] = useState([...initialItemList]);
     const [cooldown, setCooldown] = useState(false);
-    const [preloadedImages, setPreloadedImages] = useState([]);
-
-    useEffect(() => {
-        // Precargar las imágenes al cargar el componente inicialmente
-        const preloadImages = () => {
-            const images = itemList.map(item => {
-                const img = new Image();
-                img.src = imgPath + item.imagen;
-                return img;
-            });
-            setPreloadedImages(images);
-        };
-
-        preloadImages();
-    }, [itemList]);
 
     useEffect(() => {
         setIndexChanged(true);
@@ -180,14 +165,14 @@ function DesertBagGame() {
                     </div>
                     <div id="itemsContainer" className="h-100 d-flex flex-column align-items-center justify-content-center">
                         <div id="itemImgContainer" className="d-flex justify-content-center w-100">
-                        <img
-                            src={preloadedImages[currentIndex]?.src}
-                            alt={`Imagen de ${itemList[currentIndex].nombre}`}
-                            className={`${isAnimating ? "move-left-scale-animation" : ""} ${(isItemIncluded || indexChanged) ? "appear-animation" : ""} `}
-                            onAnimationEnd={() => {
-                                setIsAnimating(false); // Indica que la animación del objeto ha terminado
-                            }}
-                        />
+                            <img
+                                src={imgPath + itemList[currentIndex].imagen}
+                                alt={`Imagen de ${itemList[currentIndex].nombre}`}
+                                className={`${isAnimating ? "move-left-scale-animation" : ""} ${(isItemIncluded || indexChanged) ? "appear-animation" : ""} `}
+                                onAnimationEnd={() => {
+                                    setIsAnimating(false); // Indica que la animación del objeto ha terminado
+                                }}
+                            />
                         </div>
                         <div id="bagButtonContainer" className="d-flex justify-content-center align-items-center">
                             <AnimatedIconButton title="Objeto anterior" 
