@@ -80,6 +80,7 @@ function HigherLowerGame() {
         setNeedHelp(false);
         setShortcutsPressed(false);
         if (parseInt(data.randomImage(imageArray[leftCardIndex]).mortalidad) <= parseInt(data.randomImage(imageArray[rightCardIndex]).mortalidad)) {
+            setAnnouncement(`${data.randomImage(imageArray[rightCardIndex])?.mortalidad} muertes al año, acertaste`);
             setIsCorrect(1);
             setShowDeaths(true);
             setTickAnimation(true);
@@ -103,7 +104,7 @@ function HigherLowerGame() {
         setNeedHelp(false);
         setShortcutsPressed(false);
         if (parseInt(data.randomImage(imageArray[leftCardIndex]).mortalidad) >= parseInt(data.randomImage(imageArray[rightCardIndex]).mortalidad)) {
-            setAnnouncement('Acertaste');
+            setAnnouncement(`${data.randomImage(imageArray[rightCardIndex])?.mortalidad} muertes al año, acertaste`);
             setIsCorrect(1);
             setShowDeaths(true);
             setTickAnimation(true);
@@ -230,7 +231,7 @@ function HigherLowerGame() {
                 <h3 tabIndex='0' style={{fontSize:'calc(10px + (30 - 10) * ((100vmin - 350px) / (1080 - 350)))'}} className={`${showAnimation ? "puntuacionHOL" : ""}`}>Puntuación: {counter}</h3>
             </div>
             <span aria-live="assertive" aria-atomic="true" className="sr-only" id="anunciosHOL">
-                {`${tickAnimation ? `${data.randomImage(imageArray[rightCardIndex])?.mortalidad} muertes al año` : ''} ${announcement}`}
+                {announcement}
             </span>
         </section>
     );
