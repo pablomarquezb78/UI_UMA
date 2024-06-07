@@ -7,7 +7,7 @@ import KeyboardIcon from '@mui/icons-material/Keyboard';
 
 
 import HelpSection from "./HelpSection";
-import ShortcutsSection from '../Forest/ShortcutsSection.jsx';
+import ShortcutsSection from '../Components/ShortcutsSection.jsx';
 
 
 const MemoryGame = () => {
@@ -200,7 +200,7 @@ const MemoryGame = () => {
        <HelpSection  cancelGame={cancelGame} />
       )}
       {(shortcutsPressed) && (
-                    <ShortcutsSection  showShortcuts={showShortcuts} imagen={"/Mountain/atajosmont.png"} altText={"Atajos: Con los números 1-8 del teclado se eligen las cartas y con R puedes girarlas en el modo fácil."}/>
+                    <ShortcutsSection  showShortcuts={showShortcuts} imagen={"/Mountain/atajosmont.png"} altText={"Atajos: Con los números 1-8 del teclado se eligen las cartas y con R puedes girarlas en el modo fácil."} propButton={"btn btn-dark h-25 mt-4"}/>
       )}
       
 

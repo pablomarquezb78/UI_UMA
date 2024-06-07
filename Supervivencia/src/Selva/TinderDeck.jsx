@@ -10,7 +10,7 @@ import KeyboardIcon from '@mui/icons-material/Keyboard';
 import TinderHelpCard from "./TinderHelpCard.jsx";
 import TinderCardResut from "./TinderCardResults.jsx";
 
-import ShortcutsSection from '../Forest/ShortcutsSection.jsx';
+import ShortcutsSection from '../Components/ShortcutsSection.jsx';
 
 import correcto from '../../public/Selva/FotosAlimentos/correcto.png';
 import incorrecto from '../../public/Selva/FotosAlimentos/incorrecto.png';

@@ -1,6 +1,6 @@
 import React, { useRef, useState, useEffect } from 'react';
 import {useNavigate} from "react-router-dom";
-import ShortcutsSection from './ShortcutsSection';
+import ShortcutsSection from '../Components/ShortcutsSection';
 
 import shortcuts from '/Forest/controlesForestAudioGame.png'
 
@@ -51,7 +51,7 @@ function GameTutorial({backFunction, passFunction}) {
     return(
         <div id='gameZoneCenter'>  
             {shortcutsPressed ? (
-                <ShortcutsSection  imagen={shortcuts} altText={infoShortcuts} showShortcuts={showShortcuts} />
+                <ShortcutsSection  imagen={shortcuts} altText={infoShortcuts} showShortcuts={showShortcuts} propButton={"btn btn-dark h-25 mt-3"} />
             ) : (
                 <div className='container-fluid h-75 w-75' id='gameBox'>
                     <div className='topElement row justify-content-center align-items-center h-25' id='textCenter'>
