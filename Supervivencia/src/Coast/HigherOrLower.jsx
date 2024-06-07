@@ -200,8 +200,8 @@ function HigherLowerGame() {
                 </div>
                 <div className='imagenHOL position-relative'>
                     <img alt={data.randomImage(imageArray[rightCardIndex])?.imgAlt} className='img-fluid containerHOL' src={data.randomImage(imageArray[rightCardIndex])?.img}/>
-                    <div id='informacion_imagen_d'  className='position-absolute text-center'>
-                        <h3 tabIndex='0' className='card-text z-1'> {data.randomImage(imageArray[rightCardIndex])?.cardTitle}: {showDeaths ? data.randomImage(imageArray[rightCardIndex])?.mortalidad : '?'} muertes al año </h3>
+                    <div id='informacion_imagen_d'>
+                        <h3 tabIndex='0' className='card-text'> {data.randomImage(imageArray[rightCardIndex])?.cardTitle}: {showDeaths ? data.randomImage(imageArray[rightCardIndex])?.mortalidad : '?'} muertes al año </h3>
                     </div>
                     <div className='botonesHOL position-absolute'>
                         {buttonsVisible && (
@@ -230,7 +230,7 @@ function HigherLowerGame() {
                 <h3 tabIndex='0' style={{fontSize:'calc(10px + (30 - 10) * ((100vmin - 350px) / (1080 - 350)))'}} className={`${showAnimation ? "puntuacionHOL" : ""}`}>Puntuación: {counter}</h3>
             </div>
             <span aria-live="assertive" aria-atomic="true" className="sr-only" id="anunciosHOL">
-                {`${tickAnimation ? data.randomImage(imageArray[rightCardIndex])?.mortalidad : ''} ${announcement}`}
+                {`${tickAnimation ? `${data.randomImage(imageArray[rightCardIndex])?.mortalidad} muertes al año` : ''} ${announcement}`}
             </span>
         </section>
     );

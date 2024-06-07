@@ -25,6 +25,7 @@
   bottom: 0;
   justify-content: center;
   align-items: center;
+  pointer-events: none;
 }
 
 
@@ -39,6 +40,7 @@
   font-weight: bold; 
   color: black;
   white-space: nowrap;
+  position: absolute;
 }
 
 #informacion_imagen_i {
@@ -93,6 +95,7 @@
   border-radius: 5px;
   color: white;
   cursor: pointer;
+  pointer-events: auto;
 }
 
 .custom-buttonHOL:hover {

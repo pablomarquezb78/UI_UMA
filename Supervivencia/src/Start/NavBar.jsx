@@ -86,7 +86,7 @@ function navBar({ scrollToGridInfo, currentLink}) {
             <div className="navBarItem">
                 {showMenu === 0 && (
                     <AnimatedIconButton title="Menú despliegue navegación" disableRipple={true} onClick={toggleMenu}>
-                        <MenuIcon id="hamburger"  />
+                        <MenuIcon id="hamburger" />
                     </AnimatedIconButton>
                 )}
                 {showMenu === 1 && (
