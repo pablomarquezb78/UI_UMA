@@ -81,7 +81,7 @@ function MountainMain(){
                             A mayor altitud, la radiación solar es más intensa. Usa protector solar, gafas de sol y un sombrero para protegerte de los rayos UV.
                         </p>
 
-                        <h2>Ten cuidado con la fauna⚠️:</h2>
+                        <h2>Ten cuidado con la fauna🐗:</h2>
                         <p>
                             La montaña alberga diversos animales, algunos de los cuales pueden ser peligrosos. Mantén una distancia segura, no alimentes a los animales y guarda tu comida de manera adecuada.
                         </p>

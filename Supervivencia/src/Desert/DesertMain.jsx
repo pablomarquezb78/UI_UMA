@@ -68,7 +68,7 @@ function DesertMain(){
                             La exposición prolongada al sol puede causar quemaduras solares y golpe de calor. Usa protector solar de alto factor de protección, un sombrero y busca sombra durante las horas pico de radiación solar.
                         </p>
 
-                        <h2>Ten cuidado con la fauna⚠️:</h2>
+                        <h2>Ten cuidado con la fauna🦂:</h2>
                         <p>
                             El desierto alberga muchos animales peligrosos, como serpientes, escorpiones y arañas. Mantén tu distancia y nunca molestes a los animales. Aprende a identificar sus rastros y comportamientos.
                         </p>
