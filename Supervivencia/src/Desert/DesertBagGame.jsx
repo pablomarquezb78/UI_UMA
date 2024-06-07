@@ -99,7 +99,7 @@ function DesertBagGame() {
         if (cooldown) return;
         setCooldown(true);
         callback();
-        setTimeout(() => setCooldown(false), 600);
+        setTimeout(() => setCooldown(false), 700);
     };
 
     useEffect(() => {
