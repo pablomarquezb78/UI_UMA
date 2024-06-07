@@ -57,18 +57,17 @@ function ForestMain(){
                             Familiarízate con plantas comestibles locales y técnicas de caza o pesca. 
                             Evita consumir plantas o hongos que no puedas identificar con certeza como seguros.
                         </p>
-                    </article>
-                </div>
-
-                <div className='sliderItem sliderTips'>
-                    <article className='tipsSupervivencia'>
                         <h2>Orientación y navegación🧭:</h2>
                         <p>
                             Saber orientarte es vital para salir del bosque. 
                             Aprende a usar una brújula y un mapa, y conoce técnicas de navegación natural, 
                             como seguir el curso de un río o usar el sol y las estrellas para orientarte.
                         </p>
+                    </article>
+                </div>
 
+                <div className='sliderItem sliderTips'>
+                    <article className='tipsSupervivencia'>
                         <h2>Primeros auxilios básicos🚑:</h2>
                         <p>
                             Lleva un kit de primeros auxilios y conoce cómo tratar cortes, quemaduras, picaduras y otras heridas menores. 
@@ -85,6 +84,23 @@ function ForestMain(){
                         <p>
                             Usa ropa adecuada para el clima del bosque. 
                             Las capas de ropa, un buen calzado y protección contra la lluvia y el sol son esenciales.
+                        </p>
+                        <h2>Planificación y preparación📋:</h2>
+                        <p>
+                            Antes de adentrarte en el bosque, informa a alguien de tu itinerario y el tiempo estimado de tu regreso. 
+                            Lleva contigo un equipo básico de supervivencia y suficiente comida y agua.
+                        </p>
+
+                        <h2>Mantener la calma y la moral alta😊:</h2>
+                        <p>
+                            La actitud mental es crucial en situaciones de supervivencia. 
+                            Mantén la calma, evita el pánico y mantén una actitud positiva para tomar decisiones racionales y conservar energía.
+                        </p>
+
+                        <h2>Manejo de animales salvajes🐻:</h2>
+                        <p>
+                            Conocer el comportamiento de los animales locales y cómo actuar ante un encuentro es vital. 
+                            Si te encuentras con un animal, no corras; en lugar de eso, retrocede lentamente mientras mantienes contacto visual sin parecer amenazante.
                         </p>
                     </article>
                 </div>
