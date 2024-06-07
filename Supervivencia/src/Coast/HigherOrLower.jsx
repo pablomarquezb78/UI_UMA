@@ -6,9 +6,11 @@ import SosIcon from '@mui/icons-material/Sos';
 import KeyboardIcon from '@mui/icons-material/Keyboard';
 import './Coast.css';
 import HelpHOL from './HelpHOL.jsx';
-import ShortcutsSection from './ShortcutsSection.jsx';
+import ShortcutsSection from '../Forest/ShortcutsSection.jsx';
 
 function HigherLowerGame() {
+
+
     const AnimatedIconButton = styled(IconButton)`
     color: black;
 
@@ -193,7 +195,7 @@ function HigherLowerGame() {
         </div>
             <section className='imagenesHOL position-relative d-flex justify-content-center align-items-center'>
                 {needHelp && (<HelpHOL helpHandler={helpHandler}/>)}
-                {shortcutsPressed && (<ShortcutsSection  showShortcuts={showShortcuts}/>)}
+                {shortcutsPressed && (<ShortcutsSection  showShortcuts={showShortcuts} imagen={'/public/Coast/CoastGame/atajosCosta.jpg'} altText={"Atajos: con el 0 puedes reiniciar el juego, con el 1 puedes cancelar, con el 2 puedes pulsar el botón de lower, con el 8 puedes pulsar el botón de higher y con el 9 puedes activar el menu de ayuda SOS"}/>)}
                 <div className='imagenHOL position-relative'>
                     <img alt={data.randomImage(imageArray[leftCardIndex])?.imgAlt} className='img-fluid containerHOL' src={data.randomImage(imageArray[leftCardIndex])?.img}/>
                     <div id='informacion_imagen_i'>

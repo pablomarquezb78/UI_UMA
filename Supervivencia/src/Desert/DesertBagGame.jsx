@@ -14,7 +14,8 @@ import KeyboardIcon from '@mui/icons-material/Keyboard';
 
 import HelpSection from "./HelpSection";
 import ItemInfoContainer from "./ItemInfoContainer";
-import ShortcutsSection from "./ShortcutsSection";
+
+import ShortcutsSection from '../Forest/ShortcutsSection.jsx';
 
 function DesertBagGame() {
 
@@ -150,7 +151,7 @@ function DesertBagGame() {
                     <HelpSection showHelp={showHelp} />
                 )}
                 {(shortcutsPressed) && (
-                    <ShortcutsSection showShortcuts={showShortcuts} />
+                    <ShortcutsSection showShortcuts={showShortcuts} imagen={"../../public/Desert/DesertImages/atajosdesert.png"} altText={"Atajos: con el 0 puedes reiniciar el juego, con el 4 puedes mostrar el objeto anterior, con el 5 puedes incluir el objeto en la mochila, con el 6 puedes mostrar el siguiente objeto y con el 9 puedes activar el menu de ayuda SOS y "}/>
                 )}
                 {itemList.length === 8 && (
                     <div className="position-absolute z-1 bg-white rounded p-3 mb-5 appear-animation w-50 h-50 d-flex flex-column justify-content-center align-items-center top-50 fw-bold

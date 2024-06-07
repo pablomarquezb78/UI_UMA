@@ -10,6 +10,8 @@ import KeyboardIcon from '@mui/icons-material/Keyboard';
 import TinderHelpCard from "./TinderHelpCard.jsx";
 import TinderCardResut from "./TinderCardResults.jsx";
 
+import ShortcutsSection from '../Forest/ShortcutsSection.jsx';
+
 import correcto from '../../public/Selva/FotosAlimentos/correcto.png';
 import incorrecto from '../../public/Selva/FotosAlimentos/incorrecto.png';
 import neutro from '../../public/Selva/FotosAlimentos/neutro.png';
@@ -22,6 +24,8 @@ function TinderDeck({ numberOfCard }) {
     const numberOfCardAux = useRef(numberOfCard);
 
     const [needHelp, setNeedHelp] = useState(false);
+    const [shortcutsPressed, setShortcutsPressed] = useState(false);
+
     const [isCorrect, setIsCorrect] = useState(neutro);
     const [isShake, setIsShake] = useState(undefined);
     const [showCard, setShowCard] = useState([1, 0]);
@@ -82,6 +86,10 @@ function TinderDeck({ numberOfCard }) {
     };
 
     const helpHandler = () => setNeedHelp(true);
+
+    const showShortcuts = () => {
+        setShortcutsPressed(!shortcutsPressed);
+    }
 
     const load = (positive) => {
         let numberAux = numberOfCardAux.current[showCard[1]];
@@ -248,7 +256,7 @@ function TinderDeck({ numberOfCard }) {
                     </span>
             
                     <div className="keyboardTinderDiv">
-                        <AnimatedIconButton title="Atajos de teclado" aria-label='Atajos del juego' aria-hidden='false' id='keyboardHOL'>
+                        <AnimatedIconButton title="Atajos de teclado" aria-label='Atajos del juego' aria-hidden='false' id='keyboardHOL' onClick={showShortcuts}>
                             <KeyboardIcon />
                         </AnimatedIconButton>
                     </div>
@@ -283,6 +291,8 @@ function TinderDeck({ numberOfCard }) {
                 </div>
             )}
             {showCard[0] <= getRandom.longData() && <button id='restartTinder' onClick={restartGame}>Reiniciar</button>}
+        
+            {shortcutsPressed && <ShortcutsSection showShortcuts={showShortcuts} imagen={'un'} altText={"Atajos: con el 0 puedes reiniciar el juego, con el 4 puedes deslizar la tarjeta hacia la izquierda, con el 5 puedes seleccionar la tarjeta que aparece en pantalla, con el 6 puedes deslizar la tarjeta a la derecha y con el 9 puedes activar el menu de ayuda SOS."}></ShortcutsSection>}
         </div>
     );
 }
