@@ -171,7 +171,7 @@
     
     /* https://stackoverflow.com/questions/15649244/responsive-font-size-in-css */
     /* font-size: calc([minimum size] + ([maximum size] - [minimum size]) * ((100vw - [minimum viewport width]) / ([maximum viewport width] - [minimum viewport width]))); */
-    font-size: calc(16px + (32 - 16) * ((100vmin - 350px) / (1080 - 350)));
+    font-size: calc(6px + (32 - 6) * ((100vmin - 200px) / (1080 - 200)));
     color: white;
     text-shadow: 0px 0px 4px black;  
     text-align: center;
@@ -181,13 +181,21 @@
 #textCenter h1{
     /* font-size: 58px; */
     
-    font-size: calc(40px + (78 - 40) * ((100vmin - 350px) / (1080 - 350)));
+    font-size: calc(16px + (78 - 16) * ((100vmin - 200px) / (1080 - 200)));
+    -webkit-text-stroke-color: black;
+    padding: 1px;
+}
+
+#textCenter h2{
+    /* font-size: 58px; */
+    
+    font-size: calc(10px + (32 - 10) * ((100vmin - 200px) / (1080 - 200)));
     -webkit-text-stroke-color: black;
     padding: 1px;
 }
 
 #textCenterTutorial {
-    font-size: calc(10px + (26 - 10) * ((100vmin - 350px) / (1080 - 350)));
+    font-size: calc(4px + (26 - 4) * ((100vmin - 200px) / (1080 - 200)));
     color: white;
     text-shadow: 0px 0px 4px black;  
     text-align: center;
