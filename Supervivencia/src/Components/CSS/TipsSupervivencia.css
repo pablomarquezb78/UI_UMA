@@ -15,7 +15,6 @@
 }
 
 .tipsSupervivencia h2 {
-    font-size: calc(20px + (40 - 20) * ((100vmin - 350px) / (1080 - 350)));
     text-align: left;
     font-style: inherit;
     font-weight:bold;
@@ -49,7 +48,6 @@
     margin-bottom: 4vh;
     text-align: center;
     color: #2c3e50;
-    font-size: calc(25px + (40 - 25) * ((100vmin - 350px) / (1080 - 350)));
     font-weight: bold;
 
 }
