@@ -15,7 +15,7 @@ function InfoSection() {
 
             <div className='px-1'>
                 <h1 className='pb-4 fontControlInfoSectionh4'>Ayuda</h1>
-                <Link to="/FAQ" className='text-decoration-none fontControlInfoSection'>Preguntas Frecuentes</Link>
+                <Link to="/FAQ" className='text-decoration-none fontControlInfoSection z-1'>Preguntas Frecuentes</Link>
             </div>
             <div className='px-1'>
                 <h1 className='pb-4 fontControlInfoSectionh4'>Contacto</h1>
@@ -28,10 +28,10 @@ function InfoSection() {
             </div>
             <div className='px-1'>
                 <h1 className='pb-4 fontControlInfoSectionh4'>Información</h1>
-                <Link to="/AboutUs" className='text-decoration-none fontControlInfoSection'>Sobre Nosotros</Link><br/>
-                <Link to="/UnderConstruction" className='fontControlInfoSection text-decoration-none'>Política de Privacidad</Link><br/>
-                <Link to="/UnderConstruction" className='fontControlInfoSection text-decoration-none'>Aviso Legal</Link><br/>
-                <Link to="/UnderConstruction" className='fontControlInfoSection text-decoration-none'>Política de Cookies</Link>
+                <Link to="/AboutUs" className='text-decoration-none fontControlInfoSection z-1'>Sobre Nosotros</Link><br/>
+                <Link to="/UnderConstruction" className='fontControlInfoSection text-decoration-none z-1'>Política de Privacidad</Link><br/>
+                <Link to="/UnderConstruction" className='fontControlInfoSection text-decoration-none z-1'>Aviso Legal</Link><br/>
+                <Link to="/UnderConstruction" className='fontControlInfoSection text-decoration-none z-1'>Política de Cookies</Link>
             </div>
         </div>
         <div className='px-2 pb-3'>
