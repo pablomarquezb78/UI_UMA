@@ -12,7 +12,6 @@ import '../CSS/Start.css'
 function DesertMain(){
 
     const gridInfoRef = useRef(null);
-    const startRef = useRef(null);
 
     const scrollToGridInfo = () => {
         gridInfoRef.current.scrollIntoView({ behavior: 'smooth' });
@@ -22,7 +21,7 @@ function DesertMain(){
         <>
             <main className='sliderContainer'>
 
-                <div className='sliderItem' ref={startRef}>
+                <div className='sliderItem'>
                     <DesertStart scrollToGridInfo={scrollToGridInfo}/>
                 </div>  
 

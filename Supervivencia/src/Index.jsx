@@ -10,7 +10,6 @@ import './Components/CSS/Slider.css'
 function Index(){
 
     const gridInfoRef = useRef(null);
-    const startRef = useRef(null);
 
     const scrollToGridInfo = () => {
         gridInfoRef.current.scrollIntoView({ behavior: 'smooth' });
@@ -20,7 +19,7 @@ function Index(){
         <>
             <main className='sliderContainer'>
 
-                <div className='sliderItem' ref={startRef}>
+                <div className='sliderItem'>
                 <Start scrollToGridInfo={scrollToGridInfo}/>
                 </div>
             

@@ -6,7 +6,6 @@ import '../CSS/main.css'
 import '../CSS/Start.css'
 
 function AboutUsMain(){
-    const startRef = useRef(null);
 
     const scrollToGridInfo = () => {
         gridInfoRef.current.scrollIntoView({ behavior: 'smooth' });
@@ -16,7 +15,7 @@ function AboutUsMain(){
         <> 
             <main className='sliderContainer'>
 
-            <div className='sliderItem' ref={startRef}>
+            <div className='sliderItem'>
                 <AboutUsStart scrollToGridInfo={scrollToGridInfo}/>
             </div>
             

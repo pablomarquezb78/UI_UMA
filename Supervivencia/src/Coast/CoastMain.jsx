@@ -14,21 +14,16 @@ import '../CSS/Start.css';
 function CoastMain(){
 
     const gridInfoRef = useRef(null);
-    const startRef = useRef(null);
 
     const scrollToGridInfo = () => {
         gridInfoRef.current.scrollIntoView({ behavior: 'smooth' });
-    };
-
-    const scrollToStart = () => {
-        startRef.current.scrollIntoView({ behavior: 'smooth' });
     };
 
     return(
         <>
             <main className='sliderContainer'>
 
-                <div className='sliderItem' ref={startRef}>
+                <div className='sliderItem'>
                     <CoastStart scrollToGridInfo={scrollToGridInfo} />
                 </div>
 
