@@ -23,14 +23,14 @@ function CoastMain(){
     return(
         <>
             <main className='sliderContainer'>
-                
+
                 <div className='sliderItem' ref={startRef}>
                     <CoastStart scrollToGridInfo={scrollToGridInfo} />
                 </div>
 
                 <div className='sliderItem sliderTips'>
                     <article className='tipsSupervivencia'>
-                        <h1>Tips de supervivencia en la Costa:</h1>
+                        <h1 aria-label='Tips de supervivencia en la Costa'>Tips de supervivencia en la Costa:</h1>
                         <h2>Prepárate adecuadamente🎒:</h2>
                         <p>
                             Lleva equipo esencial como un botiquín de primeros auxilios, un cuchillo, linterna, mapas, brújula o GPS, protector solar, y ropa adecuada para el clima. 
