@@ -30,7 +30,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
 }
 
 .left {
@@ -113,18 +112,24 @@
 }
 
 .tinderHeader span img{
-    height: 80%;
-    width: 80%; 
+    height: 55%;
+    width: 55%;
+    margin-left: 7%; 
 }
 
 .tinderHeader label{
     width: 100%;
 }
 
+.tinderOverHeader  div:first-child{
+    flex-direction: column;
+    align-items: center;
+}
+
 .tinderHeader{
     padding-left: 13%;
     padding-right: 13%;
-    height: 50%;
+    height: 34%;
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -136,6 +141,7 @@
     cursor:pointer;
     width: 30%;
     display: block;
+    transform: translateX(10%);
 }
 
 .helpTinder{
@@ -258,7 +264,8 @@
 
  .sosTinderDiv{
     width: 100%;
-    justify-content: end !important;
+    justify-content: start !important;
+    transform: translateY(0%)  translateX(-25%);
  }
 
   .tinderOverHeader{
@@ -285,4 +292,21 @@
     -ms-user-select: none;
     user-select: none;
 
+  }
+
+  .keyboardTinderDiv{
+    width: 100%;
+    justify-content: end !important;
+    transform: translateY(50%);
+  }
+
+  @media only screen and (max-height: 346px) {
+   
+    .keyboardTinderDiv{
+        transform:  translateY(50%) translateX(-65%);
+      }
+
+      #restartTinder{
+        margin-top: 30%;
+      }
   }

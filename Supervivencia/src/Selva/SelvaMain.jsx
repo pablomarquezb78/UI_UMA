@@ -60,18 +60,17 @@ function SelvaMain() {
                             Lleva contigo un encendedor o fósforos a prueba de agua, y practica encender fuego antes de ir a la jungla.
                         </p>
 
-                        <h2>Sigue un camino claro🧭:</h2>
-                        <p>
-                            Usa una brújula y un mapa para evitar perderte. Marca tu camino con cintas o marcas visibles en los árboles 
-                            para poder regresar si es necesario.
-                        </p>
-
                     </article>
                 </div>
 
                 <div className='sliderItem sliderTips'>
                     <article className='tipsSupervivencia tipsSupervivencia2'>
-                        
+
+                        <h2>Sigue un camino claro🧭:</h2>
+                        <p>
+                            Usa una brújula y un mapa para evitar perderte. Marca tu camino con cintas o marcas visibles en los árboles 
+                            para poder regresar si es necesario.
+                        </p>                        
                         
                         <h2>Conoce las plantas comestibles y medicinales🌿:</h2>
                         <p>
@@ -86,12 +85,6 @@ function SelvaMain() {
                         </p>
 
                         <h2>Ten cuidado con la fauna🐅:</h2>
-                        <p>
-                            La jungla alberga muchos animales peligrosos, como serpientes, jaguares y arañas. 
-                            Mantén tu distancia y nunca molestes a los animales. Aprende a identificar sus rastros y comportamientos.
-                        </p>
-
-                        <h2>Ten cuidado con la fauna:</h2>
                         <p>
                             La jungla alberga muchos animales peligrosos, como serpientes, jaguares y arañas. 
                             Mantén tu distancia y nunca molestes a los animales. Aprende a identificar sus rastros y comportamientos.

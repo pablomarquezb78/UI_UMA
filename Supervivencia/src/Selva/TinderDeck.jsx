@@ -5,6 +5,8 @@ import TinderCard from './TinderCard.jsx';
 import { IconButton } from '@mui/material';
 import { styled } from '@mui/system';
 import SosIcon from '@mui/icons-material/Sos';
+import KeyboardIcon from '@mui/icons-material/Keyboard';
+
 import TinderHelpCard from "./TinderHelpCard.jsx";
 import TinderCardResut from "./TinderCardResults.jsx";
 
@@ -69,7 +71,7 @@ function TinderDeck({ numberOfCard }) {
 
         window.addEventListener('keydown', handleKeyDown);
         return () => window.removeEventListener('keydown', handleKeyDown);
-    }, []);
+    },);
 
     const restartGame = () => {
         setShowCard([1, 0]);
@@ -120,12 +122,6 @@ function TinderDeck({ numberOfCard }) {
         actualCard.style.cursor = 'grab';
 
         document.body.style.overflow = '';
-
-        document.removeEventListener('mousemove', moveDrag);
-        document.removeEventListener('mouseup', endDrag);
-        document.removeEventListener('touchmove', moveDrag);
-        document.removeEventListener('touchend', endDrag);
-        
         
         cardDecision(actualCard);
     };
@@ -223,9 +219,9 @@ function TinderDeck({ numberOfCard }) {
             }
         };
         
-
     return (
         <div className="allTinderCards">
+            
             {showCard[0] > getRandom.longData() && (
                 <TinderCardResut resetAction={restartGame} wiseChoice={wiseChoice.current} totalCards={numberOfCard.length} />
             )}
@@ -233,20 +229,30 @@ function TinderDeck({ numberOfCard }) {
             <div className="tinderOverHeader">
                 <div aria-live="assertive" aria-atomic="true">
                     <label>{decisionAccesbilityTool}</label>
-                </div>
-                <div className="tinderHeader">
+
                     <label className={showCard[0] > getRandom.longData() ? 'wiseChoiceCount' : ''}>
                         {wiseChoice.current} / {getRandom.longData()}
                     </label>
+                </div>
+                <div className="tinderHeader">
+
+                    <div className="sosTinderDiv">
+                        <AnimatedIconButton title='Botón de ayuda' onClick={helpHandler}>
+                            <SosIcon fontSize="large" />
+                        </AnimatedIconButton>
+                    </div>
+
                     <span>
                         <img className={isShake} src={isCorrect} alt={resultDecisionAccesibilityTool} />
                         <label aria-live="assertive" aria-atomic="true" style={{ position: 'absolute', left: '-9999px' }}>{resultDecisionAccesibilityTool}</label>
                     </span>
-                    <div className="sosTinderDiv">
-                        <AnimatedIconButton onClick={helpHandler}>
-                            <SosIcon name='Botón de ayuda' fontSize="large" />
+            
+                    <div className="keyboardTinderDiv">
+                        <AnimatedIconButton title="Atajos de teclado" aria-label='Atajos del juego' aria-hidden='false' id='keyboardHOL'>
+                            <KeyboardIcon />
                         </AnimatedIconButton>
                     </div>
+                    
                 </div>
             </div>
 

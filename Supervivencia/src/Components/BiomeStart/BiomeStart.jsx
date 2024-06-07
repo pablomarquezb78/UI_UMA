@@ -15,8 +15,9 @@ function BiomeStart ({video, title, subtitle}){
                 <video className="w-100" control={"false"} muted alt={"Imagen inicio bioma "+title} autoPlay loop>
                     <source src={'/VideosGrid/' + video + '.mp4'} type="video/mp4"></source>
                 </video>
+                <div className="w-100 h-100 position-absolute top-0"></div>
                 <div className="d-flex w-100 justify-content-center align-items-center position-absolute biomeStartTextHeader">
-                    <article>
+                    <article className="d-flex justify-content-center align-items-center flex-column">
                     <h1>{title}</h1>
                     <footer>{subtitle}</footer>
                     </article>
