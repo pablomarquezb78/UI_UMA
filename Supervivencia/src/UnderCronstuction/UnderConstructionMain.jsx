@@ -22,7 +22,7 @@ function MountainMain(){
                 </div>
 
                 <div className='sliderItem' ref={gridInfoRef}>
-                    <InfoSection scrollToStart={scrollToStart}/>
+                    <InfoSection/>
                 </div>
 
             </main>  

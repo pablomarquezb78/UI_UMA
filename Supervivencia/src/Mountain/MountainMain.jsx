@@ -108,7 +108,7 @@ function MountainMain(){
                 </div>
 
                 <div className='sliderItem helpSlider' ref={gridInfoRef}>
-                    <GridInfo scrollToStart={scrollToStart}/>
+                    <GridInfo/>
                 </div>
 
             </main>  
