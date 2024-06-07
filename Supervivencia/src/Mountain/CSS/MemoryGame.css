@@ -47,7 +47,7 @@
     cursor: pointer;
     margin-right: 3%; /* Espacio entre las cartas */
     overflow: hidden; /* Evita que las imágenes se desborden de las cartas */
-    border: 0;
+    border: 2px solid #000; /* Borde negro para mayor visibilidad */
     box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.5); /* Sombreado */
   }
   
@@ -55,7 +55,7 @@
   .memory-game .card-group .card:last-child {
     border-radius: 14px; /* NO BORRAR */
   }
-  
+    
   
   .memory-game .btn {
     margin: 10px; /* Ajusta el valor según sea necesario */

@@ -13,9 +13,6 @@ import ShortcutsSection from "./ShortcutsSection";
 const MemoryGame = () => {
   const AnimatedIconButton = styled(IconButton)`
     color: black;
-    &:hover {
-      color: white;
-    }
     .MuiSvgIcon-root {
       width: calc(33px + (64 - 33) * ((100vmin - 350px) / (1080 - 350)));
       height: calc(33px + (64 - 33) * ((100vmin - 350px) / (1080 - 350)));
@@ -150,19 +147,19 @@ const MemoryGame = () => {
       role="application" 
       aria-label="Relaciona a cada animal con su huella">
       <h2>Relaciona a cada animal con su huella</h2>
-      <div alt="Seccion de botones" className="controls">
-        <label>
+      <div aria-label="Sección de botones" className="controls">
+        <label htmlFor="dificultadselect">
           Dificultad:
-          <select alt="Elegir Dificultad" value={difficulty} onChange={e => setDifficulty(e.target.value)} className="form-select">
-            <option alt="Elegir facil" value="button">FÁCIL</option>
-            <option alt="Elegir dificil" value="time">DIFÍCIL</option>
+          <select id="dificultadselect" title="seleccionar dificultad" value={difficulty} onChange={e => setDifficulty(e.target.value)} className="form-select">
+            <option value="facil">FÁCIL</option>
+            <option value="dificil">DIFÍCIL</option>
           </select>
         </label>
 
         <AnimatedIconButton 
           className='helpmont' 
           title="Ayuda" 
-          alt="Botón de Ayuda"
+          aria-label="Botón de Ayuda"
           tabIndex={0} 
           onClick={toggleHelp} 
           onKeyDown={(e) => {
@@ -171,12 +168,12 @@ const MemoryGame = () => {
           <SosIcon />
         </AnimatedIconButton>
 
-        <AnimatedIconButton alt="Botón de atajos" className='helpmont' title="Atajos de teclado" onClick={showShortcuts}>
+        <AnimatedIconButton aria-label="Botón de atajos" className='helpmont' title="Atajos de teclado" onClick={showShortcuts}>
                         <KeyboardIcon /> 
         </AnimatedIconButton>  
 
         <button
-            alt="Boton para reiniciar el juego" 
+            aria-label="Boton para reiniciar el juego" 
             tabIndex="0"
                     style={{ marginTop : 35}}
             onClick={handleResetGame} 
@@ -233,7 +230,7 @@ const MemoryGame = () => {
           aria-labelledby="resultTitle"
           aria-describedby="resultDescription">
           <div className="d-flex flex-column justify-content-center align-items-center">
-            <h2 id="resultTitle" className="text-center">¡Has completado el juego en {moves} movimientos!</h2>
+            <h3 id="resultTitle" className="text-center">¡Has completado el juego en {moves} movimientos!</h3>
             <button id="resultDescription" className="btn btn-dark m-2" onClick={handleResetGame}>Reiniciar</button>
           </div>
         </div>
