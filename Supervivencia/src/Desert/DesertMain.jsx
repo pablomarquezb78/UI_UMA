@@ -58,7 +58,7 @@ function DesertMain(){
 
                 <div className='sliderItem sliderTips'>
                     <article className='tipsSupervivencia tipsSupervivencia2'>
-                        <h2>Conoce las plantas comestibles y medicinales🍴:</h2>
+                        <h2>Conoce las plantas comestibles y medicinales🌿:</h2>
                         <p>
                             Aprende a identificar las plantas que puedes comer y aquellas que tienen propiedades medicinales. Evita tocar o comer plantas desconocidas, ya que muchas pueden ser venenosas.
                         </p>
