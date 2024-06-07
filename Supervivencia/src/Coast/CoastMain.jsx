@@ -23,6 +23,7 @@ function CoastMain(){
     return(
         <>
             <main className='sliderContainer'>
+
                 <div className='sliderItem' ref={startRef}>
                     <CoastStart scrollToGridInfo={scrollToGridInfo} />
                 </div>

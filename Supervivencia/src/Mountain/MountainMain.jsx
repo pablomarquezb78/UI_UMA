@@ -66,9 +66,10 @@ function MountainMain(){
 
                 <div className='sliderItem sliderTips'>
                     <article className='tipsSupervivencia tipsSupervivencia2'>
-                        <h2>Mantén la hidratación y la energía💧:</h2>
+
+                        <h2>Ten cuidado con la fauna🐗:</h2>
                         <p>
-                            Bebe agua regularmente y consume alimentos energéticos para mantener tus niveles de energía. En la montaña, el esfuerzo físico y la altitud pueden aumentar la deshidratación y el agotamiento.
+                            La montaña alberga diversos animales, algunos de los cuales pueden ser peligrosos. Mantén una distancia segura, no alimentes a los animales y guarda tu comida de manera adecuada.
                         </p>
 
                         <h2>Aprende a orientarte🧭:</h2>
@@ -76,20 +77,26 @@ function MountainMain(){
                             Usa un mapa y una brújula para mantenerte en el camino correcto. Familiarízate con las técnicas de orientación y lee el terreno para evitar perderte.
                         </p>
 
+                        <h2>Mantén la hidratación y la energía💧:</h2>
+                        <p>
+                            Bebe agua regularmente y consume alimentos energéticos para mantener tus niveles de energía. En la montaña, el esfuerzo físico y la altitud pueden aumentar la deshidratación y el agotamiento.
+                        </p>
+
                         <h2>Protégete del sol🏖️:</h2>
                         <p>
                             A mayor altitud, la radiación solar es más intensa. Usa protector solar, gafas de sol y un sombrero para protegerte de los rayos UV.
-                        </p>
-
-                        <h2>Ten cuidado con la fauna🐗:</h2>
-                        <p>
-                            La montaña alberga diversos animales, algunos de los cuales pueden ser peligrosos. Mantén una distancia segura, no alimentes a los animales y guarda tu comida de manera adecuada.
                         </p>
 
                         <h2>Conoce las técnicas de primeros auxilios🚑:</h2>
                         <p>
                             Aprende las técnicas básicas de primeros auxilios para poder actuar en caso de una emergencia médica. Saber cómo tratar lesiones, hipotermia y otros problemas comunes en la montaña puede salvar vidas.
                         </p>
+
+                        <h2>Busca alimentos en la naturaleza🍇:</h2>
+                        <p>
+                            Aprende a identificar y recolectar alimentos naturales como bayas, frutas y plantas comestibles que crecen en la montaña. Asegúrate de conocer bien las especies comestibles y evitar aquellas que puedan ser tóxicas.
+                        </p>
+
                     </article>
                 </div>
 
