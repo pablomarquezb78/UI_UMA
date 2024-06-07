@@ -2,6 +2,10 @@
     display: block;
 }
 
+#infoSection span{
+    display: block;
+}
+
 #FaqDiv{
     width: 50%;
     top: 10%;

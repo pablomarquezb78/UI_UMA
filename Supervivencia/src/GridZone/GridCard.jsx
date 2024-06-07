@@ -41,9 +41,9 @@ function GridCard({nameVideo,texto, linkTo}) {
                     </video>
                     
                     <div className='textCard w-100 h-100'>
-                        <h3 className='text-center text-white' >
+                        <h1 className='text-center text-white' >
                                 {texto}
-                        </h3> 
+                        </h1> 
                     </div>
                 </Link>
 
