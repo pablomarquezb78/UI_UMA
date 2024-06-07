@@ -57,6 +57,7 @@ function HigherLowerGame() {
 
     useEffect(() => {
         if (tickAnimation) {
+            setAnnouncement('');
             const timer = setTimeout(() => {
                 if (rightCardIndex + 1 > imageArray.length - 1) {
                     setShowResult(true);
@@ -75,7 +76,6 @@ function HigherLowerGame() {
     }, [tickAnimation, rightCardIndex, imageArray.length]);
 
     const handleHigherClick = () => {
-        setAnnouncement('Has pulsado el botón de higher')
         setButtonsVisible(false);
         setNeedHelp(false);
         setShortcutsPressed(false);
@@ -99,15 +99,14 @@ function HigherLowerGame() {
     };
 
     const handleLowerClick = () => {
-        setAnnouncement('Has pulsado el botón de lower')
         setButtonsVisible(false);
         setNeedHelp(false);
         setShortcutsPressed(false);
         if (parseInt(data.randomImage(imageArray[leftCardIndex]).mortalidad) >= parseInt(data.randomImage(imageArray[rightCardIndex]).mortalidad)) {
+            setAnnouncement('Acertaste');
             setIsCorrect(1);
             setShowDeaths(true);
             setTickAnimation(true);
-            setAnnouncement('Acertaste')
             setTimeout(() => {
                 setCounter(prevCounter => prevCounter + 1);
             }, 1500);
@@ -186,8 +185,9 @@ function HigherLowerGame() {
                 <h1 className='tituloHOL'>Higher or Lower</h1>
                 <h2 className='descripcionHOL'>¿Cuál es más letal para el humano 💀?</h2>
             </div>
-            <AnimatedIconButton title="Atajos de teclado" aria-label='Atajos de teclado' aria-hidden='false' className={`position-absolute ${!showResult ? '' : 'esconderBoton'}`} id='keyboardHOL' onClick={showShortcuts}><KeyboardIcon /></AnimatedIconButton>
             <AnimatedIconButton title="Ayuda para el juego" aria-label='Ayuda para el juego' aria-hidden='false' className={`position-absolute ${!showResult ? '' : 'esconderBoton'}`}  id='sosHOL' onClick={helpHandler}><SosIcon/></AnimatedIconButton>
+            <AnimatedIconButton title="Atajos de teclado" aria-label='Atajos de teclado' aria-hidden='false' className={`position-absolute ${!showResult ? '' : 'esconderBoton'}`} id='keyboardHOL' onClick={showShortcuts}><KeyboardIcon /></AnimatedIconButton>
+
         </div>
             <section className='imagenesHOL position-relative d-flex justify-content-center align-items-center'>
                 {needHelp && (<HelpHOL helpHandler={helpHandler}/>)}
@@ -201,7 +201,7 @@ function HigherLowerGame() {
                 <div className='imagenHOL position-relative'>
                     <img alt={data.randomImage(imageArray[rightCardIndex])?.imgAlt} className='img-fluid containerHOL' src={data.randomImage(imageArray[rightCardIndex])?.img}/>
                     <div id='informacion_imagen_d'  className='position-absolute text-center'>
-                        <h3 tabIndex='0' className='card-text'> {data.randomImage(imageArray[rightCardIndex])?.cardTitle}: {showDeaths ? data.randomImage(imageArray[rightCardIndex])?.mortalidad : '?'} muertes al año </h3>
+                        <h3 tabIndex='0' className='card-text z-1'> {data.randomImage(imageArray[rightCardIndex])?.cardTitle}: {showDeaths ? data.randomImage(imageArray[rightCardIndex])?.mortalidad : '?'} muertes al año </h3>
                     </div>
                     <div className='botonesHOL position-absolute'>
                         {buttonsVisible && (
@@ -230,7 +230,7 @@ function HigherLowerGame() {
                 <h3 tabIndex='0' style={{fontSize:'calc(10px + (30 - 10) * ((100vmin - 350px) / (1080 - 350)))'}} className={`${showAnimation ? "puntuacionHOL" : ""}`}>Puntuación: {counter}</h3>
             </div>
             <span aria-live="assertive" aria-atomic="true" className="sr-only" id="anunciosHOL">
-                {announcement}
+                {`${tickAnimation ? data.randomImage(imageArray[rightCardIndex])?.mortalidad : ''} ${announcement}`}
             </span>
         </section>
     );

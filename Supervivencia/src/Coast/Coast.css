@@ -71,7 +71,7 @@
   transition: ease-in-out;
   transition-duration: 150ms; 
 
-  max-width: calc(300px + (600 - 300) * ((100vmin - 350px) / (1080 - 350)))
+  max-width: calc(300px + (600 - 300) * ((100vmin - 350px) / (1080 - 350)));
 }
 
 .card-text:hover
