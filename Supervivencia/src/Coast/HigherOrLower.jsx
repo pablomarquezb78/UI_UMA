@@ -176,7 +176,7 @@ function HigherLowerGame() {
                 <h2 className='tituloHOL'>Higher or Lower</h2>
                 <h2 className='tituloHOL'>¿Cuál es más letal para el humano 💀?</h2>
             </div>
-            <AnimatedIconButton title="Atajos de teclado" aria-label='Atajos del juego' aria-hidden='false' className={`position-absolute ${!showResult ? '' : 'esconderBoton'}`} id='keyboardHOL' onClick={showShortcuts}><KeyboardIcon /></AnimatedIconButton>
+            <AnimatedIconButton title="Atajos de teclado" aria-label='Atajos de teclado' aria-hidden='false' className={`position-absolute ${!showResult ? '' : 'esconderBoton'}`} id='keyboardHOL' onClick={showShortcuts}><KeyboardIcon /></AnimatedIconButton>
             <AnimatedIconButton title="Ayuda para el juego" aria-label='Ayuda para el juego' aria-hidden='false' className={`position-absolute ${!showResult ? '' : 'esconderBoton'}`}  id='sosHOL' onClick={helpHandler}><SosIcon/></AnimatedIconButton>
         </div>
             <section className='imagenesHOL position-relative d-flex justify-content-center align-items-center'>
@@ -210,9 +210,9 @@ function HigherLowerGame() {
                     </div>
                 )}
                 <div className={`position-absolute ${isCorrect !== 0 && 'fade-icon'}`}>
-                    {isCorrect === 0 && <img src="/Coast/CoastGame/versus-icon.png"  alt="VS" style={{ maxHeight: 'calc(40px + (100 - 40) * ((100vmin - 350px) / (1080 - 350)))', backgroundColor: 'black', borderRadius:'50%'}} />}
-                    {isCorrect === 1 && <img src="/Coast/CoastGame/tick-icon.png" alt="Tick" style={{ maxHeight: 'calc(40px + (100 - 40) * ((100vmin - 350px) / (1080 - 350)))', backgroundColor: 'green', borderRadius:'50%' }} />}
-                    {isCorrect === 2 && <img src="/Coast/CoastGame/cross-icon.png" alt="Cross" style={{ maxHeight: 'calc(40px + (100 - 40) * ((100vmin - 350px) / (1080 - 350)))', backgroundColor: 'red', borderRadius:'50%' }} />}
+                    {isCorrect === 0 && <img src="/Coast/CoastGame/versus-icon.png"  alt="versus" style={{ maxHeight: 'calc(40px + (100 - 40) * ((100vmin - 350px) / (1080 - 350)))', backgroundColor: 'black', borderRadius:'50%'}} />}
+                    {isCorrect === 1 && <img src="/Coast/CoastGame/tick-icon.png" alt="Correcto" style={{ maxHeight: 'calc(40px + (100 - 40) * ((100vmin - 350px) / (1080 - 350)))', backgroundColor: 'green', borderRadius:'50%' }} />}
+                    {isCorrect === 2 && <img src="/Coast/CoastGame/cross-icon.png" alt="Incorrecto" style={{ maxHeight: 'calc(40px + (100 - 40) * ((100vmin - 350px) / (1080 - 350)))', backgroundColor: 'red', borderRadius:'50%' }} />}
                 </div>
             </section>
             <div className="d-flex justify-content-center align-items-center">
