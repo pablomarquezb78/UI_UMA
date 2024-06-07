@@ -82,8 +82,14 @@ function DesertMain(){
                         <p>
                             La navegación en el desierto puede ser difícil debido a la falta de puntos de referencia claros. Aprende técnicas básicas de orientación utilizando el sol, las estrellas y las características del terreno.
                         </p>
+
+                        <h2>Mantén la calma y ten un plan de emergencia📢:</h2>
+                        <p>
+                            En situaciones de emergencia, es crucial mantener la calma y pensar con claridad. Ten un plan de emergencia y comunica tus planes a alguien antes de partir.
+                        </p>
                     </article>
                 </div>
+
 
 
                 <div className='sliderItem'>
