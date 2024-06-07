@@ -84,11 +84,11 @@ function HigherLowerGame() {
             setIsCorrect(1);
             setShowDeaths(true);
             setTickAnimation(true);
-            setAnnouncement('Acertaste')
             setTimeout(() => {
                 setCounter(prevCounter => prevCounter + 1);
             }, 1500);
         } else {
+            setAnnouncement(`${data.randomImage(imageArray[rightCardIndex])?.mortalidad} muertes al año`);
             setIsCorrect(2);
             setShowDeaths(true);
             setCrossAnimation(true);
@@ -112,6 +112,7 @@ function HigherLowerGame() {
                 setCounter(prevCounter => prevCounter + 1);
             }, 1500);
         } else {
+            setAnnouncement(`${data.randomImage(imageArray[rightCardIndex])?.mortalidad} muertes al año`);
             setIsCorrect(2);
             setShowDeaths(true);
             setCrossAnimation(true);
