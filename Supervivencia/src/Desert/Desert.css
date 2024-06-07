@@ -1,20 +1,11 @@
-#desertGameCompleteSection{
-    background-image: url('/public/Desert/DesertImages/FondoDesierto.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
 #completeGameSectionHelp{
     width: 85%;
     bottom: 20%;
     height: 60%; 
 
-    background: rgba(165, 165, 165, 0.1);
-    backdrop-filter: blur(7.5px);
-    -webkit-backdrop-filter: blur(7.5px);
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.18);
-    border-radius: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.18);
+    background-image: url('/public/Desert/DesertImages/FondoDesierto.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 #bagGameDisplay{
