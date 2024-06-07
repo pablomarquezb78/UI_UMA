@@ -20,6 +20,10 @@ function CoastMain(){
         gridInfoRef.current.scrollIntoView({ behavior: 'smooth' });
     };
 
+    const scrollToStart = () => {
+        startRef.current.scrollIntoView({ behavior: 'smooth' });
+    };
+
     return(
         <>
             <main className='sliderContainer'>
@@ -116,8 +120,8 @@ function CoastMain(){
                     <HigherOrLowerGame/>
                 </div>
 
-                <div className='sliderItem' ref={gridInfoRef}>
-                    <InfoSection/>
+                <div className='sliderItem helpSlider' ref={gridInfoRef}>
+                    <InfoSection scrollToStart={scrollToStart}/>
                 </div>
 
             </main>  
