@@ -40,6 +40,8 @@ function HigherLowerGame() {
     const [needHelp, setNeedHelp] = useState(false);
     const [shortcutsPressed, setShortcutsPressed] = useState(false);
 
+    const [announcement, setAnnouncement] = useState('');
+
     useEffect(() => {
         const numberOfCardAux = new Array(data.longData()).fill().map((_, index) => index + 1);
         const shuffleCard = numberOfCardAux.sort(() => Math.random() - 0.5);
@@ -73,6 +75,7 @@ function HigherLowerGame() {
     }, [tickAnimation, rightCardIndex, imageArray.length]);
 
     const handleHigherClick = () => {
+        setAnnouncement('Has pulsado el botón de higher')
         setButtonsVisible(false);
         setNeedHelp(false);
         setShortcutsPressed(false);
@@ -80,6 +83,7 @@ function HigherLowerGame() {
             setIsCorrect(1);
             setShowDeaths(true);
             setTickAnimation(true);
+            setAnnouncement('Acertaste')
             setTimeout(() => {
                 setCounter(prevCounter => prevCounter + 1);
             }, 1500);
@@ -95,6 +99,7 @@ function HigherLowerGame() {
     };
 
     const handleLowerClick = () => {
+        setAnnouncement('Has pulsado el botón de lower')
         setButtonsVisible(false);
         setNeedHelp(false);
         setShortcutsPressed(false);
@@ -102,6 +107,7 @@ function HigherLowerGame() {
             setIsCorrect(1);
             setShowDeaths(true);
             setTickAnimation(true);
+            setAnnouncement('Acertaste')
             setTimeout(() => {
                 setCounter(prevCounter => prevCounter + 1);
             }, 1500);
@@ -127,22 +133,26 @@ function HigherLowerGame() {
         setCounter(0);
         setButtonsVisible(true);
         setShowResult(false);
+        setAnnouncement('El juego ha sido reiniciado');
     };
 
     const cancelGame = () => {
         setShowResult(false);
         setNeedHelp(false);
         setShortcutsPressed(false);
+        setAnnouncement('Has seleccionado la opción de cancelar');
     };
 
     const helpHandler = () => {
         setNeedHelp(prevState => !prevState);
         setShortcutsPressed(false);
+        setAnnouncement('Has seleccionado la opción de ayuda');
     };
 
     const showShortcuts = () => {
         setShortcutsPressed(prevState => !prevState);
         setNeedHelp(false);
+        setAnnouncement('Has seleccionado la opción de atajos de teclado');
     }
 
 
@@ -219,6 +229,9 @@ function HigherLowerGame() {
                 <button className={`custom-buttonHOL m-3 ${!showResult && !crossAnimation && !tickAnimation ? '' : 'esconderBoton'}`} onClick={resetGame}>Reiniciar</button>
                 <h3 tabIndex='0' style={{fontSize:'calc(10px + (30 - 10) * ((100vmin - 350px) / (1080 - 350)))'}} className={`${showAnimation ? "puntuacionHOL" : ""}`}>Puntuación: {counter}</h3>
             </div>
+            <span aria-live="assertive" aria-atomic="true" className="sr-only" id="anunciosHOL">
+                {announcement}
+            </span>
         </section>
     );
 }

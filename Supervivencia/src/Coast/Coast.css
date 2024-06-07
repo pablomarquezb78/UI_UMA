@@ -206,3 +206,7 @@
   transform: translateY(-50%); 
   margin-right: 1%;
 }
+
+#anunciosHOL{
+  visibility: hidden;
+}
