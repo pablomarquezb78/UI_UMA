@@ -137,7 +137,7 @@
     .card-text.forestInfoCard
     {
         height: 50vmin;
-        font-size: calc(10px + (18 - 10) * ((100vmin - 350px) / (1080 - 350)));
+        font-size: calc(12px + (18 - 12) * ((100vmin - 350px) / (1080 - 350)));
     }
     
 }
