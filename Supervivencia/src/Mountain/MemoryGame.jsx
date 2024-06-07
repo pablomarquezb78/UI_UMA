@@ -150,12 +150,12 @@ const MemoryGame = () => {
       role="application" 
       aria-label="Relaciona a cada animal con su huella">
       <h2>Relaciona a cada animal con su huella</h2>
-      <div className="controls">
+      <div alt="Seccion de botones" className="controls">
         <label>
           Dificultad:
-          <select value={difficulty} onChange={e => setDifficulty(e.target.value)} className="form-select">
-            <option value="button">FÁCIL</option>
-            <option value="time">DIFÍCIL</option>
+          <select alt="Elegir Dificultad" value={difficulty} onChange={e => setDifficulty(e.target.value)} className="form-select">
+            <option alt="Elegir facil" value="button">FÁCIL</option>
+            <option alt="Elegir dificil" value="time">DIFÍCIL</option>
           </select>
         </label>
 
@@ -171,11 +171,13 @@ const MemoryGame = () => {
           <SosIcon />
         </AnimatedIconButton>
 
-        <AnimatedIconButton className='helpmont' title="Atajos de teclado" role="img" onClick={showShortcuts}>
+        <AnimatedIconButton alt="Botón de atajos" className='helpmont' title="Atajos de teclado" onClick={showShortcuts}>
                         <KeyboardIcon /> 
         </AnimatedIconButton>  
 
-        <button tabIndex="0"
+        <button
+            alt="Boton para reiniciar el juego" 
+            tabIndex="0"
                     style={{ marginTop : 35}}
             onClick={handleResetGame} 
           className="btn btn-dark">
