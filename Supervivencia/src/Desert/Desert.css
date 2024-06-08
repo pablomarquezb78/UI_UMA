@@ -3,7 +3,7 @@
     bottom: 20%;
     height: 60%; 
 
-    background-image: url('/public/Desert/DesertImages/FondoDesierto.jpg');
+    background-image: url('/Desert/DesertImages/FondoDesierto.jpg');
     background-repeat: no-repeat;
     background-size: cover;
 }
