@@ -184,7 +184,7 @@ function HigherLowerGame() {
 
     return (
         <section className='gameHOL d-flex flex-column justify-content-center align-items-center text-center vh-100 vw-100'>
-            <div tabIndex='0' id='cabeceraHOL' className='position-relative w-100 d-flex justify-content-center align-items-center'>
+            <div id='cabeceraHOL' className='position-relative w-100 d-flex justify-content-center align-items-center'>
             <div>
                 <h1 className='tituloHOL'>Higher or Lower</h1>
                 <h2 className='descripcionHOL'>¿Cuál es más letal para el humano 💀?</h2>
@@ -199,13 +199,13 @@ function HigherLowerGame() {
                 <div className='imagenHOL position-relative'>
                     <img alt={data.randomImage(imageArray[leftCardIndex])?.imgAlt} className='img-fluid containerHOL' src={data.randomImage(imageArray[leftCardIndex])?.img}/>
                     <div id='informacion_imagen_i'>
-                        <h3 tabIndex='0' className='card-text'> {data.randomImage(imageArray[leftCardIndex])?.cardTitle}: {data.randomImage(imageArray[leftCardIndex])?.mortalidad} muertes al año </h3>
+                        <h3 className='card-text'> {data.randomImage(imageArray[leftCardIndex])?.cardTitle}: {data.randomImage(imageArray[leftCardIndex])?.mortalidad} muertes al año </h3>
                     </div>      
                 </div>
                 <div className='imagenHOL position-relative'>
                     <img alt={data.randomImage(imageArray[rightCardIndex])?.imgAlt} className='img-fluid containerHOL' src={data.randomImage(imageArray[rightCardIndex])?.img}/>
                     <div id='informacion_imagen_d'>
-                        <h3 tabIndex='0' className='card-text'> {data.randomImage(imageArray[rightCardIndex])?.cardTitle}: {showDeaths ? data.randomImage(imageArray[rightCardIndex])?.mortalidad : '?'} muertes al año </h3>
+                        <h3 className='card-text'> {data.randomImage(imageArray[rightCardIndex])?.cardTitle}: {showDeaths ? data.randomImage(imageArray[rightCardIndex])?.mortalidad : '?'} muertes al año </h3>
                     </div>
                     <div className='botonesHOL position-absolute'>
                         {buttonsVisible && (
@@ -218,9 +218,9 @@ function HigherLowerGame() {
                 </div>
                 {showResult && (
                     <div className="position-absolute z-1 bg-white rounded p-2 border border-black" >
-                        <h1 tabIndex='0' style={{fontSize:'calc(20px + (30 - 20) * ((100vmin - 350px) / (1080 - 350)))'}} className={`${isCorrect == 2 ? 'text-danger' : 'text-success'}`}>{isCorrect === 2 ? '¡Fallaste!' : '¡Ganaste!'}</h1>
-                        <button tabIndex='0' className='custom-buttonHOL m-2' onClick={cancelGame}>Cancelar</button>
-                        <button tabIndex='0' className='custom-buttonHOL m-2' onClick={resetGame}>Volver a jugar</button>      
+                        <h1 style={{fontSize:'calc(20px + (30 - 20) * ((100vmin - 350px) / (1080 - 350)))'}} className={`${isCorrect == 2 ? 'text-danger' : 'text-success'}`}>{isCorrect === 2 ? '¡Fallaste!' : '¡Ganaste!'}</h1>
+                        <button tabIndex={0} className='custom-buttonHOL m-2' onClick={cancelGame}>Cancelar</button>
+                        <button tabIndex={0} className='custom-buttonHOL m-2' onClick={resetGame}>Volver a jugar</button>      
                     </div>
                 )}
                 <div className={`position-absolute ${isCorrect !== 0 && 'fade-icon'}`}>
@@ -231,7 +231,7 @@ function HigherLowerGame() {
             </section>
             <div className="d-flex justify-content-center align-items-center">
                 <button className={`custom-buttonHOL m-3 ${!showResult && !crossAnimation && !tickAnimation ? '' : 'esconderBoton'}`} onClick={resetGame}>Reiniciar</button>
-                <h3 tabIndex='0' style={{fontSize:'calc(10px + (30 - 10) * ((100vmin - 350px) / (1080 - 350)))'}} className={`${showAnimation ? "puntuacionHOL" : ""}`}>Puntuación: {counter}</h3>
+                <h3 style={{fontSize:'calc(10px + (30 - 10) * ((100vmin - 350px) / (1080 - 350)))'}} className={`${showAnimation ? "puntuacionHOL" : ""}`}>Puntuación: {counter}</h3>
             </div>
             <span aria-live="assertive" aria-atomic="true" className="visually-hidden">
                 {announcement}
