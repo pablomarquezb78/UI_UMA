@@ -185,14 +185,13 @@ function HigherLowerGame() {
     return (
         <section className='gameHOL d-flex flex-column justify-content-center align-items-center text-center vh-100 vw-100'>
             <div id='cabeceraHOL' className='position-relative w-100 d-flex justify-content-center align-items-center'>
-            <div>
-                <h1 className='tituloHOL'>Higher or Lower</h1>
-                <h2 className='descripcionHOL'>¿Cuál es más letal para el humano 💀?</h2>
+                <div>
+                    <h1 className='tituloHOL'>Higher or Lower</h1>
+                        <h2 className='descripcionHOL'>¿Cuál es más letal para el humano 💀?</h2>
+                </div>
+                <AnimatedIconButton title="Ayuda para el juego" aria-label='Ayuda para el juego' aria-hidden='false' className={`position-absolute ${!showResult ? '' : 'esconderBoton'}`}  id='sosHOL' onClick={helpHandler}><SosIcon/></AnimatedIconButton>
+                <AnimatedIconButton title="Atajos de teclado" aria-label='Atajos de teclado' aria-hidden='false' className={`position-absolute ${!showResult ? '' : 'esconderBoton'}`} id='keyboardHOL' onClick={showShortcuts}><KeyboardIcon /></AnimatedIconButton>
             </div>
-            <AnimatedIconButton title="Ayuda para el juego" aria-label='Ayuda para el juego' aria-hidden='false' className={`position-absolute ${!showResult ? '' : 'esconderBoton'}`}  id='sosHOL' onClick={helpHandler}><SosIcon/></AnimatedIconButton>
-            <AnimatedIconButton title="Atajos de teclado" aria-label='Atajos de teclado' aria-hidden='false' className={`position-absolute ${!showResult ? '' : 'esconderBoton'}`} id='keyboardHOL' onClick={showShortcuts}><KeyboardIcon /></AnimatedIconButton>
-
-        </div>
             <section className='imagenesHOL position-relative d-flex justify-content-center align-items-center'>
                 {needHelp && (<HelpHOL helpHandler={helpHandler}/>)}
                 {shortcutsPressed && (<ShortcutsSection  showShortcuts={showShortcuts} imagen={'/Coast/CoastGame/atajosCosta.jpg'} altText={"Atajos: con el 0 puedes reiniciar el juego, con el1 puedes cancelar, con el 2 puedes pulsar el botón de lower, con el 8 puedes pulsar el botón de higher y con el 9 puedes activar el menu de ayuda SOS"} propButton={"custom-buttonHOL mt-4"}/>)}
