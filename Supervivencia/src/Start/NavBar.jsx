@@ -12,7 +12,7 @@ import { styled } from '@mui/system';
 import { IconButton } from '@mui/material';
 import React from 'react';
  
-function navBar({ scrollToGridInfo, currentLink}) {
+const Navbar = React.memo(({ currentLink, scrollToGridInfo }) => {
  
     const AnimatedIconButton = styled(IconButton)`
     .MuiSvgIcon-root {
@@ -161,7 +161,7 @@ function navBar({ scrollToGridInfo, currentLink}) {
     </>
     
     )
-}
+});
 
-export default navBar
+export default Navbar
 
