@@ -13,7 +13,7 @@ import {animals} from '/public/Forest/AudioGameAssets/AudioGameDataset.json'
 
 function GameContent({backFunction, passFunction}) {
 
-    //Editing
+    const[announcement, setAnnouncement] = useState('');
 
     const [playShow, setPlayShow] = useState(false);
     const play = useRef(false);
@@ -88,6 +88,7 @@ function GameContent({backFunction, passFunction}) {
         }
         if(play.current)
         {
+            setAnnouncement('Pausado');
             audioRef.current.pause();
             setPlayShow(false);
             play.current = false;
@@ -95,6 +96,7 @@ function GameContent({backFunction, passFunction}) {
         }
         else
         {
+            setAnnouncement('Reproduciendo');
             audioRef.current.play()
             setPlayShow(true);
             play.current = true;
@@ -111,6 +113,9 @@ function GameContent({backFunction, passFunction}) {
             audioRef.current.pause();
             clearInterval(timeRef.current);
         }
+
+        setAnnouncement('Nueva pregunta');
+
         setPlayShow(false);
         play.current = false;
         setStartedShow(false);
@@ -172,11 +177,13 @@ function GameContent({backFunction, passFunction}) {
     {
         if(correctResponse.current == num)
         {
+            setAnnouncement('Respuesta correcta');
             score.current = score.current + 1;
             loadGameResources();
         }
         else
         {
+            setAnnouncement('Has fallado');
             passFunction();
         }
     }
@@ -308,7 +315,7 @@ function GameContent({backFunction, passFunction}) {
                 <div className='bottomElement row justify-content-center align-items-center h-25'>
                     <div className='bottomElement row justify-content-center align-items-center h-50' id='score'>
                         <div className='col-auto'>
-                            <p tabIndex='0'>Puntuacion: {score.current}</p>
+                            <p>Puntuacion: {score.current}</p>
                         </div>
                     </div>
                     <div className='bottomElement row justify-content-center align-items-center h-50'>
@@ -322,7 +329,9 @@ function GameContent({backFunction, passFunction}) {
                     </div>
                 </div>
             </div>
-            
+            <span aria-live='assertive' aria-atomic="true" className='visually-hidden'>
+                {announcement}
+            </span>
         </div>
     )
 }
