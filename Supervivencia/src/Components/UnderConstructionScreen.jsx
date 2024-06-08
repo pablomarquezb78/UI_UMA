@@ -3,9 +3,13 @@ import React from 'react';
 import '../CSS/Start.css';
 import './CSS/UnderConstruction.css'
 import cleaningPenguin from "../assets/UnderConstructionScreen/club-penguin-mop.gif";
-
+import { useEffect } from "react";
 
 function underConstruction() {
+
+    useEffect(() => {
+        document.title = "How2Survive ~ En Construccion";
+    }, []);
     
     return(
 
