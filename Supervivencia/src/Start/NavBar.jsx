@@ -132,8 +132,8 @@ function navBar({ scrollToGridInfo, currentLink}) {
                     </li>
                 </ul>
             </nav>
-            <div className="navBarItem">
-                <AnimatedIconButton title="Sección de ayuda" className="navBarItem" id="ayudaLogoStart" disableRipple={true} onClick={scrollToGridInfo} ><HelpOutlineIcon/></AnimatedIconButton>
+            <div className="navBarItem d-flex justify-content-end">
+                <AnimatedIconButton title="Sección de ayuda" id="ayudaLogoStart" disableRipple={true} onClick={scrollToGridInfo} ><HelpOutlineIcon/></AnimatedIconButton>
             </div>
         </header>
         <div id="overlay">
