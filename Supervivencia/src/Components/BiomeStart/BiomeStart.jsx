@@ -49,6 +49,7 @@ function BiomeStart({ video, title, subtitle }) {
                         alt={"Imagen inicio bioma " + title}
                         autoPlay
                         loop
+                        playsinline 
                     >
                         <source src={'/VideosGrid/' + video + '.mp4'} type="video/mp4" />
                     </video>

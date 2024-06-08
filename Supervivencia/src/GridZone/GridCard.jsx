@@ -34,10 +34,9 @@ function GridCard({nameVideo,texto, linkTo}) {
        
 
                 <Link to={'/' + linkTo} onMouseEnter={() => {setTime2Play(true)} } onMouseLeave={() => {setTime2Play(false)}}>          
-                    <video id={videoId} control={"false"} muted>
+                    <video id={videoId} control={"false"} muted playsinline>
                         <source src={url} type="video/mp4"></source>
                     </video>
-                    <div className='w-100 h-100'></div>
                     <div className='textCard w-100 h-100'>
                         <h1 className='text-center text-white' >
                                 {texto}
