@@ -5,8 +5,8 @@ function BiomeStart({ video, title, subtitle }) {
     const videoRef = useRef(null);
 
 
-    const url = '/VideosGrid/' + nameVideo + '.mp4'
-    const url2 = '/VideosGrid/' + nameVideo + '.jpg'
+    const url = '/VideosGrid/' + video + '.mp4'
+    const url2 = '/VideosGrid/' + video + '.jpg'
 
     useEffect(() => {
         if (!('IntersectionObserver' in window)) {
