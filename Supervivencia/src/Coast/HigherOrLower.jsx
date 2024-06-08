@@ -72,7 +72,7 @@ function HigherLowerGame() {
                     setShowDeaths(false);
                     setButtonsVisible(true);
                 }
-            }, 1500);
+            }, 2000);
             return () => clearTimeout(timer);
         }
     }, [tickAnimation, rightCardIndex, imageArray.length]);
@@ -86,18 +86,15 @@ function HigherLowerGame() {
             setIsCorrect(1);
             setShowDeaths(true);
             setTickAnimation(true);
-            setTimeout(() => {
-                setCounter(prevCounter => prevCounter + 1);
-            }, 1500);
         } else {
-            setAnnouncement(`${data.randomImage(imageArray[rightCardIndex])?.mortalidad} muertes al año`);
+            setAnnouncement(`${data.randomImage(imageArray[rightCardIndex])?.mortalidad} muertes al año, fallaste`);
             setIsCorrect(2);
             setShowDeaths(true);
             setCrossAnimation(true);
             setTimeout(() => {
                 setCrossAnimation(false);
                 setShowResult(true);
-            }, 1500);
+            }, 2000);
         }
     };
 
@@ -110,18 +107,15 @@ function HigherLowerGame() {
             setIsCorrect(1);
             setShowDeaths(true);
             setTickAnimation(true);
-            setTimeout(() => {
-                setCounter(prevCounter => prevCounter + 1);
-            }, 1500);
         } else {
-            setAnnouncement(`${data.randomImage(imageArray[rightCardIndex])?.mortalidad} muertes al año`);
+            setAnnouncement(`${data.randomImage(imageArray[rightCardIndex])?.mortalidad} muertes al año, fallaste`);
             setIsCorrect(2);
             setShowDeaths(true);
             setCrossAnimation(true);
             setTimeout(() => {
                 setCrossAnimation(false);
                 setShowResult(true);
-            }, 1500);
+            }, 2000);
         }
     };
 
