@@ -41,7 +41,6 @@ function VideoStart() {
     return (
         <div className='position-absolute w-100 h-100 top-0 bottom-0 z-0'>
             <video
-                alt="Vídeo de un explorador"
                 ref={videoRef}
                 className='w-100 h-100 object-fit-cover'
                 autoPlay
