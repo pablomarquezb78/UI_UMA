@@ -230,7 +230,8 @@ function TinderDeck({ numberOfCard }) {
         };
         
     return (
-        <div className="allTinderCards">
+        <>
+         <div className="allTinderCards">
             
             {showCard[0] > getRandom.longData() && (
                 <TinderCardResut resetAction={restartGame} wiseChoice={wiseChoice.current} totalCards={numberOfCard.length} />
@@ -238,11 +239,11 @@ function TinderDeck({ numberOfCard }) {
 
             <div className="tinderOverHeader">
                 <div aria-live="assertive" aria-atomic="true">
-                    <label>{decisionAccesbilityTool}</label>
+                    <span>{decisionAccesbilityTool}</span>
 
-                    <label className={showCard[0] > getRandom.longData() ? 'wiseChoiceCount' : ''}>
+                    <span className={showCard[0] > getRandom.longData() ? 'wiseChoiceCount' : ''}>
                         {wiseChoice.current} / {getRandom.longData()}
-                    </label>
+                    </span>
                 </div>
                 <div className="tinderHeader">
 
@@ -254,7 +255,7 @@ function TinderDeck({ numberOfCard }) {
 
                     <span>
                         <img className={isShake} src={isCorrect} alt={resultDecisionAccesibilityTool} />
-                        <label aria-live="assertive" aria-atomic="true" style={{ position: 'absolute', left: '-9999px' }}>{resultDecisionAccesibilityTool}</label>
+                        <span aria-live="assertive" aria-atomic="true" style={{ position: 'absolute', left: '-9999px' }}>{resultDecisionAccesibilityTool}</span>
                     </span>
             
                     <div className="keyboardTinderDiv">
@@ -294,8 +295,9 @@ function TinderDeck({ numberOfCard }) {
             )}
             {showCard[0] <= getRandom.longData() && <button id='restartTinder' onClick={restartGame}>Reiniciar</button>}
         
-            {shortcutsPressed && <ShortcutsSection showShortcuts={showShortcuts} imagen={'un'} altText={"Atajos: con el 0 puedes reiniciar el juego, con el 4 puedes deslizar la tarjeta hacia la izquierda, con el 5 puedes seleccionar la tarjeta que aparece en pantalla, con el 6 puedes deslizar la tarjeta a la derecha y con el 9 puedes activar el menu de ayuda SOS."}></ShortcutsSection>}
         </div>
+        {shortcutsPressed && <ShortcutsSection aditionalClass={"shortcutJungle"} propButton={"custom-buttonHOL mt-4"} showShortcuts={showShortcuts} imagen={'/Selva/shortcut.jpg'} altText={"Atajos: con el 0 puedes reiniciar el juego, con el 4 puedes deslizar la tarjeta hacia la izquierda, con el 5 puedes seleccionar la tarjeta que aparece en pantalla, con el 6 puedes deslizar la tarjeta a la derecha y con el 9 puedes activar el menu de ayuda SOS."}></ShortcutsSection>}
+        </>
     );
 }
 

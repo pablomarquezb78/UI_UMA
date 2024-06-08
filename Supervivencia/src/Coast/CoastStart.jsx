@@ -2,11 +2,17 @@ import React from 'react';
 import '../CSS/Start.css';
 import NavBar from '../Start/NavBar';
 import BiomeStart from '../Components/BiomeStart/BiomeStart'
+import { useEffect } from "react";
 
 function CoastStart({scrollToGridInfo}) {
     
+
+    useEffect(() => {
+        document.title = "How2Survive ~ Costa";
+    }, []);
+
+
     return(
-        
         
         <section id="landingSection" className="bg-white vw-100 vh-100">
     

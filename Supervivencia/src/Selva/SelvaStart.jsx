@@ -1,5 +1,6 @@
 import React from 'react';
 
+import { useEffect } from "react";
 import '../CSS/Start.css';
 import NavBar from '../Start/NavBar';
 import UnderConstruction from '../Components/UnderConstructionScreen'
@@ -8,6 +9,10 @@ import BiomeStart from '../Components/BiomeStart/BiomeStart'
 
 function SelvaStart({scrollToGridInfo}) {
     
+    useEffect(() => {
+        document.title = "How2Survive ~ Jungla";
+    }, []);
+
     return(
         
         
