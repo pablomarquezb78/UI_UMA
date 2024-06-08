@@ -60,8 +60,8 @@
 
 .card-text{
   
-  font-size: calc(14px + (25 - 14) * ((100vmin - 350px) / (1080 - 350)));
-  background: rgba(255, 255, 255, 0.8);
+  font-size: calc(15px + (25 - 15) * ((100vmin - 350px) / (1080 - 350)));
+  background: rgba(255, 255, 255, 0.9);
   backdrop-filter: blur( 7.5px );
   -webkit-backdrop-filter: blur(7.5px);
 
@@ -86,7 +86,7 @@
 
 .custom-buttonHOL {
   padding: 5px 15px;
-  font-size:  calc(7px + (20 - 7) * ((100vmin - 350px) / (1080 - 350)));
+  font-size:  calc(12px + (20 - 12) * ((100vmin - 350px) / (1080 - 350)));
   font-weight: bold;
   text-align: center;
   text-decoration: none;
@@ -118,10 +118,8 @@
     bottom: auto;
   }
 
-  .card-text{
-    font-size: calc(12px + (25 - 12) * ((100vmin - 350px) / (1080 - 350)));
-  }
 }
+
 
 @media only screen and (max-height: 350px) {
   .imagenesHOL{
@@ -165,8 +163,13 @@
   .card-text{
     font-size: calc(8px + (20 - 8) * ((100vmin - 350px) / (1080 - 350)));
   }
+
+  .custom-buttonHOL{
+    font-size:  calc(8px + (20 - 8) * ((100vmin - 350px) / (1080 - 350)));
+  }
   
 }
+
 
 
 

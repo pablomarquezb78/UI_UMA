@@ -86,6 +86,9 @@ function HigherLowerGame() {
             setIsCorrect(1);
             setShowDeaths(true);
             setTickAnimation(true);
+            setTimeout(() => {
+                setCounter(prevCounter => prevCounter + 1);
+            }, 2000);
         } else {
             setAnnouncement(`${data.randomImage(imageArray[rightCardIndex])?.mortalidad} muertes al año, fallaste`);
             setIsCorrect(2);
@@ -107,6 +110,9 @@ function HigherLowerGame() {
             setIsCorrect(1);
             setShowDeaths(true);
             setTickAnimation(true);
+            setTimeout(() => {
+                setCounter(prevCounter => prevCounter + 1);
+            }, 2000);
         } else {
             setAnnouncement(`${data.randomImage(imageArray[rightCardIndex])?.mortalidad} muertes al año, fallaste`);
             setIsCorrect(2);
@@ -224,7 +230,7 @@ function HigherLowerGame() {
             </section>
             <div className="d-flex justify-content-center align-items-center">
                 <button className={`custom-buttonHOL m-3 ${!showResult && !crossAnimation && !tickAnimation ? '' : 'esconderBoton'}`} onClick={resetGame}>Reiniciar</button>
-                <h1 style={{fontSize:'calc(10px + (30 - 10) * ((100vmin - 350px) / (1080 - 350)))'}} className={`${showAnimation ? "puntuacionHOL" : ""}`}>Puntuación: {counter}</h1>
+                <h1 style={{fontSize:'calc(13px + (30 - 13) * ((100vmin - 350px) / (1080 - 350)))'}} className={`${showAnimation ? "puntuacionHOL" : ""}`}>Puntuación: {counter}</h1>
             </div>
             <span aria-live="assertive" aria-atomic="true" className="visually-hidden">
                 {announcement}
