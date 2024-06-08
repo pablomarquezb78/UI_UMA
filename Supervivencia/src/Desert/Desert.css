@@ -173,10 +173,6 @@
     max-height: 40px;
 }
 
-#bagCapacityDisplay{
-    font-size:  calc(10px + (30 - 10) * ((100vmin - 350px) / (1080 - 350)));
-}
-
 #bagPuntuation{
     font-size:  calc(14px + (22 - 14) * ((100vmin - 350px) / (1080 - 350)));
 }

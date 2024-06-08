@@ -181,13 +181,13 @@ function DesertBagGame() {
                 <div id="bagGameDisplay" className="d-flex justify-content-center align-items-center">
                     <div id="bagPlace" className={`d-flex flex-grow-0 h-100 flex-column justify-content-center`}>
                         {(itemList.length<=15 && !endGamePressed && itemList.length>8) && (
-                            <AnimatedIconButtonDone title="Boton terminar mochila" onClick={endGame} disableRipple={true}><DoneIcon />Terminar mochila</AnimatedIconButtonDone>
+                            <AnimatedIconButtonDone title="Boton terminar mochila" onClick={endGame} disableRipple={true} style={{fontSize:'calc(14px + (30 - 14) * ((100vmin - 350px) / (1080 - 350)))'}}><DoneIcon />Terminar mochila</AnimatedIconButtonDone>
                         )}
                         <div id="BagContainer" className={`d-flex justify-content-center flex-grow-0 w-100 ${isItemIncluded ? "item-included" : ""}`}>
                             <img src={Bag} alt="Imagen de mochila de supervivencia" className="img-fluid"></img>
                         </div>
                         <div id="CapacityContainer" className={`${isItemIncluded ? "item-included" : ""}`}>
-                            <span id="bagCapacityDisplay" aria-label={`La capacidad actual de la mochila es ${16 - itemList.length} de 8`} className="d-block text-center text-white letter-spacing-1 line-height-1-2">Capacidad: {16 - itemList.length}/8</span>
+                            <span style={{fontSize:'calc(14px + (30 - 14) * ((100vmin - 350px) / (1080 - 350)))'}} aria-label={`La capacidad actual de la mochila es ${16 - itemList.length} de 8`} className="d-block text-center text-white letter-spacing-1 line-height-1-2">Capacidad: {16 - itemList.length}/8</span>
                         </div>
                     </div>
                     <div id="itemsContainer" className="h-100 d-flex flex-column align-items-center justify-content-center">
@@ -211,7 +211,7 @@ function DesertBagGame() {
                         </div>
                     </div>
                     <ItemInfoContainer itemList={itemList} currentIndex={currentIndex} Bottom={true} />
-                </div>
+                </div> 
             </div>
             {/* Span for screen reader announcements */}
             <span aria-live="assertive" aria-atomic="true" className="visually-hidden">
