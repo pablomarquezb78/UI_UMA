@@ -5,7 +5,8 @@ import PlayArrowIcon from "@mui/icons-material/PlayArrow"
 import SkipNextIcon from "@mui/icons-material/SkipNext"
 import PauseIcon from "@mui/icons-material/Pause"
 import ReplayIcon from "@mui/icons-material/Replay"
-import LibraryBooksIcon from "@mui/icons-material/LibraryBooks"
+//import LibraryBooksIcon from "@mui/icons-material/LibraryBooks"
+import SosIcon from "@mui/icons-material/Sos"
 import VolumeUpIcon from "@mui/icons-material/VolumeUp"
 import VolumeDownIcon from "@mui/icons-material/VolumeDown"
 import VolumeMuteIcon from "@mui/icons-material/VolumeMute"
@@ -321,7 +322,7 @@ function GameContent({backFunction, passFunction}) {
                     <div className='bottomElement row justify-content-center align-items-center h-50'>
                         <button tabIndex='0' onClick={tutorialClickHandle} className='scaleDown'>
                             <div className='bottomIconSVG'>
-                                <LibraryBooksIcon className='iconSVG'/>
+                                <SosIcon className='iconSVG'/>
                                 <br/>
                                 <p>Volver al tutorial</p>
                             </div>
