@@ -34,19 +34,19 @@ function TinderDeck({ numberOfCard }) {
 
     const sliderContainer = document.querySelector('.sliderContainer');
 
-    const AnimatedIconButton = styled(IconButton)`
-        color: black;
-
-        &:focus {
-            transform: scale(1.1);
-            transition: transform 0.1s ease;
+    const AnimatedIconButton = styled(IconButton)(() => ({
+        color: 'black',
+        '&:hover': {
+            color: 'gray',
+        },
+        '&:focus':{
+            color: 'gray'
+        },
+        '.MuiSvgIcon-root': {
+            width: 'calc(20px + (40 - 10) * ((100vmin - 350px) / (1080 - 350)))',
+            height: 'auto',
         }
-
-        .MuiSvgIcon-root {
-            width: calc(20px + (40 - 10) * ((100vmin - 350px) / (1080 - 350)));
-            height: calc(20px + (40 - 10) * ((100vmin - 350px) / (1080 - 350)));
-        }
-    `;
+    }));
 
     useEffect(() => {
         const handleKeyDown = (e) => {
@@ -248,7 +248,7 @@ function TinderDeck({ numberOfCard }) {
                 <div className="tinderHeader">
 
                     <div className="sosTinderDiv">
-                        <AnimatedIconButton title='Botón de ayuda' onClick={helpHandler}>
+                        <AnimatedIconButton disableRipple={true} title='Botón de ayuda' onClick={helpHandler}>
                             <SosIcon fontSize="large" />
                         </AnimatedIconButton>
                     </div>
@@ -259,7 +259,7 @@ function TinderDeck({ numberOfCard }) {
                     </span>
             
                     <div className="keyboardTinderDiv">
-                        <AnimatedIconButton title="Atajos de teclado" aria-label='Atajos del juego' aria-hidden='false' id='keyboardHOL' onClick={showShortcuts}>
+                        <AnimatedIconButton disableRipple={true} title="Atajos de teclado" aria-label='Atajos del juego' aria-hidden='false' id='keyboardHOL' onClick={showShortcuts}>
                             <KeyboardIcon />
                         </AnimatedIconButton>
                     </div>

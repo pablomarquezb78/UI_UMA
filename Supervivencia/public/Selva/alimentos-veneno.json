@@ -1,137 +1,192 @@
 [
-  {
-      "id": 1,
-      "cardTitle": "Banana",
-      "cardSubtitle": "Musa",
-      "img": "/Selva/FotosAlimentos/banana.jpg",
-      "imgAlt": "Imagen de Banana",
-      "cardText": "La banana es una fruta deliciosa y nutritiva que se encuentra comúnmente en la selva. Es una excelente fuente de potasio y otros nutrientes esenciales.",
-      "Mortalidad": "No mortal"
-  },
-  {
-      "id": 2,
-      "cardTitle": "Guayaba",
-      "cardSubtitle": "Psidium guajava",
-      "img": "/Selva/FotosAlimentos/guayaba.jpg",
-      "imgAlt": "Imagen de Guayaba",
-      "cardText": "La guayaba es una fruta tropical sabrosa y aromática que crece en la selva. Es rica en vitamina C y fibra, y es muy apreciada por su sabor único.",
-      "Mortalidad": "No mortal"
-  },
-  {
-      "id": 3,
-      "cardTitle": "Yuca",
-      "cardSubtitle": "Manihot esculenta",
-      "img": "/Selva/FotosAlimentos/yuca.jpg",
-      "imgAlt": "Imagen de Yuca",
-      "cardText": "La yuca es una raíz tuberosa comestible que se cultiva en la selva. Es una fuente importante de carbohidratos y se puede preparar de diversas formas.",
-      "Mortalidad": "No mortal"
-  },
-  {
-      "id": 4,
-      "cardTitle": "Manzana de agua",
-      "cardSubtitle": "Syzygium samarangense",
-      "img": "/Selva/FotosAlimentos/manzana_agua.jpg",
-      "imgAlt": "Imagen de Manzana de agua",
-      "cardText": "La manzana de agua es una fruta tropical que crece en los bosques húmedos. Aunque su sabor es agradable, todas las partes de la planta, incluidas las semillas, son venenosas si se ingieren.",
-      "Mortalidad": "Mortal"
-  },
-  {
-      "id": 5,
-      "cardTitle": "Fruto de manchineel",
-      "cardSubtitle": "Hippomane mancinella",
-      "img": "/Selva/FotosAlimentos/manchineel.jpg",
-      "imgAlt": "Imagen de Fruto de manchineel",
-      "cardText": "El fruto del manchineel, conocido como 'la manzana de la muerte', es extremadamente tóxico y puede ser mortal si se ingiere. Es importante evitar el contacto con esta fruta y sus hojas.",
-      "Mortalidad": "Mortal"
-  },
-  {
-      "id": 6,
-      "cardTitle": "Yuca amarga",
-      "cardSubtitle": "Manihot esculenta (amarga)",
-      "img": "/Selva/FotosAlimentos/yuca_amarga.jpg",
-      "imgAlt": "Imagen de Yuca amarga",
-      "cardText": "La variedad de yuca amarga contiene altos niveles de ácido cianhídrico, un compuesto venenoso. Si no se cocina correctamente para eliminar el veneno, puede ser fatal si se consume.",
-      "Mortalidad": "Mortal"
-  },
-  {
-      "id": 7,
-      "cardTitle": "Amanita phalloides",
-      "cardSubtitle": "Amanita phalloides",
-      "img": "/Selva/FotosAlimentos/amanita_phalloides.jpg",
-      "imgAlt": "Imagen de Amanita phalloides",
-      "cardText": "La Amanita phalloides, también conocida como 'hongo de muerte verde', es una seta altamente venenosa que se encuentra en la selva. Contiene toxinas que pueden causar daño hepático grave e incluso la muerte si se ingiere.",
-      "Mortalidad": "Mortal"
-  },
-  {
-      "id": 8,
-      "cardTitle": "Amanita muscaria",
-      "cardSubtitle": "Amanita muscaria",
-      "img": "/Selva/FotosAlimentos/amanita_muscaria.jpg",
-      "imgAlt": "Imagen de Amanita muscaria",
-      "cardText": "La Amanita muscaria, conocida como 'amanita de mosca', es otra seta altamente venenosa que se encuentra en la selva. Contiene compuestos tóxicos que pueden provocar alucinaciones, convulsiones y otros efectos adversos graves.",
-      "Mortalidad": "Mortal"
-  },
-  {
-      "id": 9,
-      "cardTitle": "Púas de la fruta de lichi",
-      "cardSubtitle": "Litchi chinensis",
-      "img": "/Selva/FotosAlimentos/puas_lichi.jpg",
-      "imgAlt": "Imagen de Púas de la fruta de lichi",
-      "cardText": "Las semillas son tóxicas si se mastican y se ingieren en grandes cantidades. Pueden causar hipoglucemia y otros problemas de salud.",
-      "Mortalidad": "No mortal"
-  },
-  {
-      "id": 10,
-      "cardTitle": "Plantas cícadas",
-      "cardSubtitle": "Cycadophyta",
-      "img": "/Selva/FotosAlimentos/cicadas.jpg",
-      "imgAlt": "Imagen de Plantas cícadas",
-      "cardText": "Las cícadas son plantas coníferas que pueden tener diferentes niveles de toxicidad dependiendo de la especie y la preparación. Algunas son utilizadas en medicina y rituales, mientras que otras pueden ser venenosas.",
-      "Mortalidad": "No mortal"
-  },
-  {
-      "id": 11,
-      "cardTitle": "Bala de cañón",
-      "cardSubtitle": "Couroupita guianensis",
-      "img": "/Selva/FotosAlimentos/bala_canon.jpg",
-      "imgAlt": "Imagen de Bala de cañón",
-      "cardText": "El árbol de la bala de cañón produce frutos espinosos y venenosos que contienen una sustancia tóxica llamada cerberin. La ingesta de la fruta puede ser mortal.",
-      "Mortalidad": "Mortal"
-  },
-  {
-      "id": 12,
-      "cardTitle": "Fruta de la higuera estranguladora",
-      "cardSubtitle": "Ficus aurea",
-      "img": "/Selva/FotosAlimentos/higuera_estranguladora.jpg",
-      "imgAlt": "Imagen de Fruta de la higuera estranguladora",
-      "cardText": "La fruta de la higuera estranguladora, una especie de higo silvestre, produce frutos tóxicos que pueden causar trastornos gastrointestinales graves y la muerte si se ingieren.",
-      "Mortalidad": "Mortal"
-  },
-  {
-      "id": 13,
-      "cardTitle": "Bayas de ricino",
-      "cardSubtitle": "Ricinus communis",
-      "img": "/Selva/FotosAlimentos/bayas_ricino.jpg",
-      "imgAlt": "Imagen de Bayas de ricino",
-      "cardText": "Las bayas del ricino contienen ricina, una toxina mortal que puede causar daño orgánico y la muerte si se ingieren.",
-      "Mortalidad": "Mortal"
-  },
-  {
-      "id": 14,
-      "cardTitle": "Castañas de saponina",
-      "cardSubtitle": "Sapindus saponaria",
-      "img": "/Selva/FotosAlimentos/castanas_saponina.jpg",
-      "imgAlt": "Imagen de Castañas de saponina",
-      "cardText": "Las castañas de saponina, producidas por el árbol de jabón, contienen una sustancia tóxica que puede causar vómitos, diarrea y otros síntomas graves si se ingieren en grandes cantidades.",
-      "Mortalidad": "Mortal"
-  },
-  {
-      "id": 15,
-      "cardTitle": "Raíz de cicuta",
-      "cardSubtitle": "Conium maculatum",
-      "img": "/Selva/FotosAlimentos/raiz_cicuta.jpg",
-      "imgAlt": "Imagen de Raíz de cicuta",
-      "cardText": "La raíz de cicuta contiene alcaloides tóxicos que pueden causar convulsiones, parálisis respiratoria y la muerte si se ingiere.",
-      "Mortalidad": "Mortal"
-  }
-]
+    {
+        "id": 1,
+        "cardTitle": "Banana",
+        "cardSubtitle": "Musa",
+        "img": "/Selva/FotosAlimentos/banana.jpg",
+        "imgAlt": "Imagen de Banana",
+        "cardText": "La banana es una fruta deliciosa y nutritiva que se encuentra comúnmente en la selva. Es una excelente fuente de potasio y otros nutrientes esenciales.",
+        "Mortalidad": "No mortal"
+    },
+    {
+        "id": 2,
+        "cardTitle": "Guayaba",
+        "cardSubtitle": "Psidium guajava",
+        "img": "/Selva/FotosAlimentos/guayaba.jpg",
+        "imgAlt": "Imagen de Guayaba",
+        "cardText": "La guayaba es una fruta tropical sabrosa y aromática que crece en la selva. Es rica en vitamina C y fibra, y es muy apreciada por su sabor único.",
+        "Mortalidad": "No mortal"
+    },
+    {
+        "id": 3,
+        "cardTitle": "Yuca",
+        "cardSubtitle": "Manihot esculenta",
+        "img": "/Selva/FotosAlimentos/yuca.jpg",
+        "imgAlt": "Imagen de Yuca",
+        "cardText": "La yuca es una raíz tuberosa comestible que se cultiva en la selva. Es una fuente importante de carbohidratos y se puede preparar de diversas formas.",
+        "Mortalidad": "No mortal"
+    },
+    {
+        "id": 4,
+        "cardTitle": "Manzana de agua",
+        "cardSubtitle": "Syzygium samarangense",
+        "img": "/Selva/FotosAlimentos/manzana_agua.jpg",
+        "imgAlt": "Imagen de Manzana de agua",
+        "cardText": "La manzana de agua es una fruta tropical que crece en los bosques húmedos. Su sabor es agradable y refrescante.",
+        "Mortalidad": "No mortal"
+    },
+    {
+        "id": 5,
+        "cardTitle": "Fruto de manchineel",
+        "cardSubtitle": "Hippomane mancinella",
+        "img": "/Selva/FotosAlimentos/manchineel.jpg",
+        "imgAlt": "Imagen de Fruto de manchineel",
+        "cardText": "El fruto del manchineel es conocido como 'la manzana de la muerte'. Es importante evitar el contacto con esta fruta y sus hojas.",
+        "Mortalidad": "Mortal"
+    },
+    {
+        "id": 6,
+        "cardTitle": "Yuca amarga",
+        "cardSubtitle": "Manihot esculenta (amarga)",
+        "img": "/Selva/FotosAlimentos/yuca_amarga.jpg",
+        "imgAlt": "Imagen de Yuca amarga",
+        "cardText": "La variedad de yuca amarga contiene altos niveles de ácido cianhídrico. Si no se cocina correctamente, puede ser fatal si se consume.",
+        "Mortalidad": "Mortal"
+    },
+    {
+        "id": 7,
+        "cardTitle": "Amanita phalloides",
+        "cardSubtitle": "Amanita phalloides",
+        "img": "/Selva/FotosAlimentos/amanita_phalloides.jpg",
+        "imgAlt": "Imagen de Amanita phalloides",
+        "cardText": "La Amanita phalloides, también conocida como 'hongo de muerte verde', es una seta que se encuentra en la selva. Contiene toxinas que pueden causar daño hepático grave e incluso la muerte si se ingiere.",
+        "Mortalidad": "Mortal"
+    },
+    {
+        "id": 8,
+        "cardTitle": "Amanita muscaria",
+        "cardSubtitle": "Amanita muscaria",
+        "img": "/Selva/FotosAlimentos/amanita_muscaria.jpg",
+        "imgAlt": "Imagen de Amanita muscaria",
+        "cardText": "La Amanita muscaria, conocida como 'amanita de mosca', es otra seta que se encuentra en la selva. Contiene compuestos que pueden provocar alucinaciones, convulsiones y otros efectos adversos graves.",
+        "Mortalidad": "Mortal"
+    },
+    {
+        "id": 9,
+        "cardTitle": "Púas de la fruta de lichi",
+        "cardSubtitle": "Litchi chinensis",
+        "img": "/Selva/FotosAlimentos/puas_lichi.jpg",
+        "imgAlt": "Imagen de Púas de la fruta de lichi",
+        "cardText": "Las frutas de lichi son dulces y jugosas, y son una excelente fuente de vitamina C y antioxidantes.",
+        "Mortalidad": "No mortal"
+    },
+    {
+        "id": 10,
+        "cardTitle": "Plantas cícadas",
+        "cardSubtitle": "Cycadophyta",
+        "img": "/Selva/FotosAlimentos/cicadas.jpg",
+        "imgAlt": "Imagen de Plantas cícadas",
+        "cardText": "Las cícadas son plantas coníferas que pueden tener diferentes niveles de toxicidad dependiendo de la especie y la preparación.",
+        "Mortalidad": "No mortal"
+    },
+    {
+        "id": 11,
+        "cardTitle": "Bala de cañón",
+        "cardSubtitle": "Couroupita guianensis",
+        "img": "/Selva/FotosAlimentos/bala_canon.jpg",
+        "imgAlt": "Imagen de Bala de cañón",
+        "cardText": "El árbol de la bala de cañón produce frutos espinosos que contienen una sustancia llamada cerberin. La ingesta de la fruta puede ser mortal.",
+        "Mortalidad": "Mortal"
+    },
+    {
+        "id": 12,
+        "cardTitle": "Fruta de la higuera estranguladora",
+        "cardSubtitle": "Ficus aurea",
+        "img": "/Selva/FotosAlimentos/higuera_estranguladora.jpg",
+        "imgAlt": "Imagen de Fruta de la higuera estranguladora",
+        "cardText": "La fruta de la higuera estranguladora, una especie de higo silvestre, produce frutos que pueden causar trastornos gastrointestinales graves si se ingieren.",
+        "Mortalidad": "Mortal"
+    },
+    {
+        "id": 13,
+        "cardTitle": "Bayas de ricino",
+        "cardSubtitle": "Ricinus communis",
+        "img": "/Selva/FotosAlimentos/bayas_ricino.jpg",
+        "imgAlt": "Imagen de Bayas de ricino",
+        "cardText": "Las bayas del ricino contienen ricina, una toxina que puede causar daño orgánico y la muerte si se ingieren.",
+        "Mortalidad": "Mortal"
+    },
+    {
+        "id": 14,
+        "cardTitle": "Castañas de saponina",
+        "cardSubtitle": "Sapindus saponaria",
+        "img": "/Selva/FotosAlimentos/castanas_saponina.jpg",
+        "imgAlt": "Imagen de Castañas de saponina",
+        "cardText": "Las castañas de saponina, producidas por el árbol de jabón, contienen una sustancia que puede causar vómitos, diarrea y otros síntomas graves si se ingieren en grandes cantidades.",
+        "Mortalidad": "Mortal"
+    },
+    {
+        "id": 15,
+        "cardTitle": "Raíz de cicuta",
+        "cardSubtitle": "Conium maculatum",
+        "img": "/Selva/FotosAlimentos/raiz_cicuta.jpg",
+        "imgAlt": "Imagen de Raíz de cicuta",
+        "cardText": "La raíz de cicuta contiene alcaloides que pueden causar convulsiones, parálisis respiratoria y la muerte si se ingiere.",
+        "Mortalidad": "Mortal"
+    },
+    {
+        "id": 16,
+        "cardTitle": "Mangostán",
+        "cardSubtitle": "Garcinia mangostana",
+        "img": "/Selva/FotosAlimentos/mangostan.jpg",
+        "imgAlt": "Imagen de Mangostán",
+        "cardText": "El mangostán es conocido como la reina de las frutas por su sabor dulce y ligeramente ácido. Es rico en antioxidantes y vitamina C.",
+        "Mortalidad": "No mortal"
+    },
+    {
+        "id": 17,
+        "cardTitle": "Papaya",
+        "cardSubtitle": "Carica papaya",
+        "img": "/Selva/FotosAlimentos/papaya.jpg",
+        "imgAlt": "Imagen de Papaya",
+        "cardText": "La papaya es una fruta tropical suave y dulce que es una excelente fuente de vitamina C, vitamina A y fibra.",
+        "Mortalidad": "No mortal"
+    },
+    {
+        "id": 18,
+        "cardTitle": "Pitahaya",
+        "cardSubtitle": "Hylocereus undatus",
+        "img": "/Selva/FotosAlimentos/pitahaya.jpg",
+        "imgAlt": "Imagen de Pitahaya",
+        "cardText": "También conocida como fruta del dragón, la pitahaya es rica en vitamina C, fibra y antioxidantes, y tiene un sabor refrescante.",
+        "Mortalidad": "No mortal"
+    },
+    {
+        "id": 19,
+        "cardTitle": "Maracuyá",
+        "cardSubtitle": "Passiflora edulis",
+        "img": "/Selva/FotosAlimentos/maracuya.jpg",
+        "imgAlt": "Imagen de Maracuyá",
+        "cardText": "El maracuyá, o fruta de la pasión, tiene un sabor dulce y ligeramente ácido. Es una excelente fuente de vitamina C y antioxidantes.",
+        "Mortalidad": "No mortal"
+    },
+    {
+        "id": 20,
+        "cardTitle": "Rambután",
+        "cardSubtitle": "Nephelium lappaceum",
+        "img": "/Selva/FotosAlimentos/rambutan.jpg",
+        "imgAlt": "Imagen de Rambután",
+        "cardText": "El rambután es una fruta exótica similar al lichi, con un sabor dulce y ligeramente ácido. Es rica en vitamina C y antioxidantes.",
+        "Mortalidad": "No mortal"
+    },
+    {
+        "id": 21,
+        "cardTitle": "Noni",
+        "cardSubtitle": "Morinda citrifolia",
+        "img": "/Selva/FotosAlimentos/noni.jpg",
+        "imgAlt": "Imagen de Noni",
+        "cardText": "El noni es conocido por sus beneficios medicinales y se utiliza en diversas preparaciones tradicionales. Es rico en vitaminas y minerales.",
+        "Mortalidad": "No mortal"
+    }
+  ]
+  
