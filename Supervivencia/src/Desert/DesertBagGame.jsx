@@ -11,6 +11,7 @@ import RestartAltIcon from '@mui/icons-material/RestartAlt';
 import SosIcon from '@mui/icons-material/Sos';
 import AddIcon from '@mui/icons-material/Add';
 import KeyboardIcon from '@mui/icons-material/Keyboard';
+import DoneIcon from '@mui/icons-material/Done';
 
 import HelpSection from "./HelpSection";
 import ItemInfoContainer from "./ItemInfoContainer";
@@ -39,6 +40,7 @@ function DesertBagGame() {
     const [indexChanged, setIndexChanged] = useState(false);
     const [helpPressed, setHelPressed] = useState(false);
     const [shortcutsPressed, setShortcutsPressed] = useState(false);
+    const [endGamePressed, setEndGamePressed] = useState(false);
     const [itemList, setItemList] = useState([...initialItemList]);
     const [cooldown, setCooldown] = useState(false);
     const [announcement, setAnnouncement] = useState('');
@@ -92,6 +94,7 @@ function DesertBagGame() {
         setSuma(0);
         setCurrentIndex(0);
         setItemList([...initialItemList]);
+        setEndGamePressed(false);
         setAnnouncement('El juego ha sido reiniciado');
     };
 
@@ -101,6 +104,10 @@ function DesertBagGame() {
 
     const showShortcuts = () => {
         setShortcutsPressed(prevState => !prevState);
+    }
+
+    const endGame = () => {
+        setEndGamePressed(true);
     }
 
     const handleButtonClick = (callback) => {
@@ -130,19 +137,19 @@ function DesertBagGame() {
             window.removeEventListener('keydown', handleKeyDown);
         };
     }, [cooldown]);
-
+ 
     return (
         <section id="desertGameCompleteSection" className="position-relative vw-100 vh-100">
             <div id="completeGameSectionHelp" className="d-flex flex-column position-absolute start-50 translate-middle-x">
                 <div id="resultDisplay" className="d-flex justify-content-around mt-2">
                     <h1 id="bagGameTitle" className="text-center text-white d-flex align-items-center letter-spacing-1 line-height-1-2">¡Prepara la mochila para sobrevivir!</h1>
-                    <AnimatedIconButton disableRipple={true} title="Reiniciar juego" className={`${(helpPressed || itemList.length === 8 || shortcutsPressed) ? "esconderBoton" : ""}`} onClick={restartGame}>
+                    <AnimatedIconButton disableRipple={true} title="Reiniciar juego" className={`${(helpPressed || itemList.length === 8 || shortcutsPressed || endGamePressed) ? "esconderBoton" : ""}`} onClick={restartGame}>
                         <RestartAltIcon />
                     </AnimatedIconButton>
-                    <AnimatedIconButton disableRipple={true} title="Ayuda del juego" className={`${(helpPressed || itemList.length === 8 || shortcutsPressed) ? "esconderBoton" : ""}`} onClick={showHelp}>
+                    <AnimatedIconButton disableRipple={true} title="Ayuda del juego" className={`${(helpPressed || itemList.length === 8 || shortcutsPressed || endGamePressed) ? "esconderBoton" : ""}`} onClick={showHelp}>
                         <SosIcon />
                     </AnimatedIconButton>
-                    <AnimatedIconButton disableRipple={true} title="Atajos de teclado" className={`${(helpPressed || itemList.length === 8 || shortcutsPressed) ? "esconderBoton" : ""}`} onClick={showShortcuts}>
+                    <AnimatedIconButton disableRipple={true} title="Atajos de teclado" className={`${(helpPressed || itemList.length === 8 || shortcutsPressed || endGamePressed) ? "esconderBoton" : ""}`} onClick={showShortcuts}>
                         <KeyboardIcon />
                     </AnimatedIconButton>
                 </div>
@@ -153,21 +160,24 @@ function DesertBagGame() {
                 {(shortcutsPressed) && (
                     <ShortcutsSection showShortcuts={showShortcuts} imagen={"../../public/Desert/DesertImages/atajosdesert.png"} altText={"Atajos: con el 0 puedes reiniciar el juego, con el 4 puedes mostrar el objeto anterior, con el 5 puedes incluir el objeto en la mochila, con el 6 puedes mostrar el siguiente objeto y con el 9 puedes activar el menu de ayuda SOS"} propButton={"btn btn-dark h-25 mt-4"}/>
                 )}
-                {itemList.length === 8 && (
+                {(itemList.length === 8 || endGamePressed) && (
                     <div className="position-absolute z-1 bg-white rounded p-3 mb-5 appear-animation w-50 h-50 d-flex flex-column justify-content-center align-items-center top-50 fw-bold
                             start-50 translate-middle" style={{ maxHeight: '200px' }}>
                         <h1 id="bagPuntuation" className="text-center h-50 letter-spacing-1 line-height-1-2">¡Fin del juego!<br /><br /> Has conseguido {suma} puntos de supervivencia</h1>
-                        <button id="bagRestartPuntuation" className="btn btn-dark h-50 mt-1" style={{ maxHeight: '50px' }} onClick={restartGame}><span className="my-auto">Reiniciar</span></button>
+                        <button id="bagRestartPuntuation" className="btn btn-dark h-50 mt-1" onClick={restartGame}><span className="my-auto">Reiniciar</span></button>
                     </div>
                 )}
                 <div id="bagGameDisplay" className="d-flex justify-content-center align-items-center">
-                    <div id="bagPlace" className={`d-flex flex-grow-0 h-100 flex-column justify-content-center  ${isItemIncluded ? "item-included" : ""}`}>
-                        <div id="BagContainer" className={`d-flex justify-content-center flex-grow-0 w-100`}>
+                    <div id="bagPlace" className={`d-flex flex-grow-0 h-100 flex-column justify-content-center`}>
+                        <div id="BagContainer" className={`d-flex justify-content-center flex-grow-0 w-100 ${isItemIncluded ? "item-included" : ""}`}>
                             <img src={Bag} alt="Imagen de mochila de supervivencia" className="img-fluid"></img>
                         </div>
-                        <div id="CapacityContainer">
+                        <div id="CapacityContainer" className={`${isItemIncluded ? "item-included" : ""}`}>
                             <span id="bagCapacityDisplay" aria-label={`La capacidad actual de la mochila es ${16 - itemList.length} de 8`} className="d-block text-center text-white letter-spacing-1 line-height-1-2">Capacidad: {16 - itemList.length}/8</span>
                         </div>
+                        {(itemList.length<=15) && (
+                        <AnimatedIconButton title="Boton Terminar" onClick={endGame} disableRipple={true}><DoneIcon /></AnimatedIconButton>
+                        )}
                     </div>
                     <div id="itemsContainer" className="h-100 d-flex flex-column align-items-center justify-content-center">
                         <div id="itemImgContainer" className="d-flex justify-content-center w-100">
@@ -178,7 +188,7 @@ function DesertBagGame() {
                                 onAnimationEnd={() => {
                                     setIsAnimating(false); // Indica que la animación del objeto ha terminado
                                 }}
-                            />
+                            /> 
                         </div>
                         <div id="bagButtonContainer" className="d-flex justify-content-center align-items-center">
                             <AnimatedIconButton title="Objeto anterior"
@@ -193,7 +203,7 @@ function DesertBagGame() {
                 </div>
             </div>
             {/* Span for screen reader announcements */}
-            <span aria-live="assertive" aria-atomic="true" className="sr-only">
+            <span aria-live="assertive" aria-atomic="true" className="visually-hidden">
                 {announcement}
             </span>
         </section>
