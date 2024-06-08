@@ -3,8 +3,14 @@ import React from "react";
 import '../CSS/Start.css';
 import AboutUS from "./Components/AboutUs";
 import NavBar from '../Start/NavBar';
+import { useEffect } from "react";
 
 function AboutUsStart({scrollToGridInfo}){
+
+    useEffect(() => {
+        document.title = "How2Survive ~ Sobre Nosotros";
+    }, []);
+
     return(
         <>
 

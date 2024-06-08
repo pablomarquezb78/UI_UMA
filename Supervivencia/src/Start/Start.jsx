@@ -6,8 +6,13 @@ import '../CSS/NavBar.css';
 import VideoStart from './VideoStart';
 import NavBar from './NavBar';
 import { Typewriter, useTypewriter } from 'react-simple-typewriter';
+import { useEffect } from "react";
 
 function Start({scrollToGridInfo}) {
+
+    useEffect(() => {
+        document.title = "How2Survive";
+    }, []);
 
     const [text] = useTypewriter({
         words: ["Sobrevive", "Adáptate", "Aprende", "Resiste", "Perdura", "Persiste", "Aguanta"],        
