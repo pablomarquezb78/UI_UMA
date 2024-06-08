@@ -54,6 +54,7 @@ function GridZone() {
                             onKeyPress={(event) => handleKeyPress(event, overFireHandler)}
                             src={hogueraPrendida}
                             alt="Hoguera Prendida"
+                            title='Apagar hoguera'
                             tabIndex={0}
                         />
                         <img
@@ -63,6 +64,7 @@ function GridZone() {
                             onKeyPress={(event) => handleKeyPress(event, fireHandler)}
                             src={hogueraSeca}
                             alt="Hoguera Seca"
+                            title='Encender hoguera'
                             tabIndex={0}
                         />
                     </div>

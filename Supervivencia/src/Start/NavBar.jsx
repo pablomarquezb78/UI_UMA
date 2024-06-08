@@ -85,13 +85,13 @@ const Navbar = React.memo(({ currentLink, scrollToGridInfo }) => {
         <header className={`d-flex flex-row position-${currentLink === 1 ? "absolute" : "fixed"} ${bg} top-0 start-0 end-0 z-3 vw-100 vh-9 navBar`}>
             <div className="navBarItem">
                 {showMenu === 0 && (
-                    <AnimatedIconButton title="Menú despliegue navegación" disableRipple={true} onClick={toggleMenu}>
-                        <MenuIcon id="hamburger" />
+                    <AnimatedIconButton  id="hamburger" title="Menú despliegue navegación" disableRipple={true} onClick={toggleMenu}>
+                        <MenuIcon />
                     </AnimatedIconButton>
                 )}
                 {showMenu === 1 && (
-                    <AnimatedIconButton title="Cerrar Menú navegación" disableRipple={true} onClick={toggleMenu}>
-                        <CloseIcon id="hamburger" />
+                    <AnimatedIconButton  id="hamburger" title="Cerrar Menú navegación" disableRipple={true} onClick={toggleMenu}>
+                        <CloseIcon />
                     </AnimatedIconButton>
                 )}
                 {showMenu === 2 && (

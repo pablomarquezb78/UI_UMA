@@ -72,7 +72,7 @@ function HigherLowerGame() {
                     setShowDeaths(false);
                     setButtonsVisible(true);
                 }
-            }, 1500);
+            }, 2000);
             return () => clearTimeout(timer);
         }
     }, [tickAnimation, rightCardIndex, imageArray.length]);
@@ -86,18 +86,15 @@ function HigherLowerGame() {
             setIsCorrect(1);
             setShowDeaths(true);
             setTickAnimation(true);
-            setTimeout(() => {
-                setCounter(prevCounter => prevCounter + 1);
-            }, 1500);
         } else {
-            setAnnouncement(`${data.randomImage(imageArray[rightCardIndex])?.mortalidad} muertes al año`);
+            setAnnouncement(`${data.randomImage(imageArray[rightCardIndex])?.mortalidad} muertes al año, fallaste`);
             setIsCorrect(2);
             setShowDeaths(true);
             setCrossAnimation(true);
             setTimeout(() => {
                 setCrossAnimation(false);
                 setShowResult(true);
-            }, 1500);
+            }, 2000);
         }
     };
 
@@ -110,18 +107,15 @@ function HigherLowerGame() {
             setIsCorrect(1);
             setShowDeaths(true);
             setTickAnimation(true);
-            setTimeout(() => {
-                setCounter(prevCounter => prevCounter + 1);
-            }, 1500);
         } else {
-            setAnnouncement(`${data.randomImage(imageArray[rightCardIndex])?.mortalidad} muertes al año`);
+            setAnnouncement(`${data.randomImage(imageArray[rightCardIndex])?.mortalidad} muertes al año, fallaste`);
             setIsCorrect(2);
             setShowDeaths(true);
             setCrossAnimation(true);
             setTimeout(() => {
                 setCrossAnimation(false);
                 setShowResult(true);
-            }, 1500);
+            }, 2000);
         }
     };
 
@@ -185,27 +179,26 @@ function HigherLowerGame() {
     return (
         <section className='gameHOL d-flex flex-column justify-content-center align-items-center text-center vh-100 vw-100'>
             <div id='cabeceraHOL' className='position-relative w-100 d-flex justify-content-center align-items-center'>
-            <div>
-                <h1 className='tituloHOL'>Higher or Lower</h1>
-                <h2 className='descripcionHOL'>¿Cuál es más letal para el humano 💀?</h2>
+                <div>
+                    <h1 className='tituloHOL'>Higher or Lower</h1>
+                        <h2 className='descripcionHOL'>¿Cuál es más letal para el humano 💀?</h2>
+                </div>
+                <AnimatedIconButton title="Ayuda para el juego" aria-label='Ayuda para el juego' aria-hidden='false' className={`position-absolute ${!showResult ? '' : 'esconderBoton'}`}  id='sosHOL' onClick={helpHandler}><SosIcon/></AnimatedIconButton>
+                <AnimatedIconButton title="Atajos de teclado" aria-label='Atajos de teclado' aria-hidden='false' className={`position-absolute ${!showResult ? '' : 'esconderBoton'}`} id='keyboardHOL' onClick={showShortcuts}><KeyboardIcon /></AnimatedIconButton>
             </div>
-            <AnimatedIconButton title="Ayuda para el juego" aria-label='Ayuda para el juego' aria-hidden='false' className={`position-absolute ${!showResult ? '' : 'esconderBoton'}`}  id='sosHOL' onClick={helpHandler}><SosIcon/></AnimatedIconButton>
-            <AnimatedIconButton title="Atajos de teclado" aria-label='Atajos de teclado' aria-hidden='false' className={`position-absolute ${!showResult ? '' : 'esconderBoton'}`} id='keyboardHOL' onClick={showShortcuts}><KeyboardIcon /></AnimatedIconButton>
-
-        </div>
             <section className='imagenesHOL position-relative d-flex justify-content-center align-items-center'>
                 {needHelp && (<HelpHOL helpHandler={helpHandler}/>)}
                 {shortcutsPressed && (<ShortcutsSection  showShortcuts={showShortcuts} imagen={'/Coast/CoastGame/atajosCosta.jpg'} altText={"Atajos: con el 0 puedes reiniciar el juego, con el1 puedes cancelar, con el 2 puedes pulsar el botón de lower, con el 8 puedes pulsar el botón de higher y con el 9 puedes activar el menu de ayuda SOS"} propButton={"custom-buttonHOL mt-4"}/>)}
                 <div className='imagenHOL position-relative'>
                     <img alt={data.randomImage(imageArray[leftCardIndex])?.imgAlt} className='img-fluid containerHOL' src={data.randomImage(imageArray[leftCardIndex])?.img}/>
                     <div id='informacion_imagen_i'>
-                        <h3 className='card-text'> {data.randomImage(imageArray[leftCardIndex])?.cardTitle}: {data.randomImage(imageArray[leftCardIndex])?.mortalidad} muertes al año </h3>
+                        <h1 className='card-text'> {data.randomImage(imageArray[leftCardIndex])?.cardTitle}: {data.randomImage(imageArray[leftCardIndex])?.mortalidad} muertes al año </h1>
                     </div>      
                 </div>
                 <div className='imagenHOL position-relative'>
                     <img alt={data.randomImage(imageArray[rightCardIndex])?.imgAlt} className='img-fluid containerHOL' src={data.randomImage(imageArray[rightCardIndex])?.img}/>
                     <div id='informacion_imagen_d'>
-                        <h3 className='card-text'> {data.randomImage(imageArray[rightCardIndex])?.cardTitle}: {showDeaths ? data.randomImage(imageArray[rightCardIndex])?.mortalidad : '?'} muertes al año </h3>
+                        <h1 className='card-text'> {data.randomImage(imageArray[rightCardIndex])?.cardTitle}: {showDeaths ? data.randomImage(imageArray[rightCardIndex])?.mortalidad : '?'} muertes al año </h1>
                     </div>
                     <div className='botonesHOL position-absolute'>
                         {buttonsVisible && (
@@ -231,7 +224,7 @@ function HigherLowerGame() {
             </section>
             <div className="d-flex justify-content-center align-items-center">
                 <button className={`custom-buttonHOL m-3 ${!showResult && !crossAnimation && !tickAnimation ? '' : 'esconderBoton'}`} onClick={resetGame}>Reiniciar</button>
-                <h3 style={{fontSize:'calc(10px + (30 - 10) * ((100vmin - 350px) / (1080 - 350)))'}} className={`${showAnimation ? "puntuacionHOL" : ""}`}>Puntuación: {counter}</h3>
+                <h1 style={{fontSize:'calc(10px + (30 - 10) * ((100vmin - 350px) / (1080 - 350)))'}} className={`${showAnimation ? "puntuacionHOL" : ""}`}>Puntuación: {counter}</h1>
             </div>
             <span aria-live="assertive" aria-atomic="true" className="visually-hidden">
                 {announcement}
