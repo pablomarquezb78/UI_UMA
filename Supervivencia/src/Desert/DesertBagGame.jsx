@@ -180,8 +180,8 @@ function DesertBagGame() {
                 )}
                 <div id="bagGameDisplay" className="d-flex justify-content-center align-items-center">
                     <div id="bagPlace" className={`d-flex flex-grow-0 h-100 flex-column justify-content-center`}>
-                        {(itemList.length<=15 && !endGamePressed && itemList.length>8) && (
-                            <AnimatedIconButtonDone title="Boton terminar mochila" onClick={endGame} disableRipple={true} style={{fontSize:'calc(14px + (30 - 14) * ((100vmin - 350px) / (1080 - 350)))'}}><DoneIcon />Terminar mochila</AnimatedIconButtonDone>
+                        {(itemList.length<=15 && !endGamePressed && itemList.length>8) && (                                                                                                                            
+                            <AnimatedIconButtonDone title="Boton terminar" onClick={endGame} disableRipple={true} style={{fontSize:'calc(14px + (30 - 14) * ((100vmin - 350px) / (1080 - 350)))'}}><DoneIcon />Terminar</AnimatedIconButtonDone>
                         )}
                         <div id="BagContainer" className={`d-flex justify-content-center flex-grow-0 w-100 ${isItemIncluded ? "item-included" : ""}`}>
                             <img src={Bag} alt="Imagen de mochila de supervivencia" className="img-fluid"></img>
