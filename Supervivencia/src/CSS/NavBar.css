@@ -50,12 +50,6 @@
     
 }
 
-#ayudaLogoStart:focus{
-    outline: 2px solid #000;
-    border-radius: 0;
-    outline-offset: -10px;
-}
-
 #webLogoStart{
     width: calc(30px + (80 - 30) * ((100vmin - 350px) / (1080 - 350)));
     height: auto; 
@@ -95,6 +89,14 @@ li img{
 
 #hamburger:focus{
     outline: 2px solid #000;
+    border-radius: 0;
+    outline-offset: -10px;
+}
+
+#ayudaLogoStart:focus{
+    outline: 2px solid #000;
+    border-radius: 0;
+    outline-offset: -10px;
 }
 
 a{
