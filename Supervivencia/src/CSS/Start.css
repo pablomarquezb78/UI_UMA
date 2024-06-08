@@ -3,7 +3,7 @@
 
 @font-face {
     font-family: Noto_Serif_B;
-    src: url('../../public/Fonts/Noto_Serif_KR/NotoSerifKR-Black.otf');
+    src: url('/Fonts/Noto_Serif_KR/NotoSerifKR-Black.otf');
     /*src: url('../../public/Fonts/Noto_Serif_KR/NotoSerifKR-Bold.otf');
     src: url('../../public/Fonts/Noto_Serif_KR/NotoSerifKR-ExtraLight.otf');
     src: url('../../public/Fonts/Noto_Serif_KR/NotoSerifKR-Light.otf'); */
@@ -15,7 +15,7 @@
 
 @font-face {
     font-family: Noto_Serif_M;
-    src: url('../../public/Fonts/Noto_Serif_KR/NotoSerifKR-Medium.otf');
+    src: url('/Fonts/Noto_Serif_KR/NotoSerifKR-Medium.otf');
 }
 
 /* SECCION DEL VIDEO */
@@ -32,7 +32,6 @@
 
 .startArticle{
     left: 0;
-    top: 10%;
     padding-left: 5vw;
 }
 
@@ -45,7 +44,7 @@
   
 #resilencia{
     padding-top: 20px;
-    padding-left: 15px;
+    padding-left: 8px;
     width: 30px;
     font-size:  calc(22px + (45 - 22) * ((100vmin - 350px) / (1080 - 350)));
     font-family: 'Noto_Serif_B', NotoSerifKR-Black
@@ -53,7 +52,7 @@
 
 #resilenciaDefinition{
     padding-top: 5px;
-    padding-left: 15px;
+    padding-left: 8px;
     width: 40vw;
     font-size:  calc(14px + (30 - 14) * ((100vmin - 350px) / (1080 - 350)));
     font-family: 'Noto_Serif_M',NotoSerifKR-Medium;

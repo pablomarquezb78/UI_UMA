@@ -6,9 +6,11 @@ import SosIcon from '@mui/icons-material/Sos';
 import KeyboardIcon from '@mui/icons-material/Keyboard';
 import './Coast.css';
 import HelpHOL from './HelpHOL.jsx';
-import ShortcutsSection from './ShortcutsSection.jsx';
+import ShortcutsSection from '../Components/ShortcutsSection.jsx';
 
 function HigherLowerGame() {
+
+
     const AnimatedIconButton = styled(IconButton)`
     color: black;
 
@@ -40,6 +42,8 @@ function HigherLowerGame() {
     const [needHelp, setNeedHelp] = useState(false);
     const [shortcutsPressed, setShortcutsPressed] = useState(false);
 
+    const [announcement, setAnnouncement] = useState('');
+
     useEffect(() => {
         const numberOfCardAux = new Array(data.longData()).fill().map((_, index) => index + 1);
         const shuffleCard = numberOfCardAux.sort(() => Math.random() - 0.5);
@@ -55,6 +59,7 @@ function HigherLowerGame() {
 
     useEffect(() => {
         if (tickAnimation) {
+            setAnnouncement('');
             const timer = setTimeout(() => {
                 if (rightCardIndex + 1 > imageArray.length - 1) {
                     setShowResult(true);
@@ -77,6 +82,7 @@ function HigherLowerGame() {
         setNeedHelp(false);
         setShortcutsPressed(false);
         if (parseInt(data.randomImage(imageArray[leftCardIndex]).mortalidad) <= parseInt(data.randomImage(imageArray[rightCardIndex]).mortalidad)) {
+            setAnnouncement(`${data.randomImage(imageArray[rightCardIndex])?.mortalidad} muertes al año, acertaste`);
             setIsCorrect(1);
             setShowDeaths(true);
             setTickAnimation(true);
@@ -84,6 +90,7 @@ function HigherLowerGame() {
                 setCounter(prevCounter => prevCounter + 1);
             }, 1500);
         } else {
+            setAnnouncement(`${data.randomImage(imageArray[rightCardIndex])?.mortalidad} muertes al año`);
             setIsCorrect(2);
             setShowDeaths(true);
             setCrossAnimation(true);
@@ -99,6 +106,7 @@ function HigherLowerGame() {
         setNeedHelp(false);
         setShortcutsPressed(false);
         if (parseInt(data.randomImage(imageArray[leftCardIndex]).mortalidad) >= parseInt(data.randomImage(imageArray[rightCardIndex]).mortalidad)) {
+            setAnnouncement(`${data.randomImage(imageArray[rightCardIndex])?.mortalidad} muertes al año, acertaste`);
             setIsCorrect(1);
             setShowDeaths(true);
             setTickAnimation(true);
@@ -106,6 +114,7 @@ function HigherLowerGame() {
                 setCounter(prevCounter => prevCounter + 1);
             }, 1500);
         } else {
+            setAnnouncement(`${data.randomImage(imageArray[rightCardIndex])?.mortalidad} muertes al año`);
             setIsCorrect(2);
             setShowDeaths(true);
             setCrossAnimation(true);
@@ -127,22 +136,26 @@ function HigherLowerGame() {
         setCounter(0);
         setButtonsVisible(true);
         setShowResult(false);
+        setAnnouncement('El juego ha sido reiniciado');
     };
 
     const cancelGame = () => {
         setShowResult(false);
         setNeedHelp(false);
         setShortcutsPressed(false);
+        setAnnouncement('Has seleccionado la opción de cancelar');
     };
 
     const helpHandler = () => {
         setNeedHelp(prevState => !prevState);
         setShortcutsPressed(false);
+        setAnnouncement('Has seleccionado la opción de ayuda');
     };
 
     const showShortcuts = () => {
         setShortcutsPressed(prevState => !prevState);
         setNeedHelp(false);
+        setAnnouncement('Has seleccionado la opción de atajos de teclado');
     }
 
 
@@ -173,15 +186,16 @@ function HigherLowerGame() {
         <section className='gameHOL d-flex flex-column justify-content-center align-items-center text-center vh-100 vw-100'>
             <div tabIndex='0' id='cabeceraHOL' className='position-relative w-100 d-flex justify-content-center align-items-center'>
             <div>
-                <h2 className='tituloHOL'>Higher or Lower</h2>
-                <h2 className='tituloHOL'>¿Cuál es más letal para el humano 💀?</h2>
+                <h1 className='tituloHOL'>Higher or Lower</h1>
+                <h2 className='descripcionHOL'>¿Cuál es más letal para el humano 💀?</h2>
             </div>
-            <AnimatedIconButton title="Atajos de teclado" aria-label='Atajos del juego' aria-hidden='false' className={`position-absolute ${!showResult ? '' : 'esconderBoton'}`} id='keyboardHOL' onClick={showShortcuts}><KeyboardIcon /></AnimatedIconButton>
             <AnimatedIconButton title="Ayuda para el juego" aria-label='Ayuda para el juego' aria-hidden='false' className={`position-absolute ${!showResult ? '' : 'esconderBoton'}`}  id='sosHOL' onClick={helpHandler}><SosIcon/></AnimatedIconButton>
+            <AnimatedIconButton title="Atajos de teclado" aria-label='Atajos de teclado' aria-hidden='false' className={`position-absolute ${!showResult ? '' : 'esconderBoton'}`} id='keyboardHOL' onClick={showShortcuts}><KeyboardIcon /></AnimatedIconButton>
+
         </div>
             <section className='imagenesHOL position-relative d-flex justify-content-center align-items-center'>
                 {needHelp && (<HelpHOL helpHandler={helpHandler}/>)}
-                {shortcutsPressed && (<ShortcutsSection  showShortcuts={showShortcuts}/>)}
+                {shortcutsPressed && (<ShortcutsSection  showShortcuts={showShortcuts} imagen={'/public/Coast/CoastGame/atajosCosta.jpg'} altText={"Atajos: con el 0 puedes reiniciar el juego, con el1 puedes cancelar, con el 2 puedes pulsar el botón de lower, con el 8 puedes pulsar el botón de higher y con el 9 puedes activar el menu de ayuda SOS"} propButton={"custom-buttonHOL mt-4"}/>)}
                 <div className='imagenHOL position-relative'>
                     <img alt={data.randomImage(imageArray[leftCardIndex])?.imgAlt} className='img-fluid containerHOL' src={data.randomImage(imageArray[leftCardIndex])?.img}/>
                     <div id='informacion_imagen_i'>
@@ -190,7 +204,7 @@ function HigherLowerGame() {
                 </div>
                 <div className='imagenHOL position-relative'>
                     <img alt={data.randomImage(imageArray[rightCardIndex])?.imgAlt} className='img-fluid containerHOL' src={data.randomImage(imageArray[rightCardIndex])?.img}/>
-                    <div id='informacion_imagen_d'  className='position-absolute text-center'>
+                    <div id='informacion_imagen_d'>
                         <h3 tabIndex='0' className='card-text'> {data.randomImage(imageArray[rightCardIndex])?.cardTitle}: {showDeaths ? data.randomImage(imageArray[rightCardIndex])?.mortalidad : '?'} muertes al año </h3>
                     </div>
                     <div className='botonesHOL position-absolute'>
@@ -204,21 +218,24 @@ function HigherLowerGame() {
                 </div>
                 {showResult && (
                     <div className="position-absolute z-1 bg-white rounded p-2 border border-black" >
-                        <h2 tabIndex='0' style={{fontSize:'calc(20px + (30 - 20) * ((100vmin - 350px) / (1080 - 350)))'}} className={`${isCorrect == 2 ? 'text-danger' : 'text-success'}`}>{isCorrect === 2 ? '¡Fallaste!' : '¡Ganaste!'}</h2>
+                        <h1 tabIndex='0' style={{fontSize:'calc(20px + (30 - 20) * ((100vmin - 350px) / (1080 - 350)))'}} className={`${isCorrect == 2 ? 'text-danger' : 'text-success'}`}>{isCorrect === 2 ? '¡Fallaste!' : '¡Ganaste!'}</h1>
                         <button tabIndex='0' className='custom-buttonHOL m-2' onClick={cancelGame}>Cancelar</button>
                         <button tabIndex='0' className='custom-buttonHOL m-2' onClick={resetGame}>Volver a jugar</button>      
                     </div>
                 )}
                 <div className={`position-absolute ${isCorrect !== 0 && 'fade-icon'}`}>
-                    {isCorrect === 0 && <img src="/Coast/CoastGame/versus-icon.png"  alt="VS" style={{ maxHeight: 'calc(40px + (100 - 40) * ((100vmin - 350px) / (1080 - 350)))', backgroundColor: 'black', borderRadius:'50%'}} />}
-                    {isCorrect === 1 && <img src="/Coast/CoastGame/tick-icon.png" alt="Tick" style={{ maxHeight: 'calc(40px + (100 - 40) * ((100vmin - 350px) / (1080 - 350)))', backgroundColor: 'green', borderRadius:'50%' }} />}
-                    {isCorrect === 2 && <img src="/Coast/CoastGame/cross-icon.png" alt="Cross" style={{ maxHeight: 'calc(40px + (100 - 40) * ((100vmin - 350px) / (1080 - 350)))', backgroundColor: 'red', borderRadius:'50%' }} />}
+                    {isCorrect === 0 && <img src="/Coast/CoastGame/versus-icon.png"  alt="versus" style={{ maxHeight: 'calc(40px + (100 - 40) * ((100vmin - 350px) / (1080 - 350)))', backgroundColor: 'black', borderRadius:'50%'}} />}
+                    {isCorrect === 1 && <img src="/Coast/CoastGame/tick-icon.png" alt="Correcto" style={{ maxHeight: 'calc(40px + (100 - 40) * ((100vmin - 350px) / (1080 - 350)))', backgroundColor: 'green', borderRadius:'50%' }} />}
+                    {isCorrect === 2 && <img src="/Coast/CoastGame/cross-icon.png" alt="Incorrecto" style={{ maxHeight: 'calc(40px + (100 - 40) * ((100vmin - 350px) / (1080 - 350)))', backgroundColor: 'red', borderRadius:'50%' }} />}
                 </div>
             </section>
             <div className="d-flex justify-content-center align-items-center">
                 <button className={`custom-buttonHOL m-3 ${!showResult && !crossAnimation && !tickAnimation ? '' : 'esconderBoton'}`} onClick={resetGame}>Reiniciar</button>
-                <h3 tabIndex='0' style={{fontSize:'calc(15px + (30 - 15) * ((100vmin - 350px) / (1080 - 350)))'}} className={`${showAnimation ? "puntuacionHOL" : ""}`}>Puntuación: {counter}</h3>
+                <h3 tabIndex='0' style={{fontSize:'calc(10px + (30 - 10) * ((100vmin - 350px) / (1080 - 350)))'}} className={`${showAnimation ? "puntuacionHOL" : ""}`}>Puntuación: {counter}</h3>
             </div>
+            <span aria-live="assertive" aria-atomic="true" className="visually-hidden">
+                {announcement}
+            </span>
         </section>
     );
 }

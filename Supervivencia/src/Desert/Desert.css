@@ -1,20 +1,13 @@
-#desertGameCompleteSection{
-    background-image: url('/public/Desert/DesertImages/FondoDesierto.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
 #completeGameSectionHelp{
     width: 85%;
     bottom: 20%;
     height: 60%; 
 
-    background: rgba(165, 165, 165, 0.1);
-    backdrop-filter: blur(7.5px);
-    -webkit-backdrop-filter: blur(7.5px);
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.18);
-    border-radius: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.18);
+    background-image: url('/Desert/DesertImages/FondoDesierto.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 1px solid #585858; /* Color y grosor del borde */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 1); /* Sombreado */
 }
 
 #bagGameDisplay{
@@ -168,6 +161,7 @@
 
 #bagRestartPuntuation{
     font-size:  calc(10px + (20 - 10) * ((100vmin - 350px) / (1080 - 350)));
+    max-height: 40px;
 }
 
 #bagRestartPuntuation{
@@ -176,10 +170,7 @@
 
 #bagCloseHelp{
     font-size:  calc(10px + (20 - 10) * ((100vmin - 350px) / (1080 - 350)));
-}
-
-#bagCapacityDisplay{
-    font-size:  calc(10px + (30 - 10) * ((100vmin - 350px) / (1080 - 350)));
+    max-height: 40px;
 }
 
 #bagPuntuation{
@@ -193,7 +184,6 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        text-align: center;
         height: 20%;
         gap: 3%;
     }
@@ -225,6 +215,14 @@
     #completeGameSectionHelp{
         height: 80%;
         bottom: 5%;
+    }
+
+    #bagCloseHelp{
+        max-height: 30px;
+    }
+
+    #bagRestartPuntuation{
+        max-height: 30px;
     }
 
 }

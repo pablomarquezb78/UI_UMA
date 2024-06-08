@@ -18,7 +18,7 @@ function HelpSection({ showHelp }) {
                 podrás elegir solo 8 de ellos para llevártelos al desierto. <br/><br/>Cada uno tiene unos puntos de supervivencia asociados y unas ventajas y desventajas para que
                 puedas analizar su utilidad. La máxima puntuación es de 100 ¡A por ello!
             </span>
-            <button id="bagCloseHelp" className="btn btn-dark h-25 mt-1" style={{ maxHeight: '50px' }} onClick={showHelp}>Volver al juego</button>
+            <button id="bagCloseHelp" className="btn btn-dark h-25 mt-1" onClick={showHelp}>Volver al juego</button>
         </div>
     );
 }

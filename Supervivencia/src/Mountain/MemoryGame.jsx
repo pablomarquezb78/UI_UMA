@@ -7,15 +7,12 @@ import KeyboardIcon from '@mui/icons-material/Keyboard';
 
 
 import HelpSection from "./HelpSection";
-import ShortcutsSection from "./ShortcutsSection";
+import ShortcutsSection from '../Components/ShortcutsSection.jsx';
 
 
 const MemoryGame = () => {
   const AnimatedIconButton = styled(IconButton)`
     color: black;
-    &:hover {
-      color: white;
-    }
     .MuiSvgIcon-root {
       width: calc(33px + (64 - 33) * ((100vmin - 350px) / (1080 - 350)));
       height: calc(33px + (64 - 33) * ((100vmin - 350px) / (1080 - 350)));
@@ -29,10 +26,11 @@ const MemoryGame = () => {
   const [matchedCards, setMatchedCards] = useState([]);
   const [moves, setMoves] = useState(0);
   const [shouldFlipIncorrect, setShouldFlipIncorrect] = useState(false);
-  const [difficulty, setDifficulty] = useState("button");
+  const [difficulty, setDifficulty] = useState("facil");
   const [showResult, setShowResult] = useState(false);
   const [showHelp, setShowHelp] = useState(false);
   const [shortcutsPressed, setShortcutsPressed] = useState(false);
+  const [announcement, setAnnouncement] = useState('');
 
 
   const shuffleCards = array => {
@@ -81,9 +79,13 @@ const MemoryGame = () => {
           setShowResult(true);
         }
       } else {
-        if (difficulty === "button") {
+        if (difficulty === "facil") {
           setShouldFlipIncorrect(true);
-        } else if (difficulty === "time") {
+          setAnnouncement('Seleccionaste modo facil');
+
+        } else if (difficulty === "dificil") {
+          setAnnouncement('Seleccionaste modo dificil');
+
           setTimeout(() => {
             setFlippedCards([]);
           }, 1500);
@@ -93,20 +95,27 @@ const MemoryGame = () => {
   };
 
   const showShortcuts = () => {
+    setAnnouncement('Abriste Seccion Atajos');
+
     setShortcutsPressed(prevState => !prevState);
   }
 
   const toggleHelp = () => {
-    
+    setAnnouncement('Abriste Seccion Ayuda');
+
     setShowHelp(!showHelp);
   };
 
   const handleResetIncorrectCards = () => {
+    setAnnouncement('Volteaste las 2 cartas incorrectas');
+
     setFlippedCards([]);
     setShouldFlipIncorrect(false);
   };
 
   const cancelGame = () => {
+    setAnnouncement('Volviste a la ventana de juego');
+
     setShowHelp(false);
   };
 
@@ -130,6 +139,8 @@ const MemoryGame = () => {
   };
 
   const handleResetGame = () => {
+    setAnnouncement('El juego ha sido reiniciado');
+
     setMoves(0);
     setMatchedCards([]);
     setFlippedCards([]);
@@ -150,19 +161,19 @@ const MemoryGame = () => {
       role="application" 
       aria-label="Relaciona a cada animal con su huella">
       <h2>Relaciona a cada animal con su huella</h2>
-      <div className="controls">
-        <label>
+      <div aria-label="Sección de botones" className="controls">
+        <label htmlFor="dificultadselect">
           Dificultad:
-          <select value={difficulty} onChange={e => setDifficulty(e.target.value)} className="form-select">
-            <option value="button">FÁCIL</option>
-            <option value="time">DIFÍCIL</option>
+          <select id="dificultadselect" title="seleccionar dificultad" value={difficulty} onChange={e => setDifficulty(e.target.value)} className="form-select">
+            <option value="facil">FÁCIL</option>
+            <option value="dificil">DIFÍCIL</option>
           </select>
         </label>
 
         <AnimatedIconButton 
           className='helpmont' 
           title="Ayuda" 
-          alt="Botón de Ayuda"
+          aria-label="Botón de Ayuda"
           tabIndex={0} 
           onClick={toggleHelp} 
           onKeyDown={(e) => {
@@ -171,11 +182,13 @@ const MemoryGame = () => {
           <SosIcon />
         </AnimatedIconButton>
 
-        <AnimatedIconButton className='helpmont' title="Atajos de teclado" role="img" onClick={showShortcuts}>
+        <AnimatedIconButton aria-label="Botón de atajos" className='helpmont' title="Atajos de teclado" onClick={showShortcuts}>
                         <KeyboardIcon /> 
         </AnimatedIconButton>  
 
-        <button tabIndex="0"
+        <button
+            aria-label="Boton para reiniciar el juego" 
+            tabIndex="0"
                     style={{ marginTop : 35}}
             onClick={handleResetGame} 
           className="btn btn-dark">
@@ -187,7 +200,7 @@ const MemoryGame = () => {
        <HelpSection  cancelGame={cancelGame} />
       )}
       {(shortcutsPressed) && (
-                    <ShortcutsSection  showShortcuts={showShortcuts} />
+                    <ShortcutsSection  showShortcuts={showShortcuts} imagen={"/Mountain/atajosmont.png"} altText={"Atajos: Con los números 1-8 del teclado se eligen las cartas y con R puedes girarlas en el modo fácil."} propButton={"btn btn-dark h-25 mt-4"}/>
       )}
       
 
@@ -222,6 +235,12 @@ const MemoryGame = () => {
         </button>
       </div>
 
+      <span aria-live="assertive" aria-atomic="true" className="sr-only" id="anunciosHOL">
+                {announcement}
+      </span>
+
+
+
 
 
       {showResult && (
@@ -231,7 +250,7 @@ const MemoryGame = () => {
           aria-labelledby="resultTitle"
           aria-describedby="resultDescription">
           <div className="d-flex flex-column justify-content-center align-items-center">
-            <h2 id="resultTitle" className="text-center">¡Has completado el juego en {moves} movimientos!</h2>
+            <h3 id="resultTitle" className="text-center">¡Has completado el juego en {moves} movimientos!</h3>
             <button id="resultDescription" className="btn btn-dark m-2" onClick={handleResetGame}>Reiniciar</button>
           </div>
         </div>

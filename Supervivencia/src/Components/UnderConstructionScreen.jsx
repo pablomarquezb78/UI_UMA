@@ -11,16 +11,16 @@ function underConstruction() {
 
         <div className="adviseDiv">
             <div>
-                <img className='resizeImageSmall' src={cleaningPenguin}></img>
+                <img className='resizeImageSmall' src={cleaningPenguin} alt='Imagen de mantenimiento de página'></img>
             </div>
             <div className='row'>
-                <h4 className='text-center'>Oops...</h4>
+                <h1 className='text-center'>Oops...</h1>
             </div>
             <div className='row'>
-                <h3 className='text-center'>La pagina sigue en construccion.</h3>
+                <h2 className='text-center'>La pagina sigue en construccion.</h2>
             </div>
             <div className='row'>
-                <h5 className='text-center'>Lo sentimos pero no esta disponible por el momento.</h5>
+                <h3 className='text-center'>Lo sentimos pero no esta disponible por el momento.</h3>
             </div>
         </div>
         

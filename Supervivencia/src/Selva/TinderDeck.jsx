@@ -5,12 +5,16 @@ import TinderCard from './TinderCard.jsx';
 import { IconButton } from '@mui/material';
 import { styled } from '@mui/system';
 import SosIcon from '@mui/icons-material/Sos';
+import KeyboardIcon from '@mui/icons-material/Keyboard';
+
 import TinderHelpCard from "./TinderHelpCard.jsx";
 import TinderCardResut from "./TinderCardResults.jsx";
 
-import correcto from '../../public/Selva/FotosAlimentos/correcto.png';
-import incorrecto from '../../public/Selva/FotosAlimentos/incorrecto.png';
-import neutro from '../../public/Selva/FotosAlimentos/neutro.png';
+import ShortcutsSection from '../Components/ShortcutsSection.jsx';
+
+import correcto from '/Selva/FotosAlimentos/correcto.png';
+import incorrecto from '/Selva/FotosAlimentos/incorrecto.png';
+import neutro from '/Selva/FotosAlimentos/neutro.png';
 
 function TinderDeck({ numberOfCard }) {
     const limit = 200;
@@ -20,11 +24,15 @@ function TinderDeck({ numberOfCard }) {
     const numberOfCardAux = useRef(numberOfCard);
 
     const [needHelp, setNeedHelp] = useState(false);
+    const [shortcutsPressed, setShortcutsPressed] = useState(false);
+
     const [isCorrect, setIsCorrect] = useState(neutro);
     const [isShake, setIsShake] = useState(undefined);
     const [showCard, setShowCard] = useState([1, 0]);
     const [decisionAccesbilityTool, setDecisionAccesbilityTool] = useState('');
     const [resultDecisionAccesibilityTool, setResultDecisionAccesibilityTool] = useState('');
+
+    const sliderContainer = document.querySelector('.sliderContainer');
 
     const AnimatedIconButton = styled(IconButton)`
         color: black;
@@ -69,7 +77,7 @@ function TinderDeck({ numberOfCard }) {
 
         window.addEventListener('keydown', handleKeyDown);
         return () => window.removeEventListener('keydown', handleKeyDown);
-    }, []);
+    },);
 
     const restartGame = () => {
         setShowCard([1, 0]);
@@ -80,6 +88,10 @@ function TinderDeck({ numberOfCard }) {
     };
 
     const helpHandler = () => setNeedHelp(true);
+
+    const showShortcuts = () => {
+        setShortcutsPressed(!shortcutsPressed);
+    }
 
     const load = (positive) => {
         let numberAux = numberOfCardAux.current[showCard[1]];
@@ -119,13 +131,7 @@ function TinderDeck({ numberOfCard }) {
         actualCard.style.transform = 'none';
         actualCard.style.cursor = 'grab';
 
-        document.body.style.overflow = '';
-
-        document.removeEventListener('mousemove', moveDrag);
-        document.removeEventListener('mouseup', endDrag);
-        document.removeEventListener('touchmove', moveDrag);
-        document.removeEventListener('touchend', endDrag);
-        
+        sliderContainer.style.overflowY = '';
         
         cardDecision(actualCard);
     };
@@ -199,7 +205,7 @@ function TinderDeck({ numberOfCard }) {
                 const startPosition = event.pageX ?? event.touches[0].pageX;
                 actualCard.style.cursor = 'pointer';
                 
-                document.body.style.overflow = 'hidden';
+                sliderContainer.style.overflowY = 'hidden';
 
                 const moveHandler = (moveEvent) => moveDrag(actualCard, startPosition, moveEvent);
                 const endHandler = (upEvent) => {
@@ -223,9 +229,9 @@ function TinderDeck({ numberOfCard }) {
             }
         };
         
-
     return (
         <div className="allTinderCards">
+            
             {showCard[0] > getRandom.longData() && (
                 <TinderCardResut resetAction={restartGame} wiseChoice={wiseChoice.current} totalCards={numberOfCard.length} />
             )}
@@ -233,20 +239,30 @@ function TinderDeck({ numberOfCard }) {
             <div className="tinderOverHeader">
                 <div aria-live="assertive" aria-atomic="true">
                     <label>{decisionAccesbilityTool}</label>
-                </div>
-                <div className="tinderHeader">
+
                     <label className={showCard[0] > getRandom.longData() ? 'wiseChoiceCount' : ''}>
                         {wiseChoice.current} / {getRandom.longData()}
                     </label>
+                </div>
+                <div className="tinderHeader">
+
+                    <div className="sosTinderDiv">
+                        <AnimatedIconButton title='Botón de ayuda' onClick={helpHandler}>
+                            <SosIcon fontSize="large" />
+                        </AnimatedIconButton>
+                    </div>
+
                     <span>
                         <img className={isShake} src={isCorrect} alt={resultDecisionAccesibilityTool} />
                         <label aria-live="assertive" aria-atomic="true" style={{ position: 'absolute', left: '-9999px' }}>{resultDecisionAccesibilityTool}</label>
                     </span>
-                    <div className="sosTinderDiv">
-                        <AnimatedIconButton onClick={helpHandler}>
-                            <SosIcon name='Botón de ayuda' fontSize="large" />
+            
+                    <div className="keyboardTinderDiv">
+                        <AnimatedIconButton title="Atajos de teclado" aria-label='Atajos del juego' aria-hidden='false' id='keyboardHOL' onClick={showShortcuts}>
+                            <KeyboardIcon />
                         </AnimatedIconButton>
                     </div>
+                    
                 </div>
             </div>
 
@@ -277,6 +293,8 @@ function TinderDeck({ numberOfCard }) {
                 </div>
             )}
             {showCard[0] <= getRandom.longData() && <button id='restartTinder' onClick={restartGame}>Reiniciar</button>}
+        
+            {shortcutsPressed && <ShortcutsSection showShortcuts={showShortcuts} imagen={'un'} altText={"Atajos: con el 0 puedes reiniciar el juego, con el 4 puedes deslizar la tarjeta hacia la izquierda, con el 5 puedes seleccionar la tarjeta que aparece en pantalla, con el 6 puedes deslizar la tarjeta a la derecha y con el 9 puedes activar el menu de ayuda SOS."}></ShortcutsSection>}
         </div>
     );
 }

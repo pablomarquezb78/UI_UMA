@@ -9,7 +9,7 @@ function GridCard({nameVideo,texto, linkTo}) {
     const videoId = useId();
 
     const url = '/VideosGrid/' + nameVideo + '.mp4'
-
+    const url2 = '/VideosGrid/' + nameVideo + '.jpg'
     useEffect(() => {
         
         const videoCard = document.getElementById(videoId);
@@ -34,16 +34,13 @@ function GridCard({nameVideo,texto, linkTo}) {
        
 
                 <Link to={'/' + linkTo} onMouseEnter={() => {setTime2Play(true)} } onMouseLeave={() => {setTime2Play(false)}}>          
-                    <video id={videoId} control={"false"} muted>
-
+                    <video id={videoId} control={"false"} muted playsInline preload="auto" poster={url2} >
                         <source src={url} type="video/mp4"></source>
-
                     </video>
-                    
                     <div className='textCard w-100 h-100'>
-                        <h3 className='text-center text-white' >
+                        <h1 className='text-center text-white' >
                                 {texto}
-                        </h3> 
+                        </h1> 
                     </div>
                 </Link>
 
