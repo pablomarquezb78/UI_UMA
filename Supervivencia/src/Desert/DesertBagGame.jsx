@@ -26,6 +26,9 @@ function DesertBagGame() {
         '&:hover': {
             color: disabled ? 'gray' : 'white',
         },
+        '&:focus':{
+            color: disabled ? 'gray' : 'white',
+        },
         '.MuiSvgIcon-root': {
             width: 'calc(30px + (80 - 30) * ((100vmin - 350px) / (1080 - 350)))',
             height: 'auto',
@@ -35,6 +38,9 @@ function DesertBagGame() {
     const AnimatedIconButtonDone = styled(IconButton)(() => ({
         color: 'black',
         '&:hover': {
+            color:'white',
+        },
+        '&:focus':{
             color:'white',
         },
         '.MuiSvgIcon-root': {
