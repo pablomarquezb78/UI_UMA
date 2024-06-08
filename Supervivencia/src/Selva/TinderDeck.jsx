@@ -255,7 +255,7 @@ function TinderDeck({ numberOfCard }) {
 
                     <span>
                         <img className={isShake} src={isCorrect} alt={resultDecisionAccesibilityTool} />
-                        <span aria-live="assertive" aria-atomic="true" style={{ position: 'absolute', left: '-9999px' }}>{resultDecisionAccesibilityTool}</span>
+                        <span className="visually-hidden" aria-live="assertive" aria-atomic="true">{resultDecisionAccesibilityTool}</span>
                     </span>
             
                     <div className="keyboardTinderDiv">
