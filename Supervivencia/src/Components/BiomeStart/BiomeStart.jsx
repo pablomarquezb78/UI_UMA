@@ -55,7 +55,7 @@ function BiomeStart({ video, title, subtitle }) {
                         loop
                         playsInline 
                         preload="auto" 
-                        poster={url2} 
+                        poster={url2}
                     >
                         <source src={url} type="video/mp4" />
                     </video>
