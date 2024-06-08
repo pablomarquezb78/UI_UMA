@@ -6,6 +6,10 @@ import cleaningPenguin from "../assets/UnderConstructionScreen/club-penguin-mop.
 
 
 function underConstruction() {
+
+    useEffect(() => {
+        document.title = "How2Survive ~ En Construccion";
+    }, []);
     
     return(
 
