@@ -32,6 +32,8 @@ function TinderDeck({ numberOfCard }) {
     const [decisionAccesbilityTool, setDecisionAccesbilityTool] = useState('');
     const [resultDecisionAccesibilityTool, setResultDecisionAccesibilityTool] = useState('');
 
+    const sliderContainer = document.querySelector('.sliderContainer');
+
     const AnimatedIconButton = styled(IconButton)`
         color: black;
 
@@ -129,7 +131,7 @@ function TinderDeck({ numberOfCard }) {
         actualCard.style.transform = 'none';
         actualCard.style.cursor = 'grab';
 
-        document.body.style.overflow = '';
+        sliderContainer.style.overflowY = '';
         
         cardDecision(actualCard);
     };
@@ -203,7 +205,7 @@ function TinderDeck({ numberOfCard }) {
                 const startPosition = event.pageX ?? event.touches[0].pageX;
                 actualCard.style.cursor = 'pointer';
                 
-                document.body.style.overflow = 'hidden';
+                sliderContainer.style.overflowY = 'hidden';
 
                 const moveHandler = (moveEvent) => moveDrag(actualCard, startPosition, moveEvent);
                 const endHandler = (upEvent) => {

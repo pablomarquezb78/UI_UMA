@@ -16,6 +16,7 @@
     "@mui/icons-material": "^5.15.16",
     "@mui/material": "^5.15.16",
     "bootstrap": "^5.3.3",
+    "intersection-observer": "^0.12.2",
     "react": "^18.2.0",
     "react-accessible-accordion": "^5.0.0",
     "react-bootstrap": "^2.10.2",
