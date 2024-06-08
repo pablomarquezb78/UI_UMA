@@ -161,7 +161,7 @@ function DesertBagGame() {
                         <SosIcon />
                     </AnimatedIconButton>
                     <AnimatedIconButton disableRipple={true} title="Atajos de teclado" className={`${(helpPressed || itemList.length === 8 || shortcutsPressed || endGamePressed) ? "esconderBoton" : ""}`} onClick={showShortcuts}>
-                        <KeyboardIcon />
+                        <KeyboardIcon /> 
                     </AnimatedIconButton>
                 </div>
                 <ItemInfoContainer itemList={itemList} currentIndex={currentIndex} Bottom={false} />
@@ -169,7 +169,7 @@ function DesertBagGame() {
                     <HelpSection showHelp={showHelp} />
                 )}
                 {(shortcutsPressed) && (
-                    <ShortcutsSection showShortcuts={showShortcuts} imagen={"../../public/Desert/DesertImages/atajosdesert.png"} altText={"Atajos: con el 0 puedes reiniciar el juego, con el 4 puedes mostrar el objeto anterior, con el 5 puedes incluir el objeto en la mochila, con el 6 puedes mostrar el siguiente objeto y con el 9 puedes activar el menu de ayuda SOS"} propButton={"btn btn-dark h-25 mt-4"}/>
+                    <ShortcutsSection showShortcuts={showShortcuts} imagen={"/Desert/DesertImages/atajosdesert.png"} altText={"Atajos: con el 0 puedes reiniciar el juego, con el 4 puedes mostrar el objeto anterior, con el 5 puedes incluir el objeto en la mochila, con el 6 puedes mostrar el siguiente objeto y con el 9 puedes activar el menu de ayuda SOS"} propButton={"btn btn-dark h-25 mt-4"}/>
                 )}
                 {(itemList.length === 8 || endGamePressed) && (
                     <div className="position-absolute z-1 bg-white rounded p-3 mb-5 appear-animation w-50 h-50 d-flex flex-column justify-content-center align-items-center top-50 fw-bold

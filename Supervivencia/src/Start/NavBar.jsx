@@ -77,7 +77,7 @@ function navBar({ scrollToGridInfo, currentLink}) {
 
         }
         // Actualiza el estado previo del menú
-        setPrevShowMenu(showMenu);
+        setPrevShowMenu(showMenu); 
     }, [showMenu]);
 
     return(

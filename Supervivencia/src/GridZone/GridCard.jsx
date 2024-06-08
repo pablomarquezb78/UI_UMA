@@ -33,7 +33,7 @@ function GridCard({nameVideo,texto, linkTo}) {
         <div className='frontCard'>
        
 
-                <Link to={'/' + linkTo} onMouseEnter={() => {setTime2Play(true)} } onMouseLeave={() => {setTime2Play(false)}}>          
+                <Link className="biomeLinkStart" to={'/' + linkTo} onMouseEnter={() => {setTime2Play(true)} } onMouseLeave={() => {setTime2Play(false)}}>          
                     <video id={videoId} control={"false"} muted playsInline preload="auto" poster={url2} >
                         <source src={url} type="video/mp4"></source>
                     </video>

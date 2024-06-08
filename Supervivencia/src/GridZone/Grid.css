@@ -123,3 +123,6 @@
   top: 0;
 }
 
+.gridCard .biomeLinkStart:focus h1 {
+  color: #FFD700 !important; /* Usa !important para forzar la aplicación del estilo si es necesario */
+}
