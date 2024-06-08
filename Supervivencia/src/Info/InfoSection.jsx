@@ -19,7 +19,7 @@ function InfoSection() {
             </div>
             <div className='px-1'>
                 <h1 className='pb-4 fontControlInfoSectionh4'>Contacto</h1>
-                <span className='fontControlInfoSection text-decoration-none'>Correo: APND@gmail.com</span><br/>
+                <span className='fontControlInfoSection text-decoration-none'>Correo: grapnd@gmail.com</span><br/>
                 <span className='fontControlInfoSection text-decoration-none'>Teléfono: 123-456-789</span><br/>
                 <div id='socialNetWorkDisplayer' className='d-flex justify-content-around'>
                     <InstagramIcon/>
