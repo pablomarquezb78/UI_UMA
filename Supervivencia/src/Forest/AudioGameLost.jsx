@@ -31,7 +31,7 @@ function GameLost({backFunction}) {
                 </div>
                 <div className='bottomElement row justify-content-center align-items-center h-25'>
                     <div className='col-6'>
-                        <button tabIndex='0' onClick={backFunction}>
+                        <button tabIndex='0' onClick={backFunction} title='Volver a jugar'>
                             <div className='bottomIconSVG'>
                                 <NavigateBeforeIcon className='iconSVG' />
                                 <br/>

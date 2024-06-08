@@ -40,7 +40,7 @@ function GamePresentation({passFunction}) {
                 <div className='bottomElement row justify-content-evenly align-items-center h-25'>
                     <div className='col-6'></div>
                     <div className='col-6'>
-                        <button tabIndex='0' onClick={passFunction}>
+                        <button tabIndex='0' onClick={passFunction} title='Siguiente'>
                             <div className='bottomIconSVG'>
                                 <NavigateNextIcon className='iconSVG' />
                                 <br/>

@@ -224,7 +224,7 @@ function GameContent({backFunction, passFunction}) {
                     <div className='topElement row justify-content-center align-items-center h-50'>
                         {/* <div className='col-md-2'></div> */}
                         <div className='col-4 col-md-2'>
-                            <button tabIndex='0' onClick={playAudio}>
+                            <button tabIndex='0' onClick={playAudio} title='Reproductor de audio'>
                                 <div className='playerIconSVG'>
                                     {!playShow ? (
                                         !startedShow ? (
@@ -253,7 +253,7 @@ function GameContent({backFunction, passFunction}) {
                         {/* <div className='col-md-2'></div> */}
                         <div className='col-3 col-md-3'></div>
                         <div className='col-4 col-md-2'>
-                            <button tabIndex='0' onClick={loadGameResources}>
+                            <button tabIndex='0' onClick={loadGameResources} title='Saltar audio actual'>
                                 <div className='playerIconSVG'>
                                     <SkipNextIcon/>
                                     <br />
@@ -290,24 +290,24 @@ function GameContent({backFunction, passFunction}) {
                 <div className='midElement row justify-content-center align-items-center h-50'>
                     <div className='midElement row justify-content-center align-items-center h-50'>
                         <div className='col h-75'>
-                            <button tabIndex='0' onClick={() => pressResponse(0)}>
+                            <button tabIndex='0' onClick={() => pressResponse(0)} title='Respuesta 1'>
                                 {responsesArray[0]}
                             </button>
                         </div>
                         <div className='col h-75'>
-                            <button tabIndex='0' onClick={() => pressResponse(1)}>
+                            <button tabIndex='0' onClick={() => pressResponse(1)} title='Respuesta 2'>
                                 {responsesArray[1]}
                             </button>
                         </div>
                     </div>
                     <div className='midElement row justify-content-center align-items-center h-50'>
                         <div className='col h-75'>
-                            <button tabIndex='0' onClick={() => pressResponse(2)}>
+                            <button tabIndex='0' onClick={() => pressResponse(2)} title='Respuesta 3'>
                                 {responsesArray[2]}
                             </button>
                         </div>
                         <div className='col h-75'>
-                            <button tabIndex='0' onClick={() => pressResponse(3)}>
+                            <button tabIndex='0' onClick={() => pressResponse(3)} title='Respuesta 4'>
                                 {responsesArray[3]}
                             </button>
                         </div>
@@ -320,7 +320,7 @@ function GameContent({backFunction, passFunction}) {
                         </div>
                     </div>
                     <div className='bottomElement row justify-content-center align-items-center h-50'>
-                        <button tabIndex='0' onClick={tutorialClickHandle} className='scaleDown'>
+                        <button tabIndex='0' onClick={tutorialClickHandle} className='scaleDown' title='Volver al tutorial'>
                             <div className='bottomIconSVG'>
                                 <SosIcon className='iconSVG'/>
                                 <br/>
