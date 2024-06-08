@@ -50,7 +50,6 @@ function BiomeStart({ video, title, subtitle }) {
                         className="w-100"
                         controls={false}
                         muted
-                        aria-label={"Imagen inicio bioma " + title}
                         autoPlay
                         loop
                         playsInline 
