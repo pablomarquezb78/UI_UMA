@@ -31,6 +31,17 @@ function DesertBagGame() {
             height: 'auto',
         }
     }));
+
+    const AnimatedIconButtonDone = styled(IconButton)(() => ({
+        color: 'black',
+        '&:hover': {
+            color:'white',
+        },
+        '.MuiSvgIcon-root': {
+            width: 'calc(14px + (50 - 14) * ((100vmin - 350px) / (1080 - 350)))',
+            height: 'auto',
+        }
+    }));
     
     const imgPath = "/Desert/DesertImages/";
     const [suma, setSuma] = useState(0);
@@ -169,15 +180,15 @@ function DesertBagGame() {
                 )}
                 <div id="bagGameDisplay" className="d-flex justify-content-center align-items-center">
                     <div id="bagPlace" className={`d-flex flex-grow-0 h-100 flex-column justify-content-center`}>
+                        {(itemList.length<=15 && !endGamePressed && itemList.length>8) && (
+                            <AnimatedIconButtonDone title="Boton terminar mochila" onClick={endGame} disableRipple={true}><DoneIcon />Terminar mochila</AnimatedIconButtonDone>
+                        )}
                         <div id="BagContainer" className={`d-flex justify-content-center flex-grow-0 w-100 ${isItemIncluded ? "item-included" : ""}`}>
                             <img src={Bag} alt="Imagen de mochila de supervivencia" className="img-fluid"></img>
                         </div>
                         <div id="CapacityContainer" className={`${isItemIncluded ? "item-included" : ""}`}>
                             <span id="bagCapacityDisplay" aria-label={`La capacidad actual de la mochila es ${16 - itemList.length} de 8`} className="d-block text-center text-white letter-spacing-1 line-height-1-2">Capacidad: {16 - itemList.length}/8</span>
                         </div>
-                        {(itemList.length<=15) && (
-                        <AnimatedIconButton title="Boton Terminar" onClick={endGame} disableRipple={true}><DoneIcon /></AnimatedIconButton>
-                        )}
                     </div>
                     <div id="itemsContainer" className="h-100 d-flex flex-column align-items-center justify-content-center">
                         <div id="itemImgContainer" className="d-flex justify-content-center w-100">
