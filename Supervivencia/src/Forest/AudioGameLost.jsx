@@ -24,14 +24,14 @@ function GameLost({backFunction}) {
         <div id='gameZoneCenter'>
             <div className='container-fluid h-75 w-75' id='gameBox'>
                 <div className='topElement row justify-content-center align-items-center h-25' id='textCenter'>
-                        <h1 tabIndex='0'>Oh no...</h1>
+                        <h1>Oh no...</h1>
                 </div>
                 <div className='midElement row justify-content-center align-items-center h-50' id='textCenter'>
-                        <h2 tabIndex='0'>Has muerto en la noche</h2>
+                        <h2>Has muerto en la noche</h2>
                 </div>
                 <div className='bottomElement row justify-content-center align-items-center h-25'>
                     <div className='col-6'>
-                        <button tabIndex='0' onClick={backFunction}>
+                        <button tabIndex='0' onClick={backFunction} title='Volver a jugar'>
                             <div className='bottomIconSVG'>
                                 <NavigateBeforeIcon className='iconSVG' />
                                 <br/>

@@ -5,7 +5,8 @@ import PlayArrowIcon from "@mui/icons-material/PlayArrow"
 import SkipNextIcon from "@mui/icons-material/SkipNext"
 import PauseIcon from "@mui/icons-material/Pause"
 import ReplayIcon from "@mui/icons-material/Replay"
-import LibraryBooksIcon from "@mui/icons-material/LibraryBooks"
+//import LibraryBooksIcon from "@mui/icons-material/LibraryBooks"
+import SosIcon from "@mui/icons-material/Sos"
 import VolumeUpIcon from "@mui/icons-material/VolumeUp"
 import VolumeDownIcon from "@mui/icons-material/VolumeDown"
 import VolumeMuteIcon from "@mui/icons-material/VolumeMute"
@@ -13,7 +14,7 @@ import {animals} from '/public/Forest/AudioGameAssets/AudioGameDataset.json'
 
 function GameContent({backFunction, passFunction}) {
 
-    //Editing
+    const[announcement, setAnnouncement] = useState('');
 
     const [playShow, setPlayShow] = useState(false);
     const play = useRef(false);
@@ -88,6 +89,7 @@ function GameContent({backFunction, passFunction}) {
         }
         if(play.current)
         {
+            setAnnouncement('Pausado');
             audioRef.current.pause();
             setPlayShow(false);
             play.current = false;
@@ -95,6 +97,7 @@ function GameContent({backFunction, passFunction}) {
         }
         else
         {
+            setAnnouncement('Reproduciendo');
             audioRef.current.play()
             setPlayShow(true);
             play.current = true;
@@ -111,6 +114,9 @@ function GameContent({backFunction, passFunction}) {
             audioRef.current.pause();
             clearInterval(timeRef.current);
         }
+
+        setAnnouncement('Nueva pregunta');
+
         setPlayShow(false);
         play.current = false;
         setStartedShow(false);
@@ -172,11 +178,13 @@ function GameContent({backFunction, passFunction}) {
     {
         if(correctResponse.current == num)
         {
+            setAnnouncement('Respuesta correcta');
             score.current = score.current + 1;
             loadGameResources();
         }
         else
         {
+            setAnnouncement('Has fallado');
             passFunction();
         }
     }
@@ -216,7 +224,7 @@ function GameContent({backFunction, passFunction}) {
                     <div className='topElement row justify-content-center align-items-center h-50'>
                         {/* <div className='col-md-2'></div> */}
                         <div className='col-4 col-md-2'>
-                            <button tabIndex='0' onClick={playAudio}>
+                            <button tabIndex='0' onClick={playAudio} title='Reproductor de audio'>
                                 <div className='playerIconSVG'>
                                     {!playShow ? (
                                         !startedShow ? (
@@ -245,7 +253,7 @@ function GameContent({backFunction, passFunction}) {
                         {/* <div className='col-md-2'></div> */}
                         <div className='col-3 col-md-3'></div>
                         <div className='col-4 col-md-2'>
-                            <button tabIndex='0' onClick={loadGameResources}>
+                            <button tabIndex='0' onClick={loadGameResources} title='Saltar audio actual'>
                                 <div className='playerIconSVG'>
                                     <SkipNextIcon/>
                                     <br />
@@ -282,24 +290,24 @@ function GameContent({backFunction, passFunction}) {
                 <div className='midElement row justify-content-center align-items-center h-50'>
                     <div className='midElement row justify-content-center align-items-center h-50'>
                         <div className='col h-75'>
-                            <button tabIndex='0' onClick={() => pressResponse(0)}>
+                            <button tabIndex='0' onClick={() => pressResponse(0)} title='Respuesta 1'>
                                 {responsesArray[0]}
                             </button>
                         </div>
                         <div className='col h-75'>
-                            <button tabIndex='0' onClick={() => pressResponse(1)}>
+                            <button tabIndex='0' onClick={() => pressResponse(1)} title='Respuesta 2'>
                                 {responsesArray[1]}
                             </button>
                         </div>
                     </div>
                     <div className='midElement row justify-content-center align-items-center h-50'>
                         <div className='col h-75'>
-                            <button tabIndex='0' onClick={() => pressResponse(2)}>
+                            <button tabIndex='0' onClick={() => pressResponse(2)} title='Respuesta 3'>
                                 {responsesArray[2]}
                             </button>
                         </div>
                         <div className='col h-75'>
-                            <button tabIndex='0' onClick={() => pressResponse(3)}>
+                            <button tabIndex='0' onClick={() => pressResponse(3)} title='Respuesta 4'>
                                 {responsesArray[3]}
                             </button>
                         </div>
@@ -308,13 +316,13 @@ function GameContent({backFunction, passFunction}) {
                 <div className='bottomElement row justify-content-center align-items-center h-25'>
                     <div className='bottomElement row justify-content-center align-items-center h-50' id='score'>
                         <div className='col-auto'>
-                            <p tabIndex='0'>Puntuacion: {score.current}</p>
+                            <p>Puntuacion: {score.current}</p>
                         </div>
                     </div>
                     <div className='bottomElement row justify-content-center align-items-center h-50'>
-                        <button tabIndex='0' onClick={tutorialClickHandle} className='scaleDown'>
+                        <button tabIndex='0' onClick={tutorialClickHandle} className='scaleDown' title='Volver al tutorial'>
                             <div className='bottomIconSVG'>
-                                <LibraryBooksIcon className='iconSVG'/>
+                                <SosIcon className='iconSVG'/>
                                 <br/>
                                 <p>Volver al tutorial</p>
                             </div>
@@ -322,7 +330,9 @@ function GameContent({backFunction, passFunction}) {
                     </div>
                 </div>
             </div>
-            
+            <span aria-live='assertive' aria-atomic="true" className='visually-hidden'>
+                {announcement}
+            </span>
         </div>
     )
 }

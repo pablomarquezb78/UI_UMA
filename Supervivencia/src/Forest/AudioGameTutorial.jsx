@@ -55,12 +55,12 @@ function GameTutorial({backFunction, passFunction}) {
             ) : (
                 <div className='container-fluid h-75 w-75' id='gameBox'>
                     <div className='topElement row justify-content-center align-items-center h-25' id='textCenter'>
-                        <h1 tabIndex='0'>Tutorial</h1>
+                        <h1>Tutorial</h1>
                     </div>
                     <div className='row justify-content-center align-items-center h-50' id='textCenterTutorial'>
                         <div className='row justify-content-center align-items-center h-75' id='textCenterTutorial'>
                             <div className='col-sm-10'>
-                                <p tabIndex='0' >
+                                <p>
                                     Se trata de un minijuego de sonido, se seleccionará un audio
                                     y se mostrarán cuatro opciones de animales a los que pueden
                                     corresponder el audio, tendrás que identificar que animal de
@@ -73,7 +73,7 @@ function GameTutorial({backFunction, passFunction}) {
                         </div>
                         <div className='bottomElement row justify-content-center align-items-center h-25'>
                             <div className='col-4'>
-                                <button tabIndex='0' onClick={showShortcuts}>
+                                <button tabIndex='0' onClick={showShortcuts} title='Atajos de teclado'>
                                     <div className='bottomIconSVG'>
                                         <KeyboardIcon className='iconSVG'/>
                                         <br/>
@@ -85,7 +85,7 @@ function GameTutorial({backFunction, passFunction}) {
                     </div>
                     <div className='bottomElement row justify-content-evenly align-items-center h-25'>
                         <div className='col-6'>
-                            <button tabIndex='0' onClick={backFunction}>
+                            <button tabIndex='0' onClick={backFunction} title='Volver'>
                                 <div className='bottomIconSVG'>
                                     <NavigateBeforeIcon className='iconSVG'/>
                                     <br/>
@@ -96,7 +96,7 @@ function GameTutorial({backFunction, passFunction}) {
                         {/*<div className='col-sm-6 col-lg-9'></div>*/}
                         <div className='col-6'>
                             <button tabIndex='0' onClick={passFunction}>
-                                <div className='bottomIconSVG'>
+                                <div className='bottomIconSVG' title='Siguiente'>
                                     <NavigateNextIcon className='iconSVG' />
                                     <br/>
                                     <p>Siguiente</p>
@@ -105,7 +105,7 @@ function GameTutorial({backFunction, passFunction}) {
                         </div>  
                     </div>
             </div>  
-            )}        
+            )}
         </div>
     )
 }

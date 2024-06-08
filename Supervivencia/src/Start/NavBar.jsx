@@ -95,7 +95,7 @@ function navBar({ scrollToGridInfo, currentLink}) {
                     </AnimatedIconButton>
                 )}
                 {showMenu === 2 && (
-                    <Link to='/'><img alt='paginaInicio' id="webLogoStart" src={logoWeb}></img></Link>
+                    <Link to='/'><img alt='Página de inicio' title='Página de inicio' id="webLogoStart" src={logoWeb}></img></Link>
                 )}
             </div>
             <nav>
