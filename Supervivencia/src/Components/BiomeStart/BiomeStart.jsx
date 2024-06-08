@@ -46,11 +46,11 @@ function BiomeStart({ video, title, subtitle }) {
             <header className="w-100 biomeStartHeader">
                 <div className="w-100 biomeStartDivHeader">
                     <video
+                        aria-label={"Vídeo inicio bioma " + title}
                         ref={videoRef}
                         className="w-100"
                         controls={false}
                         muted
-                        aria-label={"Imagen inicio bioma " + title}
                         autoPlay
                         loop
                         playsInline 
