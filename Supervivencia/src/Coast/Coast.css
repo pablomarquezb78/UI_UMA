@@ -60,7 +60,7 @@
 
 .card-text{
   
-  font-size: calc(15px + (25 - 15) * ((100vmin - 350px) / (1080 - 350)));
+  font-size: calc(14px + (25 - 14) * ((100vmin - 350px) / (1080 - 350)));
   background: rgba(255, 255, 255, 0.8);
   backdrop-filter: blur( 7.5px );
   -webkit-backdrop-filter: blur(7.5px);
