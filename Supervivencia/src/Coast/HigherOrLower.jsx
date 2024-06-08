@@ -233,7 +233,7 @@ function HigherLowerGame() {
                 <button className={`custom-buttonHOL m-3 ${!showResult && !crossAnimation && !tickAnimation ? '' : 'esconderBoton'}`} onClick={resetGame}>Reiniciar</button>
                 <h3 tabIndex='0' style={{fontSize:'calc(10px + (30 - 10) * ((100vmin - 350px) / (1080 - 350)))'}} className={`${showAnimation ? "puntuacionHOL" : ""}`}>Puntuación: {counter}</h3>
             </div>
-            <span aria-live="assertive" aria-atomic="true" className="sr-only" id="anunciosHOL">
+            <span aria-live="assertive" aria-atomic="true" className="visually-hidden">
                 {announcement}
             </span>
         </section>
