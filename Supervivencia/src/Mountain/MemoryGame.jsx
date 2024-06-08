@@ -26,7 +26,7 @@ const MemoryGame = () => {
   const [matchedCards, setMatchedCards] = useState([]);
   const [moves, setMoves] = useState(0);
   const [shouldFlipIncorrect, setShouldFlipIncorrect] = useState(false);
-  const [difficulty, setDifficulty] = useState("button");
+  const [difficulty, setDifficulty] = useState("facil");
   const [showResult, setShowResult] = useState(false);
   const [showHelp, setShowHelp] = useState(false);
   const [shortcutsPressed, setShortcutsPressed] = useState(false);
@@ -229,15 +229,17 @@ const MemoryGame = () => {
             ))}
       </div>
 
-      <span aria-live="assertive" aria-atomic="true" className="sr-only" id="anunciosHOL">
-                {announcement}
-      </span>
-
       <div style={{ visibility: shouldFlipIncorrect ? 'visible' : 'hidden' }}>
         <button onClick={handleResetIncorrectCards} style={{ height: 'auto'}} className="btn btn-primary"> 
           Volver a Intentar
         </button>
       </div>
+
+      <span aria-live="assertive" aria-atomic="true" className="sr-only" id="anunciosHOL">
+                {announcement}
+      </span>
+
+
 
 
 
