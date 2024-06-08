@@ -156,7 +156,6 @@ const MemoryGame = () => {
   return (
     <div 
       className="memory-game" 
-      tabIndex="0" 
       onKeyDown={handleKeyPress}
       role="application" 
       aria-label="Relaciona a cada animal con su huella">

@@ -33,6 +33,13 @@ function GridZone() {
         }, 500);
     };
 
+    const handleKeyPress = (event, handler) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+            event.preventDefault();
+            handler();
+        }
+    };
+
     return (
         <section>
             <div className='gridSection'>
@@ -40,9 +47,24 @@ function GridZone() {
                 <article className='gridCard sobrevive'>
                     <h1 id='sobrevive'>sobrevive.</h1>
                     <div className='fogata'>
-                        <img hidden={isFire !== 2} src={Smoke} alt="Smoke" />
-                        <img hidden={isFire !== 1} onClick={overFireHandler} src={hogueraPrendida} alt="Hoguera Prendida" />
-                        <img className={isShake ? 'shake-animation' : ''} hidden={isFire !== 0} onClick={fireHandler} src={hogueraSeca} alt="Hoguera Seca" />
+                        <img hidden={isFire !== 2} src={Smoke} alt="Smoke" tabIndex={0} />
+                        <img
+                            hidden={isFire !== 1}
+                            onClick={overFireHandler}
+                            onKeyPress={(event) => handleKeyPress(event, overFireHandler)}
+                            src={hogueraPrendida}
+                            alt="Hoguera Prendida"
+                            tabIndex={0}
+                        />
+                        <img
+                            className={isShake ? 'shake-animation' : ''}
+                            hidden={isFire !== 0}
+                            onClick={fireHandler}
+                            onKeyPress={(event) => handleKeyPress(event, fireHandler)}
+                            src={hogueraSeca}
+                            alt="Hoguera Seca"
+                            tabIndex={0}
+                        />
                     </div>
                 </article>
                 <GridCard nameVideo='montana' texto='MONTAÑA' linkTo='mountain' />
