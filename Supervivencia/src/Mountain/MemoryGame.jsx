@@ -33,6 +33,14 @@ const MemoryGame = () => {
   const [announcement, setAnnouncement] = useState('');
 
 
+  useEffect(() => {
+    if (difficulty === "facil") {
+      setAnnouncement('Juegas en modo fácil');
+    } else if (difficulty === "dificil") {
+      setAnnouncement('Juegas en modo difícil');
+    }
+  }, [difficulty]);
+
   const shuffleCards = array => {
     return array.sort(() => Math.random() - 0.5);
   };
@@ -73,6 +81,7 @@ const MemoryGame = () => {
 
       if (firstCard.id === secondCard.id) {
         const newMatchedCards = [...matchedCards, firstCardIndex, secondCardIndex];
+        setAnnouncement('Elegiste 2 cartas correctas');
         setMatchedCards(newMatchedCards);
         setFlippedCards([]);
         if (newMatchedCards.length === cards.length) {
@@ -81,13 +90,12 @@ const MemoryGame = () => {
       } else {
         if (difficulty === "facil") {
           setShouldFlipIncorrect(true);
-          setAnnouncement('Seleccionaste modo facil');
 
         } else if (difficulty === "dificil") {
-          setAnnouncement('Seleccionaste modo dificil');
 
           setTimeout(() => {
             setFlippedCards([]);
+            setAnnouncement('Elegiste 2 cartas incorrectas');
           }, 1500);
         }
       }
@@ -156,6 +164,7 @@ const MemoryGame = () => {
   return (
     <div 
       className="memory-game" 
+      tabIndex="0" 
       onKeyDown={handleKeyPress}
       role="application" 
       aria-label="Relaciona a cada animal con su huella">
@@ -234,7 +243,7 @@ const MemoryGame = () => {
         </button>
       </div>
 
-      <span aria-live="assertive" aria-atomic="true" className="sr-only" id="anunciosHOL">
+      <span aria-live="assertive" aria-atomic="true" className="sr-only visually-hidden" id="anunciosHOL">
                 {announcement}
       </span>
 
