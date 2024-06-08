@@ -4,6 +4,10 @@ import './BiomeStart.css';
 function BiomeStart({ video, title, subtitle }) {
     const videoRef = useRef(null);
 
+
+    const url = '/VideosGrid/' + video + '.mp4'
+    const url2 = '/VideosGrid/' + video + '.jpg'
+
     useEffect(() => {
         if (!('IntersectionObserver' in window)) {
             return;
@@ -49,9 +53,11 @@ function BiomeStart({ video, title, subtitle }) {
                         alt={"Imagen inicio bioma " + title}
                         autoPlay
                         loop
-                        playsinline 
+                        playsInline 
+                        preload="auto" 
+                        poster={url2} 
                     >
-                        <source src={'/VideosGrid/' + video + '.mp4'} type="video/mp4" />
+                        <source src={url} type="video/mp4" />
                     </video>
                     <div className="w-100 h-100 position-absolute top-0"></div>
                     <div className="d-flex w-100 justify-content-center align-items-center position-absolute biomeStartTextHeader">

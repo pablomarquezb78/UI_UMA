@@ -36,7 +36,7 @@ function VideoStart() {
 
     return (
         <div className='position-absolute w-100 h-100 top-0 bottom-0 z-0'>
-            <video ref={videoRef} className='w-100 h-100 object-fit-cover' autoPlay loop muted playsinline>
+            <video ref={videoRef} className='w-100 h-100 object-fit-cover' autoPlay loop muted playsInline preload="auto" poster='/src/assets/Start/videoStart.jpg'>
                 <source src={videoStart} type="video/mp4"></source>
             </video>
         </div>
