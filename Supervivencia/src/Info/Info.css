@@ -39,6 +39,7 @@
 #imgAboutUsContainer img{
     object-fit: contain;
     height: auto; 
+    margin-top: 6%;
 }
 
 .fontControlAboutUs{
