@@ -4,7 +4,7 @@
         "nombre": "Chilaba",
         "imagen": "abrigoDesierto.png",
         "puntuacion": 15,
-        "ventajas": "Chaqueta liviana que proteje del sol, viento, arena  y ofrece aislamiento térmico.",
+        "ventajas": "Chaqueta liviana que protege del sol, viento, arena  y ofrece aislamiento térmico.",
         "desventajas": "Pueden acumular calor, pueden ser pesados o voluminosos y restringir el movimiento."
     },
     { 
@@ -12,7 +12,7 @@
         "nombre": "Botella de agua",
         "imagen": "botellaDeAgua.png",
         "puntuacion": 16,
-        "ventajas": "Esencial para la hidratación y la supervivencia. Recipiente reutilizable",
+        "ventajas": "Esencial para la hidratación y la supervivencia. Recipiente reutilizable.",
         "desventajas": "Cantidad limitada de agua, requiere reabastecimiento."
     },
     {
@@ -37,7 +37,7 @@
         "imagen": "espejo.png",
         "puntuacion": 5,
         "ventajas": "Útil para señales de rescate reflejando la luz del sol.",
-        "desventajas": "Fácilmente se puede romper o perder, además depende de que se de la situación de poder ser visto"
+        "desventajas": "Fácilmente se puede romper o perder, además depende de que se de la situación de poder ser visto."
     },
     {
         "id": 6,
